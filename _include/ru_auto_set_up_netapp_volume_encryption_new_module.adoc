@@ -1,4 +1,4 @@
-If the replaced controller or high availability (HA) partner of the new controller uses NetApp Volume Encryption (NVE), you must configure the new controller module for NVE.
+If the replaced controller or high availability (HA) partner of the new controller uses either NetApp Aggregate Encryption (NAE) or NetApp Volume Encryption (NVE), you must configure the new controller module for NAE/NVE.
 
 .About this task
 
