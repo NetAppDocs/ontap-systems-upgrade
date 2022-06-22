@@ -19,6 +19,6 @@ summary: "If required, restore key-manager configuration on node3 when upgrading
 //
 
 [.lead]
-If you are using NetApp Volume Encryption (NVE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. Encrypted volumes are taken offline when ARL is complete for node1 aggregates from node2 to node3.
+If you are using NetApp Aggregate Encryption (NAE) or NetApp Volume Encryption (NVE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. Encrypted volumes are taken offline when ARL is complete for node1 aggregates from node2 to node3.
 
 include::../_include/ru_auto_restore_key_manager_config_ontap_98.adoc[]
