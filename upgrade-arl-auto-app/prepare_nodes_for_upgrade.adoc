@@ -142,7 +142,7 @@ You must run and save the output of the following commands individually:
 * `security key-manager external show-status`
 * `reachability show -detail`
 
-NOTE: If NetApp Volume Encryption using Onboard Key Manager (OKM) is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
+NOTE: If NetApp Aggregate Encryption (NAE) or NetApp Volume Encryption (NVE) using Onboard Key Manager (OKM) is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
 
 include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
