@@ -30,7 +30,7 @@ You can use this content under the following circumstances:
 +
 For upgrading MetroCluster IP configurations, refer to link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
-NOTE: You can use NetApp Storage Encryption (NSE) and NetApp Volume Encryption (NVE) with this procedure.
+NOTE: You can use NetApp Storage Encryption (NSE), NetApp Aggregation Encryption (NAE), and NetApp Volume Encryption (NVE) with this procedure.
 
 [[sys_commands_98_supported_systems]]The following table shows the supported model matrix for the controller upgrade.
 
