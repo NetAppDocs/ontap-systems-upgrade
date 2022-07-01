@@ -20,7 +20,7 @@ This procedure describes how to upgrade the controller hardware using aggregate 
 |Method |ONTAP version |Supported systems
 
 |Manual upgrade using ARL
-|9.8 or earlier
+|9.8 or later
 a|* FAS system to FAS system
 * FAS system to a system with FlexArray Virtualization Software or a V-Series system
 * AFF system to AFF system
