@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Map network ports using ONTAP 9.8</title>
+  <title>Map network ports using ONTAP 9.8 or later</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Map network ports using ONTAP 9.8" />
+  <meta property="og:title" content="Map network ports using ONTAP 9.8 or later" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-map-network-ports-ontap-9-8.html" />
 	<meta property="og:description" content="To enable node3 and node4 to communicate with each other in the cluster and with the network after the upgrade, you must ensure the physical ports are correc..." />
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Map network ports using ONTAP 9.8](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-map-network-ports-ontap-9-8.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade/upgrade_map_network_ports_ontap_9_8.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[Map network ports using ONTAP 9.8 or later](https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-map-network-ports-ontap-9-8.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade/upgrade_map_network_ports_ontap_9_8.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap-systems-upgrade/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap-systems-upgrade/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -2868,14 +2868,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Map network ports using ONTAP 9.8</h1>
+  <h1 class="n-doc__component-detail-heading">Map network ports using ONTAP 9.8 or later</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-07-08 15:33:15 +0000">07/08/2022</time>
+    <time datetime="2022-07-20 11:59:54 +0000">07/20/2022</time>
     
   
 
@@ -2914,7 +2914,7 @@
 </div>
 <div class="paragraph">
 <div class="title">Before you begin</div>
-<p>These steps apply to systems running ONTAP 9.8. If you are running ONTAP 9.7 or earlier, you must use the procedure in <a href="upgrade-map-network-ports-ontap-9-7-or-earlier.html">Map network ports using ONTAP 9.7 or earlier</a>.</p>
+<p>These steps apply to systems running ONTAP 9.8 or later. If you are running ONTAP 9.7 or earlier, you must use the procedure in <a href="upgrade-map-network-ports-ontap-9-7-or-earlier.html">Map network ports using ONTAP 9.7 or earlier</a>.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
@@ -3140,7 +3140,7 @@ Depending on the complexity of the networking configuration of the system being 
 </div>
 </li>
 <li>
-<p><a id="map_98_7"></a>Starting from ONTAP 9.8, ONTAP will automatically modify the home ports of LIFs if the ports are moved between broadcast domains during the network port reachability repair procedure. If a LIF&#8217;s home port was moved to another node, or is unassigned, that LIF will be presented as a displaced LIF. Restore the home ports of displaced LIFs whose home ports either no longer exist or were relocated to another node.</p>
+<p><a id="map_98_7"></a>Beginning with ONTAP 9.8, ONTAP will automatically modify the home ports of LIFs if the ports are moved between broadcast domains during the network port reachability repair procedure. If a LIF&#8217;s home port was moved to another node, or is unassigned, that LIF will be presented as a displaced LIF. Restore the home ports of displaced LIFs whose home ports either no longer exist or were relocated to another node.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3210,7 +3210,7 @@ For iSCSI LIFs, modification of the home port requires the LIF to be administrat
 </ol>
 </div>
 <div class="paragraph">
-<p>You have completed mapping the physical ports. To complete the upgrade, go to <a href="upgrade-final-upgrade-steps-in-ontap-9-8.html">Perform final upgrade steps in ONTAP 9.8</a>.</p>
+<p>You have completed mapping the physical ports. To complete the upgrade, go to <a href="upgrade-final-upgrade-steps-in-ontap-9-8.html">Perform final upgrade steps in ONTAP 9.8 or later</a>.</p>
 </div>
 
     </article>
