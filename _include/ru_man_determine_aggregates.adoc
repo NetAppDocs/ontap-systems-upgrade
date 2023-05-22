@@ -75,7 +75,7 @@ In the example in the previous step, "aggr2" uses internal drives, as indicated 
 
 . Enter the following command on both controllers:
 +
-`aggr status -y`
+`aggr status -v`
 +
 The system displays information about the volumes on the aggregate, as shown in the partial output in the following example:
 +
@@ -134,4 +134,5 @@ You can upgrade the controllers by referring to link:other_references.html[Refer
 You can upgrade the controllers by using the procedure _Upgrading the controller hardware on a pair of nodes running clustered Data ONTAP by moving volumes_. Refer to link:other_references.html[References] to link to the _NetApp Support Site_ where you can access this procedure.
 |===
 
+// 2023 MAY 22, AFFFASDOC-38
 // Clean-up, 2022-03-09
