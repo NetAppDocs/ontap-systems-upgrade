@@ -88,7 +88,7 @@ NOTE: If your controller upgrade model combination is not in the above table, co
 
 h|System h|ONTAP version h|System h|ONTAP version
 |FAS2720 |9.13.1 or later |FAS2820 |9.13.1 or later
-|FAS2760 |9.11.1 or earlier |FAS2820 |9.13.1 or later
+|FAS2760 |9.11.1P7 or earlier |FAS2820 |9.13.1 or later
 |AFF8060 |9.8P13 or later patches |AFF A900 |9.10.1 to 9.12.1
 |AFF8080 |9.8P10 or later patches |AFF A900 |9.10.1 to 9.12.1
 |FAS8060 |9.8P13 or later patches |FAS9500 |9.10.1P3 to 9.12.1
