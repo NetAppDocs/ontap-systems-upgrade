@@ -13,7 +13,7 @@ summary: "Install and boot node4 and install ONTAP software during a manual ARL 
 
 [.lead]
 include::../_include/ru_man_install_boot_node4_intro_to_step_15.adoc[]
-. If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
+. If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 

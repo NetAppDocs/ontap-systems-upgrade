@@ -26,10 +26,10 @@ To complete the procedure of upgrading by moving volumes, you must configure the
 . Restore Storage or Volume Encryption functionality by using the appropriate procedure in the
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html[Manage encryption with the CLI^] content.
 +
-Use one of the following procedures, depending on whether you are using onboard or external key management:
+Use one of the following procedures, depending on whether you are using onboard or External Key Management:
 
- ** "`Restoring onboard key management encryption keys`"
- ** "`Restoring external key management encryption keys`"
+ ** "`Restore onboard key management encryption keys`"
+ ** "`Restore external key management encryption keys`"
 
 . If the new nodes have FC ports (onboard or on FC adapters), onboard CNA ports, or a CNA card, configure the FC or CNA ports, enter the following command from the storage system prompt:
 +
