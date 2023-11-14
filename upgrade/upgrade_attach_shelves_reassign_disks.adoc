@@ -16,7 +16,12 @@ You must reassign the disks that belonged to node1 and node2 to node3 and node4 
 You perform the steps in this section on node3 and node4, completing each step on node3 and then node4 before going on to the next step.
 
 .Steps
-. Connect the storage shelf cables from node1/node2 to node3/node4. Verify the power supply and physical connectivity of the shelves.
+. Connect the storage shelf cables for the existing shelves in your configuration from node1/node2 to node3/node4. 
++
+NOTE: You should not connect new shelves to your configuration during the upgrade procedure. 
+
+. Verify the power supply and physical connectivity of the shelves.
+
 . From the node3 LOADER prompt, boot to Maintenance mode:
 +
 `boot_ontap maint`
@@ -87,4 +92,5 @@ You should see output similar to the following:
 +
 `halt`
 
+// 2023 NOV 14, ontap-systems-upgrade-issues-94
 // Clean-up, 2022-03-09
