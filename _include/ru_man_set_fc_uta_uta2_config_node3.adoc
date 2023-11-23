@@ -8,7 +8,7 @@ NOTE: NetApp marketing materials might use the term "UTA2" to refer to CNA adapt
 
 * If node3 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to the link:map_ports_node1_node3.html[Map ports from node1 to node3].
 
-* However, if you have a V-Series system or a system with FlexArray Virtualization software with storage arrays, and node3 does not have onboard FC ports, onboard UTA/UTA ports, or a UTA/UTA2 card, return to _Install and boot node3_ and resume at link:install_boot_node3.html#step22[Step 22].
+* However, if you have a V-Series system or a system with FlexArray Virtualization software with storage arrays, and node3 does not have onboard FC ports, onboard UTA/UTA ports, or a UTA/UTA2 card, return to _Install and boot node3_ and resume at link:install_boot_node3.html#man_install3_step22[Step 22].
 
 .Choices:
 

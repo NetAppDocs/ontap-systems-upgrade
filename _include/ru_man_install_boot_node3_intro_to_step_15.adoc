@@ -8,9 +8,9 @@ However, you do not need to netboot node3 if it has the same or a later version 
 
 [IMPORTANT]
 ====
-If you are upgrading a V-Series system connected to storage arrays or a system with FlexArray Virtualization software that is connected to storage arrays, you must complete <<man_install3_step1, Step 1>> through <<man_install3_step5,Step 5>>, leave this section at <<man_install3_step6,Step 6>> and follow instructions in link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3[Check and configure UTA/UTA2 ports on node3] as needed, entering commands in maintenance mode. You must then return to this section and resume with <<man_install3_step7,Step 7>>.
+If you are upgrading a V-Series system connected to storage arrays or a system with FlexArray Virtualization software that is connected to storage arrays, you must complete <<man_install3_step1, Step 1>> through <<man_install3_step5,Step 5>>, leave this section at <<man_install3_step6,Step 6>> and follow instructions in link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#uta-ports-node3[Check and configure UTA/UTA2 ports on node3] as needed, entering commands in maintenance mode. You must then return to this section and resume with <<man_install3_step7,Step 7>>.
 
-However, if you are upgrading a system with storage disks, you must complete this entire section and then go to link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3[Check and configure UTA/UTA2 ports on node3], entering commands at the cluster prompt.
+However, if you are upgrading a system with storage disks, you must complete this entire section and then go to link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#uta-ports-node3[Check and configure UTA/UTA2 ports on node3], entering commands at the cluster prompt.
 ====
 
 .Steps
@@ -70,7 +70,7 @@ NOTE: *Attention*: Do not override the delay; failure to allow the battery to ch
 |Has disks and no back-end storage
 |Skip Step 7 through Step 12 and go to <<man_install3_step13,Step 13>>.
 |Is a V-Series system or a system with FlexArray Virtualization software connected to storage arrays
-a|.. Go to link:set_fc_uta_uta2_config_node3.html[Set the FC or UTA/UTA2 configuration on node3] and complete the subsections link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3[Check and configure UTA/UTA2 ports on node3], as appropriate to your system.
+a|.. Go to link:set_fc_uta_uta2_config_node3.html[Set the FC or UTA/UTA2 configuration on node3] and complete the subsections link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#uta-ports-node3[Check and configure UTA/UTA2 ports on node3], as appropriate to your system.
 
 .. Return to this section and complete the remaining steps, beginning with <<man_install3_step7,Step 7>>.
 

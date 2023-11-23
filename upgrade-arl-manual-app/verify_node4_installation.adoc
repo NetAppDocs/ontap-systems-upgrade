@@ -42,7 +42,7 @@ a| Connect the HA interconnect between the nodes by completing the following ste
 You do not need to manually connect the HA interconnect between the nodes; in same-chassis configurations, the HA interconnect is connected automatically through the backplane.
 |===
 
-. [[Step5]]Take one of the following actions:
+. [[step5]]Take one of the following actions:
 +
 |===
 |If the cluster is... |Then...

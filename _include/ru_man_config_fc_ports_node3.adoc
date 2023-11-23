@@ -136,7 +136,7 @@ a|* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and co
 * If node3 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip <<Check and configure UTA/UTA2 ports on node3>> and go to link:map_ports_node1_node3.html[Map ports from node1 to node3].
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
 a|* If node3 has a card or onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
-* If node3 does not have a card or onboard ports, skip <<Check and configure UTA/UTA2 ports on node3>>, and return to _Install and boot node3_ and resume at link:install_boot_node3.html#step7[Step 7].
+* If node3 does not have a card or onboard ports, skip <<Check and configure UTA/UTA2 ports on node3>>, and return to _Install and boot node3_ and resume at link:install_boot_node3.html#man_install3_step7[Step 7].
 |===
 //22 FEB 2021:  Formatted from CMS
 // BURT 1478241, 2022-05-13
