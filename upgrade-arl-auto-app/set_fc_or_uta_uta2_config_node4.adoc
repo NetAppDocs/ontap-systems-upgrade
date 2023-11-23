@@ -39,7 +39,7 @@ include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 a|* Skip this section and go to link:verify_node4_installation.html[Verify the node4 installation] if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports.
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
 a|* Go to <<Check and configure UTA/UTA2 ports on node4>> if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
-* Skip the section _Check and configure UTA/UTA2 ports on node4_ if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#step23[Step 23].
+* Skip the section _Check and configure UTA/UTA2 ports on node4_ if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
 |===
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
@@ -55,7 +55,7 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 |Go to link:verify_node4_installation.html[Verify the node4 installation].
 
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#step23[Step 23].
+|Return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
 
 |===
 

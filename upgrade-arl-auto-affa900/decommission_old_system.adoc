@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: /upgrade-arl-auto-affa900/decommission_old_system.html
+permalink: upgrade-arl-auto-affa900/decommission_old_system.html
 keywords: decommission, old system, upgrade, databases, netapp, support, site, serial, number, cluster
 summary: "Let NetApp know that the old system is no longer in operation after your controller upgrade."
 ---
