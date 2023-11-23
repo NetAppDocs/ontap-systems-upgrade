@@ -40,7 +40,7 @@ FAS2720
 
 .Steps
 
-. If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
+. [[A900_boot_node1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 

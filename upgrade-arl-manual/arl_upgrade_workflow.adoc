@@ -4,7 +4,6 @@ permalink: upgrade-arl-manual/arl_upgrade_workflow.html
 keywords: upgrade workflow, procedure steps, stages
 summary: "Understand how the manual ARL upgrade procedure for a pair of controllers running ONTAP 9.7 or earlier works."
 ---
-
 = ARL upgrade workflow
 :hardbreaks:
 :nofooter:
