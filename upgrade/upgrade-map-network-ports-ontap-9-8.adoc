@@ -12,7 +12,7 @@ summary: To enable node3 and node4 to communicate with each other in the cluster
 To enable node3 and node4 to communicate with each other in the cluster and with the network after the upgrade, you must confirm that the physical ports are correctly configured with the settings for the intended use, such as cluster, data, and so on.
 
 .Before you begin
-These steps apply to systems running ONTAP 9.8 or later. If you are running ONTAP 9.7 or earlier, you must use the procedure in xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[Map network ports using ONTAP 9.7 or earlier].
+These steps apply to systems running ONTAP 9.8 or later. If you are running ONTAP 9.7 or earlier, you must use the procedure in link:upgrade-map-network-ports-ontap-9-7-or-earlier.html[Map network ports using ONTAP 9.7 or earlier].
 
 .About this task
 You must perform these steps on node3 and node4.
@@ -20,7 +20,7 @@ You must perform these steps on node3 and node4.
 NOTE: The following command examples refer to "node1" because at this stage in the procedure the replacement nodes "node3" and "node4" are actually named "node1" and "node2".
 
 .Steps
-. If your system is running ONTAP 9.7 or earlier, *STOP*. You must use the procedure in xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[Map network ports using ONTAP 9.7 or earlier].
+. If your system is running ONTAP 9.7 or earlier, *STOP*. You must use the procedure in link:upgrade-map-network-ports-ontap-9-7-or-earlier.html[Map network ports using ONTAP 9.7 or earlier].
 . Locate the port and LIF configuration information for node1 and node2 that you recorded in _Prepare for upgrade when moving storage_, link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3[Step 3].
 . Locate the information for ports, broadcast domains, and IPspaces that you recorded in _Prepare for upgrade when moving storage_, link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3[Step 3].
 +
@@ -168,7 +168,7 @@ NOTE: For iSCSI LIFs, modification of the home port requires the LIF to be admin
 +
 `network interface revert *`
 
-You have completed mapping the physical ports. To complete the upgrade, go to xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[Perform final upgrade steps in ONTAP 9.8 or later].
+You have completed mapping the physical ports. To complete the upgrade, go to link:upgrade-final-upgrade-steps-in-ontap-9-8.html[Perform final upgrade steps in ONTAP 9.8 or later].
 
 // 2023 NOV 8, AFFFASDOC-133
 // BURT 1476241 2022-05-13

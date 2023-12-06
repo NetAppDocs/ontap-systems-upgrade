@@ -11,34 +11,34 @@ summary: 'If you are upgrading by moving volumes, you prepare the original nodes
 [.lead]
 If you are upgrading controller hardware by moving volumes, you prepare the original nodes and join the new nodes to the cluster. You move volumes to the new nodes, configure LIFs, and unjoin the original nodes from the cluster. Upgrading by moving volumes is a nondisruptive procedure.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One]xref:upgrade-prepare-when-moving-volumes.adoc[Prepare for the upgrade when moving volumes]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One]link:upgrade-prepare-when-moving-volumes.html[Prepare for the upgrade when moving volumes]
 [role="quick-margin-para"]
 You perform a few preparation steps before upgrading controller hardware by moving volumes.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two]xref:upgrade-install-and-join-new-nodes-move-vols.adoc[Install the new nodes and join them to the cluster]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two]link:upgrade-install-and-join-new-nodes-move-vols.html[Install the new nodes and join them to the cluster]
 [role="quick-margin-para"]
 You install the new nodes and join them to the cluster so that you can move volumes from the original nodes.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]xref:upgrade_move_linux_iscsi_hosts_to_new_nodes.html[Move Linux iSCSI hosts to the new nodes]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html[Move Linux iSCSI hosts to the new nodes]
 [role="quick-margin-para"]
 Before moving iSCSI SAN volumes to new nodes, you create new iSCSI connections and rescan the iSCSI paths to the new nodes.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four]xref:upgrade-create-aggregate-move-volumes.adoc[Create an aggregate and move volumes to the new nodes]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four]link:upgrade-create-aggregate-move-volumes.html[Create an aggregate and move volumes to the new nodes]
 [role="quick-margin-para"]
 You create at least an aggregate on each of the new nodes to store the volumes you want to move from the original nodes. You must identify an aggregate for each volume and move each volume individually
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five]xref:upgrade-move-lifs-to-new-nodes.adoc[Move non-SAN data LIFs and cluster management LIFs to the new nodes]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five]link:upgrade-move-lifs-to-new-nodes.html[Move non-SAN data LIFs and cluster management LIFs to the new nodes]
 [role="quick-margin-para"]
 After you have moved the volumes from the original nodes, you migrate the non-SAN data LIFs and cluster-management LIFs from the original nodes to the new nodes.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six]xref:upgrade_move_delete_recreate_san_lifs.adoc[Move, delete, or create SAN LIFS]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six]link:upgrade_move_delete_recreate_san_lifs.html[Move, delete, or create SAN LIFS]
 [role="quick-margin-para"]
 Depending on your cluster contents and cluster environment, you move, delete, or create SAN LIFs, or re-create deleted SAN LIFs.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]xref:upgrade-unjoin-original-nodes-move-volumes.adoc[Unjoin the original nodes from the cluster]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]link:upgrade-unjoin-original-nodes-move-volumes.html[Unjoin the original nodes from the cluster]
 [role="quick-margin-para"]
 After the volumes have been moved to the new nodes, you unjoin the original nodes from the cluster. When you unjoin a node, the node's configuration is erased and all disks are initialized.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight]xref:upgrade-complete-move-volumes.adoc[Complete the upgrade]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight]link:upgrade-complete-move-volumes.html[Complete the upgrade]
 [role="quick-margin-para"]
 To complete the procedure of upgrading by moving volumes, you configure the Service Processor SP, install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.
