@@ -90,7 +90,7 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 +
 If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2’s disks.
 
-. [[step29]] For MetroCluster configuration, V-Series systems and systems with FlexArray Virtualization software connected to storage arrays, go to link:set_fc_or_uta_uta2_config_node4.html# auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15].
+. [[step29]] For MetroCluster configurations, V-Series systems, and systems with FlexArray Virtualization software connected to storage arrays, go to link:set_fc_or_uta_uta2_config_node4.html# auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15].
 
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // Clean-up, 2022-03-09
