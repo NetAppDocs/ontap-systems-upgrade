@@ -88,7 +88,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 +
 Repeat substep (g) to verify that the cluster LIF is now listening on port 7700.
 
-. [[map_98_5]]Modify the broadcast domain memberships of physical ports hosting data LIFs. You can do this manually, as shown in link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_97_7[Map network ports using ONTAP 9.7 or earlier, Step7]. The recommended approach is to use the enhanced network reachability scan and repair procedure introduced in ONTAP 9.8, as shown in the following Step 5, substeps (a) to (g).
+. [[map_98_5]]Modify the broadcast domain memberships of physical ports hosting data LIFs. You can do this manually, as shown in link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_97_7[Map network ports using ONTAP 9.7 or earlier, Step7]. NetApp recommends using the enhanced network reachability scan and repair procedure introduced in ONTAP 9.8, as shown in the following Step 5, substeps (a) to (g).
 .. List the reachability status of all ports:
 +
 `network port reachability show`
