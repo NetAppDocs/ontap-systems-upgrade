@@ -35,7 +35,7 @@ a|* Skip this section and go to link:map_ports_node2_node4.html[Map ports from n
 
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
 a|* Go to link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4[Check and configure UTA/UTA2 ports on node4] if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
-* Skip the section _Check and configure UTA/UTA2 ports on node4_ if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#step23[Step 23].
+* Skip the section _Check and configure UTA/UTA2 ports on node4_ if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
 |===
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
@@ -49,7 +49,7 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 
 |Has storage disks |Go to the section link:map_ports_node2_node4.html[Map ports from node2 to node4].
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#step23[Step 23].
+|Return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
 |===
 
 . [[auto_check_4_step13]]Exit Maintenance mode:
