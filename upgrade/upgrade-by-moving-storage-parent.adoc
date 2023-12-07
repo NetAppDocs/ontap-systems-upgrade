@@ -30,7 +30,7 @@ When shutting down and removing the original nodes you send an AutoSupport messa
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]link:upgrade-remove-disk-ownership-new-nodes.html[Remove ownership of disks attached to the new nodes]
 [role="quick-margin-para"]
-If the new nodes have internal disks or add-on shelves attached to the system, these can interfere with the controller upgrade. Use the following steps to remove ownership of any new disks that came with node3/node4.
+If the new nodes have internal disks or add-on shelves attached to the system, these can interfere with the controller upgrade.  You should remove ownership of any new disks that came with node3/node4.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four]link:upgrade-reset-default-configuration-node3-and-node4.html[Reset the default configuration on the new nodes]
 [role="quick-margin-para"]
