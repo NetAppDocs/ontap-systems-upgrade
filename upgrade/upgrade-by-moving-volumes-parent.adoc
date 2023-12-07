@@ -41,4 +41,4 @@ After the volumes have been moved to the new nodes, you unjoin the original node
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight]link:upgrade-complete-move-volumes.html[Complete the upgrade]
 [role="quick-margin-para"]
-To complete the procedure of upgrading by moving volumes, you configure the Service Processor SP, install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.
+To complete the procedure of upgrading by moving volumes, you configure the Service Processor (SP), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.
