@@ -76,7 +76,7 @@ These prompts might get buried in the console messages. If you do not enter a no
 If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` and, or, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` errors occur, perform the following steps:
 
 . Halt the node at the LOADER prompt.
-. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node2,Step 1>>.
+. Check and reset the storage encryption bootargs mentioned in <<boot_node2_step1,Step 1>>.
 . At the loader prompt, boot up:
 +
 `boot_ontap`

@@ -126,7 +126,7 @@ NOTE: You do not need to extract the contents of the `<ontap_version>_image.tgz`
 
 |===
 
-You will use information in the directory to xref:upgrade-set-up-new-nodes.adoc[set up the new nodes].
+You will use information in the directory to link:upgrade-set-up-new-nodes.html[set up the new nodes].
 
 // Clean-up, 2022-03-09
 // BURT 1476241 2022-05-13

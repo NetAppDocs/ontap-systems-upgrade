@@ -1,10 +1,10 @@
 ---
-permalink: upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html
+permalink: upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html
 sidebar: sidebar
-keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, unused, port, lif, re-enable, failover, availability, service, processor, sp, autosupport, volume, encryption, fc, cna, perform final upgrade steps in ontap 9.8
-summary: To complete the procedure of upgrading by moving storage, you must delete any unused ports and LIFs from the new nodes, re-enable storage failover or high availability, configure the Service Processor \(SP\), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or CNA ports.
+keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, port, lif, re-enable, service, processor, sp, license, autosupport, fc, cna, por, perform final upgrade steps in ontap 9.7 or earlier
+summary: To complete the procedure of upgrading by moving storage, you need to delete any unused ports and LIFs from the new nodes, re-enable storage failover or high availability, configure the Service Processor \(SP\), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or CNA ports.
 ---
-= Perform final upgrade steps in ONTAP 9.8 or later
+= Perform the final upgrade steps in ONTAP 9.7 or earlier
 :icons: font
 :imagesdir: ../media/
 
@@ -12,13 +12,17 @@ summary: To complete the procedure of upgrading by moving storage, you must dele
 To complete the procedure of upgrading by moving storage, you must delete any unused ports and LIFs from the new nodes, re-enable storage failover or high availability, configure the Service Processor (SP), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or CNA ports.
 
 .Before you begin
-These steps apply to systems running ONTAP 9.8 or later. If you are running ONTAP 9.7 or earlier, you must use the procedure in xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[Performing final upgrade steps in ONTAP 9.7 or earlier].
+These steps apply to systems running ONTAP 9.7 or earlier. If you are running ONTAP 9.8 or later, you must use the procedure in link:upgrade-final-upgrade-steps-in-ontap-9-8.html[Perform the final upgrade steps in ONTAP 9.8 or later].
 
 .Steps
-. If your system is running ONTAP 9.7 or earlier, *STOP*. You must use the procedure in xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[Performing final upgrade steps in ONTAP 9.7 or earlier].
+. If your system is running ONTAP 9.8 or later, *STOP*. You must use the procedure in link:upgrade-final-upgrade-steps-in-ontap-9-8.html[Perform final upgrade steps in ONTAP 9.8 or later].
 . From the storage system prompt, display information about LIFs:
 +
 `network interface show`
+. Delete any unused ports from the new nodes (advanced privilege level):
++
+`network port delete`
+
 . If you are in a SAN environment, delete unused LIFs from the port set so that you can remove them:
 .. Display the port set list:
 +
@@ -26,6 +30,7 @@ These steps apply to systems running ONTAP 9.8 or later. If you are running ONTA
 .. Remove any unused LIFs from the port set:
 +
 `lun portset remove`
+
 . Remove each unused LIF from the new nodes:
 +
 `network interface delete`
@@ -35,14 +40,12 @@ These steps apply to systems running ONTAP 9.8 or later. If you are running ONTA
 |===
 | If you have a...| Then...
 
-a|
-Two-node cluster
-a|
-Re-enable high availability: `cluster ha modify -configured true`
-a|
-A cluster with more than two nodes
-a|
-Re-enable storage failover: `storage failover modify -node node_name -enabled true`
+|Two-node cluster
+|Re-enable high availability:
+`cluster ha modify -configured true`
+|A cluster with more than two nodes
+|Re-enable storage failover:
+`storage failover modify -node node_name -enabled true`
 |===
 
 . Configure the SP on the new nodes as needed:
@@ -57,7 +60,8 @@ Re-enable storage failover: `storage failover modify -node node_name -enabled tr
 . From each new node, send a post-upgrade AutoSupport message to technical support:
 +
 `system node autosupport invoke -node node_name -type all -message "MAINT=END node_name successfully upgraded from platform_old to platform_new"`
-. Restore Storage or Volume Encryption functionality by using the appropriate procedure in the https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html[Manage encryption with the CLI^] content.
+. Restore Storage or Volume Encryption functionality by using the appropriate procedure in the
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html[Manage encryption with the CLI^] content.
 +
 Use one of the following procedures, depending on whether you are using onboard or external key management:
 
@@ -86,3 +90,5 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535[Migrating to a two-
 
 .After you finish
 You have completed the upgrade procedure.
+
+// Clean-up, 2022-03-09

@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html
 keywords: overview, arl, upgrade, owner, controller, hardware, old, system, chassis, disk, disks
 summary: "Understand how the ARL procedure to upgrade controller models in the same chassis works."
 ---
-
 = Overview of the ARL upgrade
 :hardbreaks:
 :nofooter:
