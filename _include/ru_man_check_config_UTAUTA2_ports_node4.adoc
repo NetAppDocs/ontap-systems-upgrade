@@ -201,7 +201,7 @@ f-a    2b      fc      target    cna      -          online
 
 |Has storage disks |Go to  link:map_ports_node2_node4.html[Map ports from node2 to node4].
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to the section _Install and boot node4_, and resume the section at link:install_boot_node4.html#Step9[Step 9].
+|Return to the section _Install and boot node4_, and resume the section at link:install_boot_node4.html#man_install4_Step9[Step 9].
 |===
 
 // Clean-up, 2022-03-09

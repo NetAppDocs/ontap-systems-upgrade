@@ -1,12 +1,11 @@
 ---
-layout: astra
+layout: landing-page
 sidebar: sidebar
 permalink: index.html
 lead: This site provides the upgrade procedures for AFF and FAS storage systems. Select the appropriate upgrade procedure for your storage system.
 keywords:  aggregate, relocation, moving, manual, upgrade, relocate
 summary: Upgrade controller hardware by relocating aggregates, moving volumes, or moving storage 
 ---
-
 = AFF and FAS System Upgrade Documentation
 :hardbreaks:
 :nofooter:

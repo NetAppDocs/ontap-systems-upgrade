@@ -40,7 +40,7 @@ Node2 will not take over but it is still serving data from all non-root aggregat
 . Bring up node1.
 . Continue with the node-pair upgrade procedure.
 +
-You might see some changes in the output of the `storage failover show` command, but that is typical and does not affect the procedure. See the troubleshooting section link:issues_multiple_stages_of_procedure.html#Unexpected-storage-failover-show-command-output[Unexpected storage failover show command output].
+You might see some changes in the output of the `storage failover show` command, but that is typical and does not affect the procedure. See the troubleshooting section link:issues_multiple_stages_of_procedure.html#storage-failover-command[Unexpected storage failover show command output].
 
 === Node2 fails during or after Stage 2 with HA still enabled
 
@@ -163,7 +163,7 @@ There is an outage for the rest of the aggregates until node3 boots again.
 .Steps
 
 . Bring up node3.
-. Relocate the remaining aggregates that belonged to node2 by repeating link:relocate_node2_non_root_aggr_node3_node4.html#Step1[Step 1] through link:relocate_node2_non_root_aggr_node3_node4.html#step3[Step 3] in the section _Relocate node2's non-root aggregates from node3 to node4_.
+. Relocate the remaining aggregates that belonged to node2 by repeating link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1[Step 1] through link:relocate_node2_non_root_aggr_node3_node4.html#step3[Step 3] in the section _Relocate node2's non-root aggregates from node3 to node4_.
 
 . Continue with the node pair upgrade procedure.
 
