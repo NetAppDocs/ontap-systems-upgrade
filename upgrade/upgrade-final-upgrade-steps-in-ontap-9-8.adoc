@@ -82,10 +82,12 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535[Migrating to a two-
 .. Change or reset the BMC admin user account password.
 +
 The BMC admin user account password is either blank (no password) or the same as the system admin user account password.
-.. Re-create the non-default BMC user accounts.
+
+.. Re-create the non-default BMC user accounts by using the `security login create` command with "application" set to "service-processor":
 +
-NOTE: You should check and change the BMC admin user account password soon after a controller
-upgrade.
+`security login create -user-or-group-name bmcuser -application service-processor -authentication-method password -role admin`
++
+NOTE: Admin privileges are required to create a user account in the BMC. 
 
 . As needed, decommission the original systems through the NetApp Support Site to inform NetApp that the systems are no longer in operation and can be removed from support databases:
  .. Log in to the https://mysupport.netapp.com/site/global/dashboard[NetApp Support^] site.
