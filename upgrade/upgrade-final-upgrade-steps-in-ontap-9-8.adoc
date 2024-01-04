@@ -83,7 +83,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535[Migrating to a two-
 +
 The BMC admin user account password is either blank (no password) or the same as the system admin user account password.
 
-.. Re-create the non-default BMC user accounts by using the `security login create` command with "application" set to "service-processor":
+.. Re-create the non-default BMC user accounts by using the `security login create` command with `application` set to "service-processor", as shown in the following example:
 +
 `security login create -user-or-group-name bmcuser -application service-processor -authentication-method password -role admin`
 +
