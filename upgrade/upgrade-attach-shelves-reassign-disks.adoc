@@ -16,6 +16,7 @@ You must reassign the disks that belonged to node1 and node2 to node3 and node4 
 You perform the steps in this section on node3 and node4, completing each step on node3 and then node4 before going on to the next step.
 
 .Steps
+
 . Connect the storage shelf cables for the existing shelves in your configuration from node1/node2 to node3/node4. 
 +
 NOTE: You should not connect new shelves to your configuration during the upgrade procedure. 
