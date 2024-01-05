@@ -29,7 +29,7 @@ The controllers in a HA pair must be two AFF, FAS, or ASA models.
 |Do I have different ONTAP versions running on the original and new nodes?
 a|.  https://hwu.netapp.com[Check the ONTAP versions and patch levels supported by the original and the new nodes^]. 
 
-. NetApp recommends, when possible, that you have the same ONTAP version running on the original and new nodes. If this is not possible, link:https://docs.netapp.com/us-en/ontap/upgrade/index.html[upgrade the ONTAP version^] on the original nodes to the maximum supported version so that the version difference between original and new nodes is NOT greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. 
+. NetApp recommends, when possible, that you have the same ONTAP version running on the original and new nodes. If this is not possible, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the maximum supported version so that the version difference between original and new nodes is NOT greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. 
 +
 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
 
@@ -84,7 +84,7 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 
 == Situations where you might need additional steps
 
-* xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[You are upgrading from an AFF A250 to an AFF A400] (a nondisruptive procedure). 
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[You are upgrading from an AFF A250 to an AFF A400] (a nondisruptive procedure). 
 
 * If the new system has fewer slots than the original system, or if it has fewer or different types of ports, you might need to add an adapter to the new system. See the https://hwu.netapp.com[NetApp Hardware Universe^].
 
@@ -97,9 +97,10 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 .Related information
 
 * link:../choose_controller_upgrade_procedure.html[Choose methods for upgrading controller hardware]
-* xref:upgrade-by-moving-storage-parent.adoc[Upgrade controller hardware by moving storage]
-* xref:upgrade-by-moving-volumes-parent.adoc[Upgrade controller hardware by moving volumes]
+* link:upgrade-by-moving-storage-parent.html[Upgrade controller hardware by moving storage]
+* link:upgrade-by-moving-volumes-parent.html[Upgrade controller hardware by moving volumes]
 
+// 2023 NOV 16, BURT 1552664
 // 2023 JULY 3, BURTs 1552420, 1552651, and 1552660
 // 2023 JUN 7, AFFFASDOC-46
 // 2023 MAR 23, ontap-systems-upgrade-issue-82

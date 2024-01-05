@@ -1,0 +1,50 @@
+indexpage:
+  lead: This site provides the upgrade procedures for AFF, FAS, and ASA storage systems. Select the appropriate upgrade procedure for your storage system.
+  tiles:
+    - title: Get started
+      links:
+        - title: ONTAP Release Notes
+          url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
+        - title: Choose your controller hardware upgrade procedure
+          url: /choose_controller_upgrade_procedure.html 
+    - title: Upgrade by relocating aggregates on systems running ONTAP 9.8 and later
+      links:
+        - title: Use "system controller replace" commands to upgrade controller models in the same chassis
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+        - title: Use "system controller replace" commands (most systems)
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+        - title: Use manual commands
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+    - title: Upgrade by relocating aggregates on systems running ONTAP 9.7 and earlier
+      links:
+        - title: Use "system controller replace" commands
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+        - title: Use manual commands
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+    - title: Upgrade by moving storage or volumes
+      links:
+        - title: Upgrade controller hardware
+          url: /upgrade/upgrade-decide-to-use-this-guide.html
+        - title: Upgrade AFF A250 to AFF A400 by converting to a drive shelf
+          url: /upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html
+    - title: Upgrade systems in a MetroCluster configuration
+      links:
+        - title: Select the upgrade procedure for your MetroCluster configuration
+          url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
+    - title: More resources
+      links:
+        - title: ONTAP hardware systems documentation
+          url: https://docs.netapp.com/us-en/ontap-systems/index.html
+        - title: ONTAP switches documentation
+          url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
+        - title: ONTAP software documentation
+          url: https://docs.netapp.com/us-en/ontap/index.html
+        - title: NetApp Hardware Universe
+          url: https://hwu.netapp.com/
+        - title: NetApp Active IQ Config Advisor
+          url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
+        - title: NetApp Interoperability Matrix
+          url: https://mysupport.netapp.com/matrix/#welcome
+        - title: NetApp Community
+          url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins
+

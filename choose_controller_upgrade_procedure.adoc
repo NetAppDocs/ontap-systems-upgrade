@@ -55,7 +55,7 @@ Aggregate relocation is a replacement procedure. You do not need to expand and s
 
 [NOTE]
 ====
-*Note1*: The ONTAP version running on the original nodes must be supported by the new nodes. If required, link:https://docs.netapp.com/us-en/ontap/upgrade/index.html[upgrade the ONTAP version^] on the original nodes to the maximum supported version. The version difference between the original and new nodes cannot be greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
+*Note1*: The ONTAP version running on the original nodes must be supported by the new nodes. If required, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the maximum supported version. The version difference between the original and new nodes cannot be greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
 
 *Note2*: A nondisruptive upgrade requires a new system with its own storage and shelves to store the data from the original system. 
 
@@ -64,5 +64,6 @@ Aggregate relocation is a replacement procedure. You do not need to expand and s
 
 If you are upgrading a MetroCluster configuration, see https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
 
-If you are replacing an individual component, see the https://docs.netapp.com/us-en/ontap-systems/index.html[AFF and FAS System Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.
+If you are replacing an individual component, see the https://docs.netapp.com/us-en/ontap-systems/index.html[ONTAP Hardware Systems Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.
 
+// 2023 NOV 16, BURT 1552664

@@ -12,9 +12,11 @@ summary: You create at least an aggregate on each of the new nodes to store the 
 You create at least an aggregate on each of the new nodes to store the volumes you want to move from the original nodes. You must identify an aggregate for each volume and move each volume individually.
 
 .Before you begin
-Data protection mirror relationships must have been initialized before you can move a volume.
-
+* Data protection mirror relationships must have been initialized before you can move a volume.
++
 https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html[Find the required data protection procedure^]. 
+
+* If you are moving iSCSI SAN volumes, verify that you have link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html[created new iSCSI connections].
 
 NOTE: For each storage virtual machine (SVM), NetApp recommends moving all the non-root volumes in the cluster before moving the root volume, and performing this procedure on one SVM at a time. 
 
@@ -91,4 +93,5 @@ Forcing the volume move operation to finish can disrupt client access to the vol
 +
 `volume show -vserver _svm_name_`
 
+// 2023 NOV 13, AFFFASDOC-166
 // 2023 JULY 3, BURTs 1552420, 1552651, and 1552660
