@@ -78,6 +78,17 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140536[Migrating to a two-
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMP1140535[Migrating to a two-node switched cluster with NetApp CN1610 cluster switches^]
 
+. If required, re-create the non-default user accounts that you had for the baseboard management controller (BMC) on the old system:
+.. Change or reset the BMC admin user account password.
++
+The BMC admin user account password is either blank (no password) or the same as the system admin user account password.
+
+.. Re-create the non-default BMC user accounts by using the `security login create` command with `application` set to "service-processor", as shown in the following example:
++
+`security login create -user-or-group-name bmcuser -application service-processor -authentication-method password -role admin`
++
+NOTE: Admin privileges are required to create a user account in the BMC. 
+
 . As needed, decommission the original systems through the NetApp Support Site to inform NetApp that the systems are no longer in operation and can be removed from support databases:
  .. Log in to the https://mysupport.netapp.com/site/global/dashboard[NetApp Support^] site.
  .. Click the link *My Installed Systems*.
@@ -86,3 +97,5 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535[Migrating to a two-
 
 .After you finish
 You have completed the upgrade procedure.
+
+// 2023 DED 20, ontap-systems-issue-63
