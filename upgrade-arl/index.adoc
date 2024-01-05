@@ -15,7 +15,7 @@ summary: Use aggregate relocation to upgrade controller hardware
 [.lead]
 This content describes how to upgrade the controller hardware without disruption by using aggregate relocation (ARL).
 
-For other methods of upgrading your controller hardware, refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
+For other methods of upgrading your controller hardware, see link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage].
 
 You can nondisruptively upgrade the controller hardware on a pair of nodes running ONTAP by migrating non-root aggregates from the original nodes to the new nodes in the same cluster. The data hosted on the nodes that are being upgraded is accessible during the upgrade.
 
