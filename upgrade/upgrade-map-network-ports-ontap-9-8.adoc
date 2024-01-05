@@ -168,6 +168,7 @@ NOTE: For iSCSI LIFs, modification of the home port requires the LIF to be admin
 +
 `network interface revert *`
 
+.After you finish
 You have completed mapping the physical ports. To complete the upgrade, go to link:upgrade-final-upgrade-steps-in-ontap-9-8.html[Perform final upgrade steps in ONTAP 9.8 or later].
 
 // 2023 NOV 8, AFFFASDOC-133
