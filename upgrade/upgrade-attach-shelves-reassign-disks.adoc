@@ -19,7 +19,7 @@ You perform the steps in this section on node3 and node4, completing each step o
 
 . Connect the storage shelf cables from the shelves that were previously attached to node1/node2 to node3/node4. 
 +
-CAUTION: You must not connect new shelves to node3/node4 during this upgrade procedure. 
+CAUTION: You must not connect new shelves to node3/node4 during this upgrade procedure. You can nondisruptively connect new shelves to the system after completing the controller upgrade.
 
 . Verify the power supply and physical connectivity of the shelves.
 
