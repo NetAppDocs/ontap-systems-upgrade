@@ -14,7 +14,7 @@ summary: "Decide whether to use the ARL procedure that upgrades controller model
 [.lead]
 This content describes how to upgrade storage controllers in a HA pair while keeping all the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
 
-Use this procedure under the following circumstances:
+You can use this procedure under the following circumstances:
 
 * You are performing one of the following controller upgrades:
 +
@@ -45,7 +45,7 @@ Use this procedure under the following circumstances:
 * You do not want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
 * You are experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
 
-Do *NOT* use this procedure under the following circumstances:
+You cannot use this procedure under the following circumstances:
 
 * You are using FlexArray Virtualization Software on the AFF A700 or FAS9000 systems.
 * You are using a shared switch for cluster-interconnect and Ethernet attached storage.
