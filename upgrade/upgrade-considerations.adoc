@@ -45,8 +45,7 @@ NOTE: If you are upgrading an eight-node cluster serving block protocols such as
 . link:upgrade-by-moving-volumes-parent.html[Upgrade by moving volumes] (a nondisruptive procedure).
 
 |Am I moving internal storage or converting the system to a drive shelf?
-a|. https://hwu.netapp.com/[Verify that the current root aggregate size and the number of disks in the root aggregate either meet or exceed the specifications for the new system^].
-. https://hwu.netapp.com/[Verify that the number of storage disks supported by the new system are equal to or greater than those supported by the original system^].
+a|. https://hwu.netapp.com/[Verify that the root aggregate size and the number of disks supported by the new system are equal to or greater than those supported by the original system^].
 . link:upgrade-by-moving-storage-parent.html[Upgrade by moving storage] (a disruptive procedure).
 
 |Am I upgrading a HA pair in a cluster with multiple HA pairs? 
@@ -100,7 +99,6 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 * link:upgrade-by-moving-storage-parent.html[Upgrade controller hardware by moving storage]
 * link:upgrade-by-moving-volumes-parent.html[Upgrade controller hardware by moving volumes]
 
-// 2024 FEB 14, ontap-systems-upgrade-issue-106
 // 2023 NOV 16, BURT 1552664
 // 2023 JULY 3, BURTs 1552420, 1552651, and 1552660
 // 2023 JUN 7, AFFFASDOC-46
