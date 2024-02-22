@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ontap-systems-upgrade | NetApp Documentation</title>
+    <atom:link href="https://docs.netapp.com/us-en/ontap-systems-upgrade/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://docs.netapp.com/us-en/ontap-systems-upgrade</link>
+    <description>The latest updates from NetApp Documentation</description>
+    <language>en-us</language>
+    <ttl>60</ttl>
+    <pubDate>Thu, 22 Feb 2024 19:49:59 +0000</pubDate>
+    <lastBuildDate>Thu, 22 Feb 2024 19:49:59 +0000</lastBuildDate>
+    
+  </channel>
+</rss>
