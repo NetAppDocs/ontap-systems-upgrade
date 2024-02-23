@@ -7,7 +7,9 @@ indexpage:
           url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
         - title: Choose your controller hardware upgrade procedure
           url: /choose_controller_upgrade_procedure.html 
-    - title: Upgrade by relocating aggregates on systems running ONTAP 9.8 and later
+    - title: Upgrade systems running ONTAP 9.15.1 and later
+      links:
+    - title: Upgrade systems running ONTAP 9.8 and later
       links:
         - title: Use "system controller replace" commands to upgrade controller models in the same chassis
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
@@ -15,9 +17,9 @@ indexpage:
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
         - title: Use manual commands
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
-    - title: Upgrade by relocating aggregates on systems running ONTAP 9.7 and earlier
-      links:
-        - title: Use "system controller replace" commands
+    - title: Upgrade systems running ONTAP 9.7 and earlier
+      links: 
+        - title: Use "system controller replace" commands     
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
         - title: Use manual commands
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/

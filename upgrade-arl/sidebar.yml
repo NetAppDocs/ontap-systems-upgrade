@@ -1,10 +1,3 @@
 section: upgrade-arl
-title: Upgrade by using aggregate relocation
-entries:
-- title: Overview
-  url: /upgrade-arl/index.html
-- section: upgrade-arl-auto-affa900
-- section: upgrade-arl-auto-app
-- section: upgrade-arl-manual-app
-- section: upgrade-arl-auto
-- section: upgrade-arl-manual
+title: Upgrade by using ARL overview
+url: /upgrade-arl/index.html
