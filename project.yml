@@ -13,7 +13,6 @@ sidebar:
       url: /choose_controller_upgrade_procedure.html
     - section: upgrade-arl
     - title: ONTAP 9.15.1 and later
-      entries:
     - title: ONTAP 9.8 and later
       entries:
       - section: upgrade-arl-auto-affa900
