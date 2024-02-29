@@ -20,7 +20,7 @@ ARL takes advantage of the HA configuration to give you the capability to move o
 
 There are several ARL methods for upgrading your controller hardware. Before you start, you must verify that you have selected the correct method for your controller hardware upgrade. 
 
-== Use "system controller replace" commands to upgrade controller models in the same chassis
+== Upgrade controller models in the same chassis
 Review the supported model matrix for upgrading controller hardware by converting the old system to the replacement system, keeping the old system chassis and disks.
 
 [cols=3*,options="header",cols="20,20,40"]
@@ -65,7 +65,7 @@ For more information on the upgrade considerations and limitations, see link:../
 
 == Use "system controller replace" commands with ONTAP 9.8 or later
 
-Review the supported model matrix for upgrading controller hardware by using system controller replace commands on systems running ONTAP 9.8 or later.
+Review the supported model matrix for upgrading controller hardware by using "system controller replace" commands on systems running ONTAP 9.8 or later.
 
 |===
 |Old controller |Replacement controller
@@ -100,9 +100,9 @@ Review the supported model matrix for upgrading controller hardware by using sys
 
 For more information on the upgrade considerations and limitations, see link:../upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.html[Decide whether to use the aggregate relocation procedure].
 
-== Use "system controller replace" with ONTAP 9.5 to 9.7
+== Use "system controller replace" commands with ONTAP 9.5 to 9.7
 
-Review the supported model matrix for upgrading controller hardware by using system controller replace commands on systems running ONTAP 9.5 to 9.7.
+Review the supported model matrix for upgrading controller hardware by using "system controller replace" commands on systems running ONTAP 9.5 to 9.7.
 
 [cols="50,50"]
 |===
