@@ -1,4 +1,4 @@
-indexpage:
+ndexpage:
   lead: This site provides the upgrade procedures for AFF, FAS, and ASA storage systems. Select the appropriate upgrade procedure for your storage system.
   tiles:
     - title: Get started
@@ -7,21 +7,21 @@ indexpage:
           url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
         - title: Choose your controller hardware upgrade procedure
           url: /choose_controller_upgrade_procedure.html 
-    - title: Upgrade systems running ONTAP 9.15.1 and later
+    - title: Upgrade controller models in the same chassis
       links:
-    - title: Upgrade systems running ONTAP 9.8 and later
+        - title: Upgrade controller models running ONTAP 9.10.1 and later
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/   
+    - title: Use "system controller replace" commands
       links:
-        - title: Use "system controller replace" commands to upgrade controller models in the same chassis
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
-        - title: Use "system controller replace" commands (most systems)
+        - title: Upgrade controller hardware running ONTAP 9.8 and later                    
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
-        - title: Use manual commands
+        - title: Upgrade controller hardware running ONTAP 9.5 to 9.7
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/   
+    - title: Use manual commands
+      links:
+        - title: Upgrade controller hardware running ONTAP 9.8 and later 
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
-    - title: Upgrade systems running ONTAP 9.7 and earlier
-      links: 
-        - title: Use "system controller replace" commands     
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
-        - title: Use manual commands
+        - title: Upgrade controller running ONTAP 9.7 and earlier
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
     - title: Upgrade by moving storage or volumes
       links:

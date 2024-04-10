@@ -12,15 +12,16 @@ sidebar:
     - title: Choose your controller hardware upgrade procedure
       url: /choose_controller_upgrade_procedure.html
     - section: upgrade-arl
-    - title: Upgrade by using ARL with ONTAP 9.15.1 and later
-    - title: Upgrade by using ARL with ONTAP 9.8 and later
+    - title: Upgrade controllers models in the same chassis
       entries:
       - section: upgrade-arl-auto-affa900
-      - section: upgrade-arl-auto-app
-      - section: upgrade-arl-manual-app
-    - title: Upgrade by using ARL with ONTAP 9.7 and earlier
+    - title: Use "system controller replace" commands
       entries:
+      - section: upgrade-arl-auto-app
       - section: upgrade-arl-auto
+    - title: Use manual commands
+      entries:
+      - section: upgrade-arl-manual-app
       - section: upgrade-arl-manual
     - section: upgrade
     - title: Legal notices
