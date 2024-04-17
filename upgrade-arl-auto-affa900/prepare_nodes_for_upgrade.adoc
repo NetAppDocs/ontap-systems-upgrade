@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html
 keywords: preparing, prepare, nodes, upgrade, stage 1, prechecks, old, system, chassis, disk, disks
 summary: "Prepare the nodes and run a series of prechecks when using ARL to upgrade controller models in the same chassis."
 ---
-
 = Prepare the nodes for upgrade
 :hardbreaks:
 :nofooter:
@@ -63,6 +62,8 @@ Warning:
 Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
 
 3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedure.
 
 Do you want to continue? {y|n}: y
 ....
@@ -128,6 +129,41 @@ If node affinity jobs are running, the check fails.
 +
 From the serial port connected to each node, run and save the output of the following commands individually:
 +
+[role="tabbed-block"]
+====
+.AFF A800 upgrade
+--
+* `vserver services name-service dns show`
+* `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
+* `network port show -node _local_ -type physical`
+* `service-processor show -node _local_ -instance`
+* `network fcp adapter show -node _local_`
+* `network port ifgrp show -node _local_`
+* `system node show -instance -node _local_`
+* `run -node _local_ sysconfig`
+* `run -node local sysconfig -ac`
+* `run -node local aggr status -r`
+* `set diag; volume efficiency show -fields compression, compression-algorithm, storage-efficiency-mode -volume  *`
+* `node show -node  * -fields is-capacity-optimized`
+* `node show -node  * -fields  is-cbse-default`
+* `node show -node * -fields  is-qat-supported`
+* `vol show -fields type`
+* `run local aggr options <data_aggr_name>`
+* `run * version`
+* `vol show -fields type , space-guarantee`
+* `storage aggregate show -node _local_`
+* `volume show -node _local_`
+* `storage array config show -switch _switch_name_`
+* `system license show -owner _local_`
+* `storage encryption disk show`
+* `security key-manager onboard show-backup`
+* `security key-manager external show`
+* `security key-manager external show-status`
+* `network port reachability show -detail -node _local_`
+--
+
+.All other system upgrades
+--
 * `vserver services name-service dns show`
 * `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
 * `network port show -node _local_ -type physical`
@@ -145,7 +181,8 @@ From the serial port connected to each node, run and save the output of the foll
 * `security key-manager external show`
 * `security key-manager external show-status`
 * `network port reachability show -detail -node _local_`
-
+--
+====
 +
 NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager is in use, keep the key-manager passphrase ready to complete the key manager resync later in the procedure.
 

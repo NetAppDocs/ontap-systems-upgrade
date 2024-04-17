@@ -16,8 +16,10 @@ Node1 with the replacement modules is now ready to boot. This section provides t
 
 [cols="35,65"]
 |===
-|Old node1 controller |Replacement node1 system modules
+|Existing node1 controller |Replacement node1 system modules
 
+|AFF A800
+|AFF A90 or AFF A70 ^1^
 |AFF A220 configured as an ASA
 |AFF A150 controller module ^1^
 |AFF A220	
@@ -36,9 +38,24 @@ FAS2720
 |===
 
 ^1^ When replacing controller modules, you move all connections from the old to the replacement controller module.
+
 ^2^ When replacing the controller and NVRAM modules, you move only the console and management connections.
 
 .Steps
+
+. (AFF A800 upgrade only) Boot node1 to maintenance mode to configure cluster ports:
+
+.. From the LOADER menu, run `boot_ontap maint`.
+.. Answer `yes` when the confirmation question prompt.
+.. At the maintenance mode menu, run `storage port show`. 
++
+All 100g ports connected to NS224 shelves or storage switches should report as `storage` ports as shown in the example output below.
++
+<Include an output for `storage port show` that includes e11a/b and e8a/b>>
+
+.. Halt the node from maintenance mode:
++
+'halt'
 
 . [[A900_boot_node1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
@@ -66,10 +83,10 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 +
 Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
 
-.	Boot the node into the boot menu:
+.	For all systems, boot the node into the boot menu:
 +
 `boot_ontap menu`
-.	Reassign the old node1 disks to the replacement node1 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
+.	Reassign the node1 disks to the replacement node1 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
 +
 After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
 +
@@ -80,7 +97,7 @@ These prompts might get buried in the console messages. If you do not enter a no
 If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` and, or, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` errors occur, perform the following steps:
 
 . Halt the node at the LOADER prompt.
-. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 1>>.
+. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 2>>.
 . At the loader prompt, boot up:
 +
 `boot_ontap`

@@ -86,6 +86,14 @@ All physical network ports, VLAN ports, and interface group ports on the node ar
 +
 You should see output similar to the following example. The port and broadcast names vary.
 +
+[role="tabbed-block"]
+====
+.AFF A800 upgrade
+--
+--
+
+.All other system upgrades
+--
 ----
 Cluster::*> network port reachability show -node local
 Node      Port     Expected Reachability                Reachability Status
@@ -106,6 +114,8 @@ Node2
           e9d      Default:Default                      no-reachability
 13 entries were displayed.
 ----
+--
+====
 +
 In the preceding example, node2 has booted and joined quorum after controller replacement. It has several ports that have no reachability and are pending a reachability scan.
 

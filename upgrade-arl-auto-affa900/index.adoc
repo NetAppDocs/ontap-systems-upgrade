@@ -12,14 +12,16 @@ summary: "You can upgrade controller hardware by converting an old system to a r
 :imagesdir: ./media/
 
 [.lead]
-This procedure describes how to nondisruptively upgrade controller hardware on a HA pair using aggregate relocation (ARL) for the following system configurations. The procedure converts the old system to the replacement system, keeping the old system chassis and disks. 
+This procedure describes how to nondisruptively upgrade controller hardware on a HA pair using aggregate relocation (ARL) for the following system configurations. The procedure converts the existing system to the replacement system, keeping the old system chassis and disks. 
 
 WARNING: This procedure strictly applies to the following upgrade configurations. Do *NOT* use this procedure to perform an upgrade between any other system combinations.
 
 [cols=3*,options="header",cols="20,20,40"]
 |===
-|Old system |Replacement system |Supported ONTAP versions
-
+|Existing system |Replacement system |Supported ONTAP versions
+|AFF A800
+|AFF A70 or AFF A90
+|9.15.1RC
 |AFF A220 configured as an All SAN Array (ASA) 
 |ASA A150
 |9.13.1P1 and later
@@ -30,7 +32,7 @@ WARNING: This procedure strictly applies to the following upgrade configurations
 |AFF A150
 a|9.10.1P15, 9.11.1P11 and later 
 
-NOTE: AFF A200 does not support ONTAP versions later than 9.11.1.
+*Note:* AFF A200 does not support ONTAP versions later than 9.11.1.
 |AFF C190
 |AFF A150
 |9.10.1P15, 9.11.1P11, 9.12.1P5 and later 
@@ -39,7 +41,7 @@ NOTE: AFF A200 does not support ONTAP versions later than 9.11.1.
 |FAS2820
 a|9.11.1P7 (FAS2620)
 
-NOTE: FAS2620 does not support ONTAP versions later than 9.11.1.
+*Note*: FAS2620 does not support ONTAP versions later than 9.11.1.
 
 9.13.1 and later (FAS2820)
 |FAS2720 |FAS2820	
@@ -66,16 +68,26 @@ During the procedure, you migrate the non-root aggregates between the old contro
 .About this task
 During this controller upgrade procedure, you perform one of the following upgrades:
 
-* Swap the controller module on each node on the old controller with the new module. This applies to an AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 system upgrade.
-* Swap the controller and NVRAM modules on each node on the old controller with the new modules. This applies to an AFF A700 or FAS9000 system upgrade.
+[cols=2*,options="header",cols="30,70"]
+|===
+|On the existing system... |Perform the following...
+|AFF A800
+|Swap the two AFF A800 controllers and all I/O modules with the new controllers and I/O modules.
+|AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
+|Swap the controller module on each node on the old controller with the new module.
 
-NOTE: You do not need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.
+*NOTE*: You do not need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.
+|AFF A700 or FAS9000
+|Swap the controller and NVRAM modules on each node on the old controller with the new modules.
 
-This procedure uses a method called aggregate relocation (ARL), which takes advantage of the HA configuration to enable you to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
+*NOTE*: You do not need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.
+|===
+
+This procedure uses a method called aggregate relocation (ARL). ARL takes advantage of the HA configuration and cluster interconnect communication, which enables you to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
 
 During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate aggregates multiple times from node to node to confirm that at least one node is serving data from the aggregates throughout the upgrade procedure. You also migrate data LIFs between nodes in the cluster as you proceed.
 
-NOTE: The terms *node1* and *node2*, are used only as a reference to node names in this document. When following the procedure, you must substitute the real names of your nodes.
+NOTE: The terms *node1* and *node2*, are used only as a reference to node names in this document. When following the procedure, you must substitute the actual names of your nodes.
 
 .Important information
 
@@ -83,13 +95,14 @@ NOTE: The terms *node1* and *node2*, are used only as a reference to node names 
 * This procedure assumes that the replacement controller hardware is new and has not been used in another system. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used as part of another ONTAP cluster or as a standalone single node system.
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each HA pair in the cluster.
 * If you have a switch that is not supported by the ONTAP version and the replacement system that you are upgrading to, refer to link:other_references.html[References] to link to the _Hardware Universe_.
-* This procedure only applies to AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700, and FAS9000 systems. For all other controller models that need upgrading to an AFF A150, FAS2820, AFF A900, or FAS9500 system, refer to link:other_references.html[References] to link to the _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and the _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_ content.
+* This procedure only applies to AFF A800, AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700, and FAS9000 systems. For all other controller models that need upgrading to an AFF A150, FAS2820, AFF A900, or FAS9500 system, refer to link:other_references.html[References] to link to the _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and the _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_ content.
 * The ASA A900, AFF A900, and FAS9500 systems only support high-line power (200V to 240V). If your AFF A700 or FAS9000 system is running on low-line power (100V to 120V), you must convert the AFF A700 or FAS9000 input power before using this procedure.
-* If you are upgrading from an AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700, or FAS9000 system with downtime, you can upgrade controller hardware by moving storage or contact technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
+* If you are upgrading from an AFF A800, AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700, or FAS9000 system with downtime, you can upgrade controller hardware by moving storage or contact technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
 
 == Automate the controller upgrade process
 This procedure provides the steps for the automated procedure, which uses automatic disk assignment and network port reachability checks to simplify the controller upgrade experience.
 
+// 2024 APR 16, AFFFASDOC-32
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39
 // 2023 MAY 22, BURT 1542232

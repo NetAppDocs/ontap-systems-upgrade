@@ -23,6 +23,8 @@ You can use this procedure under the following circumstances:
 |Old controller
 |Replacement controller
 
+|AFF A800
+|AFF A70 and AFF A90
 |AFF A220 configured as an ASA
 |ASA A150
 |AFF A220, AFF A200, or AFF C190
@@ -38,6 +40,7 @@ You can use this procedure under the following circumstances:
 |===
 
 * You have verified with your NetApp sales representative that you have received the hardware for your controller upgrade:
+** Two AFF A90 or two AFF A70 controllers and all I/O modules required for the upgrade. The required length of 100G cables. 
 ** ASA A150, AFF A150, or FAS2820 controller
 ** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts required for the upgrade
 
@@ -50,7 +53,7 @@ You cannot use this procedure under the following circumstances:
 * You are using FlexArray Virtualization Software on the AFF A700 or FAS9000 systems.
 * You are using a shared switch for cluster-interconnect and Ethernet attached storage.
 
-For upgrading Fabric MetroCluster or MetroCluster IP configurations on AFF A700 or FAS9000 systems, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
+For upgrading MetroCluster IP configurations on AFF A800, AFF A700, or FAS9000 systems, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
@@ -58,7 +61,7 @@ If you prefer a different method of upgrading the controller hardware and are wi
 
 Refer to link:other_references.html[References] to link to the _ONTAP 9 Documentation Center_ where you can access ONTAP 9 product documentation.
 
-
+// 2024 APR 16, AFFFASDOC-32
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39
 // 2022 Jan 30, BURT 1523106

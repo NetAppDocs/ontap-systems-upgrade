@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/verify_upgrade_hardware.html
 keywords: nodes, upgrade, verify, hardware
 summary: Before starting the upgrade, verify that you have the correct hardware to upgrade controller models in the same chassis.
 ---
-
 = Verify the upgrade hardware
 :hardbreaks:
 :nofooter:
@@ -19,6 +18,8 @@ Before starting the upgrade, verify that you have the correct hardware for your 
 |===
 |If you are upgrading ...
 |You must have ...
+|AFF A800
+|Two controller modules
 |AFF A220 configured as an ASA to ASA A150
 |Two controller modules
 |AFF A220, AFF A200, or AFF C190 to AFF A150
@@ -33,6 +34,7 @@ Before starting the upgrade, verify that you have the correct hardware for your 
 |Two controller and two NVRAM modules
 |===
 
+// 2024 APR 16, AFFFASDOC-32
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39
 //BURT 1452254, 2022-04-27
