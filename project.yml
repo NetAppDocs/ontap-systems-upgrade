@@ -11,16 +11,12 @@ sidebar:
       url: /index.html
     - title: Choose your controller hardware upgrade procedure
       url: /choose_controller_upgrade_procedure.html
-    - section: upgrade-arl
-    - title: Upgrade controllers models in the same chassis
+    - title: Upgrade by using ARL
       entries:
+      - section: upgrade-arl
       - section: upgrade-arl-auto-affa900
-    - title: Use "system controller replace" commands
-      entries:
       - section: upgrade-arl-auto-app
       - section: upgrade-arl-auto
-    - title: Use manual commands
-      entries:
       - section: upgrade-arl-manual-app
       - section: upgrade-arl-manual
     - section: upgrade

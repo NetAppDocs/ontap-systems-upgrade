@@ -7,31 +7,33 @@ indexpage:
           url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
         - title: Choose your controller hardware upgrade procedure
           url: /choose_controller_upgrade_procedure.html 
-    - title: Upgrade controller models in the same chassis
+    - title: Use aggregate relocation 
       links:
-        - title: Upgrade controller models running ONTAP 9.10.1 and later
+        - title: "Start here: Choose you ARL upgrade procedure"
+          url:
+        - title: Keep the same chassis (ONTAP 9.10.1 and later)
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/   
-    - title: Use "system controller replace" commands
-      links:
-        - title: Upgrade controller hardware running ONTAP 9.8 and later                    
+        - title: Use "system controller replace commands" (ONTAP 9.8 and later)                    
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
-        - title: Upgrade controller hardware running ONTAP 9.5 to 9.7
+        - title: Use "system controller replace commands" (ONTAP 9.5 to 9.7)
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/   
-    - title: Use manual commands
-      links:
-        - title: Upgrade controller hardware running ONTAP 9.8 and later 
+        - title: Use manual commands (ONTAP 9.8 and later) 
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
-        - title: Upgrade controller running ONTAP 9.7 and earlier
+        - title: Use manual commands (ONTAP 9.7 and earlier)
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
-    - title: Upgrade by moving storage or volumes
+    - title: Move storage or volumes
       links:
-        - title: Upgrade controller hardware
+        - title: "Start here: Choose moving storage or volumes"
           url: /upgrade/upgrade-decide-to-use-this-guide.html
-        - title: Upgrade AFF A250 to AFF A400 by converting to a drive shelf
+        - title: Move storage
+          url: /upgrade/upgrade-by-moving-volumes-parent.html
+        - title: Move volumes
+          url: /upgrade/upgrade-by-moving-storage-parent.html
+        - title: Upgrade AFF A250 to AFF A400
           url: /upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html
     - title: Upgrade systems in a MetroCluster configuration
       links:
-        - title: Select the upgrade procedure for your MetroCluster configuration
+        - title: Choose the upgrade procedure for your MetroCluster configuration
           url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
     - title: More resources
       links:
