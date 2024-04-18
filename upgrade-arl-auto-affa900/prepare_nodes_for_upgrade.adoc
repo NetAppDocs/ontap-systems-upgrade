@@ -148,7 +148,7 @@ From the serial port connected to each node, run and save the output of the foll
 * `node show -node  * -fields  is-cbse-default`
 * `node show -node * -fields  is-qat-supported`
 * `vol show -fields type`
-* `run local aggr options <data_aggr_name>`
+* `run local aggr options <data_aggregate_name>`
 * `run * version`
 * `vol show -fields type , space-guarantee`
 * `storage aggregate show -node _local_`

@@ -40,7 +40,7 @@ You can use this procedure under the following circumstances:
 |===
 
 * You have verified with your NetApp sales representative that you have received the hardware for your controller upgrade:
-** Two AFF A90 or two AFF A70 controllers and all I/O modules required for the upgrade. The required length of 100G cables. 
+** Two AFF A90 or two AFF A70 controllers and all I/O modules required for the upgrade. The required length of 100GbE cables. 
 ** ASA A150, AFF A150, or FAS2820 controller
 ** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts required for the upgrade
 
@@ -50,7 +50,7 @@ You can use this procedure under the following circumstances:
 
 You cannot use this procedure under the following circumstances:
 
-* You are using FlexArray Virtualization Software on the AFF A700 or FAS9000 systems.
+* You are using FlexArray Virtualization Software on the AFF A800, AFF A700, or FAS9000 systems.
 * You are using a shared switch for cluster-interconnect and Ethernet attached storage.
 
 For upgrading MetroCluster IP configurations on AFF A800, AFF A700, or FAS9000 systems, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.

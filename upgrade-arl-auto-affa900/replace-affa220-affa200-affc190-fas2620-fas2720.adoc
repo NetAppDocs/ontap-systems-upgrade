@@ -18,7 +18,7 @@ At this stage, node1 is down and all data is served by node2. Because node1 and 
 If you are not already grounded, correctly ground yourself.
 
 == Remove the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
-To access components inside the controller, you must first remove the controller module from the system and then remove the cover on the controller module.
+To access components inside the controller, remove the controller module from the system and then remove the cover on the controller module.
 
 .Steps
 . Loosen the hook and loop strap binding the cables to the cable management device, and then unplug the system cables and SFPs (if needed) from the controller module, keeping track of where the cables were connected.
@@ -36,7 +36,7 @@ image::../media/drw_2240_x_opening_cam_latch.png[Opening the cam handle]
 . Turn the controller module over and place it on a flat, stable surface.
 
 == Install the ASA A150, AFF A150, or FAS2820 controller module
-Use the following procedure to install the ASA A150, AFF A150, or FAS2820 controller module in node1.
+Install, cable, and connect the ASA A150, AFF A150, or FAS2820 controller module in node1.
 
 .Steps
 . Align the end of the controller module with the opening in the chassis, and then gently push the controller module halfway into the system.

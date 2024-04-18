@@ -90,6 +90,7 @@ You should see output similar to the following example. The port and broadcast n
 ====
 .AFF A800 upgrade
 --
+<Add A800 example ouptut>
 --
 
 .All other system upgrades

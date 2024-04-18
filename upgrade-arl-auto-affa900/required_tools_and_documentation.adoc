@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/required_tools_and_documentation.html
 keywords: required, tools, documentation, install, worksheet, ontap
 summary: "You must have certain tools and documentation to use ARL to upgrade controller models in the same chassis."
 ---
-
 = Required tools and documentation
 :hardbreaks:
 :nofooter:
@@ -15,6 +14,6 @@ summary: "You must have certain tools and documentation to use ARL to upgrade co
 [.lead]
 You must have a grounding strap to perform the upgrade, and you need to reference other documents during the upgrade process.
 
-For an AFF A800 upgrade to an aFF A70 or AFF A90, verify that the required length of 100G cables are available. You require a minimum of 1 meter long cables to perform this in-chassis upgrade.
+For an AFF A800 upgrade to an AFF A90 or AFF A70, verify that 100GbE cables of at minimum one meter in length are available.
 
 Refer to link:other_references.html[References] to access the list of reference documents and reference sites required for this upgrade.

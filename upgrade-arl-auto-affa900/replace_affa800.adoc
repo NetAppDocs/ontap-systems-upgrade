@@ -20,7 +20,7 @@ At this stage, node1 is down and all data is served by node2. Because node1 and 
 * On the front of the chassis, use your thumbs to firmly push each drive in until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane. Go to the rear of the chassis.
 
 == Remove the AFF A800 controller module
-<Insert introduction>
+Remove the cable management device from the AFF A800 controller module and move the controller slightly out of the chassis.
 
 .Steps
 . Unplug the controller module power supplies from the source.
@@ -33,11 +33,7 @@ Leave the cables in the cable management device so that when you reinstall the c
 +
 The controller module moves slightly out of the chassis.
 +
-image::../media/drw_25xx_cable_management_arm.png[Removing the cable management arm]
-
-. Squeeze the latch on the cam handle until it releases, open the cam handle fully to release the controller module from the midplane, and then, using two hands, pull the controller module out of the chassis.
-+
-image::../media/drw_2240_x_opening_cam_latch.png[Opening the cam handle]
+image::../media/a800_cable_management.png[Removing the cable management arm]
 +
 [cols=2*,cols="20,80"]
 |===
@@ -50,7 +46,7 @@ image::../media/black_circle_two.png[Number two]
 |===
 
 == Install the AFF A90 or AFF A70 controller module
-Use the following procedure to install the AFF A90 or AFF A70 controller module in node1.
+Install, cable, and connect the AFF A90 or AFF A70 controller module in node1.
 
 .Steps
 . Align the end of the controller module with the opening in the chassis, and then gently push the controller module halfway into the system.

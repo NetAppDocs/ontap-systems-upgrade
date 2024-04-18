@@ -43,17 +43,19 @@ FAS2720
 
 .Steps
 
-. (AFF A800 upgrade only) Boot node1 to maintenance mode to configure cluster ports:
-
-.. From the LOADER menu, run `boot_ontap maint`.
-.. Answer `yes` when the confirmation question prompt.
-.. At the maintenance mode menu, run `storage port show`. 
+. (AFF A800 upgrade only) At the loader prompt, enter maintenance mode: 
 +
-All 100g ports connected to NS224 shelves or storage switches should report as `storage` ports as shown in the example output below.
+`boot_ontap maint`
+.. Answer `yes` to the confirmation prompt.
+.. Show the state of the 100GbE interfaces:
 +
-<Include an output for `storage port show` that includes e11a/b and e8a/b>>
+`storage port show`. 
++
+All 100GbE ports connected to NS224 shelves or storage switches should report as `storage` ports, as shown in the example output below.
++
+<Include an output for `storage port show` that includes e11a/b and e8a/b>
 
-.. Halt the node from maintenance mode:
+.. Exit maintenance:
 +
 'halt'
 
@@ -83,7 +85,7 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 +
 Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
 
-.	For all systems, boot the node into the boot menu:
+.	Boot the node into the boot menu:
 +
 `boot_ontap menu`
 .	Reassign the node1 disks to the replacement node1 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.

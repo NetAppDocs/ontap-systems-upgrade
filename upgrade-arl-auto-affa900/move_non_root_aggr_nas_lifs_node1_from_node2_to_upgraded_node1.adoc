@@ -45,8 +45,9 @@ Confirm that all connected ports, including the interface group and VLAN ports, 
 .. Reassign FCP SAN LIFs used for FCP or FC-NVMe data access to the correct home ports:
 +
 `network interface show -vserver <vserver_hosting_fcp_lifs>`
-.. For the LIFs with the current node as the upgraded node1 and the current port is a port that existed on AFF A800 node that does not exist on the AFF A90 node and reports the "status oper" as "-", you must modify the current port before it can be brought online:
-... Verify that the physical connectivity is established to the FC target port where the FC LIF needs to be moved.
+.. For LIFs with the current node as the upgraded node1 and the current port reports "status oper" as "-" (because the port existed on the AFF A800 node but does not exist on the AFF A90 node), modify the current port before it can be brought online.
++
+Verify that physical connectivity is established to the FC target port where the FC LIF needs to be moved:
 ... Set the LIF status to "down":
 +
 `network interface modify -vserver <vserver_name> -lif <lif_name>  -status-admin down`

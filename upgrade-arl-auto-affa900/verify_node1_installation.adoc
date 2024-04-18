@@ -12,14 +12,14 @@ summary: Verify the node1 installation with the replacement modules when using A
 :imagesdir: ./media/
 
 [.lead]
-You must verify the node1 installation with the replacement system modules. 
+After you boot node1 with the replacement controller module, verify that it is installed correctly. 
 
-For an AFF A800 upgrade only, you must map the map the physical ports from existing node1 to the replacement node1  because the physical ports are changing between the AFF A800 and AFF A90 or AFF A70 controller.
+For AFF A800 upgrades only, you map the physical ports from the existing node1 to the replacement node1 because the physical ports are changing between the AFF A800 and the AFF A90 or AFF A70 controller.
 
-For all other upgrades, because there is no change to physical ports, you are not required to map the physical ports from the old node1 to the replacement node1.
+For all other upgrades, there is no change to the physical ports so you are not required to map the physical ports from the old node1 to the replacement node1.
 
 .About this task
-After you boot node1 with the replacement controller module, you verify that it is installed correctly. You must wait for node1 to join quorum and then resume the controller replacement operation.
+You must wait for node1 to join quorum and then resume the controller replacement operation.
 
 At this point in the procedure, the controller upgrade operation should have paused as node1 attempts to join quorum automatically.
 
@@ -35,9 +35,9 @@ The output of the `health` field should be `true`.
 +
 [NOTE]
 ====
-If nodes are not in quorum soon after the newly replaced node boots, wait up to five minutes and check again. Depending on the cluster connection, it might take some time for the port reachability scan to complete and move LIFs to their respective home ports.
+If node1 is not in joined quorum after you boot, wait up to five minutes and check again. Depending on the cluster connection, it might take some time for the port reachability scan to complete and move LIFs to their respective home ports.
 
-If after five minutes, the newly replaced node is still not in quorum, consider modifying the cluster port of the new node to be placed in "cluster ipspace" by using the diagnostic privilege command `network port modify <port_name> -ipspace Cluster`.
+If after five minutes the node1 is still not in quorum, consider modifying the cluster port of the new node by placing it in "Cluster ipspace" using the diagnostic privilege command `network port modify <port_name> -ipspace Cluster`.
 ====
  
 .	Switch to advanced privilege mode:
@@ -102,7 +102,7 @@ You should see output like the following example:
 ====
 .AFF A800 upgrade
 --
-
+<Add A800 example output>
 --
 
 .All other system upgrades
