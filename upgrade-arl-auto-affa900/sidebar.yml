@@ -35,11 +35,11 @@ entries:
     - title: Replace the node1 system modules
       entries:
         - title: Replace AFF A800
-          url: /upgrade-arl-auto-affa900/replace_affa800.html
+          url: /upgrade-arl-auto-affa900/replace-node1-affa800.html
         - title: Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
-          url: /upgrade-arl-auto-affa900/replace-affa220-affa200-affc190-fas2620-fas2720.html
+          url: /upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html
         - title: Replace AFF A700 or FAS9000
-          url: /upgrade-arl-auto-affa900/replace_aff700-fas900.html
+          url: /upgrade-arl-auto-affa900/replace-node1-aff700-fas900.html
     - title: Netboot node1
       url: /upgrade-arl-auto-affa900/netboot_node1.html
 - title: "Stage 3. Boot node1 with the replacement system modules"

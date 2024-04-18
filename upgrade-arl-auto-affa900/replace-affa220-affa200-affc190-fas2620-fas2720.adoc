@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-affa900/replace-affa220-affa200-affc190-fas2620-fas2720.html
+permalink: upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html
 keywords: aff, asa, fas, replace, node1, system, modules
 summary: "Replace the node1 the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 system modules when using ARL to upgrade controller models in the same chassis."
 ---

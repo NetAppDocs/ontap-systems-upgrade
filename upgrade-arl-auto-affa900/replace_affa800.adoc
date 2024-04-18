@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-affa900/replace_affa800.html
+permalink: upgrade-arl-auto-affa900/replace-node1-affa800.html
 keywords: aff, asa, fas, replace, node1, system, modules
 summary: "Replace the AFF A800 node1 system modules when using ARL to upgrade controller models in the same chassis."
 ---
