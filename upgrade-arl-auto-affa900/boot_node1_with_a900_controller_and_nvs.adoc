@@ -56,7 +56,7 @@ All 100GbE ports connected to NS224 shelves or storage switches should report as
 +
 <Include an output for `storage port show` that includes e11a/b and e8a/b>
 
-.. Exit maintenance:
+.. Exit maintenance mode:
 +
 'halt'
 
