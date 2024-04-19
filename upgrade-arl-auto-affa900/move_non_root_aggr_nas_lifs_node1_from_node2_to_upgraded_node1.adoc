@@ -48,6 +48,7 @@ Confirm that all connected ports, including the interface group and VLAN ports, 
 .. For LIFs with the current node as the upgraded node1 and the current port reports "status oper" as "-" (because the port existed on the AFF A800 node but does not exist on the AFF A90 node), modify the current port before it can be brought online.
 +
 Verify that physical connectivity is established to the FC target port where the FC LIF needs to be moved:
+
 ... Set the LIF status to "down":
 +
 `network interface modify -vserver <vserver_name> -lif <lif_name>  -status-admin down`
