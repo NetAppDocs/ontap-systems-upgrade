@@ -9,21 +9,21 @@ indexpage:
           url: /choose_controller_upgrade_procedure.html 
     - title: Use aggregate relocation 
       links:
-        - title: "Start here: Choose you ARL upgrade procedure"
-          url:
+        - title: Select your ARL upgrade procedure
+          url: /upgrade-arl/index.html
         - title: Keep the same chassis (ONTAP 9.10.1 and later)
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/   
+          url: /upgrade-arl-auto-affa900/index.html 
         - title: Use "system controller replace commands" (ONTAP 9.8 and later)                    
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+          url: /upgrade-arl-auto-app/index.html
         - title: Use "system controller replace commands" (ONTAP 9.5 to 9.7)
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/   
+          url: /upgrade-arl-auto/index.html  
         - title: Use manual commands (ONTAP 9.8 and later) 
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+          url: /upgrade-arl-manual-app/index.html
         - title: Use manual commands (ONTAP 9.7 and earlier)
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+          url: /upgrade-arl-manual/index.html
     - title: Move storage or volumes
       links:
-        - title: "Start here: Choose moving storage or volumes"
+        - title: Select moving storage or volumes"
           url: /upgrade/upgrade-decide-to-use-this-guide.html
         - title: Move storage
           url: /upgrade/upgrade-by-moving-volumes-parent.html
