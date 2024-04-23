@@ -9,7 +9,7 @@ indexpage:
           url: /choose_controller_upgrade_procedure.html 
     - title: Use aggregate relocation 
       links:
-        - title: Select your ARL upgrade procedure
+        - title: Start here
           url: /upgrade-arl/index.html
         - title: Keep the same chassis (ONTAP 9.10.1 and later)
           url: /upgrade-arl-auto-affa900/index.html 
@@ -23,7 +23,7 @@ indexpage:
           url: /upgrade-arl-manual/index.html
     - title: Move storage or volumes
       links:
-        - title: Select moving storage or volumes"
+        - title: Start here
           url: /upgrade/upgrade-decide-to-use-this-guide.html
         - title: Move storage
           url: /upgrade/upgrade-by-moving-volumes-parent.html

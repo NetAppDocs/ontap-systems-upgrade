@@ -11,6 +11,11 @@ summary: 'If you are upgrading by moving storage, you prepare the original nodes
 [.lead]
 If you are upgrading controller hardware by moving storage, you prepare the original nodes and set up the new nodes. Some platform models support transferring internal storage to the new nodes. You reassign disks and restore root volume configuration to the new nodes and configure network ports. Upgrading by moving storage is a disruptive procedure. 
 
+Before starting your upgrade, you must familiarize yourself with the general upgrade scenarios and upgrade considerations:
+
+* link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
+* link:upgrade-considerations.html[Considerations for upgrading controller hardware]
+
 [NOTE]
 ====
 In the steps for upgrading controller hardware by moving storage, the original nodes are called node1 and node2, and the new nodes are called node3 and node4. During the described procedure, node1 is replaced by node3, and node2 is replaced by node4.
