@@ -4,19 +4,12 @@ permalink: upgrade-arl-auto-app/stage_4_index.html
 keywords: relocate, retire, node2, LIF, node3, non-root aggregates, stage 4
 summary: "Stage 4 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.8 or later."
 ---
-
-= Overview
+= Stage 4 overview
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:54.902414
-//
 
 [.lead]
 During Stage 4, you relocate non-root aggregates and NAS data LIFs from node2 to node3. You also record the necessary node2 information for use later in the procedure and then retire node2.

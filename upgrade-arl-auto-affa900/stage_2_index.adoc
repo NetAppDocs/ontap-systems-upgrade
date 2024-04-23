@@ -4,8 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_2_index.html
 keywords: upgrade, relocate, retire, replace, netboot, overview, stage 2
 summary: "Stage 2 process sequence for an ARL upgrade using `system controller replace` commands to upgrade controller models in the same chassis."
 ---
-
-= Overview
+= Stage 2 overview
 :hardbreaks:
 :nofooter:
 :icons: font

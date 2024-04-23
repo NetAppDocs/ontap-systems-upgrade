@@ -12,9 +12,9 @@ summary: "You can upgrade controller hardware by converting an old system to a r
 :imagesdir: ./media/
 
 [.lead]
-This procedure describes how to nondisruptively upgrade controller hardware on a HA pair using aggregate relocation (ARL) for the following system configurations. The procedure converts the existing system to the replacement system, keeping the old system chassis and disks. 
+You can nondisruptively upgrade controller hardware on a HA pair by using aggregate relocation (ARL) and converting the existing system to the replacement system, keeping the existing system chassis and disks.
 
-WARNING: This procedure strictly applies to the following upgrade configurations. Do *NOT* use this procedure to perform an upgrade between any other system combinations.
+WARNING: This procedure strictly applies to the following upgrade configurations. Do *not* use this procedure to perform an upgrade between any other system combinations.
 
 [cols=3*,options="header",cols="20,20,40"]
 |===
