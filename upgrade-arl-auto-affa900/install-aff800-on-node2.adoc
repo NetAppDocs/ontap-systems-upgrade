@@ -19,7 +19,7 @@ Install the AFF A90 or AFF A70 controller module that you received for the upgra
 +
 NOTE: Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
 +
-<Insert image of AFF A90 or AFF A70 PCM here>
+image:./media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 or AFF A70]
 
 . Cable the management and console ports to the node1 controller module.
 +
