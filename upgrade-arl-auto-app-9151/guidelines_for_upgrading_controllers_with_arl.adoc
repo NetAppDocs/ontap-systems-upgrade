@@ -12,7 +12,7 @@ summary: "Understand if you can upgrade controllers running ONTAP 9.8 or later b
 :imagesdir: ./media/
 
 [.lead]
-To understand whether you can use ARL to upgrade a pair of controllers running ONTAP 9.8 or later depends on the platform and the configuration of both the original and replacement controllers.
+To understand whether you can use ARL to upgrade a pair of controllers running ONTAP 9.15.1 or later depends on the platform and the configuration of both the original and replacement controllers.
 
 == Supported upgrades for ARL
 
@@ -22,11 +22,7 @@ You must check the size of all defined aggregates and number of disks supported 
 
 You must validate in the cluster mixing rules whether new nodes can become part of the cluster with the existing nodes when the original controller is replaced. For more information about cluster mixing rules, refer to link:other_references.html[References] to link to the _Hardware Universe_.
 
-NOTE: If you are upgrading a system that supports internal drives (for example, an FAS2700 or AFF A250) but does NOT have internal drives, refer to link:other_references.html[References] and use the procedure in the _Aggregate Relocation to Manually Upgrade Controller Hardware_ content that is correct for your version of ONTAP.
-
-If you have a system with more than two cluster ports per node, such as an FAS8080 or an AFF8080 system, before you start the upgrade, you must migrate and re-home the cluster LIFs to two cluster ports per node. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.
-// BURT 1418719 31-Jan-2022
-// BURT 1462831, 2022-03-28
+If you have a system with more than two cluster ports per node, such as an AFF 700, and the system is using the cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d and ports e4e, e4f, e4g, and e4h, you must migrate and re-home the cluster LIFs to two cluster ports per node before you start the upgrade. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.
 
 Controller upgrade using ARL is supported on systems configured with SnapLock Enterprise and SnapLock Compliance volumes.
 
@@ -36,20 +32,14 @@ If you are upgrading nodes in a two-node switchless cluster, you can leave the n
 
 == Upgrades not supported for ARL
 
-You cannot perform the following upgrades:
+You cannot upgrade replacement controllers that do not support the disk shelves connected to the original controllers
 
-* To replacement controllers that do not support the disk shelves connected to the original controllers
-+
 Refer to link:other_references.html[References] to link to the _Hardware Universe_ for disk-support information.
 
-* To entry level controllers with internal drives, for example: an FAS 2500.
-+
-If you want to upgrade entry level controllers with internal drives,  refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
+If you want to upgrade entry level controllers with internal drives, refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
 
-== Troubleshooting
+== Troubleshoot
 
-If any problems occur while upgrading the controllers, you can refer to the link:troubleshoot_index.html[Troubleshoot] section at the end of the procedure for more information and possible solutions.
+If any problems occur while upgrading the controllers, see link:troubleshoot_index.html[Troubleshoot] for more information and possible solutions.
 
 If you do not find a solution to the problem you encountered, contact technical support.
-
-//Clean up- 2022-03-09

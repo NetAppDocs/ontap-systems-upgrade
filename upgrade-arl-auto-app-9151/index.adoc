@@ -5,7 +5,6 @@ keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, me
 summary: "You can upgrade controller hardware running ONTAP 9.8 or later by using `system controller replace` commands, relocating the ownership of non-root aggregates."
 ---
 = Overview
-
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -22,7 +21,7 @@ This procedure describes how to upgrade the controller hardware using aggregate 
 
 |Using `system controller replace` commands
 |9.8 or later
-|link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_98_supported_systems[Link to supported systems matrix]
+|link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_9151_supported_systems[Link to supported systems matrix]
 |===
 
 During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate aggregates multiple times from node to node to confirm that at least one node is serving data from the aggregates throughout the upgrade procedure. You also migrate data logical interfaces (LIFs) and assign the network ports on the new controller to the interface groups as you proceed.
@@ -38,15 +37,4 @@ Throughout this information, the term "systems with FlexArray Virtualization Sof
 
 * This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[Guidelines for upgrading controllers with ARL] and the  link:overview_of_the_arl_upgrade.html[Overview of the ARL upgrade] sections before beginning the upgrade.
 * This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7- Mode.
-* You can use ARL to perform a non-disruptive simplified controller upgrade to a new controller running a later ONTAP version than the version running on the cluster you are upgrading. The ONTAP version combinations for old and new controllers are determined by the ONTAP software release NDU cadence model. For example, if you have a controller running ONTAP 9.8, and that is the last supported version for that controller, you can upgrade to a new controller running an ONTAP version later than ONTAP 9.8.
-+
-This upgrade procedure primarily applies to upgrade scenarios where the controller model you are replacing does not support later ONTAP versions and the new controller does not support earlier ONTAP versions.
-// BURT 1280904 30-Aug-2021
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each high-availability (HA) pair in the cluster.
-* This procedure applies to FAS systems, V-Series systems, AFF systems, and systems with FlexArray Virtualization Software. FAS systems released after ONTAP 9.5 can attach to storage arrays if the required license is installed. For more information about the storage array and V-Series models, refer to link:other_references.html[References] to link to the _Hardware Universe_ and go to the V-Series Support Matrix.
-* This procedure applies to systems running 4-node NetApp MetroCluster configuration or higher. Since MetroCluster configuration sites can be at two physically different locations, the automated controller upgrade must be carried out individually at each MetroCluster site for an HA pair.
-* For non-MetroCluster systems, such as HA clusters, the ARL upgrade is the only supported procedure.
-// 2021-11-02, BURT 1438029
-* If you are upgrading from an AFF A320 system, you can use volume moves to upgrade controller hardware or contact technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
-
-// Clean-up, 2022-03-09

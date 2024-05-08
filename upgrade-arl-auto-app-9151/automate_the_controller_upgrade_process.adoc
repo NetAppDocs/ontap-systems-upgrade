@@ -12,6 +12,4 @@ summary: "Use the partially automated ARL procedure to upgrade controllers runni
 :imagesdir: ./media/
 
 [.lead]
-During a controller upgrade, the controller is replaced with another controller running a newer or more powerful platform. Earlier versions of this content contained instructions for a nondisruptive controller update process that was comprised of entirely manual steps. This content provides the steps for the new automated procedure which utilizes automatic network port reachability checks to further simplify the controller upgrade experience.
-
-The manual process was lengthy and complex but in this simplified procedure you can implement a controller update using aggregate relocation, enabling more efficient nondisruptive upgrades for HA pairs. There are significantly fewer manual steps, especially around validation, collection of information, and post checks.
+During a controller upgrade, the controller is replaced with another controller running a newer or more powerful platform. This content provides the steps for the partially automated procedure which utilizes automatic network port reachability checks to further simplify the controller upgrade experience.

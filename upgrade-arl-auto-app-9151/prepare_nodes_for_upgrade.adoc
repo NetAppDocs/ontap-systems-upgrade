@@ -20,23 +20,12 @@ The controller replacement process begins with a series of prechecks. You also g
 +
 `system controller replace start -nodes _node_names_`
 +
-[NOTE]
-====
-*	Beginning with ONTAP 9.10.1, the automated negotiated switchover (NSO) based upgrade procedure is the default for a four-node MetroCluster FC configuration. If you are upgrading a four-node MetroCluster FC configuration, when you issue the `system controller replace start` command, you must prevent the NSO based procedure initiating by setting the `-nso` parameter to `false`:
-+
-`system controller replace start -nodes _node_names_ -nso false`
-// 2021-11-02, BURT 1438029
-* The `system controller replace start` command can only be executed at the advanced privilege level:
-+
-`set -privilege advanced`
-====
-+
 You will see the following output:
 +
 ....
 Warning:
 1. Current ONTAP version is 9.x
-Before starting controller replacement operation, ensure that the new controllers are running the version 9.x
+Before starting controller replacement operation, ensure that the new controllers are running the version 9.15.1
 
 2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM  batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
 
@@ -62,11 +51,6 @@ The system runs the following prechecks; record the output of each precheck for 
 
 |Cluster Health Check
 |Checks all the nodes in the cluster to confirm they are healthy.
-|MCC Cluster Check
-|Checks if the system is a MetroCluster configuration.
-The operation automatically detects if it is a MetroCluster configuration or not and performs the specific prechecks and verification checks.
-Only 4-node MetroCluster FC configuration is supported. In the case of 2-node MetroCluster configuration and 4-node MetroCluster IP configuration, the check fails.
-If the MetroCluster configuration is in switched over state, the check fails.
 |Aggregate Relocation Status Check
 |Checks whether an aggregate relocation is already in progress.
 If another aggregate relocation is in progress, the check fails.
@@ -109,8 +93,7 @@ If node affinity jobs are running, the check fails.
 
 . After the controller replacement operation is started and the prechecks are completed, the operation pauses enabling you to collect output information that you might need later when configuring node3.
 +
-NOTE: If you have a system with more than two cluster ports per node, such as an FAS8080 or an AFF8080 system, before you start the upgrade, you must migrate and re-home the cluster LIFs to two cluster ports per node. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.
-// BURT 1418719 31-Jan-2022
+NOTE: If you have a system with more than two cluster ports per node, such as an AFF 700, and the system is using the cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d and ports e4e, e4f, e4g, and e4h, you must migrate and re-home the cluster LIFs to two cluster ports per node before you start the upgrade. If you perform the controller upgrade with more than two cluster ports per node, cluster LIFs might be missing on the new controller after the upgrade.
 
 . Run the below set of commands as directed by the controller replacement procedure on the system console.
 +

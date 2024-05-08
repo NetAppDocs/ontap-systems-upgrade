@@ -16,90 +16,33 @@ This content describes how to upgrade the storage controllers in an HA pair with
 
 You can use this content under the following circumstances:
 
-* You are running ONTAP 9.8 or later.
-* You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
+* You are running ONTAP 9.15.1 or later.
+* You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
 * You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
-* If you are upgrading a MetroCluster configuration, it is a four-node or higher FC configuration, and all nodes are running ONTAP 9.8 or later.
-+
-For upgrading MetroCluster IP configurations, refer to link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
-[[sys_commands_98_supported_systems]]The following table shows the supported model matrix for the controller upgrade.
+[[sys_commands_9151_supported_systems]]The following table shows the supported model matrix for the controller upgrade.
 
 |===
 |Old controller |Replacement controller
 
-|FAS8020^3^, FAS8040^3^, FAS8060, FAS8080
-|FAS8200, FAS8300, FAS8700, FAS9000
-
-|FAS8060^4^, FAS8080^4^
-|FAS9500
-
-|AFF8020^3^, AFF8040^3^, AFF8060, AFF8080
-|AFF A300, AFF A400, AFF A700, AFF A800^1^
-
-|AFF8060^4^, AFF8080^4^
-|AFF A900
-
-|FAS8200
-|FAS8300^2^, FAS8700, FAS9000, FAS9500
-
-|FAS8300, FAS8700, FAS9000
-|FAS9500
-
 |AFF A300
-|AFF A400^2^, AFF A700, AFF A800^1^, AFF A900
+|AFF A70^1^, AFF A90^1^, and AFF A1K
 
-|AFF A320^4^
 |AFF A400
+|AFF A70^1^, AFF A90^1^, and AFF A1K
 
-|AFF A400, AFF A700
+|AFF A700
+|AFF A70^1^, AFF A90^1^, and AFF A1K
+
 |AFF A900
+|AFF A90^1^ and AFF A1K
+
 |===
-// BURT 1455656 8-Apr-2022
+
 NOTE: If your controller upgrade model combination is not in the above table, contact technical support.
 
-^1^For the additional steps needed for AFF A800 systems, go to the step that references A800 in section link:set_fc_or_uta_uta2_config_on_node3.html#auto_check3_step23[Check and configure UTA/UTA2 ports on node3, Step 23], or link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step23[Check and configure UTA/UTA2 ports on node4, Step 23].
-
-^2^If you are upgrading from an AFF A300 to an AFF A400 or an FAS8200 to an FAS8300 system in a two-node switchless cluster configuration, you must pick temporary cluster ports for the controller upgrade. The AFF A400 and FAS8300 systems come in two configurations, as an Ethernet bundle where the mezzanine card ports are Ethernet type and as an FC bundle where the mezzanine ports are FC type.
-
-* For an AFF A400 or an FAS8300 with an Ethernet type configuration, you can use any of the two mezzanine ports as temporary cluster ports.
-* For an AFF A400 or an FAS8300 with an FC type configuration, you must add a four-port 10GbE network interface card (part number X1147A) to provide temporary cluster ports.
-* After you complete a controller upgrade by using temporary cluster ports, you can nondisruptively migrate cluster LIFs to e3a and e3b, 100GbE ports on an AFF A400 system, and e0c and e0d, 100GbE ports on an FAS8300 system.
-// BURT 1367153 30-Aug-2021
-
-^3^For FAS8020, FAS8040, AFF8020, and AFF8040 system upgrades to the target replacement controllers listed in the table above, the replacement controllers must be running same ONTAP version as the old controller. Note that FAS8020, FAS8040, AFF8020, and AFF8040 systems do not support ONTAP versions later than ONTAP 9.8.
-
-^4^The following table shows the minimum and later supported ONTAP versions for these controller upgrade combinations. 
-[cols=4*,cols="20,30,20,30"]
-|===
-2+h|Old controller 2+h|Replacement controller
-
-h|System h|ONTAP version h|System h|ONTAP version
-|AFF A320 |9.9.1 or later |AFF A400 |9.9.1 or later
-|AFF8060 |9.8P13 or later patches |AFF A900 |9.10.1 to 9.12.1
-|AFF8080 |9.8P10 or later patches |AFF A900 |9.10.1 to 9.12.1
-|FAS8060 |9.8P13 or later patches |FAS9500 |9.10.1P3 to 9.12.1
-|FAS8080 |9.8P12 or later patches |FAS9500 |9.10.1P3 to 9.12.1
-|===
-
-[NOTE]
-====
-For the upgrade combinations shown in the preceding table:
-
-* It is not required to use the same ONTAP version on the existing and replacement controllers. The ONTAP software upgrade is performed with the controller upgrade.
-* When upgrading, you must install a replacement controller with a supported ONTAP version and patch level. 
-* It is not possible to cancel or back out of a controller upgrade after you start the procedure and upgrade the first node. 
-====
+^1^ AFF A70 and AFF A90 are integrated systems with onboard disks and the two controllers and disks in a single chassis. To upgrade from an existing model, the new controllers cannot have internal drives.
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
-
-// BURT 1514374 17-Nov-2022
-// BURT 1501196 17-Nov-2022
-// BURT 1480916 27-May-2022
-// BURT 1455646 5-May-2022
-// BURT 1379899 30-Aug-2021
-// Burt 1379899 16-Apr-2021
-// Burt 1367155 14-Apr-2021 
-// Clean-up, 2022-03-09

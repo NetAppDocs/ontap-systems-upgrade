@@ -12,7 +12,56 @@ summary: "Install and boot node3 and install ONTAP software when upgrading contr
 :imagesdir: ./media/
 
 [.lead]
-include::../_include/ru_auto_install_boot_node3_intro_step_5.adoc[]
+You must install node3 in the rack, transfer node1's connections to node3, boot node3, and install ONTAP. You must then reassign any of node1's spare disks, any disks belonging to the root volume, and any non-root aggregates that were not relocated to node2 earlier in the process, as outlined in this section.
+
+.About this task
+
+The relocation operation is paused at the beginning of this stage. This process is largely automated; the operation pauses to enable you to check its status. You must manually resume the operation. In addition, you must verify the SAN LIFs have successfully moved to node3.
+
+You need to netboot node3 if it does not have the same version of ONTAP 9 that is installed on node1. After you install node3, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots, by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
+
+.Important
+
+If you are upgrading a system with storage disks, you need to complete this entire section and then go to the link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3[Check and configure UTA/UTA2 ports on node3] sections, entering commands at the cluster prompt.
+
+.Steps
+
+. [[auto_install3_step1]]Make sure that you have rack space for node3.
++
+The space and height requirements for the new nodes might be different from the existing nodes. Plan for the space requirements for your upgrade configuration. 
+
+. [[auto_install3_step2]]Install node3 in the rack, following the _Installation and Setup Instructions_ for your node model.
+
+. [[auto_install3_step3]]Cable node3, moving the connections from node1 to node3.
++
+All new controller models introduced from ONTAP 9.15.1 have only one port for the BMC and mgmt (or wrench). You msut plan the cabling requirements accordingly.
++
+* Console (remote management port)
+* Cluster ports
+* Data ports
+* Cluster and node management ports
+* Storage
+* SAN configurations: iSCSI Ethernet and FC switch ports
++
+NOTE: You might not need to move the interconnect card or the cluster interconnect cable connection from node1 to node3 because most platform models have a unique interconnect card model.
+
+. [[auto_install3_step4]]Turn on the power to node3, and then interrupt the boot process by pressing Ctrl-C at the console terminal to access the boot environment prompt.
++
+NOTE: When you boot node3, you might see the following warning message:
++
+....
+WARNING: The battery is unfit to retain data during a power outage. This is likely because the battery is discharged but could be due to other temporary conditions.
+When the battery is ready, the boot process will complete and services will be engaged.
+To override this delay, press 'c' followed by 'Enter'
+....
+
+. [[auto_install3_step5]]If you see the warning message in <<auto_install3_step4,Step 4>>, take the following actions:
+.. Check for any console messages that might indicate a problem other than a low NVRAM battery, and, if necessary, take any required corrective action.
+.. Allow the battery to charge and the boot process to complete.
++
+WARNING: *Attention: Do not override the delay; failure to allow the battery to charge could result in a loss of data.*
++
+NOTE: Refer to link:prepare_for_netboot.html[Prepare for netboot].
 
 [start=6]
 . [[step6]]Configure the netboot connection by choosing one of the following actions.
@@ -40,8 +89,102 @@ a|Manually configure the connection by using the following command at the boot e
 NOTE: Other parameters might be necessary for your interface. Enter `help ifconfig` at the firmware prompt for details.
 |===
 
-include::../_include/ru_auto_install_boot_node3_step_7_26.adoc[]
-[start=27]
+. [[step7]]Perform netboot on node3:
++
+`netboot \http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
++
+The `<path_to_the_web-accessible_directory>` should lead to where you downloaded the `<ontap_version>_image.tgz` in the section link:prepare_for_netboot.html[Prepare for netboot].
++
+NOTE: Do not interrupt the boot.
+
+. [[step8]]From the boot menu, select option `(7) Install new software first`.
++
+This menu option downloads and installs the new ONTAP image to the boot device.
++
+Disregard the following message:
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair` 
++
+The note applies to nondisruptive upgrades of ONTAP, and not upgrades of controllers.
++
+NOTE: Always use netboot to update the new node to the desired image. If you use another method to install the image on the new controller, the incorrect image might install. This issue applies to all ONTAP releases. The netboot procedure combined with option `(7) Install new software` wipes the boot media and places the same ONTAP version on both image partitions.
+
+. [[step9]]If you are prompted to continue the procedure, enter `y`, and when prompted for the package, enter the URL:
++
+`\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
+
+. [[step10]]Complete the following substeps to reboot the controller module:
+.. Enter `n` to skip the backup recovery when you see the following prompt:
++
+`Do you want to restore the backup configuration now? {y|n}`
+
+.. Enter `y` to reboot when you see the following prompt:
++
+`The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}`
++
+The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
+
+. [[step11]]Select maintenance mode `5` from the boot menu and enter `y` when you are prompted to continue with the boot.
+. [[step12]]Verify that the controller and chassis are configured as ha:
++
+`ha-config show`
++
+The following example shows the output of the `ha-config show` command:
++
+....
+Chassis HA configuration: ha
+Controller HA configuration: ha
+....
++
+NOTE: System records in a PROM whether they are in an HA pair or stand-alone configuration. The state must be the same on all components within the stand-alone system or HA pair.
+
+. [[step13]]If the controller and chassis are not configured as ha, use the following commands to correct the configuration:
++
+`ha-config modify controller ha`
++
+`ha-config modify chassis ha`
+
+. [[step14]]Exit maintenance mode:
++
+`halt`
++
+Interrupt the autoboot by pressing `Ctrl-C` at the boot environment prompt.
+
+. [[step15]]On node2, check the system date, time, and time zone:
++
+`date`
+
+. [[step16]]On node3, check the date by using the following command at the boot environment prompt:
++
+`show date`
+
+. [[step17]]If necessary, set the date on node3:
++
+`set date _mm/dd/yyyy_`
+
+. [[step18]]On node3, check the time by using the following command at the boot environment prompt:
++
+`show time`
+
+. [[step19]]If necessary, set the time on node3:
++
+`set time _hh:mm:ss_`
+
+. [[step20]]In boot loader, set the partner system ID on node3:
++
+`setenv partner-sysid _node2_sysid_`
++
+For node3, `partner-sysid` must be that of node2.
+
+.. Save the settings:
++
+`saveenv`
+
+. [[auto_install3_step21]]Verify the `partner-sysid` for node3:
++
+`printenv partner-sysid`
+
+[start=22]
 . If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
@@ -75,9 +218,3 @@ Enter the passphrase and the backup information that you recorded earlier proced
 `boot_ontap menu`
 +
 If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2's disks.
-
-. [[step29]]For a MetroCluster configuration, V-Series systems and systems with FlexArray Virtualization software connected to storage arrays,  you must set and configure the FC or UTA/UTA2 ports on node3 to detect the disks attached to the node.
-To complete this task, go to section link:set_fc_or_uta_uta2_config_on_node3.html[Set the FC or UTA/UTA2 configuration on node3].
-
-// 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
-// 2022-05-17, BURT 1476241

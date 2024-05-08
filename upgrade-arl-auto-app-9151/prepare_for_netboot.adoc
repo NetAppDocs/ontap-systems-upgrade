@@ -14,4 +14,15 @@ summary: "Prepare to netboot node3 and node4 when upgrading controllers running 
 [.lead]
 include::../_include/ru_auto_prepare_for_netboot_intro.adoc[]
 
-include::../_include/ru_auto_prepare_for_netboot_steps_1_3.adoc[]
+.Steps
+
+. Access the NetApp Support Site to download the files used for performing the netboot of the system.
+. Download the appropriate ONTAP software from the software download section of the NetApp Support Site and store the `<ontap_version>_image.tgz` file on a web-accessible directory.
+. Change to the web-accessible directory and verify that the files you need are available. 
++
+Your directory listing should contain the following file:
+`<ontap_version>_image.tgz`
++
+NOTE: You do not need to extract the contents of the `<ontap_version>_image.tgz` file.
++
+You will use the information in the directories in link:install_boot_node3.html[Stage 3].
