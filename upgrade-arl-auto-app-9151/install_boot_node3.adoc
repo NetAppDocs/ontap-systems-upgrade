@@ -1,0 +1,83 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/install_boot_node3.html
+keywords: installing, booting, node3, ontap
+summary: "Install and boot node3 and install ONTAP software when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+---
+= Install and boot node3
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_install_boot_node3_intro_step_5.adoc[]
+
+[start=6]
+. [[step6]]Configure the netboot connection by choosing one of the following actions.
++
+NOTE: You must use the management port and IP as the netboot connection. Do not use a data LIF IP or a data outage might occur while the upgrade is being performed.
+
++
+[cols=2*,options="header"cols="30,70"]
+|===
+|If Dynamic Host Configuration Protocol (DHCP) is... |Then...
+
+|Running
+|Configure the connection automatically by using the following command at the boot environment prompt:
+`ifconfig e0M -auto`
+|Not running
+a|Manually configure the connection by using the following command at the boot environment prompt:
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` is the IP address of the storage system (mandatory).
+`_netmask_` is the network mask of the storage system (mandatory).
+`_gateway_` is the gateway for the storage system (mandatory).
+`_dns_addr_` is the IP address of a name server on your network (optional).
+`_dns_domain_` is the Domain Name Service (DNS) domain name (optional).
+
+NOTE: Other parameters might be necessary for your interface. Enter `help ifconfig` at the firmware prompt for details.
+|===
+
+include::../_include/ru_auto_install_boot_node3_step_7_26.adoc[]
+[start=27]
+. If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
++
+NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
+
+.. Set `bootarg.storageencryption.support` to `true` or `false`:
++
+[cols="35,65"]
+|===
+|If the following drives are in use…	|Then…
+
+|NSE drives that conform to FIPS 140-2 Level 2 self-encryption requirements
+|`setenv bootarg.storageencryption.support *true*`
+
+|NetApp non-FIPS SEDs
+|`setenv bootarg.storageencryption.support *false*`
+
+|===
++
+[NOTE]
+====
+You cannot mix FIPS drives with other types of drives on the same node or HA pair.
+You can mix SEDs with non-encrypting drives on the same node or HA pair.
+====
+
+.. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
++
+Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
+
+. Boot node into boot menu:
++
+`boot_ontap menu`
++
+If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2's disks.
+
+. [[step29]]For a MetroCluster configuration, V-Series systems and systems with FlexArray Virtualization software connected to storage arrays,  you must set and configure the FC or UTA/UTA2 ports on node3 to detect the disks attached to the node.
+To complete this task, go to section link:set_fc_or_uta_uta2_config_on_node3.html[Set the FC or UTA/UTA2 configuration on node3].
+
+// 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
+// 2022-05-17, BURT 1476241

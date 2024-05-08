@@ -7,18 +7,22 @@ indexpage:
           url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
         - title: Choose your controller hardware upgrade procedure
           url: /choose_controller_upgrade_procedure.html 
-    - title: Use aggregate relocation 
+    - title: Use aggregate relocation (most systems)
       links:
+        - title: Use "system controller replace commands" (ONTAP 9.15.1 and later)                    
+          url: /upgrade-arl-auto-app-9151/index.html
         - title: Start here
           url: /upgrade-arl/index.html
         - title: Keep the same chassis (ONTAP 9.10.1 and later)
           url: /upgrade-arl-auto-affa900/index.html 
         - title: Use "system controller replace commands" (ONTAP 9.8 and later)                    
-          url: /upgrade-arl-auto-app/index.html
-        - title: Use "system controller replace commands" (ONTAP 9.5 to 9.7)
           url: /upgrade-arl-auto/index.html  
         - title: Use manual commands (ONTAP 9.8 and later) 
           url: /upgrade-arl-manual-app/index.html
+    - title: Use aggregate relocation (ONTAP 9.7 and earlier) 
+      links:
+        - title: Use "system controller replace commands" (ONTAP 9.5 to 9.7)
+          url: /upgrade-arl-auto/index.html
         - title: Use manual commands (ONTAP 9.7 and earlier)
           url: /upgrade-arl-manual/index.html
     - title: Move storage or volumes

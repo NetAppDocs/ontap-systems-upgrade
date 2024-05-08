@@ -1,0 +1,23 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/ensure_new_controllers_are_set_up_correctly.html
+keywords: confirm, controllers, set up, ha, node3, node4, node2, lif, cluster, high, availability
+summary: "Enable the HA pair, verify node3 and node4 storage access, and confirm aggregate ownership after upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+---
+= Confirm that the new controllers are set up correctly
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_intro-step_12.adoc[]
+
+[start=13]
+. [[Step13]]Configure the SPs by using the following command on both nodes:
++
+`system service-processor network modify -node _node_name_`
++
+Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9.8 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
+include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]

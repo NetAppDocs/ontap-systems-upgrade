@@ -1,0 +1,65 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/overview_of_the_arl_upgrade.html
+keywords: overview, arl, upgrade, owner, controller, hardware
+summary: "Understand how the procedure to upgrade controllers running ONTAP 9.8 or later by using `system controller replace` commands works."
+---
+= Overview of the ARL upgrade
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_overview_arl_workflow_top.adoc[]
+
+[cols="35,65"]
+|===
+| Stage | Description
+
+| link:stage_1_index.html[Stage 1. Prepare for upgrade]
+a| During Stage 1, you run prechecks and, if required, correct aggregate ownership. You must record certain information if you are managing storage encryption by using the OKM and you can choose to quiesce the SnapMirror relationships.
+
+Aggregate ownership at the end of Stage 1:
+
+* Node1 is the home owner and current owner of the node1 aggregates.
+* Node2 is the home owner and current owner of the node2 aggregates.
+
+| link:stage_2_index.html[Stage 2. Relocate and retire node1]
+a| During Stage 2, you relocate node1 non-root aggregates and NAS data LIFs to node2. This process is largely automated; the operation pauses to enable you to check its status. You must manually resume the operation. If required, you relocate failed or vetoed aggregates. You record node1 information for use later in the procedure before retiring node1. You can also prepare to netboot node3 and node4 later in the procedure.
+
+Aggregate ownership at the end of Stage 2:
+
+* Node2 is the current owner of node1 aggregates.
+* Node2 is the home owner and current owner of node2 aggregates.
+
+| link:stage_3_index.html[Stage 3. Install and boot node3]
+a| During Stage 3, you install and boot node3, check that the cluster and node-management ports from node1 come online on node3, and verify the node3 installation. If you are using NetApp Volume Encryption (NVE), you restore key-manager configuration. If required, you set the FC or UTA/UTA2 configuration on node3. You also relocate the node1 NAS data LIFs and non-root aggregates from node2 to node3 and verify that the SAN LIFs exist on node3.
+
+Aggregate ownership at the end of Stage 3:
+
+* Node3 is the home owner and current owner of node1 aggregates.
+* Node2 is the home owner and current owner of node2 aggregates.
+
+| link:stage_4_index.html[Stage 4. Relocate and retire node2]
+a|  During Stage 4, you relocate non-root aggregates and NAS data LIFs from node2 to node3. You also record node2 information for use later in the procedure before retiring node2.
+
+Aggregate ownership at the end of Stage 4:
+
+* Node3 is the home owner and current owner of aggregates that originally belonged to node1.
+* Node2 is the home owner of node2 aggregates.
+* Node3 is the current owner of node2 aggregates.
+
+| link:stage_5_index.html[Stage 5. Install and boot node4]
+a| During Stage 5, you install and boot node4, check that the cluster and node-management ports from node2 come online on node4, and verify the node4 installation. If you are using NVE, you restore key-manager configuration. If required, you set the FC or UTA/UTA2 configuration on node4. You also relocate node2 NAS data LIFs and non-root aggregates from node3 to node4 and verify that the SAN LIFs exist on node4.
+
+Aggregate ownership at the end of Stage 5:
+
+* Node3 is the home owner and current owner of the aggregates that originally belonged to node1.
+* Node4 is the home owner and current owner of aggregates that originally belonged to node2.
+
+| link:stage_6_index.html[Stage 6. Complete the upgrade]
+a| During Stage 6, you confirm that the new nodes are set up correctly and, if the new nodes are encryption-enabled, you configure and set up Storage Encryption or NVE. You should also decommission the old nodes and resume the SnapMirror operations.
+|===
+// Clean-up, 2022-03-10

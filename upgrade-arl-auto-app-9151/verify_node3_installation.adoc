@@ -1,0 +1,314 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/verify_node3_installation.html
+keywords: verifying, verify, node, install, installation
+summary: "Verify that the node1 physical ports map correctly to node3 and restore network configuration on node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+---
+= Verify the node3 installation
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You must verify that the physical ports from node1 map correctly to the physical ports on node3. This will enable node3 to communicate with other nodes in the cluster and with the network after the upgrade.
+
+.About this task
+
+Refer to link:other_references.html[References] to link to the _Hardware Universe_ to capture information about the ports on the new nodes. You will use the information later in this section.
+
+Physical port layout might vary, depending on the model of the nodes. When the new node boots up, ONTAP will try to determine which ports should host cluster LIFs in order to automatically come into quorum.
+
+If the physical ports on node1 do not map directly to the physical ports on node3, the subsequent section <<Restore network configuration on node3>> must be used to repair the network connectivity.
+
+After you install and boot node3, you must verify that it is installed correctly. You must wait for node3 to join quorum and then resume the relocation operation.
+
+At this point in the procedure, the operation will have paused as node3 joins quorum.
+
+.Steps
+
+. Verify that node3 has joined quorum:
++
+`cluster show -node node3 -fields health`
++
+The output of the `health` field should be `true`.
+
+. Verify that node3 is part of the same cluster as node2 and that it is healthy:
++
+`cluster show`
+
+. Depending on the ONTAP version running on the HA pair being upgraded, take one of the following actions:
++
+[cols="30,70"]
+|===
+|If your ONTAP version is... |Then...
+
+|9.8 to 9.11.1 
+|Verify that the cluster LIFs are listening on port 7700:
+
+`::> network connections listening show -vserver Cluster`
+|9.12.1 or later
+|Skip this step and go to <<verify_node3_step_5,Step 5>>.
+|===
++
+Port 7700 listening on cluster ports is the expected outcome as shown in the following example for a two-node cluster:
++
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+
+. For each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
++
+`::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
++
+Repeat Step 3 to verify that the cluster LIF is now listening on port 7700.
+// 2021-11-03, BURT 1429264
+. [[verify_node3_step_5]]Switch to advanced privilege mode:
++
+`set advanced`
+
+. Check the status of the controller replacement operation and verify that it is in a paused state and in the same state that it was in before node1 was halted to perform the physical tasks of installing new controllers and moving cables:
++
+`system controller replace show`
++
+`system controller replace show-details`
+
+. If you are working on a MetroCluster system,  verify that the replaced controller is configured correctly for the MetroCluster configuration; the MetroCluster configuration should be in a healthy state. See link:verify_health_of_metrocluster_config.html[Verify the health of the MetroCluster configuration].
++
+Reconfigure the intercluster LIFs on MetroCluster node node3, and check cluster peering to restore communication between the MetroCluster nodes before proceeding to Step 6.
++
+Check the MetroCluster node status:
++
+`metrocluster node show`
+
+. Resume the controller replacement operation:
++
+`system controller replace resume`
+
+. Controller replacement will pause for intervention with the following message:
++
+....
+Cluster::*> system controller replace show
+Node             Status                       Error-Action
+---------------- ------------------------     ------------------------------------
+Node1(now node3) Paused-for-intervention      Follow the instructions given in
+                                              Step Details
+Node2                      None
+
+Step Details:
+--------------------------------------------
+To complete the Network Reachability task, the ONTAP network configuration must be manually adjusted to match the new physical network configuration of the hardware. This includes:
+
+1. Re-create the interface group, if needed, before restoring VLANs. For detailed commands and instructions, refer to the "Re-creating VLANs, ifgrps, and broadcast domains" section of the upgrade controller hardware guide for the ONTAP version running on the new controllers.
+2. Run the command "cluster controller-replacement network displaced-vlans show" to check if any VLAN is displaced.
+3. If any VLAN is displaced, run the command "cluster controller-replacement network displaced-vlans restore" to restore the VLAN on the desired port.
+
+2 entries were displayed.
+....
++
+NOTE: In this procedure, the section _Re-creating VLANs, ifgrps, and broadcast domains_ has been renamed _Restore network configuration on node3_.
+
+. With the controller replacement in a paused state, proceed to the next section of this document to restore network configuration on the node.
+
+== Restore network configuration on node3
+
+After you confirm that node3 is in quorum and can communicate with node2, verify that node1’s VLANs, interface groups, and broadcast domains are seen on node3. Also, verify that all node3 network ports are configured in their correct broadcast domains.
+
+.About this task
+
+For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other_references.html[References] to link to _Network Management_.
+
+NOTE: If you are changing the port speed of the e0a and e1a cluster ports on AFF A800 or AFF C800 systems, you might observe malformed packets being received after the speed conversion. See https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339[NetApp Bugs Online Bug ID 1570339^] and the knowledge base article https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE[CRC errors on T6 ports after converting from 40GbE to 100GbE^] for guidance.
+
+.Steps
+
+. [[step1]]List all the physical ports that are on upgraded node1 (referred to as node3):
++
+`network port show -node node3`
++
+All physical network ports, VLAN ports and interface group ports on the node are displayed. From this output, you can see any physical ports that have been moved into the `Cluster` broadcast domain by ONTAP. You can use this output to aid in deciding which ports must be used as interface group member ports, VLAN base ports or standalone physical ports for hosting LIFs.
+
+. [[step2]]List the broadcast domains on the cluster:
++
+`network port broadcast-domain show`
+
+. [[step3]]List the network port reachability of all ports on node3:
++
+`network port reachability show`
++
+You should see output like the following example:
++
+----
+clusterA::*> reachability show -node node1_node3
+(network port reachability show)
+Node         Port       Expected Reachability   Reachability Status
+-----------  ---------  ----------------------  ----------------------
+node1_node3
+             a0a        Default:Default         no-reachability
+             a0a-822    Default:822             no-reachability
+             a0a-823    Default:823             no-reachability
+             e0M        Default:Mgmt            ok
+             e0a        Cluster:Cluster         misconfigured-reachability
+             e0b        Cluster:Cluster         no-reachability
+             e0c        Cluster:Cluster         no-reachability
+             e0d        Cluster:Cluster         no-reachability
+             e0e        Cluster:Cluster         ok
+             e0e-822    -                       no-reachability
+             e0e-823    -                       no-reachability
+             e0f        Default:Default         no-reachability
+             e0f-822    Default:822             no-reachability
+             e0f-823    Default:823             no-reachability
+             e0g        Default:Default         misconfigured-reachability
+             e0h        Default:Default         ok
+             e0h-822    Default:822             ok
+             e0h-823    Default:823             ok
+18 entries were displayed.
+----
++
+In the preceding example, node1_node3 is just booted after controller replacement. Some ports do not have reachability to their expected broadcast domains and must be repaired.
+
+. [[auto_verify_3_step4]]Repair the reachability for each of the ports on node3 with a reachability status other than `ok`. Run the following command, first on any physical ports, then on any VLAN ports, one at a time:
++
+`network port reachability repair -node _node_name_  -port _port_name_`
++
+You should see output like the following example:
++
+----
+Cluster ::> reachability repair -node node1_node3 -port e0h
+----
++
+----
+Warning: Repairing port "node1_node3: e0h" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
++
+A warning message, as shown above, is expected for ports with a reachability status that might be different from the reachability status of the broadcast domain where it is currently located. Review the connectivity of the port and answer `y` or `n` as appropriate.
++
+Verify that all physical ports have their expected reachability:
++
+`network port reachability show`
++
+As the reachability repair is performed, ONTAP attempts to place the ports in the correct broadcast domains. However, if a port’s reachability cannot be determined and does not belong to any of the existing broadcast domains, ONTAP will create new broadcast domains for these ports.
+
+. [[step5]]If interface group configuration does not match the new controller physical port layout, modify it by using the following steps.
+.. You must first remove physical ports that should be interface group member ports from their broadcast domain membership. You can do this by using the following command:
++
+`network port broadcast-domain remove-ports -broadcast-domain _broadcast-domain_name_ -ports _node_name:port_name_`
+
+.. Add a member port to an interface group:
++
+`network port ifgrp add-port -node _node_name_ -ifgrp _ifgrp_ -port _port_name_`
+
+.. The interface group is automatically added to the broadcast domain about a minute after the first member port is added.
+.. Verify that the interface group was added to the appropriate broadcast domain:
++
+`network port reachability show -node _node_name_ -port _ifgrp_`
++
+If the interface group’s reachability status is not `ok`, assign it to the appropriate broadcast domain:
++
+`network port broadcast-domain add-ports -broadcast-domain _broadcast_domain_name_ -ports _node:port_`
+
+. [[step6]]Assign appropriate physical ports to the `Cluster` broadcast domain by using the following steps:
+.. Determine which ports have reachability to the `Cluster` broadcast domain :
++
+`network port reachability show -reachable-broadcast-domains Cluster:Cluster`
+
+.. Repair any port with reachability to the `Cluster` broadcast domain, if its reachability status is not `ok`:
++
+`network port reachability repair -node _node_name_ -port _port_name_`
+
+. [[step7]]Move the remaining physical ports into their correct broadcast domains by using one of the following commands:
++
+`network port reachability repair -node _node_name_ -port _port_name_`
++
+`network port broadcast-domain remove-port`
++
+`network port broadcast-domain add-port`
++
+Verify that there are no unreachable or unexpected ports present. Check the reachability status for all physical ports by using the following command and examining the output to confirm the status is `ok`:
++
+`network port reachability show -detail`
+
+. [[step8]]Restore any VLANs that might have become displaced by using the following steps:
+.. List displaced VLANs:
++
+`cluster controller-replacement network displaced-vlans show`
++
+Output like the following should display:
++
+----
+Cluster::*> displaced-vlans show
+(cluster controller-replacement network displaced-vlans show)
+          Original
+Node      Base Port   VLANs
+--------  ----------  -----------------------------------------
+Node1       a0a       822, 823
+            e0e       822, 823
+2 entries were displayed.
+----
+
+.. Restore VLANs that were displaced from their previous base ports:
++
+`cluster controller-replacement network displaced-vlans restore`
++
+The following is an example of restoring VLANs that have been displaced from interface group "a0a" back onto the same interface group:
++
+----
+Cluster::*> displaced-vlans restore -node node1_node3 -port a0a -destination-port a0a
+----
++
+The following is an example of restoring displaced VLANs on port "e0e" to' e0h':
++
+----
+Cluster::*> displaced-vlans restore -node node1_node3 -port e0e -destination-port e0h
+----
++
+When a VLAN restore is successful, the displaced VLANs are created on the specified destination port. The VLAN restore fails if the destination port is a member of an interface group, or if the destination port is down.
++
+Wait about one minute for newly restored VLANs to be placed into their appropriate broadcast domains.
+
+.. Create new VLAN ports as needed for VLAN ports that are not in the `cluster controller-replacement network displaced-vlans show` output but should be configured on other physical ports.
+. [[step9]]Delete any empty broadcast domains after all port repairs have been completed:
++
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
+
+. [[step10]]Verify port reachability:
++
+`network port reachability show`
++
+When all ports are correctly configured and added to the correct broadcast domains, the `network port reachability show` command should report the reachability status as `ok` for all connected ports, and the status as `no-reachability` for ports with no physical connectivity. If any port reports a status other than these two, perform the reachability repair and add or remove ports from their broadcast domains as instructed in <<auto_verify_3_step4,Step 4>>.
+
+. Verify that all ports have been placed into broadcast domains:
++
+`network port show`
+
+. Verify that all ports in the broadcast domains have the correct maximum transmission unit (MTU) configured:
++
+`network port broadcast-domain show`
+
+. Restore LIF home ports, specifying the Vserver(s) and LIF(s) home ports, if any, that need to be restored by using the following steps:
+.. List any LIFs that are displaced:
++
+`displaced-interface show`
+
+.. Restore LIF home nodes and home ports:
++
+`cluster controller-replacement network displaced-interface restore-home-node -node _node_name_ -vserver _vserver_name_ -lif-name _LIF_name_`
+
+. Verify that all LIFs have a home port and are administratively up:
++
+`network interface show -fields home-port, status-admin`
+
+// 2023 NOV 8, AFFFASDOC-133
+// 2023 OCT 31, AFFFASDOC-144
+// 2022-05-12, BURT 1476241
+// Clean-up, 2022-03-09

@@ -1,0 +1,16 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/stage_2_index.html
+keywords: relocating, retiring, node1, lif, stage 2
+summary: "Stage 2 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.8 or later."
+---
+= Overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_stage_2_overview.adoc[]
+//BURT-1476241 13-Sep-2022

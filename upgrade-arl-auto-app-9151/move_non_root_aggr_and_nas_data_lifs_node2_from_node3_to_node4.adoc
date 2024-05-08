@@ -1,0 +1,81 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html
+keywords: move, non-root, aggregates, nas, lif, node2, node3, node4
+summary: "Verify that node2's NAS data LIFs that are on node3 are relocated from node3 to node4 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+---
+= Move non-root aggregates and NAS data LIFs owned by node2 from node3 to node4
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you verify network configuration on node4 and before you relocate aggregates from node3 to node4, you must verify that the NAS data LIFs belonging to node2 that are currently on node3 are relocated from node3 to node4. You must also verify that the SAN LIFs exist on node4.
+
+.About this task
+
+Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN LIFs is not necessary for cluster or service health during the upgrade. SAN LIFs are not moved unless they need to be mapped to new ports. You will verify that the LIFs are healthy and located on appropriate ports after you bring node4 online.
+
+NOTE: If you are changing the port speed of the T6-based Ethernet network interface cards or motherboard ports, you might observe malformed packets being received after the speed conversion. See https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339[NetApp Bugs Online Bug ID 1570339^] and the knowledge base article https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE[CRC errors on T6 ports after converting from 40GbE to 100GbE^] for guidance.
+
+.Steps
+
+. Resume the relocation operation:
++
+`system controller replace resume`
++
+The system performs the following tasks:
+
+* Cluster quorum check
+* System ID check
+* Image version check
+* Target platform check
+* Network reachability check
+
++
+The operation pauses at this stage in the network reachability check.
+[start=2]
+. Resume the relocation operation:
++
+`system controller replace resume`
++
+The system performs the following checks:
++
+* Cluster health check
+* Cluster LIF status check
+
++
+After performing these checks, the system relocates the non-root aggregates and NAS data LIFs owned by node2 to the new controller, node4.
+The controller replacement operation  pauses after the resource relocation is complete.
+[start=4]
+. Check the status of the aggregate relocation and NAS data LIF move operations:
++
+`system controller replace show-details`
++
+If the controller replacement procedure is paused, check and correct the error,  if any,  and then issue `resume` to continue the operation.
+
+. If necessary, restore and revert any displaced LIFs. List any displaced LIFs:
++
+`cluster controller-replacement network displaced-interface show`
++
+If any LIFs are displaced, restore the home node back to node4:
++
+`cluster controller-replacement network displaced-interface restore-home-node`
+
+. Resume the operation to prompt the system to perform the required post-checks:
++
+`system controller replace resume`
++
+The system performs the following post-checks:
++
+* Cluster quorum check
+* Cluster health check
+* Aggregates reconstruction check
+* Aggregate status check
+* Disk status check
+* Cluster LIF status check
+* Volume check
+
+// 2023 NOV 6, AFFFASDOC-144

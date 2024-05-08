@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/aggregate_relocation_failures.html
+keywords: aggregate, relocation, failures, ARL
+summary: "Troubleshoot aggregate relocation failures that might occur when using `system controller replace` commands to upgrade controllers running ONTAP 9.8 or later."
+---
+= Aggregate relocation failures
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_aggregate_relocation_failures.adoc[]
+
+include::../_include/ru_auto_check_aggregate_relocation_failure.adoc[]
+
++
+For detailed information about the `storage aggregate relocation start`, `override-vetoes`, and `override-destination-checks` options, refer to link:other_references.html[References] to link to the _ONTAP 9.8 Commands: Manual Page Reference_.
+
+include::../_include/ru_auto_aggregates_originally_node1_owned_node4_completion_upgrade.adoc[]

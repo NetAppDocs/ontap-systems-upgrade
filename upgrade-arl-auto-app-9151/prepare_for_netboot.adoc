@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/prepare_for_netboot.html
+keywords: preparing, netboot, ndac, ontap
+summary: "Prepare to netboot node3 and node4 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+---
+= Prepare for netboot
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_prepare_for_netboot_intro.adoc[]
+
+include::../_include/ru_auto_prepare_for_netboot_steps_1_3.adoc[]
