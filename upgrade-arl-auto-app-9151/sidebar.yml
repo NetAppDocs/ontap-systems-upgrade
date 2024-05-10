@@ -1,4 +1,4 @@
-section: upgrade-arl-auto-app
+section: upgrade-arl-auto-app-9151
 title: Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.15.1 or later
 entries:
   - title: "Overview"
