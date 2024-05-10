@@ -20,6 +20,29 @@ ARL takes advantage of the HA configuration to give you the capability to move o
 
 There are several ARL methods for upgrading your controller hardware. Before you start, you must verify that you have selected the correct method for your controller hardware upgrade. 
 
+== Use "system controller replace" commands with ONTAP 9.15.1 or later
+
+Review the supported model matrix for upgrading controller hardware by using "system controller replace" commands on systems running ONTAP 9.15.1 or later. 
+
+|===
+|Old controller |Replacement controller
+
+|AFF A300
+|AFF A70, AFF A90, and AFF A1K
+
+|AFF A400
+|AFF A70, AFF A90, and AFF A1K
+
+|AFF A700
+|AFF A70, AFF A90, and AFF A1K
+
+|AFF A900
+|AFF A90 and AFF A1K
+
+|===
+
+For more information on the upgrade considerations and limitations, see link:../upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html[Decide whether to use the aggregate relocation procedure].
+
 == Upgrade controller models in the same chassis
 Review the supported model matrix for upgrading controller hardware by converting the old system to the replacement system, keeping the old system chassis and disks.
 
@@ -27,6 +50,9 @@ Review the supported model matrix for upgrading controller hardware by convertin
 |===
 |Old system |Replacement system |Supported ONTAP versions
 
+|AFF A800
+|AFF A70 or AFF A90
+|9.15.1 and later
 |AFF A220 configured as an All SAN Array (ASA) 
 |ASA A150
 |9.13.1P1 and later

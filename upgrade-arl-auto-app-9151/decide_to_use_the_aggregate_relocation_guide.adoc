@@ -28,21 +28,24 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 |Old controller |Replacement controller
 
 |AFF A300
-|AFF A70^1^, AFF A90^1^, and AFF A1K
+|AFF A70, AFF A90, and AFF A1K
 
 |AFF A400
-|AFF A70^1^, AFF A90^1^, and AFF A1K
+|AFF A70, AFF A90, and AFF A1K
 
 |AFF A700
-|AFF A70^1^, AFF A90^1^, and AFF A1K
+|AFF A70, AFF A90, and AFF A1K
 
 |AFF A900
-|AFF A90^1^ and AFF A1K
+|AFF A90 and AFF A1K
 
 |===
 
-NOTE: If your controller upgrade model combination is not in the above table, contact technical support.
+[NOTE]
+====
+The AFF A70 and AFF A90 are integrated systems with onboard disks. The two controllers and disks are in a single chassis. You cannot upgrade an existing system if the new controllers have internal drives.
 
-^1^ AFF A70 and AFF A90 are integrated systems with onboard disks and the two controllers and disks in a single chassis. To upgrade from an existing model, the new controllers cannot have internal drives.
+If your controller upgrade model combination is not in the above table, contact technical support.
+====
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]

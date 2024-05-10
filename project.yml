@@ -7,10 +7,10 @@ settings:
     pdf_enabled: true
 sidebar:
   entries:
-    - title: ONTAP Hardware Upgrade Documentation
-      url: /index.html
     - title: Choose your controller hardware upgrade procedure
       url: /choose_controller_upgrade_procedure.html
+    - title: ONTAP Hardware Upgrade Documentation
+      url: /index.html
     - title: Upgrade by using ARL
       entries:
       - section: upgrade-arl-auto-app-9151

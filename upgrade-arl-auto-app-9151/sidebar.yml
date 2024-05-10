@@ -11,12 +11,6 @@ entries:
     url: /upgrade-arl-auto-app-9151/required_tools_and_documentation.html
   - title: "Guidelines for upgrading controllers with ARL"
     url: /upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html
-  - title: "Verify the health of the MetroCluster configuration"
-    url: /upgrade-arl-auto-app-9151/verify_health_of_metrocluster_config.html
-  - title: "Check for MetroCluster configuration errors"
-    url: /upgrade-arl-auto-app-9151/check_for_metrocluster_config_errors.html
-  - title: "Verify switchover, healing, and switchback"
-    url: /upgrade-arl-auto-app-9151/verify_switchover_healing_switchback.html
   - title: "Overview of the ARL upgrade"
     url: /upgrade-arl-auto-app-9151/overview_of_the_arl_upgrade.html
   - title: "Stage 1. Prepare for upgrade"

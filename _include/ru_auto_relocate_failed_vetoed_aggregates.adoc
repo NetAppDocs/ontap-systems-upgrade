@@ -13,7 +13,7 @@ The relocation operation will have paused due to the error.
 
 . When prompted, enter `y`.
 . You can force relocation by using one of the following methods:
-
++
 [cols="35,65"]
 |===
 |Option |Description
