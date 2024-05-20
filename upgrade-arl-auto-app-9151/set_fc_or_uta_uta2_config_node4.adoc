@@ -14,43 +14,110 @@ summary: "Configure node4 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 [.lead]
 include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_intro.adoc[]
 
-NOTE: If node4 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to link:verify_node4_installation.html[Verify the node4 installation].
-However, if you have a V-Series system or have FlexArray Virtualization Software and are connected to storage arrays, and node4 does not have onboard FC ports, onboard UTA/ UTA2 ports, or a UTA/UTA2 card, you must return to the section _Install and boot node4_ section and resume at link:install_boot_node4.html#step22[Step 22]. Make sure that node4 has sufficient rack space. If node4 is in a separate chassis from node2, you can put node4 in the same location as node3. If node2 and node4 are in the same chassis, then node4 is already in its appropriate rack location.
-
 include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_choices.adoc[]
 
-include::../_include/ru_auto_config_fc_ports_node4.adoc[]
+== Configure FC ports on node4
 
-[start=8]
-. [[step8]]Take one of the following actions:
+If node4 has FC ports, either onboard or on an FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured. If the ports are not configured, you might experience a disruption in service.
+
+.Before you begin
+
+You must have the values of the FC port settings from node2 that you saved in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade].
+
+.About this task
+
+You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 adapter, you configure them in <<Check and configure UTA/UTA2 ports on node4>>.
+
+IMPORTANT: If your system has storage disks, you must enter the commands in this section at the cluster prompt. If you have a V-Series system or a system with FlexArray Virtualization Software connected to storage arrays, you enter commands in this section in Maintenance mode.
+
+.Steps
+
+. Compare the FC settings on node4 with the settings that you captured earlier from node1.
+. Exit Maintenance mode:
++
+`halt`
+
+. Boot the system from loader prompt:
++
+`boot_ontap menu`
+
+. After you enter the command, wait until the system stops at the boot environment prompt.
+. Select option `5` from the boot menu for maintenance mode.
+
+== Check and configure UTA/UTA2 ports on node3
+
+If node3 has onboard UTA/UTA2 ports or a UTA/UTA2 card, you must check the configuration of the ports and possibly reconfigure them, depending on how you want to use the upgraded system.
+
+.Before you begin
+
+You must have the correct SFP+ modules for the UTA/UTA2 ports.
+
+.About this task
+
+UTA/UTA2 ports can be configured into native FC mode or UTA/UTA2A mode. FC mode supports FC initiator and FC target; UTA/UTA2 mode allows concurrent NIC and FCoE traffic to share the same 10GbE SFP+ interface and supports FC target.
+
+NOTE: NetApp marketing materials might use the term UTA2 to refer to CNA adapters and ports. However, the CLI uses the term CNA.
+
+UTA/UTA2 ports might be on an adapter or on the controller with the following configurations:
+
+* UTA/UTA2 cards ordered when the controller is ordered are configured before shipment to have the personality you request.
+* UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
+* Onboard UTA/UTA2 ports on new controllers are configured before shipment to have the personality you request.
+
+However, you should check the configuration of the UTA/UTA2 ports on node4 and change it, if necessary.
++
+WARNING: *Attention*: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a V- Series system or have FlexArray Virtualization Software and are connected to storage arrays, you enter commands in this section at the Maintenance mode prompt. You must be in Maintenance mode to configure UTA/UTA2 ports.
+
+.Steps
+
+. If the current SFP+ module does not match the desired use, replace it with the correct SFP+ module.
++
+Contact your NetApp representative to obtain the correct SFP+ module.
+
+. Examine the output of the `ucadmin show` command and determine whether the UTA/UTA2 ports have the personality you want.
+. Take one of the following actions:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
-|If the system that you are upgrading... |Then…
+|If the UTA/UTA2 ports... |Then…
 
-|Has storage disks
-a|* Skip this section and go to link:verify_node4_installation.html[Verify the node4 installation] if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports.
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-a|* Go to <<Check and configure UTA/UTA2 ports on node4>> if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
-* Skip the section _Check and configure UTA/UTA2 ports on node4_ if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
+|Do not have the personality that you want
+|Go to <<auto_check3_step4,Step 4>>.
+
+|Have the personality that you want
+|Skip Step 5 through Step 12 and go to <<auto_check3_step13,Step 13>>.
 |===
 
-include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
-
-[start=12]
-. [[step12]]Take one of the following actions:
+. [[auto_check3_step4]]Take one of the following actions:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
-|If the system... |Then…
+|If you are configuring... |Then…
 
-|Has storage disks
-|Go to link:verify_node4_installation.html[Verify the node4 installation].
-
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
-
+|Ports on a UTA/UTA2 card
+|Go to <<auto_check3_step7,Step 7>>
+|Onboard UTA/UTA2 ports
+|Skip Step 7 and go to <<auto_check3_step8,Step 8>>.
 |===
+
+. [[step6]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
++
+`storage disable adapter _adapter_name_`
++
+Adapters in target mode are automatically offline in Maintenance mode.
+
+. [[auto_check3_step7]]If the current configuration does not match the desired use, change the configuration as needed:
++
+`ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
++
+** `-m` is the personality mode, `fc` or `cna`.
+** `-t` is the FC4 type, `target` or `initiator`.
+
+. [[auto_check3_step8]]Verify the settings:
++
+`ucadmin show`
+
+. Cable the port.
 
 . [[auto_check_4_step13]]Exit Maintenance mode:
 +
@@ -59,8 +126,6 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 . [[step14]]Boot node into boot menu:
 +
 `boot_ontap menu`.
-+
-If you are upgrading to an A800, go to <<auto_check_4_step23,Step 23>>
 
 . [[auto_check_4_step15]]On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
 +
@@ -189,7 +254,73 @@ NOTE: In the above console output example, ONTAP will prompt you for the partner
 
 . If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. To resolve this, continue with <<auto_check_4_step17,Step 17>> to <<auto_check_4_step22,Step 22>> or go to section link:verify_node4_installation.html[Verify the node4 installation].
 
-include::../_include/ru_auto_check_config_uta_uta2_ports_node4_step_17_22.adoc[]
+. [[auto_check_4_step17]]Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
+
+. At the loader prompt, enter maintenance mode:
++
+`boot_ontap maint`
+
+. In maintenance mode, display all the previously set initiator ports that are now in target mode:
++
+`ucadmin show`
++
+Change the ports back to initiator mode:
++
+`ucadmin modify -m fc -t initiator -f _adapter name_`
+
+. Verify that the ports have been changed to initiator mode:
++
+`ucadmin show`
+
+. Exit maintenance mode:
++
+`halt`
+
+. [[auto_check_4_step22]]At the loader prompt, boot up:
++
+`boot_ontap menu`
++
+Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
++
+When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume:
++
+.. Return to the special boot menu:
+`LOADER> boot_ontap menu`
++
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
++
+.. Select *(10) Set Onboard Key Manager recovery secrets*
++
+.. Enter `y` at the following prompt:
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
++
+.. At the prompt, enter the key-manager passphrase.
++
+.. Enter the backup data when prompted.
++
+NOTE: You must have obtained the passphrase and backup data in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section of this procedure.
+
++
+.. After the system boots to the special boot menu again, run option *(1) Normal Boot*
++ 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step22,Step 22>> until the system boots normally. 
 
 [start=23]
 . [[auto_check_4_step23]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.

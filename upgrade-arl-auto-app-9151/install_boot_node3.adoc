@@ -12,7 +12,7 @@ summary: "Install and boot node3 and install ONTAP software when upgrading contr
 :imagesdir: ./media/
 
 [.lead]
-You must install node3 in the rack, transfer node1's connections to node3, boot node3, and install ONTAP. You must then reassign any of node1's spare disks, any disks belonging to the root volume, and any non-root aggregates that were not relocated to node2 earlier in the process, as outlined in this section.
+You install node3 in the rack, transfer node1's connections to node3, boot node3, and install ONTAP. You then reassign any of node1's spare disks, any disks belonging to the root volume, and any non-root aggregates that were not relocated to node2 earlier in the process, as outlined in this section.
 
 .About this task
 

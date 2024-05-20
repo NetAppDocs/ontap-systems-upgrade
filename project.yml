@@ -13,8 +13,8 @@ sidebar:
       url: /index.html
     - title: Upgrade by using ARL
       entries:
-      - section: upgrade-arl-auto-app-9151
       - section: upgrade-arl
+      - section: upgrade-arl-auto-app-9151
       - section: upgrade-arl-auto-affa900
       - section: upgrade-arl-auto-app
       - section: upgrade-arl-auto

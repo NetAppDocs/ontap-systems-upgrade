@@ -38,41 +38,6 @@ The output of the `health` field should be `true`.
 +
 `cluster show`
 
-. Depending on the ONTAP version running on the HA pair being upgraded, take one of the following actions:
-+
-[cols="30,70"]
-|===
-|If your ONTAP version is... |Then...
-
-|9.8 to 9.11.1 
-|Verify that the cluster LIFs are listening on port 7700:
-
-`::> network connections listening show -vserver Cluster`
-|9.12.1 or later
-|Skip this step and go to <<verify_node4_step5,Step 5>>.
-|===
-+
-Port 7700 listening on cluster ports is the expected outcome as shown in the following example for a two-node cluster:
-+
-----
-Cluster::> network connections listening show -vserver Cluster
-Vserver Name     Interface Name:Local Port     Protocol/Service
----------------- ----------------------------  -------------------
-Node: NodeA
-Cluster          NodeA_clus1:7700               TCP/ctlopcp
-Cluster          NodeA_clus2:7700               TCP/ctlopcp
-Node: NodeB
-Cluster          NodeB_clus1:7700               TCP/ctlopcp
-Cluster          NodeB_clus2:7700               TCP/ctlopcp
-4 entries were displayed.
-----
-
-. For each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
-+
-`::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
-+
-Repeat Step 3 to verify that the cluster LIF is now listening on port 7700.
-// 2021-11-03, BURT 1429264
 . [[verify_node4_step5]]Switch to advanced privilege mode:
 +
 `set advanced`
@@ -82,14 +47,6 @@ Repeat Step 3 to verify that the cluster LIF is now listening on port 7700.
 `system controller replace show`
 +
 `system controller replace show-details`
-
-. If you are working on a MetroCluster system,  verify that the replaced controller is configured correctly for the MetroCluster configuration; the MetroCluster configuration should be in a healthy state. Refer to link:verify_health_of_metrocluster_config.html[Verify the health of the MetroCluster configuration].
-+
-Reconfigure the intercluster LIFs on MetroCluster node node4, and check cluster peering to restore communication between the MetroCluster nodes before proceeding to <<auto_verify_4_Step6,Step 6>>.
-+
-Check the MetroCluster node status:
-+
-`metrocluster node show`
 
 . [[auto_verify_4_Step6]]Resume the controller replacement operation:
 +
@@ -133,8 +90,6 @@ After you confirm that node4 is in quorum and can communicate with node3, verify
 .About this task
 
 For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other_references.html[References] to link to _Network Management_.
-
-NOTE: If you are changing the port speed of the e0a and e1a cluster ports on AFF A800 or AFF C800 systems, you might observe malformed packets being received after the speed conversion. See https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339[NetApp Bugs Online Bug ID 1570339^] and the knowledge base article https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE[CRC errors on T6 ports after converting from 40GbE to 100GbE^] for guidance.
 
 .Steps
 
@@ -315,8 +270,3 @@ When all ports are correctly configured and added to the correct broadcast domai
 . Verify that all LIFs have a home port and are administratively up:
 +
 `network interface show -fields home-port, status-admin`
-
-// 2023 OCT 31, AFFFASDOC-144
-// 2023 NOV 8, AFFFASDOC-133
-// 2022-05-12 , 1476241
-// Clean-up, 2022-03-09
