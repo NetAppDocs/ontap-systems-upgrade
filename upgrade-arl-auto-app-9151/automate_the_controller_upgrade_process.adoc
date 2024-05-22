@@ -12,4 +12,4 @@ summary: "Use the partially automated ARL procedure to upgrade controllers runni
 :imagesdir: ./media/
 
 [.lead]
-During a controller upgrade, the controller is replaced with another controller running a newer or more powerful platform. This content provides the steps for the partially automated procedure which utilizes automatic network port reachability checks to further simplify the controller upgrade experience.
+During a controller upgrade, the controller is replaced with another controller running a newer or more powerful platform. This content provides the steps for the partially automated procedure, which utilizes automatic network port reachability checks to further simplify the controller upgrade experience.

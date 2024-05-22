@@ -22,7 +22,7 @@ You need to netboot node4 if it does not have the same version of ONTAP 9 that i
 
 .Important:
 
-* If you are upgrading a system with storage disks, you must complete this entire section and then proceed to link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
+If you are upgrading a system with storage disks, you must complete this entire section and then proceed to link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
 
 .Steps
 
@@ -65,8 +65,7 @@ WARNING: *Attention: Do not override the delay; failure to allow the battery to 
 +
 NOTE: Refer to link:prepare_for_netboot.html[Prepare for netboot].
 
-[start=6]
-.  [[step6]]Configure the netboot connection by choosing one of the following actions.
+. Configure the netboot connection by choosing one of the following actions.
 +
 NOTE:  You must use the management port and IP as the netboot connection. Do not use a data LIF IP or a data outage might occur while the upgrade is being performed.
 
@@ -222,4 +221,4 @@ Enter the passphrase and the backup information that you recorded earlier proced
 +
 `boot_ontap menu`
 +
-If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2's disks.
+If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step12[Check and configure UTA/UTA2 ports on node4, Step 12] so that node4 can recognize node2's disks.

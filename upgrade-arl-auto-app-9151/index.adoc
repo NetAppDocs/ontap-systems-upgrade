@@ -20,7 +20,7 @@ This procedure describes how to upgrade the controller hardware using aggregate 
 |Method |ONTAP version |Supported systems
 
 |Using `system controller replace` commands
-|9.8 or later
+|9.15.1 or later
 |link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_9151_supported_systems[Link to supported systems matrix]
 |===
 

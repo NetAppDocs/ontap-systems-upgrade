@@ -28,13 +28,13 @@ If you are upgrading a system with storage disks, you need to complete this enti
 
 . [[auto_install3_step1]]Make sure that you have rack space for node3.
 +
-The space and height requirements for the new nodes might be different from the existing nodes. Plan for the space requirements for your upgrade configuration. 
+The space and height requirements for the new nodes might be different from the existing nodes. Plan for the space requirements for your upgrade scenario. 
 
 . [[auto_install3_step2]]Install node3 in the rack, following the _Installation and Setup Instructions_ for your node model.
 
 . [[auto_install3_step3]]Cable node3, moving the connections from node1 to node3.
 +
-All new controller models introduced from ONTAP 9.15.1 have only one port for the BMC and mgmt (or wrench). You msut plan the cabling requirements accordingly.
+Beginning with ONTAP 9.15.1, new controller models have only one port for the baseboard management controller (BMC) and management connections. Plan the cabling requirements accordingly.
 +
 * Console (remote management port)
 * Cluster ports
@@ -217,4 +217,4 @@ Enter the passphrase and the backup information that you recorded earlier proced
 +
 `boot_ontap menu`
 +
-If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2's disks.
+If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step12[Check and configure UTA/UTA2 ports on node4, Step 12] so that node4 can recognize node2's disks.

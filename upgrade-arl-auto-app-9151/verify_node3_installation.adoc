@@ -87,17 +87,17 @@ For more information on creating and re-creating VLANs, interface groups, and br
 
 .Steps
 
-. [[step1]]List all the physical ports that are on upgraded node1 (referred to as node3):
+. List all the physical ports that are on upgraded node1 (referred to as node3):
 +
 `network port show -node node3`
 +
 All physical network ports, VLAN ports and interface group ports on the node are displayed. From this output, you can see any physical ports that have been moved into the `Cluster` broadcast domain by ONTAP. You can use this output to aid in deciding which ports must be used as interface group member ports, VLAN base ports or standalone physical ports for hosting LIFs.
 
-. [[step2]]List the broadcast domains on the cluster:
+. List the broadcast domains on the cluster:
 +
 `network port broadcast-domain show`
 
-. [[step3]]List the network port reachability of all ports on node3:
+. List the network port reachability of all ports on node3:
 +
 `network port reachability show`
 +
@@ -116,11 +116,11 @@ In the preceding example, node1_node3 is just booted after controller replacemen
 You should see output like the following example:
 +
 ----
-Cluster ::> reachability repair -node node1_node3 -port e0h
+Cluster ::> reachability repair -node node1_node3 -port e2a
 ----
 +
 ----
-Warning: Repairing port "node1_node3: e0h" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node1_node3: e2a" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
 +
 A warning message, as shown above, is expected for ports with a reachability status that might be different from the reachability status of the broadcast domain where it is currently located. Review the connectivity of the port and answer `y` or `n` as appropriate.
@@ -131,7 +131,7 @@ Verify that all physical ports have their expected reachability:
 +
 As the reachability repair is performed, ONTAP attempts to place the ports in the correct broadcast domains. However, if a port’s reachability cannot be determined and does not belong to any of the existing broadcast domains, ONTAP will create new broadcast domains for these ports.
 
-. [[step5]]If interface group configuration does not match the new controller physical port layout, modify it by using the following steps.
+. If interface group configuration does not match the new controller physical port layout, modify it by using the following steps.
 .. You must first remove physical ports that should be interface group member ports from their broadcast domain membership. You can do this by using the following command:
 +
 `network port broadcast-domain remove-ports -broadcast-domain _broadcast-domain_name_ -ports _node_name:port_name_`
@@ -149,7 +149,7 @@ If the interface group’s reachability status is not `ok`, assign it to the app
 +
 `network port broadcast-domain add-ports -broadcast-domain _broadcast_domain_name_ -ports _node:port_`
 
-. [[step6]]Assign appropriate physical ports to the `Cluster` broadcast domain by using the following steps:
+. Assign appropriate physical ports to the `Cluster` broadcast domain by using the following steps:
 .. Determine which ports have reachability to the `Cluster` broadcast domain :
 +
 `network port reachability show -reachable-broadcast-domains Cluster:Cluster`
@@ -158,7 +158,7 @@ If the interface group’s reachability status is not `ok`, assign it to the app
 +
 `network port reachability repair -node _node_name_ -port _port_name_`
 
-. [[step7]]Move the remaining physical ports into their correct broadcast domains by using one of the following commands:
+. Move the remaining physical ports into their correct broadcast domains by using one of the following commands:
 +
 `network port reachability repair -node _node_name_ -port _port_name_`
 +
@@ -170,7 +170,7 @@ Verify that there are no unreachable or unexpected ports present. Check the reac
 +
 `network port reachability show -detail`
 
-. [[step8]]Restore any VLANs that might have become displaced by using the following steps:
+. Restore any VLANs that might have become displaced by using the following steps:
 .. List displaced VLANs:
 +
 `cluster controller-replacement network displaced-vlans show`
@@ -184,7 +184,7 @@ Cluster::*> displaced-vlans show
 Node      Base Port   VLANs
 --------  ----------  -----------------------------------------
 Node1       a0a       822, 823
-            e0e       822, 823
+            e2a       822, 823
 2 entries were displayed.
 ----
 
@@ -198,10 +198,10 @@ The following is an example of restoring VLANs that have been displaced from int
 Cluster::*> displaced-vlans restore -node node1_node3 -port a0a -destination-port a0a
 ----
 +
-The following is an example of restoring displaced VLANs on port "e0e" to' e0h':
+The following is an example of restoring displaced VLANs on port "e9a" to' e9d':
 +
 ----
-Cluster::*> displaced-vlans restore -node node1_node3 -port e0e -destination-port e0h
+Cluster::*> displaced-vlans restore -node node1_node3 -port e9a -destination-port e9d
 ----
 +
 When a VLAN restore is successful, the displaced VLANs are created on the specified destination port. The VLAN restore fails if the destination port is a member of an interface group, or if the destination port is down.
@@ -209,7 +209,7 @@ When a VLAN restore is successful, the displaced VLANs are created on the specif
 Wait about one minute for newly restored VLANs to be placed into their appropriate broadcast domains.
 
 .. Create new VLAN ports as needed for VLAN ports that are not in the `cluster controller-replacement network displaced-vlans show` output but should be configured on other physical ports.
-. [[step9]]Delete any empty broadcast domains after all port repairs have been completed:
+. Delete any empty broadcast domains after all port repairs have been completed:
 +
 `network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
 
@@ -243,4 +243,3 @@ When all ports are correctly configured and added to the correct broadcast domai
 // 2023 NOV 8, AFFFASDOC-133
 // 2023 OCT 31, AFFFASDOC-144
 // 2022-05-12, BURT 1476241
-// Clean-up, 2022-03-09

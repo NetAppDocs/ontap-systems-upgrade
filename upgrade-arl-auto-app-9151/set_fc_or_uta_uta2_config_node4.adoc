@@ -44,9 +44,9 @@ IMPORTANT: If your system has storage disks, you must enter the commands in this
 . After you enter the command, wait until the system stops at the boot environment prompt.
 . Select option `5` from the boot menu for maintenance mode.
 
-== Check and configure UTA/UTA2 ports on node3
+== Check and configure UTA/UTA2 ports on node4
 
-If node3 has onboard UTA/UTA2 ports or a UTA/UTA2 card, you must check the configuration of the ports and possibly reconfigure them, depending on how you want to use the upgraded system.
+If node4 has onboard FC ports, onboard unified target adapter (UTA/UTA2) ports, or a UTA/UTA2 card, you must configure the settings before completing the rest of the procedure.
 
 .Before you begin
 
@@ -62,7 +62,7 @@ UTA/UTA2 ports might be on an adapter or on the controller with the following co
 
 * UTA/UTA2 cards ordered when the controller is ordered are configured before shipment to have the personality you request.
 * UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
-* Onboard UTA/UTA2 ports on new controllers are configured before shipment to have the personality you request.
+* Onboard UTA/UTA2 ports on new controllers are configured (before shipment) to have the personality you request.
 
 However, you should check the configuration of the UTA/UTA2 ports on node4 and change it, if necessary.
 +
@@ -85,7 +85,7 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 |Go to <<auto_check3_step4,Step 4>>.
 
 |Have the personality that you want
-|Skip Step 5 through Step 12 and go to <<auto_check3_step13,Step 13>>.
+|Skip Step 4 through Step 9 and go to <<auto_check3_step10,Step 10>>.
 |===
 
 . [[auto_check3_step4]]Take one of the following actions:
@@ -95,31 +95,31 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 |If you are configuring... |Then…
 
 |Ports on a UTA/UTA2 card
-|Go to <<auto_check3_step7,Step 7>>
+|Go to <<auto_check3_step6,Step 6>>
 |Onboard UTA/UTA2 ports
-|Skip Step 7 and go to <<auto_check3_step8,Step 8>>.
+|Skip Step 6 and go to <<auto_check3_step7,Step 7>>.
 |===
 
-. [[step6]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
+. If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
 `storage disable adapter _adapter_name_`
 +
 Adapters in target mode are automatically offline in Maintenance mode.
 
-. [[auto_check3_step7]]If the current configuration does not match the desired use, change the configuration as needed:
+. [[auto_check3_step6]]If the current configuration does not match the desired use, change the configuration as needed:
 +
 `ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
 +
 ** `-m` is the personality mode, `fc` or `cna`.
 ** `-t` is the FC4 type, `target` or `initiator`.
 
-. [[auto_check3_step8]]Verify the settings:
+. [[auto_check3_step7]]Verify the settings:
 +
 `ucadmin show`
 
 . Cable the port.
 
-. [[auto_check_4_step13]]Exit Maintenance mode:
+. [[auto_check_4_step10]]Exit Maintenance mode:
 +
 `halt`
 
@@ -127,7 +127,7 @@ Adapters in target mode are automatically offline in Maintenance mode.
 +
 `boot_ontap menu`.
 
-. [[auto_check_4_step15]]On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
+. [[auto_check_4_step12]]On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
 +
 .Expand the console output example
 [%collapsible]
@@ -252,9 +252,9 @@ Login:
 +
 NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. To resolve this, continue with <<auto_check_4_step17,Step 17>> to <<auto_check_4_step22,Step 22>> or go to section link:verify_node4_installation.html[Verify the node4 installation].
+. If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. To resolve this, continue with <<auto_check_4_step14,Step 14>> to <<auto_check_4_step19,Step 19>> or go to section link:verify_node4_installation.html[Verify the node4 installation].
 
-. [[auto_check_4_step17]]Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
+. [[auto_check_4_step14]]Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
 
 . At the loader prompt, enter maintenance mode:
 +
@@ -276,7 +276,7 @@ Change the ports back to initiator mode:
 +
 `halt`
 
-. [[auto_check_4_step22]]At the loader prompt, boot up:
+. [[auto_check_4_step19]]At the loader prompt, boot up:
 +
 `boot_ontap menu`
 +
@@ -322,7 +322,6 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 + 
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step22,Step 22>> until the system boots normally. 
 
-[start=23]
 . [[auto_check_4_step23]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.
 +
 WARNING: *You must perform the following substeps in the exact order shown; failure to do so might cause an outage or even data loss.*
@@ -375,5 +374,5 @@ aggr0 offline                    raid_dp, aggr        diskroot
                                  64-bit
 ---------------------------------------------------------------------
 ....
-// 11 DEC 2020, thomi, checked
+
 // 2022-05-17, BURT 1476241

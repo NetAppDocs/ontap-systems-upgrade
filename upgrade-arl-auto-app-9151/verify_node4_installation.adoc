@@ -38,7 +38,7 @@ The output of the `health` field should be `true`.
 +
 `cluster show`
 
-. [[verify_node4_step5]]Switch to advanced privilege mode:
+. Switch to advanced privilege mode:
 +
 `set advanced`
 
@@ -48,7 +48,7 @@ The output of the `health` field should be `true`.
 +
 `system controller replace show-details`
 
-. [[auto_verify_4_Step6]]Resume the controller replacement operation:
+. Resume the controller replacement operation:
 +
 `system controller replace resume`
 

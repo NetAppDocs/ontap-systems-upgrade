@@ -32,6 +32,8 @@ You must have the values of the FC port settings from node1 that you saved in th
 
 You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 card, you configure them in <<Check and configure UTA/UTA2 ports on node3>>.
 
+.Steps
+
 . Compare the FC settings on node3 with the settings that you captured earlier from node1.
 . In maintenance mode (option 5 at boot menu), modify the FC ports on node3 as needed:
 +
@@ -57,11 +59,11 @@ Where `-t` is the FC4 type: target or initiator.
 
 . Select option `5` from the boot menu for maintenance mode.
 
-. [[auto_check3_step8]]Take one of the following actions:
+. Take one of the following actions:
 +
 * If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to the section <<Check and configure UTA/UTA2 ports on node3>>.
 +
-* If node3 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip the section <<Check and configure UTA/UTA2 ports on node3>> and go to the section link:verify_node3_installation.html[Verify the node3 installation].
+* If node3 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip the section check and configure UTA/UTA2 ports on node3 and go to the section link:verify_node3_installation.html[Verify the node3 installation].
 
 == Check and configure UTA/UTA2 ports on node3
 
@@ -105,70 +107,50 @@ WARNING: *Attention*: If your system has storage disks, you enter the commands i
 
 .Steps
 
-. [[step1]]Check how the ports are currently configured by entering the following command on node3.
-+
-The system displays output similar to the following example:
-+
-....
-*> ucadmin show
-         Current  Current     Pending   Pending    Admin
-Adapter  Mode     Type        Mode      Type       Status
--------  -------  ---------   -------   --------   ---------
-0e      fc        initiator   -         -          online
-0f      fc        initiator   -         -          online
-0g      cna       target      -         -          online
-0h      cna       target      -         -          online
-0e      fc        initiator   -         -          online
-0f      fc        initiator   -         -          online
-0g      cna       target      -         -          online
-0h      cna       target      -         -          online
-*>
-....
-
-. [[step2]]If the current SFP+ module does not match the desired use, replace it with the correct SFP+ module.
+. If the current SFP+ module does not match the desired use, replace it with the correct SFP+ module.
 +
 Contact your NetApp representative to obtain the correct SFP+ module.
 
-. [[step3]]Examine the output of the `ucadmin show` command and determine whether the UTA/UTA2 ports have the personality you want.
-. [[step4]]Take one of the following actions:
+. Examine the output of the `ucadmin show` command and determine whether the UTA/UTA2 ports have the personality you want.
+. Take one of the following actions:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
 |If the UTA/UTA2 ports... |Then…
 
 |Do not have the personality that you want
-|Go to <<auto_check3_step5,Step 5>>.
+|Go to <<auto_check3_step4,Step 4>>.
 
 |Have the personality that you want
-|Skip Step 5 through Step 12 and go to <<auto_check3_step13,Step 13>>.
+|Skip Step 4 through Step 9 and go to <<auto_check3_step10,Step 10>>.
 |===
 
-. [[auto_check3_step5]]Take one of the following actions:
+. [[auto_check3_step4]]Take one of the following actions:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
 |If you are configuring... |Then…
 
 |Ports on a UTA/UTA2 card
-|Go to <<auto_check3_step7,Step 7>>
+|Go to <<auto_check3_step6,Step 6>>
 |Onboard UTA/UTA2 ports
-|Skip Step 7 and go to <<auto_check3_step8,Step 8>>.
+|Skip Step 6 and go to <<auto_check3_step7,Step 7>>.
 |===
 
-. [[step6]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
+. If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
 `storage disable adapter _adapter_name_`
 +
 Adapters in target mode are automatically offline in Maintenance mode.
 
-. [[auto_check3_step7]]If the current configuration does not match the desired use, change the configuration as needed:
+. [[auto_check3_step6]]If the current configuration does not match the desired use, change the configuration as needed:
 +
 `ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
 +
 ** `-m` is the personality mode, `fc` or `cna`.
 ** `-t` is the FC4 type, `target` or `initiator`.
 
-. [[auto_check3_step8]]Verify the settings:
+. [[auto_check3_step7]]Verify the settings:
 +
 `ucadmin show`
 +
@@ -186,28 +168,17 @@ Adapter  Mode       Type        Mode     Type        Status
 *>
 ....
 
-. [[step10]]Place any target ports online by entering one of the following commands, once for each port:
+. Cable the port.
+
+. [[auto_check3_step9]]Go to link:verify_node3_installation.html[Verify the node3 installation].
+
+. [[auto_check3_step10]]Exit maintenance mode:
 +
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system... |Then…
+`halt`
 
-|Has storage disks
-|`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`fcp config _adapter_name_ up`
-|===
+. Boot node into boot menu by running `boot_ontap menu`. If you are upgrading to an A800, go to <<auto_check3_step23,Step 23>>.
 
-. [[step11]]Cable the port.
-
-
-[start=12]
-. [[auto_check3_step12]]Go to link:verify_node3_installation.html[Verify the node3 installation].
-
-include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13_14.adoc[]
-
-[start=15]
-. [[auto9597_check_node3_step15]]On node3, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node1 to reassign the disks of node1 to node3, as per the following example.
+. On node3, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node1 to reassign the disks of node1 to node3, as per the following example.
 +
 .Expand the console output example
 [%collapsible]
@@ -311,21 +282,21 @@ Login:
 +
 NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. If the system goes into a reboot loop with the message `no disks found`, it indicates that there was a problem with the disk reassignment, which you must link:troubleshoot_index.html[troubleshoot].
+. If the system goes into a reboot loop with the message `no disks found`, it indicates that there was a problem with the disk reassignment. See link:troubleshoot_index.html[Troubleshoot] to resolve the issue.
 
-. [[auto_check3_step17]]Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
+. Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
 
-. [[step18]]At the loader prompt, enter maintenance mode:
+. At the loader prompt, enter maintenance mode:
 +
 `boot_ontap maint`
 
 . Verify the disk connectivity, controller model string, HA-configuration, and other hardware connectivity related details.
 
-. [[step21]]Exit maintenance mode:
+. Exit maintenance mode:
 +
 `halt`
 
-. [[auto_check3_step22]]At the loader prompt, boot up:
+. [[auto_check3_step18]]At the loader prompt, boot up:
 +
 `boot_ontap menu`
 +
@@ -368,4 +339,4 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 +
 .. After the system boots to the special boot menu again, run option *(1) Normal Boot*
 + 
-NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step22,Step 22>> until the system boots normally. 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step18,Step 18>> until the system boots normally. 
