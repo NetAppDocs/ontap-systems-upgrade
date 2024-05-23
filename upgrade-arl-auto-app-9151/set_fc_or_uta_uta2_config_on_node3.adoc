@@ -176,7 +176,7 @@ Adapter  Mode       Type        Mode     Type        Status
 +
 `halt`
 
-. Boot node into boot menu by running `boot_ontap menu`. If you are upgrading to an A800, go to <<auto_check3_step23,Step 23>>.
+. Boot node into boot menu by running `boot_ontap menu`.
 
 . On node3, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node1 to reassign the disks of node1 to node3, as per the following example.
 +

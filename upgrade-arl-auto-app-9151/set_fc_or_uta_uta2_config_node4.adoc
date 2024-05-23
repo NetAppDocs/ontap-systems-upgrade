@@ -65,7 +65,7 @@ UTA/UTA2 ports might be on an adapter or on the controller with the following co
 * Onboard UTA/UTA2 ports on new controllers are configured (before shipment) to have the personality you request.
 
 However, you should check the configuration of the UTA/UTA2 ports on node4 and change it, if necessary.
-+
+
 WARNING: *Attention*: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a V- Series system or have FlexArray Virtualization Software and are connected to storage arrays, you enter commands in this section at the Maintenance mode prompt. You must be in Maintenance mode to configure UTA/UTA2 ports.
 
 .Steps
@@ -85,7 +85,7 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 |Go to <<auto_check3_step4,Step 4>>.
 
 |Have the personality that you want
-|Skip Step 4 through Step 9 and go to <<auto_check3_step10,Step 10>>.
+|Skip Step 4 through Step 8 and go to <<auto_check_4_step9,Step 9>>.
 |===
 
 . [[auto_check3_step4]]Take one of the following actions:
@@ -119,15 +119,15 @@ Adapters in target mode are automatically offline in Maintenance mode.
 
 . Cable the port.
 
-. [[auto_check_4_step10]]Exit Maintenance mode:
+. [[auto_check_4_step9]]Exit Maintenance mode:
 +
 `halt`
 
-. [[step14]]Boot node into boot menu:
+. Boot node into boot menu:
 +
 `boot_ontap menu`.
 
-. [[auto_check_4_step12]]On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
+. [[auto_check_4_step11]]On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
 +
 .Expand the console output example
 [%collapsible]
@@ -276,7 +276,7 @@ Change the ports back to initiator mode:
 +
 `halt`
 
-. [[auto_check_4_step19]]At the loader prompt, boot up:
+. [[auto_check_4_step18]]At the loader prompt, boot up:
 +
 `boot_ontap menu`
 +
@@ -320,7 +320,7 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 +
 .. After the system boots to the special boot menu again, run option *(1) Normal Boot*
 + 
-NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step22,Step 22>> until the system boots normally. 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step18,Step 18>> until the system boots normally. 
 
 . [[auto_check_4_step23]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.
 +

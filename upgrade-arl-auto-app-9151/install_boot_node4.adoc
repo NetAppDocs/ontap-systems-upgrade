@@ -221,4 +221,4 @@ Enter the passphrase and the backup information that you recorded earlier proced
 +
 `boot_ontap menu`
 +
-If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step12[Check and configure UTA/UTA2 ports on node4, Step 12] so that node4 can recognize node2's disks.
+If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step11[Check and configure UTA/UTA2 ports on node4, Step 12] so that node4 can recognize node2's disks.

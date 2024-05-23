@@ -45,9 +45,9 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 ====
 The AFF A70 and AFF A90 are integrated systems with onboard disks. The two controllers and disks are in a single chassis. You cannot upgrade an existing system if the new controllers have internal drives.
 
-If your controller upgrade model combination is not in the above table, contact technical support.
+To upgrade an AFF A800 to an AFF A70 or AFF A90, see link:../upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis].
 
-To upgrade an AFF A800 to and AFF A70 or AFF A90, see link:../upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis].
+If your controller upgrade model combination is not in the above table, contact technical support.
 ====
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]

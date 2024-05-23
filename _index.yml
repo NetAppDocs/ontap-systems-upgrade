@@ -10,7 +10,7 @@ indexpage:
     - title: Upgrade by relocating aggregates on systems running ONTAP 9.8 and later
       links:
         - title: Use "system controller replace" commands (9.15.1 and later)
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-9151/
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/
         - title: Use "system controller replace" commands to upgrade controller models in the same chassis (9.10.1 and later)
           url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
         - title: Use "system controller replace" commands (9.8 and later)

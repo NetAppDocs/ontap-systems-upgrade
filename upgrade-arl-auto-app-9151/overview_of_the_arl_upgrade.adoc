@@ -62,4 +62,3 @@ Aggregate ownership at the end of Stage 5:
 | link:stage_6_index.html[Stage 6. Complete the upgrade]
 a| During Stage 6, you confirm that the new nodes are set up correctly and, if the new nodes are encryption-enabled, you configure and set up Storage Encryption or NVE. You should also decommission the old nodes and resume the SnapMirror operations.
 |===
-// Clean-up, 2022-03-10
