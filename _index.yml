@@ -1,8 +1,5 @@
 indexpage:
-  title: ONTAP Hardware Upgrade Documentation
   lead: This site provides the upgrade procedures for AFF, FAS, and ASA storage systems. Select the appropriate upgrade procedure for your storage system.
-  summary: Upgrade controller hardware by relocating aggregates, moving volumes, or moving storage.
-  keywords:  aggregate, relocation, moving, manual, upgrade, relocate
   tiles:
     - title: Get started
       links:
@@ -10,37 +7,31 @@ indexpage:
           url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
         - title: Choose your controller hardware upgrade procedure
           url: /choose_controller_upgrade_procedure.html 
-    - title: Use aggregate relocation (most systems)
+    - title: Upgrade by relocating aggregates on systems running ONTAP 9.8 and later
       links:
-        - title: Start here
-          url: /upgrade-arl/index.html
-        - title: Use "system controller replace commands" (ONTAP 9.15.1 and later)                    
-          url: /upgrade-arl-auto-app-9151/index.html
-        - title: Keep the same chassis (ONTAP 9.10.1 and later)
-          url: /upgrade-arl-auto-affa900/index.html 
-        - title: Use "system controller replace commands" (ONTAP 9.8 and later)                    
-          url: /upgrade-arl-auto/index.html  
-        - title: Use manual commands (ONTAP 9.8 and later) 
-          url: /upgrade-arl-manual-app/index.html
-    - title: Use aggregate relocation (ONTAP 9.7 and earlier) 
+        - title: Use "system controller replace" commands (9.15.1 and later)
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-9151/
+        - title: Use "system controller replace" commands to upgrade controller models in the same chassis (9.10.1 and later)
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+        - title: Use "system controller replace" commands (9.8 and later)
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+        - title: Use manual commands
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+    - title: Upgrade by relocating aggregates on systems running ONTAP 9.7 and earlier
       links:
-        - title: Use "system controller replace commands" (ONTAP 9.5 to 9.7)
-          url: /upgrade-arl-auto/index.html
-        - title: Use manual commands (ONTAP 9.7 and earlier)
-          url: /upgrade-arl-manual/index.html
-    - title: Move storage or volumes
+        - title: Use "system controller replace" commands
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+        - title: Use manual commands
+          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+    - title: Upgrade by moving storage or volumes
       links:
-        - title: Start here
+        - title: Upgrade controller hardware
           url: /upgrade/upgrade-decide-to-use-this-guide.html
-        - title: Move storage
-          url: /upgrade/upgrade-by-moving-volumes-parent.html
-        - title: Move volumes
-          url: /upgrade/upgrade-by-moving-storage-parent.html
-        - title: Upgrade AFF A250 to AFF A400
+        - title: Upgrade AFF A250 to AFF A400 by converting to a drive shelf
           url: /upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html
     - title: Upgrade systems in a MetroCluster configuration
       links:
-        - title: Choose the upgrade procedure for your MetroCluster configuration
+        - title: Select the upgrade procedure for your MetroCluster configuration
           url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
     - title: More resources
       links:
@@ -58,4 +49,3 @@ indexpage:
           url: https://mysupport.netapp.com/matrix/#welcome
         - title: NetApp Community
           url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins
-

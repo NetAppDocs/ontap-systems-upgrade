@@ -1,5 +1,5 @@
 section: upgrade-arl-auto-affa900
-title: Use "system controller replace" commands to upgrade controller models in the same chassis
+title: Use "system controller replace" commands to upgrade controller models in the same chassis (ONTAP 9.10.1 and later)
 entries:
 - title: Overview
   url: /upgrade-arl-auto-affa900/index.html
