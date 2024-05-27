@@ -152,7 +152,7 @@ Supported systems:
 
 Choose the procedure for your ONTAP version to start the upgrade:
 
-* link:../upgrade-arl-manual-app/index[Manually upgrade controller hardware running ONTAP 9.8 or later]
+* link:../upgrade-arl-manual-app/index.html[Manually upgrade controller hardware running ONTAP 9.8 or later]
 * link:../upgrade-arl-manual/index.html[Manually upgrade controller hardware running ONTAP 9.7 or earlier] 
  
 // 2023 SEP 6, AFFFASDOC-78

@@ -1,5 +1,8 @@
 indexpage:
+  title: ONTAP Hardware Upgrade Documentation
   lead: This site provides the upgrade procedures for AFF, FAS, and ASA storage systems. Select the appropriate upgrade procedure for your storage system.
+  summary: Upgrade controller hardware by relocating aggregates, moving volumes, or moving storage.
+  keywords: aggregate, relocation, moving, manual, upgrade, relocate
   tiles:
     - title: Get started
       links:
