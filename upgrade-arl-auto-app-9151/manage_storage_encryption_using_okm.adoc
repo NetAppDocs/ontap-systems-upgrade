@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-app-9151/manage_storage_encryption_using_okm.html
 keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication
-summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` command."
+summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` command."
 ---
 = Manage storage encryption using the Onboard Key Manager
 :hardbreaks:

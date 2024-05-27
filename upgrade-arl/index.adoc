@@ -4,7 +4,7 @@ permalink: upgrade-arl/index.html
 keywords:  aggregate, relocation, moving, manual, upgrade, relocate, hardware
 summary: Use aggregate relocation to upgrade controller hardware
 ---
-= Choose your ARL upgrade procedure
+= Start here: Choose your ARL upgrade procedure
 :hardbreaks:
 :nofooter:
 :icons: font

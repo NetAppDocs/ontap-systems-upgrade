@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-app-9151/stage_6_index.html
 keywords: complete upgrade, node, unified, target, storage, encryption, stage 6
-summary: "Stage 6 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.8 or later."
+summary: "Stage 6 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.15.1 or later."
 ---
 = Stage 6 overview
 :hardbreaks:

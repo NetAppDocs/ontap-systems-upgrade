@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-app-9151/automate_the_controller_upgrade_process.html
 keywords: automating, controller, upgrade, process, network, port, ha
-summary: "Use the partially automated ARL procedure to upgrade controllers running ONTAP 9.8 or later."
+summary: "Use the partially automated ARL procedure to upgrade controllers running ONTAP 9.15.1 or later."
 ---
 = Automate the controller upgrade process
 :hardbreaks:

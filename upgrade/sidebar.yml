@@ -1,7 +1,7 @@
 section: upgrade
 title: Upgrade by moving volumes or storage
 entries:
-  - title: Overview
+  - title: Start here
     url: /upgrade/upgrade-decide-to-use-this-guide.html
   - title: Considerations
     url: /upgrade/upgrade-considerations.html

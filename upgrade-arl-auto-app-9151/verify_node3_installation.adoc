@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-app-9151/verify_node3_installation.html
 keywords: verifying, verify, node, install, installation
-summary: "Verify that the node1 physical ports map correctly to node3 and restore network configuration on node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+summary: "Verify that the node1 physical ports map correctly to node3 and restore network configuration on node3 when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
 ---
 = Verify the node3 installation
 :hardbreaks:

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability
-summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
 ---
 = Decide whether to use the aggregate relocation procedure
 :hardbreaks:
@@ -12,13 +12,17 @@ summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.8 or 
 :imagesdir: ./media/
 
 [.lead]
-This content describes how to upgrade the storage controllers in an HA pair with new controllers while keeping the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
+This procedure describes how to upgrade the storage controllers in an HA pair with new controllers while keeping the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
 
-You can use this content under the following circumstances:
+You can use this procedure under the following circumstances:
 
 * You are running ONTAP 9.15.1 or later.
 * You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
 * You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
+
+You cannot use this procedure under the following circumstances:
+
+* You are upgrading an AFF A800 to an AFF A70 or AFF A90. For this AFF A800 upgrade scenario, see link:../upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis].
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
@@ -44,8 +48,6 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 [NOTE]
 ====
 The AFF A70 and AFF A90 are integrated systems with onboard disks. The two controllers and disks are in a single chassis. You cannot upgrade an existing system if the new controllers have internal drives.
-
-To upgrade an AFF A800 to an AFF A70 or AFF A90, see link:../upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis].
 
 If your controller upgrade model combination is not in the above table, contact technical support.
 ====

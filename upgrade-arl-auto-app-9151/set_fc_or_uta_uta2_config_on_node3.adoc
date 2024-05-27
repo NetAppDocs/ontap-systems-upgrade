@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-app-9151/set_fc_or_uta_uta2_config_on_node3.html
 keywords: setting, fc, uta, uta2 configuration, node
-summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
 ---
 = Set the FC or UTA/UTA2 configuration on node3
 :hardbreaks:

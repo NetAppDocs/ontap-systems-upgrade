@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:
 summary: 'This content describes how to upgrade controller hardware of an AFF system or a FAS system in a cluster by moving storage or volumes.'
 ---
-= Decide whether to upgrade by moving volumes or storage
+= Start here: Decide whether to upgrade by moving volumes or storage
 :icons: font
 :imagesdir: ../media/
 
