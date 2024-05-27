@@ -49,8 +49,7 @@ Learn about the controller hardware upgrade procedures:
 +
 Aggregate relocation is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes]
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving storage]
+* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage]
 
 
 [NOTE]
