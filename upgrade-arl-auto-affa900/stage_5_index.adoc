@@ -16,6 +16,6 @@ During Stage 5, you install the new system modules that you received for the upg
 
 .Steps
 
-. link:install-aff800-on-node2.html[Install the replacement system modules on node2]
+. link:install-affa90-affa70-on-node2.html[Install the replacement system modules on node2]
 . link:netboot_node2.html[Netboot node2]
 //BURT-1476241 13-Sep-2022

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-affa900/install-aff800-on-node2.html
+permalink: upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html
 keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement
 summary: "Install the replacement system modules on node2 during an ARL upgrade of controller models in the same chassis."
 ---
@@ -9,7 +9,7 @@ summary: "Install the replacement system modules on node2 during an ARL upgrade 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 Install the AFF A90 or AFF A70 controller module that you received for the upgrade on node2. Node2 is controller B located on the right side of the chassis when looking at the controllers from the rear of the system.
