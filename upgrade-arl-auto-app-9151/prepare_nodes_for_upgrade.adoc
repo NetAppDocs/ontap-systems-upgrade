@@ -22,22 +22,21 @@ The controller replacement process begins with a series of prechecks. You also g
 +
 NOTE: You can only execute the system controller replace start command at the advanced privilege level: `set -privilege advanced`
 +
-You will see the following output:
+You will see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
 ....
-Warning:
-1. Current ONTAP version is 9.x
-Before starting controller replacement operation, ensure that the new controllers are running the version 9.15.1
+Warning: 1. Current ONTAP version is 9.15.1
 
-2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM  batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
-
+2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
+         
 Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
-
+         
 3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
-
+         
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedure.
 Do you want to continue? {y|n}: y
 ....
-+
+
 . Press `y`, you will see the following output:
 +
 ....
@@ -109,9 +108,9 @@ From the serial port connected to each node, run and save the output of the foll
 * `network port ifgrp show -node _local_`
 * `system node show -instance -node _local_`
 * `run -node _local_ sysconfig`
+* `storage aggregate show -r`
 * `storage aggregate show -node _local_`
 * `volume show -node _local_`
-* `storage array config show -switch _switch_name_`
 * `system license show -owner _local_`
 * `storage encryption disk show`
 * `security key-manager onboard show-backup`

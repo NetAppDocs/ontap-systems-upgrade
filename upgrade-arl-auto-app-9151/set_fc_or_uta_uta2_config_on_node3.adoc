@@ -12,7 +12,14 @@ summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 :imagesdir: ./media/
 
 [.lead]
-include::../_include/ru_auto_set_fc_or_uta_uta2_confgig_node3_intro.adoc[]
+If node3 has onboard FC ports, onboard unified target adapter (UTA/UTA2) ports, or a UTA/UTA2 card, you must configure the settings before completing the rest of the procedure.
+
+.About this task
+
+You might need to complete the section <<Configure FC ports on node3>>, the section <<Check and configure UTA/UTA2 ports on node3>>, or both sections.
+
+[NOTE]
+NetApp marketing materials might use the term UTA2 to refer to converged network adapter (CNA) adapters and ports. However, the CLI uses the term CNA.
 
 * If node3 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to the link:verify_node3_installation.html[Verify the node3 installation] section.
 * However, if you have a V-Series system or a system with FlexArray Virtualization software with storage arrays, and node3 does not have onboard FC ports, onboard UTA/UTA ports, or a UTA/UTA2 card, return to the section _Install and boot node3_ and resume the section at link:install_boot_node3.html#auto_install3_step23[Step 23].

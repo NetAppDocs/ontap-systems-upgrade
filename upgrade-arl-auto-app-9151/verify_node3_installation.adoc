@@ -104,7 +104,28 @@ All physical network ports, VLAN ports and interface group ports on the node are
 You should see output like the following example:
 +
 ----
-<new output required here>
+ClusterA::*> network port reachability show
+Node      Port     Expected Reachability                Reachability Status
+--------- -------- ------------------------------------ ---------------------
+node1_node3
+          e0M      Default:Mgmt                         ok
+          e10a     Default:Default                      ok
+          e10b     -                                    no-reachability
+          e10c     Default:Default                      ok
+          e10d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
+node2_node4
+          e0M      Default:Mgmt                         ok
+          e4a      Default:Default                      ok
+          e4b      -                                    no-reachability
+          e4c      Default:Default                      ok
+          e4d      -                                    no-reachability
+          e3a      Cluster:Cluster                      ok
+          e3b      Cluster:Cluster                      ok
+18 entries were displayed.
 ----
 +
 In the preceding example, node1_node3 is just booted after controller replacement. Some ports do not have reachability to their expected broadcast domains and must be repaired.
@@ -116,11 +137,11 @@ In the preceding example, node1_node3 is just booted after controller replacemen
 You should see output like the following example:
 +
 ----
-Cluster ::> reachability repair -node node1_node3 -port e2a
+Cluster ::> reachability repair -node node1_node3 -port e4a
 ----
 +
 ----
-Warning: Repairing port "node1_node3: e2a" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node1_node3: e4a" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
 +
 A warning message, as shown above, is expected for ports with a reachability status that might be different from the reachability status of the broadcast domain where it is currently located. Review the connectivity of the port and answer `y` or `n` as appropriate.
@@ -184,7 +205,7 @@ Cluster::*> displaced-vlans show
 Node      Base Port   VLANs
 --------  ----------  -----------------------------------------
 Node1       a0a       822, 823
-            e2a       822, 823
+            e4a       822, 823
 2 entries were displayed.
 ----
 

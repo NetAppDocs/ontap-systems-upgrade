@@ -20,11 +20,13 @@ You can use this procedure under the following circumstances:
 * You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
 * You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
 
+NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
+
 You cannot use this procedure under the following circumstances:
 
 * You are upgrading an AFF A800 to an AFF A70 or AFF A90. For this AFF A800 upgrade scenario, see link:../upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis].
+* You are upgrading a V-series system or FlexArray Virtualization storage system using an external array for backend storage. Contact NetApp for options to upgrade a V-series or FlexArray systems.
 
-NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
 [[sys_commands_9151_supported_systems]]The following table shows the supported model matrix for the controller upgrade.
 

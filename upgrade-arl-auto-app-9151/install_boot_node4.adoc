@@ -20,10 +20,6 @@ The relocation operation is paused at the beginning of this stage. This process 
 
 You need to netboot node4 if it does not have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots, by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
 
-.Important:
-
-If you are upgrading a system with storage disks, you must complete this entire section and then proceed to link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
-
 .Steps
 
 . [[auto_install4_step1]]Make sure that node4 has sufficient rack space.
@@ -38,11 +34,11 @@ Cable the following connections, using the instructions in the _Installation and
 Refer to link:other_references.html[References] to link to the _FlexArray Virtualization Installation Requirements and Reference_ and _High Availability management_.
 +
 * Console (remote management port)
-* Cluster ports
+* Cluster and HA ports
 * Data ports
 * Cluster and node management ports
-* Storage
-* SAN configurations: iSCSI Ethernet and FC switch ports
+* Serial-attached SCSI (SAS) and Ethernet storage ports
+* SAN configurations: iSCSI Ethernet, FC, and NVMe/FC switch ports
 
 . Turn on the power to node4, and then interrupt the boot process by pressing `Ctrl-C` at the console terminal to access the boot environment prompt.
 +
@@ -151,6 +147,24 @@ NOTE: System records in a PROM whether they are in an HA pair or stand-alone con
 +
 `ha-config modify chassis ha`
 
+. Confirm that all Ethernet ports used to connect to Ethernet shelves are configured as storage:
++
+`storage port show`
++
+The output displayed depends on the system configuration. The following output example is for a node with a single storage card in slot11. The output for your system might be different:
++
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e11a ENET storage 100 Gb/s    enabled  online  30     
+e11b ENET storage 100 Gb/s    enabled  online  30     
+----
+
+. If the ports are not set to storage, those can be modified to storage using command 'storage port modify -p <port> -m storage'
++
+All ethernet ports connected to storage shelves must be configured as storage in order to be able to access disks/shelves. 
+
 . Exit maintenance mode:
 +
 `halt`
@@ -219,6 +233,177 @@ Enter the passphrase and the backup information that you recorded earlier proced
 
 . Boot node into boot menu:
 +
+`boot_ontap menu`.
+
+. [[auto_check_4_step11]]On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
++
+.Expand the console output example
+[%collapsible]
+====
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+The boot device has changed. System configuration information could be lost. Use option (6) to
+restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+This will replace all flash-based configuration with the last backup to disks. Are you sure
+you want to continue?: yes
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:
+<nodename of the node being replaced>
+Changing sysid of node node2 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote
+    key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+System rebooting...
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a
+boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
+====
++
+NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
+
+. [[auto_check_4_step18]]At the loader prompt, boot up:
++
 `boot_ontap menu`
 +
-If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step11[Check and configure UTA/UTA2 ports on node4, Step 12] so that node4 can recognize node2's disks.
+Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
++
+When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume:
++
+If the root volume is encrypted, you must recover the onboard key-management secrets so the system can find the root volume. 
++ 
+.. Return to the special boot menu:
+`LOADER> boot_ontap menu`
++
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
++
+.. Select *(10) Set Onboard Key Manager recovery secrets*
++
+.. Enter `y` at the following prompt:
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
++
+.. At the prompt, enter the key-manager passphrase.
++
+.. Enter the backup data when prompted.
++
+NOTE: You must have obtained the passphrase and backup data in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section of this procedure.
+
++
+.. After the system boots to the special boot menu again, run option *(1) Normal Boot*
++ 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step18,Step 18>> until the system boots normally. 

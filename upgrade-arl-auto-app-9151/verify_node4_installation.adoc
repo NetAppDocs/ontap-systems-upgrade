@@ -110,29 +110,29 @@ All physical network ports, VLAN ports and interface group ports on the node are
 The output from the command looks similar to the following example:
 +
 ....
-clusterA::*> reachability show -node node2_node4
-  (network port reachability show)
-Node         Port       Expected Reachability       Reachability Status
----------    --------  ---------------------------  ---------------------
+ClusterA::*> network port reachability show
+Node      Port     Expected Reachability                Reachability Status
+--------- -------- ------------------------------------ ---------------------
+node1_node3
+          e0M      Default:Mgmt                         ok
+          e10a     Default:Default                      ok
+          e10b     -                                    no-reachability
+          e10c     Default:Default                      ok
+          e10d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
 node2_node4
-             a0a        Default:Default             no-reachability
-             a0a-822    Default:822                 no-reachability
-             a0a-823    Default:823                 no-reachability
-             e0M        Default:Mgmt                ok
-             e0a        Cluster:Cluster             misconfigured-reachability
-             e0b        Cluster:Cluster             no-reachability
-             e0c        Cluster:Cluster             no-reachability
-             e0d        Cluster:Cluster             no-reachability
-             e0e        Cluster:Cluster             ok
-             e0e-822    -                           no-reachability
-             e0e-823    -                           no-reachability
-             e0f        Default:Default             no-reachability
-             e0f-822    Default:822                 no-reachability
-             e0f-823    Default:823                 no-reachability
-             e0g        Default:Default             misconfigured-reachability
-             e0h        Default:Default             ok
-             e0h-822    Default:822                 ok
-             e0h-823    Default:823                 ok
+          e0M      Default:Mgmt                         ok
+          e10a     Default:Default                      ok
+          e10b     -                                    no-reachability
+          e10c     Default:Default                      ok
+          e10d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
 18 entries were displayed.
 ....
 +
@@ -145,11 +145,11 @@ In the above example, node2_node4 is just booted after controller replacement. I
 The output looks like the following example:
 +
 ....
-Cluster ::> reachability repair -node node2_node4 -port e0h
+Cluster ::> reachability repair -node node2_node4 -port e10a
 ....
 +
 ....
-Warning: Repairing port "node2_node4: e0h" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node2_node4: e10a" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ....
 +
 A warning message, as shown above, is expected for ports with a reachability status that might be different from the reachability status of the broadcast domain where it is currently located.
