@@ -163,7 +163,7 @@ e11b ENET storage 100 Gb/s    enabled  online  30
 
 . If the ports are not set to storage, those can be modified to storage using command 'storage port modify -p <port> -m storage'
 +
-All ethernet ports connected to storage shelves must be configured as storage in order to be able to access disks/shelves. 
+All Ethernet ports connected to storage shelves must be configured as storage to allow access to the disks and shelves.. 
 
 . Exit maintenance mode:
 +

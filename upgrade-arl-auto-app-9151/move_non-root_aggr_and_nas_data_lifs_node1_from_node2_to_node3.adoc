@@ -20,6 +20,24 @@ Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN 
 
 .Steps
 
+. The iSCSI LIFs should automatically find the correct home ports using the reachability scan. The FC and NVMe-FC SAN LIFs do not move automatically, they continue to show the home port they were on before upgrading. Check the SAN LIFs on node3:
+
+.. Modify any iSCSI SAN LIFs reporting a "down" operation status to the new data ports:
++ 
+`network interface modify -vserver <vserver> -lif <iscsi_san_lif> admin down`
++
+`network interface modify -vserver <vserver> -lif <iscsi_san_lif> port <new_port> node <node>`
++
+`network interface modify -vserver <vserver> -lif <iscsi_san_lif>`
+
+.. Modify any FC SAN LIFs that are home to the new controller and reporting a "down" operational status to the FCP ports on the new controller:
++
+`network interface modify -vserver <vserver> -lif <fc_san_lif> admin down`
++
+`network interface modify -vserver <vserver> -lif <fc_san_lif> port <new_port> node <node>`
++
+`network interface modify -vserver <vserver> -lif <fc_san_lif>`
+
 . Resume the relocation operation:
 +
 `system controller replace resume`

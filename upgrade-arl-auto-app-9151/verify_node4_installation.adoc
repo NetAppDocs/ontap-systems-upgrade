@@ -215,7 +215,7 @@ Cluster::*> displaced-vlans show
 Node        Base Port     VLANs
 ---------   ---------     ------------------------------------------------------
 Node1       a0a           822, 823
-            e0e           822, 823
+            e10e          822, 823
 ....
 
 .. Restore VLANs that were displaced from their previous base ports:
@@ -228,10 +228,10 @@ The following is an example of restoring VLANs that have been displaced from int
 Cluster::*> displaced-vlans restore -node node2_node4 -port a0a -destination-port a0a
 ....
 +
-The following is an example of restoring displaced VLANs on port "e0e" to "e0h":
+The following is an example of restoring displaced VLANs on port "e10a" to "e10b":
 +
 ....
-Cluster::*> displaced-vlans restore -node node2_node4 -port e0e -destination-port e0h
+Cluster::*> displaced-vlans restore -node node2_node4 -port e10a -destination-port e10b
 ....
 +
 When a VLAN restore is successful, the displaced VLANs are created on the specified destination port. The VLAN restore fails if the destination port is a member of an interface group, or if the destination port is down.

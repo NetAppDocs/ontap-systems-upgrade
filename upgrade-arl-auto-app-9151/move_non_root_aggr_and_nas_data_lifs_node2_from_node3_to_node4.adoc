@@ -22,6 +22,24 @@ NOTE: If you are changing the port speed of the T6-based Ethernet network interf
 
 .Steps
 
+. The iSCSI LIFs should automatically find the correct home ports using the reachability scan. The FC and NVMe-FC SAN LIFs do not move automatically, they continue to show the home port they were on before upgrading. Check the SAN LIFs on node4:
+
+.. Modify iSCSI SAN LIFs to the new data ports, as needed:
++ 
+`network interface modify -vserver <vserver> -lif <iscsi_san_lif> admin down`
++
+`network interface modify -vserver <vserver> -lif <iscsi_san_lif> port <new_port> node <node>`
++
+`network interface modify -vserver <vserver> -lif <iscsi_san_lif>`
+
+.. Modify FC SAN LIFs to the FCP ports on the new controller, as needed:
++
+`network interface modify -vserver <vserver> -lif <fc_san_lif> admin down`
++
+`network interface modify -vserver <vserver> -lif <fc_san_lif> port <new_port> node <node>`
++
+`network interface modify -vserver <vserver> -lif <fc_san_lif>`
+
 . Resume the relocation operation:
 +
 `system controller replace resume`

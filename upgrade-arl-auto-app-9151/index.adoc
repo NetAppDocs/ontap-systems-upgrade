@@ -29,10 +29,11 @@ During the procedure, you upgrade the original controller hardware with the repl
 .Terminology used in this information
 
 In this information, the original nodes are called "node1" and "node2", and the new nodes are called "node3" and "node4". During the described procedure, node1 is replaced by node3, and node2 is replaced by node4.
+
 The terms "node1", "node2", "node3", and "node4" are used only to distinguish between the original and new nodes. When following the procedure, you must substitute the real names of your original and new nodes. However, in reality, the names of the nodes do not change: node3 has the name node1, and node4 has the name node2 after the controller hardware is upgraded.
 
 .Important information:
 
 * This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[Guidelines for upgrading controllers with ARL] and the  link:overview_of_the_arl_upgrade.html[Overview of the ARL upgrade] sections before beginning the upgrade.
-* This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7- Mode.
+* This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used.
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each high-availability (HA) pair in the cluster.
