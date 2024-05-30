@@ -12,4 +12,61 @@ summary: "Reference content and websites required to support a controller upgrad
 :imagesdir: ./media/
 
 [.lead]
-include::../_include/ru_all_other_references.adoc[]
+When performing the procedures in this content, you might need to consult reference content or go to reference websites.
+
+* <<Reference content>>
+* <<Reference sites>>
+
+== Reference content
+Content specific to this upgrade are listed in the table below.
+
+[cols="40,60"]
+|===
+|Content |Description
+
+|link:https://docs.netapp.com/us-en/ontap/system-admin/index.html[Administration overview with the CLI^]
+|Describes how to administer ONTAP systems, shows you how to use the CLI interface, how to access the cluster, how to manage nodes, and much more.
+|link:https://docs.netapp.com/us-en/ontap/software_setup/concept_decide_whether_to_use_ontap_cli.html[Decide whether to use System Manager or the ONTAP CLI for cluster setup^]
+|Describes how to set up and configure ONTAP.
+|link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html[Disk and aggregate management with the CLI^]
+|Describes how to manage ONTAP physical storage using the CLI. It shows you how to create, expand, and manage aggregates, how to work with Flash Pool aggregates, how to manage disks, and how to manage RAID policies.
+|link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html[FlexArray Virtualization Installation Requirements and Reference^]
+|Contains cabling instructions and other information for FlexArray Virtualization systems.
+|link:https://docs.netapp.com/us-en/ontap/high-availability/index.html[High Availability management^]
+|Describes how to install and manage high-availability clustered configurations, including storage failover and takeover/giveback.
+|link:https://docs.netapp.com/us-en/ontap/volumes/index.html[Logical storage management with the CLI^]
+|Describes how to efficiently manage your logical storage resources, using volumes, FlexClone volumes, files, and LUNs, FlexCache volumes, deduplication, compression, qtrees, and quotas.
+|link:https://docs.netapp.com/us-en/ontap/network-management/index.html[Network Management^]
+|Describes how to configure and manage physical and virtual network ports (VLANs and interface groups), LIFs, routing, and host-resolution services in clusters; optimize network traffic by load balancing; and monitor the cluster by using SNMP.
+|link:https://docs.netapp.com/us-en/ontap-cli-9131/index.html[ONTAP 9.13.1 Commands: Manual Page Reference^]
+|Describes syntax and usage of supported ONTAP 9.13.1 commands.
+|link:https://docs.netapp.com/us-en/ontap-cli-9141/index.html[ONTAP 9.14.1 Commands: Manual Page Reference^]
+|Describes syntax and usage of supported ONTAP 9.14.1 commands.
+|link:https://docs.netapp.com/us-en/ontap-cli/index.html[ONTAP 9.15.1 Commands: Manual Page Reference^]
+|Describes syntax and usage of supported ONTAP 9.15.1 commands.
+|link:https://docs.netapp.com/us-en/ontap/san-admin/index.html[SAN management with the CLI^]
+|Describes how to configure and manage LUNs, igroups, and targets using the iSCSI and FC protocols, and namespaces and subsystems using the NVMe/FC protocol.
+|link:https://docs.netapp.com/us-en/ontap/san-config/index.html[SAN configuration reference^]
+|Contains information about FC and iSCSI topologies and wiring schemes.
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage^]
+|Describes how to quickly upgrade controller hardware in a cluster by moving storage or volumes. Also describes how to convert a supported model to a disk shelf.
+|link:https://docs.netapp.com/us-en/ontap/upgrade/index.html[Upgrade ONTAP^]
+|Contains instructions for downloading and upgrading ONTAP.
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis^]
+|Describes the aggregate relocation procedures needed to non-disruptively upgrade a system, keeping the old system chassis and disks.
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later^]
+|Describes the aggregate relocation procedures needed to non-disruptively upgrade controllers running ONTAP 9.8 by using "system controller replace" commands.
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html[Use aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later^]
+|Describes the aggregate relocation procedures needed to perform manual non-disruptive controller upgrades running ONTAP 9.8 or later.
+|===
+
+== Reference sites
+
+The link:https://mysupport.netapp.com[NetApp Support Site^] also contains documentation about network interface cards (NICs) and other hardware that you might use with your system. It also contains the link:https://hwu.netapp.com[Hardware Universe^], which provides information about the hardware that the new system supports.
+
+Access https://docs.netapp.com/us-en/ontap/index.html[ONTAP 9 documentation^].
+
+Access the link:https://mysupport.netapp.com/site/tools[Active IQ Config Advisor^] tool.
+
+
+

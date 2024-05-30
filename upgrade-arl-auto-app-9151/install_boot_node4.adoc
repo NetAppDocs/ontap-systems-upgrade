@@ -39,6 +39,13 @@ Refer to link:other_references.html[References] to link to the _FlexArray Virtua
 * Cluster and node management ports
 * Serial-attached SCSI (SAS) and Ethernet storage ports
 * SAN configurations: iSCSI Ethernet, FC, and NVMe/FC switch ports
++
+[NOTE]
+====
+You might need to change the interconnect cables between the old and new controllers to allow interoperability between the different controller and card models. link:https://docs.netapp.com/us-en/ontap-systems/index.html[Refer to the system installation procedures^] for a cabling map of the Ethernet storage shelves for your systems.
+
+For controllers introduced in ONTAP 9.15.1 and later, cluster and HA interconnects use the same ports. For switch connected configurations, it is required to connect similar ports to the same cluster switches. For example, when upgrading to an AFF A1K from an existing controller, you should connect e1a ports on both nodes to one switch and e7a ports on both nodes to the second switch.
+====
 
 . Turn on the power to node4, and then interrupt the boot process by pressing `Ctrl-C` at the console terminal to access the boot environment prompt.
 +
@@ -161,9 +168,11 @@ e11a ENET storage 100 Gb/s    enabled  online  30
 e11b ENET storage 100 Gb/s    enabled  online  30     
 ----
 
-. If the ports are not set to storage, those can be modified to storage using command 'storage port modify -p <port> -m storage'
+. Modify the ports that are not set to storage:
 +
-All Ethernet ports connected to storage shelves must be configured as storage to allow access to the disks and shelves.. 
+`storage port modify -p <port> -m storage`
++
+All Ethernet ports connected to storage shelves must be configured as storage to allow access to the disks and shelves. 
 
 . Exit maintenance mode:
 +

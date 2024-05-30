@@ -30,7 +30,7 @@ The space and height requirements for the new nodes might be different from the 
 
 . [[auto_install3_step3]]Cable node3, moving the connections from node1 to node3.
 +
-Beginning with ONTAP 9.15.1, new controller models have only one port for the baseboard management controller (BMC) and management connections. Plan the cabling changes accordingly.
+Beginning with ONTAP 9.15.1, new controller models have only one "wrench" port for the baseboard management controller (BMC) and management connections. Plan the cabling changes accordingly.
 +
 * Console (remote management port)
 * Cluster and HA ports
