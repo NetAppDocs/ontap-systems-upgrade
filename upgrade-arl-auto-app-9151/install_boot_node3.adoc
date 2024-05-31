@@ -355,7 +355,7 @@ NOTE: In the above console output example, ONTAP will prompt you for the partner
 +
 `halt`
 
-. [[auto_check3_step18]]At the loader prompt, boot up:
+. [[auto_check3_step32]]At the loader prompt, boot up:
 +
 `boot_ontap menu`
 +
@@ -398,4 +398,4 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 +
 .. After the system boots to the special boot menu again, run option *(1) Normal Boot*
 + 
-NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step18,Step 18>> until the system boots normally. 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step18,Step 32>> until the system boots normally. 

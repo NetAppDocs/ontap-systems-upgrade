@@ -12,12 +12,113 @@ summary: "Enable the HA pair, verify node3 and node4 storage access, and confirm
 :imagesdir: ./media/
 
 [.lead]
-include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_intro-step_12.adoc[]
+To confirm correct setup, you must enable the HA pair. You must also verify that node3 and node4 can access each other's storage and that neither owns data LIFs belonging to other nodes on the cluster. In addition, you must confirm that node3 owns node1's aggregates and that node4 owns node2's aggregates, and that the volumes for both nodes are online.
 
-[start=13]
+.Steps
+
+. After the post-checks of node2, the storage failover and cluster HA pair for the node2 cluster are enabled. When the operation is done,  both nodes show as completed and the system performs some cleanup operations.
+. Verify that storage failover is enabled:
++
+`storage failover show`
++
+The following example shows the output of the command when storage failover is enabled:
++
+....
+cluster::> storage failover show
+                  Takeover
+Node     Partner  Possible   State Description
+-------- -----    -------    ------------------
+node3    node4    true       Connected to node4
+node4    node3    true       Connected to node3
+....
+
+. Verify that node3 and node4 belong to the same cluster by using the following command and examining the output:
++
+`cluster show`
+
+. Verify that node3 and node4 can access each other's storage by using the following command and examining the output:
++
+`storage failover show -fields local-missing-disks, partner-missing-disks`
+
+. Verify that neither node3 nor node4 owns data LIFs home-owned by other nodes in the cluster by using the following command and examining the output:
++
+`network interface show`
++
+If neither node3 or node4 owns data LIFs home-owned by other nodes in the cluster, revert the data LIFs to their home owner:
++
+`network interface revert`
+
+. Verify that node3 owns the aggregates from node1 and that node4 owns the aggregates from node2:
++
+`storage aggregate show -owner-name _node3_`
++
+`storage aggregate show -owner-name _node4_`
+
+. Determine whether any volumes are offline:
++
+`volume show -node _node3_ -state offline`
++
+`volume show -node _node4_ -state offline`
+
+. If any volumes are offline, compare them with the list of offline volumes that you captured in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade], and bring online any of the offline volumes, as required, by using the following command, once for each volume:
++
+`volume online -vserver _vserver_name_ -volume _volume_name_`
+. Install new licenses for the new nodes by using the following command for each node:
++
+`system license add -license-code _license_code,license_code,license_code…_`
++
+The license-code parameter accepts a list of 28 upper-case alphabetic character keys. You can add one license at a time, or you can add multiple licenses at once, separating each license key by a comma.
+
+. Remove all of the old licenses from the original nodes by using one of the following commands:
++
+`system license clean-up -unused -expired`
++
+`system license delete -serial-number _node_serial_number_ -package _licensable_package_`
++
+--
+** Delete all expired licenses:
++
+`system license clean-up -expired`
+
+** Delete all unused licenses:
++
+`system license clean-up -unused`
+
+** Delete a specific license from a cluster by using the following commands on the nodes:
++
+`system license delete -serial-number _node1_serial_number_ -package *`
++
+`system license delete -serial-number _node2_serial_number_ -package *`
+--
++
+The following output is displayed:
++
+....
+Warning: The following licenses will be removed:
+<list of each installed package>
+Do you want to continue? {y|n}: y
+....
++
+Enter `y` to remove all of the packages.
+
+
+.  Verify that the licenses are correctly installed by using the following command and examining the output:
++
+`system license show`
++
+You can compare the output with the output that you captured in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade].
+
+. [[unset_maxwait_system_commands]]If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in link:install_boot_node4.html#auto_install4_step24[Install and boot node4, Step 24]), you must unset the variable:
++
+`set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
+
 . [[Step13]]Configure the SPs by using the following command on both nodes:
 +
 `system service-processor network modify -node _node_name_`
 +
 Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9.8 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]
+
+// 2023 Feb 22, BURT 1518041
+// 2022 DEC 1, ontap-systems-upgrade-37
+// 2022 MAY 13, BURT 1476241

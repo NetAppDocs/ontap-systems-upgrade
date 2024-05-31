@@ -214,7 +214,7 @@ Save the settings:
 +
 `printenv partner-sysid`
 
-. [[auto_install4_step27]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
+. [[auto_install4_step24]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 +
@@ -369,7 +369,7 @@ Login:
 +
 NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. [[auto_check_4_step18]]At the loader prompt, boot up:
+. [[auto_check_4_step27]]At the loader prompt, boot up:
 +
 `boot_ontap menu`
 +
@@ -415,4 +415,4 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 +
 .. After the system boots to the special boot menu again, run option *(1) Normal Boot*
 + 
-NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step18,Step 18>> until the system boots normally. 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step27,Step 27>> until the system boots normally. 
