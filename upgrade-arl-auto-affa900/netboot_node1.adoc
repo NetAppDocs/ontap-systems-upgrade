@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/netboot_node1.html
 keywords: preparing, prepare, netboot, ontap, node1 
 summary:  When using ARL to upgrade controller models in the same chassis, you must netboot node1 after swapping the corresponding replacement system module.
 ---
-
 = Netboot node1
 :hardbreaks:
 :nofooter:
@@ -64,7 +63,7 @@ NOTE:	Other parameters might be necessary for your interface. Enter `help ifconf
 +
 NOTE:	Do not interrupt the boot.
 
-.	Wait for the node1 now running on the AFF A90, AFF A70, ASA A900, AFF A900, or FAS9500 controller module to boot and display the boot menu options as shown below:
+. Wait for the node1 running on the replacement controller module to boot and display the boot menu options as shown below:
 +
 ----
 Please choose one of the following:

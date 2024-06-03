@@ -16,14 +16,22 @@ At this stage, node1 is down and all data is served by node2. Because node1 and 
 
 .Before you begin
 
-* If you are not already grounded, correctly ground yourself.
-* On the front of the chassis, use your thumbs to firmly push each drive in until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane. Go to the rear of the chassis.
+If you are not already grounded, correctly ground yourself.
+
+== Prepare to remove the AFF A800 controller module
+
+.Steps
+
+. On the front of the chassis, use your thumbs to firmly push each drive in until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane. 
++
+image::../media/drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
+. Go to the rear of the chassis.
 
 == Remove the AFF A800 controller module
 Remove the cable management device from the AFF A800 controller module and move the controller slightly out of the chassis.
 
 .Steps
-. Unplug the controller module power supplies from the source.
+. Unplug the node1 controller module power supplies from the source.
 . Release the power cable retainers, and then unplug the cables from the power supplies.
 . Loosen the hook and loop strap binding the cables to the cable management device, and then unplug the system cables and SFP and QSFP modules (if needed) from the controller module, keeping track of where the cables were connected.
 +
@@ -57,14 +65,20 @@ image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 
 
 . Cable the management and console ports to the node1 controller module.
 +
-NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by autoboot as soon as it is fully seated. To interrupt the node1 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node1 controller module.
+NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by autoboot as soon as you insert the new controller module. To avoid this autoboot, NetApp recommends connecting the serial and console cables before inserting the controller module. 
 
 . With the cam handle in the open position, firmly push the controller module in until it meets the midplane and is fully seated. The locking latch rises when the controller module is fully seated. Close the cam handle to the locked position.
 +
 NOTE: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
 
-. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
-. After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press *Ctrl-C* to go into the boot menu. After the node stops at the boot menu, use option 8 to reboot the node and interrupt the AUTOBOOT during reboot.
+. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1 by selecting Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt. 
++
+If you do not select Ctrl-C and autoboot starts, wait until the node comes to the boot menu, select option `9` to reboot the controller, and interrupt the boot sequence to stop the node at LOADER> prompt.
+
+. After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. 
++
+If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt the AUTOBOOT during reboot.
+
 . At the LOADER> prompt of node1, set the default environment variables:
 +
 `set-defaults`

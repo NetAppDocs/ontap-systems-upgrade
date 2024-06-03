@@ -28,6 +28,9 @@ Verify that you have a supported SP or BMC firmware version:
 |SP or BMC
 |Minimum firmware version
 
+|AFF A800
+|
+
 |AFF A220
 |BMC	
 |11.9P1 
@@ -51,11 +54,11 @@ Verify that you have a supported SP or BMC firmware version:
 +
 `system controller replace start -nodes _node_names_`
 +
-You will see output similar to the following:
+You will see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
 ....
 Warning:
-1. Current ONTAP version is 9.x
+1. Current ONTAP version is 9.15.1
 
 2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM  batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
 
@@ -127,7 +130,7 @@ If node affinity jobs are running, the check fails.
 
 . Run the below set of commands as directed by the controller replacement procedure on the system console.
 +
-From the serial port connected to each node, run and save the output of the following commands individually:
+Select the commands for you upgrade scenario and from the serial port connected to each node, run and save the output of the commands individually:
 +
 [role="tabbed-block"]
 ====
@@ -143,13 +146,8 @@ From the serial port connected to each node, run and save the output of the foll
 * `run -node _local_ sysconfig`
 * `run -node local sysconfig -ac`
 * `run -node local aggr status -r`
-* `set diag; volume efficiency show -fields compression, compression-algorithm, storage-efficiency-mode -volume  *`
-* `node show -node  * -fields is-capacity-optimized`
-* `node show -node  * -fields  is-cbse-default`
-* `node show -node * -fields  is-qat-supported`
 * `vol show -fields type`
 * `run local aggr options <data_aggregate_name>`
-* `run * version`
 * `vol show -fields type , space-guarantee`
 * `storage aggregate show -node _local_`
 * `volume show -node _local_`

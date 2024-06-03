@@ -35,9 +35,9 @@ The output of the `health` field should be `true`.
 +
 [NOTE]
 ====
-If node1 is not in joined quorum after you boot, wait up to five minutes and check again. Depending on the cluster connection, it might take some time for the port reachability scan to complete and move LIFs to their respective home ports.
+If node1 has not joined quorum after you boot, wait five minutes and check again. Depending on the cluster connection, it might take some time for the port reachability scan to complete and move LIFs to their respective home ports.
 
-If after five minutes the node1 is still not in quorum, consider modifying the cluster port of the new node by placing it in "Cluster ipspace" using the diagnostic privilege command `network port modify <port_name> -ipspace Cluster`.
+If node1 is still not in quorum after five minutes, consider modifying the cluster port of the new node by placing it in "Cluster ipspace" using the diagnostic privilege command `network port modify <port_name> -ipspace Cluster`.
 ====
  
 .	Switch to advanced privilege mode:
