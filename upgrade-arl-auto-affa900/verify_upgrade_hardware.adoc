@@ -19,7 +19,7 @@ Before starting the upgrade, verify that you have the correct hardware for your 
 |If you are upgrading ...
 |Replacement system must have ...
 |AFF A800
-|Two controller modules
+|Two controller modules, two NVRAMs, and new IO modules
 |AFF A220 configured as an ASA to ASA A150
 |Two controller modules
 |AFF A220, AFF A200, or AFF C190 to AFF A150

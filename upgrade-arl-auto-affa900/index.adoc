@@ -72,7 +72,7 @@ During this controller upgrade procedure, you perform one of the following upgra
 |===
 |On the existing... |Perform the following...
 |AFF A800
-|Swap the two AFF A800 controllers and all I/O modules with the new controllers and I/O modules.
+|Swap the two AFF A800 controllers, NVRAM, and all I/O modules with the new controllers and I/O modules.
 |AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
 |Swap the controller module on each node on the old controller with the new module.
 
