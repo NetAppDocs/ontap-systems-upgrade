@@ -1,5 +1,5 @@
 
-. [[auto_check_4_step17]]Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
+. [[auto_check_4_step17]]Press Ctrl-C during autoboot to stop the node at the `LOADER>` prompt.
 
 . At the loader prompt, enter maintenance mode:
 +
