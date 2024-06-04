@@ -41,7 +41,7 @@ Beginning with ONTAP 9.15.1, new controller models have only one "wrench" port f
 +
 [NOTE]
 ====
-You might need to change the interconnect cables between the old and new controllers to allow interoperability between the different controller and card models. link:https://docs.netapp.com/us-en/ontap-systems/index.html[Refer to the system installation procedures^] for a cabling map of the Ethernet storage shelves for your systems.
+You might need to change the interconnect cables between the old and new controllers to allow interoperability between the different controller and card models. Refer to the link:https://docs.netapp.com/us-en/ontap-systems/index.html[system installation procedures^] for a cabling map of the Ethernet storage shelves for your systems.
 
 For controllers introduced in ONTAP 9.15.1 and later, cluster and HA interconnects use the same ports. For switch connected configurations, it is required to connect similar ports to the same cluster switches. For example, when upgrading to an AFF A1K from an existing controller, you should connect e1a ports on both nodes to one switch and e7a ports on both nodes to the second switch.
 ====
@@ -145,7 +145,7 @@ NOTE: System records in a PROM whether they are in an HA pair or stand-alone con
 +
 `ha-config modify chassis ha`
 
-. Confirm that all Ethernet ports used to connect to Ethernet shelves are configured as storage:
+. Confirm that all Ethernet ports used to connect to the Ethernet shelves are configured as storage:
 +
 `storage port show`  
 +

@@ -213,9 +213,9 @@ Cluster::*> displaced-vlans show
 (cluster controller-replacement network displaced-vlans show)
             Original
 Node        Base Port     VLANs
----------   ---------     ------------------------------------------------------
+---------   ---------     --------------
 Node1       a0a           822, 823
-            e10e          822, 823
+            e10a          822, 823
 ....
 
 .. Restore VLANs that were displaced from their previous base ports:
