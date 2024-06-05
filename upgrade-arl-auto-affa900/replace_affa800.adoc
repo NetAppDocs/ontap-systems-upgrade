@@ -71,9 +71,7 @@ NOTE: Because the chassis is already powered ON, node1 starts BIOS initializatio
 +
 NOTE: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
 
-. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1 by selecting Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt. 
-+
-If you do not select Ctrl-C and autoboot starts, wait until the node comes to the boot menu, select option `9` to reboot the controller, and interrupt the boot sequence to stop the node at LOADER> prompt.
+. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1. 
 
 . After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. 
 +

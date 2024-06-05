@@ -130,12 +130,8 @@ If node affinity jobs are running, the check fails.
 
 . Run the below set of commands as directed by the controller replacement procedure on the system console.
 +
-Select the commands for you upgrade scenario and from the serial port connected to each node, run and save the output of the commands individually:
+Run the commands from the serial port connected to each node, run and save the output of the commands individually:
 +
-[role="tabbed-block"]
-====
-.AFF A800 upgrade
---
 * `vserver services name-service dns show`
 * `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
 * `network port show -node _local_ -type physical`
@@ -158,29 +154,6 @@ Select the commands for you upgrade scenario and from the serial port connected 
 * `security key-manager external show`
 * `security key-manager external show-status`
 * `network port reachability show -detail -node _local_`
---
-
-.All other system upgrades
---
-* `vserver services name-service dns show`
-* `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
-* `network port show -node _local_ -type physical`
-* `service-processor show -node _local_ -instance`
-* `network fcp adapter show -node _local_`
-* `network port ifgrp show -node _local_`
-* `system node show -instance -node _local_`
-* `run -node _local_ sysconfig`
-* `storage aggregate show -node _local_`
-* `volume show -node _local_`
-* `storage array config show -switch _switch_name_`
-* `system license show -owner _local_`
-* `storage encryption disk show`
-* `security key-manager onboard show-backup`
-* `security key-manager external show`
-* `security key-manager external show-status`
-* `network port reachability show -detail -node _local_`
---
-====
 +
 NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager is in use, keep the key-manager passphrase ready to complete the key manager resync later in the procedure.
 
