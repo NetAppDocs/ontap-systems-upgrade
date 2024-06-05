@@ -61,7 +61,7 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 |AFF A150
 a|9.10.1P15, 9.11.1P11 and later 
 
-NOTE: AFF A200 does not support ONTAP versions later than 9.11.1.
+*Note*: AFF A200 does not support ONTAP versions later than 9.11.1.
 |AFF C190
 |AFF A150
 |9.10.1P15, 9.11.1P11, 9.12.1P5 and later 
@@ -70,7 +70,7 @@ NOTE: AFF A200 does not support ONTAP versions later than 9.11.1.
 |FAS2820
 a|9.11.1P7 (FAS2620)
 
-NOTE: FAS2620 does not support ONTAP versions later than 9.11.1.
+*Note*: FAS2620 does not support ONTAP versions later than 9.11.1.
 
 9.13.1 and later (FAS2820)
 |FAS2720 |FAS2820	
