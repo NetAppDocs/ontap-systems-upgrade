@@ -139,7 +139,11 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
-include::../_include/ru_auto_license.adoc[]
+== License
+
+For detailed information about licensing, refer to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[License management^].
+
+NOTE: Using unlicensed features on the controller might put you out of compliance with your license agreement.
 
 // 2023 JUN 28, ontap-systems-upgrade-issues-87
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
