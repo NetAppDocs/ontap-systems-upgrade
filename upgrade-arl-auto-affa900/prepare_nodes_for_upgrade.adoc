@@ -29,8 +29,8 @@ Verify that you have a supported SP or BMC firmware version:
 |Minimum firmware version
 
 |AFF A800
-|
-
+|BMC
+|10.9
 |AFF A220
 |BMC	
 |11.9P1 
