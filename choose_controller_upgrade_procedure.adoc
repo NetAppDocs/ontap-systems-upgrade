@@ -18,7 +18,7 @@ In general, how you upgrade the controller hardware depends on the platform mode
 Choose an upgrade procedure for a system with internal drives, which are listed below:
 
 * FAS2620, FAS2650, FAS2720, and FAS2750 
-* AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, AFF A800, AFF A70, and AFF A90
+* AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, and AFF A800
 * AFF C190, AFF C250, and AFF C800
 * ASA A150, ASA A250, ASA A800, and ASA AFF A220
 
@@ -33,7 +33,7 @@ image:workflow_internal_drives.png[Decision workflow for choosing an upgrade pro
 Choose an upgrade procedure for a system with only external drives, which are listed below:
 
 * FAS8200, FAS8300, FAS8700, FAS9000, and FAS9500
-* AFF A300, AFF A320, AFF A400, AFF A700, AFF A900, and AFF A1K 
+* AFF A300, AFF A320, AFF A400, AFF A700, and AFF A900
 * AFF C400 
 * ASA A400, ASA A900, and ASA AFF A700
 
