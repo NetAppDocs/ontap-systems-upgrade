@@ -114,8 +114,6 @@ Node1
           e9d      Default:Default                      ok
 20 entries were displayed.
 ----
---
-====
 +
 In the preceding example, node2 has booted and joined quorum after controller replacement. It has several ports that have no reachability and are pending a reachability scan.
 

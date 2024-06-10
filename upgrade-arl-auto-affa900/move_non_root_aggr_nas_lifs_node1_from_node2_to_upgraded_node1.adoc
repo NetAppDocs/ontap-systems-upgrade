@@ -41,7 +41,8 @@ The operation pauses at this stage in the network reachability check.
 `network port reachability show -node node1`
 +
 Confirm that all connected ports, including the interface group and VLAN ports, show their status as `OK`.
-. (AFF A800 upgrade only) Reassign the FCP SAN LIFs. 
+. For an AFF A800 upgrade to a AFF A70 or AFF A90, you must reassign the FCP SAN LIFs. For all other system upgrades, proceed to <<resume_relocation_step4,Step 4>>:
++
 .. Reassign FCP SAN LIFs used for FCP or FC-NVMe data access to the correct home ports:
 +
 `network interface show -vserver <vserver_hosting_fcp_lifs>`
@@ -62,7 +63,7 @@ Verify that physical connectivity is established to the FC target port where the
 +
 Repeat Substeps a and b for each FC SAN LIF that is home on node1.
 
-. Resume the relocation operation:
+. [[resume_relocation_step4]]Resume the relocation operation:
 +
 `system controller replace resume`
 +
