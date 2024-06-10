@@ -19,13 +19,13 @@ The following table shows the switch port usage for two-node switchless cluster 
 |===
 |Port |AFF A800 node |AFF A90 node	|AFF A70 node
 
-|Cluster |E0a |E1a |E1a
-|Cluster |E1a |E7a 
+|Cluster |e0a |e1a |e1a
+|Cluster |e1a |e7a 
 
-(Use E1B if there is no E7a)
-|E1B
-|HA |E0B |Do not connect |Do not connect
-|HA |E1B |Do not connect |Do not connect
+(Use e1b if there is no e7a)
+|e1b
+|HA |e0b |Do not connect |Do not connect
+|HA |e1b |Do not connect |Do not connect
 |SAS storage ports (if present and used) |Any available port |Any available port |Any available port
 |Ethernet storage ports for NS224 shelves |Any available port |Refer to Ethernet storage connectivity mapping |Refer to Ethernet storage connectivity mapping
 

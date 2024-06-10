@@ -98,15 +98,6 @@ All physical network ports, VLAN ports, and interface group ports on the node ar
 +
 You should see output like the following example:
 +
-[role="tabbed-block"]
-====
-.AFF A800 upgrade
---
-<Add A800 example output>
---
-
-.All other system upgrades
---
 ----
 Cluster::> reachability show -node node1
   (network port reachability show)
@@ -117,16 +108,14 @@ Node1
           a0a-822  Default:822                          ok
           a0a-823  Default:823                          ok
           e0M      Default:Mgmt                         ok
-          e11a     -                                    no-reachability
-          e11b     -                                    no-reachability
-          e11c     -                                    no-reachability
-          e11d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e2a      -                                    no-reachability
+          e2b      -                                    no-reachability
           e3a      -                                    no-reachability
           e3b      -                                    no-reachability
-          e4a      Cluster:Cluster                      ok
-          e4e      Cluster:Cluster                      ok
-          e5a      -                                    no-reachability
-          e7a      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
           e9a      Default:Default                      ok
           e9a-822  Default:822                          ok
           e9a-823  Default:823                          ok
@@ -135,10 +124,8 @@ Node1
           e9b-823  Default:823                          ok
           e9c      Default:Default                      ok
           e9d      Default:Default                      ok
-22 entries were displayed.
+20 entries were displayed.
 ----
---
-====
 +
 In the preceding examples, node1 booted after the controller replacement. The ports that display "no-reachability" have no physical connectivity. You must repair any ports with a reachability status other than `ok`.
 +
@@ -156,11 +143,11 @@ NOTE:	During the upgrade, the network ports and their connectivity should not ch
 You should see output like the following example:
 +
 ----
-Cluster ::> reachability repair -node node1 -port e11b
+Cluster ::> reachability repair -node node1 -port e1b
 ----
 +
 ----
-Warning: Repairing port "node1:e11b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node1:e1b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
 +
 A warning message, as shown in the preceding example, is expected for ports with a reachability status that might be different from the reachability status of the broadcast domain where it is currently located. Review the connectivity of the port and answer `y` or `n` as appropriate.
