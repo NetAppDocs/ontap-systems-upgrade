@@ -54,7 +54,15 @@ FAS2720
 +
 All 100GbE ports connected to NS224 shelves or storage switches should report as `storage` ports, as shown in the example output below.
 +
-<Include an output for `storage port show` that includes e11a/b and e8a/b>
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e8a  ENET storage 100 Gb/s    enabled  online  30     
+e8b  ENET storage 100 Gb/s    enabled  online  30     
+e11a ENET storage 100 Gb/s    enabled  online  30     
+e11b ENET storage 100 Gb/s    enabled  online  30     
+----
 
 .. Exit maintenance mode:
 +
@@ -89,7 +97,7 @@ Enter the passphrase and the backup information that you recorded earlier proced
 .	Boot the node into the boot menu:
 +
 `boot_ontap menu`
-.	Reassign the node1 disks to the replacement node1 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
+.	Reassign the old node1 disks to the replacement node1 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
 +
 After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
 +
