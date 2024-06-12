@@ -54,8 +54,7 @@ a|9.11.1P7 (FAS2620) ^2^
 |9.10.1P10, 9.11.1P6 and later
 |===
 
-^1^ When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing
-thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system.
+^1^ When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system.
 
 ^2^ The AFF A200 and FAS2620 systems do not support ONTAP versions later than 9.11.1.
 
