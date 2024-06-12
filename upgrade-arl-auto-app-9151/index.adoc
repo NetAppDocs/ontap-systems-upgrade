@@ -24,6 +24,8 @@ This procedure describes how to upgrade the controller hardware using aggregate 
 |link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_9151_supported_systems[Link to supported systems matrix]
 |===
 
+When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://fieldportal.netapp.com/content/2582530?assetComponentId=2575580[Learn more^].
+
 During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate aggregates multiple times from node to node to confirm that at least one node is serving data from the aggregates throughout the upgrade procedure. You also migrate data logical interfaces (LIFs) and assign the network ports on the new controller to the interface groups as you proceed.
 
 .Terminology used in this information
