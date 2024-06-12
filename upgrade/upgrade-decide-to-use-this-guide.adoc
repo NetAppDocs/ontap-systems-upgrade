@@ -15,7 +15,7 @@ Use this procedure if you want to upgrade controller hardware in the following s
 
 [NOTE] 
 ====
-When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://fieldportal.netapp.com/content/2582530?assetComponentId=2575580[Learn more^].
+When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system.
 
 The hardware upgrade procedures have been simplified in ONTAP 9.8 with the introduction of the automatic port placement feature.
 ====
