@@ -66,7 +66,7 @@ e11b ENET storage 100 Gb/s    enabled  online  30
 
 .. Exit maintenance mode:
 +
-'halt'
+`halt`
 
 . [[A900_boot_node1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
