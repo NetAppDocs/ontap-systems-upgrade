@@ -65,7 +65,7 @@ image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 
 
 . Cable the management and console ports to the node1 controller module.
 +
-NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by autoboot as soon as you insert the new controller module. To avoid this autoboot, NetApp recommends connecting the serial and console cables before inserting the controller module. 
+NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by AUTOBOOT as soon as you insert the new controller module. To avoid this AUTOBOOT, NetApp recommends connecting the serial and console cables before inserting the controller module. 
 
 . With the cam handle in the open position, firmly push the controller module in until it meets the midplane and is fully seated. The locking latch rises when the controller module is fully seated. Close the cam handle to the locked position.
 +
@@ -75,7 +75,7 @@ NOTE: To avoid damaging the connectors, do not use excessive force when sliding 
 
 . After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. 
 +
-If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt the AUTOBOOT during reboot.
+If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 
 . At the LOADER> prompt of node1, set the default environment variables:
 +

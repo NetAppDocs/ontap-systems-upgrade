@@ -45,14 +45,14 @@ NOTE: Do not completely insert the controller module in the chassis until instru
 
 . Cable the management and console ports to the node1 controller module.
 +
-NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by autoboot as soon as it is fully seated. To interrupt the node1 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node1 controller module.
+NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by AUTOBOOT as soon as it is fully seated. To interrupt the node1 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node1 controller module.
 
 . With the cam handle in the open position, firmly push the controller module in until it meets the midplane and is fully seated. The locking latch rises when the controller module is fully seated. Close the cam handle to the locked position.
 +
 NOTE: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
 
 . Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
-. After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option 8 to reboot the node and interrupt the AUTOBOOT during reboot.
+. After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 . At the LOADER> prompt of node1, set the default environment variables:
 +
 `set-defaults`
