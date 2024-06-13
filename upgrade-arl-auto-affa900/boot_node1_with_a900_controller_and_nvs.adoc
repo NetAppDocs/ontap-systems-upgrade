@@ -43,7 +43,7 @@ FAS2720
 
 .Steps
 
-. (AFF A800 upgrade only) At the loader prompt, enter maintenance mode: 
+. (AFF A800 upgrade only) At the LOADER prompt, enter maintenance mode: 
 +
 `boot_ontap maint`
 
