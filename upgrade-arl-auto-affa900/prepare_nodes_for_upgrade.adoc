@@ -66,7 +66,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 
 3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
 
-4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedure.
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedures.
 
 Do you want to continue? {y|n}: y
 ....
