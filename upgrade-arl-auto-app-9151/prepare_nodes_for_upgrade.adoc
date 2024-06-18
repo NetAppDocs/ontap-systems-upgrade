@@ -94,7 +94,15 @@ If node affinity jobs are running, the check fails.
 
 . After the controller replacement operation is started and the prechecks are completed, the operation pauses enabling you to collect output information that you might need later when configuring node3.
 +
-NOTE: If you have a system with more than two cluster ports per node, such as an AFF 700, and the system is using the cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d, and ports e4e, e4f, e4g, and e4h, you must migrate and re-home the cluster LIFs to two cluster ports per node before you start the upgrade. Performing a controller upgrade with more than two cluster ports per node might result in missing cluster LIFs on the new controller after the upgrade.
+[NOTE]
+==== 
+Before you start the upgrade, you migrate and re-home the cluster LIFs to two cluster ports per node if you have a system, such as an AFF 700, with the following configuration:
+
+* More than two cluster ports per node
+* A cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d, and ports e4e, e4f, e4g, and e4h 
+
+Performing a controller upgrade with more than two cluster ports per node might result in missing cluster LIFs on the new controller after the upgrade.
+====
 
 . Run the below set of commands as directed by the controller replacement procedure on the system console.
 +

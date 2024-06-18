@@ -18,11 +18,17 @@ To understand whether you can use ARL to upgrade a pair of controllers running O
 
 When you upgrade a pair of nodes using this ARL procedure for ONTAP 9.15.1 or later, you must verify that ARL can be performed on the original and replacement controllers.
 
-You must check the size of all defined aggregates and number of disks supported by the original system. You must then compare the aggregate sizes and number of disks supported to the aggregate size and number of disks supported by the new system.  Refer to link:other_references.html[References] to link to the _Hardware Universe_ where this information is available. The aggregate size and the number of disks supported by the new system must be equal to or greater than the aggregate size and number of disks supported by the original system.
+You must check the size of all defined aggregates and number of disks supported by the original system. You then compare the aggregate sizes and number of disks supported to the aggregate size and number of disks supported by the new system.  Refer to link:other_references.html[References] to link to the _Hardware Universe_ where this information is available. The aggregate size and the number of disks supported by the new system must be equal to or greater than the aggregate size and number of disks supported by the original system.
 
 You must validate in the cluster mixing rules whether new nodes can become part of the cluster with the existing nodes when the original controller is replaced. For more information about cluster mixing rules, refer to link:other_references.html[References] to link to the _Hardware Universe_.
 
-If you have a system with more than two cluster ports per node, such as an AFF 700, and the system is using the cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d, and ports e4e, e4f, e4g, and e4h, you must migrate and re-home the cluster LIFs to two cluster ports per node before you start the upgrade. Performing a controller upgrade with more than two cluster ports per node might result in missing cluster LIFs on the new controller after the upgrade.
+Before you start the upgrade, you must migrate and re-home the cluster LIFs to two cluster ports per node if you have a system, such as an AFF 700, with the following configuration:
+
+* More than two cluster ports per node
+* A cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d, and ports e4e, e4f, e4g, and e4h 
+
+NOTE: Performing a controller upgrade with more than two cluster ports per node might result in missing cluster LIFs on the new controller after the upgrade.
+
 
 Controller upgrade using ARL is supported on systems configured with SnapLock Enterprise and SnapLock Compliance volumes.
 

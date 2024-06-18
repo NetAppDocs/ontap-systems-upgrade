@@ -20,7 +20,7 @@ Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN 
 
 .Steps
 
-. The iSCSI LIFs automatically find the correct home ports using the reachability scan. The FC and NVMe/FC SAN LIFs do not move automatically, they continue to show the home port they were on before upgrading. 
+. The iSCSI LIFs automatically find the correct home ports using the reachability scan. The FC and NVMe/FC SAN LIFs do not move automatically. They continue to show the home port they were on before upgrading. 
 +
 Check the SAN LIFs on node4:
 
