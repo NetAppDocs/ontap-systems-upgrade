@@ -9,8 +9,8 @@ During Stage 6, you confirm that the new nodes are set up correctly and, if the 
 . link:decommission_old_system.html[Decommission the old system]
 . link:resume_snapmirror_operations.html[Resume SnapMirror operations]
 
-.For MetroCluster FC configuration
+.MetroCluster FC configuration
 
-For MetroCluster FC configuration, you must replace the disaster recovery/failover site nodes as soon as possible. Mismatch in controller models within a MetroCluster is not supported because controller model mismatch can cause disaster recovery mirroring to go offline. Use the command -`skip-metrocluster-check true` option to bypass MetroCluster checks when you are replacing nodes at second site.
+In a MetroCluster FC configuration, you must replace the disaster recovery/failover site nodes as soon as possible. Mismatch in controller models within a MetroCluster is not supported because controller model mismatch can cause disaster recovery mirroring to go offline. Use the `-skip-metrocluster-check true` command to bypass MetroCluster checks when you are replacing nodes at second site.
 
 // 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
