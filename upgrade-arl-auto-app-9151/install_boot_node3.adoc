@@ -181,7 +181,7 @@ Interrupt the autoboot by pressing `Ctrl-C` at the boot environment prompt.
 
 . If necessary, set the date on node3:
 +
-`set date _mm/dd/yyyy_`
+`set date <mm/dd/yyyy>`
 
 . On node3, check the time by using the following command at the boot environment prompt:
 +
@@ -189,11 +189,11 @@ Interrupt the autoboot by pressing `Ctrl-C` at the boot environment prompt.
 
 . If necessary, set the time on node3:
 +
-`set time _hh:mm:ss_`
+`set time <hh:mm:ss>`
 
 . In boot loader, set the partner system ID on node3:
 +
-`setenv partner-sysid _node2_sysid_`
+`setenv partner-sysid <node2_sysid>`
 +
 For node3, `partner-sysid` must be that of node2.
 

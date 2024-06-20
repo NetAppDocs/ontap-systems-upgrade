@@ -18,7 +18,7 @@ The controller replacement process begins with a series of prechecks. You also g
 
 . Begin the controller replacement process by entering the following command in the ONTAP command line:
 +
-`system controller replace start -nodes _node_names_`
+`system controller replace start -nodes <node_names>`
 +
 NOTE: You can only execute the system controller replace start command at the advanced privilege level: `set -privilege advanced`
 +
@@ -109,22 +109,22 @@ Performing a controller upgrade with more than two cluster ports per node might 
 From the serial port connected to each node, run and save the output of the following commands individually:
 +
 * `vserver services name-service dns show`
-* `network interface show -curr-node _local_ -role _cluster,intercluster,node-mgmt,cluster-mgmt,data_`
-* `network port show -node _local_ -type physical`
-* `service-processor show -node _local_ -instance`
-* `network fcp adapter show -node _local_`
-* `network port ifgrp show -node _local_`
-* `system node show -instance -node _local_`
-* `run -node _local_ sysconfig`
+* `network interface show -curr-node <local> -role <cluster,intercluster,node-mgmt,cluster-mgmt,data>`
+* `network port show -node <local> -type physical`
+* `service-processor show -node <local> -instance`
+* `network fcp adapter show -node <local>`
+* `network port ifgrp show -node <local>`
+* `system node show -instance -node <local>`
+* `run -node <local> sysconfig`
 * `storage aggregate show -r`
-* `storage aggregate show -node _local_`
-* `volume show -node _local_`
-* `system license show -owner _local_`
+* `storage aggregate show -node <local>`
+* `volume show -node <local>`
+* `system license show -owner <local>`
 * `storage encryption disk show`
 * `security key-manager onboard show-backup`
 * `security key-manager external show`
 * `security key-manager external show-status`
-* `network port reachability show -detail -node _local_`
+* `network port reachability show -detail -node <local>`
 
 +
 NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager (OKM) is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
@@ -149,7 +149,7 @@ include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
 == License
 
-For detailed information about licensing, refer to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[License management^].
+For detailed information about ONTAP licensing, refer to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[License management^].
 
 NOTE: Using unlicensed features on the controller might put you out of compliance with your license agreement.
 

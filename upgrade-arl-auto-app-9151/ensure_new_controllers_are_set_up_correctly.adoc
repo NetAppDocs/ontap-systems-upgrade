@@ -50,22 +50,22 @@ If neither node3 or node4 owns data LIFs home-owned by other nodes in the cluste
 
 . Verify that node3 owns the aggregates from node1 and that node4 owns the aggregates from node2:
 +
-`storage aggregate show -owner-name _node3_`
+`storage aggregate show -owner-name <node3>`
 +
-`storage aggregate show -owner-name _node4_`
+`storage aggregate show -owner-name <node4>`
 
 . Determine whether any volumes are offline:
 +
-`volume show -node _node3_ -state offline`
+`volume show -node <node3> -state offline`
 +
-`volume show -node _node4_ -state offline`
+`volume show -node <node4> -state offline`
 
 . If any volumes are offline, compare them with the list of offline volumes that you captured in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade], and bring online any of the offline volumes, as required, by using the following command, once for each volume:
 +
-`volume online -vserver _vserver_name_ -volume _volume_name_`
+`volume online -vserver <vserver_name> -volume <volume_name>`
 . Install new licenses for the new nodes by using the following command for each node:
 +
-`system license add -license-code _license_code,license_code,license_code…_`
+`system license add -license-code <license_code,license_code,license_code…>`
 +
 The license-code parameter accepts a list of 28 upper-case alphabetic character keys. You can add one license at a time, or you can add multiple licenses at once, separating each license key by a comma.
 
@@ -73,7 +73,7 @@ The license-code parameter accepts a list of 28 upper-case alphabetic character 
 +
 `system license clean-up -unused -expired`
 +
-`system license delete -serial-number _node_serial_number_ -package _licensable_package_`
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 +
 --
 ** Delete all expired licenses:
@@ -86,9 +86,9 @@ The license-code parameter accepts a list of 28 upper-case alphabetic character 
 
 ** Delete a specific license from a cluster by using the following commands on the nodes:
 +
-`system license delete -serial-number _node1_serial_number_ -package *`
+`system license delete -serial-number <node1_serial_number> -package *`
 +
-`system license delete -serial-number _node2_serial_number_ -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
 --
 +
 The following output is displayed:
@@ -110,11 +110,11 @@ You can compare the output with the output that you captured in the section link
 
 . [[unset_maxwait_system_commands]]If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in link:install_boot_node4.html#auto_install4_step24[Install and boot node4, Step 24]), you must unset the variable:
 +
-`set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
+`set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
 
 . [[Step13]]Configure the SPs by using the following command on both nodes:
 +
-`system service-processor network modify -node _node_name_`
+`system service-processor network modify -node <node_name>`
 +
 Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9.8 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]

@@ -132,7 +132,7 @@ In the preceding example, node1_node3 is just booted after controller replacemen
 
 . [[auto_verify_3_step4]]Repair the reachability for each of the ports on node3 with a reachability status other than `ok`. Run the following command, first on any physical ports, then on any VLAN ports, one at a time:
 +
-`network port reachability repair -node _node_name_  -port _port_name_`
+`network port reachability repair -node <node_name>  -port <port_name>`
 +
 You should see output like the following example:
 +
@@ -155,20 +155,20 @@ As the reachability repair is performed, ONTAP attempts to place the ports in th
 . If interface group configuration does not match the new controller physical port layout, modify it by using the following steps.
 .. You must first remove physical ports that should be interface group member ports from their broadcast domain membership. You can do this by using the following command:
 +
-`network port broadcast-domain remove-ports -broadcast-domain _broadcast-domain_name_ -ports _node_name:port_name_`
+`network port broadcast-domain remove-ports -broadcast-domain <broadcast-domain_name> -ports <node_name:port_name>`
 
 .. Add a member port to an interface group:
 +
-`network port ifgrp add-port -node _node_name_ -ifgrp _ifgrp_ -port _port_name_`
+`network port ifgrp add-port -node <node_name> -ifgrp <ifgrp> -port <port_name>`
 
 .. The interface group is automatically added to the broadcast domain about a minute after the first member port is added.
 .. Verify that the interface group was added to the appropriate broadcast domain:
 +
-`network port reachability show -node _node_name_ -port _ifgrp_`
+`network port reachability show -node <node_name> -port <ifgrp>`
 +
 If the interface group’s reachability status is not `ok`, assign it to the appropriate broadcast domain:
 +
-`network port broadcast-domain add-ports -broadcast-domain _broadcast_domain_name_ -ports _node:port_`
+`network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_name> -ports <node:port>`
 
 . Assign appropriate physical ports to the `Cluster` broadcast domain by using the following steps:
 .. Determine which ports have reachability to the `Cluster` broadcast domain :
@@ -177,11 +177,11 @@ If the interface group’s reachability status is not `ok`, assign it to the app
 
 .. Repair any port with reachability to the `Cluster` broadcast domain, if its reachability status is not `ok`:
 +
-`network port reachability repair -node _node_name_ -port _port_name_`
+`network port reachability repair -node <node_name> -port <port_name>`
 
 . Move the remaining physical ports into their correct broadcast domains by using one of the following commands:
 +
-`network port reachability repair -node _node_name_ -port _port_name_`
+`network port reachability repair -node <node_name> -port <port_name>`
 +
 `network port broadcast-domain remove-port`
 +
@@ -232,7 +232,7 @@ Wait about one minute for newly restored VLANs to be placed into their appropria
 .. Create new VLAN ports as needed for VLAN ports that are not in the `cluster controller-replacement network displaced-vlans show` output but should be configured on other physical ports.
 . Delete any empty broadcast domains after all port repairs have been completed:
 +
-`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
+`network port broadcast-domain delete -broadcast-domain <broadcast_domain_name>`
 
 . [[step10]]Verify port reachability:
 +
@@ -255,7 +255,7 @@ When all ports are correctly configured and added to the correct broadcast domai
 
 .. Restore LIF home nodes and home ports:
 +
-`cluster controller-replacement network displaced-interface restore-home-node -node _node_name_ -vserver _vserver_name_ -lif-name _LIF_name_`
+`cluster controller-replacement network displaced-interface restore-home-node -node <node_name> -vserver <vserver_name> -lif-name <LIF_name>`
 
 . Verify that all LIFs have a home port and are administratively up:
 +
