@@ -1,0 +1,16 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/issues_in_multiple_stages_of_procedure.html
+keywords: issues, arise, multiple, stages, procedure
+summary: "Information on issues that might occur when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+---
+= Issues that can arise in multiple stages of the procedure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+
+include::../_include/ru_auto_issues_multiple_stages_of_procedure.adoc[]

@@ -1,5 +1,8 @@
 indexpage:
+  title: ONTAP Hardware Upgrade Documentation
   lead: This site provides the upgrade procedures for AFF, FAS, and ASA storage systems. Select the appropriate upgrade procedure for your storage system.
+  summary: Upgrade controller hardware by relocating aggregates, moving volumes, or moving storage.
+  keywords: aggregate, relocation, moving, manual, upgrade, relocate
   tiles:
     - title: Get started
       links:
@@ -9,18 +12,20 @@ indexpage:
           url: /choose_controller_upgrade_procedure.html 
     - title: Upgrade by relocating aggregates on systems running ONTAP 9.8 and later
       links:
+        - title: Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1
+          url: /upgrade-arl-auto-app-9151/index.html 
         - title: Use "system controller replace" commands to upgrade controller models in the same chassis
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+          url: /upgrade-arl-auto-affa900/index.html
         - title: Use "system controller replace" commands (most systems)
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+          url: /upgrade-arl-auto-app/index.html
         - title: Use manual commands
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+          url: /upgrade-arl-manual-app/index.html
     - title: Upgrade by relocating aggregates on systems running ONTAP 9.7 and earlier
       links:
         - title: Use "system controller replace" commands
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+          url: /upgrade-arl-auto/index.html
         - title: Use manual commands
-          url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+          url: /upgrade-arl-manual/index.html
     - title: Upgrade by moving storage or volumes
       links:
         - title: Upgrade controller hardware
@@ -47,4 +52,3 @@ indexpage:
           url: https://mysupport.netapp.com/matrix/#welcome
         - title: NetApp Community
           url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins
-

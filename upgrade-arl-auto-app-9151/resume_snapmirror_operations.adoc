@@ -1,0 +1,15 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/resume_snapmirror_operations.html
+keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete
+summary: "Resume the SnapMirror transfers and relationships when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+---
+= Resume SnapMirror operations
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_resume_snapmirror_operations.adoc[]

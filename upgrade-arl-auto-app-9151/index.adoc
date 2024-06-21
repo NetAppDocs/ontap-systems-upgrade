@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/index.html
+keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology
+summary: "You can upgrade controller hardware running ONTAP 9.15.1 or later by using `system controller replace` commands, relocating the ownership of non-root aggregates."
+---
+= Overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:
+
+[cols=3*,options="header",cols="40,20,40"]
+
+|===
+|Method |ONTAP version |Supported systems
+
+|Using `system controller replace` commands
+|9.15.1 or later
+|link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_9151_supported_systems[Link to supported systems matrix]
+|===
+
+During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate aggregates multiple times from node to node to confirm that at least one node is serving data from the aggregates throughout the upgrade procedure. You also migrate data logical interfaces (LIFs) and assign the network ports on the new controller to the interface groups as you proceed.
+
+.Terminology used in this information
+
+In this information, the original nodes are called "node1" and "node2", and the new nodes are called "node3" and "node4". During the described procedure, node1 is replaced by node3, and node2 is replaced by node4.
+
+The terms "node1", "node2", "node3", and "node4" are used only to distinguish between the original and new nodes. When following the procedure, you must substitute the real names of your original and new nodes. However, in reality, the names of the nodes do not change: node3 has the name node1, and node4 has the name node2 after the controller hardware is upgraded.
+
+.Important information:
+
+* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[Guidelines for upgrading controllers with ARL] and the  link:overview_of_the_arl_upgrade.html[Overview of the ARL upgrade] sections before beginning the upgrade.
+* This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used.
+* You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each high-availability (HA) pair in the cluster.
+* When you upgrade to an AFF A70, AFF A90, or AFF A1K system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://review.docs.netapp.com/us-en/ontap_lenida-ontap-vino-rts-release/concepts/builtin-storage-efficiency-concept.html[Learn more^].

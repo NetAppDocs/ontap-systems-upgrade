@@ -1,0 +1,15 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/retire_node2.html
+keywords: retire, node2
+summary: "Shut down node2 and remove it from the rack or chassis when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+---
+= Retire node2
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+include::../_include/ru_auto_retire_node2.adoc[]

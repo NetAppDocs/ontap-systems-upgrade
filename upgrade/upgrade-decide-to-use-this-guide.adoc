@@ -13,7 +13,12 @@ This content describes how to upgrade the controller hardware of an AFF, FAS, or
 
 Use this procedure if you want to upgrade controller hardware in the following situations:
 
-NOTE: The hardware upgrade procedures have been simplified in ONTAP 9.8 with the introduction of the automatic port placement feature.
+[NOTE] 
+====
+When you upgrade to an AFF A70, AFF A90, or AFF A1K system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://review.docs.netapp.com/us-en/ontap_lenida-ontap-vino-rts-release/concepts/builtin-storage-efficiency-concept.html[Learn more^].
+
+The hardware upgrade procedures have been simplified in ONTAP 9.8 with the introduction of the automatic port placement feature.
+====
 
 * Your original and new nodes are compatible and supported.
 * The original and new nodes are running ONTAP 9.0 or later. NetApp recommends, when possible, that you have the same ONTAP version running on the original and new nodes.
@@ -37,6 +42,7 @@ If you are upgrading a MetroCluster configuration, see https://docs.netapp.com/u
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html[Where to find procedures for MetroCluster maintenance tasks^]
 * https://hwu.netapp.com[NetApp Hardware Universe^]
 
+// 2024 JUN 12, ONTAPDOC-1484
 // 2023 JULY 20, Tech refresh updates
 // 2023 Feb 1, BURT 1351102
 // 2022-03-09, Clean-up 

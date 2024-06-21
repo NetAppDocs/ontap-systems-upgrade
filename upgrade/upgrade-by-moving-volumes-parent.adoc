@@ -9,7 +9,12 @@ summary: 'If you are upgrading by moving volumes, you prepare the original nodes
 :imagesdir: ../media/
 
 [.lead]
-If you are upgrading controller hardware by moving volumes, you prepare the original nodes and join the new nodes to the cluster. You move volumes to the new nodes, configure LIFs, and unjoin the original nodes from the cluster. Upgrading by moving volumes is a nondisruptive procedure.
+Upgrading controller hardware by moving volumes is a nondisruptive procedure. Before starting your upgrade, review the general upgrade scenarios and upgrade considerations:
+
+* link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
+* link:upgrade-considerations.html[Considerations for upgrading controller hardware]
+
+To upgrade by moving volumes, you prepare the original nodes and join the new nodes to the cluster. You move volumes to the new nodes, configure LIFs, and unjoin the original nodes from the cluster. 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One]link:upgrade-prepare-when-moving-volumes.html[Prepare for the upgrade when moving volumes]
 [role="quick-margin-para"]

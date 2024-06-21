@@ -33,7 +33,7 @@ image:workflow_internal_drives.png[Decision workflow for choosing an upgrade pro
 Choose an upgrade procedure for a system with only external drives, which are listed below:
 
 * FAS8200, FAS8300, FAS8700, FAS9000, and FAS9500
-* AFF A300, AFF A320, AFF A400, AFF A700, and AFF A900 
+* AFF A300, AFF A320, AFF A400, AFF A700, and AFF A900
 * AFF C400 
 * ASA A400, ASA A900, and ASA AFF A700
 
@@ -47,10 +47,9 @@ Learn about the controller hardware upgrade procedures:
 
 * link:upgrade-arl/index.html[Upgrade by using aggregate relocation]
 +
-Aggregate relocation is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
+Aggregate relocation is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes]
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving storage]
+* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage]
 
 
 [NOTE]
