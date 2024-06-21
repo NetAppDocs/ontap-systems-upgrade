@@ -29,7 +29,7 @@ If you are performing an upgrade by using system commands refer to the following
 |To upgrade with system commands, use…
 
 |9.15.1 or later
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.htmll[Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1]
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1]
 
 |9.10.1 or later
 |link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis]

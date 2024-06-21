@@ -229,12 +229,6 @@ NOTE: If you have not already done so earlier in the procedure, see the Knowledg
 |NetApp non-FIPS SEDs
 |`setenv bootarg.storageencryption.support *false*`
 |===
-+
-[NOTE]
-====
-You cannot mix FIPS drives with other types of drives on the same node or HA pair.
-You can mix SEDs with non-encrypting drives on the same node or HA pair.
-====
 
 .. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
 +

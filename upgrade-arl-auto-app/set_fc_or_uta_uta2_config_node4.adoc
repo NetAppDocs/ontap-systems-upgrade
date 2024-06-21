@@ -196,9 +196,84 @@ NOTE: In the above console output example, ONTAP will prompt you for the partner
 
 . If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. To resolve this, continue with <<auto_check_4_step17,Step 17>> to <<auto_check_4_step22,Step 22>> or go to section link:verify_node4_installation.html[Verify the node4 installation].
 
-include::../_include/ru_auto_check_config_uta_uta2_ports_node4_step_17_22.adoc[]
+. [[auto_check_4_step17]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 
-[start=23]
+. At the loader prompt, enter maintenance mode:
++
+`boot_ontap maint`
+
+. In maintenance mode, display all the previously set initiator ports that are now in target mode:
++
+`ucadmin show`
++
+Change the ports back to initiator mode:
++
+`ucadmin modify -m fc -t initiator -f _adapter name_`
+
+. Verify that the ports have been changed to initiator mode:
++
+`ucadmin show`
+
+. Exit maintenance mode:
++
+`halt`
++
+[NOTE]
+====
+If you are upgrading from a system that supports external disks to a system that also supports external disks, go to <<auto_check_4_step22,Step 22>>.
+
+If you are upgrading from a system that uses external disks to a system that supports both internal and external disks, for example, an AFF A800 system, go to <<auto_check_4_step23,Step 23>>.
+====
+
+. [[auto_check_4_step22]]At the loader prompt, boot up:
++
+`boot_ontap menu`
++
+Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
++
+When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume.
++
+NOTE: This only applies when the root volume is using NetApp Volume Encryption.
++
+.. Return to the special boot menu:
++
+`LOADER> boot_ontap menu`
++
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
++
+.. Select *(10) Set Onboard Key Manager recovery secrets*
++
+.. Enter `y` at the following prompt:
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
++
+.. At the prompt, enter the key-manager passphrase.
++
+.. Enter the backup data when prompted.
++
+NOTE: You must have obtained the passphrase and backup data in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section of this procedure.
+
++
+.. After the system boots to the special boot menu again, run option *(1) Normal Boot*
++ 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step22,Step 22>> until the system boots normally. 
+
 . [[auto_check_4_step23]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.
 +
 WARNING: *You must perform the following substeps in the exact order shown; failure to do so might cause an outage or even data loss.*
@@ -251,5 +326,6 @@ aggr0 offline                    raid_dp, aggr        diskroot
                                  64-bit
 ---------------------------------------------------------------------
 ....
-// 11 DEC 2020, thomi, checked
+
+// 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-05-17, BURT 1476241

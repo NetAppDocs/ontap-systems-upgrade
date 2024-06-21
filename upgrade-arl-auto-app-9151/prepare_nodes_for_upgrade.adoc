@@ -102,7 +102,7 @@ Before you start the upgrade, you migrate and re-home the cluster LIFs to two cl
 * A cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d, and ports e4e, e4f, e4g, and e4h 
 
 Performing a controller upgrade with more than two cluster ports per node might result in missing cluster LIFs on the new controller after the upgrade.
-+
+
 For more information, see the Knowledge Base article link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_delete_unwanted_or_unnecessary_cluster_LIFs[How to delete unwanted or unnecessary cluster LIFs^].
 ====
 
