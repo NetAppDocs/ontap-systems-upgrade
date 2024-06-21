@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html
 keywords: preparing, prepare, nodes, upgrade, stage 1, prechecks, old, system, chassis, disk, disks
 summary: "Prepare the nodes and run a series of prechecks when using ARL to upgrade controller models in the same chassis."
 ---
-
 = Prepare the nodes for upgrade
 :hardbreaks:
 :nofooter:
@@ -29,6 +28,9 @@ Verify that you have a supported SP or BMC firmware version:
 |SP or BMC
 |Minimum firmware version
 
+|AFF A800
+|BMC
+|10.9
 |AFF A220
 |BMC	
 |11.9P1 
@@ -52,17 +54,19 @@ Verify that you have a supported SP or BMC firmware version:
 +
 `system controller replace start -nodes _node_names_`
 +
-You will see output similar to the following:
+You will see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
 ....
 Warning:
-1. Current ONTAP version is 9.x
+1. Current ONTAP version is 9.15.1
 
 2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM  batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
 
 Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
 
 3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedures.
 
 Do you want to continue? {y|n}: y
 ....
@@ -126,7 +130,7 @@ If node affinity jobs are running, the check fails.
 
 . Run the below set of commands as directed by the controller replacement procedure on the system console.
 +
-From the serial port connected to each node, run and save the output of the following commands individually:
+Run the commands from the serial port connected to each node, run and save the output of the commands individually:
 +
 * `vserver services name-service dns show`
 * `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
@@ -136,6 +140,11 @@ From the serial port connected to each node, run and save the output of the foll
 * `network port ifgrp show -node _local_`
 * `system node show -instance -node _local_`
 * `run -node _local_ sysconfig`
+* `run -node local sysconfig -ac`
+* `run -node local aggr status -r`
+* `vol show -fields type`
+* `run local aggr options _data_aggregate_name_`
+* `vol show -fields type , space-guarantee`
 * `storage aggregate show -node _local_`
 * `volume show -node _local_`
 * `storage array config show -switch _switch_name_`
@@ -145,7 +154,6 @@ From the serial port connected to each node, run and save the output of the foll
 * `security key-manager external show`
 * `security key-manager external show-status`
 * `network port reachability show -detail -node _local_`
-
 +
 NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager is in use, keep the key-manager passphrase ready to complete the key manager resync later in the procedure.
 

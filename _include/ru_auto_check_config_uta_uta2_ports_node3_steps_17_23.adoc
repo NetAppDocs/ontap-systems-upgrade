@@ -1,4 +1,4 @@
-. [[auto_check3_step17]]Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
+. [[auto_check3_step17]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 
 . [[step18]]At the loader prompt, enter maintenance mode:
 +
@@ -36,6 +36,7 @@ Now, on booting, the node can detect all the disks that were previously assigned
 When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume:
 +
 .. Return to the special boot menu:
++
 `LOADER> boot_ontap menu`
 +
 ----

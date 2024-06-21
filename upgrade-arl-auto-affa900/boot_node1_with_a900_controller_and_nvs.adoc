@@ -16,8 +16,10 @@ Node1 with the replacement modules is now ready to boot. This section provides t
 
 [cols="35,65"]
 |===
-|Old node1 controller |Replacement node1 system modules
+|Existing node1 controller |Replacement node1 system modules
 
+|AFF A800
+|AFF A90 or AFF A70 ^1^
 |AFF A220 configured as an ASA
 |AFF A150 controller module ^1^
 |AFF A220	
@@ -36,9 +38,35 @@ FAS2720
 |===
 
 ^1^ When replacing controller modules, you move all connections from the old to the replacement controller module.
+
 ^2^ When replacing the controller and NVRAM modules, you move only the console and management connections.
 
 .Steps
+
+. (AFF A800 upgrade only) At the LOADER prompt, enter maintenance mode: 
++
+`boot_ontap maint`
+
+.. Answer `yes` to the confirmation prompt.
+.. Show the state of the 100GbE interfaces:
++
+`storage port show`. 
++
+All 100GbE ports connected to NS224 shelves or storage switches should report as `storage` ports, as shown in the example output below.
++
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e8a  ENET storage 100 Gb/s    enabled  online  30     
+e8b  ENET storage 100 Gb/s    enabled  online  30     
+e11a ENET storage 100 Gb/s    enabled  online  30     
+e11b ENET storage 100 Gb/s    enabled  online  30     
+----
+
+.. Exit maintenance mode:
++
+`halt`
 
 . [[A900_boot_node1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
@@ -80,7 +108,7 @@ These prompts might get buried in the console messages. If you do not enter a no
 If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` and, or, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` errors occur, perform the following steps:
 
 . Halt the node at the LOADER prompt.
-. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 1>>.
+. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 2>>.
 . At the loader prompt, boot up:
 +
 `boot_ontap`

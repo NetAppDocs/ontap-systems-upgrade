@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2
 keywords: moving, non-root, aggregates, nas, lif, node1, node2
 summary: "Verify that the node1 NAS data LIFs on node2 are relocated from node2 to node1 when using ARL to upgrade controller models in the same chassis."
 ---
-
 = Move non-root aggregates and NAS data LIFs owned by node1 from node2 to the upgraded node1
 :hardbreaks:
 :nofooter:
@@ -42,7 +41,29 @@ The operation pauses at this stage in the network reachability check.
 `network port reachability show -node node1`
 +
 Confirm that all connected ports, including the interface group and VLAN ports, show their status as `OK`.
-. Resume the relocation operation:
+. For an AFF A800 upgrade to a AFF A70 or AFF A90, you must reassign the FCP SAN LIFs. For all other system upgrades, proceed to <<resume_relocation_step4,Step 4>>:
++
+.. Reassign FCP SAN LIFs used for FCP or FC-NVMe data access to the correct home ports:
++
+`network interface show -vserver <vserver_hosting_fcp_lifs>`
+.. For LIFs with the current node as the upgraded node1 and the current port reports "status oper" as "-" (because the port existed on the AFF A800 node but does not exist on the AFF A90 node), modify the current port before it can be brought online.
++
+Verify that physical connectivity is established to the FC target port where the FC LIF needs to be moved:
+
+... Set the LIF status to "down":
++
+`network interface modify -vserver <vserver_name> -lif <lif_name>  -status-admin down`
+... Modify the home port of the LIF:
++
+`network interface modify -vserver <vserver_name> -lif <lif_name> - home-node <node1> -home-port <FC_target_port>`
+... Set the LIF status to "up":
++
+`network interface modify -vserver <vserver> -lif <lif_name>  -status-admin up`
+
++
+Repeat Substeps a and b for each FC SAN LIF that is home on node1.
+
+. [[resume_relocation_step4]]Resume the relocation operation:
 +
 `system controller replace resume`
 +
