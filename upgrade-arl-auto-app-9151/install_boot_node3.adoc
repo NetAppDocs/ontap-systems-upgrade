@@ -361,7 +361,9 @@ NOTE: In the above console output example, ONTAP will prompt you for the partner
 +
 Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
 +
-When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume:
+When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume.
++
+NOTE: This only applies when the root volume is using NetApp Volume Encryption.
 +
 .. Return to the special boot menu:
 `LOADER> boot_ontap menu`
