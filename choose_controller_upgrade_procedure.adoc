@@ -20,7 +20,7 @@ Choose an upgrade procedure for a system with internal drives, which are listed 
 * FAS2620, FAS2650, FAS2720, and FAS2750 
 * AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, and AFF A800
 +
-NOTE: If your upgrading AFF A800, you can also upgrade by aggregate relocation. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Learn more^]
+NOTE: You can also upgrade an AFF A800 to an AFF A70, AFF A90, or AFF A1K by using aggregate relocation. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Learn more^].
 * AFF C190, AFF C250, and AFF C800
 * ASA A150, ASA A250, ASA A800, and ASA AFF A220
 
