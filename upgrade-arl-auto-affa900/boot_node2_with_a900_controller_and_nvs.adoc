@@ -79,7 +79,7 @@ If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting 
 
 . Halt the node at the LOADER prompt.
 . Check and reset the storage encryption bootargs mentioned in <<boot_node2_step1,Step 1>>.
-. At the loader prompt, boot up:
+. At the LOADER prompt, boot up:
 +
 `boot_ontap`
 ====

@@ -229,12 +229,6 @@ NOTE: If you have not already done so earlier in the procedure, see the Knowledg
 |NetApp non-FIPS SEDs
 |`setenv bootarg.storageencryption.support *false*`
 |===
-+
-[NOTE]
-====
-You cannot mix FIPS drives with other types of drives on the same node or HA pair.
-You can mix SEDs with non-encrypting drives on the same node or HA pair.
-====
 
 .. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
 +
@@ -369,13 +363,13 @@ Login:
 +
 NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. [[auto_check_4_step27]]At the loader prompt, boot up:
+. [[auto_check_4_step27]]At the LOADER prompt, boot up:
 +
 `boot_ontap menu`
 +
 Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
 +
-When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume:
+When the cluster nodes you are replacing use root volume encryption, ONTAP is unable to read the volume information from the disks. Restore the keys for the root volume:
 +
 If the root volume is encrypted, recover the onboard key-management secrets so the system can find the root volume. 
 + 
