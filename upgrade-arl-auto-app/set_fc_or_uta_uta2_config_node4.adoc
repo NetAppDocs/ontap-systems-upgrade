@@ -198,7 +198,7 @@ NOTE: In the above console output example, ONTAP will prompt you for the partner
 
 . [[auto_check_4_step17]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 
-. At the loader prompt, enter maintenance mode:
+. At the LOADER prompt, enter maintenance mode:
 +
 `boot_ontap maint`
 
@@ -225,7 +225,7 @@ If you are upgrading from a system that supports external disks to a system that
 If you are upgrading from a system that uses external disks to a system that supports both internal and external disks, for example, an AFF A800 system, go to <<auto_check_4_step23,Step 23>>.
 ====
 
-. [[auto_check_4_step22]]At the loader prompt, boot up:
+. [[auto_check_4_step22]]At the LOADER prompt, boot up:
 +
 `boot_ontap menu`
 +

@@ -142,7 +142,7 @@ Login:
 
 . [[auto_check3_step17]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 
-. [[step18]]At the loader prompt, enter maintenance mode:
+. [[step18]]At the LOADER prompt, enter maintenance mode:
 +
 `boot_ontap maint`
 
@@ -169,13 +169,13 @@ If you are upgrading from a system that supports external disks to a system that
 If you are upgrading from a system that supports external disks to a system that supports both internal and external disks, for example, an AFF A800 system, go to <<auto_check3_step23,Step 23>>.
 ====
 // GitHub issue #32
-. [[auto_check3_step22]]At the loader prompt, boot up:
+. [[auto_check3_step22]]At the LOADER prompt, boot up:
 +
 `boot_ontap menu`
 +
 Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
 +
-When the cluster nodes you are replacing use root volume encryption, ONTAP software is unable to read the volume information from the disks. Restore the keys for the root volume:
+When the cluster nodes you are replacing use root volume encryption, ONTAP is unable to read the volume information from the disks. Restore the keys for the root volume:
 +
 .. Return to the special boot menu:
 +
