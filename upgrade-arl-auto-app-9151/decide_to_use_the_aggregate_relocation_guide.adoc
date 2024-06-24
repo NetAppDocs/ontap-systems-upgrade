@@ -24,9 +24,9 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 
 You cannot use this procedure under the following circumstances:
 
-* You are upgrading an AFF A800 to an AFF A70 or AFF A90. To perform this AFF A800 upgrade, see link:https://review.docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis].
+* You are upgrading an AFF A800 to an AFF A70 or AFF A90. To perform this AFF A800 upgrade, see link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller models in the same chassis_.
 * You are upgrading a V-Series system or FlexArray Virtualization storage system using an external array for backend storage. Contact technical support for options to upgrade a V-series or FlexArray system.
-
+* You are upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
 
 [[sys_commands_9151_supported_systems]]The following table shows the supported model matrix for the controller upgrade.
 
