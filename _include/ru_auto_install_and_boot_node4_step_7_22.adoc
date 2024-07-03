@@ -76,7 +76,7 @@ If you have a MetroCluster configuration, use the following commands to modify t
 +
 `halt`
 +
-Interrupt the autoboot by pressing Ctrl-C at the boot environment prompt.
+Interrupt AUTOBOOT by pressing Ctrl-C at the boot environment prompt.
 
 . [[auto_install4_step15]]On node3, check the system date, time, and time zone:
 +

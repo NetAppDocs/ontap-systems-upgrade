@@ -2,4 +2,4 @@ If node4 has onboard FC ports, onboard unified target adapter (UTA/UTA2) ports, 
 
 .About this task
 
-You might need to complete the <<Configure FC ports on node4>> section, the <<Check and configure UTA/UTA2 ports on node4>>, or both sections.
+You might need to complete the <<Configure FC ports on node4>> or <<Check and configure UTA/UTA2 ports on node4>> section, or both sections.
