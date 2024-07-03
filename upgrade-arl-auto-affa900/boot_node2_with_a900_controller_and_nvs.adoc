@@ -16,8 +16,10 @@ Node2 with the replacement modules is now ready to boot. Upgrading by swapping t
 
 [cols="35,65"]
 |===
-|Old node2 controller |Replacement node2 system modules
+|Existing node2 controller |Replacement node2 system modules
 
+|AFF A800
+|AFF A90 or AFF A70
 |AFF A220 configured as an ASA
 |ASA A150 controller module
 |AFF A220
@@ -77,7 +79,7 @@ If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting 
 
 . Halt the node at the LOADER prompt.
 . Check and reset the storage encryption bootargs mentioned in <<boot_node2_step1,Step 1>>.
-. At the loader prompt, boot up:
+. At the LOADER prompt, boot up:
 +
 `boot_ontap`
 ====

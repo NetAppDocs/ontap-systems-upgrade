@@ -1,0 +1,38 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/prepare_for_netboot.html
+keywords: preparing, netboot, ndac, ontap
+summary: "Prepare to netboot node3 and node4 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+---
+= Prepare for netboot
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you physically rack node3 and node4 later in the procedure, you might need to netboot them. The term "netboot" means you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you put a copy of the ONTAP 9 boot image onto a web server that the system can access.
+
+You can also use the USB boot option to perform a netboot. See the Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system[How to use the boot_recovery LOADER command for installing ONTAP for initial setup of a system^].
+
+.Before you begin
+
+* Verify that you can access a HTTP server with the system.
+* Refer to link:other_references.html[References] to link to the _NetApp Support Site_ and download the necessary system files for your platform and the correct version of ONTAP.
+
+.About this task
+You must netboot the new controllers if they do not have the same version of ONTAP 9 installed on them that is installed on the original controllers. After you install each new controller, you boot the system from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots.
+
+.Steps
+
+. Access the NetApp Support Site to download the files used for performing the netboot of the system.
+. Download the appropriate ONTAP software from the software download section of the NetApp Support Site and store the `<ontap_version>_image.tgz` file on a web-accessible directory.
+. Change to the web-accessible directory and verify that the files you need are available. 
++
+Your directory listing should contain the following file:
+`<ontap_version>_image.tgz`
++
+NOTE: You do not need to extract the contents of the `<ontap_version>_image.tgz` file.
++
+You will use the information in the directories in link:install_boot_node3.html[Stage 3].

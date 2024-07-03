@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html
+keywords: 
+summary: 
+---
+= Cable node1 for shared cluster-HA and storage (AFF A800 upgrade only)
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+All cluster, HA, storage, and data connections that were previously connected to the AFF A800 node1 should now be connected to the newly installed AFF A90 or AFF A70 node1. 
+
+The following table shows the switch port usage for two-node switchless cluster configurations.
+
+|===
+|Port |AFF A800 node |AFF A90 node	|AFF A70 node
+
+|Cluster |e0a |e1a |e1a
+|Cluster |e1a |e7a 
+
+(Use e1b if there is no e7a)
+|e1b
+|HA |e0b |Do not connect |Do not connect
+|HA |e1b |Do not connect |Do not connect
+|SAS storage ports (if present and used) |Any available port |Any available port |Any available port
+|Ethernet storage ports for NS224 shelves |Any available port |Refer to Ethernet storage connectivity mapping |Refer to Ethernet storage connectivity mapping
+
+|===
+
+For a switch attached cluster, the identical cluster ports on the AFF A90 or AFF A70 nodes should be on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, prevents HA communication failure.

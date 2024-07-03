@@ -4,19 +4,12 @@ permalink: upgrade-arl-auto-app/stage_6_index.html
 keywords: complete upgrade, node, unified, target, storage, encryption, stage 6
 summary: "Stage 6 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.8 or later."
 ---
-
-= Overview
+= Stage 6 overview
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:55.716735
-//
 
 [.lead]
 include::../_include/ru_auto_stage6_overview.adoc[]

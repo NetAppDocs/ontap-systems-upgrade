@@ -19,6 +19,8 @@ Choose an upgrade procedure for a system with internal drives, which are listed 
 
 * FAS2620, FAS2650, FAS2720, and FAS2750 
 * AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, and AFF A800
++
+NOTE: You can also upgrade an AFF A800 to an AFF A70 or AFF A90 by using aggregate relocation. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Learn more].
 * AFF C190, AFF C250, and AFF C800
 * ASA A150, ASA A250, ASA A800, and ASA AFF A220
 
@@ -33,7 +35,7 @@ image:workflow_internal_drives.png[Decision workflow for choosing an upgrade pro
 Choose an upgrade procedure for a system with only external drives, which are listed below:
 
 * FAS8200, FAS8300, FAS8700, FAS9000, and FAS9500
-* AFF A300, AFF A320, AFF A400, AFF A700, and AFF A900 
+* AFF A300, AFF A320, AFF A400, AFF A700, and AFF A900
 * AFF C400 
 * ASA A400, ASA A900, and ASA AFF A700
 
@@ -47,10 +49,9 @@ Learn about the controller hardware upgrade procedures:
 
 * link:upgrade-arl/index.html[Upgrade by using aggregate relocation]
 +
-Aggregate relocation is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
+Aggregate relocation is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes]
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving storage]
+* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage]
 
 
 [NOTE]
