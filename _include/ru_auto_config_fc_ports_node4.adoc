@@ -62,7 +62,7 @@ NOTE: The FC ports must be programmed as initiators.
 +
 `halt`
 
-. Boot the system from loader prompt:
+. Boot the system from LOADER prompt:
 +
 `boot_ontap menu`
 

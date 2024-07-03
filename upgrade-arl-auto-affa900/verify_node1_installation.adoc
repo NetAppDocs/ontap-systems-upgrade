@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/verify_node1_installation.html
 keywords: verifying, verify, node1, install, installation, NVRAM, controller, module, modules
 summary: Verify the node1 installation with the replacement modules when using ARL to upgrade controller models in the same chassis.
 ---
-
 = Verify the node1 installation
 :hardbreaks:
 :nofooter:
@@ -13,10 +12,14 @@ summary: Verify the node1 installation with the replacement modules when using A
 :imagesdir: ./media/
 
 [.lead]
-You must verify the node1 installation with the replacement system modules. Because there is no change to physical ports, you are not required to map the physical ports from the old node1 to the replacement node1.
+After you boot node1 with the replacement controller module, verify that it is installed correctly. 
+
+For AFF A800 upgrades only, you map the physical ports from the existing node1 to the replacement node1 because the physical ports are changing between the AFF A800 and the AFF A90 or AFF A70 controller.
+
+For all other upgrades, there is no change to the physical ports so you are not required to map the physical ports from the old node1 to the replacement node1.
 
 .About this task
-After you boot node1 with the replacement controller module, you verify that it is installed correctly. You must wait for node1 to join quorum and then resume the controller replacement operation.
+You must wait for node1 to join quorum and then resume the controller replacement operation.
 
 At this point in the procedure, the controller upgrade operation should have paused as node1 attempts to join quorum automatically.
 
@@ -29,6 +32,14 @@ The output of the `health` field should be `true`.
 .	Verify that node1 is part of the same cluster as node2 and that it is healthy:
 +
 `cluster show`
++
+[NOTE]
+====
+If node1 has not joined quorum after you boot, wait five minutes and check again. Depending on the cluster connection, it might take some time for the port reachability scan to complete and move LIFs to their respective home ports.
+
+If node1 is still not in quorum after five minutes, consider modifying the cluster port of the new node by placing it in "Cluster ipspace" using the diagnostic privilege command `network port modify <port_name> -ipspace Cluster`.
+====
+ 
 .	Switch to advanced privilege mode:
 +
 `set advanced`
@@ -97,16 +108,14 @@ Node1
           a0a-822  Default:822                          ok
           a0a-823  Default:823                          ok
           e0M      Default:Mgmt                         ok
-          e11a     -                                    no-reachability
-          e11b     -                                    no-reachability
-          e11c     -                                    no-reachability
-          e11d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e2a      -                                    no-reachability
+          e2b      -                                    no-reachability
           e3a      -                                    no-reachability
           e3b      -                                    no-reachability
-          e4a      Cluster:Cluster                      ok
-          e4e      Cluster:Cluster                      ok
-          e5a      -                                    no-reachability
-          e7a      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
           e9a      Default:Default                      ok
           e9a-822  Default:822                          ok
           e9a-823  Default:823                          ok
@@ -115,10 +124,10 @@ Node1
           e9b-823  Default:823                          ok
           e9c      Default:Default                      ok
           e9d      Default:Default                      ok
-22 entries were displayed.
+20 entries were displayed.
 ----
 +
-In the preceding example, node1 booted after the controller replacement. Some ports do not have reachability because there is no physical connectivity. You must repair any ports with a reachability status other than `ok`.
+In the preceding examples, node1 booted after the controller replacement. The ports that display "no-reachability" have no physical connectivity. You must repair any ports with a reachability status other than `ok`.
 +
 NOTE:	During the upgrade, the network ports and their connectivity should not change. All ports should reside in the correct broadcast domains and the network port reachability should not change. However, before moving LIFs from node2 back to node1, you must verify the reachability and health status of the network ports.
 
@@ -134,11 +143,11 @@ NOTE:	During the upgrade, the network ports and their connectivity should not ch
 You should see output like the following example:
 +
 ----
-Cluster ::> reachability repair -node node1 -port e11b
+Cluster ::> reachability repair -node node1 -port e1b
 ----
 +
 ----
-Warning: Repairing port "node1:e11b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node1:e1b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
 +
 A warning message, as shown in the preceding example, is expected for ports with a reachability status that might be different from the reachability status of the broadcast domain where it is currently located. Review the connectivity of the port and answer `y` or `n` as appropriate.

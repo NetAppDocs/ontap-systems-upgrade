@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/other_references.html
 keywords: references, documentation, hardware universe, content, documentation center, information
 summary: "Reference content and websites required to support using ARL to upgrade controller models in the same chassis."
 ---
-
 = References
 :hardbreaks:
 :nofooter:
@@ -14,4 +13,3 @@ summary: "Reference content and websites required to support using ARL to upgrad
 
 [.lead]
 include::../_include/ru_all_other_references.adoc[]
-// 02 MAR 2021:  added new approach for external references

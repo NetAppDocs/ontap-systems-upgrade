@@ -33,13 +33,21 @@ entries:
     - title: Retire node1
       url: /upgrade-arl-auto-affa900/retire_node1.html
     - title: Replace the node1 system modules
-      url: /upgrade-arl-auto-affa900/replace_node1_system_modules.html
+      entries:
+        - title: Replace AFF A800
+          url: /upgrade-arl-auto-affa900/replace-node1-affa800.html
+        - title: Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
+          url: /upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html
+        - title: Replace AFF A700 or FAS9000
+          url: /upgrade-arl-auto-affa900/replace-node1-aff700-fas900.html
     - title: Netboot node1
       url: /upgrade-arl-auto-affa900/netboot_node1.html
 - title: "Stage 3. Boot node1 with the replacement system modules"
   entries:
     - title: Overview
       url: /upgrade-arl-auto-affa900/stage_3_index.html
+    - title: Cable node1 for shared cluster-HA storage (AFF A800 upgrade only)
+      url: /upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html
     - title: Boot node1 with the replacement system modules
       url: /upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html
     - title: Verify the node1 installation
@@ -61,7 +69,13 @@ entries:
    - title: Overview
      url: /upgrade-arl-auto-affa900/stage_5_index.html
    - title: Install the replacement system modules on node2
-     url: /upgrade-arl-auto-affa900/install_replacement_system_modules_on_node2.html
+     entries:
+      - title: Install AFF A90 or AFF A70
+        url: /upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html
+      - title: Install ASA A150, AFF A150, or FAS2820
+        url: /upgrade-arl-auto-affa900/install-asaa150-affa150-fas2820-on-node2.html
+      - title: Install ASA A900, AFF A900, or FAS9500
+        url: /upgrade-arl-auto-affa900/install-asaa900-affa900-fas9500-on-node2.html
    - title: Netboot node2
      url: /upgrade-arl-auto-affa900/netboot_node2.html
 - title: "Stage 6. Boot node2 with the replacement system modules"

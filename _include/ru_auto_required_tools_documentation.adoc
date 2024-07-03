@@ -1,6 +1,6 @@
 You must have specific tools to install the new hardware, and you need to reference other documents during the upgrade process.
 
-You need the following tools to perform the up grade:
+You need the following tools to perform the upgrade:
 
 * Grounding strap
 * #2 Phillips screwdriver

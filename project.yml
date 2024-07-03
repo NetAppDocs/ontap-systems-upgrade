@@ -11,7 +11,15 @@ sidebar:
       url: /index.html
     - title: Choose your controller hardware upgrade procedure
       url: /choose_controller_upgrade_procedure.html
-    - section: upgrade-arl
+    - title: Upgrade by using ARL
+      entries:
+      - section: upgrade-arl
+      - section: upgrade-arl-auto-app-9151
+      - section: upgrade-arl-auto-affa900
+      - section: upgrade-arl-auto-app
+      - section: upgrade-arl-auto
+      - section: upgrade-arl-manual-app
+      - section: upgrade-arl-manual
     - section: upgrade
     - title: Legal notices
       url: /legal-notices.html
