@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html
-keywords: 
-summary: 
+keywords: cluster, ha, aff, a800, shared, storage, data, management
+summary: Connect the cluster, HA, storage, and data connections that were previously connected to the AFF A800 node1 to the newly installed AFF A90 or AFF A70 node1
 ---
 = Cable node1 for shared cluster-HA and storage (AFF A800 upgrade only)
 :hardbreaks:
@@ -12,10 +12,10 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-Connect the cluster, HA, storage, and data connections that were previously connected to the AFF A800 node1 to the newly installed AFF A90 or AFF A70 node1.
+Connect the cluster, HA, storage, data, and management connections that were previously connected to the AFF A800 node1 to the newly installed AFF A90 or AFF A70 node1.
 
 == Connect the e0M and BMC ports
-The AFF A800 has a management port (e0M) and a and BMC port. On the AFF A90 and AFF A70, the e0M and BMC ports are combined and accessed through the "wrench" port. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the AFF A800 before connecting to the AFF A90 or AFF A70.
+The AFF A800 has a management port (e0M) and a BMC port. On the AFF A90 and AFF A70, the e0M and BMC ports are combined and accessed through the "wrench" port. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the AFF A800 before connecting to the AFF A90 or AFF A70.
 
 [cols=2*,options="header",cols="35,65"]
 |===
