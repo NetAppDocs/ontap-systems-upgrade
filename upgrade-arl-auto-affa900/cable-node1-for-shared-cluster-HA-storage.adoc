@@ -14,22 +14,22 @@ summary:
 [.lead]
 Connect the cluster, HA, storage, and data connections that were previously connected to the AFF A800 node1 to the newly installed AFF A90 or AFF A70 node1.
 
-== Connect ports e0M and BMC
-The AFF A800 has a management, e0M, and BMC port. On the AFF A90 and AFF A70, the e0M and BMC ports are combined. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the AFF A800 before connecting to the AFF A90 or AFF A70.
+== Connect the e0M and BMC ports
+The AFF A800 has a management port (e0M) and a and BMC port. On the AFF A90 and AFF A70, the e0M and BMC ports are combined and accessed through the "wrench" port. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the AFF A800 before connecting to the AFF A90 or AFF A70.
 
 [cols=2*,options="header",cols="35,65"]
 |===
 |If the... |Then...
 |e0M and BMC IP addresses are on the same IP subnet
-|Connect either the e0M or BMC port port on the AFF A800 to the "wrench" port on the AFF A90 or AFF A70. 
+|Connect either the e0M or BMC port on the AFF A800 to the "wrench" port on the AFF A90 or AFF A70. 
 
 |e0M and BMC IP addresses are on different subnets
 a|. Merge the e0M and BMC IP addresses into one IP subnet.
-. Connect either the e0M or BMC port port on the AFF A800 to the "wrench" port on the AFF A90 or AFF A70.
+. Connect either the e0M or BMC port on the AFF A800 to the "wrench" port on the AFF A90 or AFF A70.
 |===
 
 
-== Connect a two-node switchless cluster
+== Connect to a two-node switchless cluster
 The following table shows the switch port usage for two-node switchless cluster configurations.
 
 |===
@@ -47,7 +47,10 @@ The following table shows the switch port usage for two-node switchless cluster 
 
 |===
 
-== Connect a switch attached cluster
-For a switch attached cluster, the identical cluster ports on the AFF A90 or AFF A70 nodes should be on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, prevents HA communication failure.
+== Connect to a switch-attached cluster
+For a switch-attached cluster, check that you meet the following requirements:
+
+* The identical cluster ports on the AFF A90 or AFF A70 nodes are on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross-connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, will result in HA communication failures.
+* The AFF A90 and AFF A70 nodes use shared cluster-HA Ethernet ports. Ensure that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports. 
 
 // 2024 JULY 12, AFFFASDOC-240
