@@ -40,7 +40,7 @@ indexpage:
       links:
         - title: ONTAP hardware systems documentation
           url: https://docs.netapp.com/us-en/ontap-systems/index.html
-        - title: ONTAP switches documentation
+        - title: Switch documentation for ONTAP hardware systems
           url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
         - title: ONTAP software documentation
           url: https://docs.netapp.com/us-en/ontap/index.html
