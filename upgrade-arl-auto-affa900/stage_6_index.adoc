@@ -19,5 +19,4 @@ During Stage 6, you boot node2 with upgraded system modules and verify the upgra
 . link:restore_key_manager_config_node2.html[Restore key-manager configuration on node2]
 . link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2]
 
-
 //BURT-1476241 13-Sep-2022
