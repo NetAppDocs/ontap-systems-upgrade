@@ -4,7 +4,7 @@ permalink: upgrade-arl/index.html
 keywords:  aggregate, relocation, moving, manual, upgrade, relocate, hardware
 summary: Use aggregate relocation to upgrade controller hardware
 ---
-= Choose your ARL upgrade procedure
+= Start here: Choose your ARL upgrade procedure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,44 +12,164 @@ summary: Use aggregate relocation to upgrade controller hardware
 :imagesdir: ./media/
 
 [.lead]
-This content describes how to upgrade the controller hardware without disruption by using aggregate relocation (ARL).
+You can upgrade controller hardware without disruption by using aggregate relocation (ARL). For other methods of upgrading your controller hardware, see link:../upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage].
 
-For other methods of upgrading your controller hardware, see link:../upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage].
+You nondisruptively upgrade the controller hardware on a pair of nodes running ONTAP by migrating non-root aggregates from the original nodes to the new nodes in the same cluster. The data hosted on the nodes that are being upgraded is accessible during the upgrade.
 
-You can nondisruptively upgrade the controller hardware on a pair of nodes running ONTAP by migrating non-root aggregates from the original nodes to the new nodes in the same cluster. The data hosted on the nodes that are being upgraded is accessible during the upgrade.
+ARL takes advantage of the HA configuration to give you the capability to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
 
-ARL takes advantage of the HA configuration to give you the capability you to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
+There are several ARL methods for upgrading controller hardware. To select the appropriate procedure, review the following information on the systems and ONTAP versions supported for each ARL upgrade option. 
 
-There are two ARL methods for upgrading your controller hardware, using system commands or performing a manual upgrade. Before you start, you must verify that you have selected the correct content for your controller hardware upgrade.
+== Use "system controller replace" commands with ONTAP 9.15.1 or later
 
-If you are performing an upgrade by using system commands refer to the following table:
-[cols=2*,options="header",cols="30,70"]
+If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto-app-9151/index.html[Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1] to start the upgrade procedure. 
+
+.Show supported systems
+[%collapsible]
+====
 |===
-|If you’re running this ONTAP version…
-|To upgrade with system commands, use…
+|Old controller |Replacement controller
 
-|9.15.1 or later
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1]
+|AFF A300
+|AFF A70, AFF A90, and AFF A1K
 
-|9.10.1 or later
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis]
+|AFF A400
+|AFF A70, AFF A90, and AFF A1K
 
-You can use this procedure to upgrade an AFF controller configured as an All SAN Array (ASA) to an ASA controller for certain models and ONTAP software versions. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Learn more].
-|9.8 or later
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later]
-|9.5 to 9.7
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.5 to ONTAP 9.7]
+|AFF A700
+|AFF A70, AFF A90, and AFF A1K
+
+|AFF A900
+|AFF A90 and AFF A1K
+
 |===
-If you are performing a manual upgrade refer to the following table:
-[cols=2*,options="header",cols="30,70"]
-|===
-|If you’re running this ONTAP version…
-|To manually upgrade, use…
-|9.8 or later
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html[Manually upgrade controller hardware running ONTAP 9.8 or later]
-|9.0 to 9.7
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html[Manually upgrade controller hardware running ONTAP 9.7 or earlier]
-|===
+====
 
+== Upgrade controller models in the same chassis
+If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis] to start the upgrade procedure.
+
+.Show supported systems
+[%collapsible]
+====
+[cols=3*,options="header",cols="20,20,40"]
+|===
+|Old system |Replacement system |Supported ONTAP versions
+
+|AFF A800
+|AFF A70 or AFF A90
+|9.15.1 and later
+|AFF A220 configured as an All SAN Array (ASA) 
+|ASA A150
+|9.13.1P1 and later
+|AFF A220
+|AFF A150
+|9.10.1P15, 9.11.1P11, 9.12.1P5 and later
+|AFF A200
+|AFF A150
+a|9.10.1P15, 9.11.1P11 and later 
+
+*Note*: AFF A200 does not support ONTAP versions later than 9.11.1.
+|AFF C190
+|AFF A150
+|9.10.1P15, 9.11.1P11, 9.12.1P5 and later 
+
+|FAS2620 
+|FAS2820
+a|9.11.1P7 (FAS2620)
+
+*Note*: FAS2620 does not support ONTAP versions later than 9.11.1.
+
+9.13.1 and later (FAS2820)
+|FAS2720 |FAS2820	
+|9.13.1 and later
+|AFF A700 configured as an ASA 
+|ASA A900
+|9.13.1P1 and later
+|AFF A700 
+|AFF A900
+|9.10.1P10, 9.11.1P6 and later
+|FAS9000 |FAS9500
+|9.10.1P10, 9.11.1P6 and later
+|===
+====
+
+== Use "system controller replace" commands with ONTAP 9.8 or later
+
+If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto-app/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later] to start the upgrade procedure.
+
+.Show supported systems
+[%collapsible]
+====
+|===
+|Old controller |Replacement controller
+
+|FAS8020, FAS8040, FAS8060, FAS8080
+|FAS8200, FAS8300, FAS8700, FAS9000
+
+|FAS8060, FAS8080
+|FAS9500
+
+|AFF8020, AFF8040, AFF8060, AFF8080
+|AFF A300, AFF A400, AFF A700, AFF A800
+
+|AFF8060, AFF8080
+|AFF A900
+
+|FAS8200
+|FAS8300, FAS8700, FAS9000, FAS9500
+
+|FAS8300, FAS8700, FAS9000
+|FAS9500
+
+|AFF A300
+|AFF A400, AFF A700, AFF A800, AFF A900
+
+|AFF A320
+|AFF A400
+
+|AFF A400, AFF A700
+|AFF A900
+|===
+====
+
+== Use "system controller replace" commands with ONTAP 9.5 to 9.7
+
+If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.5 to 9.7] to start the upgrade procedure.
+
+.Show supported systems
+[%collapsible]
+====
+[cols="50,50"]
+|===
+|Old controller |Replacement controller
+
+|FAS8020, FAS8040, FAS8060, FAS8080
+|FAS8200, FAS8300, FAS8700, FAS9000
+|AFF8020, AFF8040, AFF8060, AFF8080
+|AFF A300, AFF A400, AFF A700, AFF A800
+|FAS8200
+|FAS8700, FAS9000, FAS8300
+|AFF A300
+|AFF A700, AFF A800, AFF A400
+|===
+====
+
+== Use manual ARL commands
+
+Review the supported systems for upgrading controller hardware by using manual commands on systems running ONTAP 9.
+
+Supported systems:
+
+* FAS system to FAS system
+* FAS system to a system with FlexArray Virtualization Software or a V-Series system
+* AFF system to AFF system
+* System with FlexArray Virtualization Software or a V-Series system to a FAS system, provided that the system with FlexArray Virtualization Software or V-Series system has no array LUNs.
+* V-Series system to a system with FlexArray Virtualization Software or a V-Series system
+
+Choose the procedure for your ONTAP version to start the upgrade:
+
+* link:../upgrade-arl-manual-app/index.html[Manually upgrade controller hardware running ONTAP 9.8 or later]
+* link:../upgrade-arl-manual/index.html[Manually upgrade controller hardware running ONTAP 9.7 or earlier] 
+ 
 // 2023 SEP 6, AFFFASDOC-78
 // 24 FEB 2021:  formatted from CMS
