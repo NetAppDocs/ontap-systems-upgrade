@@ -31,19 +31,23 @@ You cannot use this procedure under the following circumstances:
 [[sys_commands_9151_supported_systems]]The following table shows the supported model matrix for the controller upgrade.
 
 |===
-|Existing controller |Replacement controller
+|Existing controller |Replacement controller |Supported beginning with ONTAP...
 
-|AFF A300
-|AFF A70, AFF A90, and AFF A1K
+|FAS8200, FAS8300, FAS8700, FAS9000
+|FAS70, FAS90
+|9.15.1P3
 
-|AFF A400
-|AFF A70, AFF A90, and AFF A1K
+|FAS9500
+|FAS90
+|9.15.1P3
 
-|AFF A700
-|AFF A70, AFF A90, and AFF A1K
+|AFF A300, AFF A400, AFF A700
+|AFF A70, AFF A90, AFF A1K
+|9.15.1
 
 |AFF A900
-|AFF A90 and AFF A1K
+|AFF A90, AFF A1K
+|9.15.1
 
 |===
 
@@ -55,3 +59,5 @@ If your controller upgrade model combination is not in the above table, contact 
 ====
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
+
+// 2024 SEP 25, AFFFASDOC-268
