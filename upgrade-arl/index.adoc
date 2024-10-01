@@ -156,15 +156,7 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 
 == Use manual ARL commands
 
-Review the supported systems for upgrading controller hardware by using manual commands on systems running ONTAP 9.
-
-Supported systems:
-
-* FAS system to FAS system
-* FAS system to a system with FlexArray Virtualization Software or a V-Series system
-* AFF system to AFF system
-* System with FlexArray Virtualization Software or a V-Series system to a FAS system, provided that the system with FlexArray Virtualization Software or V-Series system has no array LUNs.
-* V-Series system to a system with FlexArray Virtualization Software or a V-Series system
+IF your upgrade scenario is not supported using "system commands", you can perform an ARL upgrade using manual commands.
 
 Choose the procedure for your ONTAP version to start the upgrade:
 
