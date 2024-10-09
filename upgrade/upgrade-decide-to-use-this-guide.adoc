@@ -17,8 +17,8 @@ Use this procedure if you want to upgrade controller hardware in the following s
 ====
 * When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of existing volumes and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. 
 +
-** For AFF A70, AFF A90, or AFF A1K systems, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
-** For FAS70 and FAS90 systems, ONTAP only converts the storage efficiency of existing thin-provisioned volumes that already had storage efficiency enabled before upgrading.
+** For an AFF A70, AFF A90, or AFF A1K system, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
+** For a FAS70 and FAS90 system, ONTAP only converts the storage efficiency of existing thin-provisioned volumes that already had storage efficiency enabled before upgrading.
 +
 link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more about storage efficiency^].
 
