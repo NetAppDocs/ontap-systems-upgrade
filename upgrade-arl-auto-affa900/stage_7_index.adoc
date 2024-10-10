@@ -33,5 +33,6 @@ The AFF A70 and AFF A90 systems share 100GbE network ports for both cluster and 
 If you cannot link up e0a or e0b cluster ports on the existing node to the cluster ports on the new node, see link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978[NetApp Bugs Online Bug ID CONTAP-166978^].
 ====
 
+// 2024 SEP 25, AFFFASDOC-268
 // 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
 //BURT-1476241 13-Sep-2022
