@@ -15,9 +15,14 @@ Use this procedure if you want to upgrade controller hardware in the following s
 
 [NOTE] 
 ====
-When you upgrade to an AFF A70, AFF A90, or AFF A1K system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more^].
+* When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of existing volumes and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. 
++
+** For an AFF A70, AFF A90, or AFF A1K system, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
+** For a FAS70 and FAS90 system, ONTAP only converts the storage efficiency of existing thin-provisioned volumes that already had storage efficiency enabled before upgrading.
++
+link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more about storage efficiency^].
 
-The hardware upgrade procedures have been simplified in ONTAP 9.8 with the introduction of the automatic port placement feature.
+* The hardware upgrade procedures have been simplified in ONTAP 9.8 with the introduction of the automatic port placement feature.
 ====
 
 * Your original and new nodes are compatible and supported.
@@ -42,6 +47,7 @@ If you are upgrading a MetroCluster configuration, see https://docs.netapp.com/u
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html[Where to find procedures for MetroCluster maintenance tasks^]
 * https://hwu.netapp.com[NetApp Hardware Universe^]
 
+// 2024 SEP 25, AFFFASDOC-268
 // 2024 JUN 12, ONTAPDOC-1484
 // 2023 JULY 20, Tech refresh updates
 // 2023 Feb 1, BURT 1351102
