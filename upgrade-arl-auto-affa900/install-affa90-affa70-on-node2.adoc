@@ -9,7 +9,7 @@ summary: "Install the replacement system modules on node2 during an ARL upgrade 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Install the AFF A90 or AFF A70 controller module that you received for the upgrade on node2. Node2 is controller B located on the right side of the chassis when looking at the controllers from the rear of the system.

@@ -9,7 +9,7 @@ summary: "Stage 6 process sequence for a manual ARL upgrade on controllers runni
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_stage6_intro.adoc[]

@@ -10,7 +10,7 @@ summary: "Configure and manage Storage Encryption, manage authentication keys, a
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_manage_storage_encryption_okm.adoc[]

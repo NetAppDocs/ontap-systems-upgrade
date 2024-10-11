@@ -6,7 +6,7 @@ summary: You create at least an aggregate on each of the new nodes to store the 
 ---
 = Create an aggregate and move volumes to the new nodes
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You create at least an aggregate on each of the new nodes to store the volumes you want to move from the original nodes. You must identify an aggregate for each volume and move each volume individually.

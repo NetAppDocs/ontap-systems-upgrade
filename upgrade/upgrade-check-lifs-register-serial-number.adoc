@@ -6,7 +6,7 @@ summary: 'Before returning the replacement node to service, you should verify th
 ---
 = Verify LIFs and register the serial number
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before returning the replacement node to service, you must verify that the LIFs are on their home ports, and register the serial number of the replacement node if AutoSupport is enabled, and reset automatic giveback.

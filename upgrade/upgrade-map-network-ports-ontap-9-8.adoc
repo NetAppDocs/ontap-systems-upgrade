@@ -6,7 +6,7 @@ summary: To enable node3 and node4 to communicate with each other in the cluster
 ---
 = Map network ports using ONTAP 9.8 or later
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 To enable node3 and node4 to communicate with each other in the cluster and with the network after the upgrade, you must confirm that the physical ports are correctly configured with the settings for the intended use, such as cluster, data, and so on.

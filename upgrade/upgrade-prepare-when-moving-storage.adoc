@@ -6,7 +6,7 @@ summary: 'Before upgrading by moving storage, you must gather license informatio
 ---
 = Prepare for the upgrade when moving storage
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before upgrading by moving storage, you must gather license information from the original nodes, plan network configuration, record the system IDs, and prepare the files needed for netboot.

@@ -9,7 +9,7 @@ summary: "Relocate node2's non-root aggregates to node1 when using ARL to upgrad
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before you can replace node2 with the replacement system module, you must first relocate the non-root aggregates that are owned by node2 to node1.

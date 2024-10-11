@@ -10,7 +10,7 @@ summary: "Use the partially automated ARL procedure to upgrade controllers runni
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During a controller upgrade, the controller is replaced with another controller running a newer or more powerful platform.

@@ -10,7 +10,7 @@ summary: "LIFs not online after migration in Stage 2, Stage 3, or Stage 5 during
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

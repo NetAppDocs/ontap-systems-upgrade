@@ -9,7 +9,7 @@ summary: "You can upgrade controller hardware running ONTAP 9.15.1 or later by u
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:

@@ -6,7 +6,7 @@ summary: To complete the procedure of upgrading by moving volumes, you need to c
 ---
 = Complete the upgrade
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 To complete the procedure of upgrading by moving volumes, you must configure the Service Processor (SP), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.

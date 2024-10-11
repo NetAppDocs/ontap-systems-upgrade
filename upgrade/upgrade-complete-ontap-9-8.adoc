@@ -6,7 +6,7 @@ summary: Use these steps to complete the upgrade in ONTAP 9.8 or later.
 ---
 = Overview
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Use these steps to complete the upgrade in ONTAP 9.8 or later:

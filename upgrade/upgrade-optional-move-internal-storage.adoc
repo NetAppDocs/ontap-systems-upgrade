@@ -6,7 +6,7 @@ summary: If your original node is one of the supported models, you have the opti
 ---
 = Overview
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 If your original node is one of the supported models, you have the option to move its internal SATA drives, SSDs, or SAS drives to a drive shelf that is attached to the new nodes during the process of upgrading by moving storage. You can also convert the system to a drive shelf and attach it to the new nodes.

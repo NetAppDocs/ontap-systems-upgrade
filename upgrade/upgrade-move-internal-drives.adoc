@@ -6,7 +6,7 @@ summary: If your original node is one of the supported models, during the proces
 ---
 = Move internal drives from an original node
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 If your original node is one of the supported models, during the process of upgrading by moving storage you can move the node's internal SATA drives, SSDs, or SAS drives to a drive shelf that is attached to the new node in the same cluster.

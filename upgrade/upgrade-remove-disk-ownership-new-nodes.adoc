@@ -6,7 +6,7 @@ summary: If the new nodes have internal disks or add-on shelves attached to the 
 ---
 = Remove ownership of disks attached to the new nodes
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 If the new nodes have internal disks or add-on shelves attached to the system, these can interfere with the controller upgrade. Use the following steps to remove ownership of any new disks that came with node3/node4.

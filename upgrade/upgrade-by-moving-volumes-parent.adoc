@@ -6,7 +6,7 @@ summary: 'If you are upgrading by moving volumes, you prepare the original nodes
 ---
 = Workflow
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Upgrading controller hardware by moving volumes is a nondisruptive procedure. Before starting your upgrade, review the general upgrade scenarios and upgrade considerations:

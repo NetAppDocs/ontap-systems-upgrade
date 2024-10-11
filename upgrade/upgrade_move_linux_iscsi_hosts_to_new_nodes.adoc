@@ -6,7 +6,7 @@ summary: Move your SAN volumes to the new nodes by creating new iSCSI connection
 ---
 = Move Linux iSCSI hosts to new nodes
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before moving iSCSI SAN volumes to new nodes, you must create new iSCSI connections and rescan the iSCSI paths to the new nodes. 

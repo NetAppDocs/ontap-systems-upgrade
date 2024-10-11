@@ -9,7 +9,7 @@ summary: Verify the node1 installation with the replacement modules when using A
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 After you boot node1 with the replacement controller module, verify that it is installed correctly. 

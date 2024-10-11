@@ -10,7 +10,7 @@ summary: "Using the manual ARL upgrade procedure to upgrade controller hardware 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:

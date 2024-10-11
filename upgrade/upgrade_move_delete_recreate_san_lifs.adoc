@@ -6,7 +6,7 @@ summary: Depending on your cluster contents and cluster environment, you need to
 ---
 = Overview
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Depending on your cluster contents and cluster environment, you must move, delete, or create SAN LIFs, or re-create deleted SAN LIFs.

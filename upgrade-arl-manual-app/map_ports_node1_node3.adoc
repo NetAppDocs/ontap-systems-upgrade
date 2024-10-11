@@ -10,7 +10,7 @@ summary: "Verify that the physical ports on node1 map correctly to node3 during 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_map_ports_node1_node3_intro.adoc[]

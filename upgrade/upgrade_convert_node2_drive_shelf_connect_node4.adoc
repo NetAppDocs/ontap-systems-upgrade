@@ -6,7 +6,7 @@ summary: Convert node 2 (AFF A250) to an NS224 drive shelf and then connect to n
 ---
 = Convert node2 to a drive shelf and connect to node4
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Convert AFF A250 node2 to an NS224 drive shelf and then connect to AFF A400 node4 before reassigning drives from node2 to node4.

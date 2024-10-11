@@ -10,7 +10,7 @@ summary: "Enable the HA pair, verify node3 and node4 storage access, and confirm
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_intro-step_12.adoc[]

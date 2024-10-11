@@ -9,7 +9,7 @@ summary: Use aggregate relocation to upgrade controller hardware
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You can upgrade controller hardware without disruption by using aggregate relocation (ARL). For other methods of upgrading your controller hardware, see link:../upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage].

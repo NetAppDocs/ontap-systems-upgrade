@@ -10,7 +10,7 @@ summary: "If required, configure the new controller module for NVE or NAE when u
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 // bottom half of page 71, top half of 72 in the PDF.

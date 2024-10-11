@@ -9,7 +9,7 @@ summary: "Stage 3 process sequence for an ARL upgrade using `system controller r
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During Stage 3, you connect the shared cluster-HA and storage connections for the external shelves, if any, boot node1 with the upgraded system modules, and verify the upgraded node1 installation. If you are using NetApp Volume Encryption (NVE), you restore key-manager configuration. You also relocate node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1 and verify that the SAN LIFs exist on node1.

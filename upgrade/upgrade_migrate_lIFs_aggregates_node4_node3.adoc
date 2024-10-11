@@ -6,7 +6,7 @@ summary: Prepare node3, connect node node3 to node4, and then migrate the data L
 ---
 = Migrate LIFs and data aggregates on node4 to node3
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 To complete the upgrade, you connect node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.

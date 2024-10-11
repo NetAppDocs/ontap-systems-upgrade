@@ -10,7 +10,7 @@ summary: "Relocate failed or vetoed aggregates when using ARL to upgrade control
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

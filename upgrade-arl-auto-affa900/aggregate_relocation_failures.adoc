@@ -10,7 +10,7 @@ summary: "Troubleshoot aggregate relocation failures that might occur when using
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_aggregate_relocation_failures.adoc[]

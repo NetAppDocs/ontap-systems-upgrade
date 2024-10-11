@@ -9,7 +9,7 @@ summary: "Stage 1 process sequence for an ARL upgrade using `system controller r
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_stage_1_overview.adoc[]

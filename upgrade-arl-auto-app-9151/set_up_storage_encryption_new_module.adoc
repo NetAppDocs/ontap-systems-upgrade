@@ -9,7 +9,7 @@ summary: "If required, configure Storage Encryption, install SSL certificates, a
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_set_up_storage_encryption_new_module.adoc[]

@@ -6,7 +6,7 @@ summary: 'This content describes how to upgrade controller hardware of an AFF sy
 ---
 = Decide whether to upgrade by moving volumes or storage
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This content describes how to upgrade the controller hardware of an AFF, FAS, or ASA system in a cluster by moving storage or volumes.

@@ -10,7 +10,7 @@ summary: "LIFs not online after migration in Stage 2, Stage 3, or Stage 5 when u
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

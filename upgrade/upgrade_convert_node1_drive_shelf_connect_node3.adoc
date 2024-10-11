@@ -6,7 +6,7 @@ summary: Physically connect node1 to node3 before reassigning drives from node1 
 ---
 = Convert node1 to a drive shelf and connect to node3
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Convert AFF A250 node1 to an NS224 drive shelf and then connect to AFF A400 node3 before reassigning drives from node1 to node3.

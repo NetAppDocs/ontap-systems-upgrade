@@ -6,7 +6,7 @@ summary: When you upgrade by moving storage, you begin by installing the node3 a
 ---
 = Install the new nodes
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 When you upgrade by moving storage, you begin by installing the node3 and node4 and attaching power, console, and network connections to the new nodes.

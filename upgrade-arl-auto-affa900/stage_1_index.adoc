@@ -9,7 +9,7 @@ summary: "Stage 1 process sequence for an ARL upgrade using `system controller r
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During Stage 1, you verify that you have the correct hardware for your upgrade, run prechecks and, if required, correct aggregate ownership. You also record certain information if you are managing Storage Encryption by using the Onboard Key Manager and you can choose to quiesce the SnapMirror relationships.
