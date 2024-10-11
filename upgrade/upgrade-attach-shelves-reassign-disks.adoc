@@ -6,7 +6,7 @@ summary: You must reassign the disks that belonged to node1 and node2 to node3 a
 ---
 = Attach storage shelves and reassign disk ownership
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 You must reassign the disks that belonged to node1 and node2 to node3 and node4 respectively.

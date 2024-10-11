@@ -6,7 +6,7 @@ summary:  Migrate the data aggregates, epsilon, and LIFs on node1 to node4.
 ---
 = Migrate data aggregates, epsilon, and LIFs on node1 to node4
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 Before converting AFF A250 node1 to a drive shelf, you migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to AFF A400 node4.

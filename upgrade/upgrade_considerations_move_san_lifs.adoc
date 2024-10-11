@@ -6,7 +6,7 @@ summary: You only need move SAN LIFs if you are changing the contents of your cl
 ---
 = Considerations for moving SAN LIFs
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 You only need to move the SAN LIFs if you are changing the contents of your cluster, for example, by adding nodes to the cluster or deleting nodes from the cluster. When you move a LIF, you do not have to re-zone your FC fabric or create new iSCSI sessions between the attached hosts of your cluster and the new target interface.

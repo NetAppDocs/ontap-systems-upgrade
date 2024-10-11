@@ -6,7 +6,7 @@ summary: To plan for the upgrade, you should familiarize yourself with the gener
 ---
 = Considerations for upgrading controller hardware
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 To plan for the upgrade, you must familiarize yourself with the general upgrade considerations. If necessary, contact technical support for recommendations and guidance specific to the configuration of your cluster.

@@ -7,7 +7,7 @@ summary: 'You must restore configuration information from the root volume to the
 
 = Restore the root volume configuration
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 You must restore configuration information from the root volume to the boot devices.

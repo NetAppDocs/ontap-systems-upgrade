@@ -6,7 +6,7 @@ summary: If your original node is one of the supported models, during the proces
 ---
 = Convert an original node to a drive shelf
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 If your original node is one of the supported models, during the process of upgrading by moving storage you can convert the node to a drive shelf and then attach it to the new nodes in the same cluster.

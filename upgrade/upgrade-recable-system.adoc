@@ -6,7 +6,7 @@ summary: After running diagnostics, you must recable the controller module’s s
 ---
 = Recabling the system
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 After running diagnostics, you must recable the controller module's storage and network connections.

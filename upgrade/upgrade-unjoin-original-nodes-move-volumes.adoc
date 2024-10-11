@@ -7,7 +7,7 @@ summary: After the volumes have been moved to the new nodes, you unjoin the orig
 ---
 = Unjoin the original nodes from the cluster
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 After the volumes have been moved to the new nodes, you unjoin the original nodes from the cluster. When you unjoin a node, the node's configuration is erased and all disks are initialized.

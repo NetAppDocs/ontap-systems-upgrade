@@ -6,7 +6,7 @@ summary: 'If you are upgrading by moving storage, you prepare the original nodes
 ---
 = Workflow
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 Upgrading controller hardware by moving storage is a disruptive procedure. Before starting your upgrade, review the general upgrade scenarios and upgrade considerations:
@@ -20,7 +20,7 @@ To upgrade by moving storage, you prepare the original nodes and set up the new 
 ====
 In the steps for upgrading controller hardware by moving storage, the original nodes are called node1 and node2, and the new nodes are called node3 and node4. During the described procedure, node1 is replaced by node3, and node2 is replaced by node4.
 
-image::../upgrade/media/original_to_new_nodes.png[Replacing node3 and node4 with node1 and node2]
+image:original_to_new_nodes.png[Replacing node3 and node4 with node1 and node2]
 
 The terms node1, node2, node3, and node4 are used only to distinguish between the original and new nodes. When following the procedure, you must substitute these with the real names of your original and new nodes. However, in reality, the names of the nodes do not change: node3 has the name node1, and node4 has the name node2 after the controller hardware is upgraded.
 ====

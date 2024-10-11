@@ -28,15 +28,15 @@ WARNING: When you are working on node1, you only remove the console and e0M cabl
 . Unlock and remove the controller module A from the chassis.
 ..	Slide the orange button on the cam handle downward until it unlocks.
 +
-image::../media/drw_9500_remove_PCM.png[Remove controller module]
+image:drw_9500_remove_PCM.png[Remove controller module]
 +
 [cols=2*,cols="20,80"]
 |===
 a|
-image::../media/black_circle_one.png[Number one]
+image:black_circle_one.png[Number one]
 |Cam handle release button
 a|
-image::../media/black_circle_two.png[Number two]
+image:black_circle_two.png[Number two]
 |Cam handle
 |===
 
@@ -59,16 +59,16 @@ The cam button moves away from the chassis.
 The NVRAM module disengages from the chassis and moves a few inches.
 .. Remove the NVRAM module from the chassis by pulling on the pull tabs on the sides of the module face.
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[Remove the NVRAM module]
+image:drw_a900_move-remove_NVRAM_module.png[Remove the NVRAM module]
 +
 [cols=2*,cols="20,80"]
 
 |===
 a|
-image::../media/black_circle_one.png[Number one]
+image:black_circle_one.png[Number one]
 |Lettered and numbered I/O cam latch
 a|
-image::../media/black_circle_two.png[Number two]
+image:black_circle_two.png[Number two]
 |I/O latch completely unlocked
 |===
 
@@ -91,16 +91,16 @@ Install the ASA A900, AFF A900, or FAS9500 NVRAM module in slot 6 of node1.
 . Align the NVRAM module with the edges of the chassis opening in slot 6.
 . Gently slide the NVRAM module into the slot until the lettered and numbered I/O cam latch begins to engage with the I/O cam pin, and then push the I/O cam latch all the way up to lock the NVRAM module in place.
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[Install the NVRAM module]
+image:drw_a900_move-remove_NVRAM_module.png[Install the NVRAM module]
 +
 [cols=2*,cols="20,80"]
 
 |===
 a|
-image::../media/black_circle_one.png[Number one]
+image:black_circle_one.png[Number one]
 |Lettered and numbered I/O cam latch
 a|
-image::../media/black_circle_two.png[Number two]
+image:black_circle_two.png[Number two]
 |I/O latch completely unlocked
 |===
 
@@ -122,16 +122,16 @@ The locking latch rises when the controller module is fully seated.
 +
 WARNING: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
 +
-image::../media/drw_9500_remove_PCM.png[Install the controller module]
+image:drw_9500_remove_PCM.png[Install the controller module]
 +
 [cols=2*,cols="20,80"]
 
 |===
 a|
-image::../media/black_circle_one.png[Number one]
+image:black_circle_one.png[Number one]
 |Cam handle locking latch
 a|
-image::../media/black_circle_two.png[Number two]
+image:black_circle_two.png[Number two]
 |Cam handle in the unlocked position
 |===
 

@@ -6,7 +6,7 @@ summary: You need to perform a few preparation steps before upgrading controller
 ---
 = Prepare for the upgrade when moving volumes
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 You must perform a few preparation steps before upgrading controller hardware by moving volumes.

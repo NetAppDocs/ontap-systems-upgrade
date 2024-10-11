@@ -24,7 +24,7 @@ If you are not already grounded, correctly ground yourself.
 
 . On the front of the chassis, use your thumbs to firmly push each drive in until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane. 
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
+image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
 . Go to the rear of the chassis.
 
 == Remove the AFF A800 controller module
@@ -41,15 +41,15 @@ Leave the cables in the cable management device so that when you reinstall the c
 +
 The controller module moves slightly out of the chassis.
 +
-image::../media/a800_cable_management.png[Removing the cable management arm]
+image:a800_cable_management.png[Removing the cable management arm]
 +
 [cols=2*,cols="20,80"]
 |===
 a|
-image::../media/black_circle_one.png[Number one]
+image:black_circle_one.png[Number one]
 |Locking latch
 a|
-image::../media/black_circle_two.png[Number two]
+image:black_circle_two.png[Number two]
 |Locking pin
 |===
 
@@ -61,7 +61,7 @@ Install, cable, and connect the AFF A90 or AFF A70 controller module in node1.
 +
 NOTE: Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
 +
-image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 or AFF A70]
+image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 or AFF A70]
 
 . Cable the management and console ports to the node1 controller module.
 +

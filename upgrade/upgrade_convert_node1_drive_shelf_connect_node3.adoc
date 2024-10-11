@@ -6,7 +6,7 @@ summary: Physically connect node1 to node3 before reassigning drives from node1 
 ---
 = Convert node1 to a drive shelf and connect to node3
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 Convert AFF A250 node1 to an NS224 drive shelf and then connect to AFF A400 node3 before reassigning drives from node1 to node3.
@@ -17,7 +17,7 @@ Convert AFF A250 node1 to an NS224 drive shelf and then connect to AFF A400 node
 . Insert the NVMe shelf module (NSM) into the bay of node1.
 . Connect the NSM to node3 by cabling node3 100GbE port e0c to NSM A port e0a.
 +
-image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 with one NS224 shelf]
+image:a400_with_ns224_shelf.PNG[AFF A400 with one NS224 shelf]
 
 . Move the temporary cluster connections to node3 by moving the 25GbE cabling from node1 ports e0c and e0d to any two 25GbE onboard ports (e0e, e0f, e0g, or e0h) on node3.
 +

@@ -6,7 +6,7 @@ summary: If the cluster is in a SAN environment, you must delete any SAN LIFs fr
 ---
 = Delete SAN LIFs no longer required from the original nodes
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 If the cluster is in a SAN environment, you must delete any SAN LIFs that you no longer require from the original nodes before you can unjoin the original nodes from the cluster.

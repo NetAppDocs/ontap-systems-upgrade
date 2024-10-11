@@ -6,7 +6,7 @@ summary: To complete the procedure of upgrading by moving storage, you must dele
 ---
 = Perform final upgrade steps in ONTAP 9.8 or later
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 To complete the procedure of upgrading by moving storage, you must delete any unused ports and LIFs from the new nodes, re-enable storage failover or high availability, configure the Service Processor (SP), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or CNA ports.

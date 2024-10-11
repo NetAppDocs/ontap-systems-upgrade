@@ -6,7 +6,7 @@ summary: 'When shutting down and removing the original nodes you must send an Au
 ---
 = Shut down the original nodes
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 When shutting down and removing the original nodes you must send an AutoSupport message about the upgrade, destroy the mailboxes, power down the nodes, and remove the chassis.

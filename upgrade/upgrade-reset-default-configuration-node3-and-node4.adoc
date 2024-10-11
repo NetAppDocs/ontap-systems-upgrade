@@ -6,7 +6,7 @@ summary: To confirm that configuration information on the boot media does not in
 ---
 = Reset the default configuration on the new nodes
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 To confirm that configuration information on the boot media does not interfere with the controller upgrade, you must reset the configurations of node3 and node4 to the default configuration settings.

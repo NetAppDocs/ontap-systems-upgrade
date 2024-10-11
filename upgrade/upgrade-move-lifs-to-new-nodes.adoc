@@ -6,7 +6,7 @@ summary: After you have moved the volumes from the original nodes, you need to m
 ---
 = Move non-SAN data LIFs and cluster-management LIFs to the new nodes
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 After you have moved the volumes from the original nodes, you must migrate the non-SAN data LIFs and cluster-management LIFs from the original nodes to the new nodes.

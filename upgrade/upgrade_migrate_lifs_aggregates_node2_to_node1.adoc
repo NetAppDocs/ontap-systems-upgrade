@@ -6,7 +6,7 @@ summary: Migrate the logical interfaces (LIFs) and data aggregates on node2 to n
 ---
 = Migrate LIFs and data aggregates on node2 to node1
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 Before converting AFF A250 node2 to a drive shelf, you migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.

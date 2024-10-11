@@ -6,7 +6,7 @@ summary: Convert node 2 (AFF A250) to an NS224 drive shelf and then connect to n
 ---
 = Convert node2 to a drive shelf and connect to node4
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 Convert AFF A250 node2 to an NS224 drive shelf and then connect to AFF A400 node4 before reassigning drives from node2 to node4.
@@ -17,7 +17,7 @@ Convert AFF A250 node2 to an NS224 drive shelf and then connect to AFF A400 node
 . Insert the NVMe shelf module (NSM) into the bay of node2.
 . Connect the NSM to node4 by cabling the node4 100GbE port e0c to NSM B port e0a.
 +
-image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 with one NS224 shelf]
+image:a400_with_ns224_shelf.PNG[AFF A400 with one NS224 shelf]
 
 . Connect the 25GbE cabling from node2 ports e0c and e0d to any two 25GbE onboard ports (e0e, e0f, e0g, or e0h) on node4 to create temporary cluster connections.
 +

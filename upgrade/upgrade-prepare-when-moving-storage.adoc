@@ -4,10 +4,9 @@ sidebar: sidebar
 keywords: licenses
 summary: 'Before upgrading by moving storage, you must gather license information from the original nodes, plan network configuration, record the system IDs, and prepare the files needed for netboot.'
 ---
-
 = Prepare for the upgrade when moving storage
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 Before upgrading by moving storage, you must gather license information from the original nodes, plan network configuration, record the system IDs, and prepare the files needed for netboot.
@@ -88,7 +87,7 @@ WARNING: When ports "e0a" and "e0b" are being used as HA interconnect ports on t
 +
 In the following example, the management and intercluster LIFs on network ports "e0a" and "e0b" are reassigned to network ports "e1a" and "e1b". Your nodes might be using different network ports because they vary by system.
 +
-image::../upgrade/media/reassign_lifs.PNG[Reassigning LIFs to network ports on the replacement system]
+image:reassign_lifs.PNG[Reassigning LIFs to network ports on the replacement system]
 --
 // 20 June2022, GH issue #38
 . [[prepare_move_store_5]]Download and prepare the files used for performing netboot.

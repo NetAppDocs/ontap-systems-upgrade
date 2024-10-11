@@ -6,7 +6,7 @@ summary: You must install the new nodes and join them to the cluster so that you
 ---
 = Install the new nodes and join them to the cluster
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 You must install the new nodes and join them to the cluster so that you can move volumes from the original nodes.
