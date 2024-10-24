@@ -6,10 +6,10 @@ indexpage:
   tiles:
     - title: Get started
       links:
-        - title: ONTAP Release Notes
-          url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
         - title: Choose your controller hardware upgrade procedure
           url: /choose_controller_upgrade_procedure.html
+        - title: ONTAP Release Notes
+          url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
         - title: Upgrade systems in a MetroCluster configuration
           url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html 
     - title: Learn about ONTAP systems and software 
