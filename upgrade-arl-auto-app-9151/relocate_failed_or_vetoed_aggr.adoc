@@ -9,7 +9,7 @@ summary: "Manually relocate failed or vetoed aggregates when upgrading controlle
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_relocate_failed_vetoed_aggregates.adoc[]

@@ -10,7 +10,7 @@ summary: "Shut down node2 and remove it from the rack or chassis when using ARL 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_retire_node2.adoc[]

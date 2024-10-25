@@ -9,7 +9,7 @@ summary: "Decide whether to use the ARL procedure that upgrades controller model
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This content describes how to upgrade storage controllers in a HA pair while keeping all the existing data and disks. This is a complex procedure that should be used only by experienced administrators.

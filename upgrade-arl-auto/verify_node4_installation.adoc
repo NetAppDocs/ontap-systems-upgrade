@@ -10,7 +10,7 @@ summary: "Verify that node4 joins the quorum, re-create node1's VLANs, interface
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

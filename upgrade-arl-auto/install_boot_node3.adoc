@@ -10,7 +10,7 @@ summary: "Install and boot node3 and install ONTAP software when upgrading contr
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_install_boot_node3_intro_step_5.adoc[]

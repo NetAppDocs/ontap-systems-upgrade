@@ -10,7 +10,7 @@ summary: "Re-create node2's VLANs, interface groups, and broadcast domains on no
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

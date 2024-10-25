@@ -10,7 +10,7 @@ summary: "Troubleshoot aggregate relocation failures that might occur during a m
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_aggr_relocation_failures.adoc[]

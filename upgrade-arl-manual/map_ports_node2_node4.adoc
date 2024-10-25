@@ -10,7 +10,7 @@ summary: "Verify that the physical ports on node2 map correctly to node4 during 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

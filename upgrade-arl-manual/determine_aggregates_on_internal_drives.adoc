@@ -10,7 +10,7 @@ summary: "Confirm that internal disk drives do not contain root or data aggregat
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_determine_aggregates.adoc[]

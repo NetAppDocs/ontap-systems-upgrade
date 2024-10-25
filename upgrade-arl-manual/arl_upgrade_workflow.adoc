@@ -9,7 +9,7 @@ summary: "Understand how the manual ARL upgrade procedure for a pair of controll
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before you upgrade the nodes using ARL, you should understand how the procedure works. In this document, the procedure is broken down into several stages.

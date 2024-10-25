@@ -9,7 +9,7 @@ summary: "You must have certain tools and documentation to upgrade controllers r
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_required_tools_documentation.adoc[]

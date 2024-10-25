@@ -9,7 +9,7 @@ summary: "Relocate node2's non-root aggregates to node3 when upgrading controlle
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_relocate_non_root_aggr_nas_lifs_from_node2_to_node3_intro_step_4.adoc[]

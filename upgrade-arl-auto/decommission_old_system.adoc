@@ -10,7 +10,7 @@ summary: "Let NetApp know that the old system is no longer in operation after up
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_decommission_old_system.adoc[]

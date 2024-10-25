@@ -9,7 +9,7 @@ summary: "Reference content and websites required to support using ARL to upgrad
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_all_other_references.adoc[]

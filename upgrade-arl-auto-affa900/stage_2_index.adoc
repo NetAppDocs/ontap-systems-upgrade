@@ -9,7 +9,7 @@ summary: "Stage 2 process sequence for an ARL upgrade using `system controller r
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During Stage 2, you relocate node1 non-root aggregates and NAS data LIFs to node2. This process is largely automated; the operation pauses to enable you to check its status. You must manually resume the operation. If required, you relocate failed or vetoed aggregates. You also record node1 information for use later in the procedure and then swap the corresponding node1 system modules, retire node1, and netboot the upgraded node1.

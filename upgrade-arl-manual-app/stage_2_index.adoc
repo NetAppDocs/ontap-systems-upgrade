@@ -9,7 +9,7 @@ summary: "Stage 2 process sequence for a manual ARL upgrade on controllers runni
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During Stage 2, you relocate non-root aggregates from node1 to node2 and move non-SAN data LIFs owned by node1 to node2, including failed or vetoed aggregates. You also record the necessary node1 information for use later in the procedure and then retire node1.

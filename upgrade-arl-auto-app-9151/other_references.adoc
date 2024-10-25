@@ -9,7 +9,7 @@ summary: "Reference content and websites required to support a controller upgrad
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 When performing the procedures in this content, you might need to consult reference content or go to reference websites.

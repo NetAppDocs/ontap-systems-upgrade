@@ -9,7 +9,7 @@ summary: "Troubleshoot aggregate relocation failures that might occur when upgra
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

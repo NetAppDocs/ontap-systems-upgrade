@@ -10,7 +10,7 @@ summary: "Understand if you can use the manual ARL upgrade procedure for a pair 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 To understand whether you can use aggregate relocation (ARL) to upgrade a pair of controllers running ONTAP 9.8 depends on the platform and the configuration of both the original and replacement controllers.

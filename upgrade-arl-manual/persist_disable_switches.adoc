@@ -10,7 +10,7 @@ summary:  "Disable Brocade and Cisco switches in the fabric and modify configura
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must disable the switches in the fabric persistently so that you can modify its configuration.

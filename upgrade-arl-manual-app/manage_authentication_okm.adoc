@@ -10,7 +10,7 @@ summary:  "Use the Onboard Key Manager to manage authentication keys during a ma
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_manage_authentication_okm.adoc[]

@@ -9,7 +9,7 @@ summary: "Disable the HA pair with node2 and shut down node1 when upgrading cont
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_retire_node1.adoc[]
