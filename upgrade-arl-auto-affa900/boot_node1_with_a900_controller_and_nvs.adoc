@@ -9,7 +9,7 @@ summary: Boot node1 with the replacement controller modules when using ARL to up
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Node1 with the replacement modules is now ready to boot. This section provides the steps required to boot node1 with the replacement modules for the following upgrade configurations:

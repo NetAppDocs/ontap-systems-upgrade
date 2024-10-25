@@ -9,7 +9,7 @@ summary: "Stage 6 process sequence for an ARL upgrade using `system controller r
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During Stage 6, you boot node2 with upgraded system modules and verify the upgraded node2 installation. If you are using NetApp Volume Encryption (NVE), you restore key-manager configuration. You also relocate node1 non-root aggregates and NAS data LIFs from node1 to the upgraded node2 and verify that the SAN LIFs exist on node2.

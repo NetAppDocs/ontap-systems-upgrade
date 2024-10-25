@@ -10,7 +10,7 @@ summary: "Verify that the HA pair is enabled, verify node1 and node2 storage acc
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [.lead]

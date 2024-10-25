@@ -10,7 +10,7 @@ summary: "Information on issues that might occur during a manual ARL upgrade on 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_issues_multiple_stages_of_procedure.adoc[]

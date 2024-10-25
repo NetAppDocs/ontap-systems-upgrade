@@ -10,7 +10,7 @@ summary: "Move the non-root aggregates from node1 to node2 and verify the reloca
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_relocate_non_root_aggr_node1_node2.adoc[]

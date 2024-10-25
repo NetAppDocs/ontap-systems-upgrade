@@ -10,7 +10,7 @@ summary: "Install and boot node4 and install ONTAP software when upgrading contr
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must install node4 in the rack, transfer the node2 connections to to node4, boot node4, and install ONTAP. You must then reassign any spare disks on node2, any disks belonging to the root volume, and any non-root aggregates that were not relocated to node3 earlier in the process, as outlined in this section.

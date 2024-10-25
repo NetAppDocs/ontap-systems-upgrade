@@ -10,7 +10,7 @@ summary: If required, configure the new controller module for NVE or NAE when us
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_set_up_netapp_volume_encryption_new_module.adoc[]

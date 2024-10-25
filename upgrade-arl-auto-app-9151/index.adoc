@@ -9,7 +9,7 @@ summary: "You can upgrade controller hardware running ONTAP 9.15.1 or later by u
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:
@@ -42,7 +42,7 @@ The terms "node1", "node2", "node3", and "node4" are used only to distinguish be
 * When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of existing volumes and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. 
 +
 ** For an AFF A70, AFF A90, or AFF A1K system, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
-** For a FAS70 and FAS90 system, ONTAP only converts the storage efficiency of existing thin-provisioned volumes that already had storage efficiency enabled before upgrading.
+** For a FAS70 and FAS90 system, ONTAP only converts the storage efficiency of existing thin-provisioned volumes that had storage efficiency enabled before upgrading.
  
 +
 link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more about storage efficiency^].

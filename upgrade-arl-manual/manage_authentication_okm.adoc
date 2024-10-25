@@ -10,7 +10,7 @@ summary: "Use the OKM to manage authentication keys during a manual ARL upgrade 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_manage_authentication_okm.adoc[]

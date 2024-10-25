@@ -10,7 +10,7 @@ summary: "Understand how the manual ARL upgrade procedure on controllers running
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_use_arl_overview.adoc[]

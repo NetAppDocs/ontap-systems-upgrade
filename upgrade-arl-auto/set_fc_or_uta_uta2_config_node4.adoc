@@ -10,7 +10,7 @@ summary: "Configure node4 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_intro.adoc[]

@@ -10,7 +10,7 @@ summary: "Verify that the node1 NAS data LIFs on node2 are relocated from node2 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

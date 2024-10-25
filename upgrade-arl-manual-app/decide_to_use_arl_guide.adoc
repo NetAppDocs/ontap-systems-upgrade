@@ -10,7 +10,7 @@ summary: "Decide whether to use the manual ARL procedure to upgrade storage cont
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_decide_chunk_a.adoc[]

@@ -9,7 +9,7 @@ summary: "Understand if you can use ARL, keeping the old system chassis and disk
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 To understand whether you can use aggregate relocation (ARL), keeping the old system chassis and disks, depends on the system upgrade configuration and ONTAP version.

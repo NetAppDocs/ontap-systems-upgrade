@@ -9,7 +9,7 @@ summary: "Stage 5 process sequence for an ARL upgrade using `system controller r
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

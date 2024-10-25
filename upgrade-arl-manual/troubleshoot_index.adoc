@@ -10,7 +10,7 @@ summary: "Troubleshoot failures that might occur during a manual ARL upgrade on 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_troubleshoot.adoc[]

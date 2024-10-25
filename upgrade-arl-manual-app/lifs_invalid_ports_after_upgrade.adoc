@@ -10,7 +10,7 @@ summary: "Resync LIFs that are on invalid ports in a MetroCluster configuration 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_lifs_invalid_ports.adoc[]

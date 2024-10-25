@@ -9,7 +9,7 @@ summary: "Understand how the ARL procedure to upgrade controller models in the s
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_overview_arl_workflow_top.adoc[]

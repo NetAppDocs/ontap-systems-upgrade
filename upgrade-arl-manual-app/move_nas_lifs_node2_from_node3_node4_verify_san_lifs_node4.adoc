@@ -10,7 +10,7 @@ summary: "Move node2's NAS data LIFs that are on node3 from node3 to node4 durin
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 After mapping ports from node2 to node4 and before you relocate node2 aggregates from node3 to node4, you must move the NAS data LIFs owned by node2 currently on node3 from node3 to node4. You also must verify the SAN LIFs on node4.

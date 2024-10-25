@@ -9,7 +9,7 @@ summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.15.1 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This procedure describes how to upgrade the storage controllers in an HA pair with new controllers while keeping the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
