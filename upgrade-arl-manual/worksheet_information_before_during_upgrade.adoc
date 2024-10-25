@@ -10,7 +10,7 @@ summary: "Gather certain information during a manual ARL upgrade on controllers 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_worksheet.adoc[]

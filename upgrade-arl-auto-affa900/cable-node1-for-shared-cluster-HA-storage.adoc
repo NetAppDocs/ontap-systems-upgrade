@@ -9,7 +9,7 @@ summary: Connect the cluster, HA, storage, and data connections that were previo
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Connect the cluster, HA, storage, data, and management connections that were previously connected to the AFF A800 node1 to the newly installed AFF A90 or AFF A70 node1.

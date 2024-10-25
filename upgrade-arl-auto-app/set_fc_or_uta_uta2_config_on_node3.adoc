@@ -10,7 +10,7 @@ summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

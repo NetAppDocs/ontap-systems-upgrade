@@ -10,7 +10,7 @@ summary: "Before you netboot the system, quiesce all SnapMirror relationships du
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_quiesce_snapmirror_relationships.adoc[]

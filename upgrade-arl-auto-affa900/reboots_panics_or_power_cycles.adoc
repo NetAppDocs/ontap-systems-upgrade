@@ -10,7 +10,7 @@ summary: "The system might crash – reboot, panic, or go through a power cycle 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 The system might crash – reboot, panic, or go through a power cycle – during different stages of the upgrade.

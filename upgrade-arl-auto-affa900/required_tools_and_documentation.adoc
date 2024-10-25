@@ -9,7 +9,7 @@ summary: "You must have certain tools and documentation to use ARL to upgrade co
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must have a grounding strap to perform the upgrade, and you need to reference other documents during the upgrade process.

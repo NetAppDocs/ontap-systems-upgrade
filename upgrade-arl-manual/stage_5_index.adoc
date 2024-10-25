@@ -9,7 +9,7 @@ summary: "Stage 5 process sequence for a manual ARL upgrade on controllers runni
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During Stage 5, you install and boot node4, map the cluster and node-management ports from node2 to node4, verify the node4 installation, and move data LIFs and SAN LIFs belonging to node2 from node3 to node4. You also relocate node2 aggregates from node3 to node4.

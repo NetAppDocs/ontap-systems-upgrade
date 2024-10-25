@@ -9,7 +9,7 @@ summary: "Verify that the node1 NAS data LIFs on node2 are relocated from node2 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 After you verify network configuration on node1 and before you relocate aggregates from node2 to node1, you verify that the NAS data LIFs belonging to node1 that are currently on node2 are relocated from node2 to node1. You must also verify that the SAN LIFs exist on node1.

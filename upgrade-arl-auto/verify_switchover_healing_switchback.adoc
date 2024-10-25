@@ -10,7 +10,7 @@ summary: "Verify the MetroCluster configuration switchover, healing, and switchb
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

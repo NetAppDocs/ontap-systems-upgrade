@@ -10,7 +10,7 @@ summary: Prepare the original node for upgrade by performing tasks on the origin
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_upgrade_node_pair.adoc[]

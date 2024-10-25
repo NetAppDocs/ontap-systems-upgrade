@@ -10,7 +10,7 @@ summary: "Resume the SnapMirror transfers and relationships when using ARL to up
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_resume_snapmirror_operations.adoc[]

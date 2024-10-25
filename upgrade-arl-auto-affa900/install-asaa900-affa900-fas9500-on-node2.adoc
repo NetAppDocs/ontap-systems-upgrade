@@ -9,7 +9,7 @@ summary: "Install the replacement system modules on node2 during an ARL upgrade 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Install the ASA A900, AFF A900, or FAS9500 NVRAM and controller modules that you received for the upgrade on node2. Node2 is controller B located on the right side of the chassis when looking at the controllers from the rear of the system. 
