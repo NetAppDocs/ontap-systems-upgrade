@@ -53,7 +53,7 @@ You cannot use this procedure under the following circumstances:
 
 [NOTE]
 ====
-The AFF A70 and AFF A90 are integrated systems with two onboard disks and two controllers in a single chassis. 
+The AFF A70 and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis. 
 
 * If you are upgrading to an AFF A70 or AFF A90 with internal drives, you must remove ownership of these drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A70 or AFF A90 nodes and use them for creating data aggregates. It is not mandatory to migrate root or data aggregates to internal drives.
 * If you are upgrading to an AFF A70 or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
@@ -63,5 +63,6 @@ If your controller upgrade model combination is not in the above table, contact 
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
 
+// 2024 NOV 13, ontap-systems-upgrade-issue-116
 // 2024 SEP 25, AFFFASDOC-268
 // 2024 SEP 25, AFFFASDOC-265
