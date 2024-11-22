@@ -25,6 +25,9 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 You cannot use this procedure under the following circumstances:
 
 * You are upgrading an AFF A800 to an AFF A70 or AFF A90. To perform this AFF A800 upgrade, see link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller models in the same chassis_.
+* You are upgrading an AFF C800 to an AFF C80. To perform this AFF C800 upgrade, see link:other_references.html[References] to link to Use "system controller replace" commands to upgrade controller models in the same chassis.
+* You are upgrading an AFF A250 to AFF A50 or AFF A30. To perform this AFF A250 upgrade, see link:other_references.html[References] to link to Use "system controller replace" commands to upgrade controller models in the same chassis.
+* You are upgrading an AFF C250 to an AFF C30 or AFF C60. To perform this AFF C250 upgrade, see link:other_references.html[References]s to link to Use "system controller replace" commands to upgrade controller models in the same chassis.
 * You are upgrading a V-Series system or FlexArray Virtualization storage system using an external array for backend storage. Contact technical support for options to upgrade a V-series or FlexArray system.
 * You are upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
 
@@ -32,6 +35,12 @@ You cannot use this procedure under the following circumstances:
 
 |===
 |Existing controller |Replacement controller |Supported beginning with ONTAP...
+
+|AFF A400 |AFF A50 |9.16.1
+|AFF A250 |AFF A30, AFF A50	|9.16.1
+|AFF C250 |AFF C30, AFF C50	|9.16.1
+|AFF A300 |AFF A50	|9.16.1
+|AFF A220, AFF A150	|AFF A20 |9.16.1 ^1^
 
 |FAS8200, FAS8300, FAS8700, FAS9000
 |FAS70, FAS90
@@ -50,13 +59,14 @@ You cannot use this procedure under the following circumstances:
 |9.15.1
 
 |===
+^1^ To upgrade to an AFF A20, you must first convert an AFF A150 or AFF A220 to a DS224C shelf by swapping controller module with an IOM12 module. <procedure link?>
 
 [NOTE]
 ====
-The AFF A70 and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis. 
+The AFF A70, AFF A90, AFF A50, AFF A30, AFF A20, AFF C30, and AFF C60 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis. 
 
-* If you are upgrading to an AFF A70 or AFF A90 with internal drives, you must remove ownership of these drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A70 or AFF A90 nodes and use them for creating data aggregates. It is not mandatory to migrate root or data aggregates to internal drives.
-* If you are upgrading to an AFF A70 or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
+* If you are upgrading to an AFF A70, AFF A90, AFF A30, AFF A20, AFF C30, or AFF C60 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A70, AFF A90, AFF A30, AFF A20, AFF C30, or AFF C60 nodes and use them for creating data aggregates. It is not mandatory to migrate root or data aggregates to internal drives.
+* If you are upgrading to an AFF A70, AFF A90, AFF A30, AFF A20, AFF C30, or AFF C60 without internal drives, you don't need to assign internal drives after completing the upgrade.  
 
 If your controller upgrade model combination is not in the above table, contact technical support.
 ====
