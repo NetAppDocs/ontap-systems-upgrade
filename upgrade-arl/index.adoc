@@ -30,6 +30,11 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 |===
 |Existing controller |Replacement controller |Supported beginning with ONTAP...
 
+|AFF A400 |AFF A50 |9.16.1
+|AFF A250 |AFF A30, AFF A50	|9.16.1
+|AFF C250 |AFF C30, AFF C50	|9.16.1
+|AFF A300 |AFF A50	|9.16.1
+|AFF A220, AFF A150	|AFF A20 |9.16.1
 |FAS8200, FAS8300, FAS8700, FAS9000
 |FAS70, FAS90
 |9.15.1P3
@@ -167,5 +172,6 @@ Choose the procedure for your ONTAP version to start the upgrade:
 * link:../upgrade-arl-manual-app/index.html[Manually upgrade controller hardware running ONTAP 9.8 or later]
 * link:../upgrade-arl-manual/index.html[Manually upgrade controller hardware running ONTAP 9.7 or earlier] 
  
+// 2024 NOV 25, AFFFASDOC-33
 // 2023 SEP 6, AFFFASDOC-78
 // 24 FEB 2021:  formatted from CMS

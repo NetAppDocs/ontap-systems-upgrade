@@ -17,7 +17,7 @@ Use this procedure if you want to upgrade controller hardware in the following s
 ====
 * When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of existing volumes and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. 
 +
-** For AFF A70, AFF A90, AFF A1K, AFF C80, AFF A50, AFF A30, AFF A20, AFF C30, and AFF C60 systems, or AFF A1K system, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
+** For AFF A20, AFF A30, AFF A50, AFF A70, AFF A90, AFF A1K, AFF C30, AFF C60, and AFF C80, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
 ** For a FAS70 and FAS90 system, ONTAP only converts the storage efficiency of existing thin-provisioned volumes that had storage efficiency enabled before upgrading.
 +
 link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more about storage efficiency^].
@@ -47,6 +47,7 @@ If you are upgrading a MetroCluster configuration, see https://docs.netapp.com/u
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html[Where to find procedures for MetroCluster maintenance tasks^]
 * https://hwu.netapp.com[NetApp Hardware Universe^]
 
+// 2024 NOV 25, AFFFASDOC-33
 // 2024 SEP 25, AFFFASDOC-268
 // 2024 JUN 12, ONTAPDOC-1484
 // 2023 JULY 20, Tech refresh updates
