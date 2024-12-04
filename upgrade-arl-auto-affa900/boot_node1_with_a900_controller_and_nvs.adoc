@@ -12,38 +12,18 @@ summary: Boot node1 with the replacement controller modules when using ARL to up
 :imagesdir: ../media/
 
 [.lead]
-Node1 with the replacement modules is now ready to boot. This section provides the steps required to boot node1 with the replacement modules for the following upgrade configurations:
+Node1 with the replacement modules is now ready to boot. This section provides the steps required to boot node1 with the replacement modules listed in the <<supported-systems,supported systems matrix>>.
 
-[cols="35,65"]
-|===
-|Existing node1 controller |Replacement node1 system modules
+[NOTE]
+====
+When replacing controller modules, move all connections from the old to the replacement controller module.
 
-|AFF A800
-|AFF A90 or AFF A70 ^1^
-|AFF A220 configured as an ASA
-|AFF A150 controller module ^1^
-|AFF A220	
-AFF A200	
-AFF C190
-|AFF A150 controller module ^1^
-|FAS2620 
-FAS2720 
-|FAS2820 controller module ^1^
-|AFF A700 configured as an ASA 
-|ASA A900 controller and NVRAM modules ^2^ 
-|AFF A700 
-|AFF A900 controller and NVRAM modules ^2^ 
-|FAS9000 
-|FAS9500 controller and NVRAM modules ^2^
-|===
-
-^1^ When replacing controller modules, you move all connections from the old to the replacement controller module.
-
-^2^ When replacing the controller and NVRAM modules, you move only the console and management connections.
+When replacing the controller and NVRAM modules, move only the console and management connections.
+====
 
 .Steps
 
-. (AFF A800 upgrade only) At the LOADER prompt, enter maintenance mode: 
+. (AFF A800 or AFF C800 upgrade only) At the LOADER prompt, enter maintenance mode: 
 +
 `boot_ontap maint`
 

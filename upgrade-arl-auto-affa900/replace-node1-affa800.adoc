@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/replace-node1-affa800.html
 keywords: aff, asa, fas, replace, node1, system, modules
-summary: "Replace the AFF A800 node1 system modules when using ARL to upgrade controller models in the same chassis."
+summary: "Replace the AFF A800 or AFF C800 node1 system modules when using ARL to upgrade controller models in the same chassis."
 ---
-= Replace the AFF A800 controller modules
+= Replace the AFF A800 or AFF C800 controller modules
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -18,7 +18,7 @@ At this stage, node1 is down and all data is served by node2. Because node1 and 
 
 If you are not already grounded, correctly ground yourself.
 
-== Prepare to remove the AFF A800 controller module
+== Prepare to remove the AFF A800 or AFF C800 controller module
 
 .Steps
 
@@ -27,8 +27,8 @@ If you are not already grounded, correctly ground yourself.
 image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
 . Go to the rear of the chassis.
 
-== Remove the AFF A800 controller module
-Remove the cable management device from the AFF A800 controller module and move the controller slightly out of the chassis.
+== Remove the AFF A800 or AFF C800 controller module
+Remove the cable management device from the existing module and move the controller slightly out of the chassis.
 
 .Steps
 . Unplug the node1 controller module power supplies from the source.
@@ -53,8 +53,8 @@ image:black_circle_two.png[Number two]
 |Locking pin
 |===
 
-== Install the AFF A90 or AFF A70 controller module
-Install, cable, and connect the AFF A90 or AFF A70 controller module in node1.
+== Install the AFF A90, AFF A70, or AFF C80 controller module
+Install, cable, and connect the AFF A90, AFF A70, or AFF C80 controller module in node1.
 
 .Steps
 . Align the end of the controller module with the opening in the chassis, and then gently push the controller module halfway into the system.

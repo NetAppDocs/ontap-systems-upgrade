@@ -14,31 +14,10 @@ summary: "Decide whether to use the ARL procedure that upgrades controller model
 [.lead]
 This content describes how to upgrade storage controllers in a HA pair while keeping all the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
 
+== Supported for ARL upgrades
 You can use this procedure under the following circumstances:
 
-* You are performing one of the following controller upgrades:
-+
-[cols=2*,options="header",cols="50,50"]
-|===
-|Old controller
-|Replacement controller
-
-|AFF A800
-|AFF A70 and AFF A90
-|AFF A220 configured as an ASA
-|ASA A150
-|AFF A220, AFF A200, or AFF C190
-|AFF A150
-|FAS2620 or FAS2720
-|FAS2820
-|AFF A700 configured as an ASA
-|ASA A900
-|AFF A700
-|AFF A900 
-|FAS9000
-|FAS9500
-|===
-
+* You controller upgrade is listed in the <<supported-systems,supported systems matrix>>.
 * You have verified with your NetApp sales representative that you have received the hardware for your controller upgrade:
 ** Two AFF A90 or two AFF A70 controllers and all I/O modules required for the upgrade. The required length of 100GbE cables. 
 ** ASA A150, AFF A150, or FAS2820 controller
@@ -48,6 +27,7 @@ You can use this procedure under the following circumstances:
 * You do not want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
 * You are experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
 
+== Not supported for ARL upgrades
 You cannot use this procedure under the following circumstances:
 
 * You are using FlexArray Virtualization Software on the AFF A800, AFF A700, or FAS9000 systems.
