@@ -31,6 +31,8 @@ You can only upgrade to a replacement system in the same series:
 ** AFF C-Series system to AFF C-Series system
 * ASA system to ASA system
 +
+ASA upgrade to an ASA r2 replacement system is not supported
++
 You can only upgrade to a replacement system in the same series:
 
 ** ASA A-Series system to ASA A-Series system
