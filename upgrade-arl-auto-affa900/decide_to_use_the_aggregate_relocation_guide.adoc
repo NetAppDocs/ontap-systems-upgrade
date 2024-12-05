@@ -51,7 +51,6 @@ You can use this procedure under the following circumstances:
 You cannot use this procedure under the following circumstances:
 
 * You are using FlexArray Virtualization Software on the AFF A800, AFF A700, or FAS9000 systems.
-* You are using a shared switch for cluster-interconnect and Ethernet attached storage.
 
 For upgrading MetroCluster IP configurations on AFF A800, AFF A700, or FAS9000 systems, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
@@ -61,6 +60,7 @@ If you prefer a different method of upgrading the controller hardware and are wi
 
 Refer to link:other_references.html[References] to link to the _ONTAP 9 Documentation Center_ where you can access ONTAP 9 product documentation.
 
+// 2024 DEC 5, AFFFASDOC-273
 // 2024 APR 16, AFFFASDOC-32
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39
