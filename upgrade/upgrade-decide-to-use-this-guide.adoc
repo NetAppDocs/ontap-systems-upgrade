@@ -15,6 +15,7 @@ Use this procedure if you want to upgrade controller hardware in the following s
 
 [NOTE] 
 ====
+* ASA upgrade to an ASA r2 replacement system is not supported.
 * When you upgrade to a system introduced in ONTAP 9.15.1, ONTAP converts the storage efficiency of existing volumes and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. 
 +
 ** For an AFF A70, AFF A90, or AFF A1K system, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
