@@ -67,13 +67,13 @@ a|9.11.1P7 (FAS2620) ^3^
 |9.10.1P10, 9.11.1P6 and later
 |===
 
-* ^1^ NetApp recommends, when possible, that you have the same ONTAP version on the old and replacement systems.
+^1^ NetApp recommends, when possible, that you have the same ONTAP version on the old and replacement systems.
 +
 The minimum ONTAP versions in the preceding table are mandatory. These ONTAP versions have the Service Processor or baseboard management controller (BMC) firmware version that is required to support mixing controller types within a chassis during an upgrade. 
 
-* ^2^ When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more^].
+^2^ When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more^].
 
-* ^3^ The AFF A200 and FAS2620 systems do not support ONTAP versions later than 9.11.1.
+^3^ The AFF A200 and FAS2620 systems do not support ONTAP versions later than 9.11.1.
 
 During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate the non-root aggregates between the old controller nodes. After installing the replacement nodes, you migrate the non-root aggregates from the old controller nodes to the replacement controller nodes. The data hosted on the nodes that you are upgrading is accessible during the upgrade procedure. You also migrate data LIFs between nodes in the cluster as you proceed.
 
@@ -82,12 +82,14 @@ The controller hardware that you replace depends on the existing system:
 [cols=2*,options="header",cols="30,70"]
 |===
 |On the existing... |Replace the following hardware
-|AFF A250, AFF C250, AAFF A800, AFF C800
-|Swap the two existing controllers, NVRAM, and all I/O modules with the new controllers and I/O modules.
+|AFF A250, AFF C250 
+|Swap the two AFF A250 or AFF C250 controllers with the new controllers and I/O modules
+|AAFF A800, AFF C800
+|Swap the two existing controllers, NVRAM, and all I/O modules with the new controllers and I/O modules
 |AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
-|Swap the controller module on each node on the old controller with the new module. ^1^ 
+|Swap the controller module on each node on the old controller with the new module ^1^ 
 |AFF A700 or FAS9000
-|Swap the controller and NVRAM modules on each node on the old controller with the new modules. ^1^
+|Swap the controller and NVRAM modules on each node on the old controller with the new modules ^1^
 |===
 
 ^1^ You do not need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.

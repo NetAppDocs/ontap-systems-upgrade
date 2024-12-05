@@ -20,14 +20,14 @@ Before starting the upgrade, verify that you have the correct modules for your r
 |Replacement system must have ...
 |AFF A250, AFF C250 
 |Two controller modules and new IO modules
-|AFF A800, AFF C80
+|AFF A800, AFF C800
 |Two controller modules, two NVRAMs, and new IO modules
 a|* AFF A220 configured as an ASA
 * AFF A220, AFF A200, AFF C190
 * FAS2620, FAS2720
 |Two controller modules
 
-a|* AFF A700 configured as an ASA to ASA A900
+a|* AFF A700 configured as an ASA
 * AFF A700 to AFF A900
 * FAS9000 to FAS9500
 |Two controller and two NVRAM modules

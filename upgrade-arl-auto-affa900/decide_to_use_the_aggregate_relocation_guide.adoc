@@ -17,11 +17,12 @@ This content describes how to upgrade storage controllers in a HA pair while kee
 == Supported for ARL upgrades
 You can use this procedure under the following circumstances:
 
-* You controller upgrade is listed in the <<supported-systems,supported systems matrix>>.
-* You have verified with your NetApp sales representative that you have received the hardware for your controller upgrade:
-** Two AFF A90 or two AFF A70 controllers and all I/O modules required for the upgrade. The required length of 100GbE cables. 
+* You controller upgrade is listed in the link:index.html#supported-systems,[supported systems matrix].
+* You have verified with your NetApp sales representative that you have received the hardware that you need for the controller upgrade:
+** Two AFF A90, AFF A70, or AFF C80 controllers and all I/O modules. The required length of 100GbE cables.
+** Two AFF A50, AFF A30, AFF C30, or AFF C60 controllers and I/O modules required. The required cables.  
 ** ASA A150, AFF A150, or FAS2820 controller
-** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts required for the upgrade
+** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts
 
 * You are running the minimum ONTAP version for your upgrade. For more information, see link:index.html[Overview].
 * You do not want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
