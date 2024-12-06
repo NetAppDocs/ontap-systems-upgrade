@@ -39,7 +39,7 @@ a|9.10.1P15, 9.11.1P11 and later ^2^
 
 |FAS2620 
 |FAS2820
-a|9.11.1P7 (FAS2620) ^2^
+a|9.11.1P7 or later patch releases (FAS2620) ^2^
 
 9.13.1 and later (FAS2820)
 |FAS2720 |FAS2820	
@@ -110,6 +110,7 @@ If you cannot link up e0a or e0b cluster ports on the existing node to the clust
 == Automate the controller upgrade process
 This procedure provides the steps for the automated procedure, which uses automatic disk assignment and network port reachability checks to simplify the controller upgrade experience.
 
+// 2024 DEC 4, ontap-systems-upgrade-issue-118
 // 2024 SEP 25, AFFFASDOC-268
 // 2024 APR 16, AFFFASDOC-32
 // 2023 AUG 29, AFFFASDOC-78
