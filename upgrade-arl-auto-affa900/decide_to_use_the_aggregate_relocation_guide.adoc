@@ -47,7 +47,7 @@ You can use this procedure under the following circumstances:
 * You are running the minimum ONTAP version for your upgrade. For more information, see link:index.html[Overview].
 * You do not want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
 * You are experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
-* Your systems are running ONTAP 9.15.1 or later and they are using Ethernet switches to connect to Ethernet-attached storage.
+* Your systems are running ONTAP 9.15.1 or later, and they are using Ethernet switches to connect to Ethernet-attached storage.
 
 You cannot use this procedure under the following circumstances:
 
