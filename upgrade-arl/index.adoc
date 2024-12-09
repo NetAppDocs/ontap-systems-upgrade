@@ -32,7 +32,7 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 
 |AFF A400 |AFF A50 |9.16.1
 |AFF A250 |AFF A30, AFF A50	|9.16.1
-|AFF C250 |AFF C30, AFF C50	|9.16.1
+|AFF C250 |AFF C30, AFF C60	|9.16.1
 |AFF A300 |AFF A50	|9.16.1
 |AFF A220, AFF A150	|AFF A20 |9.16.1
 |FAS8200, FAS8300, FAS8700, FAS9000

@@ -30,7 +30,7 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 
 |AFF A400 |AFF A50 ^2^ |9.16.1
 |AFF A250 |AFF A30 ^2^, AFF A50 ^2^	|9.16.1
-|AFF C250 |AFF C30 ^2^, AFF C50	|9.16.1
+|AFF C250 |AFF C30 ^2^, AFF C60	|9.16.1
 |AFF A300 |AFF A50 ^2^	|9.16.1
 |AFF A220, AFF A150	|AFF A20 ^2^ |9.16.1 ^1^
 
