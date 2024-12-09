@@ -20,7 +20,7 @@ Content specific to this upgrade are listed in the table below.
 |Describes how to install and configure the MetroCluster hardware and software components in a fabric configuration.
 |link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html[FlexArray Virtualization Installation Requirements and Reference^]
 |Contains cabling instructions and other information for FlexArray Virtualization systems.
-|link:https://docs.netapp.com/us-en/ontap/high-availability/index.html[High Availability management^]
+|link:https://docs.netapp.com/us-en/ontap/high-availability/index.html[HA pair management^]
 |Describes how to install and manage high-availability clustered configurations, including storage failover and takeover/giveback.
 |link:https://docs.netapp.com/us-en/ontap/volumes/index.html[Logical storage management with the CLI^]
 |Describes how to efficiently manage your logical storage resources, using volumes, FlexClone volumes, files, and LUNs, FlexCache volumes, deduplication, compression, qtrees, and quotas.
