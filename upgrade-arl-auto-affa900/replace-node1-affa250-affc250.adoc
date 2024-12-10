@@ -27,8 +27,7 @@ If you are not already grounded, correctly ground yourself.
 
 . Insert your forefinger into the latching mechanism on either side of the controller module, press the lever with your thumb, and gently pull the controller a few inches out of the chassis.
 +
-NOTE: If you have difficulty removing the controller module, place your index fingers through the
-finger holes from the inside (by crossing your arms).
+NOTE: If you have difficulty removing the controller module, place your index fingers through the finger holes from the inside (by crossing your arms).
 +
 image:drw_a250_pcm_remove_install.png["Push drive to firmly seat against the chassis midplane"]
 +
@@ -85,3 +84,5 @@ If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the 
 . Save the default environment variables settings:
 +
 `saveenv`
+
+// 2024 DEC 9, AFFFASDOC-33

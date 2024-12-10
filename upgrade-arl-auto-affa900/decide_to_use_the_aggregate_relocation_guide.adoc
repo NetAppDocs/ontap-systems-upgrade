@@ -20,7 +20,7 @@ You can use this procedure under the following circumstances:
 * You controller upgrade is listed in the link:index.html#supported-systems,[supported systems matrix].
 * You have verified with your NetApp sales representative that you have received the hardware that you need for the controller upgrade:
 ** Two AFF A90, AFF A70, or AFF C80 controllers and all I/O modules. The required length of 100GbE cables.
-** Two AFF A50, AFF A30, AFF C30, or AFF C60 controllers and I/O modules required. The required cables.  
+** Two AFF A50, AFF A30, AFF C30, or AFF C60 controllers and I/O modules. The required cables.  
 ** ASA A150, AFF A150, or FAS2820 controller
 ** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts
 
@@ -42,6 +42,7 @@ If you prefer a different method of upgrading the controller hardware and are wi
 
 Refer to link:other_references.html[References] to link to the _ONTAP 9 Documentation Center_ where you can access ONTAP 9 product documentation.
 
+// 2024 DEC 9, AFFFASDOC-33
 // 2024 APR 16, AFFFASDOC-32
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39

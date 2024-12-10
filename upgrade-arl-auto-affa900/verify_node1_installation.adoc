@@ -183,5 +183,6 @@ When all ports are correctly configured and added to the correct broadcast domai
 +
 `network interface show -fields home-port,status-admin`
 
+// 2024 DEC 9, AFFFASDOC-33
 // BURT 1476251, 2022-05-16
-//BURT 1452254, 2022-04-27
+// BURT 1452254, 2022-04-27
