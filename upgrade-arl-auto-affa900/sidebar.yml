@@ -35,7 +35,7 @@ entries:
     - title: Replace the node1 system modules
       entries:
         - title: Replace AFF A250 or AFF C250
-          url: /upgrade-arl-auto-affa900/replace-node1-affa250-affc250
+          url: /upgrade-arl-auto-affa900/replace-node1-affa250-affc250.html
         - title: Replace AFF A800
           url: /upgrade-arl-auto-affa900/replace-node1-affa800.html
         - title: Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
