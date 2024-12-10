@@ -12,7 +12,9 @@ summary: "Replace the AFF A700 or FAS9000 node1 system modules when using ARL to
 :imagesdir: ../media/
 
 [.lead]
-At this stage, node1 is down and all data is served by node2. Because node1 and node2 are in the same chassis and powered by the same set of power supplies, do NOT power off the chassis. You must take care to remove only the node1 controller module and the node1 NVRAM module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
+At this stage, node1 is down and all data is served by node2. You must take care to remove only the node1 controller module and the node1 NVRAM module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
+
+CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and powered by the same power supplies.
 
 .Before you begin
 If you are not already grounded, correctly ground yourself.

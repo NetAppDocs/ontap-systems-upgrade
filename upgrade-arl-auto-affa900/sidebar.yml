@@ -34,6 +34,8 @@ entries:
       url: /upgrade-arl-auto-affa900/retire_node1.html
     - title: Replace the node1 system modules
       entries:
+        - title: Replace AFF A250 or AFF C250
+          url: /upgrade-arl-auto-affa900/replace-node1-affa250-affc250
         - title: Replace AFF A800
           url: /upgrade-arl-auto-affa900/replace-node1-affa800.html
         - title: Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
@@ -70,6 +72,8 @@ entries:
      url: /upgrade-arl-auto-affa900/stage_5_index.html
    - title: Install the replacement system modules on node2
      entries:
+      - title: Install AFF A30, AFF A50, AFF C30, or AFF C60
+        url: /upgrade-arl-auto-affa900/install-aff-a30-a50-c30-c50-node2.html
       - title: Install AFF A90 or AFF A70
         url: /upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html
       - title: Install ASA A150, AFF A150, or FAS2820
