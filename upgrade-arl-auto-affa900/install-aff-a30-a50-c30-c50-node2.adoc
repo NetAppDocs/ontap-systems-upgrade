@@ -12,14 +12,12 @@ summary: "Install the replacement system modules on node2 during an ARL upgrade 
 :imagesdir: ../media/
 
 [.lead]
-Install the AFF A90 or AFF A70 controller module that you received for the upgrade on node2. Node2 is controller B located on the right side of the chassis when looking at the controllers from the rear of the system.
+Install the replacement controller module that you received for the upgrade on node2. Node2 is controller B located on the right side of the chassis when looking at the controllers from the rear of the system.
 
 .Steps
-. Align the end of the controller module with the opening in the chassis, and then gently push the controller module halfway into the system.
+. Position the storage system onto the rails in the middle of the cabinet or telco rack, and then support the storage system from the bottom and slide it into place..
 +
 NOTE: Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
-+
-image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 or AFF A70]
 
 . Cable the management and console ports to the node1 controller module.
 +
