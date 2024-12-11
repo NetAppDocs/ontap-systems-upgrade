@@ -31,8 +31,6 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 |Existing controller |Replacement controller |Supported beginning with ONTAP...
 
 |AFF A400 |AFF A50 |9.16.1
-|AFF A250 |AFF A30, AFF A50	|9.16.1
-|AFF C250 |AFF C30, AFF C60	|9.16.1
 |AFF A300 |AFF A50	|9.16.1
 |AFF A220, AFF A150	|AFF A20 |9.16.1
 |FAS8200, FAS8300, FAS8700, FAS9000
@@ -64,6 +62,14 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 |===
 |Old system |Replacement system |Supported ONTAP versions
 
+|AFF C250 |AFF C30, AFF C60
+|9.16.1 and later
+
+|AFF A250 |AFF A50, AFF A30
+|9.16.1 and later
+
+|AFF C800 |AFF C80
+|9.16.1 and later
 |AFF A800
 |AFF A70 or AFF A90
 |9.15.1 and later

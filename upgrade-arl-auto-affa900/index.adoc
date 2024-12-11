@@ -25,18 +25,18 @@ CAUTION: This procedure strictly applies to the following upgrade configurations
 [cols=3*,options="header",cols="20,20,40"]
 |===
 |Existing system |Replacement system |Supported ONTAP versions
+|AFF C250 ^1^
+|AFF C30, AFF C60
+|9.16.1
 |AFF A250 ^1^
 |AFF A30, AFF A50
 |9.16.1 
-|AFF C250 ^1^
-|AFF C30, AFF C60
+|AFF C800 ^1^
+|AFF C80
 |9.16.1 
 |AFF A800 ^1^
 |AFF A90 or AFF A70
 |9.15.1
-|AFF C800 ^1^
-|AFF C80
-|9.16.1
 |AFF A220 configured as an All SAN Array (ASA) 
 |ASA A150
 |9.13.1P1 and later

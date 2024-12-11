@@ -29,8 +29,6 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 |Existing controller |Replacement controller |Supported beginning with ONTAP...
 
 |AFF A400 |AFF A50 ^2^ |9.16.1
-|AFF A250 |AFF A30 ^2^, AFF A50 ^2^	|9.16.1
-|AFF C250 |AFF C30 ^2^, AFF C60	|9.16.1
 |AFF A300 |AFF A50 ^2^	|9.16.1
 |AFF A220, AFF A150	|AFF A20 ^2^ |9.16.1 ^1^
 
@@ -53,10 +51,10 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 |===
 ^1^ To upgrade to an AFF A20, you must first convert an AFF A150 or AFF A220 to a DS224C shelf by swapping controller module with an IOM12 module. See link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-convert-node-to-shelf.html[Convert an original node to a drive shelf].
 
-^2^ The  AFF A20, AFF A30, AFF A50, AFF A70, AFF A90, and AFF C30 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis: 
+^2^ The  AFF A20, AFF A50, AFF A70, and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis: 
 
-* If you are upgrading to an AFF A20, AFF A30, AFF A70, AFF A90, or AFF C30 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A30, AFF A70, AFF A90, or AFF C30 nodes and use them for creating data aggregates. It is not mandatory to migrate root or data aggregates to internal drives.
-* If you are upgrading to an AFF A20, AFF A30, AFF A70, AFF A90, or AFF C30 without internal drives, you don't need to assign internal drives after completing the upgrade.  
+* If you are upgrading to an AFF A20, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A70, or AFF A90 nodes and use them for creating data aggregates. It is not mandatory to migrate root or data aggregates to internal drives.
+* If you are upgrading to an AFF A20, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
 
 If your controller upgrade model combination is not in the above table, contact technical support.
 
