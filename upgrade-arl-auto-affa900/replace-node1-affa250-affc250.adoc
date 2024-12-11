@@ -41,8 +41,11 @@ image:black_circle_two.png[Number two]
 |Latching mechanism
 |===
 . Go to the rear of the chassis.
-. Unplug the node1 controller module power supplies from the source.
-. Release the power cable retainers, and then unplug the cables from the power supplies.
+. Unplug the node1 controller module power supply from the source.
+. Release the power cable retainers, and then unplug the cables from the power supplies for node1.
++
+CAUTION: The power connections for node1 and node2 are on top of each other. Take care to only unplug the cables for node1. Unplugging the cables for node1 and node2 could cause a power outage to both nodes in the HA pair.
+
 . Loosen the hook and loop strap binding the cables to the cable management device, and then unplug the system cables and SFP and QSFP modules (if needed) from the controller module, keeping track of where the cables were connected.
 +
 Leave the cables in the cable management device so that when you reinstall the cable management device, the cables are organized.

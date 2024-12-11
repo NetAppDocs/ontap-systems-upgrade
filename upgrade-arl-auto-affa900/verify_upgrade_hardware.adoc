@@ -25,8 +25,9 @@ Before starting the upgrade, verify that you have the correct modules for your r
 a|* AFF A220 configured as an ASA
 * AFF A220, AFF A200, AFF C190
 * FAS2620, FAS2720
-|Two controller modules
+a|Two controller modules
 
+If you are converting the existing system to a storage shelf so you can attach it to another system, the replacement system must also have two IO modules. 
 a|* AFF A700 configured as an ASA
 * AFF A700 to AFF A900
 * FAS9000 to FAS9500

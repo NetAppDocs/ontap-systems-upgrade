@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to
 keywords: moving, non-root, aggregates, nas, lif, node1, node2
 summary: "Verify that node2's NAS data LIFs on node1 are relocated from node1 to node2 when using ARL to upgrade controller models in the same chassis."
 ---
-
 = Move non-root aggregates and NAS data LIFs back to node2
 :hardbreaks:
 :nofooter:

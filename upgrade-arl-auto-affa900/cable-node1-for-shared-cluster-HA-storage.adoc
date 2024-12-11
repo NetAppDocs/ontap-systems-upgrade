@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.ht
 keywords: cluster, ha, aff, a800, shared, storage, data, management
 summary: Connect the cluster, HA, storage, and data connections that were previously connected to the AFF A800 node1 to the newly installed AFF A90 or AFF A70 node1
 ---
-= Cable node1 for shared cluster-HA and storage (AFF A800 or AFF C800 upgrade only)
+= Cable node1 for shared cluster-HA and storage
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,10 +12,12 @@ summary: Connect the cluster, HA, storage, and data connections that were previo
 :imagesdir: ../media/
 
 [.lead]
-Connect the cluster, HA, storage, data, and management connections that were previously connected to the AFF A800 or AFF C800 node1 to the newly installed AFF A90, AFF A70, or AFF C80 node1.
+If you are performing one of the following upgrades, you must connect the cluster, HA, storage, data, and management connections that were previously connected to the node1 on the existing system to the newly installed node1 on the replacement system.
+
+include::../_include/ru-auto-supported-upgrades-9151.adoc[]
 
 == Connect the e0M and BMC ports
-The existing system (AFF A800 or AFF C800) has a management port (e0M) and a BMC port. On the replacement system (AFF A90, AFF A70, or AFF C80), the e0M and BMC ports are combined and accessed through the "wrench" port. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the existing system before connecting to the replacement system.
+If the existing system has a management port (e0M) and a BMC port. On the replacement system, the e0M and BMC ports are combined and accessed through the "wrench" port. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the existing system before connecting to the replacement system.
 
 [cols=2*,options="header",cols="35,65"]
 |===
@@ -30,10 +32,11 @@ a|. Merge the e0M and BMC IP addresses into one IP subnet.
 
 
 == Connect to a two-node switchless cluster
-The following table shows the switch port usage for two-node switchless cluster configurations.
+The following tables show the switch port usage for two-node switchless cluster configurations.
 
+[cols=4*,cols="25,25,25,25"]
 |===
-|Port |AFF A800 or AFF C800 node |AFF A90 node	|AFF A70 or AFF C80 node
+|Port |AFF A800, AFF C800  |AFF A90 	|AFF A70, AFF C80 
 
 |Cluster |e0a |e1a |e1a
 |Cluster |e1a |e7a 
@@ -47,10 +50,36 @@ The following table shows the switch port usage for two-node switchless cluster 
 
 |===
 
-== Connect to a switch-attached cluster
-For a switch-attached cluster, check that you meet the following requirements:
+[cols=4*,cols="25,25,25,25"]
+|===
+|Port |AFF A250, AFF C250 |AFF A30, AFF C30, AFF C60 |AFF A50
 
-* The identical cluster ports on the AFF A90 or AFF A70 nodes are on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross-connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, will result in HA communication failures.
-* The AFF A90 and AFF A70 nodes use shared cluster-HA Ethernet ports. Ensure that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports. 
+|Cluster and HA
+|e0c
+|e4a
+|e4a
+|Cluster and HA
+|e0d
+|e2a 
+
+(Use e4b if there is no e2a)
+|e2a
+
+(Use e4b if there is no e2a)
+|Ethernet storage Ports 
+|Any available port
+|e3a, e3b
+|e3a, e3b
+|SAS storage ports
+|Any available port
+|3a, 3b
+|3a, 3b
+|===
+
+== Connect to a switch-attached cluster
+For a switch-attached cluster, check that you meet the following requirements for the AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60, or AFF C80 (replacement) node:
+
+* The identical cluster ports on the replacement node are on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross-connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, will result in HA communication failures.
+* The replacement node uses shared cluster-HA Ethernet ports. Ensure that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports. 
 
 // 2024 JULY 12, AFFFASDOC-240

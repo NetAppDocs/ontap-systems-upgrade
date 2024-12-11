@@ -23,10 +23,11 @@ When replacing the controller and NVRAM modules, move only the console and manag
 
 .Steps
 
-. (AFF A800 or AFF C800 upgrade only) At the LOADER prompt, enter maintenance mode: 
+. (AFF A250, AFF C250, AFF A800, or AFF C800 upgrade only) At the LOADER prompt, enter maintenance mode: 
 +
 `boot_ontap maint`
 
+.. Anser `y` to the mixed platform confirmation prompt.
 .. Answer `yes` to the confirmation prompt.
 .. Show the state of the 100GbE interfaces:
 +

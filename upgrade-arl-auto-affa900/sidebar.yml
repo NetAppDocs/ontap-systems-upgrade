@@ -48,7 +48,7 @@ entries:
   entries:
     - title: Overview
       url: /upgrade-arl-auto-affa900/stage_3_index.html
-    - title: Cable node1 for shared cluster-HA storage (AFF A800 and AFF C800 upgrade only)
+    - title: Cable node1 for shared cluster-HA storage
       url: /upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html
     - title: Boot node1 with the replacement system modules
       url: /upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html

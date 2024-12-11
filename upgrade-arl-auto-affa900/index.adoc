@@ -24,19 +24,19 @@ CAUTION: This procedure strictly applies to the following upgrade configurations
 [[supported-systems-in-chassis]]
 [cols=3*,options="header",cols="20,20,40"]
 |===
-|Existing system |Replacement system |Supported ONTAP versions ^1^
-|AFF A250
+|Existing system |Replacement system |Supported ONTAP versions
+|AFF A250 ^1^
 |AFF A30, AFF A50
-|9.16.1
-|AFF C250
+|9.16.1 
+|AFF C250 ^1^
 |AFF C30, AFF C60
-|9.16.1
-|AFF A800 ^2^
+|9.16.1 
+|AFF A800 ^1^
 |AFF A90 or AFF A70
 |9.15.1
-|AFF C800
+|AFF C800 ^1^
 |AFF C80
-|9.15.1P3 and later
+|9.16.1
 |AFF A220 configured as an All SAN Array (ASA) 
 |ASA A150
 |9.13.1P1 and later
@@ -45,7 +45,7 @@ CAUTION: This procedure strictly applies to the following upgrade configurations
 |9.10.1P15, 9.11.1P11, 9.12.1P5 and later
 |AFF A200 
 |AFF A150
-a|9.10.1P15, 9.11.1P11 and later ^3^
+a|9.10.1P15, 9.11.1P11 and later ^2^
 
 |AFF C190
 |AFF A150
@@ -53,7 +53,7 @@ a|9.10.1P15, 9.11.1P11 and later ^3^
 
 |FAS2620 
 |FAS2820
-a|9.11.1P7 (FAS2620) ^3^
+a|9.11.1P7 (FAS2620) ^2^
 
 9.13.1 and later (FAS2820)
 |FAS2720 |FAS2820	
@@ -68,13 +68,16 @@ a|9.11.1P7 (FAS2620) ^3^
 |9.10.1P10, 9.11.1P6 and later
 |===
 
-^1^ NetApp recommends, when possible, that you have the same ONTAP version on the old and replacement systems.
+^1^ When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more^].
+
+^2^ The AFF A200 and FAS2620 systems do not support ONTAP versions later than 9.11.1.
+
+[NOTE]
+====
+NetApp strongly recommends, when possible, that you have the same ONTAP version on the old and replacement systems.
 
 The minimum ONTAP versions in the preceding table are mandatory. These ONTAP versions have the Service Processor or baseboard management controller (BMC) firmware version that is required to support mixing controller types within a chassis during an upgrade. 
-
-^2^ When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more^].
-
-^3^ The AFF A200 and FAS2620 systems do not support ONTAP versions later than 9.11.1.
+====
 
 During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate the non-root aggregates between the old controller nodes. After installing the replacement nodes, you migrate the non-root aggregates from the old controller nodes to the replacement controller nodes. The data hosted on the nodes that you are upgrading is accessible during the upgrade procedure. You also migrate data LIFs between nodes in the cluster as you proceed.
 
@@ -84,13 +87,13 @@ The controller hardware that you replace depends on the existing system model ty
 |===
 |If your existing system is... |Swap the following hardware
 |AFF A250, AFF C250 
-|Two AFF A250 or AFF C250 controllers with the new controllers and I/O modules
-|AAFF A800, AFF C800
-|Two existing controllers, NVRAM, and all I/O modules with the new controllers and I/O modules
+|Swap the two AFF A250 or AFF C250 controllers with the new controllers and I/O modules.
+|AFF A800, AFF C800
+|Swap the two AFF A800 or AFF C800 controllers, NVRAM, and all I/O modules with the new controllers and I/O modules.
 |AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
-|Controller module on each node on the old controller with the new module ^1^ 
+|Swap the controller module on each node on the old controller with the new module. 
 |AFF A700 or FAS9000
-|Controller and NVRAM modules on each node on the old controller with the new modules ^1^
+|Swap the controller and NVRAM modules on each node on the old controller with the new modules. ^1^
 |===
 
 ^1^ You don't need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.
@@ -110,7 +113,10 @@ NOTE: The terms *node1* and *node2*, are used only as a reference to node names 
 ** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_ASA_A1K_A90_A70_FAS90_FAS70[How to convert an existing cluster from 10G or 25G cluster ports to 40G or 100G cluster ports on an AFF/ASA A1K, A90, A70, FAS90, FAS70^]
 --
 +
-If you cannot link up e0a or e0b cluster ports on the existing node to the cluster ports on the new node, see link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978[NetApp Bugs Online Bug ID CONTAP-166978^].
+If you cannot link up e0a or e0b cluster ports on the existing node to the cluster ports on the new node, see the following for more information:
+
+** link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978[NetApp Bugs Online Bug ID CONTAP-166978^]
+** https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1127315[NetApp Bugs Online Bug ID 1127315^]
 * The ASA A900, AFF A900, and FAS9500 systems only support high-line power (200V to 240V). If your AFF A700 or FAS9000 system is running on low-line power (100V to 120V), you must convert the AFF A700 or FAS9000 input power before using this procedure.
 * If you are upgrading from an existing system with downtime that is included in the <<supported-systems-in-chassis,supported systems matrix>>, you can upgrade controller hardware by moving storage or contact technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
 
