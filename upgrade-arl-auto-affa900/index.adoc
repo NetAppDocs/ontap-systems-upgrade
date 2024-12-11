@@ -85,7 +85,7 @@ The controller hardware that you replace depends on the existing system model ty
 
 [cols=2*,options="header",cols="30,70"]
 |===
-|If your existing system is... |Swap the following hardware
+|If your existing system is... |Then...
 |AFF A250, AFF C250 
 |Swap the two AFF A250 or AFF C250 controllers with the new controllers and I/O modules.
 |AFF A800, AFF C800

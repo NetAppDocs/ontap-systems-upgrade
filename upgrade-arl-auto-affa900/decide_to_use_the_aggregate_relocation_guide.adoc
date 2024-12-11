@@ -32,8 +32,9 @@ You can use this procedure under the following circumstances:
 You cannot use this procedure under the following circumstances:
 
 * You are using FlexArray Virtualization Software on the existing system that is being upgraded.
-
-For upgrading MetroCluster IP configurations, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
+* You are upgrading a MetroCluster IP configuration. 
++
+To upgrade a MetroCluster IP configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 

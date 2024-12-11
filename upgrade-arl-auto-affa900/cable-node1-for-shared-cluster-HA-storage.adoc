@@ -34,7 +34,7 @@ a|. Merge the e0M and BMC IP addresses into one IP subnet.
 == Connect to a two-node switchless cluster
 The following tables show the switch port usage for two-node switchless cluster configurations.
 
-[cols=4*,cols="25,25,25,25"]
+
 |===
 |Port |AFF A800, AFF C800  |AFF A90 	|AFF A70, AFF C80 
 
@@ -50,7 +50,7 @@ The following tables show the switch port usage for two-node switchless cluster 
 
 |===
 
-[cols=4*,cols="25,25,25,25"]
+
 |===
 |Port |AFF A250, AFF C250 |AFF A30, AFF C30, AFF C60 |AFF A50
 
