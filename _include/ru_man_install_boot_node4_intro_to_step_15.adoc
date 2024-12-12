@@ -35,7 +35,7 @@ The following references help you make proper cable connections. Go to link:othe
 +
 * _Installation and Setup Instructions_ or _FlexArray Virtualization Installation Requirements and Reference_ for the node4 platform
 * The appropriate disk shelf procedure
-* The _High Availability management_ documentation
+* The _HA pair management_ documentation
 
 +
 Cable the following connections:

@@ -90,7 +90,7 @@ a|9.10.1P15, 9.11.1P11 and later
 
 |FAS2620 
 |FAS2820
-a|9.11.1P7 (FAS2620)
+a|9.11.1P7 or later patch releases (FAS2620)
 
 *Note*: FAS2620 does not support ONTAP versions later than 9.11.1.
 
