@@ -14,12 +14,12 @@ summary: "You can upgrade controller hardware by converting an old system to a r
 [.lead]
 You can nondisruptively upgrade controller hardware on a HA pair by using aggregate relocation (ARL) and converting the existing system to the replacement system, keeping the existing system chassis and disks.
 
-ARL takes advantage of the HA configuration and cluster interconnect communication, which enables you to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
+ARL takes advantage of the HA configuration and cluster interconnect communication. This allows you to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
 
 [[supported-systems]]
 The following table shows the supported systems matrix for the controller upgrade.
 
-CAUTION: This procedure strictly applies to the following upgrade configurations. Do *not* use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other_references.html[References] to link to the _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and the _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_ content.
+CAUTION: This procedure strictly applies to the following upgrade configurations. Don't use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other_references.html[References] to link to the _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and the _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_ content.
 
 [[supported-systems-in-chassis]]
 [cols=3*,options="header",cols="20,20,40"]

@@ -12,7 +12,9 @@ summary: Boot node2 with the replacement controller modules when using ARL to up
 :imagesdir: ../media/
 
 [.lead]
-Node2 with the replacement modules is now ready to boot. Upgrading by swapping the system modules involves moving only the console and management connections. This section provides the steps required to boot node1 with the replacement modules listed in the link:index.html#supported-systems,[supported systems matrix].
+Node2 with the replacement modules is now ready to boot. The supported replacement modules are listed in the the link:index.html#supported-systems,[supported systems matrix].
+
+NOTE: You only move the console and management connections when you upgrade by swapping the system modules.
 
 .Steps
 
