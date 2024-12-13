@@ -15,7 +15,7 @@ summary: "Install the replacement system modules on node2 during an ARL upgrade 
 Install the replacement controller module that you received for the upgrade on node2. Node2 is controller B located on the right side of the chassis when looking at the controllers from the rear of the system.
 
 .Steps
-. Position the storage system onto the rails in the middle of the cabinet or telco rack, and then support the storage system from the bottom and slide it into place..
+. Position the storage system onto the rails in the middle of the cabinet or telco rack, and then support the storage system from the bottom and slide it into place.
 +
 NOTE: Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
 

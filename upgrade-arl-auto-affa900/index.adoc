@@ -89,7 +89,7 @@ The controller hardware that you replace depends on the existing system model ty
 |AFF A250, AFF C250 
 |Swap the two AFF A250 or AFF C250 controllers with the new controllers and I/O modules.
 |AFF A800, AFF C800
-|Swap the two AFF A800 or AFF C800 controllers, NVRAM, and all I/O modules with the new controllers and I/O modules.
+|Swap the two AFF A800 or AFF C800 controllers with the new controllers and I/O modules.
 |AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
 |Swap the controller module on each node on the old controller with the new module. 
 |AFF A700 or FAS9000
