@@ -21,10 +21,14 @@ Choose an upgrade procedure for a system with internal drives, which are listed 
 * AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, and AFF A800
 +
 NOTE: You can also upgrade an AFF A800 to an AFF A70 or AFF A90 by using aggregate relocation. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Learn more].
+
 * AFF C190, AFF C250, and AFF C800
-* ASA A150, ASA A250, ASA A800, and ASA AFF A220
 +
 NOTE: You can also upgrade an AFF A250 and AFF C250 by using aggregate relocation. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Learn more].
+
+* ASA A150, ASA A250, ASA A800, and ASA AFF A220
++
+NOTE: ASA upgrade to an ASA r2 replacement system is not supported. For information on migrating data from an ASA to ASA r2 system, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
 
 If your system is not listed, see the https://hwu.netapp.com[NetApp Hardware Universe^] to check if it has internal drives. 
 
@@ -40,6 +44,8 @@ Choose an upgrade procedure for a system with only external drives, which are li
 * AFF A300, AFF A320, AFF A400, AFF A700, and AFF A900
 * AFF C400 
 * ASA A400, ASA A900, and ASA AFF A700
++
+NOTE: ASA upgrade to an ASA r2 replacement system is not supported. For information on migrating data from ASA to ASA r2, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
 
 If your system is not listed, see the https://hwu.netapp.com[NetApp Hardware Universe^] to check if it only has external drives.
 

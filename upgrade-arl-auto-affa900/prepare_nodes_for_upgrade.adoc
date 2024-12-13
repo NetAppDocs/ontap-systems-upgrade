@@ -106,7 +106,7 @@ If storage failover is not enabled for the controllers, the task fails.
 The nodes should not own any non-local aggregates.
 |Disk Status Check
 |If any nodes being replaced have missing or failed disks, the task fails.
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _High Availability management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 |Data LIF Status Check
 |Checks if any of the nodes being replaced have non-local data LIFs.
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
