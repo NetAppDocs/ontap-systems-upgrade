@@ -79,7 +79,7 @@ The following tables show the switch port usage for two-node switchless cluster 
 == Connect to a switch-attached cluster
 For a switch-attached cluster, check that you meet the following requirements for the AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60, or AFF C80 (replacement) node:
 
-* The identical cluster ports on the replacement node are on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross-connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, will result in HA communication failures.
-* The replacement node uses shared cluster-HA Ethernet ports. Ensure that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports. 
+* The identical cluster ports on the replacement node are on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross-connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, results in HA communication failures.
+* The replacement node uses shared cluster-HA Ethernet ports. Verify that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports. 
 
 // 2024 JULY 12, AFFFASDOC-240

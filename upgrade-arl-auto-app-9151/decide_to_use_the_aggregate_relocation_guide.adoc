@@ -49,7 +49,7 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 |9.15.1
 
 |===
-^1^ To upgrade to an AFF A20, you must first convert an AFF A150 or AFF A220 to a DS224C shelf by swapping controller module with an IOM12 module. See link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-convert-node-to-shelf.html[Convert an original node to a drive shelf].
+^1^ To upgrade to an AFF A20, you must first convert an AFF A150 or AFF A220 to a DS224C shelf by swapping controller module with an IOM12 module. See link:../upgrade/upgrade-convert-node-to-shelf.html[Convert an original node to a drive shelf].
 
 ^2^ The  AFF A20, AFF A50, AFF A70, and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis: 
 

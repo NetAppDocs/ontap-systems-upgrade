@@ -112,7 +112,7 @@ Use the following procedure to install the ASA A900, AFA A900, or FAS9500 contro
 .Steps
 . Align the end of the controller module with opening A in the chassis, and then gently push the controller module halfway into the system.
 +
-NOTE: Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
+NOTE: Don't completely insert the controller module in the chassis until instructed to do so later in the procedure.
 
 . Cable the management and console ports to the node1 controller module.
 +
@@ -122,7 +122,7 @@ NOTE: Because the chassis is already powered ON, node1 starts BIOS initializatio
 +
 The locking latch rises when the controller module is fully seated.
 +
-WARNING: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
+WARNING: To avoid damaging the connectors, don't use excessive force when sliding the controller module into the chassis.
 +
 image:drw_9500_remove_PCM.png[Install the controller module]
 +

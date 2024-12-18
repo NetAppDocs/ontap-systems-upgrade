@@ -53,10 +53,9 @@ Leave the cables in the cable management device so that when you reinstall the c
 . Press down on both of the locking latches, and then rotate both latches downward at the same time.
 +
 The controller module moves slightly out of the chassis.
-. Using both hands, grasp the controller module sides and gently pull it out of the chassis and set it on a flat,
-stable surface.
+. Using both hands, grasp the controller module sides and gently pull it out of the chassis and set it on a flat, stable surface.
 +
-Make sure that you support the weight of th e controller module as you slide it out of the chassis. 
+Make sure that you support the weight of the controller module as you slide it out of the chassis. 
 
 == Install the AFF A30, AFF A50, AFF C30, or AFF C60 controller module
 Install, cable, and connect the replacement module in node1.
@@ -64,7 +63,7 @@ Install, cable, and connect the replacement module in node1.
 .Steps
 . Align the end of the controller module with the opening in the chassis, and then gently push the controller module halfway into the system.
 +
-NOTE: Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
+NOTE: Don't completely insert the controller module in the chassis until instructed to do so later in the procedure.
 
 . Cable the management and console ports to the node1 controller module.
 +
@@ -72,7 +71,7 @@ NOTE: Because the chassis is already powered ON, node1 starts BIOS initializatio
 
 . With the cam handle in the open position, firmly push the controller module in until it meets the midplane and is fully seated. The locking latch rises when the controller module is fully seated. Close the cam handle to the locked position.
 +
-NOTE: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
+NOTE: To avoid damaging the connectors, don't use excessive force when sliding the controller module into the chassis.
 
 . Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1. 
 
