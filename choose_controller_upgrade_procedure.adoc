@@ -24,7 +24,7 @@ NOTE: You can also upgrade an AFF A800 to an AFF A70 or AFF A90 by using aggrega
 
 * AFF C190, AFF C250, and AFF C800
 +
-NOTE: You can also upgrade an AFF A250 and AFF C250 by using aggregate relocation. link:upgrade-arl-auto-app-9151/index.html[Learn more].
+NOTE: You can also upgrade an AFF A250 and AFF C250 by using aggregate relocation. link:upgrade-arl-auto-affa900/index.html[Learn more].
 
 * ASA A150, ASA A250, ASA A800, and ASA AFF A220
 +
