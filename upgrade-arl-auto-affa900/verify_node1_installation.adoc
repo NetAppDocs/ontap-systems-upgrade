@@ -14,9 +14,9 @@ summary: Verify the node1 installation with the replacement modules when using A
 [.lead]
 After you boot node1 with the replacement controller module, verify that it is installed correctly. 
 
-For AFF A800 upgrades only, you map the physical ports from the existing node1 to the replacement node1 because the physical ports are changing between the AFF A800 and the AFF A90 or AFF A70 controller.
+For AFF A250, AFF C250, AFF A800, or AFF C800 upgrades only, you map the physical ports from the existing node1 to the replacement node1 because the physical ports are changing between the existing and replacement controllers.
 
-For all other upgrades, there is no change to the physical ports so you are not required to map the physical ports from the old node1 to the replacement node1.
+For all other upgrades, you don't need to map the physical ports from the existing node1 to the replacement node1.
 
 .About this task
 You must wait for node1 to join quorum and then resume the controller replacement operation.
@@ -183,5 +183,6 @@ When all ports are correctly configured and added to the correct broadcast domai
 +
 `network interface show -fields home-port,status-admin`
 
+// 2024 DEC 9, AFFFASDOC-33
 // BURT 1476251, 2022-05-16
-//BURT 1452254, 2022-04-27
+// BURT 1452254, 2022-04-27

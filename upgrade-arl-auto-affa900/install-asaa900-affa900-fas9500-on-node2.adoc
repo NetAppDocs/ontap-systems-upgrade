@@ -38,7 +38,7 @@ Install, cable, and connect the ASA A900, AFF A900, or FAS9500 controller module
 +
 TIP:  The bay label is located on the chassis directly above the controller module.
 +
-NOTE: Do not completely insert the controller module in the chassis until you are instructed to do so later in the procedure.
+NOTE: Don't completely insert the controller module in the chassis until you are instructed to do so later in the procedure.
 
 .	Cable the management and console ports to the node2 controller module.
 +
@@ -48,7 +48,7 @@ NOTE: Because the chassis is already powered ON, node2 starts booting as soon as
 +
 The locking latch rises when the controller module is fully seated.
 +
-WARNING: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
+WARNING: To avoid damaging the connectors, don't use excessive force when sliding the controller module into the chassis.
 
 .	Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
 .	After you interrupt AUTOBOOT, node2 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node2 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
