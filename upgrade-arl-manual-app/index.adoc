@@ -31,7 +31,7 @@ You can only upgrade to a replacement system in the same series:
 ** AFF C-Series system to AFF C-Series system
 * ASA system to ASA system
 +
-ASA upgrade to an ASA r2 replacement system is not supported. For information on migrating data from ASA to ASA r2, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
+ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from ASA to ASA r2, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
 +
 You can only upgrade to a replacement system in the same series:
 
