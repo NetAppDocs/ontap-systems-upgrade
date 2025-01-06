@@ -14,46 +14,28 @@ summary: "Decide whether to use the ARL procedure that upgrades controller model
 [.lead]
 This content describes how to upgrade storage controllers in a HA pair while keeping all the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
 
+== Supported for ARL upgrades
 You can use this procedure under the following circumstances:
 
-* You are performing one of the following controller upgrades:
-+
-[cols=2*,options="header",cols="50,50"]
-|===
-|Old controller
-|Replacement controller
-
-|AFF A800
-|AFF A70 and AFF A90
-|AFF A220 configured as an ASA
-|ASA A150
-|AFF A220, AFF A200, or AFF C190
-|AFF A150
-|FAS2620 or FAS2720
-|FAS2820
-|AFF A700 configured as an ASA
-|ASA A900
-|AFF A700
-|AFF A900 
-|FAS9000
-|FAS9500
-|===
-
-* You have verified with your NetApp sales representative that you have received the hardware for your controller upgrade:
-** Two AFF A90 or two AFF A70 controllers and all I/O modules required for the upgrade. The required length of 100GbE cables. 
+* You controller upgrade is listed in the link:index.html#supported-systems,[supported systems matrix].
+* You have verified with your NetApp sales representative that you have received the hardware that you need for the controller upgrade:
+** Two AFF A90, AFF A70, or AFF C80 controllers and all I/O modules. The required length of 100GbE cables.
+** Two AFF A50, AFF A30, AFF C30, or AFF C60 controllers and I/O modules. The required cables.  
 ** ASA A150, AFF A150, or FAS2820 controller
-** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts required for the upgrade
+** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts
 
 * You are running the minimum ONTAP version for your upgrade. For more information, see link:index.html[Overview].
 * You do not want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
 * You are experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
 * Your systems are running ONTAP 9.15.1 or later, and they are using Ethernet switches to connect to Ethernet-attached storage.
 
+== Not supported for ARL upgrades
 You cannot use this procedure under the following circumstances:
 
-* You are using FlexArray Virtualization Software on the AFF A800, AFF A700, or FAS9000 systems.
-
-For upgrading MetroCluster IP configurations on AFF A800, AFF A700, or FAS9000 systems, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
+* You are using FlexArray Virtualization Software on the existing system that is being upgraded.
+* You are upgrading a MetroCluster IP configuration. 
++
+To upgrade a MetroCluster IP configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
@@ -61,6 +43,7 @@ If you prefer a different method of upgrading the controller hardware and are wi
 
 Refer to link:other_references.html[References] to link to the _ONTAP 9 Documentation Center_ where you can access ONTAP 9 product documentation.
 
+// 2024 DEC 9, AFFFASDOC-33
 // 2024 DEC 5, AFFFASDOC-273
 // 2024 APR 16, AFFFASDOC-32
 // 2023 AUG 29, AFFFASDOC-78
