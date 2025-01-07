@@ -19,7 +19,7 @@ ARL takes advantage of the HA configuration and cluster interconnect communicati
 [[supported-systems]]
 The following table shows the supported systems matrix for the controller upgrade.
 
-CAUTION: This procedure strictly applies to the following upgrade configurations. Don't use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other_references.html[References] to link to the _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and the _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_ content.
+CAUTION: This procedure strictly applies to the following upgrade configurations. Don't use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_.
 
 [[supported-systems-in-chassis]]
 [cols=3*,options="header",cols="20,20,40"]
@@ -93,10 +93,10 @@ The controller hardware that you replace depends on the existing system model ty
 |AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
 |Swap the controller module on each node on the old controller with the new module. 
 |AFF A700 or FAS9000
-|Swap the controller and NVRAM modules on each node on the old controller with the new modules. ^1^
-|===
+|Swap the controller and NVRAM modules on each node on the old controller with the new modules.
 
-^1^ You don't need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.
+*Note*: You don't need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.
+|===
 
 NOTE: The terms *node1* and *node2*, are used only as a reference to node names in this document. When following the procedure, you must substitute the actual names of your nodes.
 

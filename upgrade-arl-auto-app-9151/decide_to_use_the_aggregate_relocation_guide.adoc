@@ -53,7 +53,7 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 
 ^2^ The  AFF A20, AFF A50, AFF A70, and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis: 
 
-* If you are upgrading to an AFF A20, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A70, or AFF A90 nodes and use them for creating data aggregates. It is not mandatory to migrate root or data aggregates to internal drives.
+* If you are upgrading to an AFF A20, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A70, or AFF A90 nodes and use them for creating data aggregates. You don't have to migrate root or data aggregates to internal drives.
 * If you are upgrading to an AFF A20, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
 
 If your controller upgrade model combination is not in the above table, contact technical support.

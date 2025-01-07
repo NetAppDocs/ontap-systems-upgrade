@@ -17,7 +17,7 @@ If you are performing one of the following upgrades, you must connect the cluste
 include::../_include/ru-auto-supported-upgrades-9151.adoc[]
 
 == Connect the e0M and BMC ports
-If the existing system has a management port (e0M) and a BMC port. On the replacement system, the e0M and BMC ports are combined and accessed through the "wrench" port. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the existing system before connecting to the replacement system.
+If the existing system has a management port (e0M) and a BMC port, the e0M and BMC ports are combined and accessed through the "wrench" port on the replacement system. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the existing system before connecting to the replacement system.
 
 [cols=2*,options="header",cols="35,65"]
 |===

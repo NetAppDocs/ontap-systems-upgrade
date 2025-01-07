@@ -29,8 +29,8 @@ a|Two controller modules
 
 If you are converting the existing system to a storage shelf so you can attach it to another system, the replacement system must also have two IO modules. 
 a|* AFF A700 configured as an ASA
-* AFF A700 to AFF A900
-* FAS9000 to FAS9500
+* AFF A700
+* FAS9000
 |Two controller and two NVRAM modules
 
 |===
