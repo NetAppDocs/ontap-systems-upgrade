@@ -36,7 +36,7 @@ CAUTION: This procedure strictly applies to the following upgrade configurations
 |9.16.1 
 |AFF A800 ^1^
 |AFF A90 or AFF A70
-|9.15.1
+|9.15.1 and later
 |AFF A220 configured as an All SAN Array (ASA) 
 |ASA A150
 |9.13.1P1 and later
