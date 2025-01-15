@@ -20,5 +20,5 @@ During Stage 3, you connect the shared cluster-HA and storage connections for th
 . link:boot_node1_with_a900_controller_and_nvs.html[Boot node1 with the replacement system modules]
 . link:verify_node1_installation.html[Verify the node1 installation]
 . link:restore_key_manager_config_upgraded_node1.html[Restore key-manager configuration on the upgraded node1]
-. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html[Move non-root aggregates and NAS data LIFs owned by node1 from node2 to the upgraded node1]
+. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html[Move node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1]
 //BURT-1476241 13-Sep-2022

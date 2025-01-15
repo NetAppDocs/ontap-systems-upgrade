@@ -49,8 +49,8 @@ link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-con
 * The AFF A20, AFF A50, AFF A70, AFF A90, AFF A1K, FAS70, and FAS90 systems share 100GbE network ports for both cluster and HA connections. These systems can support 10GbE or 25GbE cluster connections to legacy cluster switches; however, NetApp recommends updating to 100GbE cluster speeds when the 10GbE and 25GbE switches are no longer required. For more information, see the following Knowledge Base articles:
 +
 --
-** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_ASA_A1K_A90_A70_FAS90_FAS70[How to configure 10G or 25G cluster ports on a new cluster setup on AFF/ASA A1K, A90, A70, FAS90, FAS70^]
-** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_ASA_A1K_A90_A70_FAS90_FAS70[How to convert an existing cluster from 10G or 25G cluster ports to 40G or 100G cluster ports on an AFF/ASA A1K, A90, A70, FAS90, FAS70^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup[How to configure 10G or 25G cluster ports on a new cluster setup^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_existing_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports[How to convert existing 10G or 25G cluster ports to 40G or 100G cluster ports^]
 --
 +
 The AFF A20 system shares 10GbE and 25GbE network ports for both cluster and HA connections. These are the only network port cluster connections supported by an AFF A20 system.
