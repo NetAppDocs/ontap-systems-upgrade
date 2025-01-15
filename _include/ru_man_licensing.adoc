@@ -1,5 +1,6 @@
-When you set up a cluster, the setup wizard prompts you to enter the cluster-base license key. However, some features require additional licenses, which are issued as _packages_ that include one or more features. Each node in the cluster must have its own key for each feature to be used in the cluster.
+Some features require licenses, which are issued as _packages_ that include one or more features. Each node in the cluster must have its own key for each feature to be used in the cluster.
 
 If you do not have new license keys, currently licensed features in the cluster are available to the new controller and will continue to work. However, using unlicensed features on the controller might put you out of compliance with your license agreement, so you must install the new license key or keys for the new controller after the upgrade is complete.
 
+// 2023 JUN 30, AFFFASDOC-39
 // Clean-up, 2022-03-09

@@ -10,7 +10,7 @@ summary: "Move node2's NAS data LIFs to node3 during a manual ARL upgrade on con
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_move_nas_lifs_node2_node3.adoc[]

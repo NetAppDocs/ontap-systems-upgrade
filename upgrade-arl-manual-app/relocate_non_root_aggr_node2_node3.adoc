@@ -10,7 +10,7 @@ summary: "Send an AutoSupport message for node2 and manually relocate node2's no
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_relocate_non_root_aggr_node2_node3.adoc[]

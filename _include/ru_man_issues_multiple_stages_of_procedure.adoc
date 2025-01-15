@@ -1,5 +1,6 @@
 Some issues can occur during different stages of the procedure.
 
+[[storage-failover-command]]
 == Unexpected "storage failover show" command output
 
 During the procedure, if the node that hosts all data aggregates panics or is rebooted accidentally, you might see unexpected output for the `storage failover show` command before and after the reboot, panic, or power cycle.

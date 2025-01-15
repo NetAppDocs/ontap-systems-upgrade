@@ -1,0 +1,6 @@
+---
+permalink: upgrade/upgrade-methods.html
+redirect: ontap-systems-upgrade/choose_controller_upgrade_procedure.html
+---
+
+// 2023 AUG 15, tech-refresh

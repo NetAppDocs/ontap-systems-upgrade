@@ -5,8 +5,8 @@ entries:
     url: /upgrade/upgrade-decide-to-use-this-guide.html
   - title: Considerations
     url: /upgrade/upgrade-considerations.html
-  - title: Choose method
-    url: /upgrade/upgrade-methods.html
+# - title: Choose method
+#   url: /upgrade/upgrade-methods.html
   - title: Upgrade by moving storage
     entries:
     - title: Workflow
@@ -63,7 +63,9 @@ entries:
       url: /upgrade/upgrade-prepare-when-moving-volumes.html
     - title: Install and join new nodes
       url: /upgrade/upgrade-install-and-join-new-nodes-move-vols.html
-    - title: Create aggregate and move volumes
+    - title: Move Linux iSCSI hosts to the new nodes
+      url: /upgrade/upgrade_move_linux_iscsi_hosts_to_new_nodes.html
+    - title: Create an aggregate and move volumes to the new nodes
       url: /upgrade/upgrade-create-aggregate-move-volumes.html
     - title: Move non-SAN data LIFs and cluster management LIFs
       url: /upgrade/upgrade-move-lifs-to-new-nodes.html

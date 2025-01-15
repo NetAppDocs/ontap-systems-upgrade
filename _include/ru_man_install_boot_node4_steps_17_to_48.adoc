@@ -117,7 +117,7 @@ NOTE: If you have shared disks, hybrid aggregates, or both on your system, you m
 `_node2_sysid_ -d _node4_sysid_`
 |===
 +
-For the `<node2_sysid>` value, use the information captured in link:record_node2_information.html#man_node2_info_step10[Step 10] of the _Record node2 information_ section. For `_node4_sysid_`, use the information captured in <<man_install4_step23,Step 23>>.
+For the `<node2_sysid>` value, use the information captured in link:record_node2_information.html#man_record_2_step10[Step 10] of the _Record node2 information_ section. For `_node4_sysid_`, use the information captured in <<man_install4_step23,Step 23>>.
 +
 NOTE: The `-p` option is only required in maintenance mode when shared disks are present.
 

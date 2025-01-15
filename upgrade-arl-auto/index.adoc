@@ -10,7 +10,7 @@ summary: "You can upgrade controller hardware running ONTAP 9.5 to 9.7 by using 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:

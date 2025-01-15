@@ -10,7 +10,7 @@ summary: "Verify the node3 installation and communication with node2 during a ma
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 After you install and boot node3, you must verify that it is installed correctly, that it is part of the cluster, and that it can communicate with node2.

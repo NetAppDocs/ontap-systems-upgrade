@@ -10,7 +10,7 @@ summary: "Prepare the nodes, collect information, and confirm that all cluster n
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_prepare_nodes_upgrade_chunk_a.adoc[]

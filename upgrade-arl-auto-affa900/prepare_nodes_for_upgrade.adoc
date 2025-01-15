@@ -1,21 +1,52 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html
-keywords: preparing, nodes, upgrade, stage 1, prechecks
-summary: "Prepare the nodes and run a series of prechecks during an AFF A700 to AFF A900 upgrade."
+keywords: preparing, prepare, nodes, upgrade, stage 1, prechecks, old, system, chassis, disk, disks
+summary: "Prepare the nodes and run a series of prechecks when using ARL to upgrade controller models in the same chassis."
 ---
-
 = Prepare the nodes for upgrade
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-During Stage 1, you must prepare the nodes for the upgrade and run a series of prechecks. You must also prepare to netboot the new controllers.
+The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure and, if required, determine the type of self-encrypting drives that are in use.
 
 .Steps
+
+. List the Service Processor (SP) or baseboard management controller (BMC) firmware version running on the old controller: 
++
+`service-processor show`
++
+Verify that you have a supported SP or BMC firmware version:
++
+[cols=3*,options="header",cols="30,35,35"]
+|===
+|Old controller
+|SP or BMC
+|Minimum firmware version
+
+|AFF A800
+|BMC
+|10.9
+|AFF A220
+|BMC	
+|11.9P1 
+|AFF A200		
+|SP
+|5.11P1 
+|AFF C190		
+|BMC	
+|11.9P1 
+|FAS2620
+|SP
+|5.11P1
+|FAS2720
+|BMC
+|11.9P1
+|===
 
 . Begin the controller replacement process by entering the following command in the advanced privilege mode of the ONTAP command line:
 +
@@ -23,17 +54,19 @@ During Stage 1, you must prepare the nodes for the upgrade and run a series of p
 +
 `system controller replace start -nodes _node_names_`
 +
-You will see output similar to the following:
+You will see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
 ....
 Warning:
-1. Current ONTAP version is 9.x
+1. Current ONTAP version is 9.15.1
 
 2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM  batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
 
 Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
 
 3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedures.
 
 Do you want to continue? {y|n}: y
 ....
@@ -73,7 +106,7 @@ If storage failover is not enabled for the controllers, the task fails.
 The nodes should not own any non-local aggregates.
 |Disk Status Check
 |If any nodes being replaced have missing or failed disks, the task fails.
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _High Availability management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 |Data LIF Status Check
 |Checks if any of the nodes being replaced have non-local data LIFs.
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
@@ -97,16 +130,21 @@ If node affinity jobs are running, the check fails.
 
 . Run the below set of commands as directed by the controller replacement procedure on the system console.
 +
-From the serial port connected to each node, run and save the output of the following commands individually:
+Run the commands from the serial port connected to each node, run and save the output of the commands individually:
 +
 * `vserver services name-service dns show`
 * `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
 * `network port show -node _local_ -type physical`
-* `service-processor show -local -instance`
+* `service-processor show -node _local_ -instance`
 * `network fcp adapter show -node _local_`
-* `network port ifgrp show`
+* `network port ifgrp show -node _local_`
 * `system node show -instance -node _local_`
 * `run -node _local_ sysconfig`
+* `run -node local sysconfig -ac`
+* `run -node local aggr status -r`
+* `vol show -fields type`
+* `run local aggr options _data_aggregate_name_`
+* `vol show -fields type , space-guarantee`
 * `storage aggregate show -node _local_`
 * `volume show -node _local_`
 * `storage array config show -switch _switch_name_`
@@ -115,10 +153,9 @@ From the serial port connected to each node, run and save the output of the foll
 * `security key-manager onboard show-backup`
 * `security key-manager external show`
 * `security key-manager external show-status`
-* `network port reachability show -detail`
-
+* `network port reachability show -detail -node _local_`
 +
-NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using Onboard Key Manager is in use, keep the key-manager passphrase ready to complete the key manager resync later in the procedure.
+NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager is in use, keep the key-manager passphrase ready to complete the key manager resync later in the procedure.
 
 . If your system uses self-encrypting drives, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use on the HA pair that you are upgrading. ONTAP software supports two types of self-encrypting drives:
 +
@@ -139,15 +176,15 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
 == License
+Each node in the cluster must have its own NetApp License File (NLF). 
 
-When you set up a cluster, the setup wizard prompts you to enter the cluster-base license key. However, some features require additional licenses, which are issued as _packages_ that include one or more features. Each node in the cluster must have its own key for each feature to be used in the cluster.
+If you do not have an NLF, currently licensed features in the cluster are available to the new controller. However, using unlicensed features on the controller might put you out of compliance with your license agreement, so you should install the NLF for the new controller after the upgrade is complete.
 
-If you do not have new license keys, currently licensed features in the cluster are available to the new controller. However, using unlicensed features on the controller might put you out of compliance with your license agreement, so you should install the new license key or keys for the new controller after the upgrade is complete.
-
-Refer to link:other_references.html[References] to link to the _NetApp Support Site_ where you can obtain new 2-character license keys for 9.10.1 or later. The keys are available in the _My Support_ section under _Software licenses_. If the site does not have the license keys you need, contact your NetApp sales representative.
+Refer to link:other_references.html[References] to link to the _NetApp Support Site_ where you can obtain your NLF. The NLFs are available in the _My Support_ section under _Software licenses_. If the site does not have the NLFs that you need, contact your NetApp sales representative.
 
 For detailed information about licensing, refer to link:other_references.html[References] to link to the _System Administration Reference_.
 
+// 2023 MAY 29, AFFFASDOC-39
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022 DEC 1, ontap-systems-upgrade-37
 // 2022 MAY 16, BURT 1476251

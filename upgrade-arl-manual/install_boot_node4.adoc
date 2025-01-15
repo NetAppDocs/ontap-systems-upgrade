@@ -10,7 +10,7 @@ summary: "Install and boot node4 and install ONTAP software during a manual ARL 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_install_boot_node4_intro_to_step_15.adoc[]

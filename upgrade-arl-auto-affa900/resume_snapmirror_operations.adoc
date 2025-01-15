@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/resume_snapmirror_operations.html
 keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete
-summary: "Resume the SnapMirror transfers and relationships during an AFF A700 to AFF A900 upgrade."
+summary: "Resume the SnapMirror transfers and relationships when using ARL to upgrade controller models in the same chassis."
 ---
 
 = Resume SnapMirror operations
@@ -10,7 +10,7 @@ summary: "Resume the SnapMirror transfers and relationships during an AFF A700 t
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_resume_snapmirror_operations.adoc[]

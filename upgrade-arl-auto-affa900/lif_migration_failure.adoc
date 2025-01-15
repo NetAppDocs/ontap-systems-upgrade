@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/lif_migration_failure.html
 keywords: lif, migration, failure, mtu
-summary: "LIFs not online after migration in Stage 2, Stage 3, or Stage 5 during an AFF A700 to AFF A900 upgrade."
+summary: "LIFs not online after migration in Stage 2, Stage 3, or Stage 5 when using ARL to upgrade controller models in the same chassis."
 ---
 
 = LIF migration failure
@@ -10,7 +10,7 @@ summary: "LIFs not online after migration in Stage 2, Stage 3, or Stage 5 during
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_lif_migration_failure.adoc[]

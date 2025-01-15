@@ -10,7 +10,7 @@ summary: "Send an AutoSupport message for node2 and relocate node2's non-root ag
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 // COPIED FROM 9.8 GUIDE...CHECK FOR REUSE, THEN REMOVE THIS COMMENT

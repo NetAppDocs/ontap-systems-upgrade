@@ -10,7 +10,7 @@ summary: "Prepare to netboot node3 and node4 during a manual ARL upgrade on cont
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_prepare_for_netboot.adoc[]

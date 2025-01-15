@@ -12,7 +12,7 @@ summary: Prepare node3, connect node node3 to node4, and then migrate the data L
 To complete the upgrade, you connect node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.
 
 .Steps
-. At the LOADER prompt of the node, boot the node into the boot menu:
+. At the LOADER prompt for node3, boot the node into the boot menu:
 +
 `boot_ontap menu`
 . Select option `6 Update flash from backup config` to restore the /var file system to node3.
@@ -23,15 +23,15 @@ This replaces all flash-based configuration with the last backup to disks.
 +
 [NOTE]
 ====
-As expected, the node automatically reboots to load the new copy of the /var file system.
+The node automatically reboots to load the new copy of the /var file system.
 
 The node reports a warning that there is a system ID mismatch. Enter `y` to override the system ID.
 ====
 
 . Connect node3 to node4:
-.. Attach multipath high availability (MPHA) cables to the NS224 shelf to ensure redundancy.
-.. Connect HA pair cables (if separate interfaces) between the nodes.
-.. Connect cluster cables (if separate interfaces) between the nodes.
+.. Attach multipath high availability (MPHA) cables to the NS224 shelf to ensure redundancy. Connect node3 100GbE port e0d to NSM B port e0b and connect node4 100GbE port e0d to NSM A port e0a.
+.. Verify that HA ports e0a and e0b are connected between the nodes.
+.. Verify that cluster ports e3a and e3b are connected between the nodes.
 
 . Migrate the cluster LIFs:
 +
@@ -51,25 +51,32 @@ NOTE: Beginning with ONTAP 9.8, new IPspaces and one or more broadcast domains m
 . Display all cluster network LIFs:
 +
 `network interface show -role cluster` 
-. Migrate all cluster network LIFs to home ports:
+. Migrate all cluster network LIFs on both nodes to their home ports:
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+
+. Display all cluster network LIFs:
 +
 `network interface show -role cluster`
-. Display all data network LIFs:
+. Verify the home ports for the cluster network LIFs:
 +
-`network interface show -role data`
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-port _port_name_`
+
+
 . Migrate all data LIFs to node3:
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+
 . Display all data network LIFs:
 +
 `network interface show -role data`
+. Configure the home node and home port for all data LIFs. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
 +
-Cluster and management LIFs cannot migrate between nodes. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
-+
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+`network interface modify -vserver _vserver_name_ -lif lif_name -home-node _node_name_ -home-port _port_name_ -status-admin up`
 . Migrate the cluster management LIF:
 +
 `network interface migrate -vserver _vserver_name_ -lif cluster_mgmt -destination-node _node3_ -destination-port _port_name_`
+
 . Display the status of the cluster management LIF:
 +
 `network interface show cluster_mgmt`
@@ -88,6 +95,11 @@ Cluster and management LIFs cannot migrate between nodes. If any LIFs are down, 
 . Enable auto-revert of the network LIFs across the nodes:
 +
 `network interface modify -lif * -auto-revert true`
+
+. Enable storage failover automatic giveback:
++
+`storage failover modify -node * -auto-giveback true`
+
 . Display the cluster status:
 +
 `cluster show`
@@ -101,4 +113,5 @@ NOTE: In the cluster report output, a node might incorrectly own aggregates that
 +
 `storage aggregate show`
 
+// 2023 JUN 7, AFFFASDOC-46
 // 2023 Feb 1, BURT 1351102

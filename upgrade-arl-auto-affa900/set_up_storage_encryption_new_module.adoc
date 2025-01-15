@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/set_up_storage_encryption_new_module.html
 keywords: set up storage, encryption, controller, module, node
-summary: "If required, configure Storage Encryption, install SSL certificates, and set up key management servers during an AFF A700 to AFF A900 upgrade."
+summary: "If required, configure Storage Encryption, install SSL certificates, and set up key management servers when using ARL to upgrade controller models in the same chassis."
 ---
 
 = Set up Storage Encryption on the new controller module
@@ -10,7 +10,7 @@ summary: "If required, configure Storage Encryption, install SSL certificates, a
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

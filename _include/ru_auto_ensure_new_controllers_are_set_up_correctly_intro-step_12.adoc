@@ -94,7 +94,7 @@ Enter `y` to remove all of the packages.
 +
 You can compare the output with the output that you captured in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade].
 
-. [[unset_maxwait_system_commands]]If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in link:install_boot_node4.html#step27[Install and boot node4, Step 27]), you must unset the variable:
+. [[unset_maxwait_system_commands]]If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in link:install_boot_node4.html#auto_install4_step27[Install and boot node4, Step 27]), you must unset the variable:
 +
 `set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
 

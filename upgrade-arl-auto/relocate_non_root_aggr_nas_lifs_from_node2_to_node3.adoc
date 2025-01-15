@@ -10,7 +10,7 @@ summary: "Relocate node2's non-root aggregates to node3 when upgrading controlle
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

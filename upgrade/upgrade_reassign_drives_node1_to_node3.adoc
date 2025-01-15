@@ -26,20 +26,46 @@ After converting AFF A250 node1 to an NS224 drive shelf and connecting to AFF A4
 . Verify the mode changes to the 100GbE interfaces:
 + 
 `storage port show` 
++
+Output like the following example should display:
++
+----
+*> storage port modify -p e0c -m storage
+Nov 10 16:27:23 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0c to storage mode.
+
+Nov 10 16:27:29 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8885.
+
+*> storage port modify -p e0d -m storage
+Nov 10 16:27:34 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0d to storage mode.
+
+Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8886.
+
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e0c  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
+----
+
 . Display all attached drives:
 +
 `disk show -v` 
-. Record the local system ID.
+. Record the local system ID value; this is the system ID of node3. Also record the system IDs of node1 and node2 from the "OWNER" column. 
 . Reassign all drives from node1 to node3:
 +
-`disk reassign -s _node1_ -d _node3_ -p _node2_`
+`disk reassign -s _node1_system_ID_ -d _node3_system_ID_ -p _node4_system_ID_`
 . Verify that all reassigned drives are viewable to the new system ID:
 +
-`disk show -s _node3 system ID_`
+`disk show -s _node3_system_ID_`
 +
 NOTE: If drives are not viewable, *STOP* and contact technical support for assistance.
 . Exit Maintenance Mode: 
 +
 `halt`
 
+.What's next?
+
+link:upgrade_migrate_lIFs_aggregates_node4_node3.html[Migrate LIFs and data aggregates on node4 to node3]
+
+// 2023 JUN 7, AFFFASDOC-46
 // 2023 Feb 1, BURT 1351102

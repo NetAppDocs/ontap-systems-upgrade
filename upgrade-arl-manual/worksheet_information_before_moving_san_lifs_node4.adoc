@@ -10,7 +10,7 @@ summary: "Record node2 NAS data LIF configuration information during a manual AR
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_worksheet_move_san_lifs_node4.adoc[]

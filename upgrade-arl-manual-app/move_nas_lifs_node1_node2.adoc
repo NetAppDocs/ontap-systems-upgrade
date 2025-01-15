@@ -10,7 +10,7 @@ summary: "Move the node1 data LIFs to node2 if you have a two-node cluster, or t
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before you can replace node1 with node3, you must move the NAS data LIFs owned by node1 to node2 if you have a two-node cluster, or to a third node if your cluster has more than two nodes. The method you use depends on whether the cluster is configured for NAS or SAN.

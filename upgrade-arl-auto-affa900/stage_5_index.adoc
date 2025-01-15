@@ -1,22 +1,21 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/stage_5_index.html
-keywords: upgrade, preparing, preparation, prepare, overview, stage 1
-summary: "Stage 1 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.8 or later."
+keywords: upgrade, install, netboot, node2, overview, stage 1
+summary: "Stage 5 process sequence for an ARL upgrade using `system controller replace` commands to upgrade controller models in the same chassis."
 ---
-
-= Overview
+= Stage 5 overview
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-During Stage 5, you install the new NVRAM and controller modules that you received for the upgraded node2 and then netboot node2.
+During Stage 5, you install the new system modules that you received for the upgraded node2 and then netboot node2.
 
 .Steps
 
-. link:install_a900_nvs_and_controller_on_node2.html[Install the AFF A900 or FAS9500 NVRAM and controller modules on node2]
+. link:install-aff-a30-a50-c30-c50-node2.html[Install the replacement system modules on node2]
 . link:netboot_node2.html[Netboot node2]
 //BURT-1476241 13-Sep-2022

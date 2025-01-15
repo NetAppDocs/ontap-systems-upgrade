@@ -10,7 +10,7 @@ summary: "Use the Config Advisor tool to check for common configuration errors w
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_all_check_metrocluster_configuration_errors.adoc[]

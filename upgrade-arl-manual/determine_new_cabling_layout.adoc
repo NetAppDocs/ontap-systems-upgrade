@@ -10,7 +10,7 @@ summary:  "Determine the cabling layout for new controller modules and disk shel
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must determine the cabling for the new controller modules and any new disk shelves to the existing FC switches.

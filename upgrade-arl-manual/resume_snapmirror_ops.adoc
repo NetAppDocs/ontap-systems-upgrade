@@ -10,7 +10,7 @@ summary: "Resume the SnapMirror transfers and relationships during a manual ARL 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_resume_snapmirror_operations.adoc[]

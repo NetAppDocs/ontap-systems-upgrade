@@ -10,7 +10,7 @@ summary: "Information on issues that might occur when upgrading controllers runn
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

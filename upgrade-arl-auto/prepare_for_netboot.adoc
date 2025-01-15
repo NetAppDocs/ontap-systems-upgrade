@@ -10,7 +10,7 @@ summary: "Prepare to netboot node3 and node4 when upgrading controllers running 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_prepare_for_netboot_intro.adoc[]

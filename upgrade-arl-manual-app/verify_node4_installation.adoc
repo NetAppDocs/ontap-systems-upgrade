@@ -10,7 +10,7 @@ summary: "Verify the node4 installation and communication with node3 during a ma
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 After you install and boot node4, you must verify that it is installed correctly, that it is part of the cluster, and that it can communicate with node3.
@@ -42,7 +42,7 @@ a| Connect the HA interconnect between the nodes by completing the following ste
 You do not need to manually connect the HA interconnect between the nodes; in same-chassis configurations, the HA interconnect is connected automatically through the backplane.
 |===
 
-. [[Step5]]Take one of the following actions:
+. [[step5]]Take one of the following actions:
 +
 |===
 |If the cluster is... |Then...

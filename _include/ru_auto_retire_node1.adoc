@@ -1,4 +1,4 @@
-To retire node1, you resume the automated operation to disable the HA pair with node2 and shut node1 down correctly. You must later remove node1 from the rack or chassis.
+To retire node1, you resume the automated operation to disable the HA pair with node2 and shut node1 down correctly. Later in the procedure, you remove node1 from the rack or chassis.
 
 .Steps
 

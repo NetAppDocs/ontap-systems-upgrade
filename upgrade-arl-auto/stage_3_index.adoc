@@ -4,13 +4,12 @@ permalink: upgrade-arl-auto/stage_3_index.html
 keywords: stage 3, install node3, non-SAN data LIFs, non-root aggregates
 summary: "Stage 3 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.5 to 9.7."
 ---
-
-= Overview
+= Stage 3 overview
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 During Stage 3, you install and boot node3, map the cluster and node-management ports from node1 to node3, and verify the node3 installation. If required, you set the FC or UTA/UTA2 configuration on node3 and confirm that node3 has joined quorum. You also relocate the node1 NAS data LIFs and non-root aggregates from node2 to node3 and verify that the SAN LIFs exist on node3.

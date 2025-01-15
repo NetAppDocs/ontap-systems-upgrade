@@ -10,7 +10,7 @@ summary: "Disable the HA pair with node2 and shut down node1 when upgrading cont
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

@@ -1,6 +1,6 @@
-You must gather certain information to successfully upgrade the original nodes.  The information includes node IDs, port and LIF details, licensing keys, and IP addresses.
+You should gather certain information to support upgrading the original nodes. This information includes node IDs, port and LIF details, licensing keys, and IP addresses.
 
-You can use the following worksheet to record information for use later in the procedure:
+You can use the following worksheet to record the information for use later in the procedure:
 
 |===
 |Information needed |When collected |When used |Collected Information

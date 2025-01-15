@@ -1,0 +1,52 @@
+---
+permalink: upgrade/upgrade-reset-default-configuration-node3-and-node4.html
+sidebar: sidebar
+keywords: confirm, configuration, information, boot, media, interfere, controller, upgrade, reset, node3, node4, node, default, setting, reset default configuration on the new nodes
+summary: To confirm that configuration information on the boot media does not interfere with the controller upgrade, you need to reset the configurations of node3 and node4 to the default configuration settings.
+---
+= Reset the default configuration on the new nodes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To confirm that configuration information on the boot media does not interfere with the controller upgrade, you must reset the configurations of node3 and node4 to the default configuration settings.
+
+.About this task
+You must perform the following steps on node3 and node4. You can perform the steps on each node in parallel.
+
+. Boot the node to the boot menu:
++
+`boot_ontap menu`
+. At the boot menu prompt, type `wipeconfig` and then press Enter.
++
+The following screen shows the boot menu prompt
++
+----
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  wipeconfig
+----
+
+. Enter `yes` when you see a prompt similar to the following:
++
+----
+This option deletes critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?: yes
+Rebooting to finish wipeconfig request.
+----
++
+The system will initiate the `wipeconfig` procedure and reboot. When the procedure is complete, the system returns to the boot menu.
+
+. From the boot menu, enter 8 to reboot the node, and press Ctrl-C during AUTOBOOT to stop the node at the LOADER prompt.
+
+// Clean-up, 2022-03-09

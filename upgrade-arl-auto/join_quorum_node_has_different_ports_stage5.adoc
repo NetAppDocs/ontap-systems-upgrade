@@ -10,7 +10,7 @@ summary: "During stage 5, confirm that the new node joins the quorum when upgrad
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

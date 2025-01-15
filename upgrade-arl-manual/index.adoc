@@ -10,7 +10,7 @@ summary: "Use the manual ARL upgrade procedure to upgrade controller hardware ru
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:
@@ -30,7 +30,7 @@ a|* FAS system to FAS system
 
 include::../_include/ru_man_use_arl_overview.adoc[]
 
-* This procedure applies to MetroCluster four-node and eight-node configurations running ONTAP 9.5 and earlier. For MetroCluster configurations running ONTAP 9.6 and later, go to link:other_references.html[References] to link to _Using “system controller replace” Commands to Upgrade Controller Hardware Running ONTAP 9.5 to ONTAP 9.7_.
+* This procedure applies to MetroCluster four-node and eight-node configurations running ONTAP 9.5 and earlier. For MetroCluster configurations running ONTAP 9.6 and later, go to link:other_references.html[References] to link to _Using "system controller replace" Commands to Upgrade Controller Hardware Running ONTAP 9.5 to ONTAP 9.7_.
 
 
 // 24 FEB 2021:  formatted from CMS

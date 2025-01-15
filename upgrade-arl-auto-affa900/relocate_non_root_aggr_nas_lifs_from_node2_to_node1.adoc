@@ -1,19 +1,18 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html
-keywords: relocate, non-root, aggregates, nas, lif, node2, node1. aff, a900, NVRAM, controller
-summary: "Relocate node2's non-root aggregates to node1 during an AFF A700 to AFF A900 upgrade."
+keywords: relocate, non-root, aggregates, nas, lif, node2, node1, NVRAM, controller, module, modules
+summary: "Relocate node2's non-root aggregates to node1 when using ARL to upgrade controller models in the same chassis."
 ---
-
 = Relocate non-root aggregates and NAS data LIFs from node2 to node1
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-Before you can replace node2 with the AFF A900 or the FAS9500 controller module and the NVRAM module, you must first relocate the non-root aggregates that are owned by node2 to node1.
+Before you can replace node2 with the replacement system module, you must first relocate the non-root aggregates that are owned by node2 to node1.
 
 .Before you begin
 After the post-checks from the previous stage complete, the resource release for node2 starts automatically. The non-root aggregates and non-SAN data LIFs are migrated from node2 to the new node1.
@@ -33,10 +32,10 @@ The following example shows that the non-root aggregates on node1 are online:
 ----
 cluster::> storage aggregate show -node node1 state online -root false
 
-Aggregate     Size        Available   Used%   State	 #Vols	 Nodes	  RAID	   Status
+Aggregate     Size        Available   Used%   State	  #Vols	 Nodes	 RAID	  Status
 ----------    ---------   ---------   ------  -----   -----  ------  -------  ------
-aggr_1	      744.9GB      744.8GB	 0%	 online	  5	 node1	  raid_dp  normal
-aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
+aggr_1	      744.9GB     744.8GB	  0%	  online	  5	 node1   raid_dp  normal
+aggr_2	      825.0GB	  825.0GB	  0%	  online	  1	 node1   raid_dp  normal
 2 entries were displayed.
 ----
 +
@@ -52,7 +51,7 @@ If any volumes are offline on node1, bring them online by using the following co
 `volume online -vserver _vserver-name_ -volume _volume-name_`
 +
 The `_vserver-name_` to use with this command is found in the output of the previous `volume show` command.
-.	Verify that the LIFs have been moved to the correct ports and have a status of `up`. If any LIFs are down, set the administrative status of the LIFs to up by entering the following command, once for each LIF:
+.	Verify that the LIFs have been moved to the correct ports and have a status of `up`. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
 +
 `network interface modify -vserver _vserver_name_ -lif _LIF_name_ -home-node _nodename_ - status-admin up`
 .	Verify that there are no data LIFs remaining on node2 by using the following command and examining the output:

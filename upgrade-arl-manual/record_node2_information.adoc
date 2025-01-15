@@ -10,7 +10,7 @@ summary: "Record information about node2 cluster network, management, FC ports, 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_record_node2.adoc[]

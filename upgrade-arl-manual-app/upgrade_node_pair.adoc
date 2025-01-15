@@ -10,7 +10,7 @@ summary: "You can manually prepare the original node for upgrade by performing t
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_upgrade_node_pair.adoc[]

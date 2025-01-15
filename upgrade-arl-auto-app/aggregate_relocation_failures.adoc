@@ -9,13 +9,7 @@ summary: "Troubleshoot aggregate relocation failures that might occur when using
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:55.832749
-//
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_aggregate_relocation_failures.adoc[]

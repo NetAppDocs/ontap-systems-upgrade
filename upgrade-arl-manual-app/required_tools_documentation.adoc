@@ -10,7 +10,7 @@ summary: "You must have certain tools and documentation to perform a manual ARL 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html
 keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability
-summary: "Verify that the HA pair is enabled, verify node1 and node2 storage access and LIF, and confirm aggregate ownership after upgrading an AFF A700 to an AFF A900."
+summary: "Verify that the HA pair is enabled, verify node1 and node2 storage access and LIF, and confirm aggregate ownership after upgrading controller models in the same chassis."
 ---
 
 = Confirm that the new controllers are set up correctly
@@ -10,11 +10,11 @@ summary: "Verify that the HA pair is enabled, verify node1 and node2 storage acc
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [.lead]
-To confirm the correct setup, you must verify that the HA pair is enabled. You must also verify that node1 and node2 can access each other's storage and that neither owns data LIFs belonging to other nodes on the cluster. In addition, you must verify that all data aggregates are on their correct home nodes, and that the volumes for both nodes are online. If one of the new nodes has a unified target adapter, you must restore any port configurations and you might need to change the use of the adapter.
+To confirm the correct setup, you verify that the HA pair is enabled. You also verify that node1 and node2 can access each other's storage and that neither owns data LIFs belonging to other nodes on the cluster. In addition, you verify that all data aggregates are on their correct home nodes, and that the volumes for both nodes are online. If one of the new nodes has a unified target adapter, you must restore any port configurations and you might need to change the use of the adapter.
 
 .Steps
 .	After the post-checks of node2, the storage failover and cluster HA pair for the node2 cluster are enabled. When the operation is done, both nodes show as completed and the system performs some cleanup operations.
@@ -27,11 +27,11 @@ The following example shows the output of the command when storage failover is e
 +
 ----
 cluster::> storage failover show
-                                Takeover
-Node	         Partner	        Possible	      State Description
--------------  --------------   --------------  ------------------
-node1	         node2            true	           Connected to node2
-node2	         node1            true	           Connected to node1
+                          Takeover
+Node	    Partner       Possible      State Description
+----------  -----------   ------------  ------------------
+node1	    node2         true	        Connected to node2
+node2	    node1         true	        Connected to node1
 ----
 .	Verify that node1 and node2 belong to the same cluster by using the following command and examining the output:
 +
@@ -97,7 +97,7 @@ Enter `y` to remove all of the packages.
 +
 You can compare the output with the output that you captured in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section.
 
-. [[unset_maxwait]] If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in _Boot node2 with the AFF A900 or the FAS9500 controller and NVRAM modules_, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1[Step 1]), you must unset the variable:
+. [[unset_maxwait]] If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in _Boot node2 with the replacement system modules_, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1[Step 1]), you must unset the variable:
 +
 `set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
 .	Configure the SPs by using the following command on both nodes:

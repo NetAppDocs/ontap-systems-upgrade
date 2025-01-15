@@ -57,7 +57,7 @@ entries:
     pdf-filename: "Stage 2. Relocate and retire node1 (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
       - title: Overview
-        url:  /upgrade-arl-manual/stage_2_index.html
+        url: /upgrade-arl-manual/stage_2_index.html
       - title: "Relocate non-root aggregates from node1 to node2"
         url: /upgrade-arl-manual/relocate_non_root_aggr_node1_node2.html
       - title: "Move NAS data LIFs owned by node1 to node2"

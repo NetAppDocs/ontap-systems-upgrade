@@ -10,7 +10,7 @@ summary: "Enable Brocade and Cisco switches in the fabric persistently during a 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must enable the switches in the fabric persistently.

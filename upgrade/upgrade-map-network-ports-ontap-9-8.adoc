@@ -1,0 +1,176 @@
+---
+permalink: upgrade/upgrade-map-network-ports-ontap-9-8.html
+sidebar: sidebar
+keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, physical, port, correct, configure, setting, data, map network ports using ontap 9.8
+summary: To enable node3 and node4 to communicate with each other in the cluster and with the network after the upgrade, you must confirm that the physical ports are correctly configured with the settings for the intended use, such as cluster, data, and so on.
+---
+= Map network ports using ONTAP 9.8 or later
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To enable node3 and node4 to communicate with each other in the cluster and with the network after the upgrade, you must confirm that the physical ports are correctly configured with the settings for the intended use, such as cluster, data, and so on.
+
+.Before you begin
+These steps apply to systems running ONTAP 9.8 or later. If you are running ONTAP 9.7 or earlier, you must use the procedure in link:upgrade-map-network-ports-ontap-9-7-or-earlier.html[Map network ports using ONTAP 9.7 or earlier].
+
+.About this task
+You must perform these steps on node3 and node4.
+
+NOTE: The following command examples refer to "node1" because at this stage in the procedure the replacement nodes "node3" and "node4" are actually named "node1" and "node2".
+
+.Steps
+. If your system is running ONTAP 9.7 or earlier, *STOP*. You must use the procedure in link:upgrade-map-network-ports-ontap-9-7-or-earlier.html[Map network ports using ONTAP 9.7 or earlier].
+. Locate the port and LIF configuration information for node1 and node2 that you recorded in _Prepare for upgrade when moving storage_, link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3[Step 3].
+. Locate the information for ports, broadcast domains, and IPspaces that you recorded in _Prepare for upgrade when moving storage_, link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3[Step 3].
++
+https://hwu.netapp.com[NetApp Hardware Universe^]
+
+. Make the following changes:
+.. Boot and log in to node3 and node4 if you have not already done so.
+.. Modify ports that will be part of Cluster broadcast domain:
++
+`network port modify -node _node_name_ -port _port_name_ -mtu 9000 -ipspace Cluster`
++
+This example adds `Cluster` port e1b on "node1":
++
+`network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000`
+
+.. Migrate the cluster LIFs to the new ports, once for each LIF:
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -source-node node1 -destination-node node1 -destination-port _port_name_`
++
+When all cluster LIFs are migrated and cluster communication is established, the cluster should come into quorum.
+
+.. Modify the home port of the Cluster LIFs:
++
+`network interface modify -vserver Cluster -lif _lif_name_ –home-port _port_name_`
+
+.. Remove the old ports from the `Cluster` broadcast domain:
++
+`network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cluster -ports _node1:port_`
+.. Display the health state of node3 and node4:
++
+`cluster show -node _node1_ -fields health`
+
+.. Depending on the ONTAP version running on the HA pair being upgraded, take one of the following actions:
++
+[cols="30,70"]
+|===
+|If your ONTAP version is... |Then...
+
+|9.8 to 9.11.1 
+|Verify that the cluster LIFs are listening on port 7700:
+
+`::> network connections listening show -vserver Cluster`
+|9.12.1 or later
+|Skip this step and go to <<map_98_5,Step 5>>.
+|===
++
+Port 7700 listening on cluster ports is the expected outcome as shown in the following example for a two-node cluster:
++
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+
+.. For each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
++
+`::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
++
+Repeat substep (g) to verify that the cluster LIF is now listening on port 7700.
+
+. [[map_98_5]]Modify the broadcast domain memberships of physical ports hosting data LIFs. You can do this manually, as shown in link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_97_7[Map network ports using ONTAP 9.7 or earlier, Step7]. NetApp recommends using the enhanced network reachability scan and repair procedure introduced in ONTAP 9.8, as shown in the following Step 5, substeps (a) to (g).
+.. List the reachability status of all ports:
++
+`network port reachability show`
+.. Repair the reachability of the physical ports, followed by VLAN ports, by running the following command on each port, one port at a time:
++
+`reachability repair -node _node_name_ -port _port_name_`
++
+A warning like the following is expected. Review and enter `y` or `n` as appropriate:
++
+----
+Warning: Repairing port "node_name:port" may cause it to move into a
+different broadcast domain, which can cause LIFs to be re-homed away
+from the port. Are you sure you want to continue? {y|n}:
+----
+
+.. To enable ONTAP to complete the repair, wait for about a minute after running the `reachability repair` command on the last port.
+.. List all broadcast domains on the cluster:
++
+`network port broadcast-domain show`
+.. As the reachability repair is performed, ONTAP attempts to place the ports in the correct broadcast domains. However, if a port's reachability cannot be determined and does not correspond to any of the existing broadcast domains, ONTAP will create new broadcast domains for these ports. As required, you can delete the newly created broadcast domains if all their member ports will become member ports of the interface groups. Delete broadcast domains:
++
+`broadcast-domain delete -broadcast-domain _broadcast_domain_`
+.. Review the interface group configuration, and as required, add or delete member ports. Add member ports to interface group ports:
++
+`ifgrp add-port -node _node_name_ -ifgrp _ifgrp_port_ -port _port_name_`
++
+Remove member ports from interface group ports:
++
+`ifgrp remove-port -node _node_name_ -ifgrp _ifgrp_port_ -port _port_name_`
+.. Delete and re-create VLAN ports as needed. Delete VLAN ports:
++
+`vlan delete -node _node_name_ -vlan-name _vlan_port_`
++
+Create VLAN ports:
++
+`vlan create -node _node_name_ -vlan-name _vlan_port_`
++
+NOTE: Depending on the complexity of the networking configuration of the system being upgraded, you might be required to repeat Step 5, substeps (a) to (g) ountil all ports are placed correctly where needed.
+
+. If there are no VLANs configured on the system, go to <<map_98_7,Step 7>>. If there are VLANs configured, restore displaced VLANs that were previously configured on ports that no longer exist or were configured on ports that were moved to another broadcast domain.
+.. Display the displaced VLANs:
++
+`cluster controller-replacement network displaced-vlans show`
+.. Restore the displaced VLANs to the desired destination port:
++
+`displaced-vlans restore -node _node_name_ -port _port_name_ -destination-port _destination_port_`
+.. Verify that all displaced VLANs have been restored:
++
+`cluster controller-replacement network displaced-vlans show`
+.. VLANs are automatically placed into the appropriate broadcast domains about a minute after they are created. Verify that the restored VLANs have been placed into the appropriate broadcast domains:
++
+`network port reachability show`
+. [[map_98_7]]Beginning with ONTAP 9.8, ONTAP will automatically modify the home ports of LIFs if the ports are moved between broadcast domains during the network port reachability repair procedure. If a LIF's home port was moved to another node, or is unassigned, that LIF will be presented as a displaced LIF. Restore the home ports of displaced LIFs whose home ports either no longer exist or were relocated to another node.
+.. Display the LIFs whose home ports might have moved to another node or no longer exist:
++
+`displaced-interface show`
+.. Restore the home port of each LIF:
++
+`displaced-interface restore -vserver _vserver_name_ -lif-name _lif_name_`
+.. Verify that all LIF home ports have been restored:
++
+`displaced-interface show`
++
+When all ports are correctly configured and added to the correct broadcast domains, the network port reachability show command should report the reachability status as ok for all connected ports, and the status as no-reachability for ports with no physical connectivity. If any ports are reporting a status other than these two, repair the reachability as outlined in <<map_98_5,Step 5>>.
+. Verify that all LIFs are administratively up on ports belonging to the correct broadcast domains.
+.. Check for any LIFs that are administratively down:
++
+`network interface show -vserver _vserver_name_ -status-admin down`
+.. Check for any LIFs that are operationally down: `network interface show -vserver _vserver_name_ -status-oper down`
+.. Modify any LIFs that need to be modified to have a different home port:
++
+`network interface modify -vserver _vserver_name_ -lif _lif_ -home-port _home_port_`
++
+NOTE: For iSCSI LIFs, modification of the home port requires the LIF to be administratively down.
+
+.. Revert LIFs that are not home to their respective home ports:
++
+`network interface revert *`
+
+.After you finish
+You have completed mapping the physical ports. To complete the upgrade, go to link:upgrade-final-upgrade-steps-in-ontap-9-8.html[Perform final upgrade steps in ONTAP 9.8 or later].
+
+// 2023 NOV 8, AFFFASDOC-133
+// BURT 1476241 2022-05-13
+// Clean-up, 2022-03-09

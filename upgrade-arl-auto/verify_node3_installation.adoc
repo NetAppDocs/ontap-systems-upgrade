@@ -10,7 +10,7 @@ summary: "Verify that node3 joins the quorum, re-create node1's VLANs, interface
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 After you install and boot node3, you must verify that it is installed correctly. You must wait for node3 to join quorum and then resume the relocation operation.
