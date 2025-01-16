@@ -18,7 +18,7 @@ To understand whether you can use aggregate relocation (ARL), keeping the old sy
 
 Controller upgrades are supported for certain system configurations. To view the list of supported systems and minimum ONTAP versions, see link:index.html[Overview].
 
-If you have received a new AFF A30, AFF A50, AFF A70, AFF A90, AFF A150, AFF A900, AFF C30, AFF C60, AFF C80, FAS2820, or FAS9500 as a complete system, including a new chassis, refer to link:other_references.html[References] to link to the _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ content.
+If you have received a new AFF A30, AFF A50, AFF A70, AFF A90, AFF A150, AFF A900, AFF C30, AFF C60, AFF C80, FAS2820, or FAS9500 as a complete system, including a new chassis, refer to link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_.
 
 Controller upgrade using ARL is supported on systems configured with SnapLock Enterprise and SnapLock Compliance volumes.
 
