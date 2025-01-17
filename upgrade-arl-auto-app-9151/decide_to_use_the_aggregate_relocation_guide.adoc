@@ -17,9 +17,9 @@ This procedure describes how to upgrade the storage controllers in an HA pair wi
 == Supported upgrades for ARL
 You can upgrade a pair of nodes under the following circumstances:
 
-* You are running ONTAP 9.15.1 or later.
-* You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
-* You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
+* You're running ONTAP 9.15.1 or later.
+* You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
+* You're experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
@@ -53,8 +53,8 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 
 ^2^ The  AFF A20, AFF A50, AFF A70, and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis: 
 
-* If you are upgrading to an AFF A20, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A70, or AFF A90 nodes and use them for creating data aggregates. It is not mandatory to migrate root or data aggregates to internal drives.
-* If you are upgrading to an AFF A20, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
+* If you're upgrading to an AFF A20, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A70, or AFF A90 nodes and use them for creating data aggregates. You don't have to migrate root or data aggregates to internal drives.
+* If you're upgrading to an AFF A20, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
 
 If your controller upgrade model combination is not in the above table, contact technical support.
 
@@ -75,8 +75,8 @@ You cannot perform upgrades using ARL under the following circumstances:
 |===
 +
 To perform upgrade an upgrade listed in the above table, see link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller models in the same chassis_.
-* You are upgrading a V-Series system or FlexArray Virtualization storage system using an external array for backend storage. Contact technical support for options to upgrade a V-series or FlexArray system.
-* You are upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
+* You're upgrading a V-Series system or FlexArray Virtualization storage system using an external array for backend storage. Contact technical support for options to upgrade a V-series or FlexArray system.
+* You're upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
 
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]

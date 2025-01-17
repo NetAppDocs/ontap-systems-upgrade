@@ -23,12 +23,12 @@ This content describes how to upgrade the storage controllers in an HA pair with
 
 You can use this content under the following circumstances:
 
-* You are running ONTAP 9.8 or later.
-* You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
-* You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
-* If you are upgrading a MetroCluster configuration, it is a four-node or higher FC configuration, and all nodes are running ONTAP 9.8 or later.
+* You're running ONTAP 9.8 or later.
+* You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
+* You're experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
+* If you're upgrading a MetroCluster configuration, it's a four-node or higher FC configuration, and all nodes are running ONTAP 9.8 or later.
 +
-For upgrading MetroCluster IP configurations, refer to link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
+For upgrading MetroCluster IP configurations, refer to link:other_references.html[References] to link to _MetroCluster Upgrade and Expansion_.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
@@ -65,11 +65,11 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 |AFF A900
 |===
 // BURT 1455656 8-Apr-2022
-NOTE: If your controller upgrade model combination is not in the above table, contact technical support.
+NOTE: If your controller upgrade model combination isn't in the above table, contact technical support.
 
 ^1^For the additional steps needed for AFF A800 systems, go to the step that references A800 in section link:set_fc_or_uta_uta2_config_on_node3.html#auto_check3_step23[Check and configure UTA/UTA2 ports on node3, Step 23], or link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step23[Check and configure UTA/UTA2 ports on node4, Step 23].
 
-^2^If you are upgrading from an AFF A300 to an AFF A400 or an FAS8200 to an FAS8300 system in a two-node switchless cluster configuration, you must pick temporary cluster ports for the controller upgrade. The AFF A400 and FAS8300 systems come in two configurations, as an Ethernet bundle where the mezzanine card ports are Ethernet type and as an FC bundle where the mezzanine ports are FC type.
+^2^If you're upgrading from an AFF A300 to an AFF A400 or an FAS8200 to an FAS8300 system in a two-node switchless cluster configuration, you must pick temporary cluster ports for the controller upgrade. The AFF A400 and FAS8300 systems come in two configurations, as an Ethernet bundle where the mezzanine card ports are Ethernet type and as an FC bundle where the mezzanine ports are FC type.
 
 * For an AFF A400 or an FAS8300 with an Ethernet type configuration, you can use any of the two mezzanine ports as temporary cluster ports.
 * For an AFF A400 or an FAS8300 with an FC type configuration, you must add a four-port 10GbE network interface card (part number X1147A) to provide temporary cluster ports.
@@ -95,9 +95,9 @@ h|System h|ONTAP version h|System h|ONTAP version
 ====
 For the upgrade combinations shown in the preceding table:
 
-* It is not required to use the same ONTAP version on the existing and replacement controllers. The ONTAP software upgrade is performed with the controller upgrade.
+* It isn't required to use the same ONTAP version on the existing and replacement controllers. The ONTAP software upgrade is performed with the controller upgrade.
 * When upgrading, you must install a replacement controller with a supported ONTAP version and patch level. 
-* It is not possible to cancel or back out of a controller upgrade after you start the procedure and upgrade the first node. 
+* It isn't possible to cancel or back out of a controller upgrade after you start the procedure and upgrade the first node. 
 ====
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
