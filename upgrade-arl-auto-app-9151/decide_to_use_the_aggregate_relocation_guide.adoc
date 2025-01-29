@@ -16,7 +16,7 @@ This procedure describes how to upgrade the storage controllers in an HA pair wi
 
 There are several ARL methods for upgrading controller hardware. This ARL procedure supports controller upgrades for systems introduced in ONTAP 9.15.1 or later. To help you decide if this ARL procedure is correct for your hardware upgrade configuration, review all the following considerations. 
 
-== Considerations when deciding to use ARL
+== Considerations for using ARL
 You can upgrade a pair of nodes using this ARL procedure under the following circumstances:
 
 ** You're running ONTAP 9.15.1 or later.
@@ -46,7 +46,7 @@ To perform upgrade an upgrade listed in the above table, see link:other_referenc
 [[sys_commands_9151_supported_systems]]
 == Supported model matrix
 
-The following table shows the supported controller upgrades using ARL for systems introduced in ONTAP 9.15.1 or later.
+The following table shows the supported controller upgrade combinations using ARL for systems introduced in ONTAP 9.15.1 or later. If your controller upgrade combination is not listed, contact technical support.
 
 |===
 |Existing controller |Replacement controller |Supported beginning with ONTAP...
@@ -79,9 +79,9 @@ The following table shows the supported controller upgrades using ARL for system
 * If you're upgrading to an AFF A20, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A70, or AFF A90 nodes and use them for creating data aggregates. You don't have to migrate root or data aggregates to internal drives.
 * If you're upgrading to an AFF A20, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
 
-If your controller upgrade model combination is not in the above table, contact technical support.
 
-== Choose a different upgrade procedure
+
+== Choose a different hardware upgrade procedure
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
 
 // 2024 NOV 25, AFFFASDOC-33
