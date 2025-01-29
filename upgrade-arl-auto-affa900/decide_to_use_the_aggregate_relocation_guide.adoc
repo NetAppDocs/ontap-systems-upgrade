@@ -19,25 +19,27 @@ You can use this procedure under the following circumstances:
 
 * You controller upgrade is listed in the link:index.html#supported-systems,[supported systems matrix].
 * You have verified with your NetApp sales representative that you have received the hardware that you need for the controller upgrade:
-** Two AFF A90, AFF A70, or AFF C80 controllers and all I/O modules. The required length of 100GbE cables.
-** Two AFF A50, AFF A30, AFF C30, or AFF C60 controllers and I/O modules. The required cables.  
+** Two AFF A90, AFF A70, or AFF C80 controllers and all I/O modules. The required lengths of 100GbE cables.
+** Two AFF A50, AFF A30, AFF C30, or AFF C60 controllers and I/O modules and the required cables
 ** ASA A150, AFF A150, or FAS2820 controller
-** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and the parts
+** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and parts
 
-* You are running the minimum ONTAP version for your upgrade. For more information, see link:index.html[Overview].
-* You do not want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
-* You are experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
+* You're running the minimum ONTAP version for your upgrade. For more information, see link:index.html[Overview].
+* You're experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
 * Your systems are running ONTAP 9.15.1 or later, and they are using Ethernet switches to connect to Ethernet-attached storage.
+
+NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
 == Not supported for ARL upgrades
 You cannot use this procedure under the following circumstances:
 
-* You are using FlexArray Virtualization Software on the existing system that is being upgraded.
-* You are upgrading a MetroCluster IP configuration. 
+* You want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
+* You're using FlexArray Virtualization Software on the existing system that is being upgraded.
+* You're upgrading a MetroCluster IP configuration. 
 +
 To upgrade a MetroCluster IP configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
-NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
+
 
 If you prefer a different method of upgrading the controller hardware and are willing to do volume moves, refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
 
