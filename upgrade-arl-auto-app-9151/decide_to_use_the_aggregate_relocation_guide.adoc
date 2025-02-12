@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guid
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability
 summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
 ---
-= Decide whether to use the aggregate relocation procedure
+= Decide whether to use this aggregate relocation procedure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,20 +12,24 @@ summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.15.1 
 :imagesdir: ../media/
 
 [.lead]
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This ARL procedure supports controller upgrades for AFF and FAS storage systems introduced in ONTAP 9.15.1 or later. 
+
+== Considerations for using this ARL procedure
 This procedure describes how to upgrade the storage controllers in an HA pair with new controllers while keeping the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
 
-There are several ARL methods for upgrading controller hardware. This ARL procedure supports controller upgrades for systems introduced in ONTAP 9.15.1 or later. You should review all the following considerations to help you decide if this ARL procedure supports your controller hardware upgrade.  
+You should review all the following circumstances to help you decide if this ARL procedure supports your controller hardware upgrade.
 
-== Considerations for using ARL
+=== Supported for this ARL procedure
 You can use this ARL procedure to upgrade a pair of nodes under the following circumstances:
 
-** You're running ONTAP 9.15.1 or later.
-** You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
-** You're experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
-** Your hardware upgrade configuration is listed in the <<sys_commands_9151_supported_systems,supported model matrix>>.
+* You're running ONTAP 9.15.1 or later.
+* You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
+* You're experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
+* Your hardware upgrade configuration is listed in the <<sys_commands_9151_supported_systems,supported model matrix>>.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
+=== Unsupported for this ARL procedure
 You cannot use this ARL procedure to upgrade a pair of nodes under the following circumstances:
 
 * You're performing one of the following upgrades:
@@ -44,9 +48,9 @@ To perform upgrade an upgrade listed in the above table, see link:other_referenc
 * You're upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
 
 [[sys_commands_9151_supported_systems]]
-== Supported model matrix
+== Supported system upgrade combinations
 
-The following table shows the supported controller upgrade combinations using ARL for systems introduced in ONTAP 9.15.1 or later. If your controller upgrade combination is not listed, contact technical support.
+The following table shows the supported controller upgrade combinations using ARL for AFF and FAS systems introduced in ONTAP 9.15.1 or later. If your controller upgrade combination isn't listed, contact technical support.
 
 |===
 |Existing controller |Replacement controller |Supported beginning with ONTAP...
