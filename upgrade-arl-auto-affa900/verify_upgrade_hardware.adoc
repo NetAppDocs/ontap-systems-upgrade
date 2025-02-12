@@ -16,7 +16,7 @@ Before starting the upgrade, verify that you have the correct modules for your r
 
 [cols=2*,options="header",cols="50,50"]
 |===
-|If you are upgrading from ...
+|If you're upgrading from ...
 |Replacement system must have ...
 |AFF A250, AFF C250 
 |Two controller modules and new IO modules
@@ -27,10 +27,10 @@ a|* AFF A220 configured as an ASA
 * FAS2620, FAS2720
 a|Two controller modules
 
-If you are converting the existing system to a storage shelf so you can attach it to another system, the replacement system must also have two IO modules. 
+If you're converting the existing system to a storage shelf so you can attach it to another system, the replacement system must also have two IO modules. 
 a|* AFF A700 configured as an ASA
-* AFF A700 to AFF A900
-* FAS9000 to FAS9500
+* AFF A700
+* FAS9000
 |Two controller and two NVRAM modules
 
 |===

@@ -14,7 +14,7 @@ summary: "Replace the node1 the AFF A220, AFF A200, AFF C190, FAS2620, or FAS272
 [.lead]
 At this stage, node1 is down and all data is served by node2. You must take care to remove only the node1 controller module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
 
-CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and powered by the same power supplies.
+CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and connected to the same power supplies.
 
 .Before you begin
 If you are not already grounded, correctly ground yourself.

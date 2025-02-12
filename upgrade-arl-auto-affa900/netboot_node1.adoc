@@ -63,7 +63,7 @@ NOTE:	Other parameters might be necessary for your interface. Enter `help ifconf
 +
 NOTE:	Do not interrupt the boot.
 
-. (AFF A250 and AFF C250 upgrades only) When node1 for the replacement controller module is booting, the following warning displays:
+. (AFF A250 and AFF C250 upgrades only) When node1 for the replacement controller module is booting, the following warning displays because the configuration includes node2 for the existing controller:
 +
 ----
 *****************************************************
@@ -76,7 +76,7 @@ Do you want to continue (y/n):
 + 
 Answer `y`.
 +
-This warning displays because the configuration includes node2 for the existing controller. It displays for every system boot until you upgrade node2. This is the expected behavior.
+This warning displays for every system boot until you upgrade node2. This is the expected behavior.
 
 . Wait for the node1 running on the replacement controller module to boot and display the boot menu options as shown below:
 +

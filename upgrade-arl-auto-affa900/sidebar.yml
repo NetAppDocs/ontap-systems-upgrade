@@ -36,7 +36,7 @@ entries:
       entries:
         - title: Replace AFF A250 or AFF C250
           url: /upgrade-arl-auto-affa900/replace-node1-affa250-affc250.html
-        - title: Replace AFF A800
+        - title: Replace AFF A800 or AFF C800
           url: /upgrade-arl-auto-affa900/replace-node1-affa800.html
         - title: Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
           url: /upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html
@@ -56,7 +56,7 @@ entries:
       url: /upgrade-arl-auto-affa900/verify_node1_installation.html
     - title: Restore key-manager configuration on the upgraded node1
       url: /upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html
-    - title: Move non-root aggregates and NAS data LIFs owned by node1 from node2 to the upgraded node1
+    - title: Move node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1
       url: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html
 - title: "Stage 4. Relocate resources and retire node2"
   entries:
