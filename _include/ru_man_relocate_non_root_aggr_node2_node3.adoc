@@ -2,7 +2,7 @@ Before you can replace node2 with node4, you need to send an AutoSupport message
 
 .Steps
 
-. Verify the partner system ID is set correctly on node2 and node3:
+. Verify that the partner system ID is set correctly on node2 and node3:
 +
 * `system node run -node _node2_ -command sysconfig -a`
 * `system node run -node _node3_ -command sysconfig -a`
