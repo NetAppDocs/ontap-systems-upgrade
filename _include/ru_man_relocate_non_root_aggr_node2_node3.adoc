@@ -21,7 +21,7 @@ System Storage Configuration: Mixed-Path HA
 +
 If "partner ID" is incorrect for node2 or node3:
 
-.. Reboot the node.
+.. Reboot the node with the incorrect value.
 .. Rerun the commands in <<sysconfig-a-command,Step 1>>, and confirm that the "partner ID" has changed to the correct value.
 
 . Send an AutoSupport message to NetApp for node2:
