@@ -2,10 +2,28 @@ Before you can replace node2 with node4, you need to send an AutoSupport message
 
 .Steps
 
+[[sysconfig-a-command]]
 . Verify that the partner system ID is set correctly on node2 and node3:
 +
 * `system node run -node _node2_ -command sysconfig -a`
 * `system node run -node _node3_ -command sysconfig -a`
++
+The system displays output similar to the following example:
++
+[subs=+quotes]
+---- 
+NetApp Release 9.16.1: Mon Feb 10 07:55:45 EST 2025
+System ID: _system-ID_; *partner ID: _partner-system-ID_*
+System Serial Number: _system-serial-number_
+System Rev: A0
+System Storage Configuration: Mixed-Path HA
+----
++
+If "partner ID" is incorrect for node2 or node3:
+
+.. Reboot the node.
+.. Rerun the commands in <<sysconfig-a-command,Step 1>>, and confirm that the "partner ID" has changed to the correct value.
+
 . Send an AutoSupport message to NetApp for node2:
 +
 `system node autosupport invoke -node _node2_ -type all -message "Upgrading _node2_ from _platform_old_ to _platform_new_"`
