@@ -26,7 +26,7 @@ You can use this ARL procedure under the following circumstances:
 ** ASA A150, AFF A150, or FAS2820 controller
 ** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and parts
 
-* You're running the minimum ONTAP version for your upgrade. For more information, see link:index.html[Overview].
+* You're running the minimum ONTAP version for your upgrade. For more information, <<supported-systems,Supported system upgrade combinations>>.
 * You're experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
 * Your systems are running ONTAP 9.15.1 or later, and they are using Ethernet switches to connect to Ethernet-attached storage.
 
