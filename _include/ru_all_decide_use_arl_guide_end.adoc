@@ -1,3 +1,5 @@
+== Choose a different hardware upgrade procedure
+
 * link:../upgrade-arl/index.html[Review the alternative ARL methods available for upgrading controller hardware]. 
 * If you prefer a different method of upgrading the controller hardware and are willing to do volume moves, refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
 

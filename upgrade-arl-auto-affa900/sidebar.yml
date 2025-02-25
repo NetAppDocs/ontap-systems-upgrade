@@ -1,9 +1,9 @@
 section: upgrade-arl-auto-affa900
 title: Use "system controller replace" commands to upgrade controller models in the same chassis
 entries:
-- title: Overview
+- title: Learn about using this ARL procedure
   url: /upgrade-arl-auto-affa900/index.html
-- title: Decide whether to use the aggregate relocation content
+- title: Decide whether to use this ARL procedure
   url: /upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html
 - title: Required tools and documentation
   url: /upgrade-arl-auto-affa900/required_tools_and_documentation.html
@@ -14,7 +14,7 @@ entries:
 - title: "Stage 1. Prepare for upgrade"
   pdf-filename: "Stage 1. Prepare for upgrade (upgrade to AFF A900 or FAS9500)"
   entries:
-    - title: Overview
+    - title: Learn about Stage 1
       url: /upgrade-arl-auto-affa900/stage_1_index.html
     - title: Verify the upgrade hardware
       url: /upgrade-arl-auto-affa900/verify_upgrade_hardware.html
@@ -24,7 +24,7 @@ entries:
       url: /upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html
 - title: "Stage 2. Relocate resources and retire node1"
   entries:
-    - title: Overview
+    - title: Learn about Stage 2
       url: /upgrade-arl-auto-affa900/stage_2_index.html
     - title: Relocate non-root aggregates and NAS data LIFs owned by node1 to node2
       url: /upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html
@@ -46,7 +46,7 @@ entries:
       url: /upgrade-arl-auto-affa900/netboot_node1.html
 - title: "Stage 3. Boot node1 with the replacement system modules"
   entries:
-    - title: Overview
+    - title: Learn about Stage 3
       url: /upgrade-arl-auto-affa900/stage_3_index.html
     - title: Cable node1 for shared cluster-HA storage
       url: /upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html
@@ -60,7 +60,7 @@ entries:
       url: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html
 - title: "Stage 4. Relocate resources and retire node2"
   entries:
-    - title: Overview
+    - title: Learn about Stage 4
       url: /upgrade-arl-auto-affa900/stage_4_index.html
     - title: Relocate non-root aggregates and NAS data LIFs from node2 to node1
       url: /upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html
@@ -68,7 +68,7 @@ entries:
       url: /upgrade-arl-auto-affa900/retire_node2.html
 - title: "Stage 5. Install the replacement system modules on node2"
   entries:
-   - title: Overview
+   - title: Learn about Stage 5
      url: /upgrade-arl-auto-affa900/stage_5_index.html
    - title: Install the replacement system modules on node2
      entries:
@@ -84,7 +84,7 @@ entries:
      url: /upgrade-arl-auto-affa900/netboot_node2.html
 - title: "Stage 6. Boot node2 with the replacement system modules"
   entries:
-   - title: Overview
+   - title: Learn about Stage 6
      url: /upgrade-arl-auto-affa900/stage_6_index.html
    - title: Boot node2 with the replacement system modules
      url: /upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html
@@ -96,7 +96,7 @@ entries:
      url: /upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html
 - title: "Stage 7. Complete the upgrade"
   entries:
-  - title: Overview
+  - title: Learn about Stage 7
     url: /upgrade-arl-auto-affa900/stage_7_index.html
   - title: Manage authentication using KMIP servers
     url: /upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html

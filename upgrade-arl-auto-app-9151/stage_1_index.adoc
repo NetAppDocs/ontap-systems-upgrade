@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app-9151/stage_1_index.html
 keywords: upgrade, preparing, preparation, prepare, overview, stage 1
 summary: "Stage 1 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.15.1 or later."
 ---
-= Stage 1 overview
+= Learn about Stage 1
 :hardbreaks:
 :nofooter:
 :icons: font

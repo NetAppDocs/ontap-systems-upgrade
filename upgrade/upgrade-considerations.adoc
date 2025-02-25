@@ -24,7 +24,7 @@ NOTE: Before starting your controller upgrade procedure, you must review all the
 
 a|link:https://hwu.netapp.com[Verify that you are following storage platform mixing rules^].
 
-The controllers in a HA pair must be two AFF, FAS, or ASA models.
+The controllers in an HA pair must be two AFF, FAS, or ASA models.
 
 |Do I have different ONTAP versions running on the original and new nodes?
 a|.  https://hwu.netapp.com[Check the ONTAP versions and patch levels supported by the original and the new nodes^]. 
@@ -49,8 +49,8 @@ a|. https://hwu.netapp.com/[Verify that the current root aggregate size and the 
 . https://hwu.netapp.com/[Verify that the number of storage disks supported by the new system are equal to or greater than those supported by the original system^].
 . link:upgrade-by-moving-storage-parent.html[Upgrade by moving storage] (a disruptive procedure).
 
-|Am I upgrading a HA pair in a cluster with multiple HA pairs? 
-|Move epsilon to the node of a HA pair not undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
+|Am I upgrading an HA pair in a cluster with multiple HA pairs? 
+|Move epsilon to the node of an HA pair not undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
 |Am I running ONTAP 9.6P11, 9.7P8, or later releases? 
 |NetApp recommends that you enable Connectivity, Liveliness, and Availability Monitor (CLAM) takeover to return the cluster into quorum when certain node failures occur. The `kernel-service` command requires advanced privilege level access. For more information, see the NetApp Knowledge Base article https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436[CLAM takeover default configuration changed^]. 
 

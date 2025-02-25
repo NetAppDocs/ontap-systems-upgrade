@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_4_index.html
 keywords: stage 4, record, node2, information, retire
 summary: "Stage 4 process sequence for a manual ARL upgrade on controllers running ONTAP 9.7 or earlier."
 ---
-= Stage 4 overview
+= Learn about Stage 4
 :hardbreaks:
 :nofooter:
 :icons: font

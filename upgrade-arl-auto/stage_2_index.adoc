@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_2_index.html
 keywords: Prepare nodes for upgrade, storage encryption, KMS, key management server, stage 2
 summary: "Stage 2 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.5 to 9.7."
 ---
-= Stage 2 overview
+= Learn about Stage 2
 :hardbreaks:
 :nofooter:
 :icons: font

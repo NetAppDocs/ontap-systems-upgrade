@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/index.html
 keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology, old, system, chassis, disk, disks
 summary: "You can upgrade controller hardware by converting an old system to a replacement system, keeping the old system chassis and disks."
 ---
-= Overview
+= Learn about using this ARL procedure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,72 +12,11 @@ summary: "You can upgrade controller hardware by converting an old system to a r
 :imagesdir: ../media/
 
 [.lead]
-You can nondisruptively upgrade controller hardware on a HA pair by using aggregate relocation (ARL) and converting the existing system to the replacement system, keeping the existing system chassis and disks.
+You can nondisruptively upgrade controller hardware on an HA pair by using aggregate relocation (ARL) and converting the existing system to the replacement system, keeping the existing system chassis and disks.
+
+This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) with "system controller replace" commands on systems running ONTAP 9.7, 9.6, or 9.5. For information on the supported systems matrix, see link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_95_97_supported_systems[Supported system upgrade combinations].
 
 ARL takes advantage of the HA configuration and cluster interconnect communication. This allows you to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
-
-[[supported-systems]]
-The following table shows the supported systems matrix for the controller upgrade.
-
-CAUTION: This procedure strictly applies to the following upgrade configurations. Don't use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_.
-
-[[supported-systems-in-chassis]]
-[cols=3*,options="header",cols="20,20,40"]
-|===
-|Existing system |Replacement system |Supported ONTAP versions
-|AFF C250 ^1^
-|AFF C30, AFF C60
-|9.16.1
-|AFF A250 ^1^
-|AFF A30, AFF A50
-|9.16.1 
-|AFF C800 ^1^
-|AFF C80
-|9.16.1 
-|AFF A800 ^1^
-|AFF A90 or AFF A70
-|9.15.1 and later
-|AFF A220 configured as an All SAN Array (ASA) 
-|ASA A150
-|9.13.1P1 and later
-|AFF A220
-|AFF A150
-|9.10.1P15, 9.11.1P11, 9.12.1P5 and later
-|AFF A200 
-|AFF A150
-a|9.10.1P15, 9.11.1P11 and later ^2^
-
-|AFF C190
-|AFF A150
-|9.10.1P15, 9.11.1P11, 9.12.1P5 and later 
-
-|FAS2620 
-|FAS2820
-a|9.11.1P7 or later patch releases (FAS2620) ^2^
-
-9.13.1 and later (FAS2820)
-|FAS2720 |FAS2820	
-|9.13.1 and later
-|AFF A700 configured as an ASA 
-|ASA A900
-|9.13.1P1 and later
-|AFF A700 
-|AFF A900
-|9.10.1P10, 9.11.1P6 and later
-|FAS9000 |FAS9500
-|9.10.1P10, 9.11.1P6 and later
-|===
-
-^1^ When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more^].
-
-^2^ The AFF A200 and FAS2620 systems do not support ONTAP versions later than 9.11.1.
-
-[NOTE]
-====
-NetApp strongly recommends, when possible, that you have the same ONTAP version on the old and replacement systems.
-
-The minimum ONTAP versions in the preceding table are mandatory. These ONTAP versions have the Service Processor or baseboard management controller (BMC) firmware version that is required to support mixing controller types within a chassis during an upgrade. 
-====
 
 During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate the non-root aggregates between the old controller nodes. After installing the replacement nodes, you migrate the non-root aggregates from the old controller nodes to the replacement controller nodes. The data hosted on the nodes that you are upgrading is accessible during the upgrade procedure. You also migrate data LIFs between nodes in the cluster as you proceed.
 

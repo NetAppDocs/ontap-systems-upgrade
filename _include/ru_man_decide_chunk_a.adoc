@@ -1,4 +1,4 @@
-This content describes how to upgrade the storage controllers in an HA pair with new controllers while keeping all the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
+This procedure describes how to use manual aggregate relocation (ARL) to upgrade the storage controllers in an HA pair with new controllers while keeping all the existing data and disks. You should only use this complex procedure if you are an experienced administrator.
 
 Use this content under the following circumstances:
 

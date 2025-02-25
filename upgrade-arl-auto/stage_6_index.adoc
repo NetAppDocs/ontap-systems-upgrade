@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_6_index.html
 keywords: complete upgrade, node, unified, target, storage, encryption, MetroCluster, stage 6
 summary: "Stage 6 process sequence for an ARL upgrade using `system controller replace` commands on controllers running ONTAP 9.5 to 9.7."
 ---
-= Stage 6 overview
+= Learn about Stage 6
 :hardbreaks:
 :nofooter:
 :icons: font
