@@ -11,6 +11,11 @@ summary: If your original node is one of the supported models, during the proces
 [.lead]
 If your original node is one of the supported models, during the process of upgrading by moving storage you can convert the node to a drive shelf and then attach it to the new nodes in the same cluster.
 
+NOTE: link:upgrade-move-internal-drives.html[You can also choose to move internal drives from an original node].
+
+.About this task
+You can move drive shelves only within the same cluster.
+
 .Before you begin
 
 You must have reviewed link:upgrade-considerations.html[Considerations for upgrading controller hardware] about converting a node to a drive shelf. Contact technical support if you need guidance specific to your configuration.

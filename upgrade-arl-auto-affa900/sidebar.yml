@@ -1,7 +1,7 @@
 section: upgrade-arl-auto-affa900
 title: Use "system controller replace" commands to upgrade controller models in the same chassis
 entries:
-- title: Learn about using this ARL procedure
+- title: Learn about this ARL procedure
   url: /upgrade-arl-auto-affa900/index.html
 - title: Decide whether to use this ARL procedure
   url: /upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html
@@ -9,7 +9,7 @@ entries:
   url: /upgrade-arl-auto-affa900/required_tools_and_documentation.html
 - title: Guidelines for upgrading controllers
   url: /upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html
-- title: Overview of the ARL upgrade
+- title: Learn about the ARL upgrade sequence
   url: /upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html
 - title: "Stage 1. Prepare for upgrade"
   pdf-filename: "Stage 1. Prepare for upgrade (upgrade to AFF A900 or FAS9500)"
@@ -114,7 +114,7 @@ entries:
 - title: "Troubleshoot"
   pdf-filename: "Troubleshoot (upgrade to AFF A900 or FAS9500)"
   entries:
-  - title: Overview
+  - title: Learn about troubleshooting ARL upgrade failures
     url: /upgrade-arl-auto-affa900/troubleshoot_index.html
   - title: Aggregate relocation failures
     url: /upgrade-arl-auto-affa900/aggregate_relocation_failures.html

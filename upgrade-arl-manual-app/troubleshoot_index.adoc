@@ -5,7 +5,7 @@ keywords: troubleshoot, failure, aggregate, relocate, lifs
 summary: "Troubleshoot failures that might occur during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Troubleshoot
+= Learn about troubleshooting upgrade failures
 :hardbreaks:
 :nofooter:
 :icons: font

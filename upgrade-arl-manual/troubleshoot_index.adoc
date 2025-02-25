@@ -5,7 +5,7 @@ keywords: troubleshoot, troubleshooting, problem, error, failure
 summary: "Troubleshoot failures that might occur during a manual ARL upgrade on controllers running ONTAP 9.7 or earlier."
 ---
 
-= Troubleshoot
+= Learn about troubleshooting upgrade failures
 :hardbreaks:
 :nofooter:
 :icons: font

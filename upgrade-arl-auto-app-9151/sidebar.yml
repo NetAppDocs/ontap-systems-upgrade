@@ -1,7 +1,7 @@
 section: upgrade-arl-auto-app-9151
 title: Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1 and later
 entries:
-  - title: "Learn about using this ARL procedure"
+  - title: "Learn about this ARL procedure"
     url: /upgrade-arl-auto-app-9151/index.html
   - title: "Automate the controller upgrade process"
     url: /upgrade-arl-auto-app-9151/automate_the_controller_upgrade_process.html
@@ -11,7 +11,7 @@ entries:
     url: /upgrade-arl-auto-app-9151/required_tools_and_documentation.html
   - title: "Guidelines for upgrading controllers with ARL"
     url: /upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html
-  - title: "Overview of the ARL upgrade"
+  - title: "Learn about the ARL upgrade sequence"
     url: /upgrade-arl-auto-app-9151/overview_of_the_arl_upgrade.html
   - title: "Stage 1. Prepare for upgrade"
     pdf-filename: "Stage 1. Prepare for upgrade (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
@@ -90,7 +90,7 @@ entries:
   - title: "Troubleshoot"
     pdf-filename: "Troubleshoot (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title: Overview
+      - title: "Learn about troubleshooting ARL upgrade failures"
         url: /upgrade-arl-auto-app-9151/troubleshoot_index.html
       - title: "Aggregate relocation failures"
         url: /upgrade-arl-auto-app-9151/aggregate_relocation_failures.html

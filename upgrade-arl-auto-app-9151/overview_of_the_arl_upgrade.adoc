@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app-9151/overview_of_the_arl_upgrade.html
 keywords: overview, arl, upgrade, owner, controller, hardware
 summary: "Understand how the procedure to upgrade controllers running ONTAP 9.15.1 or later by using `system controller replace` commands works."
 ---
-= Overview of the ARL upgrade
+= Learn about the ARL upgrade sequence
 :hardbreaks:
 :nofooter:
 :icons: font

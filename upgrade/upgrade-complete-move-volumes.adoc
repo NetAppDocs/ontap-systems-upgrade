@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade
 summary: To complete the procedure of upgrading by moving volumes, you need to configure the Service Processor \(SP\), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or CNA ports.
 ---
-= Complete the upgrade
+= Complete the move volumes upgrade
 :icons: font
 :imagesdir: ../media/
 

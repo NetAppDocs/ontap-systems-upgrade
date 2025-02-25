@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/index.html
 keywords:  controller, aggregate, relocation, flexarray, manual, upgrade, metrocluster
 summary: "Use the manual ARL upgrade procedure to upgrade controller hardware running ONTAP 9.7 or earlier, relocating the ownership of non-root aggregates."
 ---
-= Learn about using this ARL procedure
+= Learn about this ARL upgrade procedure
 :hardbreaks:
 :nofooter:
 :icons: font
