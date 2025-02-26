@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_1_index.html
 keywords: upgrade, preparing, preparation, prepare, overview, stage 1
 summary: "Stage 1 process sequence for an ARL upgrade using `system controller replace` to upgrade controller models in the same chassis."
 ---
-= Learn about Stage 1
+= Learn about this ARL upgrade Stage 1
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: plan, upgrade, consideration, contact, technical, support, recommendation, guidance, cluster, considerations for upgrading controller hardware
 summary: To plan for the upgrade, you should familiarize yourself with the general upgrade considerations. If necessary, contact technical support for recommendations and guidance specific to the configuration of your cluster.
 ---
-= Considerations for upgrading controller hardware
+= Considerations for upgrading controller hardware by moving volumes or storage
 :icons: font
 :imagesdir: ../media/
 
