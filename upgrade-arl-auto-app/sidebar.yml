@@ -50,6 +50,8 @@ entries:
         url: /upgrade-arl-auto-app/install_boot_node3.html
       - title: "Set the FC or UTA/UTA2 configuration on node3"
         url: /upgrade-arl-auto-app/set_fc_or_uta_uta2_config_on_node3.html
+      - title: "Reassign node1 disks to node3"  
+        url: /upgrade-arl-auto-app/reassign-node1-disks-to-node3.html
       - title: "Verify the node3 installation"
         url: /upgrade-arl-auto-app/verify_node3_installation.html
       - title: "Restore key-manager configuration on node3"
@@ -74,6 +76,8 @@ entries:
         url: /upgrade-arl-auto-app/install_boot_node4.html
       - title: "Set the FC or UTA/UTA2 configuration on node4"
         url: /upgrade-arl-auto-app/set_fc_or_uta_uta2_config_node4.html
+      - title: "Reassign node2 disks to node4"  
+        url: /upgrade-arl-auto-app/reassign-node2-disks-to-node4.html
       - title: "Verify the node4 installation"
         url: /upgrade-arl-auto-app/verify_node4_installation.html
       - title: "Restore key-manager configuration on node4"
