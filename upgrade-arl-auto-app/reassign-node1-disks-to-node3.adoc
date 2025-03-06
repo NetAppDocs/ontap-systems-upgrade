@@ -12,7 +12,7 @@ summary: "You need to reassign the disks that belonged to node1 to node3 when up
 :imagesdir: ../media/
 
 [.lead]
-You need to reassign the disks that belonged to node1 to node3.
+You need to reassign the disks that belonged to node1 to node3 before verifying the node3 installation.
 
 .About this task
 You perform the steps in this section on node3.
@@ -148,7 +148,7 @@ Change the ports back to initiator mode:
 +
 [NOTE]
 ====
-If you are upgrading from a system that supports external disks to a system that also supports external disks, go to <<reassign-node1-node3-app-step8],Step 8>>.
+If you are upgrading from a system that supports external disks to a system that also supports external disks, go to <<reassign-node1-node3-app-step8,Step 8>>.
 
 If you are upgrading from a system that supports external disks to a system that supports both internal and external disks, for example, an AFF A800 system, go to <<reassign-node1-node3-app-step9,Step 9>>.
 ====

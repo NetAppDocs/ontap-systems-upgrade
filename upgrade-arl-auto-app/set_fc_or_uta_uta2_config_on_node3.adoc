@@ -43,7 +43,7 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.ado
 |If the system... |Then…
 
 |Has storage disks
-|Go to link:verify_node3_installation.html[Verify the node3 installation].
+|Go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
 |Return to _Install and boot node3_, and resume the procedure link:install_boot_node3.html#auto_install3_step23[Step 23].
 |===

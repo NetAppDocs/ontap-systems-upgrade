@@ -12,7 +12,7 @@ summary: "You need to reassign the disks that belonged to node1 to node3 when up
 :imagesdir: ../media/
 
 [.lead]
-You need to reassign the disks that belonged to node2 to node4.
+You need to reassign the disks that belonged to node2 to node4 before verifying the node4 installation..
 
 .About this task
 You perform the steps in this section on node4.
