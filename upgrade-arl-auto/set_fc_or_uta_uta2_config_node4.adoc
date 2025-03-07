@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto/set_fc_or_uta_uta2_config_node4.html
 keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA/UTA2 card, node4, target, adapter, ports
 summary: "Configure node4 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
 = Set the FC or UTA/UTA2 configuration on node4
 :hardbreaks:
 :nofooter:
@@ -15,8 +14,14 @@ summary: "Configure node4 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 [.lead]
 include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_intro.adoc[]
 
-NOTE: If node4 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to the link:map_ports_node2_node4.html[Map ports from node2 to node4] section.
-However, if you have a V-Series system or have FlexArray Virtualization Software and are connected to storage arrays, and node4 does not have onboard FC ports, onboard UTA/ UTA2 ports, or a UTA/UTA2 card, you must return to the section _Install and boot node4_ and resume at link:install_boot_node4.html#step22[Step 22]. Make sure that node4 has sufficient rack space. If node4 is in a separate chassis from node2, you can put node4 in the same location as node3. If node2 and node4 are in the same chassis, then node4 is already in its appropriate rack location.
+[NOTE]
+====
+If node4 doesn't have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
+
+However, if you have a V-Series system or have FlexArray Virtualization Software and are connected to storage arrays, and node4 doesn't have onboard FC ports, onboard UTA/ UTA2 ports, or a UTA/UTA2 card, you must return to _Install and boot node4_ and resume at link:install_boot_node4.html#step22[Step 22]. 
+
+Make sure that node4 has sufficient rack space. If node4 is in a separate chassis from node2, you can put node4 in the same location as node3. If node2 and node4 are in the same chassis, then node4 is already in its appropriate rack location.
+====
 
 include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_choices.adoc[]
 
@@ -31,11 +36,11 @@ include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 |If the system that you are upgrading...|Then...
 
 |Has storage disks
-a|* Skip this section and go to link:map_ports_node2_node4.html[Map ports from node2 to node4] if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports.
+a|* Skip this section and go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4] if node4 doesn't have a UTA/UTA2 card or UTA/UTA2 onboard ports.
 
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
 a|* Go to link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4[Check and configure UTA/UTA2 ports on node4] if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
-* Skip the section _Check and configure UTA/UTA2 ports on node4_ if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
+* Skip _Check and configure UTA/UTA2 ports on node4_ if node4 doesn't have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
 |===
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
@@ -47,9 +52,9 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 |===
 |If the system... |Then...
 
-|Has storage disks |Go to the section link:map_ports_node2_node4.html[Map ports from node2 to node4].
+|Has storage disks |Go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 |Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to the section _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
+|Return to _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
 |===
 
 . [[auto_check_4_step13]]Exit Maintenance mode:
@@ -60,197 +65,7 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 +
 `boot_ontap menu`
 +
-If you are upgrading to an A800, go to <<auto_check_4_step23,Step 23>>.
-
-. [[auto_check_4_step15]]On node4, go to the boot menu, and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
-+
-.Expand the console output example
-[%collapsible]
-====
-----
-LOADER-A> boot_ontap menu ...
-*******************************
-*                             *
-* Press Ctrl-C for Boot Menu. *
-*                             *
-*******************************
-.
-.
-Please choose one of the following:
-
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-Selection (1-9)? 22/7
-.
-.
-(boot_after_controller_replacement) Boot after controller upgrade
-(9a)                                Unpartition all disks and remove their ownership information.
-(9b)                                Clean configuration and initialize node with partitioned disks.
-(9c)                                Clean configuration and initialize node with whole disks.
-(9d)                                Reboot the node.
-(9e)                                Return to main boot menu.
-
-Please choose one of the following:
-
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-Selection (1-9)? boot_after_controller_replacement
-.
-This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
-.
-.
-Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
-.
-.
-Changing sysid of node <node being replaced> disks.
-Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
-Partner sysid = 4294967295, owner sysid = 536953334
-.
-.
-.
-Terminated
-<node reboots>
-.
-.
-System rebooting...
-.
-Restoring env file from boot media...
-copy_env_file:scenario = head upgrade
-Successfully restored env file from boot media...
-.
-.
-System rebooting...
-.
-.
-.
-WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
-Override system ID? {y|n} y
-Login: ...
-----
-====
-
-. If the system goes into a reboot loop with the message `no disks found`, this is because it has reset the ports back to the target mode and therefore is unable to see any disks. Continue with <<auto_check_4_step17,Step 17>> through <<auto_check_4_step22,Step 22>> to resolve this.
-
-. [[auto_check_4_step17]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
-
-. At the LOADER prompt, enter maintenance mode:
-+
-`boot_ontap maint`
-
-. In maintenance mode, display all the previously set initiator ports that are now in target mode:
-+
-`ucadmin show`
-+
-Change the ports back to initiator mode:
-+
-`ucadmin modify -m fc -t initiator -f _adapter name_`
-
-. Verify that the ports have been changed to initiator mode:
-+
-`ucadmin show`
-
-. Exit maintenance mode:
-+
-`halt`
-+
-[NOTE]
-====
-If you are upgrading from a system that supports external disks to a system that also supports external disks, go to <<auto_check_4_step22,Step 22>>.
-
-If you are upgrading from a system that uses external disks to a system that supports both internal and external disks, for example, an AFF A800 system, go to <<auto_check_4_step23,Step 23>>.
-====
-
-. [[auto_check_4_step22]]At the LOADER prompt, boot up:
-+
-`boot_ontap menu`
-+
-Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
-+
-When the cluster nodes you are replacing use root volume encryption, ONTAP is unable to read the volume information from the disks. Restore the keys for the root volume:
-+
-.. Return to the special boot menu:
-+
-`LOADER> boot_ontap menu`
-+
-----
-Please choose one of the following:
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-
-Selection (1-11)? 10
-----
-+
-.. Select *(10) Set Onboard Key Manager recovery secrets*
-+
-.. Enter `y` at the following prompt:
-+
-`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
-
-+
-.. At the prompt, enter the key-manager passphrase.
-+
-.. Enter the backup data when prompted.
-+
-NOTE: You must have obtained the passphrase and backup data in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section of this procedure.
-
-+
-.. After the system boots to the special boot menu again, run option *(1) Normal Boot*
-+ 
-NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step22,Step 22>> until the system boots normally. 
-
-. [[auto_check_4_step23]]If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to confirm that node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.
-+
-WARNING: *You must perform the following substeps in the exact order shown; failure to do so might cause an outage or even data loss.*
-
-+
-The following procedure sets node4 to boot from the root aggregate of node2:
-
-.. Enter maintenance mode:
-+
-`boot_ontap maint`
-
-.. Check the RAID, plex, and checksum information for the node2 aggregate:
-+
-`aggr status -r`
-
-.. Check the status of the node2 aggregate:
-+
-`aggr status`
-
-.. If necessary, bring the node2 aggregate online:
-+
-`aggr_online root_aggr_from___node2__`
-
-.. Prevent the node4 from booting from its original root aggregate:
-+
-`aggr offline _root_aggr_on_node4_`
-
-.. Set the node2 root aggregate as the new root aggregate for node4:
-+
-`aggr options aggr_from___node2__ root`
+If you are upgrading to an A800, go to link:reassign-node2-disks-to-node4.html#auto_check_4_step9[Reassign node2 disks to node4, Step 9].
 
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-05-16, BURT 1476241

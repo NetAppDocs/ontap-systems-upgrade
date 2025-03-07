@@ -11,12 +11,6 @@ summary: "Install and boot node4 and install ONTAP software when upgrading contr
 :linkattrs:
 :imagesdir: ../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:55.003238
-//
-
 [.lead]
 You must install node4 in the rack, transfer node2's connections to node4, boot node4, and install ONTAP. You must then reassign any of node2’s spare disks, any disks belonging to the root volume, and any non-root aggregates that were not relocated to node3 earlier in the process, as outlined in this section.
 
@@ -29,7 +23,7 @@ include::../_include/ru_auto_install_and_boot_node4_intro_step_5.adoc[]
 [start=6]
 .  [[step6]]Configure the netboot connection by choosing one of the following actions.
 +
-NOTE:  You must use the management port and IP as the netboot connection. Do not use a data LIF IP or a data outage might occur while the upgrade is being performed.
+NOTE:  You must use the management port and IP as the netboot connection. Don't use a data LIF IP or a data outage might occur while the upgrade is being performed.
 
 +
 [cols=2*,options="header"cols="30,70"]
