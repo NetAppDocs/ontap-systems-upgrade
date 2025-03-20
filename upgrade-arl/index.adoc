@@ -33,10 +33,14 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 |AFF A400 |AFF A50 |9.16.1
 |AFF A300 |AFF A50	|9.16.1
 |AFF A220, AFF A150	|AFF A20 |9.16.1
-|FAS8200, FAS8300, FAS8700, FAS9000
+|FAS8200, FAS8300,  FAS9000
+|FAS70, FAS90, FAS50
+|9.15.1P3 for FAS70, FAS90
+
+9.16.1P2 for FAS50
+|FAS8700
 |FAS70, FAS90
 |9.15.1P3
-
 |FAS9500
 |FAS90
 |9.15.1P3
