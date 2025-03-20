@@ -87,6 +87,7 @@ To perform upgrade an upgrade listed in the above table, see link:other_referenc
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
 
+// 2025 MAR 18, AFFFASDOC-287
 // 2024 NOV 25, AFFFASDOC-33
 // 2024 NOV 13, ontap-systems-upgrade-issue-116
 // 2024 SEP 25, AFFFASDOC-268
