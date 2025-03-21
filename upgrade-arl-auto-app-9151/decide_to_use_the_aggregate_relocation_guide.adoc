@@ -32,7 +32,13 @@ NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE
 |AFF A300 |AFF A50 ^2^	|9.16.1
 |AFF A220, AFF A150	|AFF A20 ^2^ |9.16.1 ^1^
 
-|FAS8200, FAS8300, FAS8700, FAS9000
+|FAS8200, FAS8300,  FAS9000
+|FAS70, FAS90, FAS50
+|9.15.1P3 for FAS70, FAS90
+
+9.16.1P2 for FAS50
+
+|FAS8700
 |FAS70, FAS90
 |9.15.1P3
 
@@ -81,6 +87,7 @@ To perform upgrade an upgrade listed in the above table, see link:other_referenc
 
 include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
 
+// 2025 MAR 18, AFFFASDOC-287
 // 2024 NOV 25, AFFFASDOC-33
 // 2024 NOV 13, ontap-systems-upgrade-issue-116
 // 2024 SEP 25, AFFFASDOC-268
