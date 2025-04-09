@@ -12,7 +12,7 @@ summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.8 or 
 :imagesdir: ../media/
 
 [.lead]
-There are several aggregate relocation (ARL) methods for upgrading controller hardware. This ARL procedure describes how to upgrade the storage controllers in an HA pair with new controllers while keeping the existing data and disks. You should only use this complex procedure if you are an experienced administrator.
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) with "system controller replace commands" on systems running ONTAP 9.8 or later. You should only use this complex procedure if you are an experienced administrator.
 
 To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all the following circumstances for supported upgrades:
 

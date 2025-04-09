@@ -12,17 +12,7 @@ summary: "You can upgrade controller hardware running ONTAP 9.15.1 or later by u
 :imagesdir: ../media/
 
 [.lead]
-This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:
-
-[cols=3*,options="header",cols="40,20,40"]
-
-|===
-|Method |ONTAP version |Supported systems
-
-|Using `system controller replace` commands
-|9.15.1 or later
-|link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_9151_supported_systems[Link to supported systems matrix]
-|===
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This ARL procedure describes how to upgrade an HA pair of controllers in AFF and FAS storage systems introduced in ONTAP 9.15.1 or later with new controllers while keeping the existing data and disks. 
 
 NOTE: You cannot use this procedure to upgrade a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
 
