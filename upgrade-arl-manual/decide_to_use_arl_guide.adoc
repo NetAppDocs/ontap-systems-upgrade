@@ -12,7 +12,12 @@ summary: "Decide whether to use the manual ARL procedure to upgrade storage cont
 :imagesdir: ../media/
 
 [.lead]
-include::../_include/ru_man_decide_chunk_a.adoc[]
+This procedure describes how to upgrade controller hardware using manual aggregate relocation (ARL) on systems running ONTAP 9.7 or earlier. You should only use this complex procedure if you are an experienced administrator.
+
+Use this content under the following circumstances:
+
+* You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
+* You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
 * Your controllers are running ONTAP 9.7 or earlier.
 * You have a system that uses Fabric MetroCluster 4-node and 8-node configurations running ONTAP 9.5 or earlier.
 
