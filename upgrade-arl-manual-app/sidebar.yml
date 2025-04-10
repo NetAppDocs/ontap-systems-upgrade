@@ -111,7 +111,7 @@ entries:
   - title: "Troubleshoot"
     pdf-filename: "Troubleshoot (manual upgrade in ONTAP 9.8 or later)"
     entries:
-      - title: "Learn about troubleshooting ARL upgrade failures"
+      - title: "Learn about troubleshooting"
         url: /upgrade-arl-manual-app/troubleshoot_index.html
       - title: "Aggregate relocation failures"
         url: /upgrade-arl-manual-app/aggregate_relocation_failures.html

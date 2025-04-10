@@ -102,7 +102,7 @@ entries:
   - title: "Troubleshoot"
     pdf-filename: "Troubleshoot (upgrade with ‘system controller replace’ in ONTAP 9.8 or later)"
     entries:
-      - title: "Learn about troubleshooting ARL upgrade failures"
+      - title: "Learn about troubleshooting"
         url: /upgrade-arl-auto-app/troubleshoot_index.html
       - title: "Aggregate relocation failures"
         url: /upgrade-arl-auto-app/aggregate_relocation_failures.html

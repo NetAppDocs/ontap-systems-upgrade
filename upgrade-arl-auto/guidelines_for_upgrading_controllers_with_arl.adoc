@@ -48,8 +48,7 @@ Refer to link:other_references.html[References] to link to the _Hardware Univers
 +
 If you want to upgrade entry level controllers with internal drives,  refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
 
-= Troubleshoot upgrade failures
-
+== Troubleshoot
 If any problems occur while upgrading the controllers, you can refer to the link:troubleshoot_index.html[Troubleshoot] section at the end of the procedure for more information and possible solutions.
 
 If you do not find a solution to the problem you encountered, contact technical support.

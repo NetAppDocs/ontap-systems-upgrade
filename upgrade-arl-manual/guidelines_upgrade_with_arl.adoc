@@ -71,6 +71,6 @@ include::../_include/ru_man_storage_encryption.adoc[]
 
 If you are upgrading nodes in a two-node switchless cluster, you can leave the nodes in the switchless cluster while performing the upgrade. You do not need to convert them to a switched cluster.
 
-= Troubleshoot upgrade failures
+== Troubleshoot
 include::../_include/ru_man_troubleshooting.adoc[]
 // 26 FEB 2021:  formatted from CMS

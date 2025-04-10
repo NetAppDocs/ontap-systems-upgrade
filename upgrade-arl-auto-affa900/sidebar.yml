@@ -114,7 +114,7 @@ entries:
 - title: "Troubleshoot"
   pdf-filename: "Troubleshoot (upgrade to AFF A900 or FAS9500)"
   entries:
-  - title: Learn about troubleshooting ARL upgrade failures
+  - title: Learn about troubleshooting
     url: /upgrade-arl-auto-affa900/troubleshoot_index.html
   - title: Aggregate relocation failures
     url: /upgrade-arl-auto-affa900/aggregate_relocation_failures.html
