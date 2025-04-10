@@ -20,7 +20,7 @@ include::../_include/ru_auto_set_fc_or_uta_uta2_confgig_node3_intro.adoc[]
 include::../_include/ru_auto_config_fc_ports_node3.adoc[]
 
 [start=8]
-. [[auto_check3_step8]]Take one of the following actions:
+. Take one of the following actions:
 +
 |===
 |If the system that you are upgrading... |Then…

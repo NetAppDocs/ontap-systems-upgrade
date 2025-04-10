@@ -23,8 +23,6 @@ However, if you have a V-Series system or have FlexArray Virtualization Software
 Make sure that node4 has sufficient rack space. If node4 is in a separate chassis from node2, you can put node4 in the same location as node3. If node2 and node4 are in the same chassis, then node4 is already in its appropriate rack location.
 ====
 
-include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_choices.adoc[]
-
 include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 
 [start=8]
