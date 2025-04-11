@@ -1,8 +1,30 @@
-Before you can replace node2 with node4, you must send an AutoSupport message for node2 and then relocate the non-root aggregates that are owned by node2 to node3.
+Before you can replace node2 with node4, you need to send an AutoSupport message for node2 and then relocate the non-root aggregates that are owned by node2 to node3.
 
 .Steps
 
-. [[step1]] Send an AutoSupport message to NetApp for node2:
+[[sysconfig-a-command]]
+. Verify that the partner system ID is set correctly on node2 and node3:
++
+* `system node run -node _node2_ -command sysconfig -a`
+* `system node run -node _node3_ -command sysconfig -a`
++
+The system displays output similar to the following example:
++
+[subs=+quotes]
+---- 
+NetApp Release 9.16.1: Mon Feb 10 07:55:45 EST 2025
+System ID: _system-ID_; *partner ID: _partner-system-ID_*
+System Serial Number: _system-serial-number_
+System Rev: A0
+System Storage Configuration: Mixed-Path HA
+----
++
+If "partner ID" is incorrect for node2 or node3:
+
+.. Reboot the node with the incorrect value.
+.. Rerun the commands in <<sysconfig-a-command,Step 1>>, and confirm that the "partner ID" has changed to the correct value.
+
+. Send an AutoSupport message to NetApp for node2:
 +
 `system node autosupport invoke -node _node2_ -type all -message "Upgrading _node2_ from _platform_old_ to _platform_new_"`
 
@@ -12,7 +34,7 @@ Before you can replace node2 with node4, you must send an AutoSupport message fo
 +
 The fields "Last Subject Sent:"" and "Last Time Sent:"" contain the message title of the last message that was sent and the time when the message was sent.
 
-. [[step3]]Relocate the non-root aggregates:
+. Relocate the non-root aggregates:
 
 .. Set the privilege level to advanced:
 +
@@ -30,7 +52,7 @@ NOTE: The command locates only non-root aggregates.
 
 .. When prompted, enter `y`.
 +
-Relocation occurs in the background. It can take anywhere from a few seconds to a couple of minutes to relocate an aggregate. The time includes both client outage and non-outage portions. The command does not relocate any offline or restricted aggregates.
+Relocation occurs in the background. It can take anywhere from a few seconds to a couple of minutes to relocate an aggregate. The time includes both client outage and non-outage portions. The command doesn't relocate any offline or restricted aggregates.
 
 .. Return to the admin privilege level:
 +
@@ -40,7 +62,7 @@ Relocation occurs in the background. It can take anywhere from a few seconds to 
 +
 `storage aggregate relocation show -node _node2_`
 +
-The output will display "Done" for an aggregate after it has been relocated.
+The output displays "Done" for an aggregate after it has been relocated.
 +
 NOTE: You must wait until all of the aggregates that are owned by node2 have been relocated to node3 before proceeding to the next step.
 
@@ -51,7 +73,7 @@ NOTE: You must wait until all of the aggregates that are owned by node2 have bee
 |If relocation of... |Then...
 
 |All aggregates was successful
-|Go to <<man_relocate_2_3_step6,Step 6>>.
+|Go to <<man_relocate_2_3_step7,Step 7>>.
 |Any aggregates failed, or was vetoed
 a|.. Display a detailed status message:
 +
@@ -90,7 +112,7 @@ If necessary, you can force the relocation by using one of the following methods
 For more information about the storage aggregate relocation commands, go to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_ and the _ONTAP 9 Commands: Manual Page Reference_.
 |===
 
-. [[man_relocate_2_3_step6]]Verify that all of the non-root aggregates are online on node3:
+. [[man_relocate_2_3_step7]]Verify that all of the non-root aggregates are online on node3:
 +
 `storage aggregate show -node _node3_ -state offline -root false`
 +
@@ -106,10 +128,11 @@ If any volumes are offline on node3, you must bring them online, once for each v
 +
 `volume online -vserver _Vserver-name_ -volume _volume-name_`
 
-. Verify that node2 does not own any online non-root aggregates:
+. Verify that node2 doesn't own any online non-root aggregates:
 +
 `storage aggregate show -owner-name _node2_ -ha-policy sfo -state online`
 +
 The command output should not display online non-root aggregates because all of the non-root online aggregates have already been relocated to node3.
-// 24 FEB 2021:  formatted from CMS
+
+// 2025 FEB 12, AFFFASDOC-296
 // 1476241, 2022-05-13
