@@ -75,7 +75,7 @@ In the example in the previous step, "aggr2" uses internal drives, as indicated 
 
 . Enter the following command on both controllers:
 +
-`aggr status -y`
+`aggr status -v`
 +
 The system displays information about the volumes on the aggregate, as shown in the partial output in the following example:
 +

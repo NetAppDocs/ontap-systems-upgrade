@@ -33,7 +33,7 @@ The controller replacement process begins with a series of prechecks. You also g
 +
 `system controller replace start -nodes _node_names_ -nso false`
 // 2021-11-02, BURT 1438029
-* The `system controller replace start` command can only be executed at the advanced privilege level:
+* You can only execute the `system controller replace start` command at the advanced privilege level:
 +
 `set -privilege advanced`
 ====
