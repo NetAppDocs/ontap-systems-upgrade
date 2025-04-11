@@ -1,5 +1,0 @@
-. [[auto_check3_step13]]Exit maintenance mode:
-+
-`halt`
-
-. [[step14]]Boot node into boot menu by running `boot_ontap menu`. If you are upgrading to an A800, go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9[Reassign node1 disks to node3, Step 9].

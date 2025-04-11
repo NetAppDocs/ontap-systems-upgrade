@@ -48,6 +48,6 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.ado
 |Return to _Install and boot node3_, and resume the procedure link:install_boot_node3.html#auto_install3_step23[Step 23].
 |===
 
-include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13_14.adoc[]
-
+include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
+. [[step14]]Boot node into boot menu by running `boot_ontap menu`. If you are upgrading to an A800, go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9[Reassign node1 disks to node3, Step 9].
 // 2025 MAR 5, AFFFASDOC-297
