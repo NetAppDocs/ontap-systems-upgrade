@@ -37,7 +37,7 @@ Aggregate ownership at the end of Stage 2:
 * Node2 is the home owner and current owner of node2 aggregates.
 
 | link:stage_3_index.html[Stage 3. Install and boot node3]
-a| During Stage 3, you install and boot node3, map the cluster and node-management ports from node1 to node3, and verify the node3 installation. If required, you set the FC or UTA/UTA2 configuration on node3 and confirm that node3 has joined quorum. You also relocate the node1 NAS data LIFs and non-root aggregates from node2 to node3 and verify that the SAN LIFs exist on node3.
+a| During Stage 3, you install and boot node3, map the cluster and node-management ports from node1 to node3, reassign the node1 disks to node3, and verify the node3 installation. If required, you set the FC or UTA/UTA2 configuration on node3 and confirm that node3 has joined quorum. You also relocate the node1 NAS data LIFs and non-root aggregates from node2 to node3 and verify that the SAN LIFs exist on node3.
 
 Aggregate ownership at the end of Stage 3:
 
@@ -57,7 +57,7 @@ Aggregate ownership at the end of Stage 4:
 * Node3 is the current owner of node2 aggregates.
 
 | link:stage_5_index.html[Stage 5. Install and boot node4]
-a| During Stage 5, you install and boot node4, map the cluster and node-management ports from node2 to node4, and verify the node4 installation. If required, you set the FC or UTA/UTA2 configuration on node4 and confirm that node4 has joined quorum. You also relocate node2 NAS data LIFs and non-root aggregates from node3 to node4 and verify the SAN LIFs exist on node4.
+a| During Stage 5, you install and boot node4, map the cluster and node-management ports from node2 to node4, reassign the node2 disks to node4, and verify the node4 installation. If required, you set the FC or UTA/UTA2 configuration on node4 and confirm that node4 has joined quorum. You also relocate node2 NAS data LIFs and non-root aggregates from node3 to node4 and verify the SAN LIFs exist on node4.
 
 Aggregate ownership at the end of Stage 5:
 

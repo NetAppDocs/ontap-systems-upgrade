@@ -12,12 +12,13 @@ summary: "Stage 3 process sequence for an ARL upgrade using `system controller r
 :imagesdir: ../media/
 
 [.lead]
-During Stage 3, you install and boot node3, map the cluster and node-management ports from node1 to node3, and verify the node3 installation. If required, you set the FC or UTA/UTA2 configuration on node3 and confirm that node3 has joined quorum. You also relocate the node1 NAS data LIFs and non-root aggregates from node2 to node3 and verify that the SAN LIFs exist on node3.
+During Stage 3, you install and boot node3, map the cluster and node-management ports from node1 to node3, reassign the node1 disks to node3, and verify the node3 installation. If required, you set the FC or UTA/UTA2 configuration on node3 and confirm that node3 has joined quorum. You also relocate the node1 NAS data LIFs and non-root aggregates from node2 to node3 and verify that the SAN LIFs exist on node3.
 
 .Steps
 
 . link:install_boot_node3.html[Install and boot node3]
 . link:set_fc_or_uta_uta2_config_on_node3.html[Set the FC or UTA/UTA2 configuration on node3]
+. link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3]
 . link:map_ports_node1_node3.html[Map ports from node1 to node3]
 . link:join_quorum_node_has_different_ports_stage3.html[Joining the quorum when a node has a different set of network ports]
 . link:verify_node3_installation.html[Verify the node3 installation]
