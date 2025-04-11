@@ -13,12 +13,13 @@ summary: "Stage 5 process sequence for an ARL upgrade using `system controller r
 
 [.lead]
 
-During Stage 5, you install and boot node4, map the cluster and node-management ports from node2 to node4, and verify the node4 installation. If required, you set the FC or UTA/UTA2 configuration on node4 and confirm that node4 has joined quorum. You also relocate node2 NAS data LIFs and non-root aggregates from node3 to node4 and verify the SAN LIFs exist on node4.
+During Stage 5, you install and boot node4, map the cluster and node-management ports from node2 to node4, reassign the node2 disks to node4, and verify the node4 installation. If required, you set the FC or UTA/UTA2 configuration on node4 and confirm that node4 has joined quorum. You also relocate node2 NAS data LIFs and non-root aggregates from node3 to node4 and verify the SAN LIFs exist on node4.
 
 .Steps
 
 . link:install_boot_node4.html[Install and boot node4]
 . link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4]
+. link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4]
 . link:map_ports_node2_node4.html[Map ports from node2 to node4]
 . link:join_quorum_node_has_different_ports_stage5.html[Join the quorum when a node has a different set of network ports]
 . link:verify_node4_installation.html[Verify the node4 installation]
