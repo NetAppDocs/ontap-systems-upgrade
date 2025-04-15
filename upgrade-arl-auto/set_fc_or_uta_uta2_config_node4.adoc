@@ -59,7 +59,7 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 +
 `halt`
 
-. [[step14]]Boot node into boot menu:
+. [[step14]]Boot the node into boot menu:
 +
 `boot_ontap menu`
 +

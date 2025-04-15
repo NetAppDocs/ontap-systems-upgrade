@@ -71,7 +71,7 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 +
 Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
 
-. Boot node into boot menu:
+. Boot the node into boot menu:
 +
 `boot_ontap menu`
 +
