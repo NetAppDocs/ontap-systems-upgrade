@@ -51,7 +51,7 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.ado
 [start=13]
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
 
-. [[step14]]Boot the node into boot menu by running `boot_ontap menu`. If you are upgrading to an A800, go to link:reassign-node1-disks-to-node3.html#auto_check3_step9[Reassign node1 disks to node3, Step 9].
+. [[step14]]Boot the node into boot menu by running `boot_ontap menu`. If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#auto_check3_step9[Reassign node1 disks to node3, Step 9].
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // top section of page 31 in PDF
 // 2022-06-02, Issue 55
