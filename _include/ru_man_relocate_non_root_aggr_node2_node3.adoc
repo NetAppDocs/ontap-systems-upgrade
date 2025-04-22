@@ -16,6 +16,9 @@ CAUTION: During this procedure, don't relocate aggregates from node3 to node2. D
 +
 The system displays output similar to the following example:
 +
+.Show example
+[%collapsible]
+====
 ----
 cluster::*> ha interconnect config show -node <node>
   (system ha interconnect config show)
@@ -32,6 +35,7 @@ Port   IP Address
 e4a-17   0.0.0.0
 e4b-18   0.0.0.0
 ----
+====
 
 . If "Partner System ID" is incorrect for node3: 
 .. Halt node3:
@@ -55,7 +59,7 @@ The node3 "partner-sysid" is the system ID of node2, which you can find in the `
 
 . Verify that the AutoSupport message was sent:
 +
-`system node autosupport show -node _node2_ -instance`
+`system node autosupport show -node <node2> -instance`
 +
 The fields "Last Subject Sent:"" and "Last Time Sent:"" contain the message title of the last message that was sent and the time when the message was sent.
 
@@ -67,11 +71,11 @@ The fields "Last Subject Sent:"" and "Last Time Sent:"" contain the message titl
 
 .. List the aggregates that are owned by node2:
 +
-`storage aggregate show -owner-name _node2_`
+`storage aggregate show -owner-name <node2>`
 
 .. Start aggregate relocation:
 +
-`storage aggregate relocation start -node _node2_ -destination _node3_ -aggregate-list * -ndo-controller-upgrade true`
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controller-upgrade true`
 +
 NOTE: The command locates only non-root aggregates.
 
@@ -85,7 +89,7 @@ Relocation occurs in the background. It can take anywhere from a few seconds to 
 
 . Verify the relocation status of node2:
 +
-`storage aggregate relocation show -node _node2_`
+`storage aggregate relocation show -node <node2>`
 +
 The output displays "Done" for an aggregate after it has been relocated.
 +
@@ -116,7 +120,7 @@ NOTE: The `event log show` command lists any errors that have occurred.
 
 .. Relocate any failed or vetoed aggregates:
 +
-`storage aggregate relocation start -node _node2_ -destination _node3_ -aggregate-list * -ndo-controllerupgrade true`
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controllerupgrade true`
 
 .. When prompted, enter `y`.
 
@@ -139,23 +143,23 @@ For more information about the storage aggregate relocation commands, go to link
 
 . [[man_relocate_2_3_step8]]Verify that all of the non-root aggregates are online on node3:
 +
-`storage aggregate show -node _node3_ -state offline -root false`
+`storage aggregate show -node <node3> -state offline -root false`
 +
 If any aggregates have gone offline or have become foreign, you must bring them online, once for each aggregate:
 +
-`storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . Verify that all of the volumes are online on node3:
 +
-`volume show -node _node3_ -state offline`
+`volume show -node <node3> -state offline`
 +
 If any volumes are offline on node3, you must bring them online, once for each volume:
 +
-`volume online -vserver _Vserver-name_ -volume _volume-name_`
+`volume online -vserver <Vserver-name> -volume <volume-name>`
 
 . Verify that node2 doesn't own any online non-root aggregates:
 +
-`storage aggregate show -owner-name _node2_ -ha-policy sfo -state online`
+`storage aggregate show -owner-name <node2> -ha-policy sfo -state online`
 +
 The command output should not display online non-root aggregates because all of the non-root online aggregates have already been relocated to node3.
 
