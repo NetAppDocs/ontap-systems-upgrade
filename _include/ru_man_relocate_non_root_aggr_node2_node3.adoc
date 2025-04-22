@@ -38,7 +38,7 @@ e4b-18   0.0.0.0
 +
 `halt` 
 .. At the LOADER prompt, set correct "partner-sysid" value. 
-
++
 The node3 "partner-sysid" is the system ID of node2, which you can find in the `ha interconnect config show` output in <<verify-partner-sys-id,Step 1>>.
 
 .. Save the settings:
