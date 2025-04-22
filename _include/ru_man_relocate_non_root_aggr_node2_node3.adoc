@@ -1,28 +1,8 @@
 Before you can replace node2 with node4, you need to send an AutoSupport message for node2 and then relocate the non-root aggregates that are owned by node2 to node3.
 
+CAUTION: During this procedure, don't relocate aggregates from the upgraded node3 to node2. Doing so might result in a data outage.
+
 .Steps
-
-[[sysconfig-a-command]]
-. Verify that the partner system ID is set correctly on node2 and node3:
-+
-* `system node run -node _node2_ -command sysconfig -a`
-* `system node run -node _node3_ -command sysconfig -a`
-+
-The system displays output similar to the following example:
-+
-[subs=+quotes]
----- 
-NetApp Release 9.16.1: Mon Feb 10 07:55:45 EST 2025
-System ID: _system-ID_; *partner ID: _partner-system-ID_*
-System Serial Number: _system-serial-number_
-System Rev: A0
-System Storage Configuration: Mixed-Path HA
-----
-+
-If "partner ID" is incorrect for node2 or node3:
-
-.. Reboot the node with the incorrect value.
-.. Rerun the commands in <<sysconfig-a-command,Step 1>>, and confirm that the "partner ID" has changed to the correct value.
 
 . Send an AutoSupport message to NetApp for node2:
 +
@@ -73,7 +53,7 @@ NOTE: You must wait until all of the aggregates that are owned by node2 have bee
 |If relocation of... |Then...
 
 |All aggregates was successful
-|Go to <<man_relocate_2_3_step7,Step 7>>.
+|Go to <<man_relocate_2_3_step6,Step 6>>.
 |Any aggregates failed, or was vetoed
 a|.. Display a detailed status message:
 +
@@ -112,7 +92,7 @@ If necessary, you can force the relocation by using one of the following methods
 For more information about the storage aggregate relocation commands, go to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_ and the _ONTAP 9 Commands: Manual Page Reference_.
 |===
 
-. [[man_relocate_2_3_step7]]Verify that all of the non-root aggregates are online on node3:
+. [[man_relocate_2_3_step6]]Verify that all of the non-root aggregates are online on node3:
 +
 `storage aggregate show -node _node3_ -state offline -root false`
 +
@@ -134,5 +114,6 @@ If any volumes are offline on node3, you must bring them online, once for each v
 +
 The command output should not display online non-root aggregates because all of the non-root online aggregates have already been relocated to node3.
 
+// 2025 APR 22, AFFFASDOC-324
 // 2025 FEB 12, AFFFASDOC-296
 // 1476241, 2022-05-13
