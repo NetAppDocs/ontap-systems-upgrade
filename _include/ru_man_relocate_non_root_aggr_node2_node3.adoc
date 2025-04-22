@@ -1,6 +1,6 @@
 Before you can replace node2 with node4, you need to send an AutoSupport message for node2 and then relocate the non-root aggregates that are owned by node2 to node3.
 
-CAUTION: During this procedure, don't relocate aggregates from the upgraded node3 to node2. Doing so might result in a data outage.
+CAUTION: During this procedure, don't relocate aggregates from node3 to node2. Doing so might result in a data outage.
 
 .Steps
 
