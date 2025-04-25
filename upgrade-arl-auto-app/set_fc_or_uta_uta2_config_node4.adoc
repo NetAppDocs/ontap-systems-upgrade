@@ -60,11 +60,11 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 +
 `halt`
 
-. [[step14]]Boot node into boot menu:
+. [[step14]]Boot the node into boot menu:
 +
 `boot_ontap menu`.
 +
-If you are upgrading to an A800, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
+If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
 
 
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36

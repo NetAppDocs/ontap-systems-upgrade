@@ -83,7 +83,7 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 
 .. Contact NetApp Support for assistance with restoring the onboard key management information.
 
-. Boot node into boot menu:
+. Boot the node into boot menu:
 +
 `boot_ontap menu`
 +
