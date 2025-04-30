@@ -84,8 +84,32 @@ For a switch-attached cluster, check that you meet the following requirements fo
 * The replacement node uses shared cluster-HA Ethernet ports. 
 * Verify that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports:
 +
-. Remove the existing configuration on the switch. See the Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Cisco interconnect switch while retaining remote connectivity^].
-. link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/install-rcf-3132q-v.html#step-2-configure-and-verify-the-setup[Configure the RCF and verify the setup^]. 
+. Remove the existing configuration on the switch:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+|If your configuration has a...
+| Go to...
+| Cisco switch 
+| The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Cisco interconnect switch while retaining remote connectivity^]
+| Broadcom-supported BES-53248
+| The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Broadcom interconnect switch while retaining remote connectivity^]
+|===
+
+
+. Configure and verify the switch setup:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+|If your switch model is...
+| Go to...
+| Cisco
+| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html[Upgrade your Reference Configuration File (RCF)^] 
+| Broadcom-supported BES-53248
+| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html[Upgrade the Reference Configuration File (RCF)]
+| NVIDIA SN2100
+| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html[Install or upgrade the Reference Configuration File (RCF) script^]
+|===
 
 // 2025 APR 22, AFFFASDOC-321
 // 2024 JULY 12, AFFFASDOC-240
