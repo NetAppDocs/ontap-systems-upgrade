@@ -16,8 +16,6 @@ entries:
   - title: "Stage 1. Prepare for upgrade"
     pdf-filename: "Stage 1. Prepare for upgrade (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title: "Learn about Stage 1"
-        url: /upgrade-arl-auto-app-9151/stage_1_index.html
       - title: "Prepare the nodes for upgrade"
         url: /upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html
       - title: "Manage storage encryption using the Onboard Key Manager"
@@ -25,8 +23,6 @@ entries:
   - title: "Stage 2. Relocate and retire node1"
     pdf-filename: "Stage 2. Relocate and retire node1 (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title: "Learn about Stage 2"
-        url: /upgrade-arl-auto-app-9151/stage_2_index.html
       - title: "Relocate non-root aggregates and NAS data LIFs owned by node1 to node2"
         url: /upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_data_lifs_node1_node2.html
       - title: "Relocate failed or vetoed aggregates"
@@ -38,8 +34,6 @@ entries:
   - title: "Stage 3. Install and boot node3"
     pdf-filename: "Stage 3. Install and boot node3 (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title: "Learn about Stage 3"
-        url: /upgrade-arl-auto-app-9151/stage_3_index.html
       - title: "Install and boot node3"
         url: /upgrade-arl-auto-app-9151/install_boot_node3.html
       - title: "Verify the node3 installation"
@@ -51,8 +45,6 @@ entries:
   - title: "Stage 4. Relocate and retire node2"
     pdf-filename: "Stage 4. Relocate and retire node2 (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title:  "Learn about Stage 4"
-        url: /upgrade-arl-auto-app-9151/stage_4_index.html
       - title: "Relocate non-root aggregates and NAS data LIFs from node2 to node3"
         url: /upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html
       - title: "Retire node2"
@@ -60,8 +52,6 @@ entries:
   - title: "Stage 5. Install and boot node4"
     pdf-filename: "Stage 5. Install and boot node4 (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title: "Learn about Stage 5"
-        url: /upgrade-arl-auto-app-9151/stage_5_index.html
       - title: "Install and boot node4"
         url: /upgrade-arl-auto-app-9151/install_boot_node4.html
       - title: "Verify the node4 installation"
@@ -73,8 +63,6 @@ entries:
   - title: "Stage 6. Complete the upgrade"
     pdf-filename: "Stage 6. Complete the upgrade (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title: "Learn about Stage 6"
-        url: /upgrade-arl-auto-app-9151/stage_6_index.html
       - title: "Manage authentication using KMIP servers"
         url: /upgrade-arl-auto-app-9151/manage-authentication-using-kmip-servers.html
       - title: "Confirm that the new controllers are set up correctly"
@@ -90,8 +78,6 @@ entries:
   - title: "Troubleshoot"
     pdf-filename: "Troubleshoot (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:
-      - title: "Learn about troubleshooting"
-        url: /upgrade-arl-auto-app-9151/troubleshoot_index.html
       - title: "Aggregate relocation failures"
         url: /upgrade-arl-auto-app-9151/aggregate_relocation_failures.html
       - title: "Reboots, panics, or power cycles"
