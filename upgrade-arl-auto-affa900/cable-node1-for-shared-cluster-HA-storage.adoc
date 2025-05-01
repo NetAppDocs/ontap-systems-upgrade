@@ -90,9 +90,9 @@ For a switch-attached cluster, check that you meet the following requirements fo
 |===
 |If your switch model is...
 | Go to...
-| Cisco switch 
+| Cisco Nexus 
 | The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Cisco interconnect switch while retaining remote connectivity^]
-| Broadcom-supported BES-53248
+| Broadcom BES-53248
 | The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Broadcom interconnect switch while retaining remote connectivity^]
 |===
 
@@ -103,9 +103,9 @@ For a switch-attached cluster, check that you meet the following requirements fo
 |===
 |If your switch model is...
 | Go to...
-| Cisco
+| Cisco Nexus 9336C-FX2
 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html[Upgrade your Reference Configuration File (RCF)^] 
-| Broadcom-supported BES-53248
+| Broadcom BES-53248
 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html[Upgrade the Reference Configuration File (RCF)^]
 | NVIDIA SN2100
 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html[Install or upgrade the Reference Configuration File (RCF) script^]
