@@ -106,7 +106,7 @@ For a switch-attached cluster, check that you meet the following requirements fo
 | Cisco
 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html[Upgrade your Reference Configuration File (RCF)^] 
 | Broadcom-supported BES-53248
-| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html[Upgrade the Reference Configuration File (RCF)]
+| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html[Upgrade the Reference Configuration File (RCF)^]
 | NVIDIA SN2100
 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html[Install or upgrade the Reference Configuration File (RCF) script^]
 |===
