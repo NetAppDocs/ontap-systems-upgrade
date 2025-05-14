@@ -16,7 +16,7 @@ To understand whether you can use aggregate relocation (ARL), keeping the old sy
 
 == Supported upgrades for ARL
 
-Controller upgrades are supported for certain system configurations. To view the list of supported systems and minimum ONTAP versions, link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems,[Supported system upgrade combinations].
+Controller upgrades are supported for certain system configurations. Refer to the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems[supported system upgrade combinations] for a list of the supported systems and minimum ONTAP version.
 
 If you have received a new AFF A30, AFF A50, AFF A70, AFF A90, AFF A150, AFF A900, AFF C30, AFF C60, AFF C80, FAS2820, or FAS9500 as a complete system, including a new chassis, refer to link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_.
 
@@ -32,9 +32,11 @@ If you are upgrading nodes in a cluster that is connected to a cluster switch, y
 
 == Troubleshoot
 
-If any problems occur while upgrading the controllers, see the link:troubleshoot_index.html[Troubleshoot] section at the end of the procedure for more information and possible solutions.
+You might encounter a failure while upgrading the node pair. The node might crash, aggregates might not relocate, or LIFs might not migrate. The cause of the failure and its solution depend on when the failure occurred during the upgrade procedure.
 
-If you do not find a solution to the problem you encountered, contact technical support.
+If any problems occur, refer to the link:aggregate_relocation_failures.html[Troubleshoot] section at the end of the procedure for more information and possible solutions. Information about the failures that can occur is listed by the phase of the procedure in the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence]. 
+
+If you don't find a solution to the problem you encountered, contact technical support.
 
 // 2023 MAY 29, AFFFASDOC-39
 // 2023 MAY 22, BURT 1542232

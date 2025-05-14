@@ -66,7 +66,7 @@ The following example shows the output of the `storage failover show` command wh
 +
 `network interface show -role data -curr-node _node2_ -home-node _node1_`
 +
-Look in the *Status Admin/Oper* column to see if any LIFs are down. If any LIFs are down, consult the link:troubleshoot_index.html[Troublehsoot] section.
+Look in the *Status Admin/Oper* column to see if any LIFs are down. If any LIFs are down, consult the link:aggregate_relocation_failures.html[Troublehsoot] section.
 
 . Take one of the following actions:
 +

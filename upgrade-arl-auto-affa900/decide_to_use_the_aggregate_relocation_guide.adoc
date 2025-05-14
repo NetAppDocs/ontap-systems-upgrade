@@ -26,7 +26,7 @@ You can use this ARL procedure under the following circumstances:
 ** ASA A150, AFF A150, or FAS2820 controller
 ** ASA A900, AFF A900, or FAS9500 controller and NVRAM modules and parts
 
-* You're running the minimum ONTAP version for your upgrade. For more information, <<supported-systems,Supported system upgrade combinations>>.
+* You're running the minimum ONTAP version for your upgrade. For more information, refer to the <<supported-systems,supported system upgrade combinations>>.
 * You're experienced in administering ONTAP and are comfortable with the risks of working in diagnostic privilege mode.
 * Your systems are running ONTAP 9.15.1 or later, and they are using Ethernet switches to connect to Ethernet-attached storage.
 
@@ -97,7 +97,7 @@ a|9.11.1P7 or later patch releases (FAS2620) ^2^
 
 ^1^ When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency, and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more^].
 
-^2^ The AFF A200 and FAS2620 systems do not support ONTAP versions later than 9.11.1.
+^2^ The AFF A200 and FAS2620 systems don't support ONTAP versions later than 9.11.1.
 
 [NOTE]
 ====

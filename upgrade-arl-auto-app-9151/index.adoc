@@ -26,7 +26,7 @@ The terms "node1", "node2", "node3", and "node4" are used only to distinguish be
 
 .Important information:
 
-* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[Guidelines for upgrading controllers with ARL] and the  link:overview_of_the_arl_upgrade.html[Learn about the ARL upgrade sequence] sections before beginning the upgrade.
+* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[guidelines for upgrading controllers with ARL] and the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence] before beginning the upgrade.
 * This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used.
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each high-availability (HA) pair in the cluster.
 * When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of existing volumes and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. 

@@ -2,14 +2,14 @@
 permalink: upgrade/upgrade-complete-move-volumes.html
 sidebar: sidebar
 keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade
-summary: To complete the procedure of upgrading by moving volumes, you need to configure the Service Processor \(SP\), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or CNA ports.
+summary: To complete the procedure of upgrading by moving volumes, you need to configure the Service Processor \(SP\), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.
 ---
 = Complete the move volumes upgrade
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-To complete the procedure of upgrading by moving volumes, you must configure the Service Processor (SP), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or CNA ports.
+To complete the procedure of upgrading by moving volumes, you must configure the Service Processor (SP), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.
 
 . Configure the SP on the new nodes as needed:
 +
@@ -31,7 +31,7 @@ Use one of the following procedures, depending on whether you are using onboard 
  ** "`Restoring onboard key management encryption keys`"
  ** "`Restoring external key management encryption keys`"
 
-. If the new nodes have FC ports (onboard or on FC adapters), onboard CNA ports, or a CNA card, configure the FC or CNA ports, enter the following command from the storage system prompt:
+. If the new nodes have FC ports (onboard or on FC adapters), onboard CNA ports, or a CNA card, configure the FC or NCA ports, enter the following command from the storage system prompt:
 +
 `system node hardware unified-connect modify -node node-name -adapter adapter-name -mode {fc|cna} -type {target|initiator}`
 +

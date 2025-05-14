@@ -335,7 +335,7 @@ Login:
 +
 NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. If the system goes into a reboot loop with the message `no disks found`, it indicates that there was a problem with the disk reassignment. See link:troubleshoot_index.html[Troubleshoot] to resolve the issue.
+. If the system goes into a reboot loop with the message `no disks found`, it indicates that there was a problem with the disk reassignment. See link:aggregate_relocation_failures.html[Troubleshoot] to resolve the issue.
 
 . Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
 
