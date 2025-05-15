@@ -90,14 +90,28 @@ The controller replacement operation pauses after the resource relocation is com
 +
 If the controller replacement procedure is paused, check and correct the error, if any, and then issue `resume` to continue the operation.
 
-. If necessary, restore and revert any displaced LIFs. List any displaced LIFs:
+. If necessary, restore and revert displaced LIFs or manually relocate LIFs that failed to relocate automatically.
 +
+[role="tabbed-block"]
+====
+.Restore and revert displaced LIFs
+List any displaced LIFs:
+--
 `cluster controller-replacement network displaced-interface show`
-+
-If any LIFs are displaced, restore the home node back to node1:
-+
-`cluster controller-replacement network displaced-interface restore-home-node`
 
+If any LIFs are displaced, restore the home node back to node1:
+
+`cluster controller-replacement network displaced-interface restore-home-node`
+--
+
+.Manually relocate LIFs
+--
+Manually relocate LIFs to node1 that failed to relocate automatically: 
+
+`aggr relocation start -node cluster-02 -destination cluster-01 -aggregate-list n01_aggr1 -override-vetoes true`
+`
+--
+====
 . Resume the operation to prompt the system to perform the required post-checks:
 +
 `system controller replace resume`
@@ -111,3 +125,5 @@ The system performs the following post-checks:
 * Disk status check
 * Cluster LIF status check
 * Volume check
+
+// 2025 MAY 15, AFFFASDOC-335
