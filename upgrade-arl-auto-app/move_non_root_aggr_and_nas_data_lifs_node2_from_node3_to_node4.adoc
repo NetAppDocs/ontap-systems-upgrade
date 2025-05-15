@@ -67,8 +67,9 @@ If the controller replacement procedure is paused, check and correct the error, 
 [role="tabbed-block"]
 ====
 .Restore and revert displaced LIFs
-List any displaced LIFs:
 --
+List any displaced LIFs:
+
 `cluster controller-replacement network displaced-interface show`
 
 If any LIFs are displaced, restore the home node back to node4:
@@ -81,7 +82,6 @@ If any LIFs are displaced, restore the home node back to node4:
 Manually relocate LIFs to node4 that failed to relocate automatically: 
 
 `aggr relocation start -node cluster-02 -destination cluster-01 -aggregate-list n01_aggr1 -override-vetoes true`
-`
 --
 ====
 
