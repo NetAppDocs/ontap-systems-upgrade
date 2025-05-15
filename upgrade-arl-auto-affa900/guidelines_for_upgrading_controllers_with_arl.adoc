@@ -30,7 +30,7 @@ If you are upgrading nodes in a two-node switchless cluster, you can leave the n
 
 If you are upgrading nodes in a cluster that is connected to a cluster switch, you must verify that the make, model, firmware version, RCF, and ONTAP version running on the switch will be same the same as those running on the replacement controller after the upgrade. If required, you must perform the switch upgrade before upgrading the controllers by using ARL.
 
-For more information, see link:upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster[Connect to a switch-attached cluster].
+For more information, see link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster[Connect to a switch-attached cluster].
 
 == Troubleshoot
 
