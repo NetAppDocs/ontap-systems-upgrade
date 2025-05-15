@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cluster, san, environment, delete, lif, re-create, move san lifs, create
 summary: Depending on your cluster contents and cluster environment, you need to move, delete, or create SAN LIFs, or re-create deleted SAN LIFs.
 ---
-= Move, delete, or create SAN LIFS
+= Move, delete, or create SAN LIFs
 :icons: font
 :imagesdir: ../media/
 
