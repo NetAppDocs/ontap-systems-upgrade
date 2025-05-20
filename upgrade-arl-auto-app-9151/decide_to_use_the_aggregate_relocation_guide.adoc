@@ -83,11 +83,12 @@ The following table shows the supported controller upgrade combinations using AR
 
 ^2^ The  AFF A20, AFF A50, AFF A70, and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis: 
 
-* If you're upgrading to an AFF A20, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A70, or AFF A90 nodes and use them for creating data aggregates. You don't have to migrate root or data aggregates to internal drives.
-* If you're upgrading to an AFF A20, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
+* If you're upgrading to an AFF A20, AFF A50, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A50, AFF A70, or AFF A90 nodes and use them for creating data aggregates. You don't have to migrate root or data aggregates to internal drives.
+* If you're upgrading to an AFF A20, AFF A50, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+// 2025 APR 15, ontap-systems-upgrade/issue-125
 // 2025 MAR 18, AFFFASDOC-287
 // 2024 NOV 25, AFFFASDOC-33
 // 2024 NOV 13, ontap-systems-upgrade-issue-116

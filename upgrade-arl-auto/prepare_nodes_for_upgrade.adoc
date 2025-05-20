@@ -21,7 +21,7 @@ The controller replacement process begins with a series of prechecks. You also g
 +
 `system controller replace start -nodes _node_names_`
 +
-NOTE: This command can only be executed at the advanced privilege level:
+NOTE: You can only execute this command at the advanced privilege level:
 `set -privilege advanced`
 
 +

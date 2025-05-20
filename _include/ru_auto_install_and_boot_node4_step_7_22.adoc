@@ -119,7 +119,7 @@ Save the settings:
 |If your system... |Then...
 
 |Has disks and no back-end storage
-|Go to <<auto_install4_step23,Step 23>>.
+|Go to <<auto_install4_step27,Step 27>>.
 |Is a V-Series system or a system with FlexArray Virtualization software connected to storage arrays
 a|.. Go to section link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4] and complete the subsections in this section.
 .. Return to this section and complete the remaining steps, beginning with <<auto_install4_step23,Step 23>>.

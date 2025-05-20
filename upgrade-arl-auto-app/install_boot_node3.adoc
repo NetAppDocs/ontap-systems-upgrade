@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-app/install_boot_node3.html
 keywords: installing, booting, node3, ontap
 summary: "Install and boot node3 and install ONTAP software when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
-
 = Install and boot node3
 :hardbreaks:
 :nofooter:
@@ -12,19 +11,13 @@ summary: "Install and boot node3 and install ONTAP software when upgrading contr
 :linkattrs:
 :imagesdir: ../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:54.146306
-//
-
 [.lead]
 include::../_include/ru_auto_install_boot_node3_intro_step_5.adoc[]
 
 [start=6]
 . [[step6]]Configure the netboot connection by choosing one of the following actions.
 +
-NOTE: You must use the management port and IP as the netboot connection. Do not use a data LIF IP or a data outage might occur while the upgrade is being performed.
+NOTE: You must use the management port and IP as the netboot connection. Don't use a data LIF IP or a data outage might occur while the upgrade is being performed.
 
 +
 [cols=2*,options="header"cols="30,70"]
@@ -49,6 +42,7 @@ NOTE: Other parameters might be necessary for your interface. Enter `help ifconf
 
 include::../_include/ru_auto_install_boot_node3_step_7_26.adoc[]
 [start=27]
+[[auto_install3_step27]]
 . If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
@@ -77,11 +71,11 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 +
 Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
 
-. Boot node into boot menu:
+. Boot the node into boot menu:
 +
 `boot_ontap menu`
 +
-If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2's disks.
+If you don't have an FC or UTA/UTA2 configuration, perform link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step1[Reassign node1 disks to node3, Step 1] so that node3 can recognize node1's disks.
 
 . [[step29]]For a MetroCluster configuration, V-Series systems and systems with FlexArray Virtualization software connected to storage arrays,  you must set and configure the FC or UTA/UTA2 ports on node3 to detect the disks attached to the node.
 To complete this task, go to section link:set_fc_or_uta_uta2_config_on_node3.html[Set the FC or UTA/UTA2 configuration on node3].
