@@ -16,5 +16,7 @@ summary: "Decide whether to use the manual ARL procedure to upgrade storage cont
 include::../_include/ru_man_decide_chunk_a.adoc[]
 * You have a system that uses Fabric MetroCluster 4-node and 8-node configurations running ONTAP 9.5 or earlier.
 
+NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
+
 include::../_include/ru_man_decide_chunk_b.adoc[]
 // 26 FEB 2021:  formatted from CMS
