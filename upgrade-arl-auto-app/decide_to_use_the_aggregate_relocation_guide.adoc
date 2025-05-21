@@ -4,24 +4,17 @@ permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.htm
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability
 summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
-
-= Decide whether to use the aggregate relocation procedure
+= Decide whether to use this aggregate relocation procedure
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:53.673641
-//
-
 [.lead]
-This content describes how to upgrade the storage controllers in an HA pair with new controllers while keeping the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) with "system controller replace commands" on systems running ONTAP 9.8 or later. You should only use this complex procedure if you're an experienced ONTAP administrator.
 
-You can use this content under the following circumstances:
+To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all of the following circumstances for supported upgrades:
 
 * You're running ONTAP 9.8 or later.
 * You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
@@ -32,7 +25,10 @@ For upgrading MetroCluster IP configurations, refer to link:other_references.htm
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
-[[sys_commands_98_supported_systems]]The following table shows the supported model matrix for the controller upgrade.
+[[sys_commands_98_supported_systems]]
+== Supported system upgrade combinations
+
+The following table shows the supported systems matrix for performing a controller upgrade using this ARL procedure.
 
 |===
 |Old controller |Replacement controller
@@ -100,7 +96,7 @@ For the upgrade combinations shown in the preceding table:
 * It isn't possible to cancel or back out of a controller upgrade after you start the procedure and upgrade the first node. 
 ====
 
-include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
+include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
 // BURT 1514374 17-Nov-2022
 // BURT 1501196 17-Nov-2022

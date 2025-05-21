@@ -41,4 +41,4 @@ Your directory listing should contain a netboot folder with a kernel file:
 NOTE: You do not need to extract the contents of the `<ontap_version>_image.tgz` file.
 |===
 +
-You will use information in the directories in link:stage_3_index.html[Stage 3].
+You will use information in the directories in link:install_boot_node3.html[Stage 3].

@@ -1,0 +1,4 @@
+---
+permalink: upgrade/upgrade_create_recreate_san_lifs.html
+redirect: ontap-systems-upgrade/upgrade/upgrade_move_delete_recreate_san_lifs.html
+---

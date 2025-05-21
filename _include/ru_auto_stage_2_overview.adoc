@@ -1,9 +1,0 @@
-During Stage 2, you relocate node1 non-root aggregates and NAS data LIFs to node2. This process is largely automated; the operation pauses to enable you to check its status. You must manually resume the operation. If required, you relocate failed or vetoed aggregates. You also record the necessary node1 information, retire node1, and prepare to netboot node3 and node4 later in the procedure.
-
-.Steps
-
-. link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html[Relocate non-root aggregates and NAS data LIFs owned by node1 to node2]
-. link:relocate_failed_or_vetoed_aggr.html[Relocate failed or vetoed aggregates]
-. link:retire_node1.html[Retire node1]
-. link:prepare_for_netboot.html[Prepare for netboot]
-//BURT-1476241 13-Sep-2022

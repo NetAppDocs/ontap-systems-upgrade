@@ -1,4 +1,0 @@
-If you prefer a different method of upgrading the controller hardware and are willing to do volume moves, refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
-
-.Related information
-Refer to link:other_references.html[References] to link to the _ONTAP 9 Documentation Center_ where you can access ONTAP 9 product documentation.
