@@ -1,4 +1,4 @@
-You must install node4 in the rack, transfer node2 connections to node4, and boot node4. You must also reassign AFF A800 or AFF C800 controller, any node2 spares, any disks belonging to root, and any non-root aggregates that were not relocated to node3 earlier.
+You must install node4 in the rack, transfer node2 connections to node4, and boot node4. You must also reassign any node2 spares, any disks belonging to root, and any non-root aggregates that were not relocated to node3 earlier.
 
 .About this task
 
