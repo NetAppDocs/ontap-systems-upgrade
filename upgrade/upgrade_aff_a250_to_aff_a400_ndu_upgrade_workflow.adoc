@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ndu, nondisruptive, upgrade, AFF, FAS, systems, entry, level
 summary: Perform an NDU to entry level NetApp AFF and FAS systems without having to purchase additional storage and cluster switches.
 ---
-= Workflow
+= Upgrade AFF A250 to AFF A400 by converting to a drive shelf workflow
 :icons: font
 :imagesdir: ../media/
 

@@ -4,8 +4,7 @@ permalink: upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html
 keywords: aggregate relocation, decide to use, upgrade, model, matrix, replacement, controller
 summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
-= Decide whether to use the aggregate relocation procedure
+= Decide whether to use this aggregate relocation procedure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,21 +12,26 @@ summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.5 to 
 :imagesdir: ../media/
 
 [.lead]
-This content describes how to upgrade the storage controllers in an HA pair with new controllers while keeping all the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This procedure describes how to upgrade the controller hardware using ARL with "system controller replace commands" on systems running ONTAP 9.7, 9.6, or 9.5. You should only use this complex procedure if you're an experienced ONTAP administrator. 
 
-Use this content under the following circumstances:
+To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all of the following circumstances for supported upgrades:
 
 * You are upgrading NetApp controllers running ONTAP 9.5, 9.6 or 9.7. This document is not applicable to upgrades to ONTAP 9.8.
 
-* You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
+* You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
 
 * You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
+
+* Your hardware upgrade combination is listed in the <<sys_commands_95_97_supported_systems,supported model matrix>>.
 
 * If you are upgrading a MetroCluster configuration, it is a 4-node or higher FC configuration, and all nodes are running ONTAP 9.6 or 9.7.
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
-[[sys_commands_95_97_supported_systems]] The following tables shows the supported model matrix for the controller upgrade.
+[[sys_commands_95_97_supported_systems]] 
+== Supported system upgrade combinations
+
+The following tables shows the supported model matrix for the controller upgrade using this ARL procedure.
 
 [cols="50,50"]
 |===
@@ -60,6 +64,6 @@ NOTE: If your controller upgrade model combination is not in the above table, co
 * After you complete a controller upgrade by using temporary cluster ports, you can nondisruptively migrate cluster LIFs to e3a and e3b, 100GbE ports on an AFF A400 system, and e0c and e0d, 100GbE ports on an FAS8300 system.
 // BURT 1367153 30-Aug-2021
 
-include::../_include/ru_auto_decide_use_arl_guide_end.adoc[]
+include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
 // 2021-04-14 Burt 1367155

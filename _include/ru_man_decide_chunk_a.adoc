@@ -1,6 +1,0 @@
-This content describes how to upgrade the storage controllers in an HA pair with new controllers while keeping all the existing data and disks. This is a complex procedure that should be used only by experienced administrators.
-
-Use this content under the following circumstances:
-
-* You do not want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
-* You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
