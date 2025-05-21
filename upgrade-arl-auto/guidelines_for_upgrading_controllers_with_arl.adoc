@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto/guidelines_for_upgrading_controllers_with_arl.html
 keywords: upgrade, controllers, guidelines, ARL, aggregate relocation, supported upgrades, two-node, cluster, troubleshoot
 summary: "Understand if you can upgrade controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
 = Guidelines for upgrading controllers with ARL
 :hardbreaks:
 :nofooter:
@@ -50,7 +49,7 @@ If you want to upgrade entry level controllers with internal drives,  refer to l
 
 == MetroCluster FC configuration
 
-In a MetroCluster FC configuration, you must replace the disaster recovery/failover site nodes as soon as possible. Mismatch in controller models within a MetroCluster is not supported because controller model mismatch can cause disaster recovery mirroring to go offline. Use the `-skip-metrocluster-check true` command to bypass MetroCluster checks when you are replacing nodes at the second site.
+In a MetroCluster FC configuration, you must replace the disaster recovery/failover site nodes as soon as possible. Mismatch in controller models within a MetroCluster configuration isn't supported because controller model mismatch can cause disaster recovery mirroring to go offline. Use the `-skip-metrocluster-check true` command to bypass MetroCluster checks when you're replacing nodes at the second site.
 
 == Troubleshoot
 
@@ -58,7 +57,7 @@ You might encounter a failure while upgrading the node pair. The node might cras
 
 Refer to the table describing the different phases of the procedure in the section Overview of the ARL upgrade. Information about the failures that can occur is listed by the phase of the procedure.
 
-If any problems occur while upgrading the controllers, you can refer to the link:aggregate_relocation_failures.html[Troubleshoot] section at the end of the procedure for more information and possible solutions.
+If any problems occur while upgrading the controllers, refer to the link:aggregate_relocation_failures.html[Troubleshoot] section. The information about failures that can occur is listed by the phase of the procedure in the link:arl_upgrade_workflow.html[ARL upgrade sequence].
 
 If you do not find a solution to the problem you encountered, contact technical support.
 // p.9 of PDF

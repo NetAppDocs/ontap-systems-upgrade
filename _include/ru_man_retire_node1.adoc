@@ -106,7 +106,7 @@ Because there is the possibility of a tie in a cluster that has an even number o
 ====
 If you have a four-node cluster, epsilon might be on a node in a different HA pair in the cluster.
 
-If you are upgrading an HA pair in a cluster with multiple HA pairs, you must move epsilon to the node of an HA pair not undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
+If you are upgrading an HA pair in a cluster with multiple HA pairs, you must move epsilon to the node of an HA pair that isn't undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
 // BURT 1400769 31-Jan-2022
 ====
 

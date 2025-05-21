@@ -31,7 +31,7 @@ Use one of the following procedures, depending on whether you are using onboard 
  ** "`Restoring onboard key management encryption keys`"
  ** "`Restoring external key management encryption keys`"
 
-. If the new nodes have FC ports (onboard or on FC adapters), onboard CNA ports, or a CNA card, configure the FC or NCA ports, enter the following command from the storage system prompt:
+. If the new nodes have FC ports (onboard or on FC adapters), onboard CNA ports, or a CNA card, configure the FC or CNA ports by entering the following command from the storage system prompt:
 +
 `system node hardware unified-connect modify -node node-name -adapter adapter-name -mode {fc|cna} -type {target|initiator}`
 +

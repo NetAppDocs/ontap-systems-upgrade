@@ -12,7 +12,7 @@ summary: "Decide whether to use the manual ARL procedure to upgrade storage cont
 :imagesdir: ../media/
 
 [.lead]
-This procedure describes how to upgrade controller hardware using manual aggregate relocation (ARL) on systems running ONTAP 9.8 or later. You should only use this complex procedure if you are an experienced administrator.
+This procedure describes how to upgrade controller hardware using manual aggregate relocation (ARL) on systems running ONTAP 9.8 or later. You should only use this complex procedure if you're an experienced ONTAP administrator.
 
 Use this content under the following circumstances:
 

@@ -45,7 +45,7 @@ Warning: Cluster HA has not been configured. Cluster HA must be configured on a 
 2 entries were displayed.
 ----
 +
-NOTE: If you are upgrading an HA pair in a cluster with multiple HA pairs, you must move epsilon to the node of an HA pair not undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
+NOTE: If you are upgrading an HA pair in a cluster with multiple HA pairs, you must move epsilon to the node of an HA pair that isn't undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
 //BURT 1400769 31-Jan-2022
 
 . If node2 holds epsilon, mark epsilon as `false` on the node so that it can be transferred to node3:

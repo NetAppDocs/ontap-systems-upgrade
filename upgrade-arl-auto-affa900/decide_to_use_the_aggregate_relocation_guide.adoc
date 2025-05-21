@@ -12,14 +12,14 @@ summary: "Decide whether to use the ARL procedure that upgrades controller model
 :imagesdir: ../media/
 
 [.lead]
-There are several aggregate relocation (ARL) methods for upgrading controller hardware. This content describes how to upgrade storage controllers in an HA pair by converting the existing system to the replacement system, keeping the existing system chassis and disks. You should only use this complex procedure if you are an experienced administrator.
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This content describes how to upgrade storage controllers in an HA pair by converting the existing system to the replacement system, keeping the existing system chassis and disks. You should only use this complex procedure if you're an experienced ONTAP administrator.
 
-To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all the following circumstances for supported and unsupported upgrades.
+To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all of the following circumstances for supported and unsupported upgrades.
 
-== Supported for this ARL upgrades
+== Supported for this ARL upgrade
 You can use this ARL procedure under the following circumstances:
 
-* You controller upgrade is listed in the <<supported-systems,supported systems matrix>>.
+* Your controller upgrade is listed in the <<supported-systems,supported systems matrix>>.
 * You have verified with your NetApp sales representative that you have received the hardware that you need for the controller upgrade:
 ** Two AFF A90, AFF A70, or AFF C80 controllers and all I/O modules. The required lengths of 100GbE cables.
 ** Two AFF A50, AFF A30, AFF C30, or AFF C60 controllers and I/O modules and the required cables
@@ -32,7 +32,7 @@ You can use this ARL procedure under the following circumstances:
 
 NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
 
-== Not supported for this ARL upgrades
+== Not supported for this ARL upgrade
 You cannot use this ARL procedure under the following circumstances:
 
 * You want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
