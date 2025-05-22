@@ -3,7 +3,7 @@ You need to netboot node4 if it does not have the same version of ONTAP 9 that i
 
 [IMPORTANT]
 ====
-* If you upgrading an AFF A800 or AFF C800 controller, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules].
+* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules].
 
 * If you are upgrading a V-Series system connected to storage arrays or a system with FlexArray Virtualization software that is connected to storage arrays, you must complete <<auto_install4_step1,Step 1>> through <<auto_install4_step21,Step 21>>, then leave this section and follow instructions to link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4[Configure FC ports on node4] and to link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4[Check and configure UTA/UTA2 ports on node4], entering commands in Maintenance mode. You must then return to this section and resume with <<auto_install4_step23,Step 23>>.
 
