@@ -23,8 +23,6 @@ Use this content under the following circumstances:
 
 * You have hybrid aggregates on your system. 
 
-
-
 include::../_include/ru_man_decide_chunk_b.adoc[]
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
