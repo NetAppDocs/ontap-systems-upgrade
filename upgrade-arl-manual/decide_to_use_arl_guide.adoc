@@ -21,8 +21,6 @@ Use this content under the following circumstances:
 * Your controllers are running ONTAP 9.7 or earlier.
 * You have a system that uses Fabric MetroCluster 4-node and 8-node configurations running ONTAP 9.5 or earlier.
 
-NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
-
 include::../_include/ru_man_decide_chunk_b.adoc[]
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
