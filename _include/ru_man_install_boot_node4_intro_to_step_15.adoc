@@ -2,7 +2,7 @@ You must install node4 in the rack, transfer node2 connections to node4, and boo
 
 .About this task
 
-You must netboot node4 if it doesn't have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots by following the instructions in link:prepare_for_netboot.html[Prepare for netboot]
+You must netboot node4 if it doesn't have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
 
 However, you aren't required to netboot node4 if it has the same or later version of ONTAP 9 that is installed on node2.
 
