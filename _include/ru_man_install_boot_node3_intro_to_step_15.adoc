@@ -134,4 +134,5 @@ NOTE: Leave node4 at the boot environment prompt; you will return to node4 in li
 . [[man_install3_step15]]Configure node3 for ONTAP:
 +
 `set-defaults`
+// 2025 MAY 22, AFFFASDOC-329
 // 2022 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
