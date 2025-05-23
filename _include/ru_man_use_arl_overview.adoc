@@ -6,7 +6,7 @@ This document uses the term _systems with FlexArray Virtualization Software_ to 
 
 .Important information:
 
-* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_upgrade_with_arl.html[Guidelines for upgrading controllers with ARL] and the  link:arl_upgrade_workflow.html[ARL upgrade workflow] sections before beginning the upgrade.
+* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_upgrade_with_arl.html[guidelines for upgrading controllers with ARL] and the link:arl_upgrade_workflow.html[ARL upgrade workflow] before beginning the upgrade.
 * This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7-Mode.
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each high-availability (HA) pair in the cluster.
 * This procedure applies to FAS systems, V-Series systems, AFF systems, and systems with FlexArray Virtualization Software. FAS systems released after ONTAP 9 can attach to storage arrays if the required license is installed. The existing V-Series systems are supported in ONTAP 9. For information about the storage array and V-Series models, refer to link:other_references.html[References] to link to the _Hardware Universe_ and see the _V-Series Support Matrix_.
