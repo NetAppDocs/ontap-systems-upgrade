@@ -1,5 +1,5 @@
 
-You need to netboot node4 if it does not have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots, by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
+You need to netboot node4 if it does not have the same version of  After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots, by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
 
 .Important:
 
