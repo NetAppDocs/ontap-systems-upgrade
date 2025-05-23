@@ -1,7 +1,11 @@
-This procedure includes troubleshooting suggestions.
+You might encounter a failure while upgrading the node pair. The node might crash, aggregates might not relocate, or LIFs might not migrate. The cause of the failure and its solution depend on when the failure occurred during the upgrade procedure.
 
-If any problems occur while upgrading the controllers, you can refer to the link:troubleshoot_index.html[Troubleshoot] section at the end of the procedure for more information and possible solutions.
+If any problems occur while upgrading the controllers, refer to the link:aggregate_relocation_failures.html[Troubleshoot] section. The information about failures that can occur is listed by the phase of the procedure in the link:arl_upgrade_workflow.html[ARL upgrade sequence].
 
 If you do not find a solution to the problem you encountered, contact technical support.
 // 1 MAR 2021: formatted from CMS
 // Clean-up, 2022-03-09
+
+
+
+
