@@ -26,7 +26,14 @@ To help you decide if this ARL procedure is suitable for your controller hardwar
 
 * If you are upgrading a MetroCluster configuration, it is a 4-node or higher FC configuration, and all nodes are running ONTAP 9.6 or 9.7.
 
-NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
+[NOTE]
+====
+* If you're upgrading a system by swapping controller modules in the same chassis, such as AFF A800 or AFF C800, NetApp strongly recommends using the upgrade procedure that link:../upgrade-arl-auto-affa900/index.html[upgrades controller models using ARL, keeping the existing system chassis and disks]. This ARL procedure includes the steps that ensure the internal disks remain secure in the chassis when you remove and install the controllers during the upgrade procedure.
++
+link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis[Learn about the supported system upgrade combinations using ARL, keeping the existing system chassis and disks]. 
+
+* You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
+====
 
 [[sys_commands_95_97_supported_systems]] 
 == Supported system upgrade combinations
@@ -66,4 +73,5 @@ NOTE: If your controller upgrade model combination is not in the above table, co
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+// 2025 MAY 22, AFFFASDOC-329
 // 2021-04-14 Burt 1367155
