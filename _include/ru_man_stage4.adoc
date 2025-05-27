@@ -1,6 +1,0 @@
-During Stage 4, you record node2 information for use later in the procedure and then retire node2.
-
-.Steps
-
-. link:record_node2_information.html[Record node2 information]
-. link:retire_node2.html[Retire node2]

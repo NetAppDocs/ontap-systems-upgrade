@@ -1,0 +1,4 @@
+---
+permalink: upgrade/upgrade-complete-ontap-9-7-or-earlier.html
+redirect: ontap-systems-upgrade/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html
+---

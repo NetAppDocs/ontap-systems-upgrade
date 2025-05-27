@@ -2,15 +2,19 @@ You must install node4 in the rack, transfer node2 connections to node4, and boo
 
 .About this task
 
-You must netboot node4 if it does not have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots by following the instructions in link:prepare_for_netboot.html[Prepare for netboot]
+You must netboot node4 if it doesn't have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
 
-However, you are not required to netboot node4 if it has the same or later version of ONTAP 9 that is installed on node2.
+However, you aren't required to netboot node4 if it has the same or later version of ONTAP 9 that is installed on node2.
 
-*Important information:*
 
-* If you are upgrading a V-Series system or a system with FlexArray Virtualization Software that is connected to storage arrays, you need to complete <<man_install4_Step1,Step 1>> through <<man_install4_Step7,Step 7>>, leave this section at <<man_install4_Step8,Step 8>> and follow instructions in link:set_fc_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4] as needed, entering the commands in Maintenance mode. You must then return to this section and resume the procedure at <<man_install4_Step9,Step 9>>.
+[IMPORTANT]
+====
+* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules]. 
 
-* However, if you are upgrading a system with storage disks, you must complete this entire section and then proceed to the section link:set_fc_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
+* If you're upgrading a V-Series system or a system with FlexArray Virtualization Software that is connected to storage arrays, you need to complete <<man_install4_Step1,Step 1>> through <<man_install4_Step7,Step 7>>, leave this section at <<man_install4_Step8,Step 8>> and follow instructions in link:set_fc_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4] as needed, entering the commands in Maintenance mode. You must then return to this section and resume the procedure at <<man_install4_Step9,Step 9>>.
+
+* If you're upgrading a system with storage disks, you must complete this entire section and then proceed to the section link:set_fc_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
+====
 
 .Steps
 
@@ -119,4 +123,5 @@ The system stops at the boot environment prompt.
 . Configure node4 for ONTAP:
 +
 `set-defaults`
+// 2025 MAY 22, AFFFASDOC-329
 // 2022 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747

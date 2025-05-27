@@ -4,10 +4,11 @@ You must make sure that the physical ports on node1 map correctly to the physica
 
 You must already have information about the ports on the new nodes from the _Hardware Universe_.  (Go to link:other_references.html[References] to link to the _Hardware Universe_).  You use the information later in this section and in link:map_ports_node2_node4.html[Map ports from node2 to node4].
 
-The software configuration of node3 must match the physical connectivity of node3, and IP connectivity must be restored before you continue with the upgrade.
+The software configuration of node3 must match the physical connectivity of node3, and network connectivity must be restored before you continue with the upgrade.
 
 .About this task
 
 Port settings might vary, depending on the model of the nodes.
 
+// 2025 APR 22, AFFFASDOC-324
 // Clean-up, 2022-03-09

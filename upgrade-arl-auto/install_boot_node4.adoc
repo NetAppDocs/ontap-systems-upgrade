@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto/install_boot_node4.html
 keywords: install, boot, node4, install ONTAP
 summary: "Install and boot node4 and install ONTAP software when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
 = Install and boot node4
 :hardbreaks:
 :nofooter:
@@ -84,13 +83,13 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 
 .. Contact NetApp Support for assistance with restoring the onboard key management information.
 
-. Boot node into boot menu:
+. Boot the node into boot menu:
 +
 `boot_ontap menu`
 +
-If you do not have an FC or UTA/UTA2 configuration, perform link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2’s disks.
+If you do not have an FC or UTA/UTA2 configuration, perform link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1[Reassign node2 disks to node4, Step 1] so that node4 can recognize node2’s disks.
 
-. [[step29]] For MetroCluster configurations, V-Series systems, and systems with FlexArray Virtualization software connected to storage arrays, go to link:set_fc_or_uta_uta2_config_node4.html# auto_check_4_step15[Check and configure UTA/UTA2 ports on node4, Step 15].
+. [[step29]] For MetroCluster configurations, V-Series systems, and systems with FlexArray Virtualization software connected to storage arrays, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1[Reassign node2 disks to node4, Step 1].
 
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // Clean-up, 2022-03-09

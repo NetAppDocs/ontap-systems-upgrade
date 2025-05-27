@@ -1,0 +1,4 @@
+---
+permalink: upgrade/upgrade-optional-move-internal-storage.html
+redirect: ontap-systems-upgrade/upgrade/upgrade-move-internal-drives.html
+---

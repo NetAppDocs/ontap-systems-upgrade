@@ -56,7 +56,7 @@ Refer to link:other_references.html[References] to link to the _Disk and aggrega
 The following example shows that the non-root aggregates on node2 are online:
 +
 ----
-cluster::> storage aggregate show -node node2 state online -root false
+cluster::> storage aggregate show -node node2 -state online -root false
 Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 --------- -------- --------- ----- ------- ------ ---------------- ------------
 aggr_1

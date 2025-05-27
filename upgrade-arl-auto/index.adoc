@@ -4,8 +4,7 @@ permalink: upgrade-arl-auto/index.html
 keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology
 summary: "You can upgrade controller hardware running ONTAP 9.5 to 9.7 by using `system controller replace` commands, relocating the ownership of non-root aggregates."
 ---
-
-= Overview
+= Learn about this ARL upgrade procedure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,16 +12,7 @@ summary: "You can upgrade controller hardware running ONTAP 9.5 to 9.7 by using 
 :imagesdir: ../media/
 
 [.lead]
-This procedure describes how to upgrade the controller hardware using aggregate relocation (ARL) for the following system configurations:
-
-[cols=3*,options="header",cols="40,20,40"]
-|===
-|Method |ONTAP version |Supported systems
-
-|Using `system controller replace` commands
-|9.5 to 9.7
-|link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_95_97_supported_systems[Link to supported systems matrix]
-|===
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This procedure describes how to upgrade the controller hardware using ARL with "system controller replace commands" on systems running ONTAP 9.7, 9.6, or 9.5. 
 
 During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate aggregates multiple times from node to node to confirm that at least one node is serving data from the aggregates throughout the upgrade procedure. You also migrate data logical interfaces (LIFs) and assign the network ports on the new controller to the interface groups as you proceed.
 
@@ -36,7 +26,7 @@ Throughout this information, the term "systems with FlexArray Virtualization Sof
 
 .Important information:
 
-* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand link:guidelines_for_upgrading_controllers_with_arl.html[Guidelines for upgrading controllers with ARL] and the  link:overview_of_the_arl_upgrade.html[Overview of the ARL upgrade] before beginning the upgrade.
+* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[guidelines for upgrading controllers with ARL] and the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence] before beginning the upgrade.
 
 * This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7-Mode.
 
