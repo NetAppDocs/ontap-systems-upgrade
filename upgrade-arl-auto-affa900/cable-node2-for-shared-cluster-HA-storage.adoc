@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/cable-node2-for-shared-cluster-HA-storage.ht
 keywords: cluster, ha, aff, a800, shared, storage, data, management
 summary: Connect the cluster, HA, storage, and data connections that were previously connected to the AFF A800 node2 to the newly installed AFF A90 or AFF A70 node1
 ---
-= Cable node1 for shared cluster-HA and storage
+= Cable node2 for shared cluster-HA and storage
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -35,11 +35,12 @@ The output of the `health` field should be `true`.
 If node1 doesn't join quorum automatically:
 
 .. Check the IPspace of ports e1a and e1b:
++
 `network port show` 
 .. If the IPspace isn't "Cluster", change the IPspace to "Cluster" on e1a and e1b:
 +
 `network port modify -node <node_name> -port <port> -ipspace Cluster`
-.. Verify that IPspace of ports e1a and e1b is "Cluster":
+.. Verify that the IPspace of ports e1a and e1b is "Cluster":
 +
 `network port show` 
 .. Migrate node1 cluster LIFs to e1a and e1b:

@@ -139,6 +139,9 @@ Warning: do not run this option on a HA node that has been taken over.
 Are you sure you want to continue?:
 ----
 ..	The node reboots to finish the `wipeconfig` and then stops at the boot menu.
++
+NOTE: Wait until the node stops at the boot menu before interrupting the `wipeconfig` operation.
+
 .	Select maintenance mode `5` from the boot menu and enter `y` when you are prompted to continue with the boot.
 .	Verify that the controller and chassis are configured as `ha`:
 +
