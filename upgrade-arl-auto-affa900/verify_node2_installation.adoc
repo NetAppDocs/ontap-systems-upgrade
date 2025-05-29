@@ -25,12 +25,64 @@ At this point in the procedure, the operation pauses while node2 joins quorum.
 `cluster show -node node2 -fields health`
 +
 The output of the `health` field should be `true`.
-. Verify that node2 is part of the same cluster as node1 and that it is healthy:
+
+. This step applies to the following upgrade configurations:
+* Two node switchless clusters 
+* Switch attached AFF A250 or AFF C250 systems upgrading to an AFF A50, AFF A30, AFF C30, or AFF C60 system.
++
+If node2 doesn't join quorum automatically:
+
+.. Check the IPspace of ports e1a and e1b:
+`network port show` 
+.. If the IPspace isn't "Cluster", change the IPspace to "Cluster" on e1a and e1b:
++
+`network port modify -node <node_name> -port <port> -ipspace Cluster`
+.. Verify that IPspace of ports e1a and e1b is "Cluster":
++
+`network port show` 
+.. Migrate node2 cluster LIFs to e1a and e1b:
++
+`network int migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port e1a`
+
+.	Verify that node2 and node1 are part of the same cluster and that the cluster is healthy:
+
 +
 `cluster show`
 . Switch to advanced privilege mode:
 +
 `set advanced`
+
+. This step only applies to two-node switchless configuration upgrades from an AFF A250 or AFF C250 to an AFF A50, AFF A30, AFF C60, or AFF C30.
++
+Verify that e4a, e2a, e1a, and e1b or e4a, e4b, e1a, and e1b are the cluster ports in "Cluster" broadcast domain.
++
+The AFF A50, AFF A30, AFF C30, and AFF C60 systems share cluster and HA ports and you can safely migrate all cluster LIFs to e4a, e4b or e4a, e2a ports on node1 and node2:
+
+.. List all cluster LIFs and their home ports and current ports:
++
+`network interface show -role Cluster -fields home-port,curr-port`
+
+.. [[migrate-cluster-lif-step-4b]]On node1 and node2, migrate the cluster LIFs that are using e1a as the home port to e4a:
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node> -destination-port e4a`
+
+.. On node1 and node2, modify the cluster LIFs migrated in <<migrate-cluster-lif-step-4b,substep b>> to use e4a as the home port:
++
+`network  interface modify -vserver Cluster -lif <cluster_lif> -home-port e4a`
+.. Verify that the cluster is in quorum:
++
+`cluster show`
+.. Repeat <<migrate-cluster-lif-step-4b,substep b>> to modify the second cluster LIF on each node to e2a or e4b. 
++
+If e2a is present and is 100GbE, this is the default second cluster port. If e2a isn't a 100GbE network port, ONTAP uses e4b as the second cluster and HA port.
+.. Remove e1a and e1b from "Cluster" broadcast domain:
++
+`broadcast-domain remove-ports -broadcast-domain Cluster -ipspace Cluster -ports <node_name>:e1a`
+.. Verify that only cluster ports e4a, e2a or e4a, e4b are in "Cluster" broadcast domain
++
+`broadcast domain show`
+.. Remove the cable connections between e1a node1 and e1a node2, and e1b node1 and e1b node2 to ensure only valid cluster-HA connections are used and there is no redundant connectivity.
+
 . Check the status of the controller replacement operation and verify that it is in a paused state and in the same state that it was in before node2 was halted to perform the physical tasks of installing new controllers and moving cables:
 +
 `system controller replace show`

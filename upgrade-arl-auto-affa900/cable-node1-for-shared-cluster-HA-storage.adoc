@@ -16,56 +16,28 @@ If you are performing one of the following upgrades, you must connect the cluste
 
 include::../_include/ru-auto-supported-upgrades-9151.adoc[]
 
-== Connect the e0M and BMC ports
-If the existing system has a management port (e0M) and a BMC port, the e0M and BMC ports are combined and accessed through the "wrench" port on the replacement system. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the existing system before connecting to the replacement system.
-
-[cols=2*,options="header",cols="35,65"]
-|===
-|If the... |Then...
-|e0M and BMC IP addresses are on the same IP subnet
-|Connect either the e0M or BMC port on the existing system to the "wrench" port on the replacement system. 
-
-|e0M and BMC IP addresses are on different subnets
-a|. Merge the e0M and BMC IP addresses into one IP subnet.
-. Connect either the e0M or BMC port on the existing system to the "wrench" port on the replacement system.
-|===
-
-
-== Connect to a two-node switchless cluster
-The following tables show the switch port usage for two-node switchless cluster configurations.
-
-
-|===
-|Port |AFF A800, AFF C800  |AFF A90 	|AFF A70, AFF C80 
-
-|Cluster |e0a |e1a |e1a
-|Cluster |e1a |e7a 
-
-(Use e1b if there is no e7a)
-|e1b
-|HA |e0b |Do not connect |Do not connect
-|HA |e1b |Do not connect |Do not connect
-|SAS storage ports (if present and used) |Any available port |Any available port |Any available port
-|Ethernet storage ports for NS224 shelves |Any available port |Refer to Ethernet storage connectivity mapping |Refer to Ethernet storage connectivity mapping
-
-|===
+include::../_include/ru-auto-cable-node-shared-storage-chunk-a.adoc[]
 
 
 |===
 |Port |AFF A250, AFF C250 |AFF A30, AFF C30, AFF C60 |AFF A50
 
-|Cluster and HA
+|Cluster
 |e0c
-|e4a
-|e4a
-|Cluster and HA
+|e1a
+
+(Use e1a for temporary cluster interconnect)
+|e1a
+
+(Use e1a for temporary cluster interconnect)
+|Cluster
 |e0d
-|e2a 
+|e1b
 
-(Use e4b if there is no e2a)
-|e2a
+(Use e1b for temporary cluster interconnect)
+|e1b
 
-(Use e4b if there is no e2a)
+(Use e1b for temporary cluster interconnect)
 |Ethernet storage Ports 
 |Any available port
 |e3a, e3b
@@ -77,39 +49,8 @@ The following tables show the switch port usage for two-node switchless cluster 
 |===
 
 [[connect-switch-attached-cluster]]
-== Connect to a switch-attached cluster
-For a switch-attached cluster, check that you meet the following requirements for the AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60, or AFF C80 (replacement) node:
 
-* The identical cluster ports on the replacement node are on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross-connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, results in HA communication failures.
-* The replacement node uses shared cluster-HA Ethernet ports. 
-* Verify that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports:
-+
-. Remove the existing configuration on the switch:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-|If your switch model is...
-| Go to...
-| Cisco Nexus 
-| The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Cisco interconnect switch while retaining remote connectivity^]
-| Broadcom BES-53248
-| The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Broadcom interconnect switch while retaining remote connectivity^]
-|===
-
-
-. Configure and verify the switch setup:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-|If your switch model is...
-| Go to...
-| Cisco Nexus 9336C-FX2
-| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html[Upgrade your Reference Configuration File (RCF)^] 
-| Broadcom BES-53248
-| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html[Upgrade the Reference Configuration File (RCF)^]
-| NVIDIA SN2100
-| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html[Install or upgrade the Reference Configuration File (RCF) script^]
-|===
+include::../_include/ru-auto-cable-node-shared-storage-chunk-b.adoc[]
 
 // 2025 APR 22, AFFFASDOC-321
 // 2024 JULY 12, AFFFASDOC-240

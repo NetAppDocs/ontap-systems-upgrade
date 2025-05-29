@@ -127,7 +127,26 @@ The node must be rebooted to start using the newly installed software. Do you wa
 ----
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
-.	At the prompt, run the `wipeconfig` command to clear any previous configuration on the boot media:
+. Clear any previous configuration on the boot media.
+.. At the following prompt, run the `wipeconfig` command.
++
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? wipeconfig
+----
+.. Select Enter.
 ..	When you see the message below, answer `yes`:
 +
 ----
@@ -136,6 +155,8 @@ Warning: do not run this option on a HA node that has been taken over.
 Are you sure you want to continue?:
 ----
 ..	The node reboots to finish the `wipeconfig` and then stops at the boot menu.
++
+NOTE: Wait until the node stops at the boot menu before interrupting the `wipeconfig` operation.
 .	Select option `5` to go to maintenance mode from the boot menu. Answer `yes` to the prompts until the node stops at maintenance mode and the command prompt `*>`.
 .	Verify that the controller and chassis are configured as `ha`:
 +
