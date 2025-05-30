@@ -31,7 +31,9 @@ The output of the `health` field should be `true`.
 . This step applies to the following upgrade configurations. For all other system upgrades, skip this step and go to <<verify-node1-step3,Step 3>>:
 * Two node switchless clusters 
 * Switch attached AFF A250 or AFF C250 systems upgrading to an AFF A50, AFF A30, AFF C30, or AFF C60 system
+
 +
+--
 If node1 doesn't join quorum automatically:
 
 .. Check the IPspace of ports e1a and e1b:
@@ -46,8 +48,8 @@ If node1 doesn't join quorum automatically:
 .. Migrate node1 cluster LIFs to e1a and e1b:
 +
 `network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
-
-.	Verify that node1 and node2 are part of the same cluster and that the cluster is healthy:
+--
+.	[[verify-node1-step3]]Verify that node1 and node2 are part of the same cluster and that the cluster is healthy:
 +
 `cluster show`
 +
@@ -58,7 +60,7 @@ If node1 has not joined quorum after you boot, wait five minutes and check again
 If node1 is still not in quorum after five minutes, consider modifying the cluster port of the new node by placing it in "Cluster ipspace" using the diagnostic privilege command `network port modify <port_name> -ipspace Cluster`.
 ====
  
-.	[[verify-node1-step3]] Switch to advanced privilege mode:
+.	Switch to advanced privilege mode:
 +
 `set advanced`
 .	Check the status of the controller replacement operation and verify that it is in a paused state and in the same state that it was in before node1 was halted to perform the physical tasks of installing new controllers and moving cables:
