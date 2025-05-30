@@ -39,11 +39,17 @@ include::../_include/ru-auto-cable-node-shared-storage-chunk-a.adoc[]
 (Use e1b for temporary cluster interconnect)
 
 |HA	
-|HA port is shared with the cluster and it's separated temporarily during this upgrade procedure.
+|e0c
+
+HA port is shared with Cluster port
 |e4a on node1 is directly connected to e4a on node2 using a 100 GbE cable
 |e4a on node1 is directly connected to e4a on node2 using a 100 GbE cable
 |HA
-|HA port is shared with the cluster and it's separated temporarily during this upgrade procedure.
+
+|e0d
+
+HA port is shared with Cluster port
+
 |e2a on node1 is directly connected to e2a on node2 using a 100 GbE cable
 
 If e2a isn't present or doesn't support 100 GbE, directly connect e4b on node1 to e4b on node2 using a 100 GbE cable.	

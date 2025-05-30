@@ -61,7 +61,7 @@ Make sure that you support the weight of the controller module as you slide it o
 Install, cable, and connect the replacement module in node1.
 
 .Before you begin
-Verify that you have an X60132A, 10/25 GbE card in slot1 on node1. The X60132A card is required for cluster interconnect during the upgrade.
+Verify that you have an X60132A, 4-port 10/25 GbE card in slot1 on node1. The X60132A card is required for cluster interconnect on two-node switchless cluster configurations during the upgrade.
 
 .Steps
 . Align the end of the controller module with the opening in the chassis, and then gently push the controller module halfway into the system.

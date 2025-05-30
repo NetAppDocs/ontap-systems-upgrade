@@ -36,6 +36,6 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 . Save the default environment variables settings:
 +
 `saveenv`
-. For two node switchless configurations, verify that you have an X60132A card in slot1 on node2. The X60132A card is required for cluster interconnect during the upgrade.
+. For two-node switchless configurations, verify that you have an X60132A, 4-port 10/25 GbE card in slot1 on node2. The X60132A card is required for cluster interconnect during the upgrade.
 
 // 2024 DEC 9, AFFFASDOC-33

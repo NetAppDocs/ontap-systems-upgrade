@@ -26,7 +26,7 @@ At this point in the procedure, the operation pauses while node2 joins quorum.
 +
 The output of the `health` field should be `true`.
 
-. This step applies to the following upgrade configurations:
+. This step applies to the following upgrade configurations. For all other system upgrades, skip this step and go to <<verify-node2-step3,Step 3>>:
 * Two node switchless clusters 
 * Switch attached AFF A250 or AFF C250 systems upgrading to an AFF A50, AFF A30, AFF C30, or AFF C60 system.
 +
@@ -43,9 +43,9 @@ If node2 doesn't join quorum automatically:
 `network port show` 
 .. Migrate node2 cluster LIFs to e1a and e1b:
 +
-`network int migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port e1a`
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port <port_name`
 
-.	Verify that node2 and node1 are part of the same cluster and that the cluster is healthy:
+.	[[verify-node2-step3]]Verify that node2 and node1 are part of the same cluster and that the cluster is healthy:
 
 +
 `cluster show`
@@ -53,13 +53,13 @@ If node2 doesn't join quorum automatically:
 +
 `set advanced`
 
-. This step only applies to two-node switchless configuration upgrades from an AFF A250 or AFF C250 to an AFF A50, AFF A30, AFF C60, or AFF C30.
+. This step only applies to two-node switchless configuration upgrades from an AFF A250 or AFF C250 to an AFF A50, AFF A30, AFF C60, or AFF C30. For all other system upgrades, skip this step and go to <<verify-node2-step6,Step 6>>:
 +
 Verify that e4a, e2a, e1a, e1b ports or e4a, e4b, e1a, e1b ports are the cluster ports in "Cluster" broadcast domain.
 +
 The AFF A50, AFF A30, AFF C30, and AFF C60 systems share cluster and HA ports. You can safely migrate all cluster LIFs to e4a, e4b or e4a, e2a on node1 and node2:
 
-.. List all cluster LIFs and their home ports and current ports:
+.. List the home ports and current ports for all cluster LIFs:
 +
 `network interface show -role Cluster -fields home-port,curr-port`
 
@@ -73,9 +73,9 @@ The AFF A50, AFF A30, AFF C30, and AFF C60 systems share cluster and HA ports. Y
 .. Verify that the cluster is in quorum:
 +
 `cluster show`
-.. Repeat <<migrate-cluster-lif-step-4b,substep b and substep c>> to migrate and modify the second cluster LIF on each node to e2a or e4b. 
+.. Repeat <<migrate-cluster-lif-step-4b,substep b and substep c>> to migrate and modify the second cluster LIF on each node to e2a or e4b: 
 +
-If e2a is present and is 100GbE, this is the default second cluster port. If e2a isn't a 100GbE network port, ONTAP uses e4b as the second cluster and HA port.
+If e2a is present and is a 100GbE network port, this is the default second cluster port. If e2a isn't a 100GbE network port, ONTAP uses e4b as the second cluster and HA port.
 .. Remove e1a and e1b from "Cluster" broadcast domain:
 +
 `broadcast-domain remove-ports -broadcast-domain Cluster -ipspace Cluster -ports <node_name>:e1a`
@@ -84,7 +84,7 @@ If e2a is present and is 100GbE, this is the default second cluster port. If e2a
 `broadcast domain show`
 .. Remove the cable connections between e1a node1 and e1a node2, and e1b node1 and e1b node2 to ensure only valid cluster-HA connections are used and there is no redundant connectivity.
 
-. Check the status of the controller replacement operation and verify that it is in a paused state and in the same state that it was in before node2 was halted to perform the physical tasks of installing new controllers and moving cables:
+. [[verify-node2-step6]]Check the status of the controller replacement operation and verify that it is in a paused state and in the same state that it was in before node2 was halted to perform the physical tasks of installing new controllers and moving cables:
 +
 `system controller replace show`
 +

@@ -38,6 +38,12 @@ include::../_include/ru-auto-cable-node-shared-storage-chunk-a.adoc[]
 |e1b
 
 (Use e1b for temporary cluster interconnect)
+
+|HA
+|Not required 
+|HA ports aren't required for the node1 upgrade	
+|HA ports aren't required for the node1 upgrade
+
 |Ethernet storage Ports 
 |Any available port
 |e3a, e3b

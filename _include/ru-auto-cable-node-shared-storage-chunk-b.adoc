@@ -32,4 +32,4 @@ For a switch-attached cluster, check that you meet the following requirements fo
 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html[Install or upgrade the Reference Configuration File (RCF) script^]
 |===
 
-NOTE: If the cluster switch only supports 10/25 GbE speeds, you must use an X60130A card in slot1 or slot2 on the replacement system for cluster interconnect.
+NOTE: If the cluster switch only supports 10/25 GbE speeds, you must use an X60130A, 4-port 10/25GbE card in slot1 or slot2 on the replacement system for cluster interconnect.

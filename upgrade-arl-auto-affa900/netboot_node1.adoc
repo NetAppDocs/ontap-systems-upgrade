@@ -155,7 +155,7 @@ Are you sure you want to continue?:
 ----
 ..	The node reboots to finish the `wipeconfig` and then stops at the boot menu.
 +
-NOTE: Wait until the node stops at the boot menu before interrupting the `wipeconfig` operation.
+NOTE: Wait until the node stops at the boot menu after completing the `wipeconfig` operation.
 .	Select option `5` to go to maintenance mode from the boot menu. Answer `yes` to the prompts until the node stops at maintenance mode and the command prompt `*>`.
 .	Verify that the controller and chassis are configured as `ha`:
 +
