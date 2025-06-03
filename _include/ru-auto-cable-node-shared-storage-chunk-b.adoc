@@ -1,0 +1,35 @@
+== Connect to a switch-attached cluster
+For a switch-attached cluster, check that you meet the following requirements for the AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60, or AFF C80 (replacement) node:
+
+* The identical cluster ports on the replacement node are on the same switch. For example, on completion of the upgrade, e1a on node1 and e1a on node2 should be attached to one cluster switch. Similarly, the second cluster port from both nodes should be attached to the second cluster switch. Cross-connection of shared cluster-HA ports, where e1a from node1 is connected to switchA and e1a from node2 is connected to switchB, results in HA communication failures.
+* The replacement node uses shared cluster-HA Ethernet ports. 
+* Verify that the cluster switches are installed with a reference configuration file (RCF) that supports shared cluster-HA ports:
++
+. Remove the existing configuration on the switch:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+|If your switch model is...
+| Go to...
+| Cisco Nexus 
+| The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Cisco interconnect switch while retaining remote connectivity^]
+| Broadcom BES-53248
+| The Knowledge Base article link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity[How to clear configuration on a Broadcom interconnect switch while retaining remote connectivity^]
+|===
+
+
+. Configure and verify the switch setup:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+|If your switch model is...
+| Go to...
+| Cisco Nexus 9336C-FX2
+| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html[Upgrade your Reference Configuration File (RCF)^] 
+| Broadcom BES-53248
+| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html[Upgrade the Reference Configuration File (RCF)^]
+| NVIDIA SN2100
+| link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html[Install or upgrade the Reference Configuration File (RCF) script^]
+|===
+
+NOTE: If the cluster switch only supports 10/25 GbE speeds, you must use an X60130A, 4-port 10/25GbE card in slot1 or slot2 on the replacement system for cluster interconnect.
