@@ -27,7 +27,29 @@ At this point in the procedure, the controller upgrade operation should have pau
 `cluster show -node node1 -fields health`
 +
 The output of the `health` field should be `true`.
-.	Verify that node1 is part of the same cluster as node2 and that it is healthy:
+
+. This step applies to the following upgrade configurations. For all other system upgrades, skip this step and go to <<verify-node1-step3,Step 3>>:
+* Two node switchless clusters 
+* Switch attached AFF A250 or AFF C250 systems upgrading to an AFF A50, AFF A30, AFF C30, or AFF C60 system
+
++
+--
+If node1 doesn't join quorum automatically:
+
+.. Check the IPspace of ports e1a and e1b:
++
+`network port show` 
+.. If the IPspace isn't "Cluster", change the IPspace to "Cluster" on e1a and e1b:
++
+`network port modify -node <node_name> -port <port> -ipspace Cluster`
+.. Verify that the IPspace of ports e1a and e1b is "Cluster":
++
+`network port show` 
+.. Migrate node1 cluster LIFs to e1a and e1b:
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
+--
+.	[[verify-node1-step3]]Verify that node1 and node2 are part of the same cluster and that the cluster is healthy:
 +
 `cluster show`
 +

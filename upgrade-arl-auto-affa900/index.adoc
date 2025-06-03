@@ -37,12 +37,17 @@ The controller hardware that you replace depends on the existing system model ty
 
 NOTE: The terms *node1* and *node2*, are used only as a reference to node names in this document. When following the procedure, you must substitute the actual names of your nodes.
 
-.Important information
+== Requirements and limitations
+
+You need to consider important factors before you start your upgrade procedure. 
+
+NOTE: You must review all the following important information before starting the upgrade procedure.
 
 * This procedure is complex and assumes that you have advanced ONTAP administration skills. You also should read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[guidelines for upgrading controllers] and link:overview_of_the_arl_upgrade.html[ARL upgrade sequence] before beginning the upgrade.
 * This procedure assumes that the replacement controller hardware is new and has not been used in another system. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used as part of another ONTAP cluster or as a standalone single node system.
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each HA pair in the cluster.
 * If you have a switch that is not supported by the ONTAP version and the replacement system that you are upgrading to, refer to link:other_references.html[References] to link to the _Hardware Universe_.
+* The AFF A250 and AFF C250 systems use 10/25 GbE onboard ports for cluster interconnect. To upgrade two-node switchless clusters of an AFF A250 or AFF C250 system to an AFF A50, AFF A30, AFF C60, or AFF C30 system, you must use an X60132A, 4-port 10/25 GbE card in slot1 on both nodes. This provides cluster interconnect for cluster LIFs to a temporary port on the target platform. 
 * The AFF A30, AFF A50, AFF A70, AFF A90, AFF A1K, AFF C30, AFF C60, AFF C80, FAS70, and FAS90 systems share 100GbE network ports for both cluster and HA connections. These systems can support 10GbE or 25GbE cluster connections to legacy cluster switches; however, NetApp recommends updating to 100GbE cluster speeds when the 10GbE and 25GbE switches are no longer required. For more information, see the following Knowledge Base articles:
 +
 --
