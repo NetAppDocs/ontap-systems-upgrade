@@ -74,6 +74,8 @@ entries:
      url: /upgrade-arl-auto-affa900/netboot_node2.html
 - title: "Stage 6. Boot node2 with the replacement system modules"
   entries:
+   - title: Cable node2 for shared cluster-HA storage
+     url: /upgrade-arl-auto-affa900/cable-node2-for-shared-cluster-HA-storage.html 
    - title: Boot node2 with the replacement system modules
      url: /upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html
    - title: Verify the node2 installation
