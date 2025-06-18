@@ -60,13 +60,10 @@ These steps apply to systems running ONTAP 9.7 or earlier. If you are running ON
 . From each new node, send a post-upgrade AutoSupport message to technical support:
 +
 `system node autosupport invoke -node node_name -type all -message "MAINT=END node_name successfully upgraded from platform_old to platform_new"`
-. Restore Storage or Volume Encryption functionality by using the appropriate procedure in the
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html[Manage encryption with the CLI^] content.
-+
-Use one of the following procedures, depending on whether you are using onboard or External Key Management:
+. Restore Storage or Volume Encryption functionality by using one of the following procedures, depending on whether you are using onboard or External Key Management:
 
- ** "`Restore onboard key management encryption keys`"
- ** "`Restore external key management encryption keys`"
+ ** link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html[Restore onboard key management encryption keys^]
+ ** link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html[Restore external key management encryption keys^]
 
 . If the new nodes have FC ports (onboard or on FC adapters), onboard CNA ports, or a CNA card, configure the FC or CNA ports by entering the following command at the storage system prompt:
 +
