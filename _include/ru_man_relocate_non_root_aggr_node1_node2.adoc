@@ -97,6 +97,5 @@ Node owns partner's aggregates as part of the nondisruptive controller upgrade p
 +
 The output should not display any online non-root aggregates, which have already been relocated to node2.
 
-// 2023 MAY 22, AFFFASDOC-38
 // Clean-up, 2022-03-09
 // 1476241, 2022-05-13

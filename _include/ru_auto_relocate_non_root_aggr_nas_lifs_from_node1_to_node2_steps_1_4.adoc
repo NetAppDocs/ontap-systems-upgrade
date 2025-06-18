@@ -43,5 +43,3 @@ If any volumes are offline on node2, bring them online by using the following co
 `volume online -vserver _vserver_name_ -volume _volume_name_`
 +
 The `_vserver_name_` to use with this command is found in the output of the previous `volume show` command.
-
-// 2023 MAY 22, AFFFASDOC-38
