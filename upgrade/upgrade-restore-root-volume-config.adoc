@@ -1,0 +1,55 @@
+---
+permalink: upgrade/upgrade-restore-root-volume-config.html
+sidebar: sidebar
+keywords: Controller Hardware Upgrade Express Guide
+summary: 'You must restore configuration information from the root volume to the boot devices.'
+---
+
+= Restore the root volume configuration
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must restore configuration information from the root volume to the boot devices.
+
+NOTE: If you are performing an in-place controller upgrade to a system that uses ports "e0a" and "e0b" as high availability (HA) interconnect ports, for example, a FAS8300, an AFF A400, or a FAS8700, verify that you have link:upgrade-prepare-when-moving-storage.html#assign_lifs[reassigned any management or intercluster LIFs] configured on ports "e0a" and "e0b" on the original system before starting the upgrade procedure.
+// 20 June 2022, GH issue #38
+
+.About this task
+You must perform these steps on node3 and node4, completing each step on one node and then
+the other before going on to the next step.
+
+.Steps
+. Access the boot menu from the LOADER prompt:
++
+`boot_ontap menu`
+. From the boot menu, select `(6) Update flash from backup config` and enter `y` when prompted to continue.
+Please choose one of the following:
++
+----
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+Selection (1-9)? 6
+This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: y
+----
++
+The update flash process runs for several minutes, and then the system reboots.
+. When you are prompted to confirm the system ID mismatch, enter `y`.
++
+----
+WARNING: System id mismatch. This usually occurs when replacing CF or NVRAM cards!
+Override system id? {y|n} [n] y
+----
++
+The startup sequence proceeds normally.
+
+If the controller upgrade fails and reports a `rlib_port_ipspace_assign` error message, you must revert the upgrade and delete the LIFs on the network ports on the original system that are being used as HA ports on the replacement system. For more information, see link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/PANIC_%3A_rlib_port_ipspace_assign%3A_port_e0a_could_not_be_moved_to_HA_ipspace[this KB article^].
+
+// Clean-up, 2022-03-09

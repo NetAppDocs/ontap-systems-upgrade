@@ -12,7 +12,7 @@ summary: Physically connect node2 to node4 before reassigning drives from node2 
 After converting AFF A250 node2 to an NS224 drive shelf and connecting to AFF A400 node4, you must reassign the drives that previously belonged to node2 to node4. 
 
 .Before you begin
-Verify that both node2 and node4 are on standby at the LOADER prompt.
+Verify that both node3 and node4 are on standby at the LOADER prompt.
 
 .About this task
 You perform the following steps on node4.
@@ -25,6 +25,7 @@ You perform the following steps on node4.
 . Show the state of the 100GbE interfaces:
 +
 `storage port show`
+
 . Set the 100GbE interfaces to storage ports:
 +
 `storage port modify -p e0c -m storage`
@@ -34,7 +35,7 @@ You perform the following steps on node4.
 +
 `storage port show`
 +
-Output like the following should display:
+Output like the following example should display:
 +
 ----
 *> storage port modify -p e0c -m storage
@@ -51,23 +52,33 @@ Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added
 Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
 ---- ---- ------- ----------- -------- ------- -------
 e0c  ENET storage 100 Gb/s    enabled  online  30
-e0d  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
 ----
 
 . Display all attached drives: 
 +
 `disk show -v`
-. Record the local system ID.
+. Record the local system ID value; this is the system ID of node4. Also record the system IDs of node1 and node2 from the "OWNER" column. 
 . Reassign all drives from node2 to node4:
 +
-`disk reassign -s _node2_ -d _node4_ -p _node1_`
+`disk reassign -s _node2_system_ID_ -d _node4_system_ID_ -p _node1_system_ID_`
 . Verify that all reassigned drives are viewable to the new system ID:
 +
 `disk show -s _node4_System_ID_`
 + 
 NOTE: If drives are not viewable, *STOP* and contact technical support for assistance. 
+
+. Verify that the root aggregate of node2 is reported in the output and the aggregate is online:
++
+`aggr status`
+
 . Exit maintenance mode: 
 +
 `halt`
 
+.What's next?
+
+link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html[Migrate data aggregates, epsilon, and LIFs on node1 to node4]
+
+// 2023 JUN 7, AFFFASDOC-46
 // 2023 Feb 1, BURT 1351102

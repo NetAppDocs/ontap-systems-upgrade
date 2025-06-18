@@ -1,0 +1,17 @@
+[cols=2*,options="header",cols="35,65"]
+|===
+|Existing system |Replacement system
+
+|AFF A250 
+|AFF A30, AFF A50
+
+|AFF C250
+|AFF C30, AFF C60
+
+|AFF A800
+|AFF A70, AFF A90
+
+|AFF C800
+|AFF C80
+
+|===

@@ -10,7 +10,7 @@ summary: "Move non-root aggregates and NAS data LIFs from node1 to node2 and mov
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before you can replace node1 with node3, you must move the non-root aggregates and NAS data LIFs from node1 to node2 before eventually moving node1's resources to node3.

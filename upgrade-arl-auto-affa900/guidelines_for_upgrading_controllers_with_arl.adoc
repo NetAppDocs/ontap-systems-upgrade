@@ -1,40 +1,48 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html
-keywords: guidelines, upgrade, aff, a900, a700, ontap, controllers
-summary: "Understand if you can use ARL to upgrade an AFF A700 to an AFF A900."
+keywords: guidelines, upgrade, ontap, controllers, old, system, chassis, disk, disks
+summary: "Understand if you can use ARL, keeping the old system chassis and disks, for your upgrade configuration."
 ---
-
 = Guidelines for upgrading controllers
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-Using ARL to upgrade a pair of controllers running ONTAP 9.10.1P10, 9.11.1P6, or a later release in the following system configurations:
-
-* AFF A700 controllers to an AFF A900 system
-* FAS9000 controllers to a FAS9500 system
+To understand whether you can use aggregate relocation (ARL), keeping the old system chassis and disks, depends on the system upgrade configuration and ONTAP version.
 
 == Supported upgrades for ARL
 
-Controller upgrade from an AFF A700 to an AFF A900 or from a FAS9000 to a FAS9500 using ARL and the NVRAM module is the supported combination. If you have received a new AFF A900 or FAS9500 system as a complete system, including a new chassis, refer to link:other_references.html[References] to link to the _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ content.
+Controller upgrades are supported for certain system configurations. Refer to the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems[supported system upgrade combinations] for a list of the supported systems and minimum ONTAP version.
 
-WARNING: This procedure strictly applies to an AFF A700 to AFF A900 or a FAS9000 to FAS9500 upgrade running ONTAP 9.10.1P10, 9.11.1P6, or a later release. Do NOT use this procedure to perform an upgrade between any other system combinations.
+If you have received a new AFF A30, AFF A50, AFF A70, AFF A90, AFF A150, AFF A900, AFF C30, AFF C60, AFF C80, FAS2820, or FAS9500 as a complete system, including a new chassis, refer to link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_.
 
 Controller upgrade using ARL is supported on systems configured with SnapLock Enterprise and SnapLock Compliance volumes.
 
 == Two-node switchless clusters
 
-If you are upgrading nodes in a two-node switchless cluster, you can leave the nodes in the switchless cluster while performing the upgrade. You do not need to convert them to a switched cluster.
+If you are upgrading nodes in a two-node switchless cluster, you can leave the nodes in the switchless cluster while performing the upgrade. You don't need to convert them to a switched cluster.
+
+== Switch attached clusters
+
+If you are upgrading nodes in a cluster that is connected to a cluster switch, you must verify that the make, model, firmware version, RCF, and ONTAP version running on the switch will be same the same as those running on the replacement controller after the upgrade. If required, you must perform the switch upgrade before upgrading the controllers by using ARL.
+
+For more information, see link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster[Connect to a switch-attached cluster].
 
 == Troubleshoot
 
-If any problems occur while upgrading the controllers, see the link:troubleshoot_index.html[Troubleshoot] section at the end of the procedure for more information and possible solutions.
+You might encounter a failure while upgrading the node pair. The node might crash, aggregates might not relocate, or LIFs might not migrate. The cause of the failure and its solution depend on when the failure occurred during the upgrade procedure.
 
-If you do not find a solution to the problem you encountered, contact technical support.
+If any problems occur, refer to the link:aggregate_relocation_failures.html[Troubleshoot] section at the end of the procedure for more information and possible solutions. Information about the failures that can occur is listed by the phase of the procedure in the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence]. 
 
+If you don't find a solution to the problem you encountered, contact technical support.
+
+// 2025 APR 22, AFFFASDOC-321
+// 2023 MAY 29, AFFFASDOC-39
+// 2023 MAY 22, BURT 1542232
+// 2023 MAY 22, BURT 1531220
 // 2022 Jan 30, BURT 1523106
 // 2022 APR 26, BURT 1452254

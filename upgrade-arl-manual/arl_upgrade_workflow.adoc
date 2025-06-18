@@ -4,13 +4,12 @@ permalink: upgrade-arl-manual/arl_upgrade_workflow.html
 keywords: upgrade workflow, procedure steps, stages
 summary: "Understand how the manual ARL upgrade procedure for a pair of controllers running ONTAP 9.7 or earlier works."
 ---
-
 = ARL upgrade workflow
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 Before you upgrade the nodes using ARL, you should understand how the procedure works. In this document, the procedure is broken down into several stages.
@@ -35,7 +34,7 @@ The following table describes the high-level tasks you perform during each stage
 |===
 | Stage | Description
 
-| link:stage_1_index.html[Stage 1: Prepare for upgrade]
+| link:determine_aggregates_on_internal_drives.html[Stage 1: Prepare for upgrade]
 a| During Stage 1, if required, you confirm that internal disk drives do not contain root aggregates or data aggregates, prepare the nodes for the upgrade, and run a series of prechecks. If required, you rekey disks for Storage Encryption and prepare to netboot the new controllers.
 
 Aggregate ownership at the end of Stage 1:
@@ -43,7 +42,7 @@ Aggregate ownership at the end of Stage 1:
 * Node1 is the home owner and current owner of the node1 aggregates.
 * Node2 is the home owner and current owner of the node2 aggregates.
 
-| link:stage_2_index.html[Stage 2: Retire node1]
+| link:relocate_non_root_aggr_node1_node2.html[Stage 2: Retire node1]
 a| During Stage 2, you relocate non-root aggregates from node1 to node2 and move non-SAN data LIFs owned by node1 to node2, including failed or vetoed aggregates. You record the necessary node1 information for use later in the procedure and then retire node1.
 
 Aggregate ownership at the end of Stage 2:
@@ -52,7 +51,7 @@ Aggregate ownership at the end of Stage 2:
 * Node2 is the current owner of node1 aggregates.
 * Node2 is the home owner and current owner of node2 aggregates.
 
-| link:stage_3_index.html[Stage 3: Install and boot node3]
+| link:install_boot_node3.html[Stage 3: Install and boot node3]
 a| During Stage 3, you install and boot node3, map the cluster and node-management ports from node1 to node3, verify the node3 installation, and move data LIFs and SAN LIFs belonging to node1 from node2 to node3. You also relocate all aggregates from node2 to node3 and move the data LIFs and SAN LIFs owned by node2 to node3.
 
 Aggregate ownership at the end of Stage 3:
@@ -61,12 +60,12 @@ Aggregate ownership at the end of Stage 3:
 * Node3 is the home owner and current owner of aggregates originally belonging to node1.
 * Node2 is the home owner and current owner of aggregates belonging to node2 but not the home owner.
 
-| link:stage_4_index.html[Stage 4: Retire node2]
+| link:record_node2_information.html[Stage 4: Retire node2]
 a| During Stage 4, you record the necessary node2 information for use later in the procedure and then retire node2.
 
 No changes occur in aggregate ownership.
 
-| link:stage_5_index.html[Stage 5: Install and boot node4]
+| link:install_boot_node4.html[Stage 5: Install and boot node4]
 a| During Stage 5, you install and boot node4, map the cluster and node-management ports from node2 to node4, verify the node4 installation, and move data LIFs and SAN LIFs belonging to node2 from node3 to node4. You also relocate node2 aggregates from node3 to node4 and move the data node2 NAS LIFs from node3 to node4.
 
 Aggregate ownership at the end of Stage 5:
@@ -74,7 +73,7 @@ Aggregate ownership at the end of Stage 5:
 * Node3 is the home owner and current owner of the aggregates that originally belonged to node1.
 * Node4 is the home owner and current owner of aggregates that originally belonged to node2.
 
-| link:stage_6_index.html[Stage 6: Complete the upgrade]
+| link:manage_authentication_kmip.html[Stage 6: Complete the upgrade]
 a| During Stage 6, you confirm that the new nodes are set up correctly and set up Storage Encryption or NetApp Volume Encryption if the new nodes are encryption-enabled. You should also decommission the old nodes and resume SnapMirror operations.
 
 NOTE: The storage virtual machine (SVM) disaster recovery updates will not be interrupted as per the schedules assigned.

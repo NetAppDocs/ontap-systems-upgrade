@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html
 keywords: storage, encryption, authentication, key, manager, external
-summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships during an AFF A700 to AFF A900 upgrade."
+summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships when using ARL to upgrade controller models in the same chassis."
 ---
 
 = Manage storage encryption using the Onboard Key Manager
@@ -10,7 +10,7 @@ summary: "Configure and manage Storage Encryption, manage authentication keys, a
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_manage_storage_encryption_okm.adoc[]

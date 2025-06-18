@@ -10,7 +10,7 @@ summary: "Prepare the nodes and run a series of prechecks when upgrading control
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
@@ -19,7 +19,7 @@ summary: "Prepare the nodes and run a series of prechecks when upgrading control
 //
 
 [.lead]
-You must perform the following steps to prepare the nodes for upgrade.
+The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure and, if required, determine the type of self-encrypting drives that are in use.
 
 .Steps
 
@@ -33,7 +33,7 @@ You must perform the following steps to prepare the nodes for upgrade.
 +
 `system controller replace start -nodes _node_names_ -nso false`
 // 2021-11-02, BURT 1438029
-* The `system controller replace start` command can only be executed at the advanced privilege level:
+* You can only execute the `system controller replace start` command at the advanced privilege level:
 +
 `set -privilege advanced`
 ====
@@ -94,7 +94,7 @@ If storage failover is not enabled for the controllers, the task fails.
 The nodes should not own any non-local aggregates.
 |Disk Status Check
 |If any nodes being replaced have missing or failed disks, the task fails.
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _High Availability management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 |Data LIF Status Check
 |Checks if any of the nodes being replaced have non- local data LIFs.
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
@@ -126,9 +126,9 @@ From the serial port connected to each node, run and save the output of the foll
 * `vserver services name-service dns show`
 * `network interface show -curr-node _local_ -role _cluster,intercluster,node-mgmt,cluster-mgmt,data_`
 * `network port show -node _local_ -type physical`
-* `service-processor show -local -instance`
+* `service-processor show -node _local_ -instance`
 * `network fcp adapter show -node _local_`
-* `network port ifgrp show`
+* `network port ifgrp show -node _local_`
 * `system node show -instance -node _local_`
 * `run -node _local_ sysconfig`
 * `storage aggregate show -node _local_`
@@ -139,10 +139,10 @@ From the serial port connected to each node, run and save the output of the foll
 * `security key-manager onboard show-backup`
 * `security key-manager external show`
 * `security key-manager external show-status`
-* `network port reachability show -detail`
+* `network port reachability show -detail -node _local_`
 
 +
-NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using Onboard Key Manager (OKM) is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
+NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager (OKM) is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
 
 . If your system uses self-encrypting drives, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use on the HA pair that you are upgrading. ONTAP software supports two types of self-encrypting drives:
 +
@@ -164,6 +164,7 @@ include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
 include::../_include/ru_auto_license.adoc[]
 
+// 2023 JUN 28, ontap-systems-upgrade-issues-87
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022 DEC 1, ontap-systems-upgrade-37
 // 2022 MAY 17, BURT 1476241

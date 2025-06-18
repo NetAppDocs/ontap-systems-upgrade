@@ -8,7 +8,7 @@ This procedure includes steps that are performed on the new controller module. Y
 ====
 .Onboard Key Manager
 --
-*Configure NVE or NAE using Onboard Key Manager*
+Configure NVE or NAE using the Onboard Key Manager.
 
 .Steps
 . Restore authentication keys from all linked key management servers to the new node:
@@ -18,7 +18,7 @@ This procedure includes steps that are performed on the new controller module. Y
 
 .External Key Management
 --
-*Configure NVE or NAE using External Key Management*
+Configure NVE or NAE using External Key Management.
 
 .Steps
 . Verify that the key management servers are still available, their status, and their authentication key information:
@@ -57,5 +57,6 @@ For more information, see the Knowledge Base article https://kb.netapp.com/onpre
 .After you finish
 Check if any volumes were taken offline because authentication keys were not available or EKM servers could not be reached. Bring those volumes back online by using the `volume online` command.
 
+// 2023 MAY 29, AFFFASDOC-39
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022-Oct-03, BURT 1476241

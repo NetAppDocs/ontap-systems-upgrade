@@ -14,17 +14,29 @@ Before converting AFF A250 node2 to a drive shelf, you migrate the logical inter
 .Before you begin
 Verify that you meet the following requirements:
 
-* The AFF A250 and AFF A400 controllers have the same ONTAP release and patch version installed.
-* Both AFF A400 controllers are on standby at the `Maintenance Mode` prompt.
+* The AFF A250 and AFF A400 controllers are running the same ONTAP release and patch version.
++
+[NOTE]
+====
+* You must netboot and install the ONTAP version on each AFF A400 that is identical to the version running on the AFF A250.
+* Both the primary and backup boot image of each AFF A400 must have the same ONTAP version.
+* If the AFF A400 clusters were previously configured, you must clear any residual cluster configuration by performing a `wipeconfig` from the boot menu.
+====
+
+* Both AFF A400 controllers are on standby at the LOADER prompt.
 * You have all the appropriate cabling on-hand.
 
 .About this task
 The following steps are performed on AFF A250 node1.
 
 .Steps
-. Disable the cluster failover automatic giveback:
+. Access the advanced privilege level:
 +
-`storage failover modify -node _node_name_ -auto-giveback false`
+`set -privilege advanced`
+
+. Disable storage failover automatic giveback:
++
+`storage failover modify -node _node1_ -auto-giveback false`
 . Disable auto-revert of the LIFs across both nodes of the HA pair:
 +
 `network interface modify -lif * -auto-revert false`  
@@ -33,10 +45,10 @@ The following steps are performed on AFF A250 node1.
 `network interface show -role data`
 . Display the status of the cluster management LIFs:
 +
-`network interface show cluster_mgmt`
+`network interface show -role cluster_mgmt`
 . Migrate all data LIFs from the storage virtual machines hosted on node2:
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node1_ -destination-port _port_name_`
 +
 NOTE: This command only migrates non-SAN LIFs. You cannot use it to migrate iSCSI and FCP LIFs.
 . Display the status of all data LIFs in the cluster:
@@ -44,7 +56,7 @@ NOTE: This command only migrates non-SAN LIFs. You cannot use it to migrate iSCS
 `network interface show -role data`
 . If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
 +
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -status-admin up`
 . Display the status of all data aggregates in the cluster:
 +
 `storage aggregate show` 
@@ -73,4 +85,9 @@ NOTE: This command only migrates non-SAN LIFs. You cannot use it to migrate iSCS
 +
 `halt -node _node2_ -inhibit-takeover true -ignore-quorum-warnings true`   
 
+.What's next?
+
+link:upgrade_convert_node2_drive_shelf_connect_node4.html[Convert node2 to a drive shelf and connect to node4]
+
+// 2023 JUN 7, AFFFASDOC-46
 // 2023 Feb 1, BURT 1351102

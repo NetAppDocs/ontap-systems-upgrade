@@ -1,0 +1,156 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html
+keywords: preparing, nodes, upgrade
+summary: "Prepare the nodes and run a series of prechecks when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+---
+= Prepare the nodes for upgrade
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure and, if required, determine the type of self-encrypting drives that are in use.
+
+.Steps
+
+. Begin the controller replacement process by entering the following command in the ONTAP command line:
++
+`system controller replace start -nodes <node_names>`
++
+NOTE: You can only execute the system controller replace start command at the advanced privilege level: `set -privilege advanced`
++
+You will see output similar to the following example. The output displays the ONTAP version running on your cluster:
++
+....
+Warning: 1. Current ONTAP version is 9.15.1
+
+2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
+         
+Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
+         
+3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+         
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedure.
+Do you want to continue? {y|n}: y
+....
+
+. Press `y`, you will see the following output:
++
+....
+Controller replacement operation: Prechecks in progress.
+Controller replacement operation has been paused for user intervention.
+....
++
+The system runs the following prechecks; record the output of each precheck for use later in the procedure:
++
+[cols="35,65"]
+|===
+|Precheck |Description
+
+|Cluster Health Check
+|Checks all the nodes in the cluster to confirm they are healthy.
+|Aggregate Relocation Status Check
+|Checks whether an aggregate relocation is already in progress.
+If another aggregate relocation is in progress, the check fails.
+|Model Name Check
+|Checks whether the controller models are supported for this procedure.
+If the models are not supported, the task fails.
+|Cluster Quorum Check
+|Checks that the nodes being replaced are in quorum. If the nodes are not in quorum, the task fails.
+|Image Version Check
+|Checks that the nodes being replaced run the same version of ONTAP.
+If the ONTAP image versions are different, the task fails.
+The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you need to netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to link:other_references.html[References] to link to _Upgrade ONTAP_.
+|HA Status Check
+|Checks if both the nodes being replaced are in a high- availability (HA) pair configuration.
+If storage failover is not enabled for the controllers, the task fails.
+|Aggregate Status Check
+|If the nodes being replaced own aggregates for which they are not the home owner, the task fails.
+The nodes should not own any non-local aggregates.
+|Disk Status Check
+|If any nodes being replaced have missing or failed disks, the task fails.
+If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
+|Data LIF Status Check
+|Checks if any of the nodes being replaced have non- local data LIFs.
+The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
+|Cluster LIF Status
+|Checks whether the cluster LIFs are up for both nodes. If the cluster LIFs are down, the task fails.
+|ASUP Status Check
+|If ASUP notifications are not configured, the task fails.
+You must enable ASUP before beginning the controller replacement procedure.
+|CPU Utilization Check
+|Checks if the CPU utilization is more than 50% for any of the nodes being replaced.
+If the CPU usage is more than 50% for a considerable period of time, the task fails.
+|Aggregate Reconstruction Check
+|Checks if reconstruction is occurring on any data aggregates.
+If aggregate reconstruction is in progress, the task fails.
+|Node Affinity Job Check
+|Checks if any node affinity jobs are running.
+If node affinity jobs are running, the check fails.
+|===
+
+. After the controller replacement operation is started and the prechecks are completed, the operation pauses enabling you to collect output information that you might need later when configuring node3.
++
+[NOTE]
+==== 
+Before you start the upgrade, you migrate and re-home the cluster LIFs to two cluster ports per node if you have a system, such as an AFF 700, with the following configuration:
+
+* More than two cluster ports per node
+* A cluster interconnect card in slot4 in breakout mode to create ports e4a, e4b, e4c, and e4d, and ports e4e, e4f, e4g, and e4h 
+
+Performing a controller upgrade with more than two cluster ports per node might result in missing cluster LIFs on the new controller after the upgrade.
+
+For more information, see the Knowledge Base article link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_delete_unwanted_or_unnecessary_cluster_LIFs[How to delete unwanted or unnecessary cluster LIFs^].
+====
+
+. Run the below set of commands as directed by the controller replacement procedure on the system console.
++
+From the serial port connected to each node, run and save the output of the following commands individually:
++
+* `vserver services name-service dns show`
+* `network interface show -curr-node <local> -role <cluster,intercluster,node-mgmt,cluster-mgmt,data>`
+* `network port show -node <local> -type physical`
+* `service-processor show -node <local> -instance`
+* `network fcp adapter show -node <local>`
+* `network port ifgrp show -node <local>`
+* `system node show -instance -node <local>`
+* `run -node <local> sysconfig`
+* `storage aggregate show -r`
+* `storage aggregate show -node <local>`
+* `volume show -node <local>`
+* `system license show -owner <local>`
+* `storage encryption disk show`
+* `security key-manager onboard show-backup`
+* `security key-manager external show`
+* `security key-manager external show-status`
+* `network port reachability show -detail -node <local>`
+
++
+NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager (OKM) is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
+
+. If your system uses self-encrypting drives, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use on the HA pair that you are upgrading. ONTAP software supports two types of self-encrypting drives:
++
+--
+* FIPS-certified NetApp Storage Encryption (NSE) SAS or NVMe drives
+* Non-FIPS self-encrypting NVMe drives (SED)
+
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types[Learn more about supported self-encrypting drives^]. 
+--
+
+include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
+
+== License
+
+For detailed information about ONTAP licensing, refer to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[License management^].
+
+NOTE: Using unlicensed features on the controller might put you out of compliance with your license agreement.
+
+// 2023 JUN 28, ontap-systems-upgrade-issues-87
+// 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
+// 2022 DEC 1, ontap-systems-upgrade-37
+// 2022 MAY 17, BURT 1476241
+// 2022 MAR 28, BURT 1462831 
+// 2022 MAR 09, Clean-up

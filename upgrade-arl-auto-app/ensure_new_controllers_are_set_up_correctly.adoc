@@ -10,13 +10,7 @@ summary: "Enable the HA pair, verify node3 and node4 storage access, and confirm
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:55.742436
-//
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_intro-step_12.adoc[]
@@ -28,5 +22,5 @@ include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_intro-s
 +
 Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9.8 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]
-// 11 DEC 2020, thomi, checked
+
 // 2022-05-17, BURT 1476241

@@ -17,10 +17,15 @@ Convert AFF A250 node1 to an NS224 drive shelf and then connect to AFF A400 node
 . Insert the NVMe shelf module (NSM) into the bay of node1.
 . Connect the NSM to node3 by cabling node3 100GbE port e0c to NSM A port e0a.
 +
-image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 with one NS224 shelf]
+image:a400_with_ns224_shelf.PNG[AFF A400 with one NS224 shelf]
 
-. Connect the 25GbE cabling from node1 ports e0c and e0d to any two 25GbE onboard ports (e0e, e0f, e0g, or e0h) on node3.
+. Move the temporary cluster connections to node3 by moving the 25GbE cabling from node1 ports e0c and e0d to any two 25GbE onboard ports (e0e, e0f, e0g, or e0h) on node3.
 +
-NOTE: If 25GbE onboard ports are not present on node3, you can use a 25GbE PCIe adapter to make the connection.
+NOTE: If the AFF A400 system uses FC ports as onboard ports, install a 25Gb Ethernet adapter into each node for cluster connectivity during the migration.
 
+.What's next?
+
+link:upgrade_reassign_drives_node1_to_node3.html[Reassign drives from node1 to node3]
+
+// 2023 JUN 7, AFFFASDOC-46
 // 2023 Feb 1, BURT 1351102

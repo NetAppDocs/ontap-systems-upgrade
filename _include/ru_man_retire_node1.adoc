@@ -66,7 +66,7 @@ The following example shows the output of the `storage failover show` command wh
 +
 `network interface show -role data -curr-node _node2_ -home-node _node1_`
 +
-Look in the *Status Admin/Oper* column to see if any LIFs are down. If any LIFs are down, consult the link:troubleshoot_index.html[Troublehsoot] section.
+Look in the *Status Admin/Oper* column to see if any LIFs are down. If any LIFs are down, consult the link:aggregate_relocation_failures.html[Troublehsoot] section.
 
 . Take one of the following actions:
 +
@@ -106,7 +106,7 @@ Because there is the possibility of a tie in a cluster that has an even number o
 ====
 If you have a four-node cluster, epsilon might be on a node in a different HA pair in the cluster.
 
-If you are upgrading a HA pair in a cluster with multiple HA pairs, you must move epsilon to the node of a HA pair not undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
+If you are upgrading an HA pair in a cluster with multiple HA pairs, you must move epsilon to the node of an HA pair that isn't undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
 // BURT 1400769 31-Jan-2022
 ====
 

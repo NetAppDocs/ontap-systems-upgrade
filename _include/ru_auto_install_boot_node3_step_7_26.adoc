@@ -72,7 +72,7 @@ If you have a MetroCluster configuration, use the following commands to modify t
 +
 `halt`
 +
-Interrupt the autoboot by pressing `Ctrl-C` at the boot environment prompt.
+Interrupt AUTOBOOT by pressing Ctrl-C at the boot environment prompt.
 
 . [[step15]]On node2, check the system date, time, and time zone:
 +
@@ -115,7 +115,7 @@ For node3, `partner-sysid` must be that of node2.
 |If your system... |Description
 
 |Has disks and no back-end storage
-|Go to <<auto_install3_step23,Step 23>>
+|Go to <<auto_install3_step27,Step 27>>
 |Is a V-Series system or a system with FlexArray Virtualization software connected to storage arrays
 a|.. Go to section link:set_fc_or_uta_uta2_config_on_node3.html[Setting the FC or UTA/UTA2 configuration on node3] and complete the subsections in this section.
 .. Return to this section and complete the remaining steps, beginning with <<auto_install3_step23,Step 23>>.

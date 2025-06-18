@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/aggregate_relocation_failures.html
 keywords: aggregate, relocation, failures, arl, stage 2, stage 3, stage 5
-summary: "Troubleshoot aggregate relocation failures that might occur during an AFF A700 to AFF A900 upgrade."
+summary: "Troubleshoot aggregate relocation failures that might occur when using ARL to upgrade controller models in the same chassis."
 ---
 
 = Aggregate relocation failures
@@ -10,7 +10,7 @@ summary: "Troubleshoot aggregate relocation failures that might occur during an 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_auto_aggregate_relocation_failures.adoc[]
@@ -31,7 +31,7 @@ Aggregates might fail to relocate correctly, that is, they have node2 as their h
 *	During Stage 3, when aggregates are relocated from node2 to node1.
 +
 Some of the aggregates being relocated have node1 as their home node. For example, such an aggregate could be called aggr_node_1. If relocation of aggr_node_1 fails during Stage 3, and relocation cannot be forced, then the aggregate is left behind on node2.
-*	After Stage 4, when node2 is replaced with the AFF A900 or the FAS9500 controller and NVRAM modules.
+*	After Stage 4, when node2 is replaced with the new system modules.
 +
 When node2 is replaced, aggr_node_1 will come online with node1 as its home node instead of node2.
 

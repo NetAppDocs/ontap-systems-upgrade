@@ -20,7 +20,7 @@ Content specific to this upgrade are listed in the table below.
 |Describes how to install and configure the MetroCluster hardware and software components in a fabric configuration.
 |link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html[FlexArray Virtualization Installation Requirements and Reference^]
 |Contains cabling instructions and other information for FlexArray Virtualization systems.
-|link:https://docs.netapp.com/us-en/ontap/high-availability/index.html[High Availability management^]
+|link:https://docs.netapp.com/us-en/ontap/high-availability/index.html[HA pair management^]
 |Describes how to install and manage high-availability clustered configurations, including storage failover and takeover/giveback.
 |link:https://docs.netapp.com/us-en/ontap/volumes/index.html[Logical storage management with the CLI^]
 |Describes how to efficiently manage your logical storage resources, using volumes, FlexClone volumes, files, and LUNs, FlexCache volumes, deduplication, compression, qtrees, and quotas.
@@ -60,8 +60,10 @@ Content specific to this upgrade are listed in the table below.
 |Describes how to quickly upgrade controller hardware in a cluster by moving storage or volumes. Also describes how to convert a supported model to a disk shelf.
 |link:https://docs.netapp.com/us-en/ontap/upgrade/index.html[Upgrade ONTAP^]
 |Contains instructions for downloading and upgrading ONTAP.
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade AFF A700 to AFF A900 or FAS9000 to FAS9500 running ONTAP 9.10.1 or later^]
-|Describes the aggregate relocation procedures needed to non-disruptively upgrade an AFF A700 to an AFF A900 system or a FAS9000 to a FAS9500 system running ONTAP 9.10.1 or later by using "system controller replace" commands.
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1 and later^]
+|Describes the aggregate relocation procedures needed to non-disruptively upgrade controllers introduced in ONTAP 9.15.1 and later by using "system controller replace" commands.
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis^]
+|Describes the aggregate relocation procedures needed to non-disruptively upgrade a system, keeping the old system chassis and disks.
 |link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later^]
 |Describes the aggregate relocation procedures needed to non-disruptively upgrade controllers running ONTAP 9.8 by using "system controller replace" commands.
 |link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html[Use aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later^]

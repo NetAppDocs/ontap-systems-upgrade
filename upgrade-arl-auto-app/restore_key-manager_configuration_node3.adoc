@@ -10,7 +10,7 @@ summary: "If required, restore key-manager configuration on node3 when upgrading
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

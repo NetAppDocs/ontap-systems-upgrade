@@ -1,0 +1,97 @@
+---
+permalink: upgrade/upgrade-create-aggregate-move-volumes.html
+sidebar: sidebar
+keywords: create, aggregate, node, store, volume, original, node, identify, aggregate, individually, create an aggregate and moving volumes to the new nodes
+summary: You create at least an aggregate on each of the new nodes to store the volumes you want to move from the original nodes. You must identify an aggregate for each volume and move each volume individually.
+---
+= Create an aggregate and move volumes to the new nodes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You create at least an aggregate on each of the new nodes to store the volumes you want to move from the original nodes. You must identify an aggregate for each volume and move each volume individually.
+
+.Before you begin
+* Data protection mirror relationships must have been initialized before you can move a volume.
++
+https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html[Find the required data protection procedure^]. 
+
+* If you are moving iSCSI SAN volumes, verify that you have link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html[created new iSCSI connections].
+
+NOTE: For each storage virtual machine (SVM), NetApp recommends moving all the non-root volumes in the cluster before moving the root volume, and performing this procedure on one SVM at a time. 
+
+.Steps
+. Create at least one aggregate on each new node:
++
+`storage aggregate create -aggregate _aggr_name_ -node _new_node_name_ -diskcount integer`
+. Add the new aggregate to the same storage virtual machine (SVM) as the aggregate on the original node from which you want to move the volumes:
++
+`vserver add-aggregates`
++
+Both the new aggregate and the old aggregate from which the volume will be moved must be in the same SVM.
+
+. Verify that the new aggregate is now assigned to the same SVM as the aggregate on the original node:
++
+`vserver show -vserver _svm_name_`
+. Display information for the volumes that you want to move from the original nodes to the new nodes:
++
+`volume show -vserver _svm_name_ -node _original_node_name_`
++
+You should retain the command output for later reference.
++
+The following example displays volumes on the "vs1" SVM and the "node0" node:
++
+----
+cluster::> volume show -vserver vs1 -node node0
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+vs1       clone        aggr1        online     RW         40MB    37.87MB    5%
+vs1       vol1         aggr1        online     RW         40MB    37.87MB    5%
+vs1       vs1root      aggr1        online     RW         20MB    18.88MB    5%
+3 entries were displayed.
+----
+
+. Determine an aggregate to which you can move a given volume:
++
+`volume move target-aggr show -vserver _svm_name_ -volume _vol_name_`
++
+The following example shows that the "user_max" volume on the "vs2" SVM can be moved to any of the listed aggregates:
++
+----
+cluster::> volume move target-aggr show -vserver vs2 -volume user_max
+Aggregate Name   Available Size  Storage Type
+--------------   --------------  ------------
+aggr2            467.9GB         FCAL
+node12a_aggr3    10.34GB         FCAL
+node12a_aggr2    10.36GB         FCAL
+node12a_aggr1    10.36GB         FCAL
+node12a_aggr4    10.36GB         FCAL
+5 entries were displayed
+----
+
+. Run a validation check on each volume that you want to move to verify that it can be moved to the specified aggregate:
++
+`volume move start -vserver _svm_name_ -volume _volume_name_ -destination-aggregate _destination_aggregate_name_ -perform-validation-only true`
+. Move the volumes one at a time (advanced privilege level):
++
+`volume move start -vserver _svm_name_ -volume _vol_name_ -destination-aggregate _destination_aggr_name_ -cutover-window integer`
++
+You cannot move the node root volume (vol0). Other volumes, including SVM root volumes, can be moved.
++
+NOTE: If your storage configuration includes volumes with encryption enabled, follow the steps in https://docs.netapp.com/us-en/ontap/encryption-at-rest/encrypt-existing-volume-task.html[Enable encryption on an existing volume with the volume move start command^] to move these volumes.
+
+. Display the outcome of the `volume move` operation to verify that the volumes were moved successfully:
++
+`volume move show -vserver _svm_name_ -volume _vol_name_`
+. If the `volume move` operation does not complete the final phase after multiple attempts, force the move to finish:
++
+`volume move trigger-cutover -vserver _svm_name_ -volume _vol_name_ -force true`
++
+Forcing the volume move operation to finish can disrupt client access to the volume that you are moving.
+
+. Verify that the volumes were moved successfully to the specified SVM and are in the correct aggregate:
++
+`volume show -vserver _svm_name_`
+
+// 2023 NOV 13, AFFFASDOC-166
+// 2023 JULY 3, BURTs 1552420, 1552651, and 1552660

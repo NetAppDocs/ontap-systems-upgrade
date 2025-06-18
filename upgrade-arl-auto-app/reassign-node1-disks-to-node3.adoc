@@ -1,0 +1,259 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app/reassign-node1-disks-to-node3.html
+keywords: setting, fc, uta, uta2 configuration, node
+summary: "You need to reassign the disks that belonged to node1 to node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+---
+= Reassign node1 disks to node3
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+You need to reassign the disks that belonged to node1 to node3 before verifying the node3 installation.
+
+.About this task
+You perform the steps in this section on node3.
+
+.Steps
+. [[reassign-node1-node3-app-step1]]Go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node1 to reassign the disks of node1 to node3, as per the following example.
++
+.Expand the console output example
+[%collapsible]
+====
+....
+LOADER-A> boot_ontap menu
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+(22/7) Print this secret List
+(25/6) Force boot with multiple filesystem disks missing.
+(25/7) Boot w/ disk labels forced to clean.
+(29/7) Bypass media errors.
+(44/4a) Zero disks if needed and create new flexible root volume.
+(44/7) Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+<output truncated>
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+The boot device has changed. System configuration information could be lost. Use option (6) to restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
+.
+<output truncated>
+.
+Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Changing sysid of node node1 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+<output truncated>
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+System rebooting...
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+<output truncated>
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+Login:
+....
+====
++
+NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
+
+. If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. To resolve this continue with <<reassign-node1-node3-app-step3,Step 3>> to <<reassign-node1-node3-app-step8,Step 8>>, or go to section link:verify_node3_installation.html[Verify the node3 installation].
+
+. [[reassign-node1-node3-app-step3]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
+
+. At the LOADER prompt, enter maintenance mode:
++
+`boot_ontap maint`
+
+. In maintenance mode, display all the previously set initiator ports that are now in target mode:
++
+`ucadmin show`
++
+Change the ports back to initiator mode:
++
+`ucadmin modify -m fc -t initiator -f _adapter name_`
+
+. Verify that the ports have been changed to initiator mode:
++
+`ucadmin show`
+
+. Exit maintenance mode:
++
+`halt`
++
+[NOTE]
+====
+If you are upgrading from a system that supports external disks to a system that also supports external disks, go to <<reassign-node1-node3-app-step8,Step 8>>.
+
+If you are upgrading from a system that supports external disks to a system that supports both internal and external disks, for example, an AFF A800 system, go to <<reassign-node1-node3-app-step9,Step 9>>.
+====
+// GitHub issue #32
+. [[reassign-node1-node3-app-step8]]At the LOADER prompt, boot up:
++
+`boot_ontap menu`
++
+Now, on booting, the node can detect all the disks that were previously assigned to it and can boot up as expected.
++
+When the cluster nodes you are replacing use root volume encryption, ONTAP is unable to read the volume information from the disks. Restore the keys for the root volume.
++
+NOTE: This only applies when the root volume is using NetApp Volume Encryption.
++
+.. Return to the special boot menu:
++
+`LOADER> boot_ontap menu`
++
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
++
+.. Select *(10) Set Onboard Key Manager recovery secrets*
++
+.. Enter `y` at the following prompt:
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
++
+.. At the prompt, enter the key-manager passphrase.
++
+.. Enter the backup data when prompted.
++
+NOTE: You must have obtained the passphrase and backup data in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section of this procedure.
++
+.. After the system boots to the special boot menu again, run option *(1) Normal Boot*
++ 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<reassign-node1-node3-app-step8,Step 8>> until the system boots normally. 
+
+. [[reassign-node1-node3-app-step9]]If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node1 aggregate as the root aggregate to confirm that node3 boots from the root aggregate of node1. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.
++
+CAUTION: *You must perform the following substeps in the exact order shown; failure to do so might cause an outage or even data loss.*
++
+
+The following procedure sets node3 to boot from the root aggregate of node1:
+
+.. Enter maintenance mode:
++
+`boot_ontap maint`
+
+.. Check the RAID, plex, and checksum information for the node1 aggregate:
++
+`aggr status -r`
+
+.. Check the status of the node1 aggregate:
++
+`aggr status`
+
+.. If necessary, bring the node1 aggregate online:
++
+`aggr_online root_aggr_from___node1__`
+
+.. Prevent the node3 from booting from its original root aggregate:
++
+`aggr offline _root_aggr_on_node3_`
+
+.. Set the node1 root aggregate as the new root aggregate for node3:
++
+`aggr options aggr_from___node1__ root`
+
+.. Verify that the root aggregate of node3 is offline and the root aggregate for the disks brought over from node1 is online and set to root:
++
+`aggr status`
++
+NOTE: Failing to perform the previous substep might cause node3 to boot from the internal root aggregate, or it might cause the system to assume a new cluster configuration exists or prompt you to identify one.
++
+The following shows an example of the command output:
++
+----
+ -----------------------------------------------------------------
+ Aggr                 State    Status             Options
+
+ aggr0_nst_fas8080_15 online   raid_dp, aggr      root, nosnap=on
+                               fast zeroed
+                               64-bit
+
+ aggr0                offline  raid_dp, aggr      diskroot
+                               fast zeroed
+                               64-bit
+ -----------------------------------------------------------------
+----
+
+// 2025 MAR 5, AFFFASDOC-297
+// 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
+// 2022-06-02, Issue 55

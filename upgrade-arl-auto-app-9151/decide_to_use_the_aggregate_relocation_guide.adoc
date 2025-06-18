@@ -1,0 +1,96 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability
+summary: "Decide whether to use ARL to upgrade controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+---
+= Decide whether to use this aggregate relocation procedure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This ARL procedure describes how to upgrade an HA pair of controllers in AFF and FAS storage systems introduced in ONTAP 9.15.1 or later with new controllers while keeping the existing data and disks. This is a complex procedure that should be used only by experienced ONTAP administrators. 
+
+To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all of the following circumstances for supported and unsupported upgrades.
+
+== Supported upgrades for this ARL procedure
+You can use this ARL procedure to upgrade a pair of nodes under the following circumstances:
+
+* You're running ONTAP 9.15.1 or later.
+* You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using the volume move procedure.
+* You're experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
+* Your hardware upgrade combination is listed in the <<sys_commands_9151_supported_systems,supported model matrix>>.
+
+NOTE: You can use NetApp Storage Encryption (NSE), NetApp Volume Encryption (NVE), and NetApp Aggregate Encryption (NAE) with this procedure.
+
+== Upgrades not supported for this ARL procedure
+You cannot use this ARL procedure to upgrade a pair of nodes under the following circumstances:
+
+* You're performing one of the following upgrades:
++
+|===
+|Existing controller |Replacement controller
+
+|AFF A250 |AFF A50, AFF A30
+|AFF A800 |AFF A70, AFF A90
+|AFF C250 |AFF C30, AFF C60
+|AFF C800 |AFF C80
+|===
++
+To perform upgrade an upgrade listed in the above table, see link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller models in the same chassis_.
+* You're upgrading a V-Series system or FlexArray Virtualization storage system using an external array for backend storage. Contact technical support for options to upgrade a V-series or FlexArray system.
+* You're upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
+
+[[sys_commands_9151_supported_systems]]
+== Supported system upgrade combinations
+
+The following table shows the supported controller upgrade combinations using ARL for AFF and FAS systems introduced in ONTAP 9.15.1 or later. If your controller upgrade combination isn't listed, contact technical support.
+
+|===
+|Existing controller |Replacement controller |Supported beginning with ONTAP...
+
+|AFF A400 |AFF A50 ^2^ |9.16.1
+|AFF A300 |AFF A50 ^2^	|9.16.1
+|AFF A220, AFF A150	|AFF A20 ^2^ |9.16.1 ^1^
+
+|FAS8200, FAS8300,  FAS9000
+|FAS70, FAS90, FAS50
+|9.15.1P3 for FAS70, FAS90
+
+9.16.1P2 for FAS50
+
+|FAS8700
+|FAS70, FAS90
+|9.15.1P3
+
+|FAS9500
+|FAS90
+|9.15.1P3
+
+|AFF A300, AFF A400, AFF A700
+|AFF A70 ^2^ , AFF A90 ^2^, AFF A1K
+|9.15.1
+
+|AFF A900
+|AFF A90 ^2^, AFF A1K
+|9.15.1
+
+|===
+^1^ To upgrade to an AFF A20, you must first convert an AFF A150 or AFF A220 to a DS224C shelf by swapping controller module with an IOM12 module. See link:../upgrade/upgrade-convert-node-to-shelf.html[Convert an original node to a drive shelf].
+
+^2^ The  AFF A20, AFF A50, AFF A70, and AFF A90 are integrated systems with two controllers in an HA configuration and onboard disks in a single chassis: 
+
+* If you're upgrading to an AFF A20, AFF A50, AFF A70, or AFF A90 with internal drives, you must remove ownership of these internal drives before you upgrade. After completing the upgrade, you can assign the internal drives to the AFF A20, AFF A50, AFF A70, or AFF A90 nodes and use them for creating data aggregates. You don't have to migrate root or data aggregates to internal drives.
+* If you're upgrading to an AFF A20, AFF A50, AFF A70, or AFF A90 without internal drives, you don't need to assign internal drives after completing the upgrade.  
+
+include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
+
+// 2025 APR 15, ontap-systems-upgrade/issue-125
+// 2025 MAR 18, AFFFASDOC-287
+// 2024 NOV 25, AFFFASDOC-33
+// 2024 NOV 13, ontap-systems-upgrade-issue-116
+// 2024 SEP 25, AFFFASDOC-268
+// 2024 SEP 25, AFFFASDOC-265

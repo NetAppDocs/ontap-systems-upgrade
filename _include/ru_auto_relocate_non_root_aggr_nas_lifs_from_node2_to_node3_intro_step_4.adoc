@@ -1,4 +1,4 @@
-Before you can replace node2 with node4, you must relocate the non-root aggregates and NAS data LIFs that are owned by node2 to node3.
+Before replacing node2 with node4, you relocate the non-root aggregates and NAS data LIFs that are owned by node2 to node3.
 
 .Before you begin
 

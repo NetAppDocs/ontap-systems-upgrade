@@ -10,10 +10,10 @@ summary: "Prepare the nodes and run a series of prechecks when upgrading control
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-You must perform the following steps to prepare the nodes for upgrade.
+The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure and, if required, determine the type of self-encrypting drives that are in use.
 
 .Steps
 
@@ -21,7 +21,7 @@ You must perform the following steps to prepare the nodes for upgrade.
 +
 `system controller replace start -nodes _node_names_`
 +
-NOTE: This command can only be executed at the advanced privilege level:
+NOTE: You can only execute this command at the advanced privilege level:
 `set -privilege advanced`
 
 +
@@ -81,7 +81,7 @@ If storage failover is not enabled for the controllers, the task fails.
 The nodes should not own any non-local aggregates.
 |Disk Status Check
 |If any nodes being replaced have missing or failed disks, the task fails.
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _High Availability management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 |Data LIF Status Check
 |Checks if any of the nodes being replaced have non- local data LIFs.
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
@@ -110,9 +110,9 @@ From the serial port connected to each node, run and save the output of the foll
 * `vserver services name-service dns show`
 * `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,clustermgmt, data`
 * `network port show -node _local_ -type physical`
-* `service-processor show -local -instance`
+* `service-processor show -node _local_ -instance`
 * `network fcp adapter show -node _local_`
-* `network port ifgrp show`
+* `network port ifgrp show -node _local_`
 * `network port vlan show`
 * `system node show -instance -node _local_`
 * `run -node _local_ sysconfig`
@@ -146,6 +146,7 @@ include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
 include::../_include/ru_auto_license.adoc[]
 
+// 2023 JUN 28, ontap-systems-upgrade-issues-87
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022 DEC 1, ontap-systems-upgrade-37
 // 2022 MAY 16, BURT 1476241

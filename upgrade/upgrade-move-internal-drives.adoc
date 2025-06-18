@@ -1,0 +1,50 @@
+---
+permalink: upgrade/upgrade-move-internal-drives.html
+sidebar: sidebar
+keywords: node, support, model, upgrading, upgrade, moving, move, storage, internal, sata, drive, ssd, drive, shelf, attach, cluster, transfer, sas, drive, move internal drives from an original node
+summary: If your original node is one of the supported models, during the process of upgrading by moving storage you can move the node's internal SATA drives, SSDs, or SAS drives to a drive shelf that is attached to the new node in the same cluster.
+---
+= Move internal drives from an original node
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your original node is one of the supported models, during the process of upgrading by moving storage you can move the node's internal SATA drives, SSDs, or SAS drives to a drive shelf that is attached to the new node in the same cluster.
+
+NOTE: link:upgrade-convert-node-to-shelf.html[You can also choose to convert the system to a drive shelf and attach it to the new nodes].
+
+.Before you begin
+
+* You must have reviewed link:upgrade-considerations.html[Considerations for upgrading controller hardware] about moving internal drives.
++
+Contact technical support if you need guidance specific to your configuration.
+
+* The SATA, SSD, or SAS drive carriers from the original node must be compatible with the new drive shelf.
+* A compatible drive shelf must already be attached to the new node.
+* The drive shelf must have enough free bays to accommodate the SATA, SSD, or SAS drive carriers from the original node.
+
+.About this task
+You can move drives only within the same cluster.
+
+.Steps
+. Gently remove the bezel from the front of the system.
+. [[move_int_drive_2]]Press the release button on the left side of the drive carrier.
++
+The cam handle on the carrier partially springs open, and the carrier releases from the midplane.
+
+. Pull the cam handle to its fully open position to unseat the carrier from the midplane, and then gently slide the carrier out of the drive shelf.
++
+NOTE: Always use two hands when removing, installing, or carrying a drive. However, do not place your hands on the drive boards exposed on the underside of the carrier.
+
+. With the cam handle in the open position, insert the carrier into a slot in the new drive shelf, firmly pushing until the carrier stops.
++
+NOTE: Use two hands when inserting the carrier.
+
+. [[move_int_drive_5]] Close the cam handle so that the carrier is fully seated in the midplane and the handle clicks into place.
++
+You must close the handle slowly so that it aligns correctly with the face of the carrier.
+
+. Repeat <<move_int_drive_2,Step 2>> through <<move_int_drive_5,Step 5>> for all of the drives that you are moving to the new system.
+
+// 2022 SEP 29, BURT 1504117
+// 2022-03-09, Clean-up

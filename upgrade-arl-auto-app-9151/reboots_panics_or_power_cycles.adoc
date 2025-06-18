@@ -1,0 +1,44 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/reboots_panics_or_power_cycles.html
+keywords: reboots, panics, power, cycles, node, crash
+summary: "The system might crash – reboot, panic, or go through a power cycle – during different stages when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+---
+= Reboots, panics, or power cycles
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+
+include::../_include/ru_auto_reboots_panics_or_power_cycles.adoc[]
+
+== Reboots, panics, or power cycles during the second verification phase
+
+=== Node3 crashes during the second verification phase
+
+If node3 crashes during this phase, takeover does not happen because the HA pair is already disabled.
+
+.About this task
+
+There is a client outage for all aggregates until node3 reboots.
+
+.Steps
+
+. Bring up node3.
+. Continue with the node-pair upgrade procedure.
+
+=== Node4 crashes during the second verification phase
+
+If node4 crashes during this phase, takeover does not happen. Node3 serves data from the aggregates.
+
+.About this task
+
+There is an outage for non-root aggregates that were already relocated until node4 reboots.
+
+.Steps
+
+. Bring up node4.
+. Continue with the node-pair upgrade procedure.

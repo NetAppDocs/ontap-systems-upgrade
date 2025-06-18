@@ -10,7 +10,7 @@ summary: "Verify that the physical ports on node1 map correctly to node3 during 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_map_ports_node1_node3_intro.adoc[]
@@ -206,7 +206,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
 
-. If necessary, for each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
+. For each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
 +
 `::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 +

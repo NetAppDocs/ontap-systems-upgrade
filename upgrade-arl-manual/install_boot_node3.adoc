@@ -10,7 +10,7 @@ summary: "Install and boot node3 and install ONTAP software during a manual ARL 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_install_boot_node3_intro_to_step_15.adoc[]

@@ -1,0 +1,38 @@
+---
+permalink: upgrade/upgrade-convert-node-to-shelf.html
+sidebar: sidebar
+keywords: node, support, model, process, upgrading, upgrade, moving, move, convert, drive, shelf, attach, convert an original node to a drive shelf
+summary: If your original node is one of the supported models, during the process of upgrading by moving storage you can convert the node to a drive shelf and then attach it to the new nodes in the same cluster.
+---
+= Convert an original node to a drive shelf
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your original node is one of the supported models, during the process of upgrading by moving storage you can convert the node to a drive shelf and then attach it to the new nodes in the same cluster.
+
+NOTE: link:upgrade-move-internal-drives.html[You can also choose to move internal drives from an original node].
+
+.About this task
+You can move drive shelves only within the same cluster.
+
+.Before you begin
+
+You must have reviewed link:upgrade-considerations.html[Considerations for upgrading controller hardware] about converting a node to a drive shelf. Contact technical support if you need guidance specific to your configuration.
+
+.Steps
+. Replace the controller modules in the node you are converting with appropriate IOM modules.
++
+https://hwu.netapp.com[NetApp Hardware Universe^]
+
+. Set the drive shelf ID.
++
+Each drive shelf, including the chassis, requires a unique ID.
+
+. Reset other drive shelf IDs as needed.
+. Turn off power to any drive shelves connected to the new nodes, and then turn off power to the new nodes.
+. Cable the converted drive shelf to a SAS port on the new system, and, if you are using out-of-band ACP cabling, to the ACP port on the new node.
+. Turn on the power to the converted drive shelf and any other drive shelves attached to the new nodes.
+. Turn on the power to the new nodes, and then interrupt the boot process on each node by pressing Ctrl-C to access the boot environment prompt.
+
+// Clean-up, 2022-03-09

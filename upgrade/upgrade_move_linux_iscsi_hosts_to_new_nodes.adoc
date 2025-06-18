@@ -1,0 +1,20 @@
+---
+permalink: upgrade/upgrade_move_linux_iscsi_hosts_to_new_nodes.html
+sidebar: sidebar
+keywords: node, old, new, iscsi, host, connection, moving, move, linux, set, up, add, report, removing, remove, rescan, path
+summary: Move your SAN volumes to the new nodes by creating new iSCSI connections and rescanning the iSCSI paths to the new nodes.
+---
+= Move Linux iSCSI hosts to new nodes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before moving iSCSI SAN volumes to new nodes, you must create new iSCSI connections and rescan the iSCSI paths to the new nodes. 
+
+If you do not need to move iSCSI SAN volumes when upgrading by moving volumes, you can skip this procedure and go to link:upgrade-create-aggregate-move-volumes.html[Create an aggregate and move volumes to the new nodes].
+
+.About this task
+* IPv4 interfaces are created when you set up the new iSCSI connections.
+* The host commands and examples are specific to Linux operating systems.
+
+include::../_include/ru_upgrade_move_iscsi_san_connectioins.adoc[]

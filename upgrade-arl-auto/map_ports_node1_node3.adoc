@@ -10,7 +10,7 @@ summary: "Verify that the physical ports on node1 map correctly to node3 when up
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must verify that the physical ports on node1 map correctly to the physical ports on node3, which will enable node3 to communicate with other nodes in the cluster and with the network after the upgrade.
@@ -200,7 +200,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
 
-. If necessary, for each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
+. For each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
 +
 `::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 +

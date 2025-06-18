@@ -1,0 +1,56 @@
+---
+permalink: upgrade/upgrade-decide-to-use-this-guide.html
+sidebar: sidebar
+keywords:
+summary: 'This content describes how to upgrade controller hardware of an AFF system or a FAS system in a cluster by moving storage or volumes.'
+---
+= Decide whether to upgrade by moving volumes or storage
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This content describes how to upgrade the controller hardware of an AFF, FAS, or ASA system in a cluster by moving storage or volumes.
+
+Use this procedure if you want to upgrade controller hardware in the following situations:
+
+[NOTE] 
+====
+* ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from an ASA to ASA r2 system, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
+* When you upgrade to a system introduced in ONTAP 9.15.1 or later, ONTAP converts the storage efficiency of existing volumes and applies the new storage efficiency features that make use of the hardware offload functionality. This is an automatic background process, with no visible performance impact to the system. 
++
+** For AFF A20, AFF A30, AFF A50, AFF A70, AFF A90, AFF A1K, AFF C30, AFF C60, and AFF C80, ONTAP converts the storage efficiency of all existing thin-provisioned volumes, including those not using storage efficiency. 
+** For a FAS70 and FAS90 system, ONTAP only converts the storage efficiency of existing thin-provisioned volumes that had storage efficiency enabled before upgrading.
++
+link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html[Learn more about storage efficiency^].
+
+* The hardware upgrade procedures have been simplified in ONTAP 9.8 with the introduction of the automatic port placement feature.
+====
+
+* Your original and new nodes are compatible and supported.
+* The original and new nodes are running ONTAP 9.0 or later. NetApp recommends, when possible, that you have the same ONTAP version running on the original and new nodes.
++
+If your controller upgrade includes mixed ONTAP versions, see https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Mixed version ONTAP clusters^] for more information.
+* You are reusing the IP addresses, network masks, and gateways of the original nodes on the new nodes.
+* You plan to upgrade controller hardware by moving storage or moving volumes.
+* You are prepared to perform a disruptive procedure if you are upgrading by moving storage.
++
+Upgrading by moving volumes is nondisruptive.
+
+* You plan to convert a node of a supported model to a disk shelf, and then attach it to the new nodes.
+
+
+If you are upgrading a MetroCluster configuration, see https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
+
+.Related information
+
+* link:upgrade-considerations.html[Considerations for upgrading controller hardware]
+* link:../choose_controller_upgrade_procedure.html[Choose methods for upgrading controller hardware]
+* https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html[Where to find procedures for MetroCluster maintenance tasks^]
+* https://hwu.netapp.com[NetApp Hardware Universe^]
+
+// 2024 NOV 25, AFFFASDOC-33
+// 2024 SEP 25, AFFFASDOC-268
+// 2024 JUN 12, ONTAPDOC-1484
+// 2023 JULY 20, Tech refresh updates
+// 2023 Feb 1, BURT 1351102
+// 2022-03-09, Clean-up 

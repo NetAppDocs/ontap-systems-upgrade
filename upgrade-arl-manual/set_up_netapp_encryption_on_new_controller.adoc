@@ -10,7 +10,7 @@ summary: "If required, configure the new controller module for NVE or NAE during
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 If the replaced controller or the high-availability (HA) partner of the new controller uses NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE), you must configure the new controller module for NVE or NAE.
@@ -57,7 +57,7 @@ You must install the same key management servers that are installed on the exist
 This command needs the Onboard Key Manager (OKM) passphrase
 +
 For more information, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu[How to restore external key manager server configuration from the ONTAP boot menu^].
-* Restore authentication for OKM:
+* Restore authentication for the OKM:
 +
 [cols=2*,options="header",cols="35,65"]
 |===

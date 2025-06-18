@@ -1,23 +1,55 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html
-keywords: boot, NVRAM, controller, module, node1, aff, a700, a900
-summary: Boot node1 with the AFF A900 controller module and NVRAM module.
+keywords: boot, NVRAM, controller, module, node1, replacement
+summary: Boot node1 with the replacement controller modules when using ARL to upgrade controller models in the same chassis.
 ---
-
-= Boot node1 with the AFF A900 or FAS9500 controller and NVRAM modules
+= Boot node1 with the replacement system modules
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-Node1 with the AFF A900 or FAS9500 controller and NVRAM modules is now ready for boot up. An AFF A700 to AFF A900 or a FAS9000 to FAS9500 upgrade by swapping the controller and NVRAM modules involves moving only the console and management connections. This section provides the steps required to boot node1 with the AFF A900 or FAS9500 controller and NVRAM modules.
+Node1 with the replacement modules is now ready to boot. The supported replacement modules are listed in the link:index.html#supported-systems,[supported systems matrix].
+
+[NOTE]
+====
+When replacing controller modules, move all connections from the old to the replacement controller module.
+
+When replacing the controller and NVRAM modules, move only the console and management connections.
+====
 
 .Steps
 
-. If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
+. (AFF A250, AFF C250, AFF A800, or AFF C800 upgrade only) At the LOADER prompt, enter maintenance mode: 
++
+`boot_ontap maint`
+
+.. Anser `y` to the mixed platform confirmation prompt.
+.. Answer `yes` to the confirmation prompt.
+.. Show the state of the 100GbE interfaces:
++
+`storage port show`. 
++
+All 100GbE ports connected to NS224 shelves or storage switches should report as `storage` ports, as shown in the example output below.
++
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e8a  ENET storage 100 Gb/s    enabled  online  30     
+e8b  ENET storage 100 Gb/s    enabled  online  30     
+e11a ENET storage 100 Gb/s    enabled  online  30     
+e11b ENET storage 100 Gb/s    enabled  online  30     
+----
+
+.. Exit maintenance mode:
++
+`halt`
+
+. [[A900_boot_node1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 
@@ -46,7 +78,7 @@ Enter the passphrase and the backup information that you recorded earlier proced
 .	Boot the node into the boot menu:
 +
 `boot_ontap menu`
-.	Reassign the AFF A700 node1 disks to AFF A900 node1 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
+.	Reassign the old node1 disks to the replacement node1 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
 +
 After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
 +
@@ -57,8 +89,8 @@ These prompts might get buried in the console messages. If you do not enter a no
 If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` and, or, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` errors occur, perform the following steps:
 
 . Halt the node at the LOADER prompt.
-. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 1>>.
-. At the loader prompt, boot up:
+. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 2>>.
+. At the LOADER prompt, boot up:
 +
 `boot_ontap`
 ====
@@ -199,6 +231,8 @@ The system IDs shown in the preceding example are example IDs. The actual system
 Between entering node names at the prompt and the login prompt, the node reboots a few times to restore the environment variables, update firmware on the cards in the system, and for other ONTAP updates.
 ====
 
+// 2023 AUG 29, AFFFASDOC-78
+// 2023 MAY 29, AFFFASDOC-39
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2023 Feb 22, BURT 1518041
 // 2022 DEC 1, ontap-systems-upgrade-37

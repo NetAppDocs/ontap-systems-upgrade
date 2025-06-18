@@ -1,23 +1,24 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/netboot_node1.html
-keywords: preparing, netboot, ontap, node1, aff, a900
-summary: After swapping the corresponding AFF A900 node1 controller module and NVRAM module, you must netboot node1.
+keywords: preparing, prepare, netboot, ontap, node1 
+summary:  When using ARL to upgrade controller models in the same chassis, you must netboot node1 after swapping the corresponding replacement system module.
 ---
-
 = Netboot node1
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-After swapping the corresponding AFF A900 or FAS9500 node1 controller and NVRAM modules, you must netboot node1. The term netboot means that you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you must add a copy of the ONTAP 9 boot image onto a web server that the system can access.
+After swapping the corresponding replacement system modules, you must netboot node1. The term netboot means that you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you add a copy of the ONTAP 9 boot image onto a web server that the system can access.
 
-It is not possible to check the version of ONTAP installed on the boot media of an AFF A900 or FAS9500 controller module unless it is installed in a chassis and powered ON. The ONTAP version on the AFF A900 or FAS9500 boot media must be same as the ONTAP version running on the AFF A700 or FAS9000 system that you are upgrading and both the primary and backup boot images must match. You can configure the images by performing a netboot followed by the `wipeconfig` command from the boot menu. If the controller module was previously used in another cluster, the `wipeconfig` command clears any residual configuration on the boot media.
+It isn't possible to check the version of ONTAP installed on the boot media of the replacement controller module unless it is installed in a chassis and powered ON. The ONTAP version on the replacement system boot media must be same as the ONTAP version running on the old system that you are upgrading and both the primary and backup boot images on the boot media must match. To verify the minimum supported ONTAP version for your upgrade, see the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems,[supported system upgrade combinations].
 
-NOTE: You can also use the USB boot option to perform the netboot. See the Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system[How to use the boot_recovery LOADER command for installing ONTAP for initial setup of a system^].
+You can configure the images by performing a netboot followed by the `wipeconfig` command from the boot menu. If the controller module was previously used in another cluster, the `wipeconfig` command clears any residual configuration on the boot media.
+
+You can also use the USB boot option to perform the netboot. See the Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system[How to use the boot_recovery LOADER command for installing ONTAP for initial setup of a system^].
 
 .Before you begin
 * Verify that you can access a HTTP server with the system.
@@ -62,7 +63,22 @@ NOTE:	Other parameters might be necessary for your interface. Enter `help ifconf
 +
 NOTE:	Do not interrupt the boot.
 
-.	Wait for the node1 now running on the AFF A900 or FAS9500 controller module to boot and display the boot menu options as shown below:
+. (AFF A250 and AFF C250 upgrades only) When node1 for the replacement controller module is booting, the following warning displays because the configuration includes node2 for the existing controller:
++
+----
+*****************************************************
+* WARNING: Partner is not of the same family/model. *
+* Mixing is only allowed when upgrading the system. *
+* The system will shut down in 24 hours.            *
+*****************************************************
+Do you want to continue (y/n):
+----
++ 
+Answer `y`.
++
+This warning displays for every system boot until you upgrade node2. This is the expected behavior.
+
+. Wait for the node1 running on the replacement controller module to boot and display the boot menu options as shown below:
 +
 ----
 Please choose one of the following:
@@ -81,7 +97,7 @@ Please choose one of the following:
 Selection (1-11)?
 ----
 
-.	From the boot menu, select option `(7) Install new software first`.
+. From the boot menu, select option `(7) Install new software first`.
 +
 This menu option downloads and installs the new ONTAP image to the boot device.
 +
@@ -111,7 +127,25 @@ The node must be rebooted to start using the newly installed software. Do you wa
 ----
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
-.	At the prompt, run the `wipeconfig` command to clear any previous configuration on the boot media:
+. Clear any previous configuration on the boot media.
+.. At the following prompt, run the `wipeconfig` command, and press the enter key:
++
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? wipeconfig
+----
 ..	When you see the message below, answer `yes`:
 +
 ----
@@ -120,6 +154,8 @@ Warning: do not run this option on a HA node that has been taken over.
 Are you sure you want to continue?:
 ----
 ..	The node reboots to finish the `wipeconfig` and then stops at the boot menu.
++
+NOTE: Wait until the node stops at the boot menu after completing the `wipeconfig` operation.
 .	Select option `5` to go to maintenance mode from the boot menu. Answer `yes` to the prompts until the node stops at maintenance mode and the command prompt `*>`.
 .	Verify that the controller and chassis are configured as `ha`:
 +
@@ -185,6 +221,6 @@ For node1, the `partner-sysid` must be that of node2. You can obtain the node2 s
 `printenv partner-sysid`
 
 
-
+// 2023 AUG 29, AFFFASDOC-78
 //BURT 1452254, 2022-04-27
 // BURT 1476251, 2022-05-16

@@ -6,10 +6,13 @@ The relocation operation is paused at the beginning of this stage. This process 
 
 You need to netboot node3 if it does not have the same version of ONTAP 9 that is installed on node1. After you install node3, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots, by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
 
-.Important:
+[IMPORTANT]
+====
+* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node1. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules]. 
 
 * If you are upgrading a V-Series system connected to storage arrays or a system with FlexArray Virtualization software that is connected to storage arrays, you need to complete <<auto_install3_step1,Step 1>> through <<auto_install3_step21,Step 21>>, then leave this section and follow instructions in the link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3[Check and configure UTA/UTA2 ports on node3] sections as needed, entering commands in Maintenance mode. You must then return to this section and resume with <<auto_install3_step23,Step 23>>.
 * If you are upgrading a system with storage disks, you need to complete this entire section and then go to the link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3[Check and configure UTA/UTA2 ports on node3] sections, entering commands at the cluster prompt.
+====
 
 .Steps
 
@@ -19,13 +22,13 @@ If node1 and node2 were in separate chassis, you can put node3 in the same rack 
 
 . [[auto_install3_step2]]Install node3 in the rack, following the _Installation and Setup Instructions_ for your node model.
 +
-NOTE: If you are upgrading to a system with both nodes in the same chassis, install node4 in the chassis as well as node3. If you do not, when you boot node3, the node will behave as if it were in a dual-chassis configuration, and when you boot node4, the interconnect between the nodes will not come up.
+NOTE: If you are upgrading to a system with both nodes in the same chassis, install node4 in the chassis as well as node3. If you don't, when you boot node3, the node will behave as if it were in a dual-chassis configuration, and when you boot node4, the interconnect between the nodes will not come up.
 
 . [[auto_install3_step3]]Cable node3, moving the connections from node1 to node3.
 +
-Cable the following connections, using the _Installation and Setup Instructions_ or the _FlexArray Virtualization Installation Requirements and Reference_ for the node3 platform, the appropriate disk shelf document, and _High Availability management_.
+Cable the following connections, using the _Installation and Setup Instructions_ or the _FlexArray Virtualization Installation Requirements and Reference_ for the node3 platform, the appropriate disk shelf document, and _HA pair management_.
 +
-Refer to link:other_references.html[References] to link to the _FlexArray Virtualization Installation Requirements and Reference_ and _High Availability management_.
+Refer to link:other_references.html[References] to link to the _FlexArray Virtualization Installation Requirements and Reference_ and _HA pair management_.
 +
 * Console (remote management port)
 * Cluster ports

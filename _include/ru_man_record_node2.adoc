@@ -22,7 +22,7 @@ node2
 4 entries were displayed.
 ----
 +
-NOTE: Your system might not have intercluster LIFs. You will have a cluster management LIF only on one node of a node pair. A cluster management LIF was displayed in the example output of link:record_node1_information.html#step[Step 1] in _Record node1 port information_.
+NOTE: Your system might not have intercluster LIFs. You will have a cluster management LIF only on one node of a node pair. A cluster management LIF is displayed in the example output of link:record_node1_information.html#step1[Step 1] in _Record node1 port information_.
 
 . Capture the information in the output to use in the section link:map_ports_node2_node4.html[Map ports from node2 to node4].
 +

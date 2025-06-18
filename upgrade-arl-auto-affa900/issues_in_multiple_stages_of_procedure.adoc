@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/issues_in_multiple_stages_of_procedure.html
 keywords: issues, arise, multiple, stages, procedure
-summary: "Information on issues that might occur during an AFF A700 to AFF A900 upgrade."
+summary: "Information on issues that might occur when using ARL to upgrade controller models in the same chassis."
 ---
 
 = Issues that can arise in multiple stages of the procedure
@@ -10,7 +10,7 @@ summary: "Information on issues that might occur during an AFF A700 to AFF A900 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

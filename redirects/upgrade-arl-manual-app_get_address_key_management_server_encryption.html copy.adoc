@@ -1,6 +1,6 @@
 ---
 permalink: upgrade-arl-manual-app/get_address_key_management_server_encryption.html
-redirect: ontap-systems-upgrade/upgrade-arl-manual-app/manage_authentication_kmip.html
+redirect: ontap-systems-upgrade/upgrade-arl-manual-app/index.html
 ---
 
 // 2023 APR 24, ontap-systems-upgrade-issue 64

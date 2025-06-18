@@ -10,7 +10,7 @@ summary: "Shut node2 down correctly and remove it from the rack or chassis durin
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_retire_node2.adoc[]

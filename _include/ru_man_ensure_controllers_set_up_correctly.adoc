@@ -1,4 +1,4 @@
-To confirm correct setup, you must enable the HA pair. You must also verify that node3 and node4 can access each other's storage and that neither owns data LIFs belonging to other nodes on the cluster. In addition, you must confirm that node3 owns node1's aggregates and that node4 owns node2's aggregates, and that the volumes for both nodes are online.
+To confirm correct setup, you enable the HA pair. You also verify that node3 and node4 can access each other's storage and that neither owns data LIFs belonging to other nodes on the cluster. In addition, you confirm that node3 owns node1's aggregates and that node4 owns node2's aggregates, and that the volumes for both nodes are online.
 
 .Steps
 
@@ -56,7 +56,7 @@ If either node3 or node4 owns data LIFs home-owned by other nodes in the cluster
 `volume show -node _node3_ -state offline`
 `volume show -node _node4_ -state offline`
 
-. If any volumes are offline, compare them with the list of offline volumes that you captured in  link:prepare_nodes_for_upgrade.html#step19d[Step 19 (d)] in _Prepare the nodes for upgrade_, and bring online any of the offline volumes, as required, by entering the following command, once for each volume:
+. If any volumes are offline, compare them with the list of offline volumes that you captured in  link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step19[Step 19 (d)] in _Prepare the nodes for upgrade_, and bring online any of the offline volumes, as required, by entering the following command, once for each volume:
 +
 `volume online -vserver _vserver_name_ -volume _volume_name_`
 
@@ -66,7 +66,7 @@ If either node3 or node4 owns data LIFs home-owned by other nodes in the cluster
 +
 The license-code parameter accepts a list of 28 upper-case alphabetic character keys. You can add one license at a time, or you can add multiple licenses at once, each license key separated by a comma.
 
-. [[unset_maxwait_manual]]If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in link:install_boot_node3.html#step16[Step 16] of _Install and boot node3_), you must unset the variable:
+. [[unset_maxwait_manual]]If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in link:install_boot_node3.html#man_install3_step16[Step 16] of _Install and boot node3_), you must unset the variable:
 +
 `set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
 
@@ -99,7 +99,7 @@ Enter `y` to remove all of the packages.
 +
 `system license show`
 +
-You can compare the output with the output that you captured in link:prepare_nodes_for_upgrade.html#step30[Step 30] of _Prepare the nodes for upgrade_.
+You can compare the output with the output that you captured in link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step30[Step 30] of _Prepare the nodes for upgrade_.
 
 . Configure the SPs by performing the following command on both nodes:
 +

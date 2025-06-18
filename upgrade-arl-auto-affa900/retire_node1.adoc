@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/retire_node1.html
-keywords: retiring, node, retire
-summary: "Disable the HA pair with node2 and shut node1 down during an AFF A700 to AFF A900 upgrade."
+keywords: retiring, node1, node, retire
+summary: "Disable the HA pair with node2 and shut node1 down when using ARL to upgrade controller models in the same chassis."
 ---
-
 = Retire node1
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [.lead]
-To retire node1, resume the automated operation to disable the HA pair with node2 and shut down node1 correctly. You must later remove the AFF A700 or the FAS9000 controller and NVRAM modules from the node1 chassis and then install the AFF A900 or the FAS9500 controller and NVRAM modules on node1.
+To retire node1, you resume the automated operation to disable the HA pair with node2 and shut down node1 correctly.
 
 .Steps
 .	Resume the operation:
@@ -27,139 +26,6 @@ To retire node1, resume the automated operation to disable the HA pair with node
 `system controller replace show-details`
 +
 After node1 has completely halted, node1 should be at the LOADER> prompt. To see the LOADER> prompt, connect to the serial console of node1.
-
-== Remove the AFF A700 or FAS9000 controller and NVRAM modules
-At this stage, node1 is down and all data is served by node2. Because node1 and node2 are in the same chassis and powered by the same set of power supplies, do NOT power off the chassis. You must take care to remove only the node1 controller module and the node1 NVRAM module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
-
-.Before you begin
-If you are not already grounded, correctly ground yourself.
-
-=== Remove the AFF A700 or FAS9000 controller module
-Use the following procedure to remove the AFF A700 or FAS9000 controller module.
-
-.Steps
-.	Detach the console cable, if any, and the management cable from the node1 controller module before removing the controller module from node1.
-+
-WARNING: When you are working on node1, you only remove the console and e0M cables from node1. You must not remove or change any other cables or connections on either node1 or node2 during this process.
-
-.	Unlock and remove the controller module A from the chassis.
-..	Slide the orange button on the cam handle downward until it unlocks.
-+
-image::../media/drw_9500_remove_PCM.png[Remove controller module]
-+
-[cols=2*,cols="20,80"]
-|===
-a|
-image::../media/black_circle_one.png[Number one]
-|Cam handle release button
-a|
-image::../media/black_circle_two.png[Number two]
-|Cam handle
-|===
-
-..	Rotate the cam handle so that it completely disengages the controller module from the chassis, and then slide the controller module out of the chassis.
-+
-Make sure that you support the bottom of the controller module as you slide it out of the chassis.
-
-=== Remove the AFF A700 or FAS9000 NVRAM module
-Use the following procedure to remove the AFF A700 or FAS9000 NVRAM module.
-
-NOTE: The AFF A700 or FAS9000 NVRAM module is in slot 6 and is double the height of the other modules in the system.
-
-.Steps
-.	Unlock and remove the NVRAM module from slot 6 of node1.
-..	Depress the lettered and numbered cam button.
-+
-The cam button moves away from the chassis.
-..	Rotate the cam latch down until it is in a horizontal position.
-+
-The NVRAM module disengages from the chassis and moves a few inches.
-..	Remove the NVRAM module from the chassis by pulling on the pull tabs on the sides of the module face.
-+
-image::../media/drw_a900_move-remove_NVRAM_module.png[Remove the NVRAM module]
-+
-[cols=2*,cols="20,80"]
-
-|===
-a|
-image::../media/black_circle_one.png[Number one]
-|Lettered and numbered I/O cam latch
-a|
-image::../media/black_circle_two.png[Number two]
-|I/O latch completely unlocked
-|===
-
-== Install the AFF A900 or FAS9500 NVRAM and controller modules on node1
-Install the AFF A900 or FAS9500 NVRAM and controller modules that you received for the upgrade on node1.
-
-You must note the following when performing the installation:
-
-* Move all blank filler modules in slots 6-1 and 6-2 from the old NVRAM module to the new NVRAM module.
-* Do NOT move the coredump device from the AFF A700 NVRAM module to the AFF A900 NVRAM module.
-* Move all flash cache modules installed in the FAS9000 NVRAM module to the FAS9500 NVRAM module.
-
-.Before you begin
-If you are not already grounded, correctly ground yourself.
-
-=== Install the AFF A900 or FAS9500 NVRAM module
-Use the following procedure to install the AFF A900 or FAS9500 NVRAM module in slot 6 of node1.
-
-.Steps
-.	Align the NVRAM module with the edges of the chassis opening in slot 6.
-.	Gently slide the NVRAM module into the slot until the lettered and numbered I/O cam latch begins to engage with the I/O cam pin, and then push the I/O cam latch all the way up to lock the NVRAM module in place.
-+
-image::../media/drw_a900_move-remove_NVRAM_module.png[Install the NVRAM module]
-+
-[cols=2*,cols="20,80"]
-
-|===
-a|
-image::../media/black_circle_one.png[Number one]
-|Lettered and numbered I/O cam latch
-a|
-image::../media/black_circle_two.png[Number two]
-|I/O latch completely unlocked
-|===
-
-=== Install the AFF A900 or FAS9500 controller module on node1.
-Use the following procedure to install the AFF A900 or FAS9500 controller module in node1.
-
-.Steps
-.	Align the end of the controller module with opening A in the chassis, and then gently push the controller module halfway into the system.
-+
-NOTE:	Do not completely insert the controller module in the chassis until instructed to do so later in the procedure.
-
-.	Cable the management and console ports to the node1 controller module.
-+
-NOTE:	Because the chassis is already powered ON, node1 starts BIOS initialization followed by autoboot as soon as it is fully seated. To interrupt the node1 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node1 controller module.
-
-.	Firmly push the controller module into the chassis until it meets the midplane and is fully seated.
-+
-The locking latch rises when the controller module is fully seated.
-+
-WARNING: To avoid damaging the connectors, do not use excessive force when sliding the controller module into the chassis.
-+
-image::../media/drw_9500_remove_PCM.png[Install the controller module]
-+
-[cols=2*,cols="20,80"]
-
-|===
-a|
-image::../media/black_circle_one.png[Number one]
-|Cam handle locking latch
-a|
-image::../media/black_circle_two.png[Number two]
-|Cam handle in the unlocked position
-|===
-
-.	Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
-.	After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press *Ctrl-C* to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt the AUTOBOOT during reboot.
-.	At the LOADER> prompt of node1, set the default environment variables:
-+
-`set-defaults`
-.	Save the default environment variables settings:
-+
-`saveenv`
 
 // 2022-OCT-24, BURT 1506458
 // 2022-APR-27, BURT 1452254

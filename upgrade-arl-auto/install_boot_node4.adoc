@@ -4,13 +4,12 @@ permalink: upgrade-arl-auto/install_boot_node4.html
 keywords: install, boot, node4, install ONTAP
 summary: "Install and boot node4 and install ONTAP software when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
 = Install and boot node4
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must install node4 in the rack, transfer the node2 connections to to node4, boot node4, and install ONTAP. You must then reassign any spare disks on node2, any disks belonging to the root volume, and any non-root aggregates that were not relocated to node3 earlier in the process, as outlined in this section.
@@ -51,14 +50,14 @@ NOTE: Other parameters might be necessary for your interface. Enter `help ifconf
 include::../_include/ru_auto_install_and_boot_node4_step_7_22.adoc[]
 
 [start=23]
-.  [[auto_install4_step23]]Add the FC initiator ports of the new node to the switch zones.
+. [[auto_install4_step23]]Add the FC initiator ports of the new node to the switch zones.
 +
 If required, modify the onboard ports to initiator by referring to the link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4[Configure FC ports on node4]. See your storage array and zoning documentation for further instructions on zoning.
 
 include::../_include/ru_auto_install_and_boot_node4_step_24_26.adoc[]
 
 [start=27]
-. If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
+. [[auto_install4_step27]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 
@@ -84,13 +83,13 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 
 .. Contact NetApp Support for assistance with restoring the onboard key management information.
 
-. Boot node into boot menu:
+. Boot the node into boot menu:
 +
 `boot_ontap menu`
 +
-If you do not have an FC or UTA/UTA2 configuration, execute link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15[Check and configure UTA/UTA2 ports on node4, Step 15] so that node4 can recognize node2’s disks.
+If you do not have an FC or UTA/UTA2 configuration, perform link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1[Reassign node2 disks to node4, Step 1] so that node4 can recognize node2’s disks.
 
-. [[step29]] For MetroCluster configuration, V-Series systems and systems with FlexArray Virtualization software connected to storage arrays, go to link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15[Check and configure UTA/UTA2 ports on node4, Step 15].
+. [[step29]] For MetroCluster configurations, V-Series systems, and systems with FlexArray Virtualization software connected to storage arrays, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1[Reassign node2 disks to node4, Step 1].
 
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // Clean-up, 2022-03-09

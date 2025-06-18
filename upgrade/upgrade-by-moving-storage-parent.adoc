@@ -1,0 +1,70 @@
+---
+permalink: upgrade/upgrade-by-moving-storage-parent.html
+sidebar: sidebar
+keywords: upgrade
+summary: 'If you are upgrading by moving storage, you prepare the original nodes and set up the new nodes. Some platform models support transferring internal storage to the new nodes. You reassign disks and restore root volume configuration to the new nodes and configure network ports. Upgrading by moving storage is a disruptive procedure.'
+---
+= Upgrade by moving storage workflow
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Upgrading controller hardware by moving storage is a disruptive procedure. Before starting your upgrade, review the general upgrade scenarios and upgrade considerations:
+
+* link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
+* link:upgrade-considerations.html[Considerations for upgrading controller hardware]
+
+To upgrade by moving storage, you prepare the original nodes and set up the new nodes. Some platform models support transferring internal storage to the new nodes. You reassign disks and restore root volume configuration to the new nodes and configure network ports. 
+
+[NOTE]
+====
+In the steps for upgrading controller hardware by moving storage, the original nodes are called node1 and node2, and the new nodes are called node3 and node4. During the described procedure, node1 is replaced by node3, and node2 is replaced by node4.
+
+image:original_to_new_nodes.png[Replacing node1 and node2 with node3 and node4]
+
+The terms node1, node2, node3, and node4 are used only to distinguish between the original and new nodes. When following the procedure, you must substitute these with the real names of your original and new nodes. However, in reality, the names of the nodes do not change: node3 has the name node1, and node4 has the name node2 after the controller hardware is upgraded.
+====
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One]link:upgrade-prepare-when-moving-storage.html[Prepare for the upgrade when moving storage]
+[role="quick-margin-para"]
+Before upgrading by moving storage, you gather license information from the original nodes, plan network configuration, record the system IDs, and prepare the files needed for netboot.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two]link:upgrade-shutdown-remove-original-nodes.html[Shut down the original nodes]
+[role="quick-margin-para"]
+When shutting down and removing the original nodes you send an AutoSupport message about the upgrade, destroy the mailboxes, power down the nodes, and remove the chassis.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]link:upgrade-remove-disk-ownership-new-nodes.html[Remove ownership of disks attached to the new nodes]
+[role="quick-margin-para"]
+If the new nodes have internal disks or add-on shelves attached to the system, these can interfere with the controller upgrade.  You should remove ownership of any new disks that came with node3/node4.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four]link:upgrade-reset-default-configuration-node3-and-node4.html[Reset the default configuration on the new nodes]
+[role="quick-margin-para"]
+To confirm that configuration information on the boot media does not interfere with the controller upgrade, you reset the configurations of node3 and node4 to the default configuration settings.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five]link:upgrade-install-new-nodes.html[Install the new nodes]
+[role="quick-margin-para"]
+When you upgrade by moving storage, you begin by installing the node3 and node4 and attaching power, console, and network connections to the new nodes.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six]link:upgrade-set-up-new-nodes.html[Set up the new nodes]
+[role="quick-margin-para"]
+During the process of upgrading by moving storage, you power on node3 and node4, boot the software image, and configure the nodes. Physical port layout between original and new nodes can be different. Mapping of ports between original and replacement nodes should be done to identify proper layout of ports and connections.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]link:upgrade-optional-move-internal-storage.html[Optional: Move internal storage or convert the system to a drive shelf]
+[role="quick-margin-para"]
+Optionally, if your original node is one of the supported models, you have the option to move its internal SATA drives, SSDs, or SAS drives to a drive shelf that is attached to the new nodes during the process of upgrading by moving storage. You can also convert the system to a drive shelf and attach it to the new nodes.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight]link:upgrade-attach-shelves-reassign-disks.html[Attach storage shelves and reassign disk ownership]
+[role="quick-margin-para"]
+You reassign the disks that belonged to node1 and node2 to node3 and node4 respectively.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-9.png[Nine]link:upgrade-restore-root-volume-config.html[Restore the root volume configuration]
+[role="quick-margin-para"]
+You restore configuration information from the root volume to the boot devices.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-10.png[Ten]link:upgrade-complete.html[Complete the upgrade]
+[role="quick-margin-para"]
+Complete the upgrade in ONTAP 9.8 or later, or ONTAP 9.7 or earlier.
+
+.Related information
+
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Upgrade AFF A250 to AFF A400 by converting to a drive shelf] (a nondisruptive procedure). 

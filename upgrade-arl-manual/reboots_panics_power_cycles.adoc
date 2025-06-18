@@ -10,7 +10,7 @@ summary: "The system might crash – reboot, panic, or go through a power cycle 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_reboots_panics_power_cycles.adoc[]

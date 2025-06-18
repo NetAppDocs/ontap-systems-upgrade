@@ -1,0 +1,54 @@
+---
+permalink: upgrade/upgrade-complete-move-volumes.html
+sidebar: sidebar
+keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade
+summary: To complete the procedure of upgrading by moving volumes, you need to configure the Service Processor \(SP\), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.
+---
+= Complete the move volumes upgrade
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To complete the procedure of upgrading by moving volumes, you must configure the Service Processor (SP), install new licenses, and set up AutoSupport. You might also need to set up Storage or Volume Encryption and configure the FC or NCA ports.
+
+. Configure the SP on the new nodes as needed:
++
+`system service-processor network modify`
+. Install new licenses on the new nodes as needed:
++
+`system license add`
+. Set up AutoSupport on the new nodes:
++
+`system node autosupport modify`
+. From each new node, send a post-upgrade AutoSupport message to technical support:
++
+`system node autosupport invoke -node node_name -type all -message "node_name successfully upgraded from platform_old to platform_new"`
+. Restore Storage or Volume Encryption functionality by using the appropriate procedure in the
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html[Manage encryption with the CLI^] content.
++
+Use one of the following procedures, depending on whether you are using onboard or External Key Management:
+
+ ** "`Restore onboard key management encryption keys`"
+ ** "`Restore external key management encryption keys`"
+
+. If the new nodes have FC ports (onboard or on FC adapters), onboard CNA ports, or a CNA card, configure the FC or CNA ports by entering the following command from the storage system prompt:
++
+`system node hardware unified-connect modify -node node-name -adapter adapter-name -mode {fc|cna} -type {target|initiator}`
++
+link:https://docs.netapp.com/us-en/ontap/san-admin/index.html[SAN management with the CLI^]
++
+You can modify the CNA configuration only when the CNA adapters are offline.
+
+. Set up a switchless cluster on the new nodes if necessary.
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536[Migrating to a two-node switched cluster with Cisco cluster switches^]
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535[Migrating to a two-node switched cluster with NetApp CN1610 cluster switches^]
+
+. As needed, decommission the original systems through the NetApp Support Site to inform NetApp that the systems are no longer in operation and can be removed from support databases:
+ .. Log in to the https://mysupport.netapp.com/site/global/dashboard[NetApp Support^] site.
+ .. Click the link *My Installed Systems*.
+ .. On the *Installed Systems* page, enter the serial number of the old system in the form and then click *Go!*
+ .. On the Decommission Form page, fill out the form and click *Submit*.
+
+// Clean-up, 2022-03-09

@@ -1,23 +1,24 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html
-keywords: boot, NVRAM, controller, module, node2, aff, a700, a900
-summary: Boot node2 with the AFF A900 controller module and NVRAM module.
+keywords: boot, NVRAM, controller, module, node2, replacement
+summary: Boot node2 with the replacement controller modules when using ARL to upgrade controller models in the same chassis.
 ---
-
-= Boot node2 with AFF A900 or FAS9500 controller and NVRAM modules
+= Boot node2 with the replacement system modules
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-Node2 with the AFF A900 or FAS9500 controller and NVRAM modules is now ready for upgrade. An AFF A700 to AFF A900 or FAS9000 to FAS9500 upgrade by swapping the controller and NVRAM modules involves moving only the console and management connections. This section provides the steps required to boot node2 with the AFF A900 or FAS9500 controller and NVRAM modules.
+Node2 with the replacement modules is now ready to boot. The supported replacement modules are listed in the link:index.html#supported-systems,[supported systems matrix].
+
+NOTE: You only move the console and management connections when you upgrade by swapping the system modules.
 
 .Steps
 
-.	[[boot_node2_step1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
+. [[boot_node2_step1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 
@@ -46,7 +47,7 @@ Enter the passphrase and the backup information that you recorded earlier proced
 .	Boot the node into the boot menu:
 +
 `boot_ontap menu`
-.	Reassign the AFF A700 node2 disks to AFF A900 node2 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
+.	Reassign the old node2 disks to the replacement node2 by entering "22/7" and selecting the hidden option `boot_after_controller_replacement` when the node stops at the boot menu.
 +
 After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
 +
@@ -57,8 +58,8 @@ These prompts might get buried in the console messages. If you do not enter a no
 If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` and, or, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` errors occur, perform the following steps:
 
 . Halt the node at the LOADER prompt.
-. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node2,Step 1>>.
-. At the loader prompt, boot up:
+. Check and reset the storage encryption bootargs mentioned in <<boot_node2_step1,Step 1>>.
+. At the LOADER prompt, boot up:
 +
 `boot_ontap`
 ====
@@ -200,6 +201,8 @@ The system IDs shown in the preceding example are example IDs. The actual system
 Between entering node names at the prompt and the login prompt, the node reboots a few times to restore the environment variables, update firmware on the cards in the system, and for other ONTAP updates.
 ====
 
+// 2023 AUG 29, AFFFASDOC-78
+// 2023 MAY 29, AFFFASDOC-39
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2023 Feb 22, BURT 1518041
 // 2022 DEC 1, ontap-systems-upgrade-37

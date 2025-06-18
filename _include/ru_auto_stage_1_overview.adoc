@@ -1,7 +1,0 @@
-During Stage 1, you run prechecks and, if required, correct aggregate ownership. You must record certain information if you are managing storage encryption by using OKM and you can choose to quiesce the SnapMirror relationships.
-
-.Steps
-
-. link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade]
-. link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager]
-// BURT-1476241 2022-August-12

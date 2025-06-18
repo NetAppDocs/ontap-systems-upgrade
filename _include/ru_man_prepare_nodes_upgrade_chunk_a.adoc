@@ -4,7 +4,7 @@ Before you can replace the original nodes, you must confirm that they are in an 
 
 . Confirm that each of the original nodes has enough resources to adequately support the workload of both nodes during takeover mode.
 +
-Refer to link:other_references.html[References] to link to _High Availability management_ and follow the _Best practices for HA pairs_ section. Neither of the original nodes should be running at more than 50 percent utilization; if a node is running at less than 50 percent utilization, it can handle the loads for both nodes during the controller upgrade.
+Refer to link:other_references.html[References] to link to _HA pair management_ and follow the _Best practices for HA pairs_ section. Neither of the original nodes should be running at more than 50 percent utilization; if a node is running at less than 50 percent utilization, it can handle the loads for both nodes during the controller upgrade.
 
 . Complete the following substeps to create a performance baseline for the original nodes:
 
@@ -135,7 +135,7 @@ node1          node2          true     Connected to node2, Partial giveback
 node2          node1          true     Connected to node1
 ....
 +
-If either node is in partial giveback, use the `storage failover giveback` command to perform the giveback, and then use the `storage failover show-giveback` command to make sure that no aggregates still need to be given back. For detailed information about the commands, refer to link:other_references.html[References] to link to _High Availability management_.
+If either node is in partial giveback, use the `storage failover giveback` command to perform the giveback, and then use the `storage failover show-giveback` command to make sure that no aggregates still need to be given back. For detailed information about the commands, refer to link:other_references.html[References] to link to _HA pair management_.
 
 . [[man_prepare_nodes_step9]]Confirm that neither node1 nor node2 owns the aggregates for which it is the current owner (but not the home owner):
 +
@@ -217,7 +217,7 @@ node1    None                None
 node2    None                None
 ....
 +
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _High Availability management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 
 . Confirm that node1 and node2 are healthy and eligible to participate in the cluster:
 +

@@ -1,10 +1,14 @@
 
 You need to netboot node4 if it does not have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots, by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
 
-.Important:
+[IMPORTANT]
+====
+* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules].
 
 * If you are upgrading a V-Series system connected to storage arrays or a system with FlexArray Virtualization software that is connected to storage arrays, you must complete <<auto_install4_step1,Step 1>> through <<auto_install4_step21,Step 21>>, then leave this section and follow instructions to link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4[Configure FC ports on node4] and to link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4[Check and configure UTA/UTA2 ports on node4], entering commands in Maintenance mode. You must then return to this section and resume with <<auto_install4_step23,Step 23>>.
-* However, if you are upgrading a system with storage disks, you must complete this entire section and then proceed to link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
+
+* If you are upgrading a system with storage disks, you must complete this entire section and then proceed to link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
+====
 
 .Steps
 
@@ -15,9 +19,9 @@ If node4 is in a separate chassis from node2, you can put node4 in the same loca
 . Install node4 in the rack, following the instructions in the _Installation and Setup Instructions_ for the node model.
 . Cable node4, moving the connections from node2 to node4.
 +
-Cable the following connections, using the instructions in the _Installation and Setup Instructions_ or the _FlexArray Virtualization Installation Requirements and Reference_ for the node4 platform, the appropriate disk shelf document, and _High Availability management_.
+Cable the following connections, using the instructions in the _Installation and Setup Instructions_ or the _FlexArray Virtualization Installation Requirements and Reference_ for the node4 platform, the appropriate disk shelf document, and _HA pair management_.
 +
-Refer to link:other_references.html[References] to link to the _FlexArray Virtualization Installation Requirements and Reference_ and _High Availability management_.
+Refer to link:other_references.html[References] to link to the _FlexArray Virtualization Installation Requirements and Reference_ and _HA pair management_.
 +
 * Console (remote management port)
 * Cluster ports
@@ -29,7 +33,7 @@ Refer to link:other_references.html[References] to link to the _FlexArray Virtua
 NOTE: You might not need to move the interconnect card/FC-VI card or interconnect/FC-VI cable connection from node2 to node4 because most platform models have unique interconnect card models.
 For the MetroCluster configuration, you must move the FC-VI cable connections from node2 to node4. If the new host does not have an FC-VI card, you might need to move the FC-VI card.
 
-. Turn on the power to node4, and then interrupt the boot process by pressing `Ctrl-C` at the console terminal to access the boot environment prompt.
+. Turn on the power to node4, and then interrupt the boot process by pressing Ctrl-C at the console terminal to access the boot environment prompt.
 +
 NOTE: When you boot node4, you might see the following warning message:
 +

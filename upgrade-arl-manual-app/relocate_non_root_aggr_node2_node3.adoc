@@ -4,13 +4,12 @@ permalink: upgrade-arl-manual-app/relocate_non_root_aggr_node2_node3.html
 keywords:  non-root, non-root, aggregates, relocate, node2, node3
 summary: "Send an AutoSupport message for node2 and manually relocate node2's non-root aggregates to node3 during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
-
 = Relocate non-root aggregates from node2 to node3
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 include::../_include/ru_man_relocate_non_root_aggr_node2_node3.adoc[]

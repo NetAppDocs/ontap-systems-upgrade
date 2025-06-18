@@ -1,9 +1,9 @@
 section: upgrade-arl-manual
 title: "Manually upgrade controller hardware running ONTAP 9.7 or earlier"
 entries:
-  - title: Overview
+  - title: Learn about this ARL procedure
     url: /upgrade-arl-manual/index.html
-  - title: "Decide whether to use the aggregate relocation content"
+  - title: "Decide whether to use this ARL procedure"
     url: /upgrade-arl-manual/decide_to_use_arl_guide.html
   - title: "ARL upgrade workflow"
     url: /upgrade-arl-manual/arl_upgrade_workflow.html
@@ -15,7 +15,7 @@ entries:
     url: /upgrade-arl-manual/worksheet_information_before_during_upgrade.html
   - title: "Reconfigure the FC switch layout for ONTAP 9.1 or later"
     entries:
-      - title: Overview
+      - title: Prepare to reconfigure the switch layout
         url: /upgrade-arl-manual/reconfig_index.html
       - title: "Send a custom AutoSupport message prior to reconfiguring switches"
         url: /upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html
@@ -36,8 +36,6 @@ entries:
   - title: "Stage 1. Prepare for upgrade"
     pdf-filename: "Stage 1. Prepare for upgrade (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
-      - title: Overview
-        url: /upgrade-arl-manual/stage_1_index.html
       - title: "Determine whether the controller has aggregates on internal disk drives"
         url: /upgrade-arl-manual/determine_aggregates_on_internal_drives.html
       - title: "Prepare the nodes for upgrade"
@@ -56,8 +54,6 @@ entries:
   - title: "Stage 2. Relocate and retire node1"
     pdf-filename: "Stage 2. Relocate and retire node1 (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
-      - title: Overview
-        url:  /upgrade-arl-manual/stage_2_index.html
       - title: "Relocate non-root aggregates from node1 to node2"
         url: /upgrade-arl-manual/relocate_non_root_aggr_node1_node2.html
       - title: "Move NAS data LIFs owned by node1 to node2"
@@ -69,8 +65,6 @@ entries:
   - title: "Stage 3. Install and boot node3"
     pdf-filename: "Stage 3. Install and boot node3 (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
-      - title: Overview
-        url: /upgrade-arl-manual/stage_3_index.html
       - title: "Install and boot node3"
         url: /upgrade-arl-manual/install_boot_node3.html
       - title: "Set the FC or UTA/UTA2 configuration on node3"
@@ -90,8 +84,6 @@ entries:
   - title: "Stage 4. Record information and retire node2"
     pdf-filename: "Stage 4. Record information and retire node2 (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
-      - title: Overview
-        url: /upgrade-arl-manual/stage_4_index.html
       - title: "Record node2 information"
         url: /upgrade-arl-manual/record_node2_information.html
       - title: "Retire node2"
@@ -99,8 +91,6 @@ entries:
   - title: "Stage 5. Install and boot node4"
     pdf-filename: "Stage 5. Install and boot node4 (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
-      - title: Overview
-        url: /upgrade-arl-manual/stage_5_index.html
       - title: "Install and boot node4"
         url: /upgrade-arl-manual/install_boot_node4.html
       - title: "Set the FC or UTA/UTA2 configuarion on node4"
@@ -118,8 +108,6 @@ entries:
   - title: "Stage 6. Complete the upgrade"
     pdf-filename: "Stage 6. Complete the upgrade (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
-      - title: Overview
-        url: /upgrade-arl-manual/stage_6_index.html
       - title: "Manage authentication using KMIP servers"
         url: /upgrade-arl-manual/manage_authentication_kmip.html
       - title: "Confirm that the new controllers are set up correctly"
@@ -135,8 +123,6 @@ entries:
   - title: "Troubleshoot"
     pdf-filename: "Troubleshoot (manual upgrade in ONTAP 9.7 or earlier)"
     entries:
-      - title: Overview
-        url: /upgrade-arl-manual/troubleshoot_index.html
       - title: "Aggregate relocation failures"
         url: /upgrade-arl-manual/aggregate_relocation_failures.html
       - title: "Reboots, panics, or power cycles"

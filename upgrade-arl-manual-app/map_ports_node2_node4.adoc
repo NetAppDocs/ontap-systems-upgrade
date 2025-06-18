@@ -10,7 +10,7 @@ summary: "Verify that the physical ports on node2 map correctly to node4 during 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
 You must make sure that the physical ports on node2 map correctly to the physical ports on node4, which will let node4 communicate with other nodes in the cluster and with the network after the upgrade.
@@ -71,9 +71,19 @@ When all cluster LIFs are migrated and cluster communication is established, the
 +
 `cluster show -node node2 -fields health`
 
-.. Each cluster LIF must be listening on port 7700. Verify that the cluster LIFs are listening on port 7700:
+.. Depending on the ONTAP version running on the HA pair being upgraded, take one of the following actions:
 +
+[cols="30,70"]
+|===
+|If your ONTAP version is... |Then...
+
+|9.8 to 9.11.1 
+|Verify that the cluster LIFs are listening on port 7700:
+
 `::> network connections listening show -vserver Cluster`
+|9.12.1 or later
+|Skip this step and go to <<man_map_2_Step3,Step 3>>.
+|===
 +
 Port 7700 listening on cluster ports is the expected outcome as shown in the following example for a two-node cluster:
 +
@@ -90,7 +100,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
 
-.. If necessary, for each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
+.. For each cluster LIF that is not listening on port 7700, set the administrative status of the LIF to `down` and then `up`:
 +
 `::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 +
@@ -185,4 +195,5 @@ NOTE: For iSCSI LIFs, modification of the home port requires the LIF to be admin
 +
 `network interface revert *`
 
+// 2023 NOV 8, AFFFASDOC-133
 // 2022-05-17, BURT 1476241

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/netboot_node2.html
-keywords: preparing, netboot, ontap, aff, a900, node2
-summary: After swapping the corresponding AFF A900 node2 controller module and NVRAM module, you might need to netboot them.
+keywords: preparing, prepare, netboot, ontap, node2
+summary: After swapping the corresponding replacement node2 system modules when using ARL to upgrade controller models in the same chassis, you might need to netboot them.
 ---
 
 = Netboot node2
@@ -10,14 +10,14 @@ summary: After swapping the corresponding AFF A900 node2 controller module and N
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 [.lead]
-After swapping the corresponding AFF A900 or FAS9500 node2 controller module and NVRAM, module you might need to netboot them. The term netboot means that you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you must put a copy of the ONTAP 9 boot image onto a web server that the system can access.
+After swapping the corresponding replacement node2 system modules, you might need to netboot them. The term netboot means that you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you put a copy of the ONTAP 9 boot image onto a web server that the system can access.
 
-It is not possible to check the version of ONTAP installed on the boot media of an AFF A900 or a FAS9500 controller module unless it is installed in a chassis and powered ON. The ONTAP version on the AFF A900 or the FAS9500 boot media must be the same as the ONTAP version running on the AFF A700 or the FAS9000 system that you are upgrading and both the primary and backup boot images must match. You can configure the images by performing a netboot followed by the `wipeconfig` command from the boot menu. If the controller module was previously used in another cluster, the `wipeconfig` command clears any residual configuration on the boot media.
+It isn't possible to check the version of ONTAP installed on the boot media of the replacement controller module unless it is installed in a chassis and powered ON. The ONTAP version on the replacement system boot media must be the same as the ONTAP version running on the old system that you are upgrading and both the primary and backup boot images must match. You can configure the images by performing a netboot followed by the `wipeconfig` command from the boot menu. If the controller module was previously used in another cluster, the `wipeconfig` command clears any residual configuration on the boot media.
 
-NOTE: You can also use the USB boot option to perform the netboot. See the Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system[How to use the boot_recovery LOADER command for installing ONTAP for initial setup of a system^].
+You can also use the USB boot option to perform the netboot. See the Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system[How to use the boot_recovery LOADER command for installing ONTAP for initial setup of a system^].
 
 .Before you begin
 * Verify that you can access a HTTP server with the system.
@@ -62,7 +62,7 @@ NOTE:	Other parameters might be necessary for your interface. Enter `help ifconf
 +
 NOTE:	Do not interrupt the boot.
 
-.	Wait for the node2 now running on the AFF A900 or FAS9500 controller module to boot and display the boot menu options as shown in the following output:
+.	Wait for the node2 now running on the replacement controller module to boot and display the boot menu options as shown in the following output:
 +
 ----
 Please choose one of the following:
@@ -111,7 +111,25 @@ The node must be rebooted to start using the newly installed software. Do you wa
 ----
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
-.	At the prompt, run the `wipeconfig` command to clear any previous configuration on the boot media.
+. Clear any previous configuration on the boot media.
+.. At the following prompt, run the `wipeconfig` command, and press the enter key:
++
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? wipeconfig
+----
 ..	When you see the message below, answer `yes`:
 +
 ----
@@ -120,6 +138,9 @@ Warning: do not run this option on a HA node that has been taken over.
 Are you sure you want to continue?:
 ----
 ..	The node reboots to finish the `wipeconfig` and then stops at the boot menu.
++
+NOTE: Wait until the node stops at the boot menu after completing the `wipeconfig` operation.
+
 .	Select maintenance mode `5` from the boot menu and enter `y` when you are prompted to continue with the boot.
 .	Verify that the controller and chassis are configured as `ha`:
 +
@@ -142,7 +163,7 @@ Controller HA configuration: ha
 `halt`
 +
 Node2 should stop at the LOADER> prompt.
-.	On node2, check the system date, time, and time zone:
+.	On node1, check the system date, time, and time zone:
 +
 `date`
 .	On node2, check the date by using the following command at the boot environment prompt:
@@ -167,7 +188,7 @@ NOTE: Set the corresponding UTC time on node2.
 +
 `setenv partner-sysid _node1_sysid_`
 +
-For node2, the `partner-sysid` must be that of the node1 that you are upgrading to an AFF A900 or FAS9500.
+For node2, the `partner-sysid` must be that of the node1 that you are upgrading.
 
 ..	Save the settings:
 +
@@ -177,5 +198,6 @@ For node2, the `partner-sysid` must be that of the node1 that you are upgrading 
 +
 `printenv partner-sysid`
 
+// 2023 MAY 29, AFFFASDOC-39
 // BURT 1476251, 2022-05-16
 //BURT 1452254, 2022-04-27
