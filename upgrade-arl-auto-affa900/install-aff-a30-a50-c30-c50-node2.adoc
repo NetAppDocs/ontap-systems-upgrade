@@ -29,7 +29,7 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 
 . Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
 . After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
-. At the LOADER> prompt of node1, set the default environment variables:
+. On the replacement node2, at the LOADER> prompt, set the default environment variables:
 +
 `set-defaults`
 
@@ -38,4 +38,5 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 `saveenv`
 . For two-node switchless configurations, verify that you have an X60132A, 4-port 10/25 GbE card in slot1 on node2. The X60132A card is required for cluster interconnect during the upgrade.
 
+// 2025 JUN 19, AFFFASDOC-334
 // 2024 DEC 9, AFFFASDOC-33

@@ -82,7 +82,7 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 +
 If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 
-. At the LOADER> prompt of node1, set the default environment variables:
+. On the replacement node1, at the LOADER> prompt, set the default environment variables:
 +
 `set-defaults`
 
@@ -90,4 +90,5 @@ If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the 
 +
 `saveenv`
 
+// 2025 JUN 19, AFFFASDOC-334
 // 2024 DEC 9, AFFFASDOC-33
