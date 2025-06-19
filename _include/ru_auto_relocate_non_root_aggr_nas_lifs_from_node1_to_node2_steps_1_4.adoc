@@ -16,7 +16,7 @@ The operation pauses to enable you to verify whether all node1 non-root aggregat
 
 . With the operation still paused, verify that all the non-root aggregates are online for their state on node2:
 +
-`storage aggregate show -node _node2_ -state online -root false`
+`storage aggregate show -node <node2> -state online -root false`
 +
 The following example shows that the non-root aggregates on node2 are online:
 +
@@ -32,14 +32,14 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 +
 If the aggregates have gone offline or become foreign on node2, bring them online by using the following command on node2, once for each aggregate:
 +
-`storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . Verify that all the volumes are online on node2 by using the following command on node2 and examining its output:
 +
-`volume show -node _node2_ -state offline`
+`volume show -node <node2> -state offline`
 +
 If any volumes are offline on node2, bring them online by using the following command on node2, once for each volume:
 +
-`volume online -vserver _vserver_name_ -volume _volume_name_`
+`volume online -vserver <vserver_name> -volume <volume_name>`
 +
-The `_vserver_name_` to use with this command is found in the output of the previous `volume show` command.
+The `vserver_name` to use with this command is found in the output of the previous `volume show` command.
