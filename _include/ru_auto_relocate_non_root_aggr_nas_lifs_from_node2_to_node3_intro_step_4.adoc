@@ -16,7 +16,7 @@ NOTE: The home owner for the aggregates and LIFs are not modified; only the curr
 
 . Verify that all the non-root aggregates are online and their state on node3:
 +
-`storage aggregate show -node _node3_ -state online -root false`
+`storage aggregate show -node <node3> -state online -root false`
 +
 The following example shows that the non-root aggregates on node2 are online:
 +
@@ -32,21 +32,21 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 +
 If the aggregates have gone offline or become foreign on node3, bring them online by using the following command on node3, once for each aggregate:
 +
-`storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . Verify that all the volumes are online on node3 by using the following command on node3 and examining the  output:
 +
-`volume show -node _node3_ -state offline`
+`volume show -node <node3> -state offline`
 +
 If any volumes are offline on node3, bring them online by using the following command on node3, once for each volume:
 +
-`volume online -vserver _vserver_name_ -volume _volume_name_`
-+
-The `_vserver_name_` to use with this command is found in the output of the previous `volume show` command.
+`volume online -vserver <vserver_name> -volume <volume_name>`
+<
+The `vserver_name` to use with this command is found in the output of the previous `volume show` command.
 
 . Verify that the LIFs have been moved to the correct ports and have a status of `up`. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
 +
-`network interface modify -vserver _vserver_name_ -lif _LIF_name_ -home-node _node_name_ -status-admin up`
+`network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node_name> -status-admin up`
 
 . If the ports currently hosting data LIFs will not exist on the new hardware, remove them from the broadcast domain:
 +
