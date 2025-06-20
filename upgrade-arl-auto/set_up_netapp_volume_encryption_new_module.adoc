@@ -121,7 +121,7 @@ For more information, see the Knowledge Base article https://kb.netapp.com/onpre
 
 .After you finish
 
-Check if any volumes were taken offline because authentication keys were not available or External Key Management servers could not be reached. Bring those volumes back online using the `volume online` command.
+Check if any volumes were taken offline because authentication keys were not available or External Key Management servers could not be reached. Bring those volumes back online by using the `volume online` command.
 
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // BURT 1476251, 2022-05-16

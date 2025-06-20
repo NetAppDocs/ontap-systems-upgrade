@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.
 keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability
 summary: "Verify that the HA pair is enabled, verify node1 and node2 storage access and LIF, and confirm aggregate ownership after upgrading controller models in the same chassis."
 ---
-
 = Confirm that the new controllers are set up correctly
 :hardbreaks:
 :nofooter:
@@ -48,27 +47,27 @@ If neither node1 or node2 owns data LIFs home-owned by other nodes in the cluste
 `network interface revert`
 .	Verify that the aggregates are owned by their respective home nodes.
 +
-`storage aggregate show -owner-name _node1_`
+`storage aggregate show -owner-name <node1>`
 +
-`storage aggregate show -owner-name _node2_`
+`storage aggregate show -owner-name <node2>`
 .	Determine whether any volumes are offline:
 +
-`volume show -node _node1_ -state offline`
+`volume show -node <node1> -state offline`
 +
-`volume show -node _node2_ -state offline`
+`volume show -node <node2> -state offline`
 .	If any volumes are offline, compare them with the list of offline volumes that you captured in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade], and bring online any of the offline volumes, as required, by using the following command, once for each volume:
 +
-`volume online -vserver _vserver_name_ -volume _volume_name_`
+`volume online -vserver <vserver_name> -volume <volume_name>`
 .	Install new licenses for the new nodes by using the following command for each node:
 +
-`system license add -license-code _license_code,license_code,license_code..._`
+`system license add -license-code <license_code,license_code,license_code...>`
 +
 The license-code parameter accepts a list of 28 upper-case alphabetic character keys. You can add one license at a time, or you can add multiple licenses at once, separating each license key by a comma.
 .	Remove all of the old licenses from the original nodes by using one of the following commands:
 +
 `system license clean-up -unused -expired`
 +
-`system license delete -serial-number _node_serial_number_ -package _licensable_package_`
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 +
 --
 * Delete all expired licenses:
@@ -79,8 +78,8 @@ The license-code parameter accepts a list of 28 upper-case alphabetic character 
 `system license clean-up -unused`
 * Delete a specific license from a cluster by using the following commands on the nodes:
 +
-`system license delete -serial-number _node1_serial_number_ -package *`
-`system license delete -serial-number _node2_serial_number_ -package *`
+`system license delete -serial-number <node1_serial_number> -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
 --
 +
 The following output is displayed:
@@ -99,10 +98,10 @@ You can compare the output with the output that you captured in the link:prepare
 
 . [[unset_maxwait]] If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in _Boot node2 with the replacement system modules_, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1[Step 1]), you must unset the variable:
 +
-`set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
+`set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
 .	Configure the SPs by using the following command on both nodes:
 +
-`system service-processor network modify -node _node_name_`
+`system service-processor network modify -node <node_name>`
 +
 Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
 
