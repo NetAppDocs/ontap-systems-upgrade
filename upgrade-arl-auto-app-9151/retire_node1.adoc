@@ -12,4 +12,20 @@ summary: "Disable the HA pair with node2 and shut down node1 when upgrading cont
 :imagesdir: ../media/
 
 [.lead]
-include::../_include/ru_auto_retire_node1.adoc[]
+To retire node1, you resume the automated operation to disable the HA pair with node2 and shut node1 down correctly. Later in the procedure, you remove node1 from the rack or chassis.
+
+.Steps
+
+. Resume the operation:
++
+`system controller replace resume`
+
+. Verify that node1 has been halted:
++
+`system controller replace show-details`
+
+.After you finish
+
+After retiring node1, verify that it‘s powered off and not connected to the network. Leave the old hardware of node1 in this state until you complete the upgrade of both node1 and node2. You can then decommission node1 during link:manage-authentication-using-kmip-servers.html[Stage 6. Complete the upgrade].
+
+// 2025 JUL 1, AFFFASDOC-361

@@ -12,4 +12,18 @@ summary: "Shut down node2 and remove it from the rack or chassis when upgrading 
 :imagesdir: ../media/
 
 [.lead]
-include::../_include/ru_auto_retire_node2.adoc[]
+To retire node2, you first shut node2 down correctly and remove it from the rack or chassis.
+
+.Steps
+
+. Resume the operation:
++
+`system controller replace resume`
++
+The node halts automatically.
+
+.After you finish
+
+After retiring node2, verify that it‘s powered off and not connected to the network. Leave the old hardware of node2 in this state until you complete the upgrade of both node1 and node2. You can then decommission node2 during link:manage-authentication-using-kmip-servers.html[Stage 6. Complete the upgrade].
+
+// 2025 JUL 1, AFFFASDOC-361
