@@ -42,8 +42,8 @@ NOTE: Other parameters might be necessary for your interface. Enter `help ifconf
 |===
 
 include::../_include/ru_auto_install_boot_node3_step_7_26.adoc[]
-[start=27]
-[[auto_install3_step27]]
+[start=22]
+[[auto_install3_step22]]
 . If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
@@ -76,7 +76,7 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 +
 If you do not have an FC or UTA/UTA2 configuration, perform link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1[Reassign node1 disks to node3, Step 1] so that node3 can recognize node1’s disks.
 
-. [[auto9597_istall3_step29]]For a MetroCluster configuration, V-Series systems and systems with FlexArray Virtualization software connected to storage arrays,
+. [[auto9597_istall3_step29]]For a MetroCluster configuration,
 go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1[Reassign node1 disks to node3, Step 1].
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // BURT 1476241 2022-05-13

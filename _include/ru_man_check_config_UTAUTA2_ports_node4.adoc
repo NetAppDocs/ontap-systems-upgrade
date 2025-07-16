@@ -20,38 +20,13 @@ UTA/UTA2 ports might be on an adapter or on the controller with the following co
 
 However, you can check the configuration of the UTA/UTA2 ports on node4 and change it, if necessary.
 
-*Attention*: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a MetroCluster FC system, V-Series system or a system with FlexArray Virtualization software that is connected to storage arrays,  you must be in Maintenance mode to configure UTA/UTA2 ports.
+WARNING: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a MetroCluster FC system, you must be in Maintenance mode to configure UTA/UTA2 ports.
 
 .Steps
 
-. Check how the ports are currently configured by using one of the following commands on node4:
+. Check how the ports are currently configured on node4:
 +
-[cols=2*,options="header",cols="35,65"]
-|===
-|If the system... |Then…
-|Has storage disks
-|`system node hardware unified-connect show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-|===
-+
-The system displays output similar to the following example:
-+
-....
-*> ucadmin show
-                Current  Current    Pending   Pending   Admin
-Node   Adapter  Mode     Type       Mode      Type      Status
-----   -------  ---      ---------  -------   --------  -------
-f-a    0e       fc       initiator  -          -        online
-f-a    0f       fc       initiator  -          -        online
-f-a    0g       cna      target     -          -        online
-f-a    0h       cna      target     -          -        online
-f-a    0e       fc       initiator  -          -        online
-f-a    0f       fc       initiator  -          -        online
-f-a    0g       cna      target     -          -        online
-f-a    0h       cna      target     -          -        online
-*>
-....
+`system node hardware unified-connect show`
 
 . If the current SFP+ module does not match the desired use, replace it with the correct SFP+ module.
 +
@@ -70,20 +45,9 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 |Skip Step 5 through Step 12 and go to <<man_check_4_Step13,Step 13>>.
 |===
 
-. [[man_check_4_Step5]]Take one of the following actions:
+. [[man_check_4_Step5]]If the system=has storage disks and is running Data ONTAP 8.3, boot node4 and enter maintenance mode:
 +
-[cols=2*,options="header",cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks and is running Data ONTAP 8.3
-|Boot node4 and enter maintenance mode:
-
 `boot_ontap maint`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Go to <<man_check_4_Step6,Step 6>>.
-You should already be in Maintenance mode.
-|===
 
 . [[man_check_4_Step6]]Take one of the following actions:
 +
@@ -110,20 +74,13 @@ Adapters in target mode are automatically offline in Maintenance mode.
 * `-t` is the FC4 type: target or initiator.
 
 +
-NOTE: You must use FC initiator for tape drives and FlexArray Virtualization systems. You must use the FC target for SAN clients.
+NOTE: You must use FC initiator for tape drives. You must use the FC target for SAN clients.
 
 . Verify the settings by entering the following command and examining its output:
 +
 `ucadmin show`
 
-. Perform one of the following actions:
-+
-[cols=2*, options="header",cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks
-a|.. Enter the following command:
+. If the system as storage disks, enter the following command:
 +
 `halt`
 +
@@ -131,27 +88,10 @@ The system stops at the boot environment prompt.
 .. Enter the following command:
 +
 `boot_ontap`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays and is running Data ONTAP 8.3
-|Reboot to Maintenance mode:
 
-`boot_ontap maint`
-|===
-
-. Verify the settings:
+. If the system has storage disks, enter the following command:
 +
-[cols=2*, options="header",cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks
-|Enter the following command:
-
 `system node hardware unified-connect show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Enter the following command:
-
-`ucadmin show`
-|===
 +
 The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`.
 +
@@ -166,42 +106,15 @@ f-a    2a      fc       target    cna      -          online
 f-a    2b      fc       target    cna      -          online
 4 entries were displayed.
 ----
-+
-----
-*> ucadmin show
-               Current Current   Pending  Pending    Admin
-Node  Adapter  Mode    Type      Mode     Type       Status
-----  -------  ------- --------- -------  -------    -----
-f-a    1a      fc      initiator -        -          online
-f-a    1b      fc      target    -        initiator  online
-f-a    2a      fc      target    cna      -          online
-f-a    2b      fc      target    cna      -          online
-4 entries were displayed.
-*>
-----
 
 . Place any target ports online by entering one of the following commands, once for each port:
 +
-[cols=2*, options="header",cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks |`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`fcp config _adapter_name_ up`
-|===
+`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 
 . [[man_check_4_Step13]]Cable the port.
 
-. Perform one of the following actions:
-+
-[cols=2*,options="header",cols="35,65"]
-|===
-|If the system... |Then...
+.After you finish
+Go to  link:map_ports_node2_node4.html[Map ports from node2 to node4].
 
-|Has storage disks |Go to  link:map_ports_node2_node4.html[Map ports from node2 to node4].
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to the section _Install and boot node4_, and resume the section at link:install_boot_node4.html#man_install4_Step9[Step 9].
-|===
 
 // Clean-up, 2022-03-09

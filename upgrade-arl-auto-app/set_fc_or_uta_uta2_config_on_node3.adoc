@@ -16,38 +16,23 @@ summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 include::../_include/ru_auto_set_fc_or_uta_uta2_confgig_node3_intro.adoc[]
 
 * If node3 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
-* However, if you have a V-Series system or a system with FlexArray Virtualization software with storage arrays, and node3 does not have onboard FC ports, onboard UTA/UTA ports, or a UTA/UTA2 card, return to the _Install and boot node3_ and resume the procedure at link:install_boot_node3.html#auto_install3_step23[Step 23].
 
 include::../_include/ru_auto_config_fc_ports_node3.adoc[]
 
 [start=8]
-. [[auto_check3_step8]]Take one of the following actions:
+. [[auto_check3_step8]]If the system that you are upgrading has storage disks, take one of the following actions:
 +
-|===
-|If the system that you are upgrading... |Then…
+* Go to <<Check and configure UTA/UTA2 ports on node3>> if node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
 
-|Has storage disks
-a|* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
 * If node3 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip _Check and configure UTA/UTA2 ports on node3_ and go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-a|* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
-* If node3 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip _Check and configure UTA/UTA2 ports on node3_ and return to _Install and boot node3_ and resume the procedure at link:install_boot_node3.html#auto_install3_step23[Step 23].
-|===
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.adoc[]
 
 [start=12]
-. [[auto_check3_step12]]Take one of the following actions:
-+
-|===
-|If the system... |Then…
-
-|Has storage disks
-|Go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to _Install and boot node3_, and resume the procedure link:install_boot_node3.html#auto_install3_step23[Step 23].
-|===
+. [[auto_check3_step12]]If the system has storage disks, go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
-. [[step14]]Boot the node into boot menu by running `boot_ontap menu`. If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9[Reassign node1 disks to node3, Step 9].
+. [[step14]]Boot the node into boot menu by running `boot_ontap menu`. 
++
+If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9[Reassign node1 disks to node3, Step 9].
 // 2025 MAR 5, AFFFASDOC-297

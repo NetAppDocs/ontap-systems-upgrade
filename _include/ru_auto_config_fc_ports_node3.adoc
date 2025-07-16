@@ -10,53 +10,25 @@ You must have the values of the FC port settings from node1 that you saved in th
 
 You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 card, you configure them in <<Check and configure UTA/UTA2 ports on node3>>.
 
-IMPORTANT: If your system has storage disks, enter the commands in this section at the cluster prompt. If you have a 'V-Series system' or have FlexArray Virtualization Software and are connected to storage arrays, enter commands in this section in Maintenance mode.
+IMPORTANT: If your system has storage disks, enter the commands in this section at the cluster prompt.
 
 . [[step1]]Compare the FC settings on node3 with the settings that you captured earlier from node1.
-. [[step2]]Take one of the following actions:
+. [[step2]]Take one of the following actions to modify the FC ports on node3, as needed:
 +
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system that you are upgrading... |Then…
-
-|Has storage disks
-a|In maintenance mode (option 5 at boot menu), modify the FC ports on node3 as needed:
-
+In maintenance mode (option 5 at boot menu):
++
 * To program target ports:
-
++
 `ucadmin modify -m fc -t target _adapter_`
-
++
 * To program initiator ports:
-
++
 `ucadmin modify -m fc -t initiator _adapter_`
 
-`-t` is the FC4 type: target or initiator.
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
 
-a|In maintenance mode (option 5 at boot menu), modify the FC ports on node3 as needed:
-
-`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
-
-`-t` is the FC4 type, target or initiator.
-
-NOTE: The FC ports must be programmed as initiators.
-|===
-
-. [[step3]]Take one of the following actions:
+. [[step3]]Verify the new settings by using the following command and examining the output:
 +
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system that you are upgrading... |Then…
-
-|Has storage disks
-|Verify the new settings by using the following command and examining the output:
-
 `ucadmin show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Verify the new settings by using the following command and examining the output:
-
-`ucadmin show`
-|===
 
 . [[step4]]Exit Maintenance mode:
 +

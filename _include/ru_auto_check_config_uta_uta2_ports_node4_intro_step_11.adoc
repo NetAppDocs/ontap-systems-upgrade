@@ -20,21 +20,13 @@ UTA/UTA2 ports might be on an adapter or on the controller with the following co
 
 However, you should check the configuration of the UTA/UTA2 ports on node4 and change it, if necessary.
 
-WARNING: *Attention*: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a MetroCluster FC system, V-Series system or a system with FlexArray Virtualization software that is connected to storage arrays,  you must be in Maintenance mode to configure UTA/UTA2 ports.
+WARNING: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode.
 
 .Steps
 
 . Check how the ports are currently configured by using one of the following commands on node4:
 +
-[cols=2*,options="header"cols="30,70"]
-|===
-|If the system... |Then…
-
-|Has storage disks
-|`system node hardware unified-connect show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-|===
+`system node hardware unified-connect show`
 +
 The system displays output similar to the following example:
 +
@@ -100,7 +92,7 @@ Adapters in target mode are automatically offline in Maintenance mode.
 ** `-m` is the personality mode, FC or 10GbE UTA.
 ** `-t` is the FC4 type, `target` or `initiator`.
 +
-NOTE: You must use FC initiator for tape drives, FlexArray Virtualization systems, and MetroCluster configurations. You must use the FC target for SAN clients.
+NOTE: You must use FC initiator for tape drives and MetroCluster configurations. You must use the FC target for SAN clients.
 
 . [[auto_check_4_step8]]Verify the settings by using the following command and examining its output:
 +
@@ -108,16 +100,7 @@ NOTE: You must use FC initiator for tape drives, FlexArray Virtualization system
 
 . Verify the settings:
 +
-[cols=2*,options="header"cols="40,60"]
-|===
-|If the system... |Then…
-
-|Has storage disks
-|`ucadmin show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-
-|===
+`ucadmin show`
 +
 The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
 +
@@ -135,14 +118,6 @@ f-a   2b       fc             target       cna           -             online
 
 . Place any target ports online by entering one of the following commands, once for each port:
 +
-[cols=2*,options="header"cols="30,70"]
-|===
-|If the system... |Then…
-
-|Has storage disks
-|`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`fcp config _adapter_name_ up`
-|===
+`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 
 . Cable the port.

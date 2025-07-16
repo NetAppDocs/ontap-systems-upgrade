@@ -10,53 +10,26 @@ You must have the values of the FC port settings from node2 that you saved in th
 
 You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 adapter, you configure them in <<Check and configure UTA/UTA2 ports on node4>>.
 
-IMPORTANT: If your system has storage disks, you must enter the commands in this section at the cluster prompt. If you have a V-Series system or a system with FlexArray Virtualization Software connected to storage arrays, you enter commands in this section in Maintenance mode.
+IMPORTANT: If your system has storage disks, you must enter the commands in this section at the cluster prompt.
 
 .Steps
 
-. Take one of the following actions:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system that you are upgrading... |Then…
-
-|Has storage disks
-|
+. Display information about all FC and converged network adapters on the system:
++ 
 `system node hardware unified-connect show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-|===
-+
-The system displays information about all FC and converged network adapters on the system.
 
 . Compare the FC settings on node4 with the settings that you captured earlier from node1.
-. Take one of the following actions:
+. Modify the FC ports on node4 as needed:
 +
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system that you are upgrading... |Then…
-
-|Has storage disks
-a|Modify the FC ports on node4 as needed:
-
 * To program target ports:
 +
 `ucadmin modify -m fc -t target _adapter_`
++
 * To program initiator ports:
 +
 `ucadmin modify -m fc -t initiator _adapter_`
-
++
 `-t` is the FC4 type: target or initiator.
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-
-a|Modify the FC ports on node4 as needed:
-
-`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
-
-`-t` is the FC4 type, target or initiator.
-
-NOTE: The FC ports must be programmed as initiators.
-|===
 
 . Exit Maintenance mode:
 +

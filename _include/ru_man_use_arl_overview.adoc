@@ -2,13 +2,12 @@ During the procedure, you upgrade the original controller hardware with the repl
 
 NOTE: In this document, the original nodes are called _node1_ and _node2_, and the new nodes are called _node3_ and _node4_. During the described procedure, node1 is replaced by node3, and node2 is replaced by node4.
 The terms _node1_, _node2_, _node3_, and _node4_ are used only to distinguish between the original and new nodes. When following the procedure, you must substitute the real names of your original and new nodes. However, in reality, the names of the nodes do not change: node3 has the name node1, and node4 has the name node2 after the controller hardware is upgraded.
-This document uses the term _systems with FlexArray Virtualization Software_ to refer to systems that belong to these new platforms. It uses the term _V-Series system_ to refer to the separate hardware systems that can attach to storage arrays
 
 .Important information:
 
 * This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_upgrade_with_arl.html[guidelines for upgrading controllers with ARL] and the link:arl_upgrade_workflow.html[ARL upgrade workflow] before beginning the upgrade.
 * This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7-Mode.
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each high-availability (HA) pair in the cluster.
-* This procedure applies to FAS systems, V-Series systems, AFF systems, and systems with FlexArray Virtualization Software. FAS systems released after ONTAP 9 can attach to storage arrays if the required license is installed. The existing V-Series systems are supported in ONTAP 9. For information about the storage array and V-Series models, refer to link:other_references.html[References] to link to the _Hardware Universe_ and see the _V-Series Support Matrix_.
+* This procedure applies to FAS systems and AFF systems. FAS systems released after ONTAP 9 can attach to storage arrays if the required license is installed.
 
 // Clean-up, 2022-03-09

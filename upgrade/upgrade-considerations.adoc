@@ -88,8 +88,6 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 
 * If the new system has fewer slots than the original system, or if it has fewer or different types of ports, you might need to add an adapter to the new system. See the https://hwu.netapp.com[NetApp Hardware Universe^].
 
-* If the original nodes or new nodes use FlexArray Virtualization software, see the Knowledge Base article https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F[What are the specific steps involved in FlexArray for NetApp controller upgrades and replacements^].
-
 * If your cluster has SAN hosts you might need to take steps to resolve issues with LUN serial number changes. See the Knowledge Base article https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP[How to resolve issues during storage controller motherboard replacement and head upgrades with iSCSI and FCP^].
 
 * If your system uses out-of-band ACP, you might need to migrate from out-of-band ACP to in-band ACP. See the Knowledge Base article https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support[In-Band ACP Setup and Support^]
