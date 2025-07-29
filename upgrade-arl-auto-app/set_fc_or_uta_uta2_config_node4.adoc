@@ -24,23 +24,27 @@ Make sure that node4 has sufficient rack space. If node4 is in a separate chassi
 include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 
 [start=8]
-. [[step8]]If the system that you are upgrading has storage disks, go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4] if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports.
+. [[step8]]Take one of the following actions:
++
+* Go to <<Check and configure UTA/UTA2 ports on node4>> if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
+
+* If node4 doesn't have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip _Check and configure UTA/UTA2 ports on node4_ and go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
 
 [start=12]
-. [[step12]]If the system has storage disks, go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
-
-. [[auto_check_4_step13]]Exit Maintenance mode:
+. [[auto_check_4_step12]]Exit Maintenance mode:
 +
 `halt`
 
 . [[step14]]Boot the node into boot menu:
 +
 `boot_ontap menu`.
-+
-If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
 
+.What's next?
+
+If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
+For all other system upgrades, go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-05-17, BURT 1476241

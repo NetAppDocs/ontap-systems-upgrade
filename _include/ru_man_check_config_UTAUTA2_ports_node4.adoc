@@ -20,7 +20,7 @@ UTA/UTA2 ports might be on an adapter or on the controller with the following co
 
 However, you can check the configuration of the UTA/UTA2 ports on node4 and change it, if necessary.
 
-WARNING: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a MetroCluster FC system, you must be in Maintenance mode to configure UTA/UTA2 ports.
+WARNING: Enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a MetroCluster FC system, you must be in Maintenance mode to configure UTA/UTA2 ports.
 
 .Steps
 
@@ -107,7 +107,7 @@ f-a    2b      fc       target    cna      -          online
 4 entries were displayed.
 ----
 
-. Place any target ports online by entering one of the following commands, once for each port:
+. Place any target ports online by entering the following commands, once for each port:
 +
 `network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 

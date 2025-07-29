@@ -20,7 +20,7 @@ UTA/UTA2 ports might be on an adapter or on the controller with the following co
 
 However, you should check the configuration of the UTA/UTA2 ports on node4 and change it, if necessary.
 
-WARNING: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode.
+WARNING: Enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode.
 
 .Steps
 
@@ -63,7 +63,7 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 
 |Have the personality that you want
 
-|Skip Step 5 through Step 12 and go to <<auto_check_4_step13,Step 13>>.
+|Skip Step 5 through Step 12 and go to <<auto_check_4_step12,Step 12>>.
 
 |===
 

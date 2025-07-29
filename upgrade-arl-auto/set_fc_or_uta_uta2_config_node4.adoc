@@ -29,17 +29,19 @@ include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
 
 [start=12]
-. [[step12]]If the system has storage disks |Go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
-
-. [[auto_check_4_step13]]Exit Maintenance mode:
+. [[auto_check_4_step12]]Exit Maintenance mode:
 +
 `halt`
 
-. [[step14]]Boot the node into boot menu:
+. Boot the node into boot menu:
 +
 `boot_ontap menu`
-+
+
+.What's next?
+
 If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#auto_check_4_step9[Reassign node2 disks to node4, Step 9].
+
+For all other system upgrades, go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-05-16, BURT 1476241

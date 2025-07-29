@@ -36,7 +36,7 @@ UTA/UTA2 ports might be found on an adapter or on the controller, and have the f
 * UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
 * Onboard UTA/UTA2 ports on new controllers are configured before shipment to have the personality you request.
 +
-WARNING: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. You must be in Maintenance mode to configure UTA/UTA2 ports.
+WARNING: Enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. You must be in Maintenance mode to configure UTA/UTA2 ports.
 
 .Steps
 
@@ -45,7 +45,8 @@ WARNING: If your system has storage disks, you enter the commands in this sectio
 Contact your NetApp representative to obtain the correct SFP+ module.
 
 . Examine the output of the `ucadmin show` command and determine whether the UTA/UTA2 ports have the personality you want.
-.Take one of the following actions:
+
+. Take one of the following actions:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -107,8 +108,8 @@ Adapter  Mode       Type        Mode     Type        Status
 *>
 ....
 
-. Place any target ports online by entering one of the following commands, once for each port:
+. Place any target ports online by entering the following commands, once for each port:
 +
-|`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
+`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 
 . [[step10]]Cable the port.
