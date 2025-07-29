@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto/install_boot_node3.html
 keywords: install, boot, node3 relocation, nodes, V-series, storage disks
 summary: "Install and boot node3 and install ONTAP software when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
 = Install and boot node3
 :hardbreaks:
 :nofooter:
@@ -73,10 +72,15 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 . Boot the node into boot menu:
 +
 `boot_ontap menu`
-+
-If you do not have an FC or UTA/UTA2 configuration, perform link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1[Reassign node1 disks to node3, Step 1] so that node3 can recognize node1’s disks.
 
-. [[auto9597_istall3_step29]]For a MetroCluster configuration,
-go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1[Reassign node1 disks to node3, Step 1].
+.What's next?
+
+* If you have a system with an FC or UTA/UTA2 configuration, link:set_fc_or_uta_uta2_config_on_node3.html[set the FC or UTA/UTA2 configuration on node3].
+
+* If you don't have an FC or UTA/UTA2 configuration, link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1[reassign node1 disks to node3] so that node3 can recognize node1’s disks.
+
+* If you have a MetroCluster configuration, link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1[reassign node1 disks to node3].
+
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // BURT 1476241 2022-05-13
+

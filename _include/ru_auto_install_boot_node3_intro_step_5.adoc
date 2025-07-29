@@ -25,7 +25,7 @@ NOTE: If you are upgrading to a system with both nodes in the same chassis, inst
 
 . [[auto_install3_step3]]Cable node3, moving the connections from node1 to node3.
 +
-Cable the following connections, using the appropriate disk shelf document and _HA pair management_.
+Cable the following connections using the _Installation and Setup Instructions_ for the node3 platform, the appropriate disk shelf document, and the _HA pair management_ documentation.
 +
 Refer to link:other_references.html[References] to link to _HA pair management_.
 +

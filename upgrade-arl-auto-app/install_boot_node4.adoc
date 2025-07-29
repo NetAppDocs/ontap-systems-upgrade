@@ -81,10 +81,14 @@ Enter the passphrase and the backup information that you recorded earlier proced
 +
 `boot_ontap menu`
 +
-If you don't have an FC or UTA/UTA2 configuration, preform link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step1[Reassign node2 disks to node4, Step 1] so that node4 can recognize node2's disks.
 
-.  [[step29]]For MetroCluster configuration, you must set and configure the FC or UTA/UTA2 ports on node4 to detect the disks attached to the node.
-To complete this task, go to section link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UT2 configuration on node4].
+.What's next?
+
+* If you have an FC or UTA/UTA2 configuration, link:set_fc_or_uta_uta2_config_node4.html[set and configure the FC or UTA/UTA2 ports on node4].
+
+* If you don't have an FC or UTA/UTA2 configuration, link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step1[reassign node2 disks to node4, Step 1] so that node4 can recognize node2's disks.
+
+* If you have a  MetroCluster configuration, link:set_fc_or_uta_uta2_config_node4.html[set and configure the FC or UTA/UTA2 ports on node4] to detect the disks attached to the node.
 
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022-05-17, BURT 1476241
