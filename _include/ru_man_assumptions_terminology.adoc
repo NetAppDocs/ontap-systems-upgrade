@@ -2,11 +2,11 @@ This document is written with the following assumptions:
 
 * The replacement controller hardware is new and has not been used.
 +
-WARNING: *Attention*: Because this procedure assumes that the replacement controller hardware is new and has not been used, the steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7-Mode.
+WARNING: Because this procedure assumes that the replacement controller hardware is new and has not been used, the steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7-Mode.
 
 * You read and understand the guidelines for upgrading the pair of nodes.
 +
-WARNING: *Attention*: Do not try to clear the NVRAM contents. If you need to clear the contents of NVRAM, contact NetApp technical support.
+WARNING: Do not try to clear the NVRAM contents. If you need to clear the contents of NVRAM, contact NetApp technical support.
 
 * You are performing the appropriate command before and after the `modify` commands and comparing the output of both `show` commands to verify that the `modify` command was successful.
 

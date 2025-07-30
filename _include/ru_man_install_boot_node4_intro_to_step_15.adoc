@@ -80,7 +80,7 @@ WARNING: The battery is unfit to retain data during a power
 .. Check for any console messages that might indicate a problem other than a low NVRAM battery and, if necessary, take any required corrective action.
 .. Allow the battery to charge and the boot process to finish.
 +
-WARNING: *Warning: Do not override the delay. Failure to allow the battery to charge could result in a loss of data.*
+WARNING: *Do not override the delay. Failure to allow the battery to charge could result in a loss of data.*
 
 . [[man_install4_Step8]]At the Maintenance mode prompt, enter the following command:
 +

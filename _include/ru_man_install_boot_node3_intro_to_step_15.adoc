@@ -59,47 +59,22 @@ To override this delay, press 'c' followed by 'Enter'
 .. Check for any console messages that might indicate a problem other than a low NVRAM battery, and, if necessary, take any required corrective action.
 .. Allow the battery to charge and the boot process to complete.
 +
-NOTE: *Attention*: Do not override the delay; failure to allow the battery to charge could result in a loss of data.
+WARNING: *Do not override the delay; failure to allow the battery to charge could result in a loss of data.*
 
-. [[man_install3_step6]]Take 
-
-
-. [[man_install3_step6]]Add the FC initiator ports of the new node to the switch zones.
-+
-If your system has a tape SAN, then you need zoning for the initiators. See your storage array and zoning documentation for instructions.
-
-. [[man_install3_step7]]Add the FC initiator ports to the storage array as new hosts, mapping the array LUNs to the new hosts.
-+
-See your storage array and zoning documentation for instructions.
-
-. [[man_install3_step8]] Modify the World Wide Port Name (WWPN) values in the host or volume groups associated with array LUNs on the storage array.
-+
-Installing a new controller module changes the WWPN values associated with each onboard FC port.
-
-. [[man_install3_step9]]If your configuration uses switch-based zoning, adjust the zoning to reflect the new WWPN values.
-
-. [[man_install3_step10]]Verify that the array LUNs are now visible to node3:
-+
-`sysconfig -v`
-+
-The system displays all the array LUNs visible to each of the FC initiator ports. If the array LUNs are not visible, you will not be able to reassign disks from node1 to node3 later in this section.
-
-. [[man_install3_step11]]Press Ctrl-C to display the boot menu and select maintenance mode.
-
-. [[man_install3_step12]]At the Maintenance mode prompt, enter the following command:
+. At the Maintenance mode prompt, enter the following command:
 +
 `halt`
 +
 The system stops at the boot environment prompt.
 
-. [[man_install3_step13]]Take one of the following actions:
+. Take one of the following actions:
 +
 [cols="35,65"]
 |===
 |If the system you are upgrading to is in a... |Then...
 
 |Dual-chassis configuration (with controllers in different chassis)
-|Go to <<man_install3_step14,Step 14>>.
+|Go to <<man_install3_step8,Step 8>>.
 |Single-chassis configuration (with controllers in the same chassis)
 a|.. Switch the console cable from node3 to node4.
 
@@ -113,10 +88,10 @@ NOTE: Leave node4 at the boot environment prompt; you will return to node4 in li
 
 .. Switch the console cable back from node4 to node3.
 
-.. Go to <<man_install3_step15,Step 15>>.
+.. Go to <<man_install3_step8,Step 8>>.
 |===
 
-. [[man_install3_step14]]Configure node3 for ONTAP:
+. [[man_install3_step8]]Configure node3 for ONTAP:
 +
 `set-defaults`
 // 2025 MAY 22, AFFFASDOC-329

@@ -10,7 +10,7 @@ You must have the values of the FC port settings from node2 that you saved in th
 
 You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 adapter, you configure them in <<Check and configure UTA/UTA2 ports on node4>>.
 
-IMPORTANT: If your system has storage disks, you must enter the commands in this section at the cluster prompt. 
+IMPORTANT: Enter the commands in this section at the cluster prompt. 
 
 .Steps
 

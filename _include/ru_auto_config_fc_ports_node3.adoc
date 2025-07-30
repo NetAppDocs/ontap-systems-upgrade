@@ -10,7 +10,7 @@ You must have the values of the FC port settings from node1 that you saved in th
 
 You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 card, you configure them in <<Check and configure UTA/UTA2 ports on node3>>.
 
-IMPORTANT: If your system has storage disks, enter the commands in this section at the cluster prompt.
+IMPORTANT: Enter the commands in this section at the cluster prompt.
 
 . [[step1]]Compare the FC settings on node3 with the settings that you captured earlier from node1.
 . [[step2]]Take one of the following actions to modify the FC ports on node3, as needed:

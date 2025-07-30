@@ -4,7 +4,7 @@
 +
 WARNING: If this new node has ever been used in any other cluster or HA pair, you must run `wipeconfig` before proceeding. Failure to do so might result in service outages or data loss. Contact technical support if the replacement controller was previously used, especially if the controllers were running ONTAP running in 7-Mode.
 
-. [[man_install3_step18]]Press CTRL-C to display the boot menu.
+. Press CTRL-C to display the boot menu.
 
 . [[man_install3_step19]]Take one of the following actions:
 +
@@ -13,12 +13,12 @@ WARNING: If this new node has ever been used in any other cluster or HA pair, yo
 |If the system you are upgrading... |Then...
 
 |Does _not_ have the correct or current ONTAP version on node3
-|Go to <<man_install3_step20,Step 20>>.
+|Go to <<man_install3_step13,Step 13>>.
 |Has the correct or current version of ONTAP on node3
-|Go to <<man_install3_step25,Step 25>>.
+|Go to <<man_install3_step18,Step 18>>.
 |===
 
-. [[man_install3_step20]]Configure the netboot connection by choosing one of the following actions.
+. [[man_install3_step13]]Configure the netboot connection by choosing one of the following actions.
 +
 NOTE: You must use the management port and IP as the netboot connection. Do not use a data LIF IP or else a data outage might occur while the upgrade is being performed.
 +
@@ -41,7 +41,7 @@ a|Manually configure the connection by entering the following command at the boo
 NOTE: Other parameters might be necessary for your interface. Enter `help ifconfig` at the firmware prompt for details.
 |===
 
-. [[man_install3_step21]]Perform netboot on node3:
+. Perform netboot on node3:
 +
 [cols="35,65"]
 |===
@@ -58,7 +58,7 @@ The `<path_to_the_web-accessible_directory>` leads to where you downloaded the `
 +
 NOTE: Do not interrupt the boot.
 
-. [[man_install3_step22]]From the boot menu, select option *(7) Install new software* first.
+. From the boot menu, select option *(7) Install new software* first.
 +
 This menu option downloads and installs the new ONTAP image to the boot device.
 +
@@ -70,11 +70,11 @@ The note applies to nondisruptive upgrades of ONTAP, and not upgrades of control
 +
 NOTE: Always use netboot to update the new node to the desired image. If you use another method to install the image on the new controller, the wrong image might install. This issue applies to all releases of ONTAP. The netboot procedure combined with option `(7) Install new software` wipes the boot media and places the same ONTAP version ONTAP on both image partitions.
 
-. [[man_install3_step23]]If you are prompted to continue the procedure, enter `y`, and when prompted for the package, enter the following URL:
+. If you are prompted to continue the procedure, enter `y`, and when prompted for the package, enter the following URL:
 +
 `\http://<web_server_ip>/<path_to_web-accessible_directory>/<ontap_version_image>.tgz`
 
-. [[man_install3_step24]]Complete the following substeps:
+. Complete the following substeps:
 +
 .. Enter `n` to skip the backup recovery when you see the following prompt:
 +
@@ -90,12 +90,12 @@ The node must be rebooted to start using the newly installed software. Do you wa
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted and the configuration data needs to be restored.
 
-. [[man_install3_step25]]Select *(5) Maintenance mode boot* by entering `5`, and then enter `y` when prompted to continue with the boot.
+. [[man_install3_step18]]Select *(5) Maintenance mode boot* by entering `5`, and then enter `y` when prompted to continue with the boot.
 . [[man_install3_step26]]Before continuing, go to link:set_fc_uta_uta2_config_node3.html[Set the FC or UTA/UTA2 configuration on node3] to make any necessary changes to the FC or UTA/UTA2 ports on the node.
 +
 Make the changes recommended in those sections, reboot the node, and go into maintenance mode.
 
-. [[man_install3_step27]]Find the system ID of node3:
+. Find the system ID of node3:
 +
 `disk show -a`
 +
@@ -117,7 +117,7 @@ The system displays the system ID of the node and information about its disks, a
 +
 NOTE: You might see the message `disk show: No disks match option -a.` after entering the command. This is not an error message so you can continue with the procedure.
 
-. [[man_install3_step28]]Reassign node1's spares, any disks belonging to the root, and any non-root aggregates that were not relocated to node2 earlier in link:relocate_non_root_aggr_node1_node2.html[Relocate non-root aggregates from node1 to node2].
+. [[man_install3_step21]]Reassign node1's spares, any disks belonging to the root, and any non-root aggregates that were not relocated to node2 earlier in link:relocate_non_root_aggr_node1_node2.html[Relocate non-root aggregates from node1 to node2].
 +
 Enter the appropriate form of the `disk reassign` command based on whether your system has shared disks:
 +
@@ -281,7 +281,7 @@ The system stops at the boot environment prompt.
 +
 `set time _hh:mm:ss_`
 
-. [[man_install3_step42]]Verify the partner system ID is set correctly as noted in <<man_install3_step28,Step 28>> under -p switch:
+. [[man_install3_step42]]Verify the partner system ID is set correctly as noted in <<man_install3_step21,Step 21>> under -p switch:
 +
 `printenv partner-sysid`
 

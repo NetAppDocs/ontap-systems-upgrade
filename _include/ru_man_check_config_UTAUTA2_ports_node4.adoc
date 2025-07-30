@@ -45,7 +45,7 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 |Skip Step 5 through Step 12 and go to <<man_check_4_Step13,Step 13>>.
 |===
 
-. [[man_check_4_Step5]]If the system=has storage disks and is running Data ONTAP 8.3, boot node4 and enter maintenance mode:
+. [[man_check_4_Step5]]If the system has storage disks and is running Data ONTAP 8.3, boot node4 and enter maintenance mode:
 +
 `boot_ontap maint`
 
@@ -74,7 +74,7 @@ Adapters in target mode are automatically offline in Maintenance mode.
 * `-t` is the FC4 type: target or initiator.
 
 +
-NOTE: You must use FC initiator for tape drives. You must use the FC target for SAN clients.
+NOTE: You must use FC initiator for tape drives and the FC target for SAN clients.
 
 . Verify the settings by entering the following command and examining its output:
 +
@@ -85,6 +85,7 @@ NOTE: You must use FC initiator for tape drives. You must use the FC target for 
 `halt`
 +
 The system stops at the boot environment prompt.
+
 .. Enter the following command:
 +
 `boot_ontap`
@@ -112,9 +113,6 @@ f-a    2b      fc       target    cna      -          online
 `network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 
 . [[man_check_4_Step13]]Cable the port.
-
-.After you finish
-Go to  link:map_ports_node2_node4.html[Map ports from node2 to node4].
 
 
 // Clean-up, 2022-03-09
