@@ -36,6 +36,7 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
 
 .What's next?
 
-If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9[Reassign node1 disks to node3, Step 9].
-For all other system upgrades, go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
+* If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9[Reassign node1 disks to node3, Step 9].
+
+* For all other system upgrades, go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3, Step 1].
 // 2025 MAR 5, AFFFASDOC-297

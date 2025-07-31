@@ -43,8 +43,9 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.ado
 
 .What's next?
 
-If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
-For all other system upgrades, go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
+* If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
+
+* For all other system upgrades, go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4, Step 1].
 
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-05-17, BURT 1476241

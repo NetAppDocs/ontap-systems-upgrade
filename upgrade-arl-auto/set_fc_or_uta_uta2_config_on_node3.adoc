@@ -34,9 +34,9 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
 
 .What's next?
 
-If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#auto_check3_step9[Reassign node1 disks to node3, Step 9].
+* If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#auto_check3_step9[Reassign node1 disks to node3, Step 9].
 
-For all other system upgrades, go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
+* For all other system upgrades, go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3, Step 1].
 
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // top section of page 31 in PDF
