@@ -97,10 +97,6 @@ NOTE: You must use FC initiator for tape drives and MetroCluster configurations.
 . [[auto_check_4_step8]]Verify the settings by using the following command and examining its output:
 +
 `ucadmin show`
-
-. Verify the settings:
-+
-`ucadmin show`
 +
 The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
 +

@@ -30,7 +30,7 @@ The terms "node1", "node2", "node3", and "node4" are used only to distinguish be
 
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each HA pair in the cluster.
 
-* This procedure applies to FAS systems and AFF systems. FAS systems released after ONTAP 9.5 can attach to storage arrays if the required license is installed.
+* This procedure applies to FAS systems and AFF systems.
 
 * Beginning with ONTAP 9.6, this procedure applies to systems running 4-node MetroCluster configuration or higher. Because MetroCluster configuration sites can be at two physically different locations, the automated controller upgrade must be carried out individually at each MetroCluster site for an HA pair.
 

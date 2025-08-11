@@ -108,7 +108,7 @@ f-a    2b      fc       target    cna      -          online
 4 entries were displayed.
 ----
 
-. Place any target ports online by entering the following commands, once for each port:
+. Place any target ports online by entering one of the following commands, once for each port:
 +
 `network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 

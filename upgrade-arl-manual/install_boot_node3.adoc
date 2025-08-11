@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-manual/install_boot_node3.html
-keywords: install, boot, node3, rack, transfer connections, v-series, , storage disks
+keywords: install, boot, node3, rack, transfer connections, v-series, storage disks
 summary: "Install and boot node3 and install ONTAP software during a manual ARL upgrade on controllers running ONTAP 9.7 or earlier."
 ---
 

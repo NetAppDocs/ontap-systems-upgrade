@@ -117,15 +117,13 @@ NOTE: You need to use the FC initiator for tape drives and MetroCluster configur
 +
 `ucadmin show`
 
-. Verify the settings:
-+
-.. Stop the system:
+. Stop the system:
 +
 `halt`
 +
 The system stops at the boot environment prompt.
 +
-.. Enter the following command:
+. Enter the following command:
 +
 `boot_ontap`
 
