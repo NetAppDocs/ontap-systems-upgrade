@@ -49,24 +49,28 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 +
 `boot_ontap maint`
 
-. [[man_check_4_Step6]]Take one of the following actions:
+. Verify the settings by entering the following command and examining its output:
++
+`ucadmin show`
+
+. Take one of the following actions:
 +
 [cols=2*,options="header",cols="35,65"]
 |===
 |If you are configuring... |Then...
 |Ports on a UTA/UTA2A card
-|Go to <<man_check_4_Step7,Step 7>>.
+|Go to <<man_check_4_Step8,Step 8>>.
 |Onboard UTA/UTA2 ports
-|Skip Step 7 and go to <<man_check_4_Step8,Step 8>>.
+|Skip Step 8 and go to <<man_check_4_Step9,Step 9>>.
 |===
 
-. [[man_check_4_Step7]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
+. [[man_check_4_Step8]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
 `storage disable adapter _adapter_name_`
 +
 Adapters in target mode are automatically offline in Maintenance mode.
 
-. [[man_check_4_Step8]]If the current configuration does not match the desired use, enter the following command to change the configuration as needed:
+. [[man_check_4_Step9]]If the current configuration does not match the desired use, enter the following command to change the configuration as needed:
 +
 `ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
 +
@@ -76,9 +80,6 @@ Adapters in target mode are automatically offline in Maintenance mode.
 +
 NOTE: You must use FC initiator for tape drives and the FC target for SAN clients.
 
-. Verify the settings by entering the following command and examining its output:
-+
-`ucadmin show`
 
 . If the system as storage disks, enter the following command:
 +

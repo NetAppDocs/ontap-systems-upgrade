@@ -24,7 +24,7 @@ WARNING: Enter the commands in this section at the cluster prompt unless directe
 
 .Steps
 
-. Check how the ports are currently configured by using one of the following commands on node4:
+. Check how the ports are currently configured on node4:
 +
 `system node hardware unified-connect show`
 +
@@ -63,11 +63,28 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 
 |Have the personality that you want
 
-|Skip Step 5 through Step 12 and go to <<auto_check_4_step12,Step 12>>.
+|Skip Step 5 through Step 10 and go to <<auto_check_4_step11,Step 11>>.
 
 |===
 
-. [[auto_check_4_step5]]Take one of the following actions:
+. [[auto_check_4_step5]]Verify the settings:
++
+`ucadmin show`
++
+The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
++
+....
+*> ucadmin show
+Node  Adapter  Current Mode  Current Type  Pending Mode  Pending Type  Admin Status
+----  -------  ------------  ------------  ------------  ------------  ------------
+f-a   1a       fc             initiator    -             -             online
+f-a   1b       fc             target       -             initiator     online
+f-a   2a       fc             target       cna           -             online
+f-a   2b       fc             target       cna           -             online
+4 entries were displayed.
+*>
+....
+. Take one of the following actions:
 +
 [cols=2*,options="header"cols="30,70"]
 |===
@@ -85,7 +102,7 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 +
 Adapters in target mode are automatically offline in Maintenance mode.
 
-. [[auto_check_4_step7]]If the current configuration does not match the desired use, change the configuration as needed:
+. [[auto_check_4_step8]]If the current configuration does not match the desired use, change the configuration as needed:
 +
 `ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
 
@@ -94,23 +111,7 @@ Adapters in target mode are automatically offline in Maintenance mode.
 +
 NOTE: You must use FC initiator for tape drives and MetroCluster configurations. You must use the FC target for SAN clients.
 
-. [[auto_check_4_step8]]Verify the settings by using the following command and examining its output:
-+
-`ucadmin show`
-+
-The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
-+
-....
-*> ucadmin show
-Node  Adapter  Current Mode  Current Type  Pending Mode  Pending Type  Admin Status
-----  -------  ------------  ------------  ------------  ------------  ------------
-f-a   1a       fc             initiator    -             -             online
-f-a   1b       fc             target       -             initiator     online
-f-a   2a       fc             target       cna           -             online
-f-a   2b       fc             target       cna           -             online
-4 entries were displayed.
-*>
-....
+
 
 . Place any target ports online by entering one of the following commands, once for each port:
 +

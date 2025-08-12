@@ -41,7 +41,7 @@ NOTE: Enter the commands in this section at the cluster prompt unless directed t
 
 .Steps
 
-. Check how the ports are currently configured entering the following command on node3:
+. Check how the ports are currently configured on node3:
 +
 `system node hardware unified-connect show`
 +
@@ -79,32 +79,36 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 |Do not have the personality that you want
 |Go to <<man_check_3_step5,Step 5>>.
 |Have the personality that you want
-|Skip Step 5 through Step 12 and go to <<man_check_3_step13,Step 13>>.
+|Skip Step 5 through Step 13 and go to <<man_check_3_step14,Step 14>>.
 |===
 
 . [[man_check_3_step5]]If the system has storage disks and is running clustered Data ONTAP 8.3, boot node3 and enter maintenance mode:
 +
 `boot_ontap maint`
 
-. [[man_check_3_step6]]Take one of the following actions:
+. Verify the settings:
++
+`ucadmin show`
+
+. Take one of the following actions:
 +
 [cols="35,65"]
 |===
 |If you are configuring... |Then...
 
 |Ports on a UTA/UTA2 card
-|Go to <<man_check_3_step7,Step 7>>.
+|Go to <<man_check_3_step8,Step 8>>.
 |Onboard UTA/UTA2 ports
-|Skip Step 7 and go to <<man_check_3_step8,Step 8>>.
+|Skip Step 8 and go to <<man_check_3_step9,Step 9>>.
 |===
 
-. [[man_check_3_step7]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
+. [[man_check_3_step8]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
 `storage disable adapter _adapter_name_`
 +
 Adapters in target mode are automatically offline in maintenance mode.
 
-. [[man_check_3_step8]]If the current configuration does not match the desired use, change the configuration as needed:
+. [[man_check_3_step9]]If the current configuration does not match the desired use, change the configuration as needed:
 +
 `ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
 +
@@ -113,9 +117,7 @@ Adapters in target mode are automatically offline in maintenance mode.
 +
 NOTE: You need to use the FC initiator for tape drives and MetroCluster configurations. You need to use the FC target for SAN clients.
 
-. Verify the settings:
-+
-`ucadmin show`
+
 
 . Stop the system:
 +
