@@ -153,6 +153,6 @@ The output in the following examples show that the FC4 type of adapter "1b" is c
 +
 `network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 
-. [[man_check_3_step13]]Cable the port.
+. [[man_check_3_step14]]Cable the port.
 
 // Clean-up, 2022-03-09
