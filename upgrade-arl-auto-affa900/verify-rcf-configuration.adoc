@@ -12,7 +12,7 @@ summary: "Troubleshoot aggregate relocation failures that might occur when using
 :imagesdir: ../media/
 
 [.lead]
-At this stage in the upgrade procedure, all data aggregates should be on node1. If you're upgrading a configuration with switch attached clusters, you need to validate that the cluster switch configuration (reference configuration file) supports the shared cluster/HA ports for the new controllers.  
+At this stage in the upgrade procedure, all data aggregates should be on node1. If you're upgrading a configuration with switch attached clusters, you need to validate that the cluster switch reference configuration file (RCF) supports the shared cluster/HA ports for the new controllers.  
 
 If you're upgrading to a two-node switchless cluster configuration, you can skip this section and go to link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2]
 
