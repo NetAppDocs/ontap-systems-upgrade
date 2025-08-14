@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-affa900/verify-rcf-configuration.html
-keywords: aggregate, relocation, failures, arl, stage 2, stage 3, stage 5
-summary: "Troubleshoot aggregate relocation failures that might occur when using ARL to upgrade controller models in the same chassis."
+keywords: aggregate, relocation, cluster, switch, rcf, shared
+summary: "Verify that the cluster switch RCF supports the shared cluster/HA ports for the new controllers for switch attached clusters upgrades."
 ---
 = Verify the RCF configuration on cluster switches
 :hardbreaks:
