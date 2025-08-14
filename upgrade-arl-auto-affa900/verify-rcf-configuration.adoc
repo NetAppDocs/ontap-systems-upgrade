@@ -1,0 +1,46 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-affa900/verify-rcf-configuration.html
+keywords: aggregate, relocation, cluster, switch, rcf, shared
+summary: "Verify that the cluster switch RCF supports the shared cluster/HA ports for the new controllers for switch-attached clusters upgrades."
+---
+= Verify the RCF configuration on cluster switches
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+At this stage in the upgrade procedure, all data aggregates should be on node1. If you're upgrading a configuration with switch-attached clusters, you need to validate that the cluster switch reference configuration file (RCF) supports the shared cluster/HA ports for the new controllers.  
+
+If you're upgrading to a two-node switchless cluster configuration, you can skip this section and go to link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2].
+
+.Steps
+. Switch to advanced privilege mode:
++
+`set advanced`
+. Check the status of "IC RDMA":
++
+`ha interconnect status show`
++
+In the output, the "IC RDMA Connection" should have the status `Up`. 
++
+[cols=2*,options="header",cols="50,50"]
+|===
+|If the "IC RDMA Connection" status is ... |Then…
+| `Up`
+| Go to link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2].
+| `Down`
+| Go to <<verify-rcf-step3,Step 3>>.
+|===
+[[verify-rcf-step3]]
+. Check the cluster ports and switch RCF.
++
+For more information, see link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster[Connect to a switch-attached cluster]. 
+. Verify that the "IC RDMA Connection" status has changed to `Up`:
++
+`ha interconnect status show`
+
+.What's next
+link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2]
