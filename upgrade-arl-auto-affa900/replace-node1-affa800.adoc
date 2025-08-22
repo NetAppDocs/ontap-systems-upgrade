@@ -68,6 +68,11 @@ image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 or AFF A70
 +
 NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by AUTOBOOT as soon as you insert the new controller module. To avoid this AUTOBOOT, NetApp recommends connecting the serial and console cables before inserting the controller module. 
 
+. On the front of the chassis, use your thumbs to firmly push each drive in until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane.
++
+image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
+
+
 . With the cam handle in the open position, firmly push the controller module in until it meets the midplane and is fully seated. The locking latch rises when the controller module is fully seated. Close the cam handle to the locked position.
 +
 NOTE: To avoid damaging the connectors, don't use excessive force when sliding the controller module into the chassis.
