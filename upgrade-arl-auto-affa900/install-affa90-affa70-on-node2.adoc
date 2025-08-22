@@ -25,10 +25,12 @@ image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[Install an AFF A90 or AFF A70
 +
 NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by AUTOBOOT as soon as it is fully seated. To interrupt the node1 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node1 controller module.
 
-. On the front of the chassis, use your thumbs to firmly push each drive in until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane.
+
+. [[a90_push_drives_node2]] On the front of the chassis, use your thumbs to firmly push each drive in until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane.
 +
 image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
 
+.. Go to the rear of the chassis.
 . With the cam handle in the open position, firmly push the controller module in until it meets the midplane and is fully seated. The locking latch rises when the controller module is fully seated. Close the cam handle to the locked position.
 +
 NOTE: To avoid damaging the connectors, don't use excessive force when sliding the controller module into the chassis.
@@ -42,5 +44,7 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 . Save the default environment variables settings:
 +
 `saveenv`
+
+.  Repeat <<a90_push_drives_node2, Step 3>> to firmly push each drive in until you feel a positive stop.  This is to ensure that any drives that were unseated during the installation of the new controller are firmly seated.
 
 // 2024 APR 16, AFFFASDOC-32
