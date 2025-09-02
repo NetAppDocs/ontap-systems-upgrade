@@ -29,6 +29,10 @@ The node halts automatically.
 
 Remove the cable management device from the existing module and move the controller slightly out of the chassis.
 
+.Before you begin
+If you are not already grounded, correctly ground yourself.
+
+
 .Steps
 . Prepare to remove the controller module:
 .. On the front of the chassis, use your thumbs to firmly push each drive in to the top and bottom disk bays until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane. 
