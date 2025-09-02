@@ -92,9 +92,6 @@ If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the 
 . Save the default environment variables settings:
 +
 `saveenv`
-.  On the front of the chassis, use your thumbs to firmly push each drive in to the top and bottom disk bays until you feel a positive stop. This ensures that the drives are firmly seated against the chassis midplane.
-+
-image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
-.. Go to the rear of the chassis.
+ 
 
 // 2024 APR 16, AFFFASDOC-32
