@@ -48,18 +48,7 @@ Leave the cables in the cable management device so that when you reinstall the c
 . Press down on both of the locking latches, and then rotate both latches downward at the same time.
 +
 The controller module moves slightly out of the chassis.
-+
-image:a800_cable_management.png[Removing the cable management arm]
-+
-[cols=2*,cols="20,80"]
-|===
-a|
-image:black_circle_one.png[Number one]
-|Locking latch
-a|
-image:black_circle_two.png[Number two]
-|Locking pin
-|===
+
 
 
 .After you finish
