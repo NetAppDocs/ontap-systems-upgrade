@@ -66,3 +66,5 @@ image:black_circle_two.png[Number two]
 
 You can decommission node2 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system]. 
 // 10 DEC 2020, thomi, checked
+
+// 2025 Aug 09, AFFFASDOC-378

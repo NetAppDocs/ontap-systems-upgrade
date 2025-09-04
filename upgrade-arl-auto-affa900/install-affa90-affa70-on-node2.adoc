@@ -51,4 +51,5 @@ image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the 
 
 .. Go to the rear of the chassis.
 
+// 2025 Aug 09, AFFFASDOC-378
 // 2024 APR 16, AFFFASDOC-32
