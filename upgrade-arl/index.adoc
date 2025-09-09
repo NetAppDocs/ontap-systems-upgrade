@@ -177,7 +177,9 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 
 If your upgrade scenario is not supported using "system commands", you can perform an ARL upgrade using manual commands.
 
-
+.Show supported systems
+[%collapsible]
+=====
 [role="tabbed-block"]
 ====
 .ONTAP 9.8 or later
@@ -213,6 +215,7 @@ Manual ARL upgrades are supported for the following systems running ONTAP 9.7 an
 link:../upgrade-arl-manual/index.html[Manually upgrade controller hardware running ONTAP 9.7 or earlier] 
 --
 ====
+=====
 
  
 // 2025 MAR 18, AFFFASDOC-287
