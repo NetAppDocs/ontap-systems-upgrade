@@ -177,10 +177,43 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 
 If your upgrade scenario is not supported using "system commands", you can perform an ARL upgrade using manual commands.
 
-Choose the procedure for your ONTAP version to start the upgrade:
 
-* link:../upgrade-arl-manual-app/index.html[Manually upgrade controller hardware running ONTAP 9.8 or later]
-* link:../upgrade-arl-manual/index.html[Manually upgrade controller hardware running ONTAP 9.7 or earlier] 
+[role="tabbed-block"]
+====
+.ONTAP 9.8 or later
+--
+Manual ARL upgrades are supported for the following systems running ONTAP 9.8 and later:
+
+* FAS system to FAS system
+* AFF system to AFF system
++
+You can only upgrade to a replacement system in the same series:
++
+** AFF A-Series system to AFF A-Series system
+** AFF C-Series system to AFF C-Series system
+
+* ASA system to ASA system
++
+NOTE: ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from ASA to ASA r2, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
++
+You can only upgrade to a replacement system in the same series:
++
+** ASA A-Series system to ASA A-Series system
+** ASA C-Series system to ASA C-Series system
+
+link:../upgrade-arl-manual-app/index.html[Manually upgrade controller hardware running ONTAP 9.8 or later]
+--
+.ONTAP 9.7 or earlier
+--
+Manual ARL upgrades are supported for the following systems running ONTAP 9.7 and earlier:
+
+* FAS system to FAS system
+* AFF system to AFF system
+
+link:../upgrade-arl-manual/index.html[Manually upgrade controller hardware running ONTAP 9.7 or earlier] 
+--
+====
+
  
 // 2025 MAR 18, AFFFASDOC-287
 // 2024 NOV 25, AFFFASDOC-33
