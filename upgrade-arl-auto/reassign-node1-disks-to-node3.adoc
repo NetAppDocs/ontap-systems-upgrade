@@ -72,8 +72,7 @@ disks. Are you sure you want to continue?: yes
 .
 .
 Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
-.
-.
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node <node being replaced> disks.
 Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
 Partner sysid = 4294967295, owner sysid = 536953334
@@ -232,8 +231,7 @@ The following shows an example of the command output:
  -----------------------------------------------------------------
 ----
 
+// 2025 SEP 9, AFFFASDOC-312
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
-
 // top section of page 31 in PDF
-
 // 2022-06-02, Issue 55

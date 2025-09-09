@@ -300,6 +300,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 <output truncated>
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -395,3 +396,5 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 .. After the system boots to the special boot menu again, run option *(1) Normal Boot*
 + 
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step32,Step 32>> until the system boots normally. 
+
+// 2025 SEP 9, AFFFASDOC-312

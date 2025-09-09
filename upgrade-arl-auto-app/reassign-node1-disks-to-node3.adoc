@@ -87,6 +87,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 <output truncated>
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -254,6 +255,7 @@ The following shows an example of the command output:
  -----------------------------------------------------------------
 ----
 
+// 2025 SEP 9, AFFFASDOC-312
 // 2025 MAR 5, AFFFASDOC-297
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-06-02, Issue 55
