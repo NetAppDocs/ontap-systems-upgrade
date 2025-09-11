@@ -21,7 +21,9 @@ You perform the steps in this section on node4.
 
 . [[reassign-node2-node4-step1]]Go to the boot menu, and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
 +
-The prompts might get buried in the console messages. If you do not enter a node name or enter an incorrect name, you are prompted to enter the name again.
+After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
+
+These prompts might get buried in the console messages. If you do not enter a node name or enter an incorrect name, you are prompted to enter the name again.
 +
 .Expand the console output example
 [%collapsible]
