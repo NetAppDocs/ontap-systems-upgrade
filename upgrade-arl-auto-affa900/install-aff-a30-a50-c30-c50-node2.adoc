@@ -19,17 +19,16 @@ Install the replacement controller module that you received for the upgrade on n
 +
 NOTE: Don't completely insert the controller module in the chassis until instructed to do so later in the procedure.
 
-. Cable the management and console ports to the node1 controller module.
+. Cable the management and console ports to the node2 controller module.
 +
-NOTE: Because the chassis is already powered ON, node1 starts BIOS initialization followed by AUTOBOOT as soon as it is fully seated. To interrupt the node1 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node1 controller module.
+NOTE: Because the chassis is already powered ON, node2 starts BIOS initialization followed by AUTOBOOT as soon as it is fully seated. To interrupt the node2 boot, before completely inserting the controller module into the slot, it is recommended that you connect the serial console and management cables to the node2 controller module.
 
 . With the cam handle in the open position, firmly push the controller module in until it meets the midplane and is fully seated. The locking latch rises when the controller module is fully seated. Close the cam handle to the locked position.
 +
 NOTE: To avoid damaging the connectors, don't use excessive force when sliding the controller module into the chassis.
-
-. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
-. After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
-. On the replacement node2, at the LOADER> prompt, set the default environment variables:
+. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node2.
+. After you interrupt AUTOBOOT, node2 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node2 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
+. At the LOADER> prompt of node2, set the default environment variables:
 +
 `set-defaults`
 
@@ -38,5 +37,7 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 `saveenv`
 . For two-node switchless configurations, verify that you have an X60132A, 4-port 10/25 GbE card in slot1 on node2. The X60132A card is required for cluster interconnect during the upgrade.
 
+
 // 2025 JUN 19, AFFFASDOC-334
+// 2025 Aug 09, AFFFASDOC-378
 // 2024 DEC 9, AFFFASDOC-33
