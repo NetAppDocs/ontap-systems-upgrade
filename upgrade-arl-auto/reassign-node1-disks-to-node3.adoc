@@ -21,6 +21,8 @@ You perform the steps in this section on node3.
 
 . [[reassign-node1-node3-step1]]Go to the boot menu and using 22/7 and select the hidden option `boot_after_controller_replacement`. At the prompt, enter node1 to reassign the disks of node1 to node3, as per the following example.
 +
+The prompts might get buried in the console messages. If you do not enter a node name or enter an incorrect name, you are prompted to enter the name again.
++
 .Expand the console output example
 [%collapsible]
 ====
