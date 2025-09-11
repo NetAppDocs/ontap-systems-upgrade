@@ -37,10 +37,10 @@ The locking latch rises when the controller module is fully seated.
 +
 NOTE: To avoid damaging the connectors, don't use excessive force when sliding the controller module into the chassis.
 
-. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
+. Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node2.
 . After you interrupt AUTOBOOT, node2 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node2 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 
-. On the replacement node2, at the LOADER> prompt, set the default environment variables:
+. At the LOADER> prompt of node2, set the default environment variables:
 +
 `set-defaults`
 . Save the default environment variables settings:
@@ -48,6 +48,7 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 `saveenv`
 
 // 2025 JUN 19, AFFFASDOC-334
+// 2025 Aug 09, AFFFASDOC-378
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39
 // 2023-MAR-3, ontap-systems-upgrade/issues/78

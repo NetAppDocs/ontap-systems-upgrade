@@ -16,4 +16,4 @@ summary: If required, configure the new controller module for NVE or NAE when us
 include::../_include/ru_auto_set_up_netapp_volume_encryption_new_module.adoc[]
 
 .After you finish
-Check if any volumes were taken offline because authentication keys were not available or External Key Management servers could not be reached. Bring those volumes back online using the `volume online` command.
+Check if any volumes were taken offline because authentication keys were not available or External Key Management servers could not be reached. Bring those volumes back online by using the `volume online` command.

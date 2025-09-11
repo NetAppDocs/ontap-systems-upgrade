@@ -58,11 +58,11 @@ If your system has a tape SAN, then you need zoning for the initiators. If requi
 include::../_include/ru_auto_install_and_boot_node4_step_24_26.adoc[]
 
 [start=27]
-. [[auto_install4_step27]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps.
+. [[auto_install4_step27]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 +
-.. Set `bootarg.storageencryption.support` to `true` or `false`.
+.. Set `bootarg.storageencryption.support` to `true` or `false`:
 +
 [cols="35,65"]
 |===
