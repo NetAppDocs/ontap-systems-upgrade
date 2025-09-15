@@ -236,9 +236,11 @@ Enter the passphrase and the backup information that you recorded earlier proced
 
 . Boot the node into boot menu:
 +
-`boot_ontap menu`.
+`boot_ontap menu`
 
-. [[auto_check_4_step11]]On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
+. [[auto_check_4_step11]]When the node4 stops at the boot menu, reassign the node2 disks to node4 by running the following command on node4:
++
+`boot_after_controller_replacement`
 +
 After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
 
@@ -416,4 +418,5 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 + 
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step27,Step 27>> until the system boots normally. 
 
+// 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312
