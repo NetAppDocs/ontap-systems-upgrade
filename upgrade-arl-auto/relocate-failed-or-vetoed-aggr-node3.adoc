@@ -1,11 +1,10 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto/relocate_failed_or_vetoed_aggr.html
+permalink: upgrade-arl-auto/relocate-failed-or-vetoed-aggr-node3.html
 keywords: relocate, aggregates, fail, veto
-summary: "Manually relocate failed or vetoed aggregates when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
+summary: "Manually relocate failed or vetoed aggregates to node3 when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
-= Relocate failed or vetoed aggregates
+= Relocate failed or vetoed aggregates to node3
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +12,7 @@ summary: "Manually relocate failed or vetoed aggregates when upgrading controlle
 :imagesdir: ../media/
 
 [.lead]
-If any aggregates fail to relocate or are vetoed, you must take manually relocate the aggregates, or override either the vetoes or destination checks, if necessary.
+If any aggregates fail to relocate or are vetoed, you must take manually relocate the aggregates to node3, or override either the vetoes or destination checks, if necessary.
 
 .About this task
 
@@ -25,7 +24,7 @@ The relocation operation will have paused due to the error.
 
 . Relocate any failed or vetoed aggregates:
 +
-`storage aggregate relocation start -node _node1_ -destination _node2_ aggregate-list * -ndocontroller-upgrade true`
+`storage aggregate relocation start -node _node2_ -destination _node3_ aggregate-list * -ndocontroller-upgrade true`
 
 . When prompted, enter `y`.
 
@@ -45,4 +44,5 @@ The relocation operation will have paused due to the error.
 `storage aggregate relocation start -overridedestination-checks * -ndo-controllerupgrade true`
 |===
 
+// 2025 SEP 15, AFFFASDOC-388
 // 2022-05-16, BURT 1476241

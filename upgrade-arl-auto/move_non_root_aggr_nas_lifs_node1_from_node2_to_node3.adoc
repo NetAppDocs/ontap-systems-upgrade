@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node
 keywords: aggregate relocation, lifs, node3, node1, node2, NAS
 summary: "Move the node1 NAS data LIFs on node2 from node2 to node3 when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
 = Move non-root aggregates and NAS data LIFs owned by node1 from node2 to node3
 :hardbreaks:
 :nofooter:
@@ -69,7 +68,7 @@ The system pauses once the resource relocation is complete.
 
 . Verify that the non-root aggregates and NAS data LIFs have been successfully relocated to node3.
 +
-If any aggregates fail to relocate or are vetoed, you must manually relocate the aggregates, or override either the vetoes or destination checks, if necessary. See link:relocate_failed_or_vetoed_aggr.html[Relocate failed or vetoed aggregates] for more information.
+If any aggregates fail to relocate or are vetoed, you must manually relocate the aggregates, or override either the vetoes or destination checks, if necessary. See link:relocate-failed-or-vetoed-aggr-node2.html[Relocate failed or vetoed aggregates] for more information.
 
 . Verify that the SAN LIFs are on the correct ports on node3 by completing the following substeps:
 

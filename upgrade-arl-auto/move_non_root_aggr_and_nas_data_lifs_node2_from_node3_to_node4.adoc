@@ -65,7 +65,7 @@ The system pauses once the resource relocation is complete.
 
 . Manually verify that the non-root aggregates and NAS data LIFs have been successfully relocated to node4.
 +
-If any aggregates fail to relocate or are vetoed, you must take manually relocate the aggregates, or override either the vetoes or destination checks, if necessary. See the section link:relocate_failed_or_vetoed_aggr.html[Relocate failed or vetoed aggregates] for more information.
+If any aggregates fail to relocate or are vetoed, you must take manually relocate the aggregates, or override either the vetoes or destination checks, if necessary. See the section link:relocate-failed-or-vetoed-aggr-node2.html[Relocate failed or vetoed aggregates] for more information.
 
 . Confirm that the SAN LIFs are on the correct ports on node4 by completing the following substeps:
 +
