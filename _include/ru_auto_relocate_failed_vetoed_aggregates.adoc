@@ -1,8 +1,8 @@
-If any aggregates fail to relocate or are vetoed, you must manually relocate the aggregates to node2, or if necessary, override either the vetoes or destination checks.
+If any aggregates fail to relocate or are vetoed, you need to manually relocate the aggregates to node2, or if necessary, override either the vetoes or destination checks.
 
 .About this task
 
-The relocation operation will have paused due to the error.
+The system pauses the relocation operation due to the error.
 
 .Steps
 
