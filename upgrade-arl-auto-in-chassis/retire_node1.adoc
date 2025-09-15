@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/retire_node1.html
+keywords: retiring, node1, node, retire
+summary: "Disable the HA pair with node2 and shut node1 down when using ARL to upgrade controller models in the same chassis."
+---
+= Retire node1
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+
+[.lead]
+To retire node1, you resume the automated operation to disable the HA pair with node2 and shut down node1 correctly.
+
+.Steps
+.	Resume the operation:
++
+`system controller replace resume`
+
+.	Verify that node1 has been halted:
+
++
+`system controller replace show-details`
++
+After node1 has completely halted, node1 should be at the LOADER> prompt. To see the LOADER> prompt, connect to the serial console of node1.
+
+// 2022-OCT-24, BURT 1506458
+// 2022-APR-27, BURT 1452254

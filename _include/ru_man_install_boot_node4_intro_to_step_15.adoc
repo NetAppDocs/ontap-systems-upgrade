@@ -9,7 +9,7 @@ However, you aren't required to netboot node4 if it has the same or later versio
 
 [IMPORTANT]
 ====
-* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules]. 
+* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-in-chassis/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules]. 
 
 * If you're upgrading a V-Series system or a system with FlexArray Virtualization Software that is connected to storage arrays, you need to complete <<man_install4_Step1,Step 1>> through <<man_install4_Step7,Step 7>>, leave this section at <<man_install4_Step8,Step 8>> and follow instructions in link:set_fc_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4] as needed, entering the commands in Maintenance mode. You must then return to this section and resume the procedure at <<man_install4_Step9,Step 9>>.
 

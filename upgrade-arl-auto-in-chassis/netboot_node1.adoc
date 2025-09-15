@@ -1,0 +1,226 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/netboot_node1.html
+keywords: preparing, prepare, netboot, ontap, node1 
+summary:  When using ARL to upgrade controller models in the same chassis, you must netboot node1 after swapping the corresponding replacement system module.
+---
+= Netboot node1
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+After swapping the corresponding replacement system modules, you must netboot node1. The term netboot means that you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you add a copy of the ONTAP 9 boot image onto a web server that the system can access.
+
+It isn't possible to check the version of ONTAP installed on the boot media of the replacement controller module unless it is installed in a chassis and powered ON. The ONTAP version on the replacement system boot media must be same as the ONTAP version running on the old system that you are upgrading and both the primary and backup boot images on the boot media must match. To verify the minimum supported ONTAP version for your upgrade, see the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems,[supported system upgrade combinations].
+
+You can configure the images by performing a netboot followed by the `wipeconfig` command from the boot menu. If the controller module was previously used in another cluster, the `wipeconfig` command clears any residual configuration on the boot media.
+
+You can also use the USB boot option to perform the netboot. See the Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system[How to use the boot_recovery LOADER command for installing ONTAP for initial setup of a system^].
+
+.Before you begin
+* Verify that you can access a HTTP server with the system.
+* Download the necessary system files for your system and the correct version of ONTAP from the _NetApp Support Site_. Refer to link:other_references.html[References] to link to the _NetApp Support Site_.
+
+.About this task
+You must netboot the new controllers if they do not have the same version of ONTAP 9 installed on them that is installed on the original controllers. After you install each new controller, you boot the system from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots.
+
+.Steps
+.	Refer to link:other_references.html[References] to link to the _NetApp Support Site_ to download the files used for performing the netboot of the system.
+.	[[netboot_node1_step2]]Download the appropriate ONTAP software from the software download section of the _NetApp Support Site_ and store the `<ontap_version>_image.tgz` file on a web-accessible directory.
+.	Change to the web-accessible directory and verify that the files you need are available.
+.	Your directory listing should contain `<ontap_version>_image.tgz`.
+.	Configure the netboot connection by choosing one of the following actions.
++
+NOTE:	You must use the management port and IP as the netboot connection. Do not use a data LIF IP or a data outage might occur while the upgrade is being performed.
++
+[cols=2*,cols="35,65"]
+
+|===
+|If Dynamic Host Configuration Protocol (DHCP) is...	|Then...
+
+|Running
+|Configure the connection automatically by using the following command at the boot environment prompt:
+`ifconfig e0M -auto`
+|Not running
+a|Manually configure the connection by using the following command at the boot environment prompt:
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` is the IP address of the storage system (mandatory).
+`_netmask_` is the network mask of the storage system (mandatory).
+`_gateway_` is the gateway for the storage system (mandatory).
+`_dns_addr_` is the IP address of a name server on your network (optional).
+`_dns_domain_` is the Domain Name Service (DNS) domain name (optional).
+
+NOTE:	Other parameters might be necessary for your interface. Enter `help ifconfig` at the firmware prompt for details.
+|===
+
+.	Perform netboot on node1:
++
+`netboot \http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`
++
+NOTE:	Do not interrupt the boot.
+
+. (AFF A250 and AFF C250 upgrades only) When node1 for the replacement controller module is booting, the following warning displays because the configuration includes node2 for the existing controller:
++
+----
+*****************************************************
+* WARNING: Partner is not of the same family/model. *
+* Mixing is only allowed when upgrading the system. *
+* The system will shut down in 24 hours.            *
+*****************************************************
+Do you want to continue (y/n):
+----
++ 
+Answer `y`.
++
+This warning displays for every system boot until you upgrade node2. This is the expected behavior.
+
+. Wait for the node1 running on the replacement controller module to boot and display the boot menu options as shown below:
++
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)?
+----
+
+. From the boot menu, select option `(7) Install new software first`.
++
+This menu option downloads and installs the new ONTAP image to the boot device.
++
+Disregard the following message: 
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
++
+This note applies to nondisruptive ONTAP software upgrades, and not controller upgrades.
++
+NOTE: Always use netboot to update the new node to the desired image. If you use another method to install the image on the new controller, the incorrect image might install. This issue applies to all ONTAP releases. The netboot procedure combined with option `(7) Install new software` wipes the boot media and places the same ONTAP version on both image partitions.
+
+.	If you are prompted to continue the procedure, enter `y`, and when prompted for the package, enter the URL:
+`\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
++
+The `<path_to_the_web-accessible_directory>` should lead to where you downloaded the `<ontap_version>_image.tgz` in <<netboot_node1_step2,Step 2>>.
+
+.	Complete the following substeps to reboot the controller module:
+..	Enter `n` to skip the backup recovery when you see the following prompt:
++
+----
+Do you want to restore the backup configuration now? {y|n}
+----
+..	Enter `y` to reboot when you see the following prompt:
++
+----
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+----
++
+The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
+. Clear any previous configuration on the boot media.
+.. At the following prompt, run the `wipeconfig` command, and press the enter key:
++
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? wipeconfig
+----
+..	When you see the message below, answer `yes`:
++
+----
+This will delete critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?:
+----
+..	The node reboots to finish the `wipeconfig` and then stops at the boot menu.
++
+NOTE: Wait until the node stops at the boot menu after completing the `wipeconfig` operation.
+.	Select option `5` to go to maintenance mode from the boot menu. Answer `yes` to the prompts until the node stops at maintenance mode and the command prompt `*>`.
+.	Verify that the controller and chassis are configured as `ha`:
++
+`ha-config show`
++
+The following example shows the output of the `ha-config show` command:
++
+----
+Chassis HA configuration: ha
+Controller HA configuration: ha
+----
+.	If the controller and chassis are not configured as `ha`, use the following commands to correct the configuration:
++
+`ha-config modify controller ha`
++
+`ha-config modify chassis ha`
+.	Verify the `ha-config` settings:
++
+`ha-config show`
++
+----
+Chassis HA configuration: ha
+Controller HA configuration: ha
+----
+.	Halt node1:
++
+`halt`
++
+Node1 should stop at the LOADER prompt.
+.	On node2, check the system date, time, and time zone:
++
+`date`
+.	On node1, check the date by using the following command at the boot environment prompt:
++
+`show date`
+.	If necessary, set the date on node1:
++
+`set date _mm/dd/yyyy_`
++
+NOTE: Set the corresponding UTC date on node1.
+
+.	On node1, check the time by using the following command at the boot environment prompt:
++
+`show time`
+
+.	If necessary, set the time on node1:
++
+`set time _hh:mm:ss_`
++
+NOTE: Set the corresponding UTC time on node1.
+
+.	Set the partner system ID on node1:
++
+`setenv partner-sysid _node2_sysid_`
++
+For node1, the `partner-sysid` must be that of node2. You can obtain the node2 system ID from the `node show -node _node2_` command output on node2.
++
+..	Save the settings:
++
+`saveenv`
+.	On node1, at the LOADER prompt, verify the `partner-sysid` for node1:
++
+`printenv partner-sysid`
+
+
+// 2023 AUG 29, AFFFASDOC-78
+//BURT 1452254, 2022-04-27
+// BURT 1476251, 2022-05-16

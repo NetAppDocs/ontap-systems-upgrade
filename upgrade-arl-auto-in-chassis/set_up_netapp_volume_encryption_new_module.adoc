@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/set_up_netapp_volume_encryption_new_module.html
+keywords: set up, netapp volume encryption, controller, module, nve, node
+summary: If required, configure the new controller module for NVE or NAE when using ARL to upgrade controller models in the same chassis."
+---
+
+= Set up NetApp Volume or Aggregate Encryption on the new controller module
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+include::../_include/ru_auto_set_up_netapp_volume_encryption_new_module.adoc[]
+
+.After you finish
+Check if any volumes were taken offline because authentication keys were not available or External Key Management servers could not be reached. Bring those volumes back online by using the `volume online` command.
