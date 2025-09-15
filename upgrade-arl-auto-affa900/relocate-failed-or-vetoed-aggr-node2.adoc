@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-app-9151/relocate-failed-or-vetoed-aggr-node3.html
-keywords: relocating, failed, vetoed, aggregates, relocation, operation
-summary: "Manually relocate failed or vetoed aggregates to node3 when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+permalink: upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node2.html
+keywords: relocate, failed, vetoed, aggregates, relocation, operation
+summary: "Relocate failed or vetoed aggregates to node2 when using ARL to upgrade controller models in the same chassis."
 ---
-= Relocate failed or vetoed aggregates to node3
+= Relocate failed or vetoed aggregates to node2
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,6 +12,7 @@ summary: "Manually relocate failed or vetoed aggregates to node3 when upgrading 
 :imagesdir: ../media/
 
 [.lead]
-include::../_include/ru-auto-relocate-failed-vetoed-aggregates-node3.adoc[]
+
+include::../_include/ru_auto_relocate_failed_vetoed_aggregates.adoc[]
 
 // 2025 SEP 15, AFFFASDOC-388
