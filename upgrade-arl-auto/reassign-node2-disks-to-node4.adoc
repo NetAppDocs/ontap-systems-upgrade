@@ -102,7 +102,7 @@ Login: ...
 ----
 ====
 
-. If the system goes into a reboot loop with the message `no disks found`, this is because it has reset the ports back to the target mode and therefore is unable to see any disks. Continue by performing <<auto_check_4_step3,Step 3>> through <<auto_check_4_step8,Step 8>> on node4 to resolve this issue.
+. If the system goes into a reboot loop with the message `no disks found`, this is because it has reset the ports back to the target mode and therefore is unable to see any disks. Perform <<auto_check_4_step3,Step 3>> through <<auto_check_4_step8,Step 8>> on node4 to resolve this issue.
 
 . [[auto_check_4_step3]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 

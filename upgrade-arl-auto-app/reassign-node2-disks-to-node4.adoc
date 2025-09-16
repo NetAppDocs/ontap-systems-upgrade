@@ -147,7 +147,7 @@ Login:
 +
 NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. Perform one of the following to resolve this issue:
+. If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. Select one of the following tasks to resolve this issue:
 +
 * Perform <<reassign-node2-node4-app-step3,Step 3>> to <<reassign-node2-node4-app-step8,Step 8>> on node4
 * Go to section link:verify_node4_installation.html[Verify the node4 installation]
