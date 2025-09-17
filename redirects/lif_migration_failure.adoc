@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/lif_migration_failure.html
+redirects: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/lif-migration-failure.html
+---
