@@ -11,18 +11,14 @@ summary: "Verify that node2's NAS data LIFs that are on node3 are relocated from
 :linkattrs:
 :imagesdir: ../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:55.666158
-//
-
 [.lead]
-After you verify network configuration on node4 and before you relocate aggregates from node3 to node4, you must verify that the NAS data LIFs belonging to node2 that are currently on node3 are relocated from node3 to node4. You must also verify that the SAN LIFs exist on node4.
+After verifying the network configuration on node4, you need to relocate the NAS data LIFs owned by node2 from node3 to node4 and confirm that the SAN LIFs exist on node4.
 
 .About this task
 
-Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN LIFs is not necessary for cluster or service health during the upgrade. SAN LIFs are not moved unless they need to be mapped to new ports. You will verify that the LIFs are healthy and located on appropriate ports after you bring node4 online.
+Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN LIFs is not necessary for cluster or service health during the upgrade. SAN LIFs are not moved unless they need to be mapped to new ports. 
+
+Verify that the LIFs are healthy and located on the correct ports after you bring node4 online.
 
 NOTE: If you are changing the port speed of the T6-based Ethernet network interface cards or motherboard ports, you might observe malformed packets being received after the speed conversion. See https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339[NetApp Bugs Online Bug ID 1570339^] and the knowledge base article https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE[CRC errors on T6 ports after converting from 40GbE to 100GbE^] for guidance.
 
@@ -41,7 +37,7 @@ The system performs the following tasks:
 * Network reachability check
 
 +
-The operation pauses at this stage in the network reachability check.
+The system pauses the operation at this stage in the network reachability check.
 [start=2]
 . Resume the relocation operation:
 +
@@ -62,26 +58,30 @@ The controller replacement operation  pauses after the resource relocation is co
 +
 If the controller replacement procedure is paused, check and correct the error,  if any,  and then issue `resume` to continue the operation.
 
-. If necessary, restore and revert displaced LIFs or manually relocate LIFs that failed to relocate automatically.
+. If necessary, restore and revert displaced LIFs or manually migrate and modify the node2 LIFs that failed to relocate automatically to node4.
 +
 [role="tabbed-block"]
 ====
 .Restore and revert displaced LIFs
 --
-List any displaced LIFs:
-
+.. List any displaced LIFs:
++
 `cluster controller-replacement network displaced-interface show`
 
-If any LIFs are displaced, restore the home node back to node4:
-
-`cluster controller-replacement network displaced-interface restore-home-node`
+.. If any LIFs are displaced, restore the home node back to node4:
++
+`cluster controller-replacement network displaced-interface restore-home-node -node <node4_nodename> -vserver <vserver name> -lif-name <lif_name>`
 --
 
-.Manually relocate LIFs
+.Manually migrate and modify LIFs
 --
-Manually relocate LIFs to node4 that failed to relocate automatically: 
+.. Migrate the LIFs that failed to relocate automatically to node4:
++
+`network interface migrate -vserver <vserver name> -lif <lif_name> -destination-node <node4_nodename> -destination-port <port_on_node4>`
 
-`aggr relocation start -node cluster-02 -destination cluster-01 -aggregate-list n01_aggr1 -override-vetoes true`
+.. Modify the home node and home port for the migrated LIFs:
++
+`network interface modify -vserver <vserver_name> -lif <data_lif_name> -home-node <node4_nodename> -home-port <home_port>`
 --
 ====
 

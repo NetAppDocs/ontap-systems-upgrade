@@ -12,10 +12,12 @@ summary: "Verify that node2's NAS data LIFs on node1 are relocated from node1 to
 :imagesdir: ../media/
 
 [.lead]
-After you verify network configuration on node2 and before you relocate aggregates from node1 to node2, you verify that the NAS data LIFs belonging to node2 that are currently on node1 are relocated from node1 to node2. You must also verify that the SAN LIFs exist on node2.
+After verifying the network configuration on node2, you need to relocate the NAS data LIFs owned by node2 from node1 to node2 and confirm that the SAN LIFs exist on node2.
 
 .About this task
-Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN LIFs is not necessary for cluster or service health during the upgrade. SAN LIFs are not moved unless they need to be mapped to new ports. After you bring node2 online, you must verify that the LIFs are healthy and located on the appropriate ports.
+Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN LIFs is not necessary for cluster or service health during the upgrade. SAN LIFs are not moved unless they need to be mapped to new ports. 
+
+Verify that the LIFs are healthy and located on the correct ports after you bring node2 online.
 
 .Steps
 . Resume the relocation operation:
@@ -32,7 +34,7 @@ The system performs the following tasks:
 * Network reachability check
 --
 +
-The operation pauses at this stage in the network reachability check.
+The system pauses the operation at this stage in the network reachability check
 
 . Resume the relocation operation:
 +
@@ -55,27 +57,30 @@ The controller replacement operation pauses after the resource relocation is com
 +
 If the controller replacement procedure is paused, check and correct the error, if any, and then issue `resume` to continue the operation.
 
-. If necessary, restore and revert displaced LIFs or manually relocate LIFs that failed to relocate automatically.
+. If necessary, restore and revert displaced LIFs or manually migrate and modify the node2 LIFs that failed to relocate automatically to node2.
 +
 [role="tabbed-block"]
 ====
 .Restore and revert displaced LIFs
 --
-List any displaced LIFs:
-
+.. List any displaced LIFs:
++
 `cluster controller-replacement network displaced-interface show`
 
-If any LIFs are displaced, restore the home node back to node2:
-
-`cluster controller-replacement network displaced-interface restore-home-node`
+.. If any LIFs are displaced, restore the home node back to node2:
++
+`cluster controller-replacement network displaced-interface restore-home-node -node <node2_nodename> -vserver <vserver name> -lif-name <lif_name>`
 --
 
-.Manually relocate LIFs
+.Manually migrate and modify LIFs
 --
-Manually relocate LIFs to node2 that failed to relocate automatically: 
+.. Migrate the LIFs that failed to relocate automatically to node2:
++
+`network interface migrate -vserver <vserver name> -lif <lif_name> -destination-node <node2_nodename> -destination-port <port_on_node2>`
 
-`aggr relocation start -node cluster-02 -destination cluster-01 -aggregate-list n01_aggr1 -override-vetoes true`
-
+.. Modify the home node and home port for the migrated LIFs:
++
+`network interface modify -vserver <vserver_name> -lif <data_lif_name> -home-node <node2_nodename> -home-port <home_port>`
 --
 ====
 
