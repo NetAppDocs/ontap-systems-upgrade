@@ -9,7 +9,7 @@ The system pauses the relocation operation due to the error.
 . Check the event management system (EMS) logs to determine why the aggregate failed to relocate or was vetoed.
 . Relocate any failed or vetoed aggregates:
 +
-`storage aggregate relocation start -node _node1_ -destination _node2_ -aggregate-list _aggr_name_ -ndo-controller-upgrade true`
+`storage aggregate relocation start -node <node1> -destination <node2> -aggregate-list <aggregate_name> -ndo-controller-upgrade true`
 
 . When prompted, enter `y`.
 . You can force relocation by using one of the following methods:
@@ -20,10 +20,10 @@ The system pauses the relocation operation due to the error.
 
 |Overriding veto checks
 |Use the following command:
-`storage aggregate relocation start -node node1 -destination node2 -aggregate-list _aggr_list_ -ndo-controller-upgrade true -override-vetoes true`
+`storage aggregate relocation start -node node1 -destination node2 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true`
 |Overriding destination checks
 |Use the following command:
-`storage aggregate relocation start -node node1 -destination node2 -aggregate-list _aggr_list_ -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true`
+`storage aggregate relocation start -node node1 -destination node2 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true`
 |===
 
 // BURT 1478241 2022-04-12

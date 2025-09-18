@@ -57,7 +57,7 @@ entries:
     - title: Relocate non-root aggregates and NAS data LIFs from node2 to node1
       url: /upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html
     - title: Relocate failed or vetoed aggregates
-      url: /upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node3.html
+      url: /upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node1.html
     - title: Retire node2
       url: /upgrade-arl-auto-affa900/retire_node2.html
 - title: "Stage 5. Install the replacement system modules on node2"
