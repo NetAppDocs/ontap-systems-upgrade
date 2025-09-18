@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html
+

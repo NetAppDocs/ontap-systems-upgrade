@@ -1,4 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html
-redirects: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html
 ---
