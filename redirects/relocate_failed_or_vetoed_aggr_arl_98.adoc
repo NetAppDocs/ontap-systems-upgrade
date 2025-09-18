@@ -1,6 +1,0 @@
----
-permalink: upgrade-arl-auto-app/relocate_failed_or_vetoed_aggr.html
-redirect: ontap-systems-upgrade/upgrade-arl-auto-app/relocate-failed-or-vetoed-aggr-node2.html
----
-
-// 2025 SEP 15, AFFFASDOC-388
