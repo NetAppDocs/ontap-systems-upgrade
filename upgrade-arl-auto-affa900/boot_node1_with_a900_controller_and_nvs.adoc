@@ -27,7 +27,7 @@ When replacing the controller and NVRAM modules, move only the console and manag
 +
 `boot_ontap maint`
 
-.. Anser `y` to the mixed platform confirmation prompt.
+.. Answer `y` to the mixed platform confirmation prompt.
 .. Answer `yes` to the confirmation prompt.
 .. Show the state of the 100GbE interfaces:
 +

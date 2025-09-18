@@ -230,7 +230,7 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 + 
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<reassign-node2-node4-app-step8,Step 8>> until the system boots normally. 
 
-. [[reassign-node2-node4-app-step9]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu on node 4 and select option `5` to enter maintenance mode.
+. [[reassign-node2-node4-app-step9]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu on node4 and select option `5` to enter maintenance mode.
 +
 WARNING: *You must perform the following substeps in the exact order shown; failure to do so might cause an outage or even data loss.*
 

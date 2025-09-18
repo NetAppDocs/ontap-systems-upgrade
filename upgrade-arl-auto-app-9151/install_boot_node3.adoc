@@ -231,7 +231,7 @@ Enter the passphrase and the backup information that you recorded earlier proced
 +
 `boot_ontap menu`
 
-. When the node3 stops at the boot menu, reassign the node1 disks to node3 by running the following command on node3:
+. When node3 stops at the boot menu, reassign the node1 disks to node3 by running the following command on node3:
 +
 `boot_after_controller_replacement`
 +

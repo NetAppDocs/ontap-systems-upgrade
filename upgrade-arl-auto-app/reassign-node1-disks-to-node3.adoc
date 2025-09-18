@@ -128,7 +128,7 @@ NOTE: In the above console output example, ONTAP will prompt you for the partner
 
 . If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. Select one of the following tasks to resolve this issue:
 * Perform <<reassign-node1-node3-app-step3,Step 3>> to <<reassign-node1-node3-app-step8,Step 8>> on node3
-* Go section link:verify_node3_installation.html[Verify the node3 installation]
+* Go to section link:verify_node3_installation.html[Verify the node3 installation]
 
 . [[reassign-node1-node3-app-step3]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 
