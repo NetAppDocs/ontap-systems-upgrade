@@ -93,7 +93,7 @@ NOTE: The HA pair and storage failover remain disabled in the current state.
 ----
 network interface modify -vserver Cluster -lif <cluster_LIF> -home-node <node4> -home-port <port_name>
 ----
-. If interface groups and data VLANs are in use on the FAS2820 cluster you are upgrading, do this step. If not, go to <<migrate_node1_nod4,Step 9>>.
+. If interface groups and data VLANs are in use on the FAS2820 cluster you are upgrading, do this step. If not, go to <<migrate_node1_nod4,Step 11>>.
 +
 The physical network port names on the replacement controller differ from those on the FAS2820. This might lead to incorrectly configured interface groups and displaced VLANs on node4. Check, and if required, fix any incorrectly configured interface groups and displaced VLANs:
 +
@@ -120,7 +120,7 @@ ifgrp add-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
 ----
 
 [[migrate_node1_nod4]]
-[start=9] 
+[start=11] 
 . Migrate the data aggregates on node1 to node4:
 +
 [source,cli]

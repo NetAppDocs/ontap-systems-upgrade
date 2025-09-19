@@ -46,14 +46,14 @@ disk reassign -s <node1_system_ID> -d <node3_system_ID>
 .If you're using partitioned disks
 --
 Run the following command:
-+
+
 [source,cli]
 ----
 disk reassign -s <node1_system_ID> -d <node3_system_ID> -p <node4_system_ID>
 ----
 --
 ====
-----
+
 . Verify that all reassigned drives are viewable to the new system ID:
 +
 [source,cli]

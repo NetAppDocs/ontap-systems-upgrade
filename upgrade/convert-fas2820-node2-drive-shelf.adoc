@@ -9,7 +9,7 @@ summary: Convert node 2 (FAS2820) to a DS212C drive shelf and then connect to no
 :imagesdir: ../media/
 
 [.lead]
-Convert FAS2820 node2 to a DS212C drive shelf. Connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the reference controllers inside the DS212C shelf.
+Convert FAS2820 node2 to a DS212C drive shelf. Connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the controllers inside the DS212C shelf.
 
 .Steps
 . Disconnect all the network cables from node2.

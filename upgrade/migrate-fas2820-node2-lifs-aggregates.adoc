@@ -18,7 +18,7 @@ Verify that you meet the following requirements:
 
 [NOTE]
 ====
-* You need to netboot and install the ONTAP version on node3 and node4 to match the ONTAP version on the FAS2820 systems.
+* You need to netboot and install the ONTAP version on node3 and node4 to match the ONTAP version on the FAS2820 systems. Node3 and node4 are the replacement controllers.
 * Both the primary and backup boot image of the node3 and node4 controllers must have the same ONTAP version.
 * You need to clear any residual cluster configuration on node3 and node4 by performing a `wipeconfig` from the boot menu.
 ====

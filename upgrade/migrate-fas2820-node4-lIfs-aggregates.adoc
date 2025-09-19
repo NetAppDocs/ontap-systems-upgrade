@@ -128,6 +128,7 @@ network interface show -role cluster-mgmt
 ----
 storage aggregate show
 ----
+
 . Enable cluster high availability in the two-node cluster: 
 +
 [source,cli]
@@ -135,22 +136,23 @@ storage aggregate show
 cluster ha modify -configured true
 ----
 
-. Enable and verify storage failover:
+. Enable and verify storage failover for node3 and node4:
 +
 [source,cli]
----
+----
 storage failover modify -node <node3> -enabled true
 ----
 +
 [source,cli]
----
+----
 storage failover modify -node <node4> -enabled true
 ----
 +
 [source,cli]
----
+----
 storage failover show
 ----
+
 . Migrate data aggregates owned by node4 that should be owned by node3:
 + 
 [source,cli]
