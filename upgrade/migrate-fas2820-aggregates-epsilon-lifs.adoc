@@ -1,15 +1,15 @@
 ---
-permalink: upgrade/upgrade_fas2820_migrate_aggregates_epsilon_lifs_node1_node4.html
+permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html
 sidebar: sidebar
 keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs
-summary:  Before converting FAS2820 node1 to a drive shelf, you migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to node4.
+summary:  Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to node4.
 ---
-= Migrate data aggregates, epsilon, and LIFs on node1 to node4
+= Migrate data aggregates, epsilon, and LIFs on FAS2820 node1 to node4
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Before converting FAS2820 node1 to a drive shelf, you migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to node4.
+Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on the FAS2820 node1 to node4.
 
 .About this task
 You perform the following steps on node4.
@@ -21,7 +21,7 @@ You perform the following steps on node4.
 ----
 setenv partner-sysid <system_ID_of_node1>
 ----
-. Verify the partner system-ID:
+. Check the partner system-ID:
 +
 [source,cli]
 ----
@@ -77,8 +77,8 @@ network port modify -node <node4> -port <port_name> -mtu 9000 -ipspace Cluster
 [source,cli]
 ----
 network interface migrate -vserver Cluster -lif <cluster_LIF>  -destination-node <node4> -destination-port <port_name>
----- 
-. Wait for the cluster to come into quorum, and verify that the cluster nodes are healthy:
+----
+. Wait for the cluster to reach quorum, then verify that the cluster nodes are healthy:
 +
 [source,cli]
 ----
@@ -93,9 +93,9 @@ NOTE: The HA pair and storage failover remain disabled in the current state.
 ----
 network interface modify -vserver Cluster -lif <cluster_LIF> -home-node <node4> -home-port <port_name>
 ----
-. If interface groups and data VLANs are in use on the FAS2820 cluster you are upgrading, perform this step. If not, go to <<migrate_node1_nod4,Step 9>>.
+. If interface groups and data VLANs are in use on the FAS2820 cluster you are upgrading, do this step. If not, go to <<migrate_node1_nod4,Step 9>>.
 +
-The physical network port names on the replacement controller are different to those on the FAS2820. This might lead to incorrectly configured interface groups and displaced VLANs on node4. Check, and if required, fix any incorrectly configured interface groups and displaced VLANs:
+The physical network port names on the replacement controller differ from those on the FAS2820. This might lead to incorrectly configured interface groups and displaced VLANs on node4. Check, and if required, fix any incorrectly configured interface groups and displaced VLANs:
 +
 [source,cli]
 ----
@@ -127,7 +127,7 @@ ifgrp add-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
 ----
 storage aggregate relocation start -aggregate-list <aggregate_list_name> -node <node1> -destination <node4> -ndo-controller-upgrade true -override-destination-checks true   
 ----
-. Display the status of all data aggregates in the cluster:
+. Show data aggregate status:
 +
 [source,cli]
 ----
@@ -146,7 +146,7 @@ cluster modify -epsilon false -node <node1>
 ----
 cluster modify -epsilon true -node <node4>
 ----
-. Display the cluster status to verify the epsilon change:
+. Show cluster status to verify the epsilon change:
 +
 [source,cli]
 ----
@@ -198,6 +198,6 @@ halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
 
 .What's next?
 
-link:upgrade_fas2820_convert_node1_drive_shelf_connect_node3.html[Convert node1 to a drive shelf and connect to node3]
+link:convert-fas2820-node1-drive-shelf.html[Convert node1 to a drive shelf and connect to node3]
 
 // 2023 Oct 12, AFFFASDOC-64

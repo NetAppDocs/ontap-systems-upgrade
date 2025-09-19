@@ -71,7 +71,7 @@ entries:
       url: /upgrade/upgrade-complete-move-volumes.html
   - title: Upgrade AFF A250 to AFF A400
     entries:
-    - title: Workflow
+    - title: Learn about upgrading AFF A250 to AFF A400
       url: /upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html
     - title: Migrate LIFs and data aggregates on node2 to node1
       url: /upgrade/upgrade_migrate_lifs_aggregates_node2_to_node1.html
@@ -89,19 +89,19 @@ entries:
       url: /upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html
   - title: Upgrade FAS2820
     entries:
-    - title: Workflow
-      url: /upgrade/upgrade_convert_fas2820_to_drive_shelf_workflow.html
+    - title: Learn about upgrading FAS2820
+      url: /upgrade/convert-fas2820-to-drive-shelf.html
     - title: Migrate LIFs and data aggregates on node2 to node1
-      url: /upgrade/upgrade_fas2820_migrate_lifs_aggregates_node2_to_node1.html
+      url: /upgrade/migrate-fas2820-node2-lifs-aggregates.html
     - title: Convert node2 to a drive shelf and connect to node4
-      url: /upgrade/upgrade_fas2820_convert_node2_drive_shelf_connect_node4.html
+      url: /upgrade/convert-fas2820-node2-drive-shelf.html
     - title: Reassign drives from node2 to node4
-      url: /upgrade/upgrade_fas2820_reassign_drives_node2_to_node4.html
+      url: /upgrade/reassign-fas2820-node2-drives.html
     - title: Migrate data aggregates, epsilon, and LIFs on node1 to node4
-      url: /upgrade/upgrade_fas2820_migrate_aggregates_epsilon_lifs_node1_node4.html
+      url: /upgrade/migrate-fas2820-aggregates-epsilon-lifs.html
     - title: Convert node1 to a drive shelf and connect to node3
-      url: /upgrade/upgrade_fas2820_convert_node1_drive_shelf_connect_node3.html    
+      url: /upgrade/convert-fas2820-node1-drive-shelf.html    
     - title: Reassign drives from node1 to node3
-      url: /upgrade/upgrade_fas2820_reassign_drives_node1_to_node3.html
+      url: /upgrade/reassign-fas2820-node1-drives.html
     - title: Migrate LIFs and data aggregates on node4 to node3
-      url: /upgrade/upgrade_fas2820_migrate_lIFs_aggregates_node4_node3.html
+      url: /upgrade/migrate-fas2820-node4-lIfs-aggregates.html

@@ -1,5 +1,5 @@
 ---
-permalink: upgrade/upgrade_fas2820_convert_node2_drive_shelf_connect_node4.html
+permalink: upgrade/convert-fas2820-node2-drive-shelf.html
 sidebar: sidebar
 keywords: fas8280, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
 summary: Convert node 2 (FAS2820) to a DS212C drive shelf and then connect to node4.
@@ -9,7 +9,7 @@ summary: Convert node 2 (FAS2820) to a DS212C drive shelf and then connect to no
 :imagesdir: ../media/
 
 [.lead]
-Convert FAS2820 node2 to a DS212C drive shelf and then connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the reference controllers inside the DS212C shelf.
+Convert FAS2820 node2 to a DS212C drive shelf. Connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the reference controllers inside the DS212C shelf.
 
 .Steps
 . Disconnect all the network cables from node2.
@@ -24,6 +24,6 @@ NOTE: If node4 only supports 10GbE cluster connections, you must have 10GbE cabl
 
 .What's next?
 
-link:upgrade_fas2820_reassign_drives_node2_to_node4.html[Reassign drives from node2 to node4]
+link:reassign-fas2820-node2-drives.html[Reassign drives from node2 to node4]
 
 // 2023 Oct 12, AFFFASDOC-64

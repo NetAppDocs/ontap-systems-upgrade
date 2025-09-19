@@ -1,15 +1,15 @@
 ---
-permalink: upgrade/upgrade_fas2820_reassign_drives_node1_to_node3.html
+permalink: upgrade/reassign-fas2820-node1-drives.html
 sidebar: sidebar
 keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives
 summary: After converting FAS2820 node1 to a DS212C drive and connecting to node3, you reassign the drives that previously belonged to node1 to node3.
 ---
-= Reassign drives from node1 to node3
+= Reassign drives from FAS2820 node1 to node3
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-After converting FAS2820 node1 to a DS212C drive and connecting to node3, you reassign the drives that previously belonged to node1 to node3.
+Reassign the drives that previously belonged to FAS2820 node1 to node3.
 
 .About this task
 You perform the following steps on node3.
@@ -71,6 +71,6 @@ halt
 
 .What's next?
 
-link:upgrade_fas2820_migrate_lIFs_aggregates_node4_node3.html[Migrate LIFs and data aggregates on node4 to node3]
+link:migrate-fas2820-node4-lIfs-aggregates.html[Migrate LIFs and data aggregates on node4 to node3]
 
 // 2023 Oct 12, AFFFASDOC-64

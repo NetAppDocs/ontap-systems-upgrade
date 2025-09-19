@@ -95,8 +95,8 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 
 .Related information
 
-* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Upgrade AFF A250 to AFF A400 by converting to a drive shelf] (nondisruptive procedure)
-* link:upgrade_convert_fas2820_to_drive_shelf_workflow.html[Upgrade FAS2820 by converting to a drive shelf] (nondisruptive procedure)
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Convert AFF A250 to drive shelf and upgrade to AFF A400] (nondisruptive procedure)
+* link:convert-fas2820-to-drive-shelf.html[Upgrade FAS2820 by converting to a drive shelf] (nondisruptive procedure)
 * link:../choose_controller_upgrade_procedure.html[Choose methods for upgrading controller hardware]
 * link:upgrade-by-moving-storage-parent.html[Upgrade controller hardware by moving storage]
 * link:upgrade-by-moving-volumes-parent.html[Upgrade controller hardware by moving volumes]

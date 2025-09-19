@@ -1,30 +1,30 @@
 ---
-permalink: upgrade/upgrade_fas2820_migrate_lifs_aggregates_node2_to_node1.html
+permalink: upgrade/migrate-fas2820-node2-lifs-aggregates.html
 sidebar: sidebar
 keywords: fas2820, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs
-summary: Before converting FAS2820 node2 to a drive shelf, you migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.
+summary: Migrate the logical interfaces (LIFs) and data aggregates on FAS2820 node2 to node1 before converting node2 to a drive shelf.
 ---
-= Migrate LIFs and data aggregates on node2 to node1
+= Migrate LIFs and data aggregates on FAS2820 node2 to node1
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Before converting FAS2820 node2 to a drive shelf, you migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.
+Migrate the logical interfaces (LIFs) and data aggregates on FAS2820 node2 to node1 before converting node2 to a drive shelf.
 
 .Before you begin
 Verify that you meet the following requirements:
 
-* The FAS2820 and replacement controllers are running the same ONTAP release and patch version, when possible. See the https://hwu.netapp.com[NetApp Hardware Universe^] for supported ONTAP releases for your systems.
-+
+* The FAS2820 and replacement controllers have the same ONTAP release and patch version, when possible. Refer to the https://hwu.netapp.com[NetApp Hardware Universe^] for supported ONTAP releases.
+
 [NOTE]
 ====
-* You need to netboot and install the ONTAP version on the node3 and node4 controllers that is the same as the version running on the FAS2820 systems.
+* You need to netboot and install the ONTAP version on node3 and node4 to match the ONTAP version on the FAS2820 systems.
 * Both the primary and backup boot image of the node3 and node4 controllers must have the same ONTAP version.
 * You need to clear any residual cluster configuration on node3 and node4 by performing a `wipeconfig` from the boot menu.
 ====
 
 * Both replacement controllers are on standby at the LOADER prompt.
-* You have all the appropriate cabling on-hand.
+* You have all the correct cabling available.
 
 
 .About this task
@@ -139,6 +139,6 @@ halt -node <node2> -inhibit-takeover true -ignore-quorum-warnings true
 
 .What's next?
 
-link:upgrade_fas2820_convert_node2_drive_shelf_connect_node4.html[Convert node2 to a drive shelf and connect to node4]
+link:convert-fas2820-node2-drive-shelf.html[Convert node2 to a drive shelf and connect to node4]
 
 // 2023 Oct 12, AFFFASDOC-64
