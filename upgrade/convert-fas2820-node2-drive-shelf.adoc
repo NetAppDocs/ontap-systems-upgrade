@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8280, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
 summary: Convert node 2 (FAS2820) to a DS212C drive shelf and then connect to node4.
 ---
-= Convert node2 to a drive shelf and connect to node4
+= Convert FAS2820 node2 to a drive shelf and connect to node4
 :icons: font
 :imagesdir: ../media/
 
