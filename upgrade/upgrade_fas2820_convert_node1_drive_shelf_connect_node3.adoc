@@ -1,0 +1,28 @@
+---
+permalink: upgrade/upgrade_fas2820_convert_node1_drive_shelf_connect_node3.html
+sidebar: sidebar
+keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives
+summary: Convert FAS2820 node1 to a DS212C drive shelf and then connect to node3 before reassigning drives from node1 to node3.
+---
+= Convert node1 to a drive shelf and connect to node3
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Convert FAS2820 node1 to a DS212C drive shelf and then connect to node3 before reassigning drives from node1 to node3.
+
+.Steps
+. Disconnect all network cables from node1.
+. Remove node1 from the FAS2820 chassis.
+. Insert the IOM12 or IOM12B module into the bay of node1.
+. Cable the node3 SAS port to an available port on the IOM12 or IOM12B module. See the link:https://hwu.netapp.com[Hardware Universe^] to verify the SAS ports for your system. See the link:https://hwu.netapp.com[Hardware Universe^] to verify the SAS ports for your system. 
+
+. Create temporary cluster connections by connecting the node4 cluster ports to any cluster ports on node3.
++
+NOTE: If node3 only supports 10GbE cluster connections, you must have 10GbE cabling to create temporary cluster connections.
+
+.What's next?
+
+link:upgrade_fas2820_reassign_drives_node1_to_node3.html[Reassign drives from node1 to node3]
+
+// 2023 Oct 12, AFFFASDOC-64

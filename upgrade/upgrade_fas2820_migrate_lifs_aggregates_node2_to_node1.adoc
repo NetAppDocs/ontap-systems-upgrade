@@ -1,0 +1,144 @@
+---
+permalink: upgrade/upgrade_fas2820_migrate_lifs_aggregates_node2_to_node1.html
+sidebar: sidebar
+keywords: fas2820, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs
+summary: Before converting FAS2820 node2 to a drive shelf, you migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.
+---
+= Migrate LIFs and data aggregates on node2 to node1
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before converting FAS2820 node2 to a drive shelf, you migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.
+
+.Before you begin
+Verify that you meet the following requirements:
+
+* The FAS2820 and replacement controllers are running the same ONTAP release and patch version, when possible. See the https://hwu.netapp.com[NetApp Hardware Universe^] for supported ONTAP releases for your systems.
++
+[NOTE]
+====
+* You need to netboot and install the ONTAP version on the node3 and node4 controllers that is the same as the version running on the FAS2820 systems.
+* Both the primary and backup boot image of the node3 and node4 controllers must have the same ONTAP version.
+* You need to clear any residual cluster configuration on node3 and node4 by performing a `wipeconfig` from the boot menu.
+====
+
+* Both replacement controllers are on standby at the LOADER prompt.
+* You have all the appropriate cabling on-hand.
+
+
+.About this task
+The following steps are performed on FAS2820 node1.
+
+.Steps
+. Access the advanced privilege level:
++
+[source,cli]
+----
+set -privilege advanced
+----
+. Disable storage failover automatic giveback:
++
+[source,cli]
+----
+storage failover modify -node node1 -auto-giveback false
+----
+. Disable auto-revert of the LIFs across both nodes of the HA pair:
++
+[source,cli]
+----
+network interface modify -lif * -auto-revert false  
+----
+. Display the status of all data network LIFs:
++
+[source,cli]
+----
+network interface show -role data
+----
+. Display the status of the cluster management LIFs:
++
+[source,cli]
+----
+network interface show -role cluster-mgmt
+----
+. Migrate all data LIFs from the storage virtual machines hosted on node2:
++
+[source,cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node1> -destination-port <port_name>
+----
++
+NOTE: This command only migrates non-SAN LIFs. You cannot use it to migrate iSCSI and FCP LIFs.
+. Display the status of all data LIFs in the cluster:
++
+[source,cli]
+----
+network interface show -role data
+----
+. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
++
+[source,cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up
+----
+. Display the status of all data aggregates in the cluster:
++
+[source,cli]
+----
+storage aggregate show
+----
+. Display failover eligibility:
++
+[source,cli]
+----
+storage failover show
+----
+. Migrate the data aggregates on node2 to node1:
++
+[source,cli]
+----
+storage aggregate relocation start -aggregate <aggregate_name> -node <node2> -destination <node1>  
+----
+. Display the status of all data aggregates in the cluster:
++
+[source,cli]
+----
+storage aggregate show
+----
+. Display the status of all data volumes in the cluster:
++
+[source,cli]
+----
+volume show
+----
+. Display the `ha` status and ownership of epsilon:
++
+[source,cli]
+----
+cluster show 
+----
+
+. Disable cluster ha:
++
+[source,cli]
+----
+cluster ha modify -configured false 
+----
+. Display the `ha` status and ownership of epsilon:
++
+[source,cli]
+----
+cluster show
+----
+. Halt node2:
++
+[source,cli]
+----
+halt -node <node2> -inhibit-takeover true -ignore-quorum-warnings true
+----
+
+.What's next?
+
+link:upgrade_fas2820_convert_node2_drive_shelf_connect_node4.html[Convert node2 to a drive shelf and connect to node4]
+
+// 2023 Oct 12, AFFFASDOC-64

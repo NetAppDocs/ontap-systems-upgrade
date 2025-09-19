@@ -1,0 +1,85 @@
+---
+permalink: upgrade/upgrade_fas2820_reassign_drives_node2_to_node4.html
+sidebar: sidebar
+keywords: fas2820, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
+summary: After converting FAS2820 node2 to a DS212C drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4. 
+---
+= Reassign drives from node2 to node4
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After converting FAS2820 node2 to a DS212C drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4. 
+
+.Before you begin
+Verify that both node3 and node4 are on standby at the LOADER prompt.
+
+.About this task
+You perform the following steps on node4.
+
+.Steps
+. At the LOADER prompt, boot node4 into Maintenance Mode:
++
+[source,cli]
+----
+boot_ontap maint
+----
++
+The Maintenance Mode prompt appears.
+
+. Display all attached drives: 
++
+[source,cli]
+----
+disk show -v
+----
+. Record the local system ID value; this is the system ID of node4. Also record the system IDs of node1 and node2 from the "OWNER" column. 
+. Reassign all drives from node2 to node4.
++
+[role="tabbed-block"]
+====
+.If you're using whole disks
+--
+Run the following command:
+[source,cli]
+----
+disk reassign -s <node2_system_ID> -d <node4_system_ID> 
+----
+--
+.If you're using partitioned disks
+--
+Run the following command:
+[source,cli]
+----
+disk reassign -s <node2_system_ID> -d <node4_system_ID> -p <node1_system_ID>
+----
+--
+====
+. Verify that all reassigned drives are viewable to the new system ID:
++
+[source,cli]
+----
+disk show -s <node4_System_ID>
+----
++ 
+CAUTION: If drives are not viewable, *stop* and contact technical support for assistance. 
+
+. Verify that the root aggregate of node2 is reported in the output and the aggregate is online:
++
+[source,cli]
+----
+aggr status
+----
+
+. Exit maintenance mode: 
++
+[source,cli]
+----
+halt
+----
+
+.What's next?
+
+link:upgrade_fas2820_migrate_aggregates_epsilon_lifs_node1_node4.html[Migrate data aggregates, epsilon, and LIFs on node1 to node4]
+
+// 2023 Oct 12, AFFFASDOC-64

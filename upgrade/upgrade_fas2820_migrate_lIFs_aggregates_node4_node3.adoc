@@ -1,0 +1,202 @@
+---
+permalink: upgrade/upgrade_fas2820_migrate_lIFs_aggregates_node4_node3.html
+sidebar: sidebar
+keywords: fas2820, ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif
+summary: To complete the upgrade, you connect node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.
+---
+= Migrate LIFs and data aggregates on node4 to node3
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To complete the upgrade, you connect node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.
+
+.About this task
+
+You perform the following steps on node3.
+
+.Steps
+. At the LOADER prompt for node3, boot the node into the boot menu:
++
+[source,cli]
+----
+boot_ontap menu
+----
+. Select option `6 Update flash from backup config` to restore the /var file system to node3.
++
+This replaces all flash-based configuration with the last backup to disks. 
+. Enter `y` to continue.
+. Allow the node to boot as normal.
++
+[NOTE]
+====
+The node automatically reboots to load the new copy of the /var file system.
+
+The node reports a warning that there is a system ID mismatch. Enter `y` to override the system ID.
+====
+
+. Verify that the cluster and HA ports are connected between node3 to node4.
+
+. Display the cluster and HA ports on node3 and node4:
++
+[source,cli]
+----
+set -privilege advanced
+----
++
+[source,cli]
+----
+network port show
+----
+. Modify the cluster broadcast domain to include the desired cluster ports:
++
+[source,cli]
+----
+network port broadcast-domain remove-ports -broadcast-domain <broadcast_domain_name> -ports <port_names>
+----
++
+[source,cli]
+----
+network port broadcast-domain add-ports -broadcast-domain Cluster -ports <port_names>
+----
++
+NOTE: Beginning with ONTAP 9.8, new IPspaces and one or more broadcast domains might be designated to existing physical ports that are intended for cluster connectivity.
+. Modify the cluster IPspace to include the desired cluster ports and set the maximum transmission unit to 9000 if not already set:
++
+[source,cli]
+----
+network port modify -node <node_name> -port <port_name> -mtu 9000 -ipspace Cluster
+----
+. Display all cluster network LIFs:
++
+[source,cli]
+----
+network interface show -role cluster
+----
+. Migrate all cluster network LIFs on both nodes to their planned home ports:
++
+[source,cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node_name> -destination-port <port_name>
+----
+. Display all cluster network LIFs:
++
+[source,cli]
+----
+network interface show -role cluster
+----
+. Configure the home ports for the cluster network LIFs:
++
+[source,cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-port <port_name>
+----
+. Migrate all data LIFs meant for node3 back to node3:
++
+[source,cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node3> -destination-port <port_name>
+----
+. Display all data network LIFs:
++
+[source,cli]
+----
+network interface show -role data
+----
+. Configure the home node and home port for all data LIFs. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
++
+[source,cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <node_name> -home-port <port_name> -status-admin up
+----
+. Migrate the cluster management LIF:
++
+[source,cli]
+----
+network interface migrate -vserver <vserver_name> -lif <cluster_mgmt_lif> -destination-node <node3> -destination-port <port_name>
+----
+
+. Display the status of the cluster management LIF:
++
+[source,cli]
+----
+network interface show -role cluster-mgmt
+----
+. Display the status of all data aggregates in the cluster:
++
+[source,cli]
+----
+storage aggregate show
+----
+. Enable cluster high availability in the two-node cluster: 
++
+[source,cli]
+----
+cluster ha modify -configured true
+----
+
+. Enable and verify storage failover:
++
+[source,cli]
+---
+storage failover modify -node <node3> -enabled true
+----
++
+[source,cli]
+---
+storage failover modify -node <node4> -enabled true
+----
++
+[source,cli]
+---
+storage failover show
+----
+. Migrate data aggregates owned by node4 that should be owned by node3:
++ 
+[source,cli]
+----
+storage aggregate relocation start -aggregate <aggregate_name> -node <node4> -destination <node3>
+----
+. Display the status of all data aggregates in the cluster:
++
+[source,cli]
+----
+storage aggregate show
+----
+. Enable auto-revert of the network LIFs across the nodes:
++
+[source,cli]
+----
+network interface modify -lif * -auto-revert true
+----
+
+. Enable storage failover automatic giveback:
++
+[source,cli]
+----
+storage failover modify -node * -auto-giveback true
+----
+
+. Display the cluster status:
++
+[source,cli]
+----
+cluster show
+----
+. Display failover eligibility: 
++
+[source,cli]
+----
+storage failover show
+----
++
+NOTE: In the cluster report output, a node might incorrectly own aggregates that belong to another node. If this occurs, normalize by performing a takeover and giveback from both sides of the cluster.
+
+. Display the status of all data aggregates in the cluster:
++
+[source,cli]
+----
+storage aggregate show
+----
+
+// 2023 Oct 12, AFFFASDOC-64

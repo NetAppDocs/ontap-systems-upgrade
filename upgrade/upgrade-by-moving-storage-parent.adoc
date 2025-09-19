@@ -67,4 +67,5 @@ Complete the upgrade in ONTAP 9.8 or later, or ONTAP 9.7 or earlier.
 
 .Related information
 
-* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Upgrade AFF A250 to AFF A400 by converting to a drive shelf] (a nondisruptive procedure). 
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Upgrade AFF A250 to AFF A400 by converting to a drive shelf] (nondisruptive procedure)
+* link:upgrade_convert_fas2820_to_drive_shelf_workflow.html[Upgrade FAS2820 by converting to a drive shelf] (nondisruptive procedure)

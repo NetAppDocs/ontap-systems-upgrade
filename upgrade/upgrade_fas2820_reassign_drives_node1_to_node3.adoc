@@ -1,0 +1,76 @@
+---
+permalink: upgrade/upgrade_fas2820_reassign_drives_node1_to_node3.html
+sidebar: sidebar
+keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives
+summary: After converting FAS2820 node1 to a DS212C drive and connecting to node3, you reassign the drives that previously belonged to node1 to node3.
+---
+= Reassign drives from node1 to node3
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After converting FAS2820 node1 to a DS212C drive and connecting to node3, you reassign the drives that previously belonged to node1 to node3.
+
+.About this task
+You perform the following steps on node3.
+
+.Steps
+. At the LOADER prompt, boot node3 into Maintenance Mode:
++
+[source,cli]
+----
+boot_ontap maint 
+----
++
+The Maintenance Mode prompt appears.
+
+. Display all attached drives:
++
+[source,cli]
+----
+disk show -v
+----
+. Record the local system ID value; this is the system ID of node3. Also record the system IDs of node1 and node4 from the "OWNER" column. 
+. Reassign all drives from node1 to node3:
++
+[role="tabbed-block"]
+====
+.If you're using whole disks
+--
+Run the following command:
+[source,cli]
+----
+disk reassign -s <node1_system_ID> -d <node3_system_ID>  
+----
+--
+.If you're using partitioned disks
+--
+Run the following command:
++
+[source,cli]
+----
+disk reassign -s <node1_system_ID> -d <node3_system_ID> -p <node4_system_ID>
+----
+--
+====
+----
+. Verify that all reassigned drives are viewable to the new system ID:
++
+[source,cli]
+----
+disk show -s <node3_system_ID>
+----
++
+CAUTION: If drives are not viewable, *stop* and contact technical support for assistance.
+. Exit Maintenance Mode: 
++
+[source,cli]
+----
+halt
+----
+
+.What's next?
+
+link:upgrade_fas2820_migrate_lIFs_aggregates_node4_node3.html[Migrate LIFs and data aggregates on node4 to node3]
+
+// 2023 Oct 12, AFFFASDOC-64
