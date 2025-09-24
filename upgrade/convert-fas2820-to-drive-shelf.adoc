@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2820,  ndu, nondisruptive, upgrade, FAS, systems, entry, level
 summary: Perform a nondisruptive upgrade to a FAS2820 by converting each node to a DS212C drive shelf and then connecting to the replacement nodes.
 ---
-= Upgrade FAS2820 by converting to DS212C drive shelf
+= Upgrade from FAS2820 by converting to DS212C drive shelf
 :icons: font
 :imagesdir: ../media/
 

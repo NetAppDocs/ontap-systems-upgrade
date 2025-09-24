@@ -87,9 +87,9 @@ entries:
       url: /upgrade/upgrade_reassign_drives_node1_to_node3.html
     - title: Migrate LIFs and data aggregates on node4 to node3
       url: /upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html
-  - title: Upgrade FAS2820
+  - title: Upgrade from FAS2820
     entries:
-    - title: Learn about upgrading FAS2820
+    - title: Learn about upgrading from FAS2820
       url: /upgrade/convert-fas2820-to-drive-shelf.html
     - title: Migrate LIFs and data aggregates on node2 to node1
       url: /upgrade/migrate-fas2820-node2-lifs-aggregates.html
