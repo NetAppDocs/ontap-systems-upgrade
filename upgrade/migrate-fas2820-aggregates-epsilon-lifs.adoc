@@ -1,0 +1,207 @@
+---
+permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html
+sidebar: sidebar
+keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs
+summary:  Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to node4.
+---
+= Migrate data aggregates, epsilon, and LIFs on FAS2820 node1 to node4
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on the FAS2820 node1 to node4.
+
+.About this task
+Perform the following steps on node4.
+
+.Steps
+. At the LOADER prompt for node4, set partner-system ID:
++
+[source,cli]
+----
+setenv partner-sysid <system_ID_of_node1>
+----
+. Check the partner system-ID:
++
+[source,cli]
+----
+printenv partner-sysid 
+----
+
+. Save the changes:
++
+[source,cli]
+----
+saveenv
+----
+. Boot the node into the boot menu:
++
+[source,cli]
+----
+boot_ontap menu
+----
+. At the boot menu, select option `6 Update flash from backup config` to restore the /var file system to node4.
++
+This replaces all flash-based configuration with the last backup to disks. 
+. Enter `y` to continue.
++
+[NOTE]
+====
+The node automatically reboots to load the new copy of the /var file system. 
+
+The node reports a system ID mismatch warning. Enter `y` to override the system ID.
+====
+
+. Migrate the cluster LIFs:
++
+[source,cli]
+----
+set -privilege advanced
+----
++
+[source,cli]
+----
+network port show
+----
++
+[NOTE]
+====
+If the system cluster ports are not similar when upgrading a FAS2820 to a replacement controller, you might have to temporarily change the interfaces on node4 into cluster ports:
+[source,cli]
+
+----
+network port modify -node <node4> -port <port_name> -mtu 9000 -ipspace Cluster
+----
+====
++
+[source,cli]
+----
+network interface migrate -vserver Cluster -lif <cluster_LIF>  -destination-node <node4> -destination-port <port_name>
+----
+. Wait for the cluster to reach quorum, then verify that the cluster nodes are healthy:
++
+[source,cli]
+----
+– cluster show
+----
++
+NOTE: The HA pair and storage failover remain disabled in the current state.  
+
+. Move the cluster LIFs to the temporary 25G cluster ports on node4:
++
+[source,cli]
+----
+network interface modify -vserver Cluster -lif <cluster_LIF> -home-node <node4> -home-port <port_name>
+----
+. Complete this step only if interface groups and data VLANs are used on the FAS2820 cluster you are upgrading. Otherwise, go to <<migrate_node1_nod4,Step 11>>.
++
+The physical network port names on the replacement controller differ from those on the FAS2820. This might lead to displaced VLANs and incorrectly configured interface groups on node4. 
++
+.. Show the displaced VLANs:
++
+[source,cli]
+----
+cluster controller-replacement network displaced-vlans show
+----
++
+.. Restore the displaced VLANs:
++
+[source,cli]
+----
+cluster controller-replacement network displaced-vlans restore
+----
++
+.. Fix the incorrectly configured interface groups. The port names between the FAS2820 and the controllers you are upgrading might be different. Update the interface groups with the correct member ports:
++ 
+[source,cli]
+----
+ifgrp remove-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
+----
++
+[source,cli]
+----
+ifgrp add-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
+----
+
+[[migrate_node1_nod4]]
+[start=11] 
+. Migrate the data aggregates on node1 to node4:
++
+[source,cli]
+----
+storage aggregate relocation start -aggregate-list <aggregate_list_name> -node <node1> -destination <node4> -ndo-controller-upgrade true -override-destination-checks true   
+----
+. Show data aggregate status:
++
+[source,cli]
+----
+storage aggregate show 
+----
+. Migrate the epsilon by removing it from node1 and moving it to node4.
+.. Remove epsilon from node1: 
++
+[source,cli]
+----
+cluster modify -epsilon false -node <node1>
+----
+.. Move epsilon to node4: 
++
+[source,cli]
+----
+cluster modify -epsilon true -node <node4>
+----
+. Show cluster status to verify the epsilon change:
++
+[source,cli]
+----
+cluster show
+----
+. Display all data network LIFs:
++
+[source,cli]
+----
+network interface show -role data 
+----
+. Migrate all data LIFs to node4:
++
+[source,cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node4> -destination-port <port_name>
+----
+. Display the status of all data LIFs in the cluster:
++
+[source,cli]
+----
+network interface show -role data
+----
+. If any LIFs are down, set their administrative status to `up` by entering the following command once for each LIF:
++
+[source,cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up
+----
+. Migrate the cluster management LIF:
++
+[source,cli]
+----
+network interface migrate -vserver <vserver_name> -lif <cluster_mgmt_lif> -destination-node <node4> -destination-port <port_name>
+----
++  
+. Display the status of the cluster management LIF:
++
+[source,cli]
+----
+network interface show -role cluster-mgmt 
+----
+. Halt node1: 
++
+[source,cli]
+----
+halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
+----
+
+.What's next?
+
+link:convert-fas2820-node1-drive-shelf.html[Convert node1 to a drive shelf and connect to node3]
+
+// 2023 Oct 12, AFFFASDOC-64
