@@ -25,7 +25,7 @@ entries:
     - title: Relocate non-root aggregates and NAS data LIFs owned by node1 to node2
       url: /upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html
     - title: Relocate failed or vetoed aggregates
-      url: /upgrade-arl-auto-affa900/relocate_failed_or_vetoed_aggr.html
+      url: /upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node2.html
     - title: Retire node1
       url: /upgrade-arl-auto-affa900/retire_node1.html
     - title: Replace the node1 system modules
@@ -56,6 +56,8 @@ entries:
   entries:
     - title: Relocate non-root aggregates and NAS data LIFs from node2 to node1
       url: /upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html
+    - title: Relocate failed or vetoed aggregates
+      url: /upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node1.html
     - title: Retire node2
       url: /upgrade-arl-auto-affa900/retire_node2.html
 - title: "Stage 5. Install the replacement system modules on node2"
@@ -82,6 +84,8 @@ entries:
      url: /upgrade-arl-auto-affa900/verify_node2_installation.html
    - title: Restore key-manager configuration on node2
      url: /upgrade-arl-auto-affa900/restore_key_manager_config_node2.html
+   - title: Verify the RCF configuration on cluster switches
+     url: /upgrade-arl-auto-affa900/verify-rcf-configuration.html  
    - title: Move non-root aggregates and NAS data LIFs back to node2
      url: /upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html
 - title: "Stage 7. Complete the upgrade"

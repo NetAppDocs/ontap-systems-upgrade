@@ -14,11 +14,14 @@ summary: "You need to reassign the disks that belonged to node1 to node3 when up
 [.lead]
 You need to reassign the disks that belonged to node2 to node4 before verifying the node4 installation..
 
-.About this task
-You perform the steps in this section on node4.
-
 .Steps
-. [[reassign-node2-node4-app-step1]]Go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
+. [[reassign-node2-node4-app-step1]]Verify that node2 has stopped at the boot menu and reassign the disks of node2 to node4:
++
+`boot_after_controller_replacement`
++
+After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
++
+These prompts might get buried in the console messages. If you do not enter a node name or enter an incorrect name, you are prompted to enter the name again.
 +
 .Expand the console output example
 [%collapsible]
@@ -95,6 +98,7 @@ you want to continue?: yes
 .
 Controller Replacement: Provide name of the node you would like to replace:
 <nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node2 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -143,7 +147,10 @@ Login:
 +
 NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. To resolve this, continue with <<reassign-node2-node4-app-step3,Step 3>> to <<reassign-node2-node4-app-step8,Step 8>> or go to section link:verify_node4_installation.html[Verify the node4 installation].
+. If the system goes into a reboot loop with the message `no disks found`, it indicates that the system has reset the FC or UTA/UTA2 ports back to the target mode and therefore is unable to see any disks. Select one of the following tasks to resolve this issue:
++
+* Perform <<reassign-node2-node4-app-step3,Step 3>> to <<reassign-node2-node4-app-step8,Step 8>> on node4
+* Go to section link:verify_node4_installation.html[Verify the node4 installation]
 
 . [[reassign-node2-node4-app-step3]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 
@@ -223,7 +230,7 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 + 
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<reassign-node2-node4-app-step8,Step 8>> until the system boots normally. 
 
-. [[reassign-node2-node4-app-step9]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.
+. [[reassign-node2-node4-app-step9]] If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to ensure node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu on node4 and select option `5` to enter maintenance mode.
 +
 WARNING: *You must perform the following substeps in the exact order shown; failure to do so might cause an outage or even data loss.*
 
@@ -276,4 +283,6 @@ aggr0 offline                    raid_dp, aggr        diskroot
 ---------------------------------------------------------------------
 ....
 
+// 2025 SEP 15, AFFFASDOC-205
+// 2025 SEP 9, AFFFASDOC-312
 // 2025 MAR 5, AFFFASDOC-297

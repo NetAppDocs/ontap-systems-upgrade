@@ -59,7 +59,8 @@ Aggregate ownership at the end of Stage 5:
 *	Upgraded node2 is the home owner and current owner of aggregates that originally belonged to node2.
 
 | link:boot_node2_with_a900_controller_and_nvs.html[Stage 6: Boot node2 with the replacement system modules]
-a| During Stage 6, you boot node2 with upgraded system modules and verify the upgraded node2 installation. If you are using NVE, you restore key-manager configuration. You also relocate node1 non-root aggregates and NAS data LIFs from node1 to the upgraded node2 and verify that the SAN LIFs exist on node2.
+
+a| During Stage 6, you boot node2 with upgraded system modules and verify the upgraded node2 installation. If you are using NVE, you restore key-manager configuration. For switch-attached cluster upgrades, you need to validate that the cluster switch reference configuration file (RCF) supports the shared cluster/HA ports. You also relocate node1 non-root aggregates and NAS data LIFs from node1 to the upgraded node2 and verify that the SAN LIFs exist on node2.
 
 | link:manage-authentication-using-kmip-servers.html[Stage 7: Complete the upgrade]
 a| During Stage 7, you confirm that the new nodes are set up correctly and, if the new nodes are encryption-enabled, you configure and set up Storage Encryption or NVE. You should also decommission the old nodes and resume the SnapMirror operations.

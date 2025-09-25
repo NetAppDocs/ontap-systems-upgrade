@@ -1,0 +1,29 @@
+If any aggregates fail to relocate or are vetoed, you need to manually relocate the aggregates to node3, or if necessary, override either the vetoes or destination checks.
+
+.About this task
+
+The system pauses the relocation operation due to the error.
+
+.Steps
+
+. Check the event management system (EMS) logs to determine why the aggregate failed to relocate or was vetoed.
+. Relocate any failed or vetoed aggregates:
++
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list <aggregate_name> -ndo-controller-upgrade true`
+
+. When prompted, enter `y`.
+. You can force relocation by using one of the following methods:
++
+[cols="35,65"]
+|===
+|Option |Description
+
+|Overriding veto checks
+|Use the following command:
+`storage aggregate relocation start -node node2 -destination node3 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true`
+|Overriding destination checks
+|Use the following command:
+`storage aggregate relocation start -node node2 -destination node3 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true`
+|===
+
+// 2025 SEP 15, AFFFASDOC-388

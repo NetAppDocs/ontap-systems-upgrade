@@ -236,9 +236,15 @@ Enter the passphrase and the backup information that you recorded earlier proced
 
 . Boot the node into boot menu:
 +
-`boot_ontap menu`.
+`boot_ontap menu`
 
-. On node4, go to the boot menu and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
+. [[auto_check_4_step11]]When node4 stops at the boot menu, reassign the node2 disks to node4 by running the following command on node4:
++
+`boot_after_controller_replacement`
++
+After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
++
+These prompts might get buried in the console messages. If you do not enter a node name or enter an incorrect name, you are prompted to enter the name again.
 +
 .Expand the console output example
 [%collapsible]
@@ -315,6 +321,7 @@ you want to continue?: yes
 .
 Controller Replacement: Provide name of the node you would like to replace:
 <nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node2 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -410,3 +417,6 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 .. After the system boots to the special boot menu again, run option *(1) Normal Boot*
 + 
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step27,Step 27>> until the system boots normally. 
+
+// 2025 SEP 15, AFFFASDOC-205
+// 2025 SEP 9, AFFFASDOC-312
