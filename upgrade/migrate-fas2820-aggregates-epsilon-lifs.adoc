@@ -95,19 +95,23 @@ network interface modify -vserver Cluster -lif <cluster_LIF> -home-node <node4> 
 ----
 . If interface groups and data VLANs are in use on the FAS2820 cluster you are upgrading, do this step. If not, go to <<migrate_node1_nod4,Step 11>>.
 +
-The physical network port names on the replacement controller differ from those on the FAS2820. This might lead to incorrectly configured interface groups and displaced VLANs on node4. Check, and if required, fix any incorrectly configured interface groups and displaced VLANs:
+The physical network port names on the replacement controller differ from those on the FAS2820. This might lead to displaced VLANs and incorrectly configured interface groups on node4. 
++
+.. Show the displaced VLANs:
 +
 [source,cli]
 ----
 cluster controller-replacement network displaced-vlans show
 ----
 +
+.. Restore the displaced VLANs:
++
 [source,cli]
 ----
 cluster controller-replacement network displaced-vlans restore
 ----
 +
-The port names between the FAS2820 and the controllers you are upgrading might be different. Update the interface groups with the correct member ports:
+.. Fix the incorrectly configured interface groups. The port names between the FAS2820 and the controllers you are upgrading might be different. Update the interface groups with the correct member ports:
 + 
 [source,cli]
 ----
