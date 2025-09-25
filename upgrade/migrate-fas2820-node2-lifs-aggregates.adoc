@@ -24,7 +24,7 @@ Verify that you meet the following requirements:
 ====
 
 * Both replacement controllers are on standby at the LOADER prompt.
-* You have all the correct cabling available.
+* All required cabling is available.
 
 
 .About this task
@@ -75,7 +75,7 @@ NOTE: This command only migrates non-SAN LIFs. You cannot use it to migrate iSCS
 ----
 network interface show -role data
 ----
-. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
+. If any LIFs are down, set their administrative status to `up` by entering the following command once for each LIF:
 +
 [source,cli]
 ----

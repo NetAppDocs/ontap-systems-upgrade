@@ -13,7 +13,7 @@ To complete the upgrade, you connect FAS2820 node3 to node4 and then migrate the
 
 .About this task
 
-You perform the following steps on node3.
+Perform the following steps on node3.
 
 .Steps
 . At the LOADER prompt for node3, boot the node into the boot menu:
@@ -103,7 +103,7 @@ network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-n
 ----
 network interface show -role data
 ----
-. Configure the home node and home port for all data LIFs. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
+. Configure the home node and home port for all data LIFs. If any LIFs are down, set their administrative status to `up` by entering the following command once for each LIF:
 +
 [source,cli]
 ----
@@ -192,7 +192,7 @@ cluster show
 storage failover show
 ----
 +
-NOTE: In the cluster report output, a node might incorrectly own aggregates that belong to another node. If this occurs, normalize by performing a takeover and giveback from both sides of the cluster.
+NOTE: In the cluster report output, a node might incorrectly own aggregates that belong to another node. If this occurs, perform a takeover and giveback from both sides of the cluster.
 
 . Display the status of all data aggregates in the cluster:
 +
