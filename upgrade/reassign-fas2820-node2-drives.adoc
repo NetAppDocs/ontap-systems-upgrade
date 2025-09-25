@@ -15,7 +15,7 @@ Reassign the drives that previously belonged to FAS2820 node2 to node4.
 Verify that both node3 and node4 are on standby at the LOADER prompt.
 
 .About this task
-You perform the following steps on node4.
+Perform the following steps on node4.
 
 .Steps
 . At the LOADER prompt, boot node4 into Maintenance Mode:

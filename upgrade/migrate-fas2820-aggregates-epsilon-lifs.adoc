@@ -12,7 +12,7 @@ summary:  Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on
 Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on the FAS2820 node1 to node4.
 
 .About this task
-You perform the following steps on node4.
+Perform the following steps on node4.
 
 .Steps
 . At the LOADER prompt for node4, set partner-system ID:
@@ -93,7 +93,7 @@ NOTE: The HA pair and storage failover remain disabled in the current state.
 ----
 network interface modify -vserver Cluster -lif <cluster_LIF> -home-node <node4> -home-port <port_name>
 ----
-. If interface groups and data VLANs are in use on the FAS2820 cluster you are upgrading, do this step. If not, go to <<migrate_node1_nod4,Step 11>>.
+. Complete this step only if interface groups and data VLANs are used on the FAS2820 cluster you are upgrading. Otherwise, go to <<migrate_node1_nod4,Step 11>>.
 +
 The physical network port names on the replacement controller differ from those on the FAS2820. This might lead to displaced VLANs and incorrectly configured interface groups on node4. 
 +
@@ -174,7 +174,7 @@ network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-n
 ----
 network interface show -role data
 ----
-. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:
+. If any LIFs are down, set their administrative status to `up` by entering the following command once for each LIF:
 +
 [source,cli]
 ----

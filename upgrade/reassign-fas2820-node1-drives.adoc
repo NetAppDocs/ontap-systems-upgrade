@@ -9,10 +9,10 @@ summary: After converting FAS2820 node1 to a DS212C drive and connecting to node
 :imagesdir: ../media/
 
 [.lead]
-Reassign the drives that previously belonged to FAS2820 node1 to node3.
+Reassign the drives that were previously assigned to FAS2820 node1 to node3.
 
 .About this task
-You perform the following steps on node3.
+Perform the following steps on node3.
 
 .Steps
 . At the LOADER prompt, boot node3 into Maintenance Mode:
