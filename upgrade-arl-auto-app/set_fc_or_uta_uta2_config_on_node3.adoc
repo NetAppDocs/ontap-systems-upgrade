@@ -22,9 +22,15 @@ include::../_include/ru_auto_config_fc_ports_node3.adoc[]
 [start=8]
 . [[auto_check3_step8]]Take one of the following actions:
 +
-* Go to <<Check and configure UTA/UTA2 ports on node3>> if node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
+[cols=2*,options="header"cols="30,70"]
+|===
+| If node 3... | Then...
+| Has a UTA/UTA2 card or UTA/UTA2 onboard ports
+| Go to <<Check and configure UTA/UTA2 ports on node3>>
+| Does not have a UTA/UTA2 card or UTA/UTA2 onboard ports
+| Skip _Check and configure UTA/UTA2 ports on node3_ and go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
+|===
 
-* If node3 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip _Check and configure UTA/UTA2 ports on node3_ and go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.adoc[]
 
