@@ -12,7 +12,7 @@ If you want to use a Unified Target Adapter (UTA/UTA2) port for FC, you must fir
 
 NOTE: NetApp marketing materials might use the term UTA2 to refer to CNA adapters and ports. However, the CLI uses the term CNA.
 
-You can use the `ucadmin show` command to verify the current port configuration:
+You can use the `ucadmin show` command to view or verify the current port configuration, as shown in the following example output:
 
 ....
 *> ucadmin show
@@ -30,13 +30,13 @@ Adapter  Mode     Type       Mode      Type         Status
 
 UTA/UTA2 ports can be configured into native FC mode or UTA/UTA2 mode. FC mode supports FC initiator and FC target; UTA/UTA2 mode allows concurrent NIC and FCoE traffic sharing the same 10GbE SFP+ interface and supports FC targets.
 
-UTA/UTA2 ports might be found on an adapter or on the controller, and have the following configurations, but you should check the configuration of the UTA/UTA2 ports on the node3 and change it, if necessary:
+UTA/UTA2 ports might be found on an add-on adapter or on the controller motherboard, and have the following configurations, but you should check the configuration of the UTA/UTA2 ports on the node3 and change it, if necessary:
 
 * UTA/UTA2 cards ordered when the controller is ordered are configured before shipment to have the personality you request.
 * UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
 * Onboard UTA/UTA2 ports on new controllers are configured before shipment to have the personality you request.
 +
-WARNING: Enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. You must be in Maintenance mode to configure UTA/UTA2 ports.
+WARNING: You must be in Maintenance mode to configure UTA/UTA2 ports. Enter the commands in this section at the Maintenance mode shell prompt. 
 
 .Steps
 
@@ -63,7 +63,7 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 +
 `ucadmin show`
 +
-The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
+The output in the following example shows that the type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`. CNA mode allows you to use the card as a network adapter.
 +
 ....
 *> ucadmin show
@@ -91,13 +91,13 @@ a|Skip Step 6 and go to <<auto_check3_step7,Step 7>>.
 
 . [[auto_check3_step6]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
-`storage disable adapter _adapter_name_`
+`storage disable adapter <adapter_name>`
 +
 Adapters in target mode are automatically offline in Maintenance mode.
 
 . [[auto_check3_step6]]If the current configuration does not match the desired use, change the configuration as needed:
 +
-`ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
+`ucadmin modify -m fc|cna -t initiator|target <adapter_name>`
 +
 ** `-m` is the personality mode, `fc` or `cna`.
 ** `-t` is the FC4 type, `target` or `initiator`.
@@ -106,8 +106,8 @@ NOTE: You must use FC initiator for tape drives and MetroCluster configurations.
 
 
 
-. Place any target ports online by entering one of the following commands, once for each port:
+. Place any target ports online by entering the following command once for each port:
 +
-`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
+`storage enable adapter <adapter_name>`
 
 . Cable the port.

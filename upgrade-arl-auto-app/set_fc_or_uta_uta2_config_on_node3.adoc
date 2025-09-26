@@ -32,7 +32,9 @@ include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.ado
 [[auto_check3_step10]]
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
-. [[step14]]Boot the node into boot menu by running `boot_ontap menu`. 
+. [[step14]]Boot the node into boot menu:
++
+`boot_ontap menu` 
 
 .What's next?
 
