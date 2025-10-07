@@ -34,8 +34,8 @@ include::../_include/ru_auto_config_fc_ports_node3.adoc[]
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.adoc[]
 
-[start=10]
-[[auto_check3_step10]]
+[start=9]
+[[auto_check3_step9]]
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
 . [[step14]]Boot the node into boot menu:

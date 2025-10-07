@@ -1,6 +1,6 @@
 == Configure FC ports on node3
 
-If node3 has FC ports, either onboard or on an FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured. If the ports are not configured, you might experience a disruption in service.
+If node3 has FC ports, either onboard or on an add-on FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured when the systems are shipped. If you don't configure the ports, you might experience a disruption in service.
 
 .Before you begin
 
@@ -19,20 +19,22 @@ IMPORTANT: Enter the commands in this section at the Maintenance mode shell prom
 +
 In Maintenance mode (option 5 at boot menu):
 +
-* To program target ports:
+* To program as target ports:
 +
 `ucadmin modify -m fc -t target <adapter>`
 +
+For example, `ucadmin modify -m fc -t target 2a`. 
 * To program initiator ports:
 +
 `ucadmin modify -m fc -t initiator <adapter>`
-
++
+for example, `ucadmin modify -m fc -t initator 2b`. 
 
 . Verify the new settings by using the following command and examining the output:
 +
 `ucadmin show`
 
-. Exit Maintenance mode:
+. Halt the node:
 +
 `halt`
 
