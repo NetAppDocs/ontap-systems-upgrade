@@ -1,6 +1,6 @@
 == Configure FC ports on node4
 
-If node4 has FC ports, either onboard or on an FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured. If the ports are not configured, you might experience a disruption in service.
+If node4 has FC ports, either onboard or on an add-on FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured when the systems are shipped. If you don't configure the ports as required, you might experience a disruption in service.
 
 .Before you begin
 
@@ -21,17 +21,19 @@ IMPORTANT: Enter the commands in this section at the Maintenance mode shell prom
 . Compare the FC settings on node4 with the settings that you captured earlier from node1.
 . Modify the FC ports on node4 as needed:
 +
-* To program target ports:
+* To program as target ports:
 +
 `ucadmin modify -m fc -t target _adapter_`
 +
+For example: `ucadmin modify -m fc -t target 2a`
 * To program initiator ports:
 +
 `ucadmin modify -m fc -t initiator _adapter_`
 +
 `-t` is the FC4 type: target or initiator.
-
-. Exit Maintenance mode:
++
+For example: `ucadmin modify -m fc -t initator 2b`
+. Halt the node:
 +
 `halt`
 

@@ -32,8 +32,8 @@ include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
 
-[start=11]
-. [[auto_check_4_step11]]Exit Maintenance mode:
+[start=10]
+. [[auto_check_4_step10]]Exit Maintenance mode:
 +
 `halt`
 

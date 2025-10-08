@@ -50,26 +50,11 @@ f-a    0h       cna      target     -          -        online
 +
 Contact your NetApp representative to obtain the correct SFP+ module.
 
-. Examine the output of the `ucadmin show` command and determine whether the UTA/UTA2 ports have the personality you want.
-
-. Take one of the following actions:
-+
-[cols=2*,options="header"cols="30,70"]
-|===
-|If the CNA ports... |Then…
-
-|Do not have the personality that you want
-|Go to <<auto_check_4_step5,Step 5>>.
-
-|Have the personality that you want
-
-|Skip Step 5 through Step 10 and go to <<auto_check_4_step11,Step 11>>.
-
-|===
-
-. [[auto_check_4_step5]]Verify the settings:
+.  Verify the settings:
 +
 `ucadmin show`
++
+Examine the output of the `ucadmin show` command and determine whether the UTA/UTA2 ports have the personality you want.
 +
 The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
 +
@@ -84,25 +69,42 @@ f-a   2b       fc             target       cna           -             online
 4 entries were displayed.
 *>
 ....
+
+
 . Take one of the following actions:
++
+[cols=2*,options="header"cols="30,70"]
+|===
+|If the CNA ports... |Then…
+
+|Do not have the personality that you want
+|Go to <<auto_check_4_step5,Step 5>>.
+
+|Have the personality that you want
+
+|Skip Step 5 through Step 9 and go to <<auto_check_4_step10,Step 10>>.
+
+|===
+
+. [[auto_check_4_step5]]Take one of the following actions:
 +
 [cols=2*,options="header"cols="30,70"]
 |===
 |If you are configuring... |Then…
 
 |Ports on a UTA/UTA2 card
-|Go to <<auto_check_4_step7,Step 7>>
+|Go to <<auto_check_4_step6,Step 6>>
 |Onboard UTA/UTA2 ports
-|Skip Step 7 and go to <<auto_check_4_step8,Step 8>>.
+|Skip Step 6 and go to <<auto_check_4_step7,Step 7>>.
 |===
 
-. If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
+. [[auto_check_4_step6]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
 `storage disable adapter _adapter_name_`
 +
 Adapters in target mode are automatically offline in Maintenance mode.
 
-. [[auto_check_4_step8]]If the current configuration does not match the desired use, change the configuration as needed:
+. [[auto_check_4_step7]]If the current configuration does not match the desired use, change the configuration as needed:
 +
 `ucadmin modify -m fc|cna -t initiator|target <adapter_name>`
 
