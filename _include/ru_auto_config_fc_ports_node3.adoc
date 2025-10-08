@@ -23,12 +23,12 @@ In Maintenance mode (option 5 at boot menu):
 +
 `ucadmin modify -m fc -t target <adapter>`
 +
-For example, `ucadmin modify -m fc -t target 2a`. 
+For example: `ucadmin modify -m fc -t target 2a`
 * To program initiator ports:
 +
 `ucadmin modify -m fc -t initiator <adapter>`
 +
-for example, `ucadmin modify -m fc -t initator 2b`. 
+For example: `ucadmin modify -m fc -t initator 2b`
 
 . Verify the new settings by using the following command and examining the output:
 +

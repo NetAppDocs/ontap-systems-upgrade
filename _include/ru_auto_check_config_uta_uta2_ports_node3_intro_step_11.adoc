@@ -74,7 +74,7 @@ Adapter  Mode       Type        Mode     Type        Status
 |Go to <<auto_check3_step4,Step 4>>.
 
 |Have the personality that you want
-|Skip Step 4 through Step 9 and go to <<auto_check3_step9,Step 9>>.
+|Skip Step 4 through Step 8 and go to <<auto_check3_step9,Step 9>>.
 |===
 
 . [[auto_check3_step4]]Take one of the following actions:
