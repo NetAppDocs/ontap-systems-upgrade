@@ -84,7 +84,6 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 
 == Situations where you might need additional steps
 
-* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[You are upgrading from an AFF A250 to an AFF A400] (a nondisruptive procedure). 
 
 * If the new system has fewer slots than the original system, or if it has fewer or different types of ports, you might need to add an adapter to the new system. See the https://hwu.netapp.com[NetApp Hardware Universe^].
 
@@ -94,6 +93,8 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 
 .Related information
 
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Convert AFF A250 to drive shelf and upgrade to AFF A400] (nondisruptive procedure)
+* link:convert-fas2820-to-drive-shelf.html[Upgrade from FAS2820 by converting to a drive shelf] (nondisruptive procedure)
 * link:../choose_controller_upgrade_procedure.html[Choose methods for upgrading controller hardware]
 * link:upgrade-by-moving-storage-parent.html[Upgrade controller hardware by moving storage]
 * link:upgrade-by-moving-volumes-parent.html[Upgrade controller hardware by moving volumes]
@@ -108,4 +109,3 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 // 2022 SEP 3, Clean-up 
 // 2022 FEB 9, BURT 1493415 
 // 2022 JAN 31, BURT 1400769
-
