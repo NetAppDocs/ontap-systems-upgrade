@@ -47,7 +47,7 @@ Stage 5: _Install and boot node4_
 |Stage 1: _Prepare the nodes for the upgrade_
 |Stage 6: _Confirm that the new controllers are set up correctly_
 |
-|IP address for the external key management server
+|IP address for the External Key Management server
 |Stage 1: _Rekey  disks for Storage Encryption_
 |Stage 6: _Set up Storage Encryption on the new nodes_
 |

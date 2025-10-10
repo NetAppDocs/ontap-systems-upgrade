@@ -32,7 +32,7 @@ entries:
       - title: "Relocate non-root aggregates and NAS data LIFs owned by node1 to node2"
         url: /upgrade-arl-auto-app/relocate_non_root_aggr_nas_data_lifs_node1_node2.html
       - title: "Relocate failed or vetoed aggregates"
-        url: /upgrade-arl-auto-app/relocate_failed_or_vetoed_aggr.html
+        url: /upgrade-arl-auto-app/relocate-failed-or-vetoed-aggr-node2.html
       - title: "Retire node1"
         url: /upgrade-arl-auto-app/retire_node1.html
       - title: "Prepare for netboot"
@@ -57,6 +57,8 @@ entries:
     entries:
       - title: "Relocate non-root aggregates and NAS data LIFs from node2 to node3"
         url: /upgrade-arl-auto-app/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html
+      - title: "Relocate failed or vetoed aggregates"
+        url: /upgrade-arl-auto-app/relocate-failed-or-vetoed-aggr-node3.html
       - title: "Retire node2"
         url: /upgrade-arl-auto-app/retire_node2.html
   - title: "Stage 5. Install and boot node4"

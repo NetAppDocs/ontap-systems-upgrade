@@ -14,12 +14,15 @@ summary: "Configure node4 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 [.lead]
 You need to reassign the disks that belonged to node2 to node4 before verifying the node4 installation..
 
-.About this task
-You perform the steps in this section on node4.
-
 .Steps
 
-. [[reassign-node2-node4-step1]]Go to the boot menu, and using 22/7, select the hidden option `boot_after_controller_replacement`. At the prompt, enter node2 to reassign the disks of node2 to node4, as per the following example.
+. [[reassign-node2-node4-step1]]Verify that node2 has stopped at the boot menu and reassign the disks of node2 to node4:
++
+`boot_after_controller_replacement`
++
+After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
++
+These prompts might get buried in the console messages. If you do not enter a node name or enter an incorrect name, you are prompted to enter the name again.
 +
 .Expand the console output example
 [%collapsible]
@@ -71,8 +74,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 .
 .
 Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
-.
-.
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node <node being replaced> disks.
 Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
 Partner sysid = 4294967295, owner sysid = 536953334
@@ -100,7 +102,7 @@ Login: ...
 ----
 ====
 
-. If the system goes into a reboot loop with the message `no disks found`, this is because it has reset the ports back to the target mode and therefore is unable to see any disks. Continue with <<auto_check_4_step3,Step 3>> through <<auto_check_4_step8,Step 8>> to resolve this.
+. If the system goes into a reboot loop with the message `no disks found`, this is because it has reset the ports back to the target mode and therefore is unable to see any disks. Perform <<auto_check_4_step3,Step 3>> through <<auto_check_4_step8,Step 8>> on node4 to resolve this issue.
 
 . [[auto_check_4_step3]]Press Ctrl-C during AUTOBOOT to stop the node at the LOADER> prompt.
 
@@ -178,7 +180,7 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 + 
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step22,Step 22>> until the system boots normally. 
 
-. [[auto_check_4_step9]]If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to confirm that node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu and select option `5` to enter maintenance mode.
+. [[auto_check_4_step9]]If you are upgrading from a system with external disks to a system that supports internal and external disks (AFF A800 systems, for example), set the node2 aggregate as the root aggregate to confirm that node4 boots from the root aggregate of node2. To set the root aggregate, go to the boot menu on node4 and select option `5` to enter maintenance mode.
 +
 WARNING: *You must perform the following substeps in the exact order shown; failure to do so might cause an outage or even data loss.*
 
@@ -209,5 +211,7 @@ The following procedure sets node4 to boot from the root aggregate of node2:
 +
 `aggr options aggr_from___node2__ root`
 
+// 2025 SEP 15, AFFFASDOC-205
+// 2025 SEP 9, AFFFASDOC-312
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-05-16, BURT 1476241
