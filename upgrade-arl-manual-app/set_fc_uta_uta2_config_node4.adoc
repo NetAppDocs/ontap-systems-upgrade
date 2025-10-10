@@ -4,7 +4,6 @@ permalink: upgrade-arl-manual-app/set_fc_uta_uta2_config_node4.html
 keywords:  fc configuration, uta configuration, uta2 configuration, configure FC ports, uta/uta2 card, node4, target, adapter, ports
 summary: "Configure node4 onboard FC ports, UTA/UTA2 ports, or UTA/UTA2 card during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
-
 = Set the FC or UTA/UTA2 configuration on node4
 :hardbreaks:
 :nofooter:
@@ -13,7 +12,16 @@ summary: "Configure node4 onboard FC ports, UTA/UTA2 ports, or UTA/UTA2 card dur
 :imagesdir: ../media/
 
 [.lead]
-include::../_include/ru_man_set_fc_utauta2_config_node4.adoc[]
+If node4 has onboard FC ports, onboard unified target adapter (UTA/UTA2) ports, or a UTA/UTA2 card, you must configure the settings before completing the rest of the procedure.
+
+.About this task
+
+You might need to complete <<Configure FC ports on node4>>, the <<Check and configure UTA/UTA2 ports on node4>>, or both sections.
+
+If node4 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card (for example, AFF and FAS systems introduced in ONTAP 9.15.1), and you are upgrading a system with storage disks, you can skip to link:map_ports_node2_node4.html[Map ports from node2 to node4].
+
+However, if you have a V-Series system or have FlexArray Virtualization Software and are connected to storage arrays, and node4 does not have onboard FC ports, onboard UTA/ UTA2 ports, or a UTA/UTA2 card, you must return to the _Install and boot node4_ section and resume at link:install_boot_node4.html#man_install4_Step9[Step 9]. Make sure that node4 has sufficient rack space. If node4 is in a separate chassis from node2, you can put node4 in the same location as node3. If node2 and node4 are in the same chassis, then node4 is already in its appropriate rack location.
+
 
 include::../_include/ru_man_config_fc_ports_node4.adoc[]
 
