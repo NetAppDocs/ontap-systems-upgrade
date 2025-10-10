@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/verify_node1_installation.html
+redirect: ontap-systems-upgrade/upgrade-arl-in-chassis/verify_node1_installation.html
+---

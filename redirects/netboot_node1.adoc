@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/netboot_node1.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/netboot_node1.html
+---

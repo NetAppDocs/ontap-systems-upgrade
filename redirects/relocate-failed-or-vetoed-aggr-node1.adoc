@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node1.html
+redirect: ontap-systems-upgrade/upgrade-arl-in-chassis/relocate-failed-or-vetoed-aggr-node1.html
+---
