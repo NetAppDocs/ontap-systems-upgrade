@@ -4,19 +4,12 @@ permalink: upgrade-arl-auto-app/move_non-root_aggr_and_nas_data_lifs_node1_from_
 keywords: moving, non-root, aggregates, nas, lif, node1, node2, node3
 summary: "Verify that the node1 NAS data LIFs on node2 are relocated from node2 to node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
-
 = Move non-root aggregates and NAS data LIFs owned by node1 from node2 to node3
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:54.852771
-//
 
 [.lead]
 After you verify network configuration on node3 and before you relocate aggregates from node2 to node3, you must verify that the NAS data LIFs belonging to node1 that are currently on node2 are relocated from node2 to node3. You must also verify that the SAN LIFs exist on node3.
