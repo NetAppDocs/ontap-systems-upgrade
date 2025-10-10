@@ -1,0 +1,43 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node1.html
+keywords: relocating, failed, vetoed, aggregates, relocation, operation
+summary: "Manually relocate failed or vetoed aggregates to node1 when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` commands."
+---
+= Relocate failed or vetoed aggregates to node1
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+If any aggregates fail to relocate or are vetoed, you need to manually relocate the aggregates to node1, or if necessary, override either the vetoes or destination checks.
+
+.About this task
+
+The system pauses the relocation operation due to the error.
+
+.Steps
+
+. Check the event management system (EMS) logs to determine why the aggregate failed to relocate or was vetoed.
+. Relocate any failed or vetoed aggregates:
++
+`storage aggregate relocation start -node <node2> -destination <node1> -aggregate-list <aggregate_name> -ndo-controller-upgrade true`
+
+. When prompted, enter `y`.
+. You can force relocation by using one of the following methods:
++
+[cols="35,65"]
+|===
+|Option |Description
+
+|Overriding veto checks
+|Use the following command:
+`storage aggregate relocation start -node node2 -destination node1 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true`
+|Overriding destination checks
+|Use the following command:
+`storage aggregate relocation start -node node2 -destination node1 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true`
+|===
+
+// 2025 SEP 15, AFFFASDOC-388

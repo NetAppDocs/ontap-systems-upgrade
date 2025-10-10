@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto/relocate_failed_or_vetoed_aggr.html
 keywords: relocate, aggregates, fail, veto
 summary: "Manually relocate failed or vetoed aggregates when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
 = Relocate failed or vetoed aggregates
 :hardbreaks:
 :nofooter:
@@ -17,7 +16,7 @@ If any aggregates fail to relocate or are vetoed, you must take manually relocat
 
 .About this task
 
-The relocation operation will have paused due to the error.
+The system pauses the relocation operation due to the error.
 
 .Steps
 
