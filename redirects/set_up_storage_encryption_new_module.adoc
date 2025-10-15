@@ -1,4 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/set_up_storage_encryption_new_module.html
-redirect: ontap-systems-upgrade/upgrade-arl-in-chassis/set_up_storage_encryption_new_module.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/set_up_storage_encryption_new_module.html
 ---

@@ -1,4 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html
-redirect: ontap-systems-upgrade/upgrade-arl-in-chassis/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html
 ---

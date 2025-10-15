@@ -1,4 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/verify_node2_installation.html
-redirect: ontap-systems-upgrade/upgrade-arl-in-chassis/verify_node2_installation.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/verify_node2_installation.html
 ---

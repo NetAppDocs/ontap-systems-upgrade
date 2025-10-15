@@ -1,4 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/required_tools_and_documentation.html
-redirect: ontap-systems-upgrade/upgrade-arl-in-chassis/required_tools_and_documentation.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/required_tools_and_documentation.html
 ---
