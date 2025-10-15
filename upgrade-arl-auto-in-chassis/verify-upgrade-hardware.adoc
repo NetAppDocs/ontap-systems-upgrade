@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/verify_upgrade_hardware.html
+permalink: upgrade-arl-auto-in-chassis/verify-upgrade-hardware.html
 keywords: nodes, upgrade, verify, hardware
 summary: Before starting the upgrade, verify that you have the correct hardware to upgrade controller models in the same chassis.
 ---

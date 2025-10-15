@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/reboots_panics_or_power_cycles.html
+permalink: upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html
 keywords: reboots, panics, power, cycles, node, crash
 summary: "The system might crash – reboot, panic, or go through a power cycle – during different stages when using ARL to upgrade controller models in the same chassis."
 ---

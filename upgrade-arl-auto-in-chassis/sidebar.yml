@@ -4,30 +4,30 @@ entries:
 - title: Learn about this ARL procedure
   url: /upgrade-arl-auto-in-chassis/index.html
 - title: Decide whether to use this ARL procedure
-  url: /upgrade-arl-auto-in-chassis/decide_to_use_the_aggregate_relocation_guide.html
+  url: /upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html
 - title: Required tools and documentation
-  url: /upgrade-arl-auto-in-chassis/required_tools_and_documentation.html
+  url: /upgrade-arl-auto-in-chassis/required-tools-and-documentation.html
 - title: Guidelines for upgrading controllers
   url: /upgrade-arl-auto-in-chassis/guidelines_for_upgrading_controllers_with_arl.html
 - title: Learn about the ARL upgrade sequence
-  url: /upgrade-arl-auto-in-chassis/overview_of_the_arl_upgrade.html
+  url: /upgrade-arl-auto-in-chassis/overview-of-the-arl-upgrade.html
 - title: "Stage 1. Prepare for upgrade"
   pdf-filename: "Stage 1. Prepare for upgrade (upgrade to AFF A900 or FAS9500)"
   entries:
     - title: Verify the upgrade hardware
-      url: /upgrade-arl-auto-in-chassis/verify_upgrade_hardware.html
+      url: /upgrade-arl-auto-in-chassis/verify-upgrade-hardware.html
     - title: Prepare the nodes for upgrade
-      url: /upgrade-arl-auto-in-chassis/prepare_nodes_for_upgrade.html
+      url: /upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html
     - title: Manage storage encryption using the Onboard Key Manager
       url: /upgrade-arl-auto-in-chassis/manage_storage_encryption_using_okm.html
 - title: "Stage 2. Relocate resources and retire node1"
   entries:
     - title: Relocate non-root aggregates and NAS data LIFs owned by node1 to node2
-      url: /upgrade-arl-auto-in-chassis/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html
+      url: /upgrade-arl-auto-in-chassis/relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html
     - title: Relocate failed or vetoed aggregates
       url: /upgrade-arl-auto-in-chassis/relocate_failed_or_vetoed_aggr.html
     - title: Retire node1
-      url: /upgrade-arl-auto-in-chassis/retire_node1.html
+      url: /upgrade-arl-auto-in-chassis/retire-node1.html
     - title: Replace the node1 system modules
       entries:
         - title: Replace AFF A250 or AFF C250
@@ -39,7 +39,7 @@ entries:
         - title: Replace AFF A700 or FAS9000
           url: /upgrade-arl-auto-in-chassis/replace-node1-aff700-fas900.html
     - title: Netboot node1
-      url: /upgrade-arl-auto-in-chassis/netboot_node1.html
+      url: /upgrade-arl-auto-in-chassis/netboot-node1.html
 - title: "Stage 3. Boot node1 with the replacement system modules"
   entries:
     - title: Cable node1 for shared cluster-HA storage
@@ -47,17 +47,17 @@ entries:
     - title: Boot node1 with the replacement system modules
       url: /upgrade-arl-auto-in-chassis/boot_node1_with_a900_controller_and_nvs.html
     - title: Verify the node1 installation
-      url: /upgrade-arl-auto-in-chassis/verify_node1_installation.html
+      url: /upgrade-arl-auto-in-chassis/verify-node1-installation.html
     - title: Restore key-manager configuration on the upgraded node1
-      url: /upgrade-arl-auto-in-chassis/restore_key_manager_config_upgraded_node1.html
+      url: /upgrade-arl-auto-in-chassis/restore-key-manager-config-upgraded-node1.html
     - title: Move node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1
-      url: /upgrade-arl-auto-in-chassis/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html
+      url: /upgrade-arl-auto-in-chassis/move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html
 - title: "Stage 4. Relocate resources and retire node2"
   entries:
     - title: Relocate non-root aggregates and NAS data LIFs from node2 to node1
-      url: /upgrade-arl-auto-in-chassis/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html
+      url: /upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html
     - title: Retire node2
-      url: /upgrade-arl-auto-in-chassis/retire_node2.html
+      url: /upgrade-arl-auto-in-chassis/retire-node2.html
 - title: "Stage 5. Install the replacement system modules on node2"
   entries:
    - title: Install the replacement system modules on node2
@@ -71,7 +71,7 @@ entries:
       - title: Install ASA A900, AFF A900, or FAS9500
         url: /upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html
    - title: Netboot node2
-     url: /upgrade-arl-auto-in-chassis/netboot_node2.html
+     url: /upgrade-arl-auto-in-chassis/netboot-node2.html
 - title: "Stage 6. Boot node2 with the replacement system modules"
   entries:
    - title: Cable node2 for shared cluster-HA storage
@@ -79,9 +79,9 @@ entries:
    - title: Boot node2 with the replacement system modules
      url: /upgrade-arl-auto-in-chassis/boot_node2_with_a900_controller_and_nvs.html
    - title: Verify the node2 installation
-     url: /upgrade-arl-auto-in-chassis/verify_node2_installation.html
+     url: /upgrade-arl-auto-in-chassis/verify-node2-installation.html
    - title: Restore key-manager configuration on node2
-     url: /upgrade-arl-auto-in-chassis/restore_key_manager_config_node2.html
+     url: /upgrade-arl-auto-in-chassis/restore-key-manager-config-node2.html
    - title: Verify the RCF configuration on cluster switches
      url: /upgrade-arl-auto-in-chassis/verify-rcf-configuration.html  
    - title: Move non-root aggregates and NAS data LIFs back to node2
@@ -94,23 +94,23 @@ entries:
   - title: Confirm that the new controllers are set up correctly
     url: /upgrade-arl-auto-in-chassis/ensure_new_controllers_are_set_up_correctly.html
   - title: Set up Storage Encryption on the new controller module
-    url: /upgrade-arl-auto-in-chassis/set_up_storage_encryption_new_module.html
+    url: /upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html
   - title: Set up NetApp Volume or Aggregate Encryption on the new controller module
-    url: /upgrade-arl-auto-in-chassis/set_up_netapp_volume_encryption_new_module.html
+    url: /upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html
   - title: Decommission the old system
     url: /upgrade-arl-auto-in-chassis/decommission_old_system.html
   - title: Resume SnapMirror operations
-    url: /upgrade-arl-auto-in-chassis/resume_snapmirror_operations.html
+    url: /upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html
 - title: "Troubleshoot"
   pdf-filename: "Troubleshoot (upgrade to AFF A900 or FAS9500)"
   entries:
   - title: Aggregate relocation failures
     url: /upgrade-arl-auto-in-chassis/aggregate_relocation_failures.html
   - title: Reboots, panics, or power cycles
-    url: /upgrade-arl-auto-in-chassis/reboots_panics_or_power_cycles.html
+    url: /upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html
   - title: Issues that can arise in multiple stages of the procedure
     url: /upgrade-arl-auto-in-chassis/issues_in_multiple_stages_of_procedure.html
   - title: LIF migration failure
     url: /upgrade-arl-auto-in-chassis/lif_migration_failure.html
 - title: References
-  url: /upgrade-arl-auto-in-chassis/other_references.html
+  url: /upgrade-arl-auto-in-chassis/other-references.html

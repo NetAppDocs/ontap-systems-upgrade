@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/verify_node1_installation.html
+permalink: upgrade-arl-auto-in-chassis/verify-node1-installation.html
 keywords: verifying, verify, node1, install, installation, NVRAM, controller, module, modules
 summary: Verify the node1 installation with the replacement modules when using ARL to upgrade controller models in the same chassis.
 ---

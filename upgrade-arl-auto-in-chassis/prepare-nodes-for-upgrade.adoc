@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/prepare_nodes_for_upgrade.html
+permalink: upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html
 keywords: preparing, prepare, nodes, upgrade, stage 1, prechecks, old, system, chassis, disk, disks
 summary: "Prepare the nodes and run a series of prechecks when using ARL to upgrade controller models in the same chassis."
 ---

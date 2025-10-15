@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/required_tools_and_documentation.html
+permalink: upgrade-arl-auto-in-chassis/required-tools-and-documentation.html
 keywords: required, tools, documentation, install, worksheet, ontap
 summary: "You must have certain tools and documentation to use ARL to upgrade controller models in the same chassis."
 ---

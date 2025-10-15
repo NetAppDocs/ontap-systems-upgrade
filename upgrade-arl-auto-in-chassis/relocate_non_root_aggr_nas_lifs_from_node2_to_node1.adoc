@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html
+permalink: upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html
 keywords: relocate, non-root, aggregates, nas, lif, node2, node1, NVRAM, controller, module, modules
 summary: "Relocate node2's non-root aggregates to node1 when using ARL to upgrade controller models in the same chassis."
 ---

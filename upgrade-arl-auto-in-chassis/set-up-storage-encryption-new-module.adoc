@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/set_up_storage_encryption_new_module.html
+permalink: upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html
 keywords: set up storage, encryption, controller, module, node
 summary: "If required, configure Storage Encryption, install SSL certificates, and set up key management servers when using ARL to upgrade controller models in the same chassis."
 ---

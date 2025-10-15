@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/set_up_netapp_volume_encryption_new_module.html
+permalink: upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html
 keywords: set up, netapp volume encryption, controller, module, nve, node
 summary: If required, configure the new controller module for NVE or NAE when using ARL to upgrade controller models in the same chassis."
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/other_references.html
+permalink: upgrade-arl-auto-in-chassis/other-references.html
 keywords: references, documentation, hardware universe, content, documentation center, information
 summary: "Reference content and websites required to support using ARL to upgrade controller models in the same chassis."
 ---

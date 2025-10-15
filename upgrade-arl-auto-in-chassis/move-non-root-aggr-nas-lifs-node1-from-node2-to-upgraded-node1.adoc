@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html
+permalink: upgrade-arl-auto-in-chassis/move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html
 keywords: moving, non-root, aggregates, nas, lif, node1, node2
 summary: "Verify that the node1 NAS data LIFs on node2 are relocated from node2 to node1 when using ARL to upgrade controller models in the same chassis."
 ---

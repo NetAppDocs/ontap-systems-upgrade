@@ -1,4 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html
-redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/restore_key_manager_config_upgraded_node1.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/restore-key-manager-config-upgraded-node1.html
 ---

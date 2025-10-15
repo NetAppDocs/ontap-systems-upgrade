@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-in-chassis/restore_key_manager_config_node2.html
+permalink: upgrade-arl-auto-in-chassis/restore-key-manager-config-node2.html
 keywords: restore key-manager, configuration, node1, nve, arl, volume, encryption
 summary: "If required, restore key-manager configuration on node2 when using ARL to upgrade controller models in the same chassis."
 ---
