@@ -1,4 +1,4 @@
 ---
-permalink: upgrade-arl-auto-affa900/install-asaa900-affa900-fas9500-on-node2.html
-redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html
+permalink: upgrade-arl-auto-affa900/ensure-new-controllers-are-set-up-correctly.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html
 ---

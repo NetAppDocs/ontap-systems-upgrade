@@ -69,7 +69,7 @@ entries:
       - title: Install ASA A150, AFF A150, or FAS2820
         url: /upgrade-arl-auto-in-chassis/install-asaa150-affa150-fas2820-on-node2.html
       - title: Install ASA A900, AFF A900, or FAS9500
-        url: /upgrade-arl-auto-in-chassis/install-asaa900-affa900-fas9500-on-node2.html
+        url: /upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html
    - title: Netboot node2
      url: /upgrade-arl-auto-in-chassis/netboot_node2.html
 - title: "Stage 6. Boot node2 with the replacement system modules"
