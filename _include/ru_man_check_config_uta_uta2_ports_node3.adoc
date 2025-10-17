@@ -37,23 +37,15 @@ UTA/UTA2 ports might be found on an adapter or on the controller, and have the f
 * UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
 * Onboard UTA/UTA2 ports on new controllers are configured before shipment to have the personality you request.
 +
-NOTE: *Attention*: If your system has storage disks, you must enter the commands in this section at the cluster prompt unless directed to enter maintenance mode. If you have a VSeries system or have FlexArray Virtualization Software and are connected to storage arrays, you must enter commands in this section at the maintenance mode prompt. You must be in maintenance mode to configure UTA/UTA2 ports.
+NOTE: Enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode.
 
 .Steps
 
-. Check how the ports are currently configured entering on of the following commands on node3:
+. Check the current port configuration by entering the following command on node3:
 +
-[cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks
-|`system node hardware unified-connect show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-|===
+`system node hardware unified-connect show`
 +
-The system displays output similar to the following examples:
+The system displays output similar to the following example:
 +
 ----
  cluster1::> system node hardware unified-connect show
@@ -71,22 +63,6 @@ The system displays output similar to the following examples:
  f-b   0h       cna      target     -        -        online
  12 entries were displayed.
 ----
-+
-----
-*> ucadmin show
-         Current  Current    Pending  Pending  Admin
-Adapter  Mode     Type       Mode     Type     Status
--------  -------  ---------  -------  -------  ------
-0e       fc       initiator  -        -        online
-0f       fc       initiator  -        -        online
-0g       cna      target     -        -        online
-0h       cna      target     -        -        online
-0e       fc       initiator  -        -        online
-0f       fc       initiator  -        -        online
-0g       cna      target     -        -        online
-0h       cna      target     -        -        online
-*>
-----
 
 . [[step2]]If the current SFP+ module does not match the desired use, replace it with the correct SFP+ module.
 +
@@ -103,90 +79,59 @@ Contact your NetApp representative to obtain the correct SFP+ module.
 |Do not have the personality that you want
 |Go to <<man_check_3_step5,Step 5>>.
 |Have the personality that you want
-|Skip Step 5 through Step 12 and go to <<man_check_3_step13,Step 13>>.
+|Skip Step 5 through Step 13 and go to <<man_check_3_step14,Step 14>>.
 |===
 
-. [[man_check_3_step5]]Take one of the following actions:
+. [[man_check_3_step5]]If the system has storage disks and is running clustered Data ONTAP 8.3, boot node3 and enter maintenance mode:
 +
-[cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks and is running clustered Data ONTAP 8.3
-|Boot node3 and enter maintenance mode:
-
 `boot_ontap maint`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Go to <<man_check_3_step6,Step 6>>.
 
-You should already be in maintenance mode.
-|===
+. Verify the settings:
++
+`ucadmin show`
 
-. [[man_check_3_step6]]Take one of the following actions:
+. Take one of the following actions:
 +
 [cols="35,65"]
 |===
 |If you are configuring... |Then...
 
 |Ports on a UTA/UTA2 card
-|Go to <<man_check_3_step7,Step 7>>.
+|Go to <<man_check_3_step8,Step 8>>.
 |Onboard UTA/UTA2 ports
-|Skip Step 7 and go to <<man_check_3_step8,Step 8>>.
+|Skip Step 8 and go to <<man_check_3_step9,Step 9>>.
 |===
 
-. [[man_check_3_step7]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
+. [[man_check_3_step8]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
 `storage disable adapter _adapter_name_`
 +
 Adapters in target mode are automatically offline in maintenance mode.
 
-. [[man_check_3_step8]]If the current configuration does not match the desired use, change the configuration as needed:
+. [[man_check_3_step9]]If the current configuration does not match the desired use, change the configuration as needed:
 +
 `ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
 +
 * `-m` is the personality mode, `fc` or `cna`.
 * `-t` is the FC4 type, `target` or `initiator`.
 +
-NOTE: You need to use the FC initiator for tape drives, FlexArray Virtualization systems, and MetroCluster configurations. You need to use the FC target for SAN clients.
+NOTE: You must use the FC initiator for tape drives and MetroCluster configurations. You must use the FC target for SAN clients.
 
-. Verify the settings:
-+
-`ucadmin show`
 
-. Verify the settings:
-+
-[cols="35,65"]
-|===
-|If the system... |Then...
 
-|Has storage disks
-a|.. Stop the system:
+. Stop the system:
 +
 `halt`
 +
 The system stops at the boot environment prompt.
-
-.. Enter the following command:
++
+. Enter the following command:
 +
 `boot_ontap`
 
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Reboot to maintenance mode:
-
-`boot_netapp maint`
-|===
-
 . [[step11]]Verify the settings:
 +
-[cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks
-|`system node hardware unified-connect show`
-|Is a V-Series or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-|===
+`system node hardware unified-connect show`
 +
 The output in the following examples show that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
 +
@@ -203,43 +148,11 @@ The output in the following examples show that the FC4 type of adapter "1b" is c
 
  4 entries were displayed.
 ----
+
+. [[step12a]]Place any target ports online by entering the following command, once for each port:
 +
-----
-*> ucadmin show
-         Current  Current    Pending  Pending    Admin
-Adapter  Mode     Type       Mode     Type       Status
--------  -------  ---------  -------  ---------  ------
-1a       fc       initiator  -        -          online
-1b       fc       target     -        initiator  online
-2a       fc       target     cna      -          online
-2b       fc       target     cna      -          online
-*>
-----
+`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
 
-. [[step12a]]Place any target ports online by entering one of the following commands, once for each port:
-+
-[cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks
-|`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`fcp config _adapter_name_ up`
-|===
-
-. [[man_check_3_step13]]Cable the port.
-
-. [[step14]]Take one of the following actions:
-+
-[cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks
-|Go to link:map_ports_node1_node3.html[Map ports from node1 to node3].
-|Is a V-series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to _Install and boot node3_ and resume at link:install_boot_node3.html#man_install3_step7[Step 7].
-|===
+. [[man_check_3_step14]]Cable the port.
 
 // Clean-up, 2022-03-09

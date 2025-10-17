@@ -164,7 +164,7 @@ The value of this command must match the physical state of the system.
 +
 `system node halt -node _node1_`
 +
-WARNING: *Attention*: If node1 is in same chassis as node2, do not power off the chassis by using the power switch or by pulling the power cable. If you do so, node2, which is serving data, will go down.
+WARNING: If node1 is in same chassis as node2, do not power off the chassis by using the power switch or by pulling the power cable. If you do so, node2, which is serving data, will go down.
 
 . When the system prompts you to confirm that you want to halt the system, enter `y`.
 +

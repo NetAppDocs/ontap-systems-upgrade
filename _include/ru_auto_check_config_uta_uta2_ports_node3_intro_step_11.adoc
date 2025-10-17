@@ -12,7 +12,7 @@ If you want to use a Unified Target Adapter (UTA/UTA2) port for FC, you must fir
 
 NOTE: NetApp marketing materials might use the term UTA2 to refer to CNA adapters and ports. However, the CLI uses the term CNA.
 
-You can use the `ucadmin show` command to verify the current port configuration:
+You can use the `ucadmin show` command to view or verify the current port configuration, as shown in the following example output:
 
 ....
 *> ucadmin show
@@ -30,132 +30,84 @@ Adapter  Mode     Type       Mode      Type         Status
 
 UTA/UTA2 ports can be configured into native FC mode or UTA/UTA2 mode. FC mode supports FC initiator and FC target; UTA/UTA2 mode allows concurrent NIC and FCoE traffic sharing the same 10GbE SFP+ interface and supports FC targets.
 
-UTA/UTA2 ports might be found on an adapter or on the controller, and have the following configurations, but you should check the configuration of the UTA/UTA2 ports on the node3 and change it, if necessary:
+UTA/UTA2 ports might be found on an add-on adapter or on the controller motherboard, and have the following configurations, but you should check the configuration of the UTA/UTA2 ports on the node3 and change it, if necessary:
 
 * UTA/UTA2 cards ordered when the controller is ordered are configured before shipment to have the personality you request.
 * UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
 * Onboard UTA/UTA2 ports on new controllers are configured before shipment to have the personality you request.
 +
-WARNING: *Attention*: If your system has storage disks, you enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode. If you have a V- Series system or have FlexArray Virtualization Software and are connected to storage arrays, you enter commands in this section at the Maintenance mode prompt. You must be in Maintenance mode to configure UTA/UTA2 ports.
+WARNING: You must be in Maintenance mode to configure UTA/UTA2 ports. Enter the commands in this section at the Maintenance mode shell prompt. 
 
 .Steps
 
-. [[step1]]Check how the ports are currently configured by entering the following command on node3:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system... |Then…
-
-|Has storage disks
-|No action required.
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-|===
-+
-The system displays output similar to the following example:
-+
-....
-*> ucadmin show
-         Current  Current     Pending   Pending    Admin
-Adapter  Mode     Type        Mode      Type       Status
--------  -------  ---------   -------   --------   ---------
-0e      fc        initiator   -         -          online
-0f      fc        initiator   -         -          online
-0g      cna       target      -         -          online
-0h      cna       target      -         -          online
-0e      fc        initiator   -         -          online
-0f      fc        initiator   -         -          online
-0g      cna       target      -         -          online
-0h      cna       target      -         -          online
-*>
-....
-
-. [[step2]]If the current SFP+ module does not match the desired use, replace it with the correct SFP+ module.
+. If the current SFP+ module does not match the desired use, replace it with the correct SFP+ module.
 +
 Contact your NetApp representative to obtain the correct SFP+ module.
 
-. [[step3]]Examine the output of the `ucadmin show` command and determine whether the UTA/UTA2 ports have the personality you want.
-. [[step4]]Take one of the following actions:
+. Verify the UTA/UTA2 port settings:
++
+`ucadmin show`
++
+Examine the output and determine whether the UTA/UTA2 ports have the personality you want.
++
+The output in the following example shows that the type of adapter "1b" is changing to initiator and that the mode of adapters "2a" and "2b" is changing to "cna". The CNA mode allows you to use the card as a network adapter.
++
+----
+*> ucadmin show 
+         Current    Current     Pending  Pending     Admin 
+Adapter  Mode       Type        Mode     Type        Status 
+-------  --------   ----------  -------  --------    -------- 
+1a       fc         initiator   -        -           online 
+1b       fc         target      -        initiator   online 
+2a       fc         target      cna      -           online 
+2b       fc         target      cna      -           online 
+*> 
+----
+
+. Take one of the following actions:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
 |If the UTA/UTA2 ports... |Then…
 
 |Do not have the personality that you want
-|Go to <<auto_check3_step5,Step 5>>.
+|Go to <<auto_check3_step4,Step 4>>.
 
 |Have the personality that you want
-|Skip Step 5 through Step 12 and go to <<auto_check3_step13,Step 13>>.
+|Skip Step 4 through Step 8 and go to <<auto_check3_step9,Step 9>>.
 |===
 
-. [[auto_check3_step5]]Take one of the following actions:
+. [[auto_check3_step4]]Take one of the following actions:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
 |If you are configuring... |Then…
 
 |Ports on a UTA/UTA2 card
-|Go to <<auto_check3_step7,Step 7>>
+|Go to <<auto_check3_step5,Step 5>>
 |Onboard UTA/UTA2 ports
-|Skip Step 7 and go to <<auto_check3_step8,Step 8>>.
+|Skip Step 5 and go to <<auto_check3_step6,Step 6>>.
 |===
 
-. [[step6]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
+. [[auto_check3_step5]]If the adapter is in initiator mode, and if the UTA/UTA2 port is online, take the UTA/UTA2 port offline:
 +
-`storage disable adapter _adapter_name_`
+`storage disable adapter <adapter_name>`
 +
 Adapters in target mode are automatically offline in Maintenance mode.
 
-. [[auto_check3_step7]]If the current configuration does not match the desired use, change the configuration as needed:
+. [[auto_check3_step6]]If the current configuration does not match the desired use, change the configuration as needed:
 +
-`ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
+`ucadmin modify -m fc|cna -t initiator|target <adapter_name>`
 +
 ** `-m` is the personality mode, `fc` or `cna`.
 ** `-t` is the FC4 type, `target` or `initiator`.
 +
-NOTE: You must use FC initiator for tape drives, FlexArray Virtualization systems, and MetroCluster configurations. You must use the FC target for SAN clients.
+NOTE: You must use FC initiator for tape drives and MetroCluster configurations. You must use the FC target for SAN clients.
 
-. [[auto_check3_step8]]Verify the settings:
+
+
+. Place any target ports online by entering the following command once for each port:
 +
-`ucadmin show`
+`storage enable adapter <adapter_name>`
 
-. [[step9]]Verify the settings:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system... |Then…
-
-|Has storage disks
-|`ucadmin show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`ucadmin show`
-
-|===
-+
-The output in the following examples shows that the FC4 type of adapter "1b" is changing to `initiator` and that the mode of adapters "2a" and "2b" is changing to `cna`:
-+
-....
-*> ucadmin show
-         Current    Current     Pending  Pending     Admin
-Adapter  Mode       Type        Mode     Type        Status
--------  --------   ----------  -------  --------    --------
-1a       fc         initiator   -        -           online
-1b       fc         target      -        initiator   online
-2a       fc         target      cna      -           online
-2b       fc         target      cna      -           online
-*>
-....
-
-. [[step10]]Place any target ports online by entering one of the following commands, once for each port:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system... |Then…
-
-|Has storage disks
-|`network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|`fcp config _adapter_name_ up`
-|===
-
-. [[step11]]Cable the port.
+. Cable the port.
