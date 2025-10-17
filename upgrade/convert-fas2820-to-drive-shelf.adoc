@@ -1,0 +1,47 @@
+---
+permalink: upgrade/convert-fas2820-to-drive-shelf.html
+sidebar: sidebar
+keywords: fas2820,  ndu, nondisruptive, upgrade, FAS, systems, entry, level
+summary: Perform a nondisruptive upgrade to a FAS2820 by converting each node to a DS212C drive shelf and then connecting to the replacement nodes.
+---
+= Upgrade from FAS2820 by converting to DS212C drive shelf
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can perform a nondisruptive upgrade of a NetApp FAS2820 by converting each node to a DS212C drive shelf and then connecting it to the replacement nodes.
+
+.About this task
+In this procedure, the FAS2820 high-availability (HA) pair controllers are called node1 and node2, and the replacement HA 
+pair controllers are called node3 and node4.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One]xref:migrate-fas2820-node2-lifs-aggregates.adoc[Migrate LIFs and data aggregates on node2 to node1]
+[role="quick-margin-para"]
+Before converting FAS2820 node2 to a drive shelf, you migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two]xref:convert-fas2820-node2-drive-shelf.adoc[Convert node2 to a drive shelf and connect to node4]
+[role="quick-margin-para"]
+You convert FAS8280 node2 to a DS212C drive shelf and then connect to node4 before reassigning drives from node2 to node4.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]xref:reassign-fas2820-node2-drives.adoc[Reassign drives from node2 to node4]
+[role="quick-margin-para"]
+After converting FAS2820 node2 to a DS212C drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four]xref:migrate-fas2820-aggregates-epsilon-lifs.adoc[Migrate data aggregates, epsilon, and LIFs on node1 to node4]
+[role="quick-margin-para"]
+Before converting FAS2820 node1 to a drive shelf, you migrate the data aggregates, epsilon, and LIFs on node1 to node4.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five]xref:convert-fas2820-node1-drive-shelf.html[Convert node1 to a drive shelf and connect to node3]
+[role="quick-margin-para"]
+You convert FAS2820 node1 to a DS212C drive shelf and connect to node3 before reassigning drives from node1 to node3.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six]xref:reassign-fas2820-node1-drives.adoc[Reassign drives from node1 to node3]
+[role="quick-margin-para"]
+After converting FAS2820 node1 to a DS212C drive and connecting to node3, you reassign the drives that previously belonged to node1 to node3.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]xref:migrate-fas2820-node4-lIfs-aggregates.adoc[Migrate LIFs and data aggregates on node4 to node3]
+[role="quick-margin-para"]
+To complete the upgrade, you connect node3 to node4 and then migrate the data LIFs and data aggregates on node4 to node3.
+
+// 2023 Oct 12, AFFFASDOC-64
