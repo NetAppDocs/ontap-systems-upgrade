@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto/index.html
-keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology
+keywords: aggregate, relocation, controller, hardware, aggregates, metrocluster, terminology
 summary: "You can upgrade controller hardware running ONTAP 9.5 to 9.7 by using `system controller replace` commands, relocating the ownership of non-root aggregates."
 ---
 = Learn about this ARL upgrade procedure
@@ -22,8 +22,6 @@ In this information, the original nodes are called "node1" and "node2", and the 
 
 The terms "node1", "node2", "node3", and "node4" are used only to distinguish between the original and new nodes. When following the procedure, you must substitute the real names of your original and new nodes. However, in reality, the names of the nodes do not change: "node3" has the same name as "node1", and "node4" has the same name as "node2" after the controller hardware is upgraded.
 
-Throughout this information, the term "systems with FlexArray Virtualization Software" refers to systems that belong to these new platforms. The term "V-Series system" refers to the separate hardware systems that can attach to storage arrays.
-
 .Important information:
 
 * This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[guidelines for upgrading controllers with ARL] and the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence] before beginning the upgrade.
@@ -32,7 +30,7 @@ Throughout this information, the term "systems with FlexArray Virtualization Sof
 
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each HA pair in the cluster.
 
-* This procedure applies to FAS systems, V-Series systems, AFF systems, and systems with FlexArray Virtualization Software. FAS systems released after ONTAP 9.5 can attach to storage arrays if the required license is installed. The existing V-Series systems are supported in ONTAP 9.5. For more information about the storage array and V-Series models, refer to link:other_references.html[References] to link to the _Hardware Universe_ and go to the V-Series Support Matrix.
+* This procedure applies to FAS systems and AFF systems.
 
 * Beginning with ONTAP 9.6, this procedure applies to systems running 4-node MetroCluster configuration or higher. Because MetroCluster configuration sites can be at two physically different locations, the automated controller upgrade must be carried out individually at each MetroCluster site for an HA pair.
 

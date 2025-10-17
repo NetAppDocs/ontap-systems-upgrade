@@ -18,8 +18,6 @@ include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_intro.adoc[]
 ====
 If node4 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card (for example, AFF and FAS systems introduced beginning with ONTAP 9.15.1), and you are upgrading a system with storage disks, you can skip to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 
-However, if you have a V-Series system or have FlexArray Virtualization Software and are connected to storage arrays, and node4 does not have onboard FC ports, onboard UTA/ UTA2 ports, or a UTA/UTA2 card, you must return to _Install and boot node4_ and resume the procedure at link:install_boot_node4.html#step22[Step 22]. 
-
 Make sure that node4 has sufficient rack space. If node4 is in a separate chassis from node2, you can put node4 in the same location as node3. If node2 and node4 are in the same chassis, then node4 is already in its appropriate rack location.
 ====
 
@@ -28,44 +26,26 @@ include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 [start=8]
 . [[step8]]Take one of the following actions:
 +
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system that you are upgrading... |Then…
+* Go to <<Check and configure UTA/UTA2 ports on node4>> if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
 
-|Has storage disks
-a|* Skip this section and go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4] if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports.
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-a|* Go to <<Check and configure UTA/UTA2 ports on node4>> if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
-* Skip _Check and configure UTA/UTA2 ports on node4_ if node4 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, return to _Install and boot node4_, and resume the procedure at link:install_boot_node4.html#auto_install4_step23[Step 23].
-|===
+* If node4 doesn't have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip _Check and configure UTA/UTA2 ports on node4_ and go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node4_intro_step_11.adoc[]
 
-[start=12]
-. [[step12]]Take one of the following actions:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-|If the system... |Then…
-
-|Has storage disks
-|Go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
-
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to _Install and boot node4_, and resume at link:install_boot_node4.html#auto_install4_step23[Step 23].
-
-|===
-
-. [[auto_check_4_step13]]Exit Maintenance mode:
+[start=10]
+. [[auto_check_4_step10]]Exit Maintenance mode:
 +
 `halt`
 
 . [[step14]]Boot the node into boot menu:
 +
-`boot_ontap menu`.
-+
-If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
+`boot_ontap menu`
 
+.What's next?
+
+* If you are upgrading to an AFF A800 system, go to link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9[Reassign node 2 disks to node 4, Step 9].
+
+* For all other system upgrades, go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4, Step 1].
 
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // 2022-05-17, BURT 1476241
