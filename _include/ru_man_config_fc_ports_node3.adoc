@@ -48,7 +48,7 @@ IMPORTANT: Enter the commands in this section at the cluster prompt.
 +
 `system node hardware unified-connect show`
 
-. Exit maintenance mode by entering the following command:
+. Exit Maintenance mode:
 +
 `halt`
 

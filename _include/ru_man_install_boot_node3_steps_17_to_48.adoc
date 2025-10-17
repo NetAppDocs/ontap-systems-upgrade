@@ -117,7 +117,7 @@ The system displays the system ID of the node and information about its disks, a
 +
 NOTE: You might see the message `disk show: No disks match option -a.` after entering the command. This is not an error message so you can continue with the procedure.
 
-. [[man_install3_step21]]Reassign node1's spares, any disks belonging to the root, and any non-root aggregates that were not relocated to node2 earlier in link:relocate_non_root_aggr_node1_node2.html[Relocate non-root aggregates from node1 to node2].
+. [[man_install3_step21]]Reassign node1's spare disks, any disks belonging to the root, and any non-root aggregates that were not relocated to node2 earlier in link:relocate_non_root_aggr_node1_node2.html[Relocate non-root aggregates from node1 to node2].
 +
 Enter the appropriate form of the `disk reassign` command based on whether your system has shared disks:
 +

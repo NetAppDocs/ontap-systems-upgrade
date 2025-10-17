@@ -37,11 +37,11 @@ UTA/UTA2 ports might be found on an adapter or on the controller, and have the f
 * UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
 * Onboard UTA/UTA2 ports on new controllers are configured before shipment to have the personality you request.
 +
-NOTE: Enter the commands in this section at the cluster prompt unless directed to enter maintenance mode.
+NOTE: Enter the commands in this section at the cluster prompt unless directed to enter Maintenance mode.
 
 .Steps
 
-. Check how the ports are currently configured on node3:
+. Check the current port configuration by entering the following command on node3:
 +
 `system node hardware unified-connect show`
 +
@@ -115,7 +115,7 @@ Adapters in target mode are automatically offline in maintenance mode.
 * `-m` is the personality mode, `fc` or `cna`.
 * `-t` is the FC4 type, `target` or `initiator`.
 +
-NOTE: You need to use the FC initiator for tape drives and MetroCluster configurations. You need to use the FC target for SAN clients.
+NOTE: You must use the FC initiator for tape drives and MetroCluster configurations. You must use the FC target for SAN clients.
 
 
 
