@@ -90,4 +90,5 @@ If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the 
 +
 `saveenv`
 
+// 2025 JUN 19, AFFFASDOC-334
 // 2024 DEC 9, AFFFASDOC-33
