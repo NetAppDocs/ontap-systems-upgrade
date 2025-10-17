@@ -15,7 +15,7 @@ summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 [.lead]
 include::../_include/ru_auto_set_fc_or_uta_uta2_confgig_node3_intro.adoc[]
 
-* If node3 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card (for example, AFF and FAS systems introduced in ONTAP 9.15.1), and you are upgrading a system with storage disks, you can skip to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
+* If node3 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card (for example, AFF and FAS systems introduced beginning with ONTAP 9.15.1), and you are upgrading a system with storage disks, you can skip to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
 * However, if you have a V-Series system or a system with FlexArray Virtualization software with storage arrays, and node3 does not have onboard FC ports, onboard UTA/UTA ports, or a UTA/UTA2 card, return to the _Install and boot node3_ and resume the procedure at link:install_boot_node3.html#auto_install3_step23[Step 23].
 
 include::../_include/ru_auto_config_fc_ports_node3.adoc[]
