@@ -16,7 +16,7 @@ include::../_include/ru_auto_set_fc_or_uta_uta2_config_node4_intro.adoc[]
 
 [NOTE]
 ====
-If node4 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
+If node4 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card (for example, AFF and FAS systems introduced beginning with ONTAP 9.15.1), and you are upgrading a system with storage disks, you can skip to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 
 Make sure that node4 has sufficient rack space. If node4 is in a separate chassis from node2, you can put node4 in the same location as node3. If node2 and node4 are in the same chassis, then node4 is already in its appropriate rack location.
 ====
