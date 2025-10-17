@@ -81,7 +81,7 @@ Adapters in target mode are automatically offline in Maintenance mode.
 NOTE: You must use FC initiator for tape drives and the FC target for SAN clients.
 
 
-. If the system as storage disks, enter the following command:
+. If the system has storage disks, enter the following command:
 +
 `halt`
 +
