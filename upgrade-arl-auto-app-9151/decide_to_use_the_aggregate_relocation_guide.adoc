@@ -41,7 +41,6 @@ You cannot use this ARL procedure to upgrade a pair of nodes under the following
 |===
 +
 To perform upgrade an upgrade listed in the above table, see link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller models in the same chassis_.
-* You're upgrading a V-Series system or FlexArray Virtualization storage system using an external array for backend storage. Contact technical support for options to upgrade a V-series or FlexArray system.
 * You're upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
 
 [[sys_commands_9151_supported_systems]]

@@ -10,8 +10,6 @@ However, you don't need to netboot node3 if it has the same or a later version o
 ====
 * For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node1. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules]. 
 
-* If you are upgrading a V-Series system connected to storage arrays or a system with FlexArray Virtualization software that is connected to storage arrays, you must complete <<man_install3_step1, Step 1>> through <<man_install3_step5,Step 5>>, leave this section at <<man_install3_step6,Step 6>> and follow instructions in link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#uta-ports-node3[Check and configure UTA/UTA2 ports on node3] as needed, entering commands in maintenance mode. You must then return to this section and resume with <<man_install3_step7,Step 7>>.
-
 * If you are upgrading a system with storage disks, you must complete this entire section and then go to link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#uta-ports-node3[Check and configure UTA/UTA2 ports on node3], entering commands at the cluster prompt.
 ====
 
@@ -29,7 +27,7 @@ NOTE: If you are upgrading to a system with both nodes in the same chassis, inst
 +
 The following references help you make proper cable connections. Go to link:other_references.html[References] to link to them.
 +
-* _Installation and Setup Instructions_ or _FlexArray Virtualization Installation Requirements and Reference_ for the node3 platform
+* _Installation and Setup Instructions_ for the node3 platform
 * The appropriate disk shelf procedure
 * The _HA pair management_ documentation
 
@@ -61,60 +59,22 @@ To override this delay, press 'c' followed by 'Enter'
 .. Check for any console messages that might indicate a problem other than a low NVRAM battery, and, if necessary, take any required corrective action.
 .. Allow the battery to charge and the boot process to complete.
 +
-NOTE: *Attention*: Do not override the delay; failure to allow the battery to charge could result in a loss of data.
+WARNING: *Do not override the delay; failure to allow the battery to charge could result in a loss of data.*
 
-. [[man_install3_step6]]Take one of the following actions:
-+
-[cols="35,65"]
-|===
-|If your system... |Then...
-
-|Has disks and no back-end storage
-|Skip Step 7 through Step 12 and go to <<man_install3_step13,Step 13>>.
-|Is a V-Series system or a system with FlexArray Virtualization software connected to storage arrays
-a|.. Go to link:set_fc_uta_uta2_config_node3.html[Set the FC or UTA/UTA2 configuration on node3] and complete the subsections link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#uta-ports-node3[Check and configure UTA/UTA2 ports on node3], as appropriate to your system.
-
-.. Return to this section and complete the remaining steps, beginning with <<man_install3_step7,Step 7>>.
-
-IMPORTANT: You must reconfigure FC onboard ports, CNA onboard ports, and CNA cards before you boot ONTAP on the V-Series or system with FlexArray Virtualization software.
-|===
-
-. [[man_install3_step7]]Add the FC initiator ports of the new node to the switch zones.
-+
-If your system has a tape SAN, then you need zoning for the initiators. See your storage array and zoning documentation for instructions.
-
-. [[man_install3_step8]]Add the FC initiator ports to the storage array as new hosts, mapping the array LUNs to the new hosts.
-+
-See your storage array and zoning documentation for instructions.
-
-. [[man_install3_step9]] Modify the World Wide Port Name (WWPN) values in the host or volume groups associated with array LUNs on the storage array.
-+
-Installing a new controller module changes the WWPN values associated with each onboard FC port.
-
-. [[man_install3_step10]]If your configuration uses switch-based zoning, adjust the zoning to reflect the new WWPN values.
-
-. [[man_install3_step11]]Verify that the array LUNs are now visible to node3:
-+
-`sysconfig -v`
-+
-The system displays all the array LUNs visible to each of the FC initiator ports. If the array LUNs are not visible, you will not be able to reassign disks from node1 to node3 later in this section.
-
-. [[man_install3_step12]]Press Ctrl-C to display the boot menu and select maintenance mode.
-
-. [[man_install3_step13]]At the Maintenance mode prompt, enter the following command:
+. At the Maintenance mode prompt, enter the following command:
 +
 `halt`
 +
 The system stops at the boot environment prompt.
 
-. [[man_install3_step14]]Take one of the following actions:
+. Take one of the following actions:
 +
 [cols="35,65"]
 |===
 |If the system you are upgrading to is in a... |Then...
 
 |Dual-chassis configuration (with controllers in different chassis)
-|Go to <<man_install3_step15,Step 15>>.
+|Go to <<man_install3_step8,Step 8>>.
 |Single-chassis configuration (with controllers in the same chassis)
 a|.. Switch the console cable from node3 to node4.
 
@@ -128,10 +88,10 @@ NOTE: Leave node4 at the boot environment prompt; you will return to node4 in li
 
 .. Switch the console cable back from node4 to node3.
 
-.. Go to <<man_install3_step15,Step 15>>.
+.. Go to <<man_install3_step8,Step 8>>.
 |===
 
-. [[man_install3_step15]]Configure node3 for ONTAP:
+. [[man_install3_step8]]Configure node3 for ONTAP:
 +
 `set-defaults`
 // 2025 MAY 22, AFFFASDOC-329
