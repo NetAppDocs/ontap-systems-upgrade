@@ -1,8 +1,5 @@
 When performing the procedures in this content, you might need to consult reference content or go to reference websites.
 
-* <<Reference content>>
-* <<Reference sites>>
-
 == Reference content
 Content specific to this upgrade are listed in the table below.
 

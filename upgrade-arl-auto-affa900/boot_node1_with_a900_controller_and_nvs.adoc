@@ -12,7 +12,7 @@ summary: Boot node1 with the replacement controller modules when using ARL to up
 :imagesdir: ../media/
 
 [.lead]
-Node1 with the replacement modules is now ready to boot. The supported replacement modules are listed in the link:index.html#supported-systems,[supported systems matrix].
+Node1 with the replacement modules is now ready to boot. The supported replacement modules are listed in the link:decide_to_use_the_aggregate_relocation_guide.html.html#supported-systems-in-chassis,[supported systems matrix].
 
 [NOTE]
 ====

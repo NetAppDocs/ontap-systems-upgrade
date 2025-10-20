@@ -34,8 +34,8 @@ In the output, the "IC RDMA Connection" should have the status `Up`.
 | `Down`
 | Go to <<verify-rcf-step3,Step 3>>.
 |===
-[[verify-rcf-step3]]
-. Check the cluster ports and switch RCF.
+
+. [[verify-rcf-step3]]Check the cluster ports and switch RCF.
 +
 For more information, see link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster[Connect to a switch-attached cluster]. 
 . Verify that the "IC RDMA Connection" status has changed to `Up`:

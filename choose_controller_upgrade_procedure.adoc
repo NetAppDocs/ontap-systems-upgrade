@@ -34,22 +34,24 @@ This requires a new system with its own storage and shelves to store the data fr
 
 a| Upgrade by using one of the following methods:
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Moving volumes]
+* link:upgrade/upgrade-decide-to-use-this-guide.html[Move volumes]
 +
 This requires joining the new nodes, moving the volumes and LIFs to the new nodes, and unjoining the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, convert it to a switched attached cluster using a pair of cluster switches before adding new nodes.
-* link:upgrade-arl/index.html[Using aggregate relocation]
+* link:upgrade-arl/index.html[Use aggregate relocation]
 +
 ARL is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
 | Do I have a modular system?
 
-(The controller does not have any internal disks and all storage is externally attached shelves.)
+In a modular system, the controller does not have any internal disks and all storage is externally attached shelves.
 
 | link:upgrade-arl/index.html[Upgrade by using aggregate relocation].
 
-| Do I have an integrated system (the controller and disks are in the same chassis) and want to upgrade by moving volumes?	
+| Do I have an integrated system and want to upgrade by moving volumes?	
 
-a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system is supported].
+In an integrated system, the controller has internal disks and the storage is contained within the controller chassis.
+
+a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system is supported^].
 . link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes].
 
 | Do I have an integrated system and want to upgrade by swapping the controller module only, keeping existing chassis and disks?
@@ -59,7 +61,7 @@ a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system i
 | Refer to link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow[SVM data mobility overview^].
 
 | Am I upgrading a MetroCluster configuration?
-|Refer to link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration].
+|Refer to link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
 
 | Am I replacing an individual component?
 | Refer to the link:https://docs.netapp.com/us-en/ontap-systems/index.html[ONTAP Hardware Systems Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.

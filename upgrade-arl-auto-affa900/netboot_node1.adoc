@@ -14,7 +14,7 @@ summary:  When using ARL to upgrade controller models in the same chassis, you m
 [.lead]
 After swapping the corresponding replacement system modules, you must netboot node1. The term netboot means that you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you add a copy of the ONTAP 9 boot image onto a web server that the system can access.
 
-It isn't possible to check the version of ONTAP installed on the boot media of the replacement controller module unless it is installed in a chassis and powered ON. The ONTAP version on the replacement system boot media must be same as the ONTAP version running on the old system that you are upgrading and both the primary and backup boot images on the boot media must match. To verify the minimum supported ONTAP version for your upgrade, see the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems,[supported system upgrade combinations].
+It isn't possible to check the version of ONTAP installed on the boot media of the replacement controller module unless it is installed in a chassis and powered ON. The ONTAP version on the replacement system boot media must be same as the ONTAP version running on the old system that you are upgrading and both the primary and backup boot images on the boot media must match. To verify the minimum supported ONTAP version for your upgrade, see the link:decide_to_use_the_aggregate_relocation_guide.html.html#supported-systems-in-chassis,[supported systems matrix].
 
 You can configure the images by performing a netboot followed by the `wipeconfig` command from the boot menu. If the controller module was previously used in another cluster, the `wipeconfig` command clears any residual configuration on the boot media.
 
