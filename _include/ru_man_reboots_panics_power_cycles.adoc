@@ -179,7 +179,7 @@ There is an outage for non-root aggregates that were already relocated until nod
 .Steps
 
 . Bring up node4.
-. Relocate the remaining aggregates that belonged to node2 by again completing link:relocate_node2_non_root_aggr_node3_node4.html#Step1[Step 1] through link:relocate_node2_non_root_aggr_node3_node4.html#step3[Step 3] in _Relocate node2's non-root aggregates from node3 to node4_.
+. Relocate the remaining aggregates that belonged to node2 by again completing link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1[Step 1] through link:relocate_node2_non_root_aggr_node3_node4.html#step3[Step 3] in _Relocate node2's non-root aggregates from node3 to node4_.
 . Continue with the node-pair upgrade procedure.
 // 02 MAR 2021 Formatted from CMS
 // Clean-up, 2022-03-09
