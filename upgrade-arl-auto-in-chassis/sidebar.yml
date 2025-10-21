@@ -8,7 +8,7 @@ entries:
 - title: Required tools and documentation
   url: /upgrade-arl-auto-in-chassis/required-tools-and-documentation.html
 - title: Guidelines for upgrading controllers
-  url: /upgrade-arl-auto-in-chassis/guidelines_for_upgrading_controllers_with_arl.html
+  url: /upgrade-arl-auto-in-chassis/guidelines-for-upgrading-controllers-with-arl.html
 - title: Learn about the ARL upgrade sequence
   url: /upgrade-arl-auto-in-chassis/overview-of-the-arl-upgrade.html
 - title: "Stage 1. Prepare for upgrade"
@@ -19,13 +19,13 @@ entries:
     - title: Prepare the nodes for upgrade
       url: /upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html
     - title: Manage storage encryption using the Onboard Key Manager
-      url: /upgrade-arl-auto-in-chassis/manage_storage_encryption_using_okm.html
+      url: /upgrade-arl-auto-in-chassis/manage-storage-encryption-using-okm.html
 - title: "Stage 2. Relocate resources and retire node1"
   entries:
     - title: Relocate non-root aggregates and NAS data LIFs owned by node1 to node2
       url: /upgrade-arl-auto-in-chassis/relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html
     - title: Relocate failed or vetoed aggregates
-      url: /upgrade-arl-auto-in-chassis/relocate_failed_or_vetoed_aggr.html
+      url: /upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html
     - title: Retire node1
       url: /upgrade-arl-auto-in-chassis/retire-node1.html
     - title: Replace the node1 system modules
@@ -45,7 +45,7 @@ entries:
     - title: Cable node1 for shared cluster-HA storage
       url: /upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html
     - title: Boot node1 with the replacement system modules
-      url: /upgrade-arl-auto-in-chassis/boot_node1_with_a900_controller_and_nvs.html
+      url: /upgrade-arl-auto-in-chassis/boot-node1-with-a900-controller-and-nvs.html
     - title: Verify the node1 installation
       url: /upgrade-arl-auto-in-chassis/verify-node1-installation.html
     - title: Restore key-manager configuration on the upgraded node1
@@ -77,7 +77,7 @@ entries:
    - title: Cable node2 for shared cluster-HA storage
      url: /upgrade-arl-auto-in-chassis/cable-node2-for-shared-cluster-HA-storage.html 
    - title: Boot node2 with the replacement system modules
-     url: /upgrade-arl-auto-in-chassis/boot_node2_with_a900_controller_and_nvs.html
+     url: /upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html
    - title: Verify the node2 installation
      url: /upgrade-arl-auto-in-chassis/verify-node2-installation.html
    - title: Restore key-manager configuration on node2
@@ -85,32 +85,32 @@ entries:
    - title: Verify the RCF configuration on cluster switches
      url: /upgrade-arl-auto-in-chassis/verify-rcf-configuration.html  
    - title: Move non-root aggregates and NAS data LIFs back to node2
-     url: /upgrade-arl-auto-in-chassis/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html
+     url: /upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html
 - title: "Stage 7. Complete the upgrade"
   entries:
   - title: Manage authentication using KMIP servers
     url: /upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html
   # 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
   - title: Confirm that the new controllers are set up correctly
-    url: /upgrade-arl-auto-in-chassis/ensure_new_controllers_are_set_up_correctly.html
+    url: /upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html
   - title: Set up Storage Encryption on the new controller module
     url: /upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html
   - title: Set up NetApp Volume or Aggregate Encryption on the new controller module
     url: /upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html
   - title: Decommission the old system
-    url: /upgrade-arl-auto-in-chassis/decommission_old_system.html
+    url: /upgrade-arl-auto-in-chassis/decommission-old-system.html
   - title: Resume SnapMirror operations
     url: /upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html
 - title: "Troubleshoot"
   pdf-filename: "Troubleshoot (upgrade to AFF A900 or FAS9500)"
   entries:
   - title: Aggregate relocation failures
-    url: /upgrade-arl-auto-in-chassis/aggregate_relocation_failures.html
+    url: /upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html
   - title: Reboots, panics, or power cycles
     url: /upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html
   - title: Issues that can arise in multiple stages of the procedure
-    url: /upgrade-arl-auto-in-chassis/issues_in_multiple_stages_of_procedure.html
+    url: /upgrade-arl-auto-in-chassis/issues-in-multiple-stages-of-procedure.html
   - title: LIF migration failure
-    url: /upgrade-arl-auto-in-chassis/lif_migration_failure.html
+    url: /upgrade-arl-auto-in-chassis/lif-migration-failure.html
 - title: References
   url: /upgrade-arl-auto-in-chassis/other-references.html
