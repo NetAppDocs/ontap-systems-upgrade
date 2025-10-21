@@ -1,0 +1,215 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html
+keywords: boot, NVRAM, controller, module, node2, replacement
+summary: Boot node2 with the replacement controller modules when using ARL to upgrade controller models in the same chassis.
+---
+= Boot node2 with the replacement system modules
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Node2 with the replacement modules is now ready to boot. The supported replacement modules are listed in the link:index.html#supported-systems,[supported systems matrix].
+
+NOTE: You only move the console and management connections when you upgrade by swapping the system modules.
+
+.Steps
+
+. [[boot_node2_step1]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
++
+NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
+
+.. Set `bootarg.storageencryption.support` to `true` or `false`:
++
+[cols="35,65"]
+|===
+|If the following drives are in use…	|Then…
+
+|NSE drives that conform to FIPS 140-2 Level 2 self-encryption requirements
+|`setenv bootarg.storageencryption.support *true*`
+|NetApp non-FIPS SEDs
+|`setenv bootarg.storageencryption.support *false*`
+|===
++
+[NOTE]
+====
+You cannot mix FIPS drives with other types of drives on the same node or HA pair.
+You can mix SEDs with non-encrypting drives on the same node or HA pair.
+====
+
+.. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
++
+Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
+
+. Boot the node into the boot menu:
++
+`boot_ontap menu`
+. When the node stops at the boot menu, reassign the old node2 disks to the replacement node2 by running the following command on node2:
++
+`boot_after_controller_replacement`
++
+After a short delay, you are prompted to enter the name of the node that is being replaced. If there are shared disks (also called Advanced Disk Partitioning (ADP) or partitioned disks), you are prompted to enter the node name of the HA partner.
++
+These prompts might get buried in the console messages. If you do not enter a node name or enter an incorrect name, you are prompted to enter the name again.
++
+[NOTE]
+====
+If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` and, or, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` errors occur, perform the following steps:
+
+. Halt the node at the LOADER prompt.
+. Check and reset the storage encryption bootargs mentioned in <<boot_node2_step1,Step 1>>.
+. At the LOADER prompt, boot up:
++
+`boot_ontap`
+====
+
++
+You can use the following example as a reference:
++
+.Expand the console output example
+[%collapsible]
+====
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+
+
+
+The boot device has changed. System configuration information could be lost. Use option (6) to restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+
+This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
+
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
+Changing sysid of node node1 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+
+System rebooting...
+
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
+====
++
+[NOTE]
+====
+The system IDs shown in the preceding example are example IDs. The actual system IDs of the nodes that you are upgrading will be different.
+
+Between entering node names at the prompt and the login prompt, the node reboots a few times to restore the environment variables, update firmware on the cards in the system, and for other ONTAP updates.
+====
+
+// 2025 SEP 15, AFFFASDOC-205
+// 2025 SEP 9, AFFFASDOC-312
+// 2023 AUG 29, AFFFASDOC-78
+// 2023 MAY 29, AFFFASDOC-39
+// 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
+// 2023 Feb 22, BURT 1518041
+// 2022 DEC 1, ontap-systems-upgrade-37
+// BURT-1481586 30-May-2022
+// 2022 APR 27, BURT 1452254

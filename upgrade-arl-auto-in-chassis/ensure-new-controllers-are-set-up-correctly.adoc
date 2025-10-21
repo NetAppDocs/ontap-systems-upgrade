@@ -1,0 +1,116 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html
+keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability
+summary: "Verify that the HA pair is enabled, verify node1 and node2 storage access and LIF, and confirm aggregate ownership after upgrading controller models in the same chassis."
+---
+= Confirm that the new controllers are set up correctly
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+
+[.lead]
+To confirm the correct setup, you verify that the HA pair is enabled. You also verify that node1 and node2 can access each other's storage and that neither owns data LIFs belonging to other nodes on the cluster. In addition, you verify that all data aggregates are on their correct home nodes, and that the volumes for both nodes are online. If one of the new nodes has a unified target adapter, you must restore any port configurations and you might need to change the use of the adapter.
+
+.Steps
+.	After the post-checks of node2, the storage failover and cluster HA pair for the node2 cluster are enabled. When the operation is done, both nodes show as completed and the system performs some cleanup operations.
+
+.	Verify that storage failover is enabled:
++
+`storage failover show`
++
+The following example shows the output of the command when storage failover is enabled:
++
+----
+cluster::> storage failover show
+                          Takeover
+Node	    Partner       Possible      State Description
+----------  -----------   ------------  ------------------
+node1	    node2         true	        Connected to node2
+node2	    node1         true	        Connected to node1
+----
+.	Verify that node1 and node2 belong to the same cluster by using the following command and examining the output:
++
+`cluster show`
+.	Verify that node1 and node2 can access each other's storage by using the following command and examining the output:
++
+`storage failover show -fields local-missing-disks,partner-missing-disks`
+.	Verify that neither node1 nor node2 owns data LIFs home-owned by other nodes in the cluster by using the following command and examining the output:
++
+`network interface show`
++
+If neither node1 or node2 owns data LIFs home-owned by other nodes in the cluster, revert the data LIFs to their home owner:
++
+`network interface revert`
+.	Verify that the aggregates are owned by their respective home nodes.
++
+`storage aggregate show -owner-name <node1>`
++
+`storage aggregate show -owner-name <node2>`
+.	Determine whether any volumes are offline:
++
+`volume show -node <node1> -state offline`
++
+`volume show -node <node2> -state offline`
+.	If any volumes are offline, compare them with the list of offline volumes that you captured in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade], and bring online any of the offline volumes, as required, by using the following command, once for each volume:
++
+`volume online -vserver <vserver_name> -volume <volume_name>`
+.	Install new licenses for the new nodes by using the following command for each node:
++
+`system license add -license-code <license_code,license_code,license_code...>`
++
+The license-code parameter accepts a list of 28 upper-case alphabetic character keys. You can add one license at a time, or you can add multiple licenses at once, separating each license key by a comma.
+.	Remove all of the old licenses from the original nodes by using one of the following commands:
++
+`system license clean-up -unused -expired`
++
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
++
+--
+* Delete all expired licenses:
++
+`system license clean-up -expired`
+* Delete all unused licenses:
++
+`system license clean-up -unused`
+* Delete a specific license from a cluster by using the following commands on the nodes:
++
+`system license delete -serial-number <node1_serial_number> -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
+--
++
+The following output is displayed:
++
+----
+Warning: The following licenses will be removed:
+<list of each installed package>
+Do you want to continue? {y|n}: y
+----
+Enter `y` to remove all of the packages.
+.	Verify that the licenses are correctly installed by using the following command and examining its output:
++
+`system license show`
++
+You can compare the output with the output that you captured in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section.
+
+. [[unset_maxwait]] If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in _Boot node2 with the replacement system modules_, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1[Step 1]), you must unset the variable:
++
+`set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
+.	Configure the SPs by using the following command on both nodes:
++
+`system service-processor network modify -node <node_name>`
++
+Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
+
+. If you want to set up a switchless cluster on the new nodes, refer to link:other_references.html[References] to link to the _NetApp Support Site_ and follow the instructions in _Transitioning to a two-node switchless cluster_.
+
+.After you finish
+
+If Storage Encryption is enabled on node1 and node2, complete the section link:set_up_storage_encryption_new_module.html[Set up Storage Encryption on the new controller module]. Otherwise, complete the section link:decommission_old_system.html[Decommission the old system].
+
+// 2023 Feb 22, BURT 1518041
+// 2022 DEC 1, ontap-systems-upgrade-37
+// 2022 MAY 16, BURT 1476251 

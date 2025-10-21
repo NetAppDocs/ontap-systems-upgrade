@@ -57,7 +57,7 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 ====
 
 == Upgrade controller models in the same chassis
-If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis] to start the upgrade procedure.
+If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto-in-chassis/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis] to start the upgrade procedure.
 
 .Show supported systems
 [%collapsible]

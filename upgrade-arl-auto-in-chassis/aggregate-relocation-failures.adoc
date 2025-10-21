@@ -1,0 +1,60 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html
+keywords: aggregate, relocation, failures, arl, stage 2, stage 3, stage 5
+summary: "Troubleshoot aggregate relocation failures that might occur when using ARL to upgrade controller models in the same chassis."
+---
+= Aggregate relocation failures
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+include::../_include/ru_auto_aggregate_relocation_failures.adoc[]
+
+include::../_include/ru_auto_check_aggregate_relocation_failure.adoc[]
+
++
+For detailed information about the `storage aggregate relocation start`, `override-vetoes`, and `override-destination-checks` options, refer to link:other_references.html[References] to link to the _ONTAP 9 Commands: Manual Page Reference_.
+
+== Aggregates originally on node1 are owned by node2 after completion of the upgrade
+
+At the end of the upgrade procedure, node1 should be the new home node of aggregates that originally had node1 as the home node. You can relocate them after the upgrade.
+
+.About this task
+
+Aggregates might fail to relocate correctly, that is, they have node2 as their home node instead of node1, under the following circumstances:
+
+*	During Stage 3, when aggregates are relocated from node2 to node1.
++
+Some of the aggregates being relocated have node1 as their home node. For example, such an aggregate could be called aggr_node_1. If relocation of aggr_node_1 fails during Stage 3, and relocation cannot be forced, then the aggregate is left behind on node2.
+*	After Stage 4, when node2 is replaced with the new system modules.
++
+When node2 is replaced, aggr_node_1 will come online with node1 as its home node instead of node2.
+
+You can fix the incorrect ownership problem after Stage 6, after you have enabled storage failover by completing the following steps:
+
+.Steps
+.	Get a list of aggregates:
++
+`storage aggregate show -nodes _node2_ -is-home true`
++
+To identify aggregates that were not correctly relocated, refer to the list of aggregates with the home owner of node1 that you obtained in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] and compare it with the output of the above command.
+
+.	Compare the output of Step 1 with the output you captured for node1 in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] and note any aggregates that were not correctly relocated.
+.	Relocate the aggregates left behind on node2:
++
+`storage aggregate relocation start -node _node2_ -aggr _aggr_node_1_ -destination _node1_`
++
+Do not use the -ndo-controller-upgrade parameter during this relocation.
+.	Verify that node1 is now the home owner of the aggregates:
++
+`storage aggregate show -aggregate _aggr1,aggr2,aggr3..._ -fields home-name`
++
+`_aggr1,aggr2,aggr3..._` is the list of aggregates that had node1 as the original home owner.
++
+Aggregates that do not have node1 as home owner can be relocated to node1 using the same relocation command in Step 3.
+
+// BURT 1476251, 2022-05-16
