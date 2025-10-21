@@ -8,7 +8,7 @@ However, you don't need to netboot node3 if it has the same or a later version o
 
 [IMPORTANT]
 ====
-* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node1. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules]. 
+* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node1. For more information, see link:../upgrade-arl-auto-in-chassis/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules]. 
 
 * If you are upgrading a system with storage disks, you must complete this entire section and then go to link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3[Configure FC ports on node3] and link:set_fc_uta_uta2_config_node3.html#uta-ports-node3[Check and configure UTA/UTA2 ports on node3], entering commands at the cluster prompt.
 ====

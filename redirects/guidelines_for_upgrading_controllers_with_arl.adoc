@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/guidelines-for-upgrading-controllers-with-arl.html
+---

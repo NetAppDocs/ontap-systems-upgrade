@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/install-asaa150-affa150-fas2820-on-node2.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/install-asa150-affa150-fas2820-on-node2.html
+---
