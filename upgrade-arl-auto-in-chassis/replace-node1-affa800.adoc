@@ -20,9 +20,6 @@ CAUTION: Don't power off the chassis because node1 and node2 are in the same cha
 
 If you are not already grounded, correctly ground yourself.
 
-
-
-
 == Remove the AFF A800 or AFF C800 controller module
 Remove the cable management device from the existing module and move the controller slightly out of the chassis.
 
@@ -93,5 +90,6 @@ If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the 
 +
 `saveenv`
 
+// 2025 JUN 19, AFFFASDOC-334
 // 2025 Aug 09, AFFFASDOC-378
 // 2024 APR 16, AFFFASDOC-32

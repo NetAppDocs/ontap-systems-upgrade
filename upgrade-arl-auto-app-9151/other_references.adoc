@@ -30,8 +30,7 @@ Content specific to this upgrade are listed in the table below.
 |Describes how to set up and configure ONTAP.
 |link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html[Disk and aggregate management with the CLI^]
 |Describes how to manage ONTAP physical storage using the CLI. It shows you how to create, expand, and manage aggregates, how to work with Flash Pool aggregates, how to manage disks, and how to manage RAID policies.
-|link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html[FlexArray Virtualization Installation Requirements and Reference^]
-|Contains cabling instructions and other information for FlexArray Virtualization systems.
+|link:https://docs.netapp.com/us-en/ontap-/install/index.html
 |link:https://docs.netapp.com/us-en/ontap/high-availability/index.html[HA pair management^]
 |Describes how to install and manage high-availability clustered configurations, including storage failover and takeover/giveback.
 |link:https://docs.netapp.com/us-en/ontap/volumes/index.html[Logical storage management with the CLI^]

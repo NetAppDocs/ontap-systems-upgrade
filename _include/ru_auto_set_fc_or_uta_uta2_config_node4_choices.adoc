@@ -1,4 +1,0 @@
-.Choices
-
-* <<Configure FC ports on node4>>
-* <<Check and configure UTA/UTA2 ports on node4>>

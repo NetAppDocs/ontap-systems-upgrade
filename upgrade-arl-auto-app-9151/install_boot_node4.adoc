@@ -29,9 +29,9 @@ If node4 is in a separate chassis from node2, you can put node4 in the same loca
 . Install node4 in the rack, following the instructions in the _Installation and Setup Instructions_ for the node model.
 . Cable node4, moving the connections from node2 to node4.
 +
-Cable the following connections, using the instructions in the _Installation and Setup Instructions_ or the _FlexArray Virtualization Installation Requirements and Reference_ for the node4 platform, the appropriate disk shelf document, and _HA pair management_.
+Cable the following connections, using the instructions in the _Installation and Setup Instructions_ for the node4 platform, the appropriate disk shelf document, and _HA pair management_.
 +
-Refer to link:other_references.html[References] to link to the _FlexArray Virtualization Installation Requirements and Reference_ and _HA pair management_.
+Refer to link:other_references.html[References] to link to _HA pair management_.
 +
 * Console (remote management port)
 * Cluster and HA ports
@@ -64,7 +64,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 .. Check for any console messages that might indicate a problem other than a low NVRAM battery, and, if necessary, take any required corrective action.
 .. Allow the battery to charge and the boot process to complete.
 +
-WARNING: *Attention: Do not override the delay; failure to allow the battery to charge could result in a loss of data.*
+WARNING: *Do not override the delay; failure to allow the battery to charge could result in a loss of data.*
 +
 NOTE: Refer to link:prepare_for_netboot.html[Prepare for netboot].
 

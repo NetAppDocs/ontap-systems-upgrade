@@ -23,13 +23,13 @@ Install the ASA A150, AFF A150 or FAS2820 controller module that you received fo
 
 . Align the end of the controller module with bay B in the chassis, and then gently push the controller module halfway into the system.
 +
-TIP: Bay B is located on the chassis at the bottom.
+TIP: Bay B is located on the right side of the chassis.
 +
 WARNING: Don't completely insert the controller module in the chassis until you are instructed to do so later in the procedure.
 
 . Cable the management and console ports to the node2 controller module.
 +
-NOTE: Because the chassis is already powered ON, node2 starts booting as soon as it is fully seated. To avoid node2 booting, NetApp recommends that you connect the console and management cables to the node2 controller module before completely inserting the controller module into the slot.
+NOTE: Because the chassis is already powered ON, node2 starts booting as soon as it is fully seated.To prevent node2 from booting, connect the console and management cables before fully inserting the controller module.
 
 . Firmly push the controller module into the chassis until it meets the midplane and is fully seated.
 +
@@ -40,6 +40,8 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 . Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node2.
 . After you interrupt AUTOBOOT, node2 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node2 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 
+
+// 2025 JUN 19, AFFFASDOC-334
 // 2025 Aug 09, AFFFASDOC-378
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39
