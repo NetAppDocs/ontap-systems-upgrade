@@ -43,13 +43,13 @@ ARL is a replacement procedure. You do not need to expand and shrink your cluste
 
 | Do I have a modular system?
 
-In a modular system, the controller does not have any internal disks and all storage is externally attached shelves.
+*Note*: In a modular system, the controller does not have any internal disks and all storage is in externally attached shelves.
 
 | link:upgrade-arl/index.html[Upgrade by using aggregate relocation].
 
 | Do I have an integrated system and want to upgrade by moving volumes?	
 
-In an integrated system, the controller has internal disks and the storage is contained within the controller chassis.
+*Note*: In an integrated system, the controller has internal disks and the storage is contained within the controller chassis and in externally attached shelves. External shelves are for storage expansion and might not be included in every system configuration.
 
 a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system is supported^].
 . link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes].
