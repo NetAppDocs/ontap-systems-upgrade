@@ -1,0 +1,78 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html
+keywords: moving, non-root, aggregates, nas, lif, node1, node2
+summary: "Verify that node2's NAS data LIFs on node1 are relocated from node1 to node2 when using ARL to upgrade controller models in the same chassis."
+---
+= Move non-root aggregates and NAS data LIFs back to node2
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+After you verify network configuration on node2 and before you relocate aggregates from node1 to node2, you verify that the NAS data LIFs belonging to node2 that are currently on node1 are relocated from node1 to node2. You must also verify that the SAN LIFs exist on node2.
+
+.About this task
+Remote LIFs handle traffic to SAN LUNs during the upgrade procedure. Moving SAN LIFs is not necessary for cluster or service health during the upgrade. SAN LIFs are not moved unless they need to be mapped to new ports. After you bring node2 online, you must verify that the LIFs are healthy and located on the appropriate ports.
+
+.Steps
+. Resume the relocation operation:
++
+`system controller replace resume`
++
+The system performs the following tasks:
++
+--
+* Cluster quorum check
+* System ID check
+* Image version check
+* Target platform check
+* Network reachability check
+--
++
+The operation pauses at this stage in the network reachability check.
+
+. Resume the relocation operation:
++
+`system controller replace resume`
++
+The system performs the following checks:
++
+--
+* Cluster health check
+* Cluster LIF status check
+--
++
+After performing these checks, the system relocates the non-root aggregates and NAS data LIFs back to node2, which is now running on the replacement controller.
++
+The controller replacement operation pauses after the resource relocation is complete.
+
+. Check the status of the aggregate relocation and NAS data LIF move operations:
++
+`system controller replace show-details`
++
+If the controller replacement procedure is paused, check and correct the error, if any, and then issue `resume` to continue the operation.
+
+. If necessary, restore and revert any displaced LIFs. List any displaced LIFs:
++
+`cluster controller-replacement network displaced-interface show`
++
+If any LIFs are displaced, restore the home node back to node2:
++
+`cluster controller-replacement network displaced-interface restore-home-node`
+
+. Resume the operation to prompt the system to perform the required post-checks:
++
+`system controller replace resume`
++
+The system performs the following post-checks:
+
+* Cluster quorum check
+* Cluster health check
+* Aggregates reconstruction check
+* Aggregate status check
+* Disk status check
+* Cluster LIF status check
+* Volume check

@@ -58,7 +58,7 @@ Content specific to this upgrade are listed in the table below.
 |Contains instructions for downloading and upgrading ONTAP.
 |link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1 and later^]
 |Describes the aggregate relocation procedures needed to non-disruptively upgrade controllers introduced in ONTAP 9.15.1 and later by using "system controller replace" commands.
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis^]
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-in-chassis/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis^]
 |Describes the aggregate relocation procedures needed to non-disruptively upgrade a system, keeping the old system chassis and disks.
 |link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later^]
 |Describes the aggregate relocation procedures needed to non-disruptively upgrade controllers running ONTAP 9.8 by using "system controller replace" commands.

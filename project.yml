@@ -16,7 +16,7 @@ sidebar:
       entries:
       - section: upgrade-arl
       - section: upgrade-arl-auto-app-9151
-      - section: upgrade-arl-auto-affa900
+      - section: upgrade-arl-auto-in-chassis
       - section: upgrade-arl-auto-app
       - section: upgrade-arl-auto
       - section: upgrade-arl-manual-app
