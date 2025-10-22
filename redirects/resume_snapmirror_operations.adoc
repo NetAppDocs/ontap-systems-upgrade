@@ -1,3 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/resume_snapmirror_operations.html
 redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html
+---

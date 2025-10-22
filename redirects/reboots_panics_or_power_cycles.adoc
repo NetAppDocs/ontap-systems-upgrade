@@ -1,4 +1,4 @@
 ---
 permalink: upgrade-arl-auto-affa900/reboots_panics_or_power_cycles.html
-redirects: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html
 ---

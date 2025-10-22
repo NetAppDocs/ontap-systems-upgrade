@@ -94,7 +94,7 @@ entries:
     url: /upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html
   # 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
   - title: Confirm that the new controllers are set up correctly
-    url: /upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html
+    url: /upgrade-arl-auto-in-chassis/confirm-new-controllers-are-set-up-correctly.html
   - title: Set up Storage Encryption on the new controller module
     url: /upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html
   - title: Set up NetApp Volume or Aggregate Encryption on the new controller module
