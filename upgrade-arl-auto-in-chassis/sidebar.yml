@@ -56,6 +56,8 @@ entries:
   entries:
     - title: Relocate non-root aggregates and NAS data LIFs from node2 to node1
       url: /upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html
+    - title: Relocate failed or vetoed aggregates
+      url: /upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html
     - title: Retire node2
       url: /upgrade-arl-auto-in-chassis/retire-node2.html
 - title: "Stage 5. Install the replacement system modules on node2"
