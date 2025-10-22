@@ -55,6 +55,8 @@ The following table shows the supported controller upgrade combinations using AR
 |AFF A300 |AFF A50 ^2^	|9.16.1
 |AFF A220, AFF A150	|AFF A20 ^2^ |9.16.1 ^1^
 
+|AFF C400 | AFF C60, AFF C80 |9.16.1
+
 |FAS8200, FAS8300,  FAS9000
 |FAS70, FAS90, FAS50
 |9.15.1P3 for FAS70, FAS90
@@ -87,6 +89,7 @@ The following table shows the supported controller upgrade combinations using AR
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+// 2025 OCT 22, AFFFASDOC-405
 // 2025 APR 15, ontap-systems-upgrade/issue-125
 // 2025 MAR 18, AFFFASDOC-287
 // 2024 NOV 25, AFFFASDOC-33
