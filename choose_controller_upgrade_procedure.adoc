@@ -16,6 +16,46 @@ NOTE: ASA upgrades to an ASA r2 replacement system aren't supported. For informa
 
 To select the appropriate upgrade procedure, review all the questions listed in the table below.
 
+.Show example answers
+[%collapsible]
+====
+This example shows the possible answers for a FAS9500 to FAS90 controller upgrade.
+
+[cols=2*,options="header",cols="30,70"]
+|===
+| Question | Example answer
+
+| Am I running a different software version on the original and new nodes?
+| No. Both FAS9500 and FAS90 run ONTAP 9.15.1.
+
+| Do I want to do a disruptive upgrade?
+| No. I want to keep my production environment online during the upgrade.
+
+| Do I want to do a non-disruptive upgrade?
+| Yes. Based on whether my system is modular or integrated, I can upgrade by moving volumes or using aggregate relocation (ARL).
+
+| Do I have a modular system?
+| Yes. The FAS9500 is a modular system with external storage shelves. I can upgrade by using ARL.
+
+| Do I have an integrated system and want to upgrade by moving volumes?
+| No. The FAS9500 is a modular system, so this doesn't apply.
+
+| Do I have an integrated system and want to upgrade by swapping the controller module only, keeping existing chassis and disks?
+| No. The FAS9500 is a modular system, so this doesn't apply.
+
+| Am I relocating an SVM?
+| No. I'm upgrading the hardware while keeping the same SVMs.
+
+| Am I upgrading a MetroCluster configuration?
+| No. This is a standard HA pair cluster.
+
+| Am I replacing an individual component?
+| No. I'm upgrading the entire controller system.
+|===
+
+*Recommended upgrade path for this example:* link:upgrade-arl/index.html[Upgrade by using aggregate relocation] because the FAS9500 is a modular system and ARL provides a non-disruptive upgrade method.
+====
+
 [cols=2*,options="header",cols="30,70"]
 |===
 | Ask yourself…	| If your answer is yes, you can do this…
