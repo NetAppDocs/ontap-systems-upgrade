@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node2.html
+permalink: upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html
 keywords: relocate, failed, vetoed, aggregates, relocation, operation
 summary: "Relocate failed or vetoed aggregates to node2 when using ARL to upgrade controller models in the same chassis."
 ---
