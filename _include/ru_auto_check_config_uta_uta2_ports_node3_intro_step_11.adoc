@@ -30,7 +30,7 @@ Adapter  Mode     Type       Mode      Type         Status
 
 UTA/UTA2 ports can be configured into native FC mode or UTA/UTA2 mode. FC mode supports FC initiator and FC target; UTA/UTA2 mode allows concurrent NIC and FCoE traffic sharing the same 10GbE SFP+ interface and supports FC targets.
 
-UTA/UTA2 ports might be found on an add-on adapter or on the controller motherboard, and have the following configurations, but you should check the configuration of the UTA/UTA2 ports on the node3 and change it, if necessary:
+You might find UTA/UTA2 ports might be found on an add-on adapter or on the controller motherboard, and have the following configurations, but you should check the configuration of the UTA/UTA2 ports on the node3 and change it, if necessary:
 
 * UTA/UTA2 cards ordered when the controller is ordered are configured before shipment to have the personality you request.
 * UTA/UTA2 cards ordered separately from the controller are shipped with the default FC target personality.
