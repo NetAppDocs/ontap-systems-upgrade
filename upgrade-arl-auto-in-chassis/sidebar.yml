@@ -56,6 +56,8 @@ entries:
   entries:
     - title: Relocate non-root aggregates and NAS data LIFs from node2 to node1
       url: /upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html
+    - title: Relocate failed or vetoed aggregates
+      url: /upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html
     - title: Retire node2
       url: /upgrade-arl-auto-in-chassis/retire-node2.html
 - title: "Stage 5. Install the replacement system modules on node2"
@@ -92,7 +94,7 @@ entries:
     url: /upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html
   # 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
   - title: Confirm that the new controllers are set up correctly
-    url: /upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html
+    url: /upgrade-arl-auto-in-chassis/confirm-new-controllers-are-set-up-correctly.html
   - title: Set up Storage Encryption on the new controller module
     url: /upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html
   - title: Set up NetApp Volume or Aggregate Encryption on the new controller module
