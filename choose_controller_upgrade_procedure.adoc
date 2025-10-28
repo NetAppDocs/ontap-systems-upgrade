@@ -103,7 +103,7 @@ This example shows the possible answers for a FAS9500 to FAS90 controller upgrad
 | No. I'm upgrading the entire controller system.
 |===
 
-*Recommended upgrade path for this example:* link:upgrade-arl/index.html[Upgrade by using aggregate relocation] because the FAS9500 is a modular system and ARL provides a non-disruptive upgrade method.
+*Recommended upgrade path for this example:* link:upgrade-arl/index.html[Upgrade by using ARL] because the FAS9500 is a modular system and ARL provides a non-disruptive upgrade method.
 
 // 2025 OCT 17, AFFFASDOC-404
 // 2023 NOV 16, BURT 1552664
