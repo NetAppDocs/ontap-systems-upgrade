@@ -21,9 +21,9 @@ To select the appropriate upgrade procedure, review all the questions listed in 
 | Ask yourself…	| If your answer is yes, you can do this…
 | Am I running a different software version on the original and new nodes?	
 
-| Upgrade the ONTAP version on the original nodes to the maximum supported version.
+| Upgrade the ONTAP version on the original nodes to the highest supported version.
 
-The new nodes must support the ONTAP version running on the original nodes. If required, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the maximum supported version. The version difference between the original and new nodes cannot be greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. link:https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
+when possible, the new nodes must support the ONTAP version running on the original nodes. If this is not possible, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the highest supported version. The version difference between the original and new nodes cannot be greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. link:https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
 
 | Do I want to do a disruptive upgrade?	
 | link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving storage].
