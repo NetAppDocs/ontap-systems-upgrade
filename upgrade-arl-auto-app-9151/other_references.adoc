@@ -50,7 +50,7 @@ Content specific to this upgrade are listed in the table below.
 |Describes how to quickly upgrade controller hardware in a cluster by moving storage or volumes. Also describes how to convert a supported model to a disk shelf.
 |link:https://docs.netapp.com/us-en/ontap/upgrade/index.html[Upgrade ONTAP^]
 |Contains instructions for downloading and upgrading ONTAP.
-|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis^]
+|link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-in-chassis/index.html[Use "system controller replace" commands to upgrade controller models in the same chassis^]
 |Describes the aggregate relocation procedures needed to non-disruptively upgrade a system, keeping the old system chassis and disks.
 |link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later^]
 |Describes the aggregate relocation procedures needed to non-disruptively upgrade controllers running ONTAP 9.8 by using "system controller replace" commands.

@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/verify_upgrade_hardware.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/verify-upgrade-hardware.html
+---

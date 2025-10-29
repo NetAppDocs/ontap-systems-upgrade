@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/aggregate_relocation_failures.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html
+---

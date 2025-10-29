@@ -1,0 +1,77 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/index.html
+keywords: aggregate, relocation, controller, hardware, aggregates, metrocluster, terminology, old, system, chassis, disk, disks
+summary: "You can upgrade controller hardware by converting an old system to a replacement system, keeping the old system chassis and disks."
+---
+= Learn about this ARL upgrade procedure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This procedure describes how to upgrade storage controllers in an HA pair by converting the existing system to the replacement system, keeping the existing system chassis and disks.
+
+ARL takes advantage of the HA configuration and cluster interconnect communication. This allows you to move ownership of non-root aggregates from one node to another if they share storage within the same cluster.
+
+During the procedure, you upgrade the original controller hardware with the replacement controller hardware, relocating the ownership of non-root aggregates. You migrate the non-root aggregates between the old controller nodes. After installing the replacement nodes, you migrate the non-root aggregates from the old controller nodes to the replacement controller nodes. The data hosted on the nodes that you are upgrading is accessible during the upgrade procedure. You also migrate data LIFs between nodes in the cluster as you proceed.
+
+The controller hardware that you replace depends on the existing system model type:
+
+[cols=2*,options="header",cols="30,70"]
+|===
+|If your existing system is... |Then...
+|AFF A250, AFF C250 
+|Swap the two AFF A250 or AFF C250 controllers with the new controllers and I/O modules.
+|AFF A800, AFF C800
+|Swap the two AFF A800 or AFF C800 controllers with the new controllers and I/O modules.
+|AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
+|Swap the controller module on each node on the old controller with the new module. 
+|AFF A700 or FAS9000
+|Swap the controller and NVRAM modules on each node on the old controller with the new modules.
+
+*Note*: You don't need to move, disconnect, or reconnect the I/O cards, data cables, disk shelves, and disks.
+|===
+
+NOTE: The terms *node1* and *node2*, are used only as a reference to node names in this document. When following the procedure, you must substitute the actual names of your nodes.
+
+== Requirements and limitations
+
+You need to consider important factors before you start your upgrade procedure. 
+
+NOTE: You must review all the following important information before starting the upgrade procedure.
+
+* This procedure is complex and assumes that you have advanced ONTAP administration skills. You also should read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[guidelines for upgrading controllers] and link:overview_of_the_arl_upgrade.html[ARL upgrade sequence] before beginning the upgrade.
+* This procedure assumes that the replacement controller hardware is new and has not been used in another system. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used as part of another ONTAP cluster or as a standalone single node system.
+* You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each HA pair in the cluster.
+* If you have a switch that is not supported by the ONTAP version and the replacement system that you are upgrading to, refer to link:other_references.html[References] to link to the _Hardware Universe_.
+* The AFF A250 and AFF C250 systems use 10/25 GbE onboard ports for cluster interconnect. To upgrade two-node switchless clusters of an AFF A250 or AFF C250 system to an AFF A50, AFF A30, AFF C60, or AFF C30 system, you must use an X60132A, 4-port 10/25 GbE card in slot1 on both nodes. This provides cluster interconnect for cluster LIFs to a temporary port on the target platform. 
+* The AFF A30, AFF A50, AFF A70, AFF A90, AFF A1K, AFF C30, AFF C60, AFF C80, FAS70, and FAS90 systems share 100GbE network ports for both cluster and HA connections. These systems can support 10GbE or 25GbE cluster connections to legacy cluster switches; however, NetApp recommends updating to 100GbE cluster speeds when the 10GbE and 25GbE switches are no longer required. For more information, see the following Knowledge Base articles:
++
+--
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup[How to configure 10G or 25G cluster ports on a new cluster setup^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_existing_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports[How to convert existing 10G or 25G cluster ports to 40G or 100G cluster ports^]
+--
++
+If you cannot link up e0a or e0b cluster ports on the existing node to the cluster ports on the new node, see the following for more information:
+
+** link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978[NetApp Bugs Online Bug ID CONTAP-166978^]
+** https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1127315[NetApp Bugs Online Bug ID 1127315^]
+* The ASA A900, AFF A900, and FAS9500 systems only support high-line power (200V to 240V). If your AFF A700 or FAS9000 system is running on low-line power (100V to 120V), you must convert the AFF A700 or FAS9000 input power before using this procedure.
+* If you are upgrading from an existing system with downtime that is included in the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis,[supported systems matrix], you can upgrade controller hardware by moving storage or contact technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
+
+== Automate the controller upgrade process
+This procedure provides the steps for the automated procedure, which uses automatic disk assignment and network port reachability checks to simplify the controller upgrade experience.
+
+// 2024 DEC 9, AFFFASDOC-33
+// 2024 DEC 4, ontap-systems-upgrade-issue-118
+// 2024 SEP 25, AFFFASDOC-268
+// 2024 APR 16, AFFFASDOC-32
+// 2023 AUG 29, AFFFASDOC-78
+// 2023 MAY 29, AFFFASDOC-39
+// 2023 MAY 22, BURT 1542232
+// 2023 MAY 22, BURT 1531220
+// 2022 JAN 30, BURT 1523106
+// 2022 APR 26, BURT 1452254

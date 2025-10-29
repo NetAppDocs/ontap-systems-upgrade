@@ -3,7 +3,7 @@ You need to netboot node4 if it does not have the same version of ONTAP 9 that i
 
 [IMPORTANT]
 ====
-* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-affa900/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules].
+* For an AFF A800 or AFF C800 controller upgrade, you must ensure that all drives in the chassis are firmly seated against the midplane before removing node2. For more information, see link:../upgrade-arl-auto-in-chassis/replace-node1-affa800.html[Replace the AFF A800 or AFF C800 controller modules].
 
 * If you are upgrading a system with storage disks, you must complete this entire section and then proceed to link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4], entering commands at the cluster prompt.
 ====
