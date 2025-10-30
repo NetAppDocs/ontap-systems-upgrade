@@ -36,7 +36,7 @@ a| Upgrade by using one of the following methods:
 
 * link:upgrade/upgrade-decide-to-use-this-guide.html[Move volumes]
 +
-This requires joining the new nodes, moving the volumes and LIFs to the new nodes, and unjoining the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, convert it to a switched attached cluster using a pair of cluster switches before adding new nodes.
+This requires joining the new nodes, moving the volumes and LIFs to the new nodes, and unjoining the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, convert it to a switched-attached cluster using a pair of cluster switches before adding new nodes.
 * link:upgrade-arl/index.html[Use aggregate relocation]
 +
 ARL is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
