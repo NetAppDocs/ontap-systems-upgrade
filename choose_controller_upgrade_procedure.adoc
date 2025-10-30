@@ -14,7 +14,7 @@ In general, how you upgrade the controller hardware depends on the platform mode
 NOTE: ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from an ASA to ASA r2 system, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
 
 == Which upgrade procedure should I use?
-To select the appropriate upgrade procedure, review all the questions listed in the table below.
+To select the appropriate upgrade procedure, review all of the questions listed in the table below.
 
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -30,7 +30,7 @@ When possible, the new nodes must support the ONTAP version running on the origi
 
 This requires a new system with its own storage and shelves to store the data from the original system. Conversion from a controller shelf is possible for certain upgrades.
 
-| Do I want to do a non-disruptive upgrade?	
+| Do I want to perform a non-disruptive upgrade?	
 
 a| Upgrade by using one of the following methods:
 
@@ -78,10 +78,10 @@ This example shows the possible answers for a FAS9500 to FAS90 controller upgrad
 | Am I running a different software version on the original and new nodes?
 | No. Both FAS9500 and FAS90 run ONTAP 9.15.1.
 
-| Do I want to do a disruptive upgrade?
+| Do I want to perform a disruptive upgrade?
 | No. I want to keep my production environment online during the upgrade.
 
-| Do I want to do a non-disruptive upgrade?
+| Do I want to perform a non-disruptive upgrade?
 | Yes. Based on whether my system is modular or integrated, I can upgrade by moving volumes or using aggregate relocation (ARL).
 
 | Do I have a modular system?
