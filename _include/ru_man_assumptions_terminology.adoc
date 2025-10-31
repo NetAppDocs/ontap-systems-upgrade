@@ -2,7 +2,7 @@ This document is written with the following assumptions:
 
 * The replacement controller hardware is new and has not been used.
 +
-WARNING: Because this procedure assumes that the replacement controller hardware is new and has not been used, the steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7-Mode.
+WARNING: The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure because this procedure assumes that the replacement controller hardware is new and has not been used. You must contact technical support if the replacement controller hardware was previously used, especially if the controllers were running Data ONTAP in 7-Mode.
 
 * You read and understand the guidelines for upgrading the pair of nodes.
 +

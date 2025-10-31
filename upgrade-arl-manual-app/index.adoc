@@ -11,6 +11,7 @@ summary: "Using the manual ARL upgrade procedure to upgrade controller hardware 
 :linkattrs:
 :imagesdir: ../media/
 
+[.lead]
 This procedure describes how to upgrade controller hardware using manual aggregate relocation (ARL) on systems running ONTAP 9.8 or later.
 
 You can use this ARL procedure if you are performing one of the following upgrades:
