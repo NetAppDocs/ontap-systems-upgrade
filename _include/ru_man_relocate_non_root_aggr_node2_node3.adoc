@@ -5,7 +5,7 @@ CAUTION: During this procedure, don't relocate aggregates from node3 to node2. D
 .Steps
 
 [[verify-partner-sys-id]]
-. Verify that the partner system ID is set correctly on node3 :
+. Verify that the partner system ID is set correctly on node3:
 +
 .. Enter the advanced privilege level:
 +
@@ -63,7 +63,7 @@ The node3 "partner-sysid" is the system ID of node2, which you can find in the `
 +
 The fields "Last Subject Sent:"" and "Last Time Sent:"" contain the message title of the last message that was sent and the time when the message was sent.
 
-. Relocate the non-root aggregates:
+. [[relocate-step5]]Relocate the non-root aggregates:
 
 .. Set the privilege level to advanced:
 +
