@@ -21,7 +21,7 @@ If node1 and node2 were in separate chassis, you can put node3 in the same rack 
 
 . [[auto_install3_step2]]Install node3 in the rack, following the _Installation and Setup Instructions_ for your node model.
 +
-NOTE: If you're upgrading to a system with both nodes in the same chassis, install node4 and node3 in the chassis. If you don't install both nodes in the same chassis, when you boot node3, the node behaves as if it were in a dual-chassis configuration, and when you boot node4, the interconnect between the nodes doesn't come up.
+NOTE: If you're upgrading to a system with both nodes in the same chassis, install node4 and node3 in the chassis. If you don't install both nodes in the same chassis, when you boot node3, it behaves as if it were in a dual-chassis configuration, and when you boot node4, the interconnect between the nodes doesn't come up.
 
 . [[auto_install3_step3]]Cable node3, moving the connections from node1 to node3.
 +
