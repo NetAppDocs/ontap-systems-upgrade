@@ -53,9 +53,14 @@ Refer to link:other_references.html[References] to link to the _Hardware Univers
 +
 If you want to upgrade entry level controllers with internal drives,  refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
 
-== Troubleshooting
+== MetroCluster FC configuration
+In a MetroCluster FC configuration, you must replace the disaster recovery/failover site nodes as soon as possible. Mismatch in controller models within a MetroCluster is not supported because controller model mismatch can cause disaster recovery mirroring to go offline. Use the `-skip-metrocluster-check true` command to bypass MetroCluster checks when you are replacing nodes at the second site.
 
-If any problems occur while upgrading the controllers, you can refer to the link:troubleshoot_index.html[Troubleshoot] section at the end of the procedure for more information and possible solutions.
+== Troubleshoot
+
+You might encounter a failure while upgrading the node pair. The node might crash, aggregates might not relocate, or LIFs might not migrate. The cause of the failure and its solution depend on when the failure occurred during the upgrade procedure.
+
+If any problems occur, refer to the link:aggregate_relocation_failures.html[Troubleshoot] section at the end of the procedure for more information and possible solutions. Information about the failures that can occur is listed by the phase of the procedure in the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence]. 
 
 If you do not find a solution to the problem you encountered, contact technical support.
 

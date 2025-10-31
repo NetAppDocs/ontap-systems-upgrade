@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html
+---

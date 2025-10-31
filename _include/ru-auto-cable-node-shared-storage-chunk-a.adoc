@@ -1,0 +1,33 @@
+== Connect the e0M and BMC ports
+If the existing system has a management port (e0M) and a BMC port, the e0M and BMC ports are combined and accessed through the "wrench" port on the replacement system. You must ensure that the e0M and BMC ports are connected to the same switch and subnet on the existing system before connecting to the replacement system.
+
+[cols=2*,options="header",cols="35,65"]
+|===
+|If the... |Then...
+|e0M and BMC IP addresses are on the same IP subnet
+|Connect either the e0M or BMC port on the existing system to the "wrench" port on the replacement system. 
+
+|e0M and BMC IP addresses are on different subnets
+a|. Merge the e0M and BMC IP addresses into one IP subnet.
+. Connect either the e0M or BMC port on the existing system to the "wrench" port on the replacement system.
+|===
+
+
+== Connect to a two-node switchless cluster
+The following tables show the switch port usage for two-node switchless cluster configurations.
+
+
+|===
+|Port type |AFF A800, AFF C800  |AFF A90 	|AFF A70, AFF C80
+
+|Cluster |e0a |e1a |e1a
+|Cluster |e1a |e7a 
+
+(Use e1b if there is no e7a)
+|e1b
+|HA |e0b |Don't connect |Don't connect
+|HA |e1b |Don't connect |Don't connect
+|SAS storage ports (if present and used) |Any available port |Any available port |Any available port
+|Ethernet storage ports for NS224 shelves |Any available port |Refer to Ethernet storage connectivity mapping |Refer to Ethernet storage connectivity mapping
+
+|===

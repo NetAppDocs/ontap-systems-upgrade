@@ -31,14 +31,6 @@ Stage 5: _Map ports from node2 to node4_
 |Stage 1: _Prepare the nodes for the upgrade_
 |When configuring FC ports on the new nodes
 |
-|(V-Series systems or systems with FlexArray Virtualization software only)
-
-Topology for V-Series systems or systems with FlexArray Virtualization software
-|Stage 1: _Prepare the nodes for the upgrade_
-|Stage 3: _Install and boot node3_
-
-Stage 5: _Install and boot node4_
-|
 |IP address of SPs
 |Stage 1: _Prepare the nodes for the upgrade_
 |Stage 6: _Confirm that the new controllers are set up correctly_
@@ -47,7 +39,7 @@ Stage 5: _Install and boot node4_
 |Stage 1: _Prepare the nodes for the upgrade_
 |Stage 6: _Confirm that the new controllers are set up correctly_
 |
-|IP address for the external key management server
+|IP address for the External Key Management server
 |Stage 1: _Rekey  disks for Storage Encryption_
 |Stage 6: _Set up Storage Encryption on the new nodes_
 |

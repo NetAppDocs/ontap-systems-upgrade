@@ -11,6 +11,8 @@ summary: If your original node is one of the supported models, during the proces
 [.lead]
 If your original node is one of the supported models, during the process of upgrading by moving storage you can move the node's internal SATA drives, SSDs, or SAS drives to a drive shelf that is attached to the new node in the same cluster.
 
+NOTE: link:upgrade-convert-node-to-shelf.html[You can also choose to convert the system to a drive shelf and attach it to the new nodes].
+
 .Before you begin
 
 * You must have reviewed link:upgrade-considerations.html[Considerations for upgrading controller hardware] about moving internal drives.
@@ -20,6 +22,9 @@ Contact technical support if you need guidance specific to your configuration.
 * The SATA, SSD, or SAS drive carriers from the original node must be compatible with the new drive shelf.
 * A compatible drive shelf must already be attached to the new node.
 * The drive shelf must have enough free bays to accommodate the SATA, SSD, or SAS drive carriers from the original node.
+
+.About this task
+You can move drives only within the same cluster.
 
 .Steps
 . Gently remove the bezel from the front of the system.

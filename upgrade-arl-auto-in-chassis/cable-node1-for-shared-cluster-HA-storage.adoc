@@ -1,0 +1,62 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html
+keywords: cluster, ha, aff, a800, shared, storage, data, management
+summary: Connect the cluster, HA, storage, and data connections that were previously connected to the AFF A800 node1 to the newly installed AFF A90 or AFF A70 node1
+---
+= Cable node1 for shared cluster-HA and storage
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+If you are performing one of the following upgrades, you must connect the cluster, HA, storage, data, and management connections that were previously connected to the node1 on the existing system to the newly installed node1 on the replacement system.
+
+include::../_include/ru-auto-supported-upgrades-9151.adoc[]
+
+include::../_include/ru-auto-cable-node-shared-storage-chunk-a.adoc[]
+
+
+|===
+|Port |AFF A250, AFF C250 |AFF A30, AFF C30, AFF C60 |AFF A50
+
+|Cluster
+|e0c
+|e1a
+
+(Use e1a for temporary cluster interconnect)
+|e1a
+
+(Use e1a for temporary cluster interconnect)
+|Cluster
+|e0d
+|e1b
+
+(Use e1b for temporary cluster interconnect)
+|e1b
+
+(Use e1b for temporary cluster interconnect)
+
+|HA
+|Not required 
+|HA ports aren't required for the node1 upgrade	
+|HA ports aren't required for the node1 upgrade
+
+|Ethernet storage Ports 
+|Any available port
+|e3a, e3b
+|e3a, e3b
+|SAS storage ports
+|Any available port
+|3a, 3b
+|3a, 3b
+|===
+
+[[connect-switch-attached-cluster]]
+
+include::../_include/ru-auto-cable-node-shared-storage-chunk-b.adoc[]
+
+// 2025 APR 22, AFFFASDOC-321
+// 2024 JULY 12, AFFFASDOC-240

@@ -4,7 +4,6 @@ permalink: upgrade-arl-manual/guidelines_upgrade_with_arl.html
 keywords:  guidelines, upgrade, controllers, arl, aggregate, relocation
 summary: "Understand if you can use the manual ARL procedure for a pair of controllers running ONTAP 9.7 or earlier."
 ---
-
 = Guidelines for upgrading controllers with ARL
 :hardbreaks:
 :nofooter:
@@ -71,6 +70,6 @@ include::../_include/ru_man_storage_encryption.adoc[]
 
 If you are upgrading nodes in a two-node switchless cluster, you can leave the nodes in the switchless cluster while performing the upgrade. You do not need to convert them to a switched cluster.
 
-== Troubleshooting
+== Troubleshoot
 include::../_include/ru_man_troubleshooting.adoc[]
 // 26 FEB 2021:  formatted from CMS

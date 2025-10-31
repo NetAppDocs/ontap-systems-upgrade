@@ -37,7 +37,7 @@ If the configuration is different for node4, a system disruption might occur lat
 
 . Check that the replaced controller is configured correctly for MetroCluster configuration and not in switch-over mode.
 +
-CAUTION: *Attention:* At this stage MetroCluster configuration will not be in a normal state and you might have errors to resolve. See link:verify_health_of_metrocluster_config.html[Verify the health of the MetroCluster configuration].
+CAUTION: At this stage MetroCluster configuration will not be in a normal state and you might have errors to resolve. See link:verify_health_of_metrocluster_config.html[Verify the health of the MetroCluster configuration].
 
 == Re-create VLANs, interface groups, and broadcast domains on node4
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto/set_fc_or_uta_uta2_config_on_node3.html
-keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports, FlexArray Virtualization
+keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports
 summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
 = Set the FC or UTA/UTA2 configuration on node3
@@ -14,44 +14,30 @@ summary: "Configure node3 onboard FC ports, UTA/UTA2 ports, or the UTA/UTA2 card
 [.lead]
 include::../_include/ru_auto_set_fc_or_uta_uta2_confgig_node3_intro.adoc[]
 
-* If node3 doesn't have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
-* However, if you have a V-Series system or a system with FlexArray Virtualization software with storage arrays, and node3 doesn't have onboard FC ports, onboard UTA/UTA ports, or a UTA/UTA2 card, return to _Install and boot node3_ and resume at link:install_boot_node3.html#auto_install3_step23[Step 23].
+If node3 doesn't have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 card, and you are upgrading a system with storage disks, you can skip to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
 
 include::../_include/ru_auto_config_fc_ports_node3.adoc[]
 
 [start=8]
-. Take one of the following actions:
+. Perform one of the following actions:
 +
-|===
-|If the system that you are upgrading... |Then…
-
-|Has storage disks
-a|* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
+* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
 * If node3 doesn't have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip <<Check and configure UTA/UTA2 ports on node3>> and go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-a|* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
-* If node3 doesn't have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip <<Check and configure UTA/UTA2 ports on node3>> and return to _Install and boot node3_ at resume at link:install_boot_node3.html#auto_install3_step23[Step 23].
-|===
 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_intro_step_11.adoc[]
 
-[start=12]
-. [[auto_check3_step12]]Take one of the following actions:
-
-[cols="35,65"]
-|===
-|If the system... |Then...
-
-|Has storage disks
-|Go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3].
-|Is a V-series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Return to _Install and boot node3_ and resume the section at link:install_boot_node3.html#auto_install3_step23[Step 23].
-|===
-
-[start=13]
+[start=10]
+[[auto_check3_step9]] 
 include::../_include/ru_auto_check_config_uta_uta2_ports_node3_steps_13.adoc[]
 
-. [[step14]]Boot the node into boot menu by running `boot_ontap menu`. If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#auto_check3_step9[Reassign node1 disks to node3, Step 9].
+. Boot the node into boot menu by running `boot_ontap menu`. 
+
+.What's next?
+
+* If you are upgrading to an AFF A800 system, go to link:reassign-node1-disks-to-node3.html#auto_check3_step9[Reassign node1 disks to node3, Step 9].
+
+* For all other system upgrades, go to link:reassign-node1-disks-to-node3.html[Reassign node1 disks to node3, Step 1].
+
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36
 // top section of page 31 in PDF
 // 2022-06-02, Issue 55

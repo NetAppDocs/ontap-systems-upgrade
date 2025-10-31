@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html
+---

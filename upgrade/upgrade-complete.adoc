@@ -2,9 +2,9 @@
 permalink: upgrade/upgrade-complete.html
 sidebar: sidebar
 keywords: complete, upgrade, ontap, complete the upgrade
-summary: Complete the upgrade in ONTAP 9.8 or later, or ONTAP 9.7 or earlier.
+summary: Complete the move storage upgrade in ONTAP 9.8 or later, or ONTAP 9.7 or earlier.
 ---
-= Overview
+= Complete the move storage upgrade workflow
 :icons: font
 :imagesdir: ../media/
 
@@ -15,5 +15,5 @@ You must use the procedure for your version of ONTAP.
 
 image:workflow_completing_upgrade_98_or_97x.png[Complete the upgrade]
 
-* link:upgrade-complete-ontap-9-8.html[Complete the upgrade in ONTAP 9.8 or later]
-* link:upgrade-complete-ontap-9-7-or-earlier.html[Complete the upgrade in ONTAP 9.7 or earlier]
+* link:upgrade-map-network-ports-ontap-9-8.html[Complete the upgrade in ONTAP 9.8 or later]
+* link:upgrade-map-network-ports-ontap-9-7-or-earlier.html[Complete the upgrade in ONTAP 9.7 or earlier]

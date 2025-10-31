@@ -1,6 +1,6 @@
 ---
 permalink: upgrade/install_replacement_system_modules_on_node2.html
-redirect: ontap-systems-upgrade/upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/install-affa90-affa70-on-node2.html
 ---
 
 // 2024 APR 18, AFFFASDOC-32

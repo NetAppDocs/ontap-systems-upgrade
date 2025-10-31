@@ -2,7 +2,7 @@ Before you can replace node1 with node3, you must move the non-root aggregates f
 
 .Steps
 
-. [[step1]]Relocate the non-root aggregates by completing the following substeps:
+. [[relocate-step1]]Relocate the non-root aggregates by completing the following substeps:
 .. Set the privilege level to advanced:
 +
 `set -privilege advanced`

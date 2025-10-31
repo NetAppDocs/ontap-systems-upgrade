@@ -1,6 +1,6 @@
 ---
 permalink: upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html
-redirect: ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/index.html
 ---
 
 // 2023 APR 24, ontap-systems-upgrade-issue 64

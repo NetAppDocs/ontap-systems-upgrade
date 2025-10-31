@@ -1,0 +1,69 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/overview-of-the-arl-upgrade.html
+keywords: overview, arl, upgrade, owner, controller, hardware, old, system, chassis, disk, disks
+summary: "Understand how the ARL procedure to upgrade controller models in the same chassis works."
+---
+= Learn about the ARL upgrade sequence
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+include::../_include/ru_auto_overview_arl_workflow_top.adoc[]
+
+[cols="35,65"]
+|===
+| Stage | Steps
+
+| link:verify_upgrade_hardware.html[Stage 1: Prepare for upgrade]
+a| During Stage 1, you verify that you have the correct hardware for your upgrade, run prechecks, and, if required, correct aggregate ownership. You must record certain information if you are managing Storage Encryption by using the Onboard Key Manager and you can choose to quiesce the SnapMirror relationships.
+
+Aggregate ownership at the end of Stage 1:
+
+* Node1 is the home owner and current owner of the node1 aggregates
+* Node2 is the home owner and current owner of the node2 aggregates
+
+| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html[Stage 2: Relocate resources and retire node1]
+a| During Stage 2, you relocate node1 non-root aggregates and NAS data LIFs from node1 to node2. This process is largely automated; the operation pauses to enable you to check its status. You must manually resume the operation. If required, you relocate failed or vetoed aggregates. You record node1 information for use later in the procedure before retiring node1. You can also prepare to netboot node1 later in the procedure.
+
+Aggregate ownership at the end of Stage 2:
+
+* Node2 is the current owner of node1 aggregates
+* Node2 is the home owner and current owner of node2 aggregates
+
+| link:cable-node1-for-shared-cluster-HA-storage.html[Stage 3: Boot node1 with the replacement system modules]
+a| During Stage 3, you boot node1 with upgraded system modules and verify the upgraded node1 installation. If you are using NetApp Volume Encryption (NVE), you restore key-manager configuration. You also relocate node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1 and verify that the SAN LIFs exist on node1.
+
+Aggregate ownership at the end of Stage 3:
+
+* Upgraded node1 is the home owner and current owner of node1 aggregates
+* Node2 is the home owner and current owner of node2 aggregates
+
+| link:relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html[Stage 4: Relocate resources and retire node2]
+a| During Stage 4, you relocate non-root aggregates and NAS data LIFs from node2 to the upgraded node1 and retire node2.
+
+Aggregate ownership at the end of Stage 4:
+
+*	Upgraded node1 is the home owner and current owner of aggregates that originally belonged to node1
+*	Upgraded node1 is the current owner of node2 aggregates
+
+| link:install-aff-a30-a50-c30-c50-node2.html[Stage 5: Install the replacement system modules on node2]
+a| During Stage 5, you install the new system modules that you received for the upgraded node2 and then netboot node2.
+
+Aggregate ownership at the end of Stage 5:
+
+*	Upgraded node1 is the home owner and current owner of the aggregates that originally belonged to node1.
+*	Upgraded node2 is the home owner and current owner of aggregates that originally belonged to node2.
+
+| link:boot_node2_with_a900_controller_and_nvs.html[Stage 6: Boot node2 with the replacement system modules]
+
+a| During Stage 6, you boot node2 with upgraded system modules and verify the upgraded node2 installation. If you are using NVE, you restore key-manager configuration. For switch-attached cluster upgrades, you need to validate that the cluster switch reference configuration file (RCF) supports the shared cluster/HA ports. You also relocate node1 non-root aggregates and NAS data LIFs from node1 to the upgraded node2 and verify that the SAN LIFs exist on node2.
+
+| link:manage-authentication-using-kmip-servers.html[Stage 7: Complete the upgrade]
+a| During Stage 7, you confirm that the new nodes are set up correctly and, if the new nodes are encryption-enabled, you configure and set up Storage Encryption or NVE. You should also decommission the old nodes and resume the SnapMirror operations.
+|===
+
+//BURT 1452254, 2022-04-26

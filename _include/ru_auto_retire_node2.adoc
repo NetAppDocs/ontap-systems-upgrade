@@ -1,4 +1,4 @@
-To retire node2, you first shut node2 down correctly and remove it from the rack or chassis.
+To retire node2, you shut down node2 correctly and then remove it from the rack or chassis.
 
 .Steps
 

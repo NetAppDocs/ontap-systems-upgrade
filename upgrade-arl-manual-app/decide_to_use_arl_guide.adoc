@@ -2,10 +2,9 @@
 sidebar: sidebar
 permalink: upgrade-arl-manual-app/decide_to_use_arl_guide.html
 keywords:  decision, decision, what to use, upgrade, HA pair, metrocluster, storage encryption, volume encryption, NSE, NVE
-summary: "Decide whether to use the manual ARL procedure to upgrade storage controllers in a HA pair with new controllers running ONTAP 9.8 or later."
+summary: "Decide whether to use the manual ARL procedure to upgrade storage controllers in an HA pair with new controllers running ONTAP 9.8 or later."
 ---
-
-= Decide whether to use the aggregate relocation procedure
+= Decide whether to use this aggregate relocation procedure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +12,19 @@ summary: "Decide whether to use the manual ARL procedure to upgrade storage cont
 :imagesdir: ../media/
 
 [.lead]
-include::../_include/ru_man_decide_chunk_a.adoc[]
+This procedure describes how to upgrade controller hardware using manual aggregate relocation (ARL) on systems running ONTAP 9.8 or later. You should only use this complex procedure if you're an experienced ONTAP administrator.
+
+Use this content under the following circumstances:
+
+* You don't want to add the new controllers as a new HA pair to the cluster and migrate the data using volume moves.
+* You are experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
+* Your controllers are running ONTAP 9.8 or later.
 * You have a system that uses Fabric MetroCluster 4-node and 8-node configurations running ONTAP 9.8 or later.
 
 * You have hybrid aggregates on your system. 
 
 include::../_include/ru_man_decide_chunk_b.adoc[]
+
+include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
 // 2022 SEP 28, BURT 1501272 

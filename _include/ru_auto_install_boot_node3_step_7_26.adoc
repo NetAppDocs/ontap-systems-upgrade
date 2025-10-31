@@ -108,34 +108,6 @@ For node3, `partner-sysid` must be that of node2.
 +
 `printenv partner-sysid`
 
-. [[step22]]Take one of the following actions:
-+
-[cols=2*,options="header"cols="30,70"]
-|===
-|If your system... |Description
-
-|Has disks and no back-end storage
-|Go to <<auto_install3_step27,Step 27>>
-|Is a V-Series system or a system with FlexArray Virtualization software connected to storage arrays
-a|.. Go to section link:set_fc_or_uta_uta2_config_on_node3.html[Setting the FC or UTA/UTA2 configuration on node3] and complete the subsections in this section.
-.. Return to this section and complete the remaining steps, beginning with <<auto_install3_step23,Step 23>>.
-
-IMPORTANT: You must reconfigure FC onboard ports, CNA onboard ports, and CNA cards before you boot ONTAP on the V-Series or system with FlexArray Virtualization software.
-|===
-
-. [[auto_install3_step23]]Add the FC initiator ports of the new node to the switch zones.
-+
-If your system has a tape SAN, then you need zoning for the initiators. If required, modify the onboard ports to initiator by referring to the link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3[Configuring FC ports on node3]. See your storage array and zoning documentation for further instructions on zoning.
-
-. [[step24]]Add the FC initiator ports to the storage array as new hosts, mapping the array LUNs to the new hosts.
-+
-See your storage array and zoning documentation for instructions.
-
-. [[step25]]Modify the worldwide port name (WWPN) values in the host or volume groups associated with array LUNs on the storage array.
-+
-Installing a new controller module changes the WWPN values associated with each onboard FC port.
-
-. [[step26]]If your configuration uses switch-based zoning, adjust the zoning to reflect the new WWPN values.
 
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2023 Feb 22, BURT 1518041

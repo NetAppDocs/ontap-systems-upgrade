@@ -7,12 +7,12 @@
 |===
 |If the system you are upgrading... |Then...
 |Does not have the correct or current ONTAP version on node4
-|Go to <<man_install4_Step20,Step 20>>.
+|Go to <<man_install4_Step13,Step 13>>.
 |Has the correct or current version of ONTAP on node4
-|Go to <<man_install4_Step25,Step 25>>.
+|Go to <<man_install4_Step18,Step 18>>.
 |===
 
-. [[man_install4_Step20]]Configure the netboot connection by choosing one of the following actions.
+. [[man_install4_Step13]]Configure the netboot connection by choosing one of the following actions.
 +
 NOTE: You must use the management port and IP address as the netboot connection. Do not use a data LIF IP address or a data outage might occur while the upgrade is being performed.
 
@@ -79,9 +79,9 @@ The node must be rebooted to start using the newly installed software. Do you wa
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted and the configuration data needs to be restored.
 
-. [[man_install4_Step25]]Select maintenance mode `5` from the boot menu and enter `y` when you are prompted to continue with the boot.
+. [[man_install4_Step18]]Select maintenance mode `5` from the boot menu and enter `y` when you are prompted to continue with the boot.
 
-. [[man_install4_Step26]]Before continuing, go to link:set_fc_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4] to make any necessary changes to the FC or UTA/UTA2 ports on the node. Make the changes recommended in those sections, reboot the node, and go into Maintenance mode.
+. [[man_install4_Step19]]Before continuing, go to link:set_fc_uta_uta2_config_node4.html[Set the FC or UTA/UTA2 configuration on node4] to make any necessary changes to the FC or UTA/UTA2 ports on the node. Make the changes recommended in those sections, reboot the node, and go into Maintenance mode.
 
 . Enter the following command and examine the output to find the system ID of node4:
 +
@@ -229,7 +229,7 @@ The system stops at the boot environment prompt.
 +
 `set time _hh:mm:ss_`
 
-. Verify the partner system ID is set correctly as noted in <<man_install4_Step26,Step 26>> under option.
+. Verify the partner system ID is set correctly as noted in <<man_install4_Step19,Step 19>> under option.
 +
 `printenv partner-sysid`
 

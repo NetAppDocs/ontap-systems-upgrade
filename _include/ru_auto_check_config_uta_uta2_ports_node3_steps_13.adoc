@@ -1,3 +1,3 @@
-. [[auto_check3_step13]]Exit maintenance mode:
+. Exit maintenance mode:
 +
 `halt`

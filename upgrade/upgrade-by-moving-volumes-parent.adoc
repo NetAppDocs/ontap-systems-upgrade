@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade by moving volumes
 summary: 'If you are upgrading by moving volumes, you prepare the original nodes and join the new nodes to the cluster. You move volumes to the new nodes, configure LIFs, and unjoin the original nodes from the cluster. Upgrading by moving volumes is a nondisruptive procedure.'
 ---
-= Workflow
+= Upgrade by moving volumes workflow
 :icons: font
 :imagesdir: ../media/
 

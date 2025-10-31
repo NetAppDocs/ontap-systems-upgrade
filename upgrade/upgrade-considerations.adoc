@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: plan, upgrade, consideration, contact, technical, support, recommendation, guidance, cluster, considerations for upgrading controller hardware
 summary: To plan for the upgrade, you should familiarize yourself with the general upgrade considerations. If necessary, contact technical support for recommendations and guidance specific to the configuration of your cluster.
 ---
-= Considerations for upgrading controller hardware
+= Considerations for upgrading controller hardware by moving volumes or storage
 :icons: font
 :imagesdir: ../media/
 
@@ -24,7 +24,7 @@ NOTE: Before starting your controller upgrade procedure, you must review all the
 
 a|link:https://hwu.netapp.com[Verify that you are following storage platform mixing rules^].
 
-The controllers in a HA pair must be two AFF, FAS, or ASA models.
+The controllers in an HA pair must be two AFF, FAS, or ASA models.
 
 |Do I have different ONTAP versions running on the original and new nodes?
 a|.  https://hwu.netapp.com[Check the ONTAP versions and patch levels supported by the original and the new nodes^]. 
@@ -49,8 +49,8 @@ a|. https://hwu.netapp.com/[Verify that the current root aggregate size and the 
 . https://hwu.netapp.com/[Verify that the number of storage disks supported by the new system are equal to or greater than those supported by the original system^].
 . link:upgrade-by-moving-storage-parent.html[Upgrade by moving storage] (a disruptive procedure).
 
-|Am I upgrading a HA pair in a cluster with multiple HA pairs? 
-|Move epsilon to the node of a HA pair not undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
+|Am I upgrading an HA pair in a cluster with multiple HA pairs? 
+|Move epsilon to the node of an HA pair not undergoing a controller upgrade. For example, if you are upgrading nodeA/nodeB in a cluster with the HA pair configuration nodeA/nodeB and nodeC/nodeD, you must move epsilon to nodeC or nodeD.
 |Am I running ONTAP 9.6P11, 9.7P8, or later releases? 
 |NetApp recommends that you enable Connectivity, Liveliness, and Availability Monitor (CLAM) takeover to return the cluster into quorum when certain node failures occur. The `kernel-service` command requires advanced privilege level access. For more information, see the NetApp Knowledge Base article https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436[CLAM takeover default configuration changed^]. 
 
@@ -84,11 +84,8 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 
 == Situations where you might need additional steps
 
-* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[You are upgrading from an AFF A250 to an AFF A400] (a nondisruptive procedure). 
 
 * If the new system has fewer slots than the original system, or if it has fewer or different types of ports, you might need to add an adapter to the new system. See the https://hwu.netapp.com[NetApp Hardware Universe^].
-
-* If the original nodes or new nodes use FlexArray Virtualization software, see the Knowledge Base article https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F[What are the specific steps involved in FlexArray for NetApp controller upgrades and replacements^].
 
 * If your cluster has SAN hosts you might need to take steps to resolve issues with LUN serial number changes. See the Knowledge Base article https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP[How to resolve issues during storage controller motherboard replacement and head upgrades with iSCSI and FCP^].
 
@@ -96,6 +93,8 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 
 .Related information
 
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Convert AFF A250 to drive shelf and upgrade to AFF A400] (nondisruptive procedure)
+* link:convert-fas2820-to-drive-shelf.html[Upgrade from FAS2820 by converting to a drive shelf] (nondisruptive procedure)
 * link:../choose_controller_upgrade_procedure.html[Choose methods for upgrading controller hardware]
 * link:upgrade-by-moving-storage-parent.html[Upgrade controller hardware by moving storage]
 * link:upgrade-by-moving-volumes-parent.html[Upgrade controller hardware by moving volumes]
@@ -110,4 +109,3 @@ Transferring the internal storage is an optional task in the workflow for upgrad
 // 2022 SEP 3, Clean-up 
 // 2022 FEB 9, BURT 1493415 
 // 2022 JAN 31, BURT 1400769
-

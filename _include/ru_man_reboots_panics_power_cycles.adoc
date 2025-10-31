@@ -28,8 +28,9 @@ When node1 enters the `waiting for giveback state`, node2 will give back all the
 
 .Steps
 
-. Complete link:relocate_non_root_aggr_node1_node2.html#step1[Step 1] in the section _Relocate non-root aggregates from node1 to node2_ again.
+. Complete link:relocate_non_root_aggr_node1_node2.html#relocate-step1[Step 1] in the section _Relocate non-root aggregates from node1 to node2_ again.
 . Continue with the node-pair upgrade procedure.
+
 
 === Node1 crashes after Stage 2 while HA is disabled
 
@@ -52,7 +53,7 @@ Node1 will take over all of node2's aggregates as well any of its own aggregates
 
 .Steps
 
-. Complete link:relocate_non_root_aggr_node1_node2.html#step1[Step 1] in the section _Relocate non-root aggregates from node1 to node2_ again.
+. Complete link:relocate_non_root_aggr_node1_node2.html#relocate-step1[Step 1] in the section _Relocate non-root aggregates from node1 to node2_ again.
 . Continue with the node-pair upgrade procedure.
 
 === Node2 crashes after Stage 2 and after HA is disabled
@@ -92,7 +93,7 @@ There will be client outage for aggregates that were not relocated.
 .Steps
 
 . Bring up node2.
-. Relocate the remaining aggregates by completing link:relocate_non_root_aggr_node2_node3.html#step1[Step 1] through link:relocate_non_root_aggr_node2_node3.html#step3[Step 3] in the section _Relocate non-root aggregates from node2 to node3_.
+. Relocate the remaining aggregates by completing link:relocate_non_root_aggr_node2_node3.html#verify-partner-sys-id[Step 1] through link:relocate_non_root_aggr_node2_node3.html#relocate-step5[Step 5] in the section _Relocate non-root aggregates from node2 to node3_.
 . Continue with the node-pair upgrade procedure.
 
 === Node3 crashes during Stage 3 and before node2 has relocated any aggregates
@@ -116,7 +117,7 @@ Node2 continues to serve remaining aggregates, but aggregates that were already 
 .Steps
 
 . Bring up node3.
-. Complete link:relocate_non_root_aggr_node2_node3.html#step3[Step 3] again in the section _Relocate non-root aggregates from node2 to node3_.
+. Complete link:relocate_non_root_aggr_node2_node3.html#relocate-step5[Step 5] again in the section _Relocate non-root aggregates from node2 to node3_.
 
 . Continue with the node-pair upgrade procedure.
 
@@ -178,7 +179,7 @@ There is an outage for non-root aggregates that were already relocated until nod
 .Steps
 
 . Bring up node4.
-. Relocate the remaining aggregates that belonged to node2 by again completing link:relocate_node2_non_root_aggr_node3_node4.html#Step1[Step 1] through link:relocate_node2_non_root_aggr_node3_node4.html#step3[Step 3] in _Relocate node2's non-root aggregates from node3 to node4_.
+. Relocate the remaining aggregates that belonged to node2 by again completing link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1[Step 1] through link:relocate_node2_non_root_aggr_node3_node4.html#step3[Step 3] in _Relocate node2's non-root aggregates from node3 to node4_.
 . Continue with the node-pair upgrade procedure.
 // 02 MAR 2021 Formatted from CMS
 // Clean-up, 2022-03-09
