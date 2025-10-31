@@ -99,7 +99,8 @@ Enter `y` to remove all of the packages.
 +
 `system license show`
 +
-You can compare the output with the output that you captured in link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step30[Step 30] of _Prepare the nodes for upgrade_.
+You can compare the output with the output that you captured in link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step29[Step 29] of _Prepare the nodes for upgrade_.
+
 
 . Configure the SPs by performing the following command on both nodes:
 +
