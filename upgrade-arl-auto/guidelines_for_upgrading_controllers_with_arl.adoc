@@ -57,7 +57,7 @@ You might encounter a failure while upgrading the node pair. The node might cras
 
 Refer to the table describing the different phases of the procedure in the section Overview of the ARL upgrade. Information about the failures that can occur is listed by the phase of the procedure.
 
-If any problems occur while upgrading the controllers, refer to the link:aggregate_relocation_failures.html[Troubleshoot] section. The information about failures that can occur is listed by the phase of the procedure in the link:arl_upgrade_workflow.html[ARL upgrade sequence].
+If any problems occur while upgrading the controllers, refer to the link:aggregate_relocation_failures.html[Troubleshoot] section. The information about failures that can occur is listed by the phase of the procedure in the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence].
 
 If you do not find a solution to the problem you encountered, contact technical support.
 // p.9 of PDF

@@ -11,64 +11,99 @@ summary: In general, how you upgrade the controller hardware depends on the plat
 [.lead]
 In general, how you upgrade the controller hardware depends on the platform models of the original nodes. You upgrade either by relocating aggregates or moving volumes (both nondisruptive procedures), or by moving the storage (a disruptive procedure). If you have different ONTAP versions running on the original and new nodes, you might need to perform a software upgrade before starting the hardware upgrade.
 
-[role="tabbed-block"]
-====
-.Systems with internal drives
---
-Choose an upgrade procedure for a system with internal drives, which are listed below:
-
-* FAS2620, FAS2650, FAS2720, and FAS2750 
-* AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, and AFF A800
-* AFF C190, AFF C250, and AFF C800
-* ASA A150, ASA A250, ASA A800, and ASA AFF A220
-+
 NOTE: ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from an ASA to ASA r2 system, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
 
-NOTE: For certain controller upgrades, you can use aggregate relocation to upgrade a system with internal drives. link:upgrade-arl/index.html[Learn more].
+== Which upgrade procedure should I use?
+To select the appropriate upgrade procedure, review all of the questions listed in the table below.
 
-If your system is not listed, see the https://hwu.netapp.com[NetApp Hardware Universe^] to check if it has internal drives. 
+[cols=2*,options="header",cols="30,70"]
+|===
+| Ask yourself…	| If your answer is yes, you can do this…
+| Am I running a different software version on the original and new nodes?	
 
-image:workflow_internal_drives.png[Decision workflow for choosing an upgrade procedure]
+| Upgrade the ONTAP version on the original nodes to the highest supported version.
 
---
+When possible, the new nodes must support the ONTAP version running on the original nodes. If this is not possible, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the highest supported version. The version difference between the original and new nodes cannot be greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. link:https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
 
-.Systems with only external drives
---
-Choose an upgrade procedure for a system with only external drives, which are listed below:
+| Do I want to do a disruptive upgrade?	
+| link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving storage].
 
-* FAS8200, FAS8300, FAS8700, FAS9000, and FAS9500
-* AFF A300, AFF A320, AFF A400, AFF A700, and AFF A900
-* AFF C400 
-* ASA A400, ASA A900, and ASA AFF A700
+This requires a new system with its own storage and shelves to store the data from the original system. Conversion from a controller shelf is possible for certain upgrades.
+
+| Do I want to perform a non-disruptive upgrade?	
+
+a| Upgrade by using one of the following methods:
+
+* link:upgrade/upgrade-decide-to-use-this-guide.html[Move volumes]
 +
-NOTE: ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from ASA to ASA r2, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
-
-If your system is not listed, see the https://hwu.netapp.com[NetApp Hardware Universe^] to check if it only has external drives.
-
-image:workflow_external_drives.png[Decision workflow for choosing an upgrade procedure]
---
-====
-
-Learn about the controller hardware upgrade procedures:
-
-* link:upgrade-arl/index.html[Upgrade by using aggregate relocation]
+This requires joining the new nodes, moving the volumes and LIFs to the new nodes, and unjoining the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, convert it to a switched-attached cluster using a pair of cluster switches before adding new nodes.
+* link:upgrade-arl/index.html[Use aggregate relocation]
 +
-Aggregate relocation is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
+ARL is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes or storage]
+| Do I have a modular system?
 
+*Note*: In a modular system, the controller does not have any internal disks and all storage is in externally attached shelves.
 
-[NOTE]
-====
-*Note1*: The ONTAP version running on the original nodes must be supported by the new nodes. If required, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the maximum supported version. The version difference between the original and new nodes cannot be greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
+| link:upgrade-arl/index.html[Upgrade by using aggregate relocation].
 
-*Note2*: A nondisruptive upgrade requires a new system with its own storage and shelves to store the data from the original system. 
+| Do I have an integrated system and want to upgrade by moving volumes?	
 
-*Note3*: When upgrading by moving volumes, you join the new nodes, move the volumes and LIFs to the new nodes, and then unjoin the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, you convert it to a switched attached cluster using a pair of cluster switches before adding new nodes.
-====
+*Note*: In an integrated system, the controller has internal disks and the storage is contained within the controller chassis and in externally attached shelves. External shelves are for storage expansion and might not be included in every system configuration.
 
-If you are upgrading a MetroCluster configuration, see https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
+a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system is supported^].
+. link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes].
 
-If you are replacing an individual component, see the https://docs.netapp.com/us-en/ontap-systems/index.html[ONTAP Hardware Systems Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.
+| Do I have an integrated system and want to upgrade by swapping the controller module only, keeping existing chassis and disks?
+| link:upgrade-arl-auto-affa900/index.html[Upgrade by using ARL, keeping the same chassis and disks].
 
+| Am I relocating an SVM? 
+| Refer to link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow[SVM data mobility overview^].
+
+| Am I upgrading a MetroCluster configuration?
+|Refer to link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
+
+| Am I replacing an individual component?
+| Refer to the link:https://docs.netapp.com/us-en/ontap-systems/index.html[ONTAP Hardware Systems Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.
+|===
+
+== Example: FAS9500 to FAS90 upgrade
+
+This example shows the possible answers for a FAS9500 to FAS90 controller upgrade.
+
+[cols=2*,options="header",cols="30,70"]
+|===
+| Question | Example answer
+
+| Am I running a different software version on the original and new nodes?
+| No. Both FAS9500 and FAS90 run ONTAP 9.15.1.
+
+| Do I want to perform a disruptive upgrade?
+| No. I want to keep my production environment online during the upgrade.
+
+| Do I want to perform a non-disruptive upgrade?
+| Yes. Based on whether my system is modular or integrated, I can upgrade by moving volumes or using aggregate relocation (ARL).
+
+| Do I have a modular system?
+| Yes. The FAS9500 is a modular system with external storage shelves. I can upgrade by using ARL.
+
+| Do I have an integrated system and want to upgrade by moving volumes?
+| No. The FAS9500 is a modular system, so this doesn't apply.
+
+| Do I have an integrated system and want to upgrade by swapping the controller module only, keeping existing chassis and disks?
+| No. The FAS9500 is a modular system, so this doesn't apply.
+
+| Am I relocating an SVM?
+| No. I'm upgrading the hardware while keeping the same SVMs.
+
+| Am I upgrading a MetroCluster configuration?
+| No. This is a standard HA pair cluster.
+
+| Am I replacing an individual component?
+| No. I'm upgrading the entire controller system.
+|===
+
+*Recommended upgrade path for this example:* link:upgrade-arl/index.html[Upgrade by using ARL] because the FAS9500 is a modular system and ARL provides a non-disruptive upgrade method.
+
+// 2025 OCT 17, AFFFASDOC-404
 // 2023 NOV 16, BURT 1552664

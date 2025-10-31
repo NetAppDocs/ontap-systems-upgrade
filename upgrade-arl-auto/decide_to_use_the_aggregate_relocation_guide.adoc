@@ -58,7 +58,7 @@ NOTE: If your controller upgrade model combination is not in the above table, co
 
 ^1^ARL automated upgrade for the AFF A700 system is supported from ONTAP 9.7P2.
 
-^2^If you are updating to an AFF A800 or a system that supports internal and external disks, you must follow specific instructions for the root aggregate on internal NVMe disks. See link:set_fc_or_uta_uta2_config_on_node3.html#step14[Check and configure UTA/UTA2 ports on node3, Step 14] and link:set_fc_or_uta_uta2_config_node4.html#step14[Check and configure UTA/UTA2 ports on node4, Step 14].
+^2^If you are updating to an AFF A800 or a system that supports internal and external disks, you must follow specific instructions for the root aggregate on internal NVMe disks. Refer to link:reassign-node1-disks-to-node3.html#auto_check3_step9[Reassign node1 disks to node3, Step 9] and link:reassign-node2-disks-to-node4.html#auto_check_4_step9[Reassign node2 disks to node4, Step 9].
 
 ^3^ARL automated upgrade from an AFF A300 to an AFF A800 system is supported from ONTAP 9.7P5.
 
