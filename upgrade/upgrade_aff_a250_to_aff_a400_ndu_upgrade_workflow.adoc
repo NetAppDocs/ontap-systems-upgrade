@@ -15,7 +15,7 @@ Perform a nondisruptive upgrade from an AFF A250 system to an AFF A400 system by
 Review the general upgrade scenarios and upgrade considerations for upgrading by moving volumes or storage:
 
 * link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
-* link:upgrade_general_upgrade_considerations.html[Considerations for upgrading controller hardware]
+* link:upgrade-considerations.html[Considerations for upgrading controller hardware]
 
 .About this task
 The AFF A250 high-availability (HA) pair controllers are node1 and node2 and the replacement AFF A400 HA pair controllers are node3 and node4.
