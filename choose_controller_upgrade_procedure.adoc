@@ -43,7 +43,7 @@ ARL is a replacement procedure. You do not need to expand and shrink your cluste
 
 * link:upgrade/upgrade-decide-to-use-this-guide.html[Move storage]
 +
-You can perform a non-disruptive upgrade by converting the original system to a controller shelf and moving the storage to the replacement system for an AFF A250 to AFF A400 or a FAS2820 upgrade.
+You can non-disruptively upgrade from an AFF A250 to an AFF A400 or a FAS2820 to a replacement system by converting the original system to a controller shelf and then moving the storage to the replacement system.
 
 | Do I have a modular system?
 
