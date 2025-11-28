@@ -9,7 +9,7 @@ summary: Perform an NDU to entry level NetApp AFF and FAS systems without having
 :imagesdir: ../media/
 
 [.lead]
-Perform a nondisruptive upgrade from an AFF A250 system to an AFF A400 system by converting the AFF A250 nodes to NS224 drive shelf. Then, connect them to the AFF A400 replacement nodes. This moves the AFF A250 onboard storage to the AFF A400 replacement system.
+Perform a nondisruptive upgrade from an AFF A250 system to an AFF A400 system by converting the AFF A250 nodes to NS224 drive shelves. Then, connect them to the AFF A400 replacement nodes. This moves the AFF A250 onboard storage to the AFF A400 replacement system.
 
 .Before you begin
 Review the general upgrade scenarios and upgrade considerations for upgrading by moving volumes or storage:
