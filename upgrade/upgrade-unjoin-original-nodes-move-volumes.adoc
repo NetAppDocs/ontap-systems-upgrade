@@ -13,7 +13,9 @@ summary: After the volumes have been moved to the new nodes, you unjoin the orig
 After the volumes have been moved to the new nodes, you unjoin the original nodes from the cluster. When you unjoin a node, the node's configuration is erased and all disks are initialized.
 
 .Steps
-. Disable high-availability configuration on the original nodes: `storage failover modify -node _original_node_name_ -enabled false`
+. Disable high-availability configuration on the original nodes:
++
+`storage failover modify -node <original_node_name> -enabled false`
 . Access the advanced privilege level:
 +
 `set -privilege advanced`
@@ -33,16 +35,34 @@ node2                true    true         false
 node3                true    true         false
 ----
 
-. If one of the original nodes holds epsilon, move epsilon to a different node:
- .. Remove epsilon from the original node:
- +
- `cluster modify -node _original_node_name_ -epsilon false`
- .. Assign epsilon to a different node:
- +
- `cluster modify -node _new_node_name_ -epsilon true`
-. From a node that will remain in the cluster, unjoin each original node from the cluster (advanced privilege level):
+. If one of the  nodes holds epsilon, move epsilon to a different node:
+.. Remove epsilon from the original node:
 +
-`cluster unjoin -node _original_node_name_`
+`cluster modify -node <original_node_name> -epsilon false`
+.. Assign epsilon to a different node:
++
+`cluster modify -node <new_node_name> -epsilon true`
+. Identify the current master node:
++
+`cluster ring show`
++
+The master node is the node that holds processes such as `mgmt`, `vldb`, `vifmgr`, `bcomd`, and `crs`.
+. If of the original nodes is the current master node, then enable one of the nodes is remaining in the cluster to be elected as the master node:
+
+.. Make the current master node ineligible to participate in the cluster:
++
+`cluster modify -node <node_name> -eligibility false`
++
+The node is marked unhealthy until eligibility is restored. When the master node becomes ineligible, one of the nodes remaining in the cluster is elected by the cluster quorum as the new master.
++
+NOTE: If you are performing this step on the first node in an HA pair, you should mark only that node as ineligible. Do not modify the status of the HA partner. If the partner node is selected as the new master, you need to verify if it holds epsilon before making it ineligible. This is done when you repeat these steps to remove the partner node.
+.. Make the previous master node eligible to participate in the cluster again:
++
+`cluster modify -node <node_name> -eligibility true`
+
+. From a node that is remaining in the cluster, unjoin each original node from the cluster (advanced privilege level):
++
+`cluster unjoin -node <original_node_name>`
 +
 The system displays a message similar to the following:
 +
@@ -73,4 +93,8 @@ This will erase all the data on the disks, are you sure?:
 +
 `cluster ha modify -configured true`
 
-// BURT 1476241 2022-05-13
+.What's next?
+link:upgrade-complete-move-volumes.html[Complete the move volumes upgrade]
+
+// 2025 DEC 12, AFFFASDOC-442
+// 2022 MAY 13, BURT 1476241 
