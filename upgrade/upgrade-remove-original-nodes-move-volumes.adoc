@@ -48,11 +48,13 @@ node3                true    true         false
 The master node is the node that holds processes such as `mgmt`, `vldb`, `vifmgr`, `bcomd`, and `crs`.
 . Before removing a node, ensure it's not the current master node. If it is, then enable one of the nodes remaining in the cluster to be elected as master:
 
+. If a node that you are removing is the current master node, then enable a node that is remaining in the cluster to be elected as the master node:
+
 .. Make the current master node ineligible to participate in the cluster:
 +
 `cluster modify -node <original_node_name> -eligibility false`
 +
-The node is marked unhealthy until eligibility is restored. When the master node becomes ineligible, one of the nodes remaining in the cluster is elected by the cluster quorum as the new master.
+The node is marked unhealthy until eligibility is restored. When the master node becomes ineligible, another node in the cluster is elected by the cluster quorum as the new master.
 +
 [NOTE]
 ====
@@ -64,20 +66,20 @@ If a node holds epsilon, move epsilon to a different node before changing the no
 +
 `cluster modify -node <node_name> -eligibility true`
 
-. Log into the remote node management LIF or the cluster-management LIF on a node that is remaining in the cluster.
-+
-Remove each original node from the cluster (advanced privilege level):
+. Log into the remote node management LIF or the cluster-management LIF on a node that is remaining in the cluster and remove each original node from the cluster (advanced privilege level):
 +
 [role="tabbed-block"]
 ====
 .ONTAP 9.4 and later
 --
 With node name:
+
 [source,cli]
 ----
 cluster remove-node -node <original_node_name>
 ----
 With node IP:
+
 [source,cli]
 ----
 cluster remove-node -cluster_ip <original_node_ip>
@@ -85,7 +87,6 @@ cluster remove-node -cluster_ip <original_node_ip>
 --
 .ONTAP 3
 --
-
 [source,cli]
 ----
 cluster unjoin
