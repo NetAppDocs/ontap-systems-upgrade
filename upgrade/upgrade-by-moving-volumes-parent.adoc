@@ -40,9 +40,9 @@ After you have moved the volumes from the original nodes, you migrate the non-SA
 [role="quick-margin-para"]
 Depending on your cluster contents and cluster environment, you move, delete, or create SAN LIFs, or re-create deleted SAN LIFs.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]link:upgrade-remove-original-nodes-move-volumes.html[Unjoin the original nodes from the cluster]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]link:upgrade-remove-original-nodes-move-volumes.html[Remove the original nodes from the cluster]
 [role="quick-margin-para"]
-After the volumes have been moved to the new nodes, you unjoin the original nodes from the cluster. When you unjoin a node, the node's configuration is erased and all disks are initialized.
+After the volumes have been moved to the new nodes, you remove the original nodes from the cluster. When you remove a node, the node's configuration is erased and all disks are initialized.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight]link:upgrade-complete-move-volumes.html[Complete the upgrade]
 [role="quick-margin-para"]

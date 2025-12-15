@@ -1,7 +1,6 @@
 ---
-permalink: upgrade/upgrade-remove-original-nodes-move-volumes.html
+permalink: upgrade/upgrade-remove-original-nodes.html
 sidebar: sidebar
-
 keywords: volume, move, node, remove, original, cluster, configuration, disk, initialize, remove the original nodes from the cluster
 summary: After the volumes have been moved to the new nodes, you remove the original nodes from the cluster. When you remove a node, the node’s configuration is erased and all disks are initialized.
 ---
