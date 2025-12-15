@@ -14,7 +14,7 @@ Upgrading controller hardware by moving volumes is a nondisruptive procedure. Be
 * link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
 * link:upgrade-considerations.html[Considerations for upgrading controller hardware]
 
-To upgrade by moving volumes, you prepare the original nodes and join the new nodes to the cluster. You move volumes to the new nodes, configure LIFs, and unjoin the original nodes from the cluster. 
+To upgrade by moving volumes, you prepare the original nodes and join the new nodes to the cluster. You move volumes to the new nodes, configure LIFs, and remove the original nodes from the cluster. 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One]link:upgrade-prepare-when-moving-volumes.html[Prepare for the upgrade when moving volumes]
 [role="quick-margin-para"]
@@ -40,7 +40,7 @@ After you have moved the volumes from the original nodes, you migrate the non-SA
 [role="quick-margin-para"]
 Depending on your cluster contents and cluster environment, you move, delete, or create SAN LIFs, or re-create deleted SAN LIFs.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]link:upgrade-unjoin-original-nodes-move-volumes.html[Unjoin the original nodes from the cluster]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]link:upgrade-remove-original-nodes-move-volumes.html[Unjoin the original nodes from the cluster]
 [role="quick-margin-para"]
 After the volumes have been moved to the new nodes, you unjoin the original nodes from the cluster. When you unjoin a node, the node's configuration is erased and all disks are initialized.
 

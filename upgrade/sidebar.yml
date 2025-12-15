@@ -66,7 +66,7 @@ entries:
     - title: "Move, delete, or create SAN LIFS"
       url: /upgrade/upgrade_move_delete_recreate_san_lifs.html
     - title: Unjoin original nodes
-      url: /upgrade/upgrade-unjoin-original-nodes-move-volumes.html
+      url: /upgrade/upgrade-remove-original-nodes-move-volumes.html
     - title: Complete upgrade
       url: /upgrade/upgrade-complete-move-volumes.html
   - title: Upgrade AFF A250 to AFF A400
