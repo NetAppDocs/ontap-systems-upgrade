@@ -46,7 +46,6 @@ node3                true    true         false
 `cluster ring show`
 +
 The master node is the node that holds processes such as `mgmt`, `vldb`, `vifmgr`, `bcomd`, and `crs`.
-. Before removing a node, ensure it's not the current master node. If it is, then enable one of the nodes remaining in the cluster to be elected as master:
 
 . If a node that you are removing is the current master node, then enable a node that is remaining in the cluster to be elected as the master node:
 
