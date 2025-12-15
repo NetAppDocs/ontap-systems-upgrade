@@ -12,7 +12,7 @@ summary: After the volumes have been moved to the new nodes, you remove the orig
 After moving the volumes from the original to the new nodes and moving or deleting data LIFs, you remove the original nodes from the cluster. When you remove a node, the node's configuration is erased and all disks are initialized.
 
 .Steps
-. Disable high-availability configuration on the original nodes:
+. [[disable-ha]]Disable high-availability configuration on the original nodes:
 +
 `storage failover modify -node <original_node_name> -enabled false`
 . Access the advanced privilege level:
@@ -67,36 +67,23 @@ If a node holds epsilon, move epsilon to a different node before changing the no
 
 . Log into the remote node management LIF or the cluster-management LIF on a node that is remaining in the cluster and remove each original node from the cluster (advanced privilege level):
 +
-[role="tabbed-block"]
-====
-.ONTAP 9.4 and later
---
 With node name:
-
++
 [source,cli]
 ----
 cluster remove-node -node <original_node_name>
 ----
 With node IP:
-
++
 [source,cli]
 ----
 cluster remove-node -cluster_ip <original_node_ip>
 ----
---
-.ONTAP 3
---
-[source,cli]
-----
-cluster unjoin
-----
---
-====
 +
 If you have a mixed version cluster and you are removing the last lower version node, use the `-skip-last-low-version-node-check` parameter with these commands.
 +
 The system informs you of the following:
-
++
 ** You must also remove the node's failover partner from the cluster.
 ** After the node is removed and before it can rejoin a cluster, you must use boot menu option *(4) Clean configuration and initialize all disks* or option *(9) Configure Advanced Drive Partitioning* to erase the node's configuration and initialize all disks.
 +
@@ -106,19 +93,19 @@ If the node is the quorum master, the cluster briefly loses and then returns to 
 
 . If a failure message indicates error conditions, address those conditions and rerun the `cluster remove-node` or `cluster unjoin` command.
 +
-The node automatically reboots after it is successfully removed from the cluster.
+After a node is successfully removed from the cluster, it automatically reboots.
 
 . If you are repurposing the node, erase the node configuration and initialize all disks:
 .. During the boot process, press Ctrl-C to display the boot menu when prompted to do so.
 .. Select the boot menu option *(4) Clean configuration and initialize all disks*.
-. Return to admin privilege level:
+. [[return-admin]]Return to admin privilege level on one of the new nodes in the cluster:
 +
 [source,cli]
 ----
 set -privilege admin
 ----
 
-. Repeat the preceding steps to remove the failover partner from the cluster.
+. Repeat Steps <<disable-ha,1>> to <<return-admin,10>> to remove the failover partner from the cluster.
 
 . If the cluster has only two nodes remaining, configure high availability for the two-node cluster:
 +
