@@ -57,9 +57,11 @@ The node is marked unhealthy until eligibility is restored. When the master node
 +
 [NOTE]
 ====
-If you are performing this step on the first node in an HA pair, you should mark only that node as ineligible. Do not modify the status of the HA partner. If the partner node is selected as the new master, you need to verify if it holds epsilon before making it ineligible. This is done when you repeat these steps to remove the partner node.
+If you are performing this step on the first node in an HA pair, you should mark only that node as ineligible. Do not modify the status of the HA partner. 
 
-If a node holds epsilon, move epsilon to a different node before changing the node's eligibility to `eligibility false`, as described in <<epsilon-true,Step 4>>. 
+If the partner node is selected as the new master, you need to verify if it holds epsilon. If the partner node holds epsilon, you need to move epsilon to a different node that is remaining in the cluster before before making it ineligible. You do this when you repeat these steps to remove the partner node.
+
+Do not set eligibility to "false" on a node that holds epsilon.
 ====
 .. Make the previous master node eligible to participate in the cluster again:
 +
