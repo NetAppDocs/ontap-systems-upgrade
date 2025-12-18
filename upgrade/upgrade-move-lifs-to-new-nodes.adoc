@@ -82,6 +82,9 @@ network interface modify -vserver <cluster_name> -lif cluster_mgmt -home-node <n
 network interface migrate -vserver <vserver_name> -lif cluster-mgmt -destination-node <new_node_name> -destination-port {<netport|ifgrp>}
 ----
 
+.What's next?
+link:upgrade_move_delete_recreate_san_lifs.html[Move, delete, or create SAN LIFs]
+
 // 2023 NOV 16, AFFFASDOC-93
 // 2023 JUN 15, BURT 1552668
 // 2022 MAY13, BURT 1476241
