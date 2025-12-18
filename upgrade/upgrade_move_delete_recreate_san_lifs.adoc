@@ -28,7 +28,7 @@ For more information, see the https://docs.netapp.com/us-en/ontap/san-admin/move
 
 == Delete SAN LIFs no longer required
 
-If the cluster is in a SAN environment, you must delete any SAN LIFs that you no longer require from the original nodes before you can unjoin the original nodes from the cluster.
+If the cluster is in a SAN environment, you must delete any SAN LIFs that you no longer require from the original nodes before you can remove the original nodes from the cluster.
 
 .Steps
 . If you have iSCSI initiators, complete the following steps:
@@ -74,6 +74,9 @@ js11      ps0          mixed    LIF1,                   igroup1
 == Create new SAN LIFs or re-create deleted SAN LIFs
 
 Depending on your cluster environment requirements, you might decide to create new SAN LIFs or re-create SAN LIFs that you deleted earlier in this procedure. You can create or re-create SAN LIFs by using the https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_creating_network_interfaces.html[network interfaces creation^] procedure in the _Cluster Management Using OnCommand® System Manager_ documentation.
+
+.What's next?
+link:upgrade-remove-original-nodes.html[Remove the original nodes from the cluster]
 
 
 // BURT 1476241 2022-05-13
