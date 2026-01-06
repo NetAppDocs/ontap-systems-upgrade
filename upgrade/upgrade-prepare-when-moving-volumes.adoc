@@ -39,4 +39,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535[Migrating to a two-
 +
 `system node autosupport invoke -node _node_name_ -type all -message "Upgrading node_name from _platform_original_ to _platform_new_"`
 
+.What's next?
+link:upgrade-install-and-join-new-nodes-move-vols.html[Install the new nodes and join them to the cluster]
+
 // Clean-up, 2022-03-09
