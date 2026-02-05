@@ -11,7 +11,7 @@ summary: Migrate the logical interfaces (LIFs) and data aggregates on node2 to n
 [.lead]
 Migrate the logical interfaces (LIFs) and data aggregates on node2 to node1 before converting node2 to a drive shelf.
 
-This procedure supports the following system conversions:
+These steps support the following system conversions:
 
 * Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
 * Converting a FAS2820 to a DS212C drive shelf
