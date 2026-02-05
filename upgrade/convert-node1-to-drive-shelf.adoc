@@ -1,8 +1,8 @@
 ---
 permalink: upgrade/convert-node1-to-drive-shelf.html
 sidebar: sidebar
-keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives
-summary: Convert FAS2820 node1 to a DS212C drive shelf and then connect to node3 before reassigning drives from node1 to node3.
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node3, node1, reassign, drives
+summary: Convert node1 to a drive shelf and connect to node3 before reassigning drives from node1 to node3.
 ---
 = Convert node1 to a drive shelf and connect to node3
 :icons: font
@@ -11,10 +11,10 @@ summary: Convert FAS2820 node1 to a DS212C drive shelf and then connect to node3
 [.lead]
 Convert node1 to a drive shelf and connect to node3 before reassigning drives from node1 to node3.
 
-This procedure supports the following system conversions when upgrading a system by converting nodes to drive shelves:
+This procedure supports the following system conversions:
 
-* Converting AFF A150 or AFF A220 to a DS224C drive shelf 
-* Converting FAS2820 to a DS212C drive shelf
+* Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
+* Converting a FAS2820 to a DS212C drive shelf
 
 .Steps
 . Disconnect all network cables from node1.

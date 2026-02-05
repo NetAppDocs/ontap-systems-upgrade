@@ -1,10 +1,10 @@
 ---
 permalink: upgrade/migrate-node2-lifs-aggregates.html
 sidebar: sidebar
-keywords: fas2820, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs
-summary: Migrate the logical interfaces (LIFs) and data aggregates on FAS2820 node2 to node1 before converting node2 to a drive shelf.
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs
+summary: Migrate the logical interfaces (LIFs) and data aggregates on node2 to node1 before converting node2 to a drive shelf.
 ---
-= Migrate LIFs and data aggregates on FAS2820 node2 to node1
+= Migrate LIFs and data aggregates on node2 to node1
 :icons: font
 :imagesdir: ../media/
 

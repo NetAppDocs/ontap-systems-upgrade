@@ -1,8 +1,8 @@
 ---
 permalink: upgrade/reassign-node2-drives.html
 sidebar: sidebar
-keywords: fas2820, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
-summary: After converting FAS2820 node2 to a DS212C drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4. 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
+summary: After converting node2 to a drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4. 
 ---
 = Reassign drives from node2 to node4
 :icons: font

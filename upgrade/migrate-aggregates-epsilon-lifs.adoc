@@ -1,7 +1,7 @@
 ---
 permalink: upgrade/migrate-aggregates-epsilon-lifs.html
 sidebar: sidebar
-keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs
 summary:  Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to node4.
 ---
 = Migrate data aggregates, epsilon, and LIFs on node1 to node4
