@@ -1,0 +1,4 @@
+---
+permalink: upgrade/migrate-fas2820-node4-lIfs-aggregates.html
+redirect: ontap-systems-upgrade/upgrade/migrate-node4-lIfs-aggregates.html
+---

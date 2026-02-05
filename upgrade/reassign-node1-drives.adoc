@@ -1,5 +1,5 @@
 ---
-permalink: upgrade/migrate-fas2820-node4-lIfs-aggregates.html
+permalink: upgrade/reassign-node1-drives.html
 sidebar: sidebar
 keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives
 summary: After converting FAS2820 node1 to a DS212C drive and connecting to node3, you reassign the drives that previously belonged to node1 to node3.
@@ -11,7 +11,7 @@ summary: After converting FAS2820 node1 to a DS212C drive and connecting to node
 [.lead]
 Reassign the drives that were previously assigned to node1 to node3.
 
-This procedure is for the following system conversions:
+This procedure supports the following system conversions:
 
 * Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
 * Converting a FAS2820 to a DS212C drive shelf
@@ -77,6 +77,6 @@ halt
 
 .What's next?
 
-link:migrate-fas2820-node4-lIfs-aggregates.html[Migrate LIFs and data aggregates on node4 to node3]
+link:migrate-node4-lIfs-aggregates.html[Migrate LIFs and data aggregates on node4 to node3]
 
 // 2023 Oct 12, AFFFASDOC-64

@@ -1,0 +1,4 @@
+---
+permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html
+redirect: ontap-systems-upgrade/upgrade/migrate-aggregates-epsilon-lifs.html
+---

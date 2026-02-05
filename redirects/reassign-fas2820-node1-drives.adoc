@@ -1,0 +1,4 @@
+---
+permalink: upgrade/reassign-fas2820-node1-drives.html
+redirect: ontap-systems-upgrade/upgrade/reassign-node1-drives.html
+---

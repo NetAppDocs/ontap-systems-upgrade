@@ -1,5 +1,5 @@
 ---
-permalink: upgrade/migrate-fas2820-node4-lIfs-aggregates.html
+permalink: upgrade/migrate-node4-lIfs-aggregates.html
 sidebar: sidebar
 keywords: fas2820, ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif
 summary: To complete the upgrade, you connect FAS2820node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.
@@ -11,7 +11,7 @@ summary: To complete the upgrade, you connect FAS2820node3 to node4 and then mig
 [.lead]
 To complete the upgrade, connect node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.
 
-This procedure is for the following system conversions:
+This procedure supports the following system conversions:
 
 * Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
 * Converting a FAS2820 to a DS212C drive shelf
