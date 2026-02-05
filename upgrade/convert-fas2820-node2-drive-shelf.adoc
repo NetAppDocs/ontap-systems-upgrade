@@ -1,5 +1,5 @@
 ---
-permalink: upgrade/convert-fas2820-node2-drive-shelf.html
+permalink: upgrade/convert-fas2820-node1-drive-shelf.html
 sidebar: sidebar
 keywords: fas8280, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
 summary: Convert node 2 (FAS2820) to a DS212C drive shelf and then connect to node4.
@@ -9,11 +9,16 @@ summary: Convert node 2 (FAS2820) to a DS212C drive shelf and then connect to no
 :imagesdir: ../media/
 
 [.lead]
-Convert FAS2820 node2 to a DS212C drive shelf. Connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the controllers inside the DS212C shelf.
+Convert node2 to a drive shelf and connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the controllers inside the drive shelf.
+
+This procedure is for the following system conversions:
+
+* Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
+* Converting a FAS2820 to a DS212C drive shelf
 
 .Steps
 . Disconnect all the network cables from node2.
-. Remove node2 from the FAS2820 chassis.
+. Remove node2 from the AFF A150, AFF A220, or FAS2820 chassis.
 . Insert the IOM12 or IOM12B module into the bay of node2.
 . Cable the node4 serial-attached SCSI (SAS) port to an available port on the IOM12 or IOM12B module. See the link:https://hwu.netapp.com[Hardware Universe^] to verify the SAS ports for your system. 
 

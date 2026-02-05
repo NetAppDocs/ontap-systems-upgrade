@@ -9,12 +9,17 @@ summary: Migrate the logical interfaces (LIFs) and data aggregates on FAS2820 no
 :imagesdir: ../media/
 
 [.lead]
-Migrate the logical interfaces (LIFs) and data aggregates on FAS2820 node2 to node1 before converting node2 to a drive shelf.
+Migrate the logical interfaces (LIFs) and data aggregates on node2 to node1 before converting node2 to a drive shelf.
+
+This procedure is for the following system conversions:
+
+* Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
+* Converting a FAS2820 to a DS212C drive shelf
 
 .Before you begin
 Verify that you meet the following requirements:
 
-* The FAS2820 and replacement controllers have the same ONTAP release and patch version, when possible. Refer to the https://hwu.netapp.com[NetApp Hardware Universe^] for supported ONTAP releases.
+* The original and replacement controllers have the same ONTAP release and patch version, when possible. Refer to the https://hwu.netapp.com[NetApp Hardware Universe^] for supported ONTAP releases.
 
 [NOTE]
 ====
@@ -26,9 +31,9 @@ Verify that you meet the following requirements:
 * Both replacement controllers are on standby at the LOADER prompt.
 * All required cabling is available.
 
-
 .About this task
-The following steps are performed on FAS2820 node1.
+
+The following steps are performed on node1.
 
 .Steps
 . Access the advanced privilege level:
