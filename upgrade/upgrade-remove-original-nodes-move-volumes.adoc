@@ -14,14 +14,23 @@ After moving the volumes from the original to the new nodes and moving or deleti
 .Steps
 . [[disable-ha]]Disable high-availability (HA) configuration on the original nodes:
 +
-`storage failover modify -node <original_node_name> -enabled false`
+[source,cli]
+----
+storage failover modify -node <original_node_name> -enabled false
+----
 
-include::https://raw.githubusercontent.com/NetAppDocs/ontap/main/_include/remove-nodes-from-cluster.adoc[]
+include]::https://raw.githubusercontent.com/NetAppDocs/ontap/main/_include/remove-nodes-from-cluster.adoc[]
+
+[start=11]
 . Repeat Steps <<disable-ha,1>> to <<return-admin,10>> to remove the failover partner from the cluster.
 
 . If the cluster has only two nodes remaining, configure high availability for the two-node cluster:
 +
-`cluster ha modify -configured true`
+[source,cli]
+----
+cluster ha modify -configured true
+----
+
 .What's next?
 link:upgrade-complete-move-volumes.html[Complete the move volumes upgrade]
 
