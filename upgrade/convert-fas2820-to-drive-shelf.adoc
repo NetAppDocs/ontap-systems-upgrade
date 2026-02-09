@@ -27,7 +27,7 @@ Before converting FAS2820 node2 to a drive shelf, migrate the logical interfaces
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two]xref:convert-fas2820-node2-drive-shelf.adoc[Convert node2 to a drive shelf and connect to node4]
 [role="quick-margin-para"]
-Convert FAS8280 node2 to a DS212C drive shelf and then connect to node4 before reassigning drives from node2 to node4.
+Convert FAS2820 node2 to a DS212C drive shelf and then connect to node4 before reassigning drives from node2 to node4.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]xref:reassign-fas2820-node2-drives.adoc[Reassign drives from node2 to node4]
 [role="quick-margin-para"]
