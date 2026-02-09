@@ -23,14 +23,14 @@ You must note the following when performing the installation:
 .Before you begin
 If you are not already grounded, correctly ground yourself.
 
-== Step 1: Install the ASA A900, AFF A900, or FAS9500 NVRAM module
+== Install the ASA A900, AFF A900, or FAS9500 NVRAM module
 Install the ASA A900, AFF A900, or FAS9500 NVRAM module in slot 6 of node2.
 
 .Steps
 . Align the NVRAM module with the edges of the chassis opening in slot 6.
 . Gently slide the NVRAM module into the slot until the lettered and numbered I/O cam latch begins to engage with the I/O cam pin, and then push the I/O cam latch all the way up to lock the NVRAM module in place.
 
-== Step 2: Install the ASA A900, AFF A900, or FAS9500 controller module in node2
+== Install the ASA A900, AFF A900, or FAS9500 controller module in node2
 Install, cable, and connect the ASA A900, AFF A900, or FAS9500 controller module in node2.
 
 .Steps
