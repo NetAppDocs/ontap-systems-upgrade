@@ -12,6 +12,8 @@ summary: "Replace the node1 the AFF A220, AFF A200, AFF C190, FAS2620, or FAS272
 :imagesdir: ../media/
 
 [.lead]
+Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller modules with ASA A150, AFF A150, or FAS2820 controller modules
+
 At this stage, node1 is down and all data is served by node2. You must take care to remove only the node1 controller module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
 
 CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and connected to the same power supplies.
@@ -19,7 +21,7 @@ CAUTION: Don't power off the chassis because node1 and node2 are in the same cha
 .Before you begin
 If you are not already grounded, correctly ground yourself.
 
-== Remove the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
+== Step 1: Remove the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
 To access components inside the controller, remove the controller module from the system and then remove the cover on the controller module.
 
 .Steps
@@ -37,7 +39,7 @@ image:drw_2240_x_opening_cam_latch.png[Opening the cam handle]
 
 . Turn the controller module over and place it on a flat, stable surface.
 
-== Install the ASA A150, AFF A150, or FAS2820 controller module
+== Step 2: Install the ASA A150, AFF A150, or FAS2820 controller module
 Install, cable, and connect the ASA A150, AFF A150, or FAS2820 controller module in node1.
 
 .Steps

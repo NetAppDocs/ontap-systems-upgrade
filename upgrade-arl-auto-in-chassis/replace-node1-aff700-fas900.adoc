@@ -12,6 +12,8 @@ summary: "Replace the AFF A700 or FAS9000 node1 system modules when using ARL to
 :imagesdir: ../media/
 
 [.lead]
+Replace the AFF A700 or FAS9000 controller and NVRAM modules with ASA A900, AFF A900, or FAS9500 controller and NVRAM modules.
+
 At this stage, node1 is down and all data is served by node2. You must take care to remove only the node1 controller module and the node1 NVRAM module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
 
 CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and connected to the same power supplies.
@@ -19,7 +21,7 @@ CAUTION: Don't power off the chassis because node1 and node2 are in the same cha
 .Before you begin
 If you are not already grounded, correctly ground yourself.
 
-== Remove the AFF A700 or FAS9000 controller module
+== Step 1: Remove the AFF A700 or FAS9000 controller module
 Detach and remove the AFF A700 or FAS9000 controller module from node1.
 
 .Steps
@@ -46,7 +48,7 @@ image:black_circle_two.png[Number two]
 +
 Make sure that you support the bottom of the controller module as you slide it out of the chassis.
 
-== Remove the AFF A700 or FAS9000 NVRAM module
+== Step 2: Remove the AFF A700 or FAS9000 NVRAM module
 Unlock and remove the AFF A700 or FAS9000 NVRAM module from node1.
 
 NOTE: The AFF A700 or FAS9000 NVRAM module is in slot 6 and is double the height of the other modules in the system.
@@ -74,20 +76,18 @@ image:black_circle_two.png[Number two]
 |I/O latch completely unlocked
 |===
 
-== Install the ASA A900, AFF A900, or FAS9500 NVRAM and controller modules
-Install, cable, and connect the ASA A900, AFF A900, or FAS9500 NVRAM and controller modules in node1.
+== Step 3: Install the ASA A900, AFF A900, or FAS9500 NVRAM module
+Install, cable, and connect the ASA A900, AFF A900, or FAS9500 NVRAM module in slot 6 of node1.
 
-You must note the following when performing the installation:
-
+[NOTE]
+====
 * Move all blank filler modules in slots 6-1 and 6-2 from the old NVRAM module to the new NVRAM module.
 * Do NOT move the coredump device from the AFF A700 NVRAM module to the ASA A900 or AFF A900 NVRAM module.
 * Move all flash cache modules installed in the FAS9000 NVRAM module to the FAS9500 NVRAM module.
+====
 
 .Before you begin
 If you are not already grounded, correctly ground yourself.
-
-=== Install the ASA A900, AFF A900, or FAS9500 NVRAM module
-Install the ASA A900, AFF A900, or FAS9500 NVRAM module in slot 6 of node1.
 
 .Steps
 . Align the NVRAM module with the edges of the chassis opening in slot 6.
@@ -106,8 +106,12 @@ image:black_circle_two.png[Number two]
 |I/O latch completely unlocked
 |===
 
-=== Install the ASA A900, AFF A900, or FAS9500 controller module on node1.
-Use the following procedure to install the ASA A900, AFA A900, or FAS9500 controller module in node1.
+== Step 4: Install the ASA A900, AFF A900, or FAS9500 controller module on node1.
+Install, cable, and connect the ASA A900, AFF A900, or FAS9500 controller module in node1.
+
+
+.Before you begin
+If you are not already grounded, correctly ground yourself.
 
 .Steps
 . Align the end of the controller module with opening A in the chassis, and then gently push the controller module halfway into the system.
