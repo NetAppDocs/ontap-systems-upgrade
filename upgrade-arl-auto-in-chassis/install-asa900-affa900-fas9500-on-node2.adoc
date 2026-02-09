@@ -14,23 +14,24 @@ summary: "Install the replacement system modules on node2 during an ARL upgrade 
 [.lead]
 Install the ASA A900, AFF A900, or FAS9500 NVRAM and controller modules that you received for the upgrade on node2. Node2 is controller B located on the right side of the chassis when looking at the controllers from the rear of the system. 
 
-You must note the following when performing the installation:
-
+[NOTE]
+====
 * Move all blank filler modules in slots 6-1 and 6-2 from the old NVRAM module to the new NVRAM module.
 * Do NOT move the coredump device from the AFF A700 NVRAM module to the ASA A900 or AFF A900 NVRAM module.
 * Move all flash cache modules installed in the FAS9000 NVRAM module to the FAS9500 NVRAM module.
+====
 
 .Before you begin
 If you are not already grounded, correctly ground yourself.
 
-== Install the ASA A900, AFF A900, or FAS9500 NVRAM module
+== Step 1: Install the ASA A900, AFF A900, or FAS9500 NVRAM module
 Install the ASA A900, AFF A900, or FAS9500 NVRAM module in slot 6 of node2.
 
 .Steps
 . Align the NVRAM module with the edges of the chassis opening in slot 6.
 . Gently slide the NVRAM module into the slot until the lettered and numbered I/O cam latch begins to engage with the I/O cam pin, and then push the I/O cam latch all the way up to lock the NVRAM module in place.
 
-== Install the ASA A900, AFF A900, or FAS9500 controller module in node2
+== Step 2: Install the ASA A900, AFF A900, or FAS9500 controller module
 Install, cable, and connect the ASA A900, AFF A900, or FAS9500 controller module in node2.
 
 .Steps
@@ -55,10 +56,16 @@ WARNING: To avoid damaging the connectors, don't use excessive force when slidin
 
 . At the LOADER> prompt of node2, set the default environment variables:
 +
-`set-defaults`
+[source,cli]
+----
+set-defaults
+----
 .	Save the default environment variables settings:
 +
-`saveenv`
+[source,cli]
+----
+saveenv
+----
 
 // 2025 JUN 19, AFFFASDOC-334
 // 2025 Aug 09, AFFFASDOC-378
