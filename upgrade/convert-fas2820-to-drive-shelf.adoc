@@ -9,7 +9,7 @@ summary: Perform a nondisruptive upgrade to a FAS2820 by converting each node to
 :imagesdir: ../media/
 
 [.lead]
-Perform a nondisruptive upgrade of a NetApp FAS2820 by converting each node to a DS212C drive shelf. Then, connect the drive shelves to the replacement nodes. This moves the FAS2820 onboard storage to the replacement system.
+Perform a nondisruptive upgrade of a NetApp FAS2820 system by converting each node to a DS212C drive shelf. Then, connect the drive shelves to the replacement nodes. This moves the FAS2820 onboard storage to the replacement system.
 
 .Before you begin
 Review the general upgrade scenarios and upgrade considerations for upgrading by moving volumes or storage:
