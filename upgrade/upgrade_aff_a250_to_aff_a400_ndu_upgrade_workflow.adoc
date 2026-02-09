@@ -30,7 +30,7 @@ Convert AFF A250 node2 to an NS224 drive shelf and then connect to AFF A400 node
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]link:upgrade_reassign_drives_node2_to_node4.html[Reassign drives from node2 to node4]
 [role="quick-margin-para"]
-After converting AFF A250 node2 to an NS224 drive shelf and connecting to AFF A400 node4, reassign the drives that previously belonged to node2 to node4
+After converting AFF A250 node2 to an NS224 drive shelf and connecting to AFF A400 node4, reassign the drives that previously belonged to node2 to node4.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four]link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html[Migrate data aggregates, epsilon, and LIFs on node1 to node4]
 [role="quick-margin-para"]
