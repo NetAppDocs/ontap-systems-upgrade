@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/install-aff-a30-a50-c30-c50-node2.html
 keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement
 summary: "Install the replacement system modules on node2 during an ARL upgrade of controller models in the same chassis."
 ---
-= Install AFF A30, AFF A50, AFF C30, or AFF C60 module on node2
+= Install AFF A30, AFF A50, AFF C30, or AFF C60 module in node2
 :hardbreaks:
 :nofooter:
 :icons: font

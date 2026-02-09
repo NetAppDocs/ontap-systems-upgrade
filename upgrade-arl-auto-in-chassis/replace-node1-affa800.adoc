@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/replace-node1-affa800.html
 keywords: aff, asa, fas, replace, node1, system, modules
 summary: "Replace the AFF A800 or AFF C800 node1 system modules when using ARL to upgrade controller models in the same chassis."
 ---
-= Replace the AFF A800 or AFF C800 controller module
+= Replace the node1 AFF A800 or AFF C800 controller module
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,7 +12,7 @@ summary: "Replace the AFF A800 or AFF C800 node1 system modules when using ARL t
 :imagesdir: ../media/
 
 [.lead]
-Replace the AFF A800 or AFF C800 controller module with an AFF A90, AFF A70, or AFF C80 controller module.
+Replace the node1 AFF A800 or AFF C800 controller module with an AFF A90, AFF A70, or AFF C80 controller module.
 
 At this stage, node1 is down and all data is served by node2. You must take care to remove only the node1 controller module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
 
@@ -23,7 +23,7 @@ CAUTION: Don't power off the chassis because node1 and node2 are in the same cha
 If you are not already grounded, correctly ground yourself.
 
 == Step 1: Remove the AFF A800 or AFF C800 controller module
-Remove the cable management device from the existing module and move the controller slightly out of the chassis.
+Remove the cable management device from the existing node1 module and move the controller slightly out of the chassis.
 
 .Steps
 . Ensure that all drives in the chassis are firmly seated against the midplane by using your thumbs to push each drive until you feel a positive stop.
