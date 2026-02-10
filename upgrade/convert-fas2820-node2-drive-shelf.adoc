@@ -21,7 +21,6 @@ Convert FAS2820 node2 to a DS212C drive shelf. Connect to node4 before reassigni
 +
 NOTE: If node4 only supports 10GbE cluster connections, you must have 10GbE cabling to create temporary cluster connections.
 
-
 .What's next?
 
 link:reassign-fas2820-node2-drives.html[Reassign drives from node2 to node4]
