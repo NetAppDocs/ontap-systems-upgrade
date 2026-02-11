@@ -9,41 +9,48 @@ summary: Perform a nondisruptive upgrade by converting each node to a drive shel
 :imagesdir: ../media/
 
 [.lead]
-You can perform a nondisruptive upgrade by converting each node in the original system to a drive shelf and then connecting it to the replacement nodes.
+Perform a nondisruptive upgrade of certain NetApp systems by converting each node in the original system to a drive shelf. Then, connect the drive shelves to the replacement nodes. This moves the onboard storage to the replacement system.
 
+.Before you begin
+Review the general upgrade scenarios and upgrade considerations for upgrading by moving volumes or storage:
+
+* link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
+* link:upgrade-considerations.html[Considerations for upgrading controller hardware]
+
+.About this task
 This procedure supports the following system conversions:
 
-* Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
+* Converting an AFF A150 or AFF A220 to a DS224C drive shelf
 * Converting a FAS2820 to a DS212C drive shelf
 
-The high-availability (HA) pair controllers are called node1 and node2, and the replacement HA pair controllers are called node3 and node4.
+The high-availability (HA) pair controllers are node1 and node2 and the replacement HA pair controllers are node3 and node4.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One]xref:migrate-node2-lifs-aggregates.adoc[Migrate LIFs and data aggregates on node2 to node1]
 [role="quick-margin-para"]
-Before converting node2 to a drive shelf, you migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.
+Before converting node2 to a drive shelf, migrate the logical interfaces (LIFs) and data aggregates on node2 to node1.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two]xref:convert-node2-to-drive-shelf.adoc[Convert node2 to a drive shelf and connect to node4]
 [role="quick-margin-para"]
-You convert node2 to a drive shelf and then connect to node4 before reassigning drives from node2 to node4.
+Convert node2 to a drive shelf, then connect to node4 before reassigning drives from node2 to node4.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three]xref:reassign-node2-drives.adoc[Reassign drives from node2 to node4]
 [role="quick-margin-para"]
-After converting node2 to a drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4.
+After converting node2 to a drive shelf and connecting to node4, reassign the drives that previously belonged to node2 to node4.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four]xref:migrate-aggregates-epsilon-lifs.adoc[Migrate data aggregates, epsilon, and LIFs on node1 to node4]
 [role="quick-margin-para"]
-Before converting node1 to a drive shelf, you migrate the data aggregates, epsilon, and LIFs on node1 to node4.
+Before converting node1 to a drive shelf, migrate the data aggregates, epsilon, and LIFs on node1 to node4.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five]xref:convert-node1-to-drive-shelf.adoc[Convert node1 to a drive shelf and connect to node3]
 [role="quick-margin-para"]
-You convert node1 to a drive shelf and connect to node3 before reassigning drives from node1 to node3.
+Convert node1 to a drive shelf and connect to node3 before reassigning drives from node1 to node3.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six]xref:reassign-node1-drives.adoc[Reassign drives from node1 to node3]
 [role="quick-margin-para"]
-After converting node1 to a drive shelf and connecting to node3, you reassign the drives that previously belonged to node1 to node3.
+After converting node1 to a drive shelf and connecting to node3, reassign the drives that previously belonged to node1 to node3.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]xref:migrate-node4-lIfs-aggregates.adoc[Migrate LIFs and data aggregates on node4 to node3]
 [role="quick-margin-para"]
-To complete the upgrade, you connect node3 to node4 and then migrate the data LIFs and data aggregates on node4 to node3.
+To complete the upgrade, connect node3 to node4 and migrate the data LIFs and data aggregates on node4 to node3.
 
 // 2023 Oct 12, AFFFASDOC-64

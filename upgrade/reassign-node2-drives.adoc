@@ -11,18 +11,18 @@ summary: After converting node2 to a drive shelf and connecting to node4, you re
 [.lead]
 Reassign the drives that previously belonged to node2 to node4.
 
+.Before you begin
+Verify that both node3 and node4 are on standby at the LOADER prompt.
+
+.About this task
 These steps support the following system conversions:
 
 * Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
 * Converting a FAS2820 to a DS212C drive shelf
 
-.Before you begin
-Verify that both node3 and node4 are on standby at the LOADER prompt.
-
-.About this task
-Perform the following steps on node4.
-
 .Steps
+Perform these steps on node4.
+
 . At the LOADER prompt, boot node4 into Maintenance Mode:
 +
 [source,cli]

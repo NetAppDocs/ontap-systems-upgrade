@@ -11,15 +11,15 @@ summary:  Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on
 [.lead]
 Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to node4.
 
+.About this task
 These steps support the following system conversions:
 
 * Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
 * Converting a FAS2820 to a DS212C drive shelf
 
-.About this task
-Perform the following steps on node4.
-
 .Steps
+Perform these steps on node4.
+
 . At the LOADER prompt for node4, set partner-system ID:
 +
 [source,cli]

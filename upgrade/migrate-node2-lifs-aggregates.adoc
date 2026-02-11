@@ -11,11 +11,6 @@ summary: Migrate the logical interfaces (LIFs) and data aggregates on node2 to n
 [.lead]
 Migrate the logical interfaces (LIFs) and data aggregates on node2 to node1 before converting node2 to a drive shelf.
 
-These steps support the following system conversions:
-
-* Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
-* Converting a FAS2820 to a DS212C drive shelf
-
 .Before you begin
 Verify that you meet the following requirements:
 
@@ -31,11 +26,17 @@ Verify that you meet the following requirements:
 * Both replacement controllers are on standby at the LOADER prompt.
 * All required cabling is available.
 
-.About this task
 
-The following steps are performed on node1.
+.About this task
+These steps support the following system conversions:
+
+* Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
+* Converting a FAS2820 to a DS212C drive shelf
 
 .Steps
+
+Perform these steps on node1.
+
 . Access the advanced privilege level:
 +
 [source,cli]

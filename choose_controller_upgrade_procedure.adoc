@@ -34,14 +34,14 @@ This requires a new system with its own storage and shelves to store the data fr
 
 a| Upgrade by using one of the following methods:
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Move volumes]
+* link:upgrade/upgrade-decide-to-use-this-guide.html[Moving volumes]
 +
 This requires adding the new nodes, moving the volumes and LIFs to the new nodes, and removing the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, convert it to a switched-attached cluster using a pair of cluster switches before adding new nodes.
-* link:upgrade-arl/index.html[Use aggregate relocation]
+* link:upgrade-arl/index.html[Using aggregate relocation]
 +
 ARL is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
-* Convert original system to a drive shelf:
+* Converting the original system to a drive shelf and moving storage:
 
 ** link:upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Convert AFF A250 to a drive shelf and upgrade to AFF A400]
 ** link:upgrade/convert-to-drive-shelf.html[Convert AFF A150, AFF A220, or FAS2820 to a drive shelf]

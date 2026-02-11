@@ -11,6 +11,7 @@ summary: Convert node2 to a drive shelf and connect to node4 before reassigning 
 [.lead]
 Convert node2 to a drive shelf and connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the controllers inside the drive shelf.
 
+.About this task
 These steps support the following system conversions:
 
 * Converting an AFF A150 or AFF A220 to a DS224C drive shelf 

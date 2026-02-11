@@ -11,15 +11,15 @@ summary: To complete the upgrade, connect node3 to node4 and then migrate the da
 [.lead]
 To complete the upgrade, connect node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.
 
+.About this task
 These steps support the following system conversions:
 
 * Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
 * Converting a FAS2820 to a DS212C drive shelf
 
-.About this task
-Perform the following steps on node3.
-
 .Steps
+Perform these steps on node3.
+
 . At the LOADER prompt for node3, boot the node into the boot menu:
 +
 [source,cli]
