@@ -21,7 +21,7 @@ CAUTION: Don't power off the chassis because node1 and node2 are in the same cha
 .Before you begin
 If you are not already grounded, correctly ground yourself.
 
-== Remove the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
+== Step 1: Remove the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
 To access components inside the node1 controller, remove the controller module from the system and then remove the cover on the controller module.
 
 .Steps
