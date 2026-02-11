@@ -11,13 +11,6 @@ summary: After converting node1 to a drive shelf and connecting to node3, you re
 [.lead]
 Reassign the drives that were previously assigned to node1 to node3.
 
-.About this task
-
-These steps support the following system conversions:
-
-* Converting an AFF A150 or AFF A220 to a DS224C drive shelf 
-* Converting a FAS2820 to a DS212C drive shelf
-
 .Steps
 Perform these steps on node3.
 
