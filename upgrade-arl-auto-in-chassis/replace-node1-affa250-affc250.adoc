@@ -59,7 +59,7 @@ The controller module moves slightly out of the chassis.
 +
 Make sure that you support the weight of the controller module as you slide it out of the chassis. 
 
-== Step 2: Install the AFF A30, AFF A50, AFF C30, or AFF C60 controller module
+== Install the AFF A30, AFF A50, AFF C30, or AFF C60 controller module
 Install, cable, and connect the replacement module in node1.
 
 .Before you begin
