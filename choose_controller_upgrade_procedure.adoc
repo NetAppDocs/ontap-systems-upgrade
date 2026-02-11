@@ -43,8 +43,8 @@ ARL is a replacement procedure. You do not need to expand and shrink your cluste
 
 * Converting the original system to a drive shelf and moving storage:
 
-** link:upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Convert AFF A250 to a drive shelf and upgrade to AFF A400]
-** link:upgrade/convert-to-drive-shelf.html[Convert AFF A150, AFF A220, or FAS2820 to a drive shelf]
+** link:upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Convert AFF A250 to a drive shelf and move storage to AFF A400]
+** link:upgrade/convert-to-drive-shelf.html[Convert AFF A150, AFF A220, or FAS2820 to a drive shelf and move storage to a supported replacement system]
 
 | Do I have a modular system?
 
