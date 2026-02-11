@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, FAS, systems, entry, level
 summary: Perform a nondisruptive upgrade by converting each node to a drive shelf and connecting it to the replacement node.
 ---
-= Learn about upgrading NetApp systems by converting to drive shelves and moving storage
+= Learn about converting AFF A150, AFF A220, or FAS2820 to a drive shelf and moving storage
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Perform a nondisruptive upgrade of certain NetApp systems by converting each node in the original system to a drive shelf. Then, connect the drive shelves to the replacement nodes. This moves the onboard storage to the replacement system.
+Perform a nondisruptive upgrade of an AFF A150, AFF A220, or FAS2820 system. First, convert each node in the AFF A150, AFF A220, or FAS2820 system to a drive shelf. Then, connect them to the replacement nodes. This moves the onboard storage to the replacement system.
 
 .About this task
 This procedure supports the following system conversions:
