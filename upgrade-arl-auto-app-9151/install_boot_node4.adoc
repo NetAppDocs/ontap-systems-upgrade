@@ -18,7 +18,7 @@ You install node4 in the rack, transfer node2's connections to node4, boot node4
 
 The relocation operation is paused at the beginning of this stage. This process is mostly automated; the operation pauses to enable you to check its status. You must manually resume the operation.
 
-You need to netboot node4 if it does not have the same version of ONTAP 9 that is installed on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots, by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
+You must netboot node4 if the ONTAP version on node4 is different to the ONTAP version on node2. After you install node4, boot it from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots by following the instructions in link:prepare_for_netboot.html[Prepare for netboot].
 
 .Steps
 

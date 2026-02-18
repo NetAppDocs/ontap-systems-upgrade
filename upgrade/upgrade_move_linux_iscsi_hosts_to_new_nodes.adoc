@@ -18,3 +18,6 @@ If you do not need to move iSCSI SAN volumes when upgrading by moving volumes, y
 * The host commands and examples are specific to Linux operating systems.
 
 include::../_include/ru_upgrade_move_iscsi_san_connectioins.adoc[]
+
+.What's next?
+link:upgrade-create-aggregate-move-volumes.html[Create an aggregate and move volumes to the new nodes]
