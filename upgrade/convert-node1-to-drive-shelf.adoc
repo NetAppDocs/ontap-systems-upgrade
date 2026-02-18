@@ -16,7 +16,7 @@ Convert node1 to a drive shelf and connect to node3 before reassigning drives fr
 . Disconnect all network cables from node1.
 . Remove node1 from the AFF A150, AFF A220, or FAS2820 chassis.
 . Insert the IOM12 or IOM12B module into the bay of node1.
-. Cable the node3 SAS port to an available port on the IOM12 or IOM12B module. See the link:https://hwu.netapp.com[Hardware Universe^] to verify the SAS ports for your system. See the link:https://hwu.netapp.com[Hardware Universe^] to verify the SAS ports for your system. 
+. Cable the node3 SAS port to an available port on the IOM12 or IOM12B module. See the link:https://hwu.netapp.com[Hardware Universe^] to verify the SAS ports for your system. 
 
 . Create temporary cluster connections by connecting the node4 cluster ports to any cluster ports on node3.
 +
