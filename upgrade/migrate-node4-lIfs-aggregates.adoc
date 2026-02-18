@@ -1,5 +1,5 @@
 ---
-permalink: upgrade/migrate-node4-lIfs-aggregates.html
+permalink: upgrade/migrate-node4-lifs-aggregates.html
 sidebar: sidebar
 keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif
 summary: To complete the upgrade, connect node3 to node4 and then migrate the data logical interfaces (LIFs) and data aggregates on node4 to node3.

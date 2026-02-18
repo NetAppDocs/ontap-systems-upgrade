@@ -106,4 +106,4 @@ entries:
       - title: Reassign drives from node1 to node3
         url: /upgrade/reassign-node1-drives.html
       - title: Migrate LIFs and data aggregates on node4 to node3
-        url: /upgrade/migrate-node4-lIfs-aggregates.html
+        url: /upgrade/migrate-node4-lifs-aggregates.html

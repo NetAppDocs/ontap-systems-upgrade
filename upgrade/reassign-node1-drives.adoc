@@ -70,6 +70,6 @@ halt
 
 .What's next?
 
-link:migrate-node4-lIfs-aggregates.html[Migrate LIFs and data aggregates on node4 to node3]
+link:migrate-node4-lifs-aggregates.html[Migrate LIFs and data aggregates on node4 to node3]
 
 // 2023 Oct 12, AFFFASDOC-64
