@@ -23,12 +23,12 @@ To select the appropriate upgrade procedure, review all of the questions listed 
 
 | Upgrade the ONTAP version on the original nodes to the highest supported version.
 
-When possible, the new nodes must support the ONTAP version running on the original nodes. If this is not possible, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the highest supported version. The version difference between the original and new nodes cannot be greater than four. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. link:https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
+When possible, the new nodes must support the ONTAP version running on the original nodes. If this is not possible, link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html[upgrade the ONTAP version^] on the original nodes to the highest supported version. You cannot have a version difference greater than four between the original and new nodes. For example, ONTAP 9.8 and 9.12.1 is supported; however, ONTAP 9.8 and 9.13.1 is not supported. link:https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html[Learn more about mixed version ONTAP clusters^].
 
 | Do I want to do a disruptive upgrade?	
 | link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving storage].
 
-This requires a new system with its own storage and shelves to store the data from the original system. Conversion from a controller shelf is possible for certain upgrades.
+This requires a new system with its own storage and shelves to store the data from the original system. You can convert from a controller shelf for certain upgrades.
 
 | Do I want to perform a non-disruptive upgrade?	
 
@@ -36,14 +36,18 @@ a| Upgrade by using one of the following methods:
 
 * link:upgrade/upgrade-decide-to-use-this-guide.html[Move volumes]
 +
-This requires joining the new nodes, moving the volumes and LIFs to the new nodes, and unjoining the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, convert it to a switched-attached cluster using a pair of cluster switches before adding new nodes.
+This requires adding the new nodes, moving the volumes and LIFs to the new nodes, and removing the nodes you want to remove from the cluster. If you are upgrading a two-node switchless cluster, convert it to a switched-attached cluster using a pair of cluster switches before adding new nodes.
 * link:upgrade-arl/index.html[Use aggregate relocation]
 +
 ARL is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
+* link:upgrade/upgrade-decide-to-use-this-guide.html[Move storage]
++
+You can non-disruptively upgrade from an AFF A250 to an AFF A400 or a FAS2820 to a replacement system by converting the original nodes to drive shelves, then connecting the drive shelves to the replacement nodes to move onboard storage.
+
 | Do I have a modular system?
 
-*Note*: In a modular system, the controller does not have any internal disks and all storage is in externally attached shelves.
+*Note*: In a modular system, the controller has no internal disks; all storage is in externally attached shelves.
 
 | link:upgrade-arl/index.html[Upgrade by using aggregate relocation].
 
@@ -69,7 +73,7 @@ a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system i
 
 == Example: FAS9500 to FAS90 upgrade
 
-This example shows the possible answers for a FAS9500 to FAS90 controller upgrade.
+This example provides possible answers for a FAS9500 to FAS90 controller upgrade.
 
 [cols=2*,options="header",cols="30,70"]
 |===

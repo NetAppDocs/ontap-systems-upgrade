@@ -1,0 +1,4 @@
+---
+permalink: upgrade/upgrade-unjoin-original-nodes-move-volumes.html
+redirect: ontap-systems-upgrade/upgrade/upgrade-remove-original-nodes.html
+---
