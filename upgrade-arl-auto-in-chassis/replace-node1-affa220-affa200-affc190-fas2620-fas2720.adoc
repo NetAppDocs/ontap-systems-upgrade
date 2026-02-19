@@ -12,6 +12,8 @@ summary: "Replace the node1 the AFF A220, AFF A200, AFF C190, FAS2620, or FAS272
 :imagesdir: ../media/
 
 [.lead]
+Replace the node1 AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module with an ASA A150, AFF A150, or FAS2820 controller module.
+
 At this stage, node1 is down and all data is served by node2. You must take care to remove only the node1 controller module. Typically, node1 is controller A, located on the left side of the chassis when looking at the controllers from the rear of the system. The controller label is located on the chassis directly above the controller module.
 
 CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and connected to the same power supplies.
@@ -19,8 +21,8 @@ CAUTION: Don't power off the chassis because node1 and node2 are in the same cha
 .Before you begin
 If you are not already grounded, correctly ground yourself.
 
-== Remove the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
-To access components inside the controller, remove the controller module from the system and then remove the cover on the controller module.
+== Step 1: Remove the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
+To access components inside the node1 controller, remove the controller module from the system and then remove the cover on the controller module.
 
 .Steps
 . Loosen the hook and loop strap binding the cables to the cable management device, and then unplug the system cables and SFPs (if needed) from the controller module, keeping track of where the cables were connected.
@@ -57,11 +59,17 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 . After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 . At the LOADER> prompt of node1, set the default environment variables:
 +
-`set-defaults`
+[source,cli]
+----
+set-defaults
+----
 
 . Save the default environment variables settings:
 +
-`saveenv`
+[source,cli]
+----
+saveenv
+----
 
 // 2025 JUN 19, AFFFASDOC-334
 // 2023 AUG 29, AFFFASDOC-78
