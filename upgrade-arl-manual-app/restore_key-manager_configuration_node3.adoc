@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-manual-app/restore_key-manager_configuration_node3.html
 keywords: restoring, key-manager, configuration, node3, nve, arl, encryption, netapp, volume
-summary: "If required, restore key-manager configuration on node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+summary: "If required, restore key-manager configuration on node3 during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 = Restore key-manager configuration on node3
 :hardbreaks:
