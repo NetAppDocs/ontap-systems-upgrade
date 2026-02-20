@@ -12,7 +12,7 @@ summary: "Decide whether to use the ARL procedure that upgrades controller model
 :imagesdir: ../media/
 
 [.lead]
-There are several aggregate relocation (ARL) methods for upgrading controller hardware. This content describes how to upgrade storage controllers in an HA pair by converting the existing system to the replacement system, keeping the existing system chassis and disks. You should only use this complex procedure if you're an experienced ONTAP administrator.
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This content describes how to upgrade storage controllers in an HA pair by converting the existing system to the replacement system, keeping the existing system chassis, disks, and stored data. You should only use this complex procedure if you're an experienced ONTAP administrator.
 
 To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all of the following circumstances for supported and unsupported upgrades.
 
@@ -43,7 +43,7 @@ To upgrade a MetroCluster IP configuration, see link:other_references.html[Refer
 [[supported-systems]]
 == Supported system upgrade combinations
 
-The following table shows the supported systems matrix for performing a controller upgrade by converting the existing system to the replacement system, keeping the existing system chassis and disks.
+The following table shows the supported systems matrix for performing a controller upgrade by converting the existing system to the replacement system, keeping the existing system chassis, disks, and the data stored on them.
 
 CAUTION: This procedure strictly applies to the following upgrade configurations. Don't use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_.
 
