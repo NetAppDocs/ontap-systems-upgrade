@@ -41,7 +41,7 @@ If the aggregates have gone offline or become foreign on node3, bring them onlin
 If any volumes are offline on node3, bring them online by using the following command on node3, once for each volume:
 +
 `volume online -vserver <vserver_name> -volume <volume_name>`
-<
++
 The `vserver_name` to use with this command is found in the output of the previous `volume show` command.
 
 . Verify that the LIFs have been moved to the correct ports and have a status of `up`. If any LIFs are down, set the administrative status of the LIFs to `up` by entering the following command, once for each LIF:

@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/install-asaa900-affa900-fas9500-on-node2.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html
+---

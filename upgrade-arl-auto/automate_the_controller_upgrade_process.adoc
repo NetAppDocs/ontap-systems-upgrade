@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto/automate_the_controller_upgrade_process.html
 keywords: automate, controller, upgrade, nondisruptive
 summary: "Use the partially automated ARL procedure to upgrade controllers running ONTAP 9.5 to 9.7."
 ---
-
 = Automate the controller upgrade process
 :hardbreaks:
 :nofooter:

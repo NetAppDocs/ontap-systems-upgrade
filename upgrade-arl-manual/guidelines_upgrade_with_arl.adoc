@@ -4,7 +4,6 @@ permalink: upgrade-arl-manual/guidelines_upgrade_with_arl.html
 keywords:  guidelines, upgrade, controllers, arl, aggregate, relocation
 summary: "Understand if you can use the manual ARL procedure for a pair of controllers running ONTAP 9.7 or earlier."
 ---
-
 = Guidelines for upgrading controllers with ARL
 :hardbreaks:
 :nofooter:

@@ -49,6 +49,6 @@ If you want to upgrade entry level controllers with internal drives, refer to li
 
 == Troubleshoot
 
-If any problems occur while upgrading the controllers, see link:aggregate_relocation_failures.htmll[Troubleshoot] for more information and possible solutions.
+If any problems occur while upgrading the controllers, see link:aggregate_relocation_failures.html[Troubleshoot] for more information and possible solutions.
 
 If you do not find a solution to the problem you encountered, contact technical support.

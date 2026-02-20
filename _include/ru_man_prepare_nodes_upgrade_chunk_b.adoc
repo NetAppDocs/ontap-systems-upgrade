@@ -8,7 +8,7 @@ NOTE: You will use the information to reassign disks and decommission the origin
 +
 `run -node _node_name_ sysconfig`
 +
-NOTE: You can use the information to identify parts or accessories that you might want to transfer to node3 or node4. If you do not know if the nodes are V-Series systems or have FlexArray Virtualization software, you can learn that also from the output.
+NOTE: You can use the information to identify parts or accessories that you might want to transfer to node3 or node4. 
 
 .. Enter the following command on both node1 and node2 and record the aggregates that are online on both nodes:
 +
@@ -216,31 +216,7 @@ node2   0d      fc      initiator -       -         online
 +
 You can use the information after the upgrade to set the configuration of FC ports on the new nodes.
 
-. If you are upgrading a V-Series system or a system with FlexArray Virtualization software, capture information about the topology of the original nodes by entering the following command and recording the output:
-+
-`storage array config show -switch`
-+
-The system displays topology information, as show in the following example:
-+
-....
-cluster::> storage array config show -switch
-
-      LUN LUN                                  Target Side Initiator Side Initi-
-Node  Grp Cnt Array Name    Array Target Port  Switch Port Switch Port    ator
------ --- --- ------------- ------------------ ----------- -------------- ------
-node1 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:3  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:4  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:1  0c
-node2 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:1  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:2  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:3  0c
-                            208600a0b84772da   vgbr6510b:5  vgbr6510s163:4  2a
-7 entries were displayed.
-....
-
-. [[man_prepare_nodes_step29]]Complete the following substeps:
+. [[man_prepare_nodes_step28]]Complete the following substeps:
 .. Enter the following command on one of the original nodes and record the output:
 +
 `service-processor show -node * -instance`
@@ -253,7 +229,7 @@ The system displays detailed information about the SP on both nodes.
 You might want to reuse the network parameters of the remote management devices, in this case the SPs, from the original system for the SPs on the new nodes.
 For detailed information about the SP, refer to link:other_references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Commands: Manual Page Reference_.
 
-. [[man_prepare_nodes_step30]]If you want the new nodes to have the same licensed functionality as the original nodes, enter the following command to see the cluster licenses on the original system:
+. [[man_prepare_nodes_step29]]If you want the new nodes to have the same licensed functionality as the original nodes, enter the following command to see the cluster licenses on the original system:
 +
 `system license show -owner *`
 +

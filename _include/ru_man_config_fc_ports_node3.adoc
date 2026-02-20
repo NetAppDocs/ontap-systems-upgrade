@@ -1,6 +1,6 @@
 == Configure FC ports on node3
 
-If node3 has FC ports, either onboard or on an FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured. If the ports are not configured, you might experience a disruption in service.
+If node3 has FC ports, either onboard or on an add-on FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured when the systems are shipped. If you don't configure the ports, you might experience a disruption in service.
 
 .Before you begin
 
@@ -10,133 +10,59 @@ You must have the values of the FC port settings from node1 that you saved in li
 
 You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 card, you configure them in <<Check and configure UTA/UTA2 ports on node3>>.
 
-IMPORTANT: If your system has storage disks, enter the commands in this section at the cluster prompt. If you have a V-Series system or have FlexArray Virtualization Software and are connected to storage arrays, enter commands in this section in maintenance mode.
+IMPORTANT: Enter the commands in this section at the cluster prompt.
 
 .Steps
 
-. Take one of the following actions:
+. Display information about all FC and converged network adapters on the system.
 +
-[cols="35,65"]
-|===
-|If the system that you are upgrading... |Then...
-
-|Has storage disks
-|Go to <<man_config_3_step5,Step 5>>
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Go to <<man_config_3_step2,Step 2>>
-|===
-
-. [[man_config_3_step2]]Boot node3 and access maintenance mode:
-+
-`boot_ontap maint`
-
-. [[step3]]Take one of the following actions:
-+
-[cols="35,65"]
-|===
-|If the system that you are upgrading... |Then...
-
-|Has storage disks
-|Enter the following command:
-
 `system node hardware unified-connect show`
-|Is a V-series system or has FlexArray Virtualization Software and is connected to storage arrays.
-|Enter the following command
 
-`ucadmin show`
-|===
-+
-The system displays information about all FC and converged network adapters on the system.
-. [[step4]]Compare the FC settings of node3 with the settings that you captured earlier from node1.
+. Compare the FC settings of node3 with the settings that you captured earlier from node1.
 
-. [[man_config_3_step5]]Take one of the following actions:
+. [[man_config_3_step3]]Take one of the following actions:
 +
 [cols="35,65"]
 |===
 |If the default FC settings on the new nodes are... |Then...
 
 |The same as the ones you that captured on node1
-|Go to <<man_config_3_step11,Step 11>>.
+|Go to <<man_config_3_step9,Step 9>>.
 |Different from the ones that you captured on node1
-|Go to <<man_config_3_step6,Step 6>>.
+|Go to <<man_config_3_step4,Step 4>>.
 |===
 
-. [[man_config_3_step6]]Take one of the following actions:
+. [[man_config_3_step4]]Modify the FC ports on node3 as needed by entering one of the following commands:
 +
-[cols="35,65"]
-|===
-|If the system that you are upgrading... |Then...
-
-|Has storage disks
-a|Modify the FC ports on node3 as needed by entering one of the following commands:
-
 * To program target ports:
-`system node hardware unified-connect modify -type \| -t target -adapter _port_name_`
-
-* To program initiator ports:
-`system node hardware unified-connect modify -type \| -t initiator -adapter _port_name_`
-
-`-t` is the FC4 type: target or initiator.
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-a|Modify the FC ports on node3 as needed by entering the following command:
-
-`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
-
-`-t` is the FC4 type, target or initiator.
-
-NOTE: The FC ports must be programmed as initiators.
-|===
-
-. [[step7]]Take one of the following actions:
 +
-[cols="35,65"]
-|===
-|If the system that you are upgrading... |Then...
+`system node hardware unified-connect modify -type \| -t target -adapter _port_name_`
++
+* To program initiator ports:
++
+`system node hardware unified-connect modify -type \| -t initiator -adapter _port_name_`
++
+`-t` is the FC4 type: target or initiator.
 
-|Has storage disks
-|Verify the new settings by entering the following command and examining the output:
-
+. Verify the new settings by entering the following command and examining the output:
++
 `system node hardware unified-connect show`
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-|Verify the new settings by entering the following command and examining the output:
 
-`ucadmin show`
-|===
-
-. [[step8]]Exit maintenance mode by entering the following command:
+. Exit Maintenance mode:
 +
 `halt`
 
-. [[step9]]After you enter the command, wait until the system stops at the boot environment prompt.
+. After you enter the command, wait until the system stops at the boot environment prompt.
 
-. [[step10]]Take one of the following actions:
+. Boot node3 at the boot environment prompt:
 +
-[cols="35,65"]
-|===
-|If the system you are upgrading... |Then...
-
-|Is a V-Series system or has FlexArray Virtualization software running clustered Data ONTAP 8.3
-|Boot node3 and access maintenance at the boot environment prompt:
-
-`boot_ontap maint`
-|Is not a V-Series system or does not have FlexArray Virtualization software
-|Boot node3 at the boot environment prompt:
-
 `boot_ontap`
-|===
 
-. [[man_config_3_step11]]Take one of the following actions:
+. [[man_config_3_step9]]Take one of the following actions:
 +
-[cols="35,65"]
-|===
-|If the system that you are upgrading... |Then...
-
-|Has storage disks
-a|* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
+* If node3 has a UTA/UTA2 card or UTA/UTA2 onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
++
 * If node3 does not have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip <<Check and configure UTA/UTA2 ports on node3>> and go to link:map_ports_node1_node3.html[Map ports from node1 to node3].
-|Is a V-Series system or has FlexArray Virtualization Software and is connected to storage arrays
-a|* If node3 has a card or onboard ports, go to <<Check and configure UTA/UTA2 ports on node3>>.
-* If node3 does not have a card or onboard ports, skip <<Check and configure UTA/UTA2 ports on node3>>, and return to _Install and boot node3_ and resume at link:install_boot_node3.html#man_install3_step7[Step 7].
-|===
+
 //22 FEB 2021:  Formatted from CMS
 // BURT 1478241, 2022-05-13

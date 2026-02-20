@@ -50,15 +50,8 @@ NOTE: Other parameters might be necessary for your interface. Enter `help ifconf
 
 include::../_include/ru_auto_install_and_boot_node4_step_7_22.adoc[]
 
-[start=23]
-.  [[auto_install4_step23]]Add the FC initiator ports of the new node to the switch zones.
-+
-If your system has a tape SAN, then you need zoning for the initiators. If required, modify the onboard ports to initiator by referring to the link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4[Configure FC ports on node4]. See your storage array and zoning documentation for further instructions on zoning.
-
-include::../_include/ru_auto_install_and_boot_node4_step_24_26.adoc[]
-
-[start=27]
-. [[auto_install4_step27]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
+[start=22]
+. [[auto_install4_step22]]If you have NetApp Storage Encryption (NSE) drives installed, perform the following steps:
 +
 NOTE: If you have not already done so earlier in the procedure, see the Knowledge Base article https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified[How to tell if a drive is FIPS certified^] to determine the type of self-encrypting drives that are in use.
 +
@@ -88,10 +81,14 @@ Enter the passphrase and the backup information that you recorded earlier proced
 +
 `boot_ontap menu`
 +
-If you don't have an FC or UTA/UTA2 configuration, preform link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step1[Reassign node2 disks to node4, Step 1] so that node4 can recognize node2's disks.
 
-.  [[step29]]For MetroCluster configuration, V-Series systems and systems with FlexArray Virtualization software connected to storage arrays you must set and configure the FC or UTA/UTA2 ports on node4 to detect the disks attached to the node.
-To complete this task, go to section link:set_fc_or_uta_uta2_config_node4.html[Set the FC or UTA/UT2 configuration on node4].
+.What's next?
+
+* If you have an FC or UTA/UTA2 configuration, link:set_fc_or_uta_uta2_config_node4.html[set and configure the FC or UTA/UTA2 ports on node4].
+
+* If you don't have an FC or UTA/UTA2 configuration, link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step1[reassign node2 disks to node4, Step 1] so that node4 can recognize node2's disks.
+
+* If you have a  MetroCluster configuration, link:set_fc_or_uta_uta2_config_node4.html[set and configure the FC or UTA/UTA2 ports on node4] to detect the disks attached to the node.
 
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022-05-17, BURT 1476241

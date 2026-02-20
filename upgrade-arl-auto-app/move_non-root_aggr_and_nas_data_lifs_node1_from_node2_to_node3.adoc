@@ -4,19 +4,12 @@ permalink: upgrade-arl-auto-app/move_non-root_aggr_and_nas_data_lifs_node1_from_
 keywords: moving, non-root, aggregates, nas, lif, node1, node2, node3
 summary: "Verify that the node1 NAS data LIFs on node2 are relocated from node2 to node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
-
 = Move non-root aggregates and NAS data LIFs owned by node1 from node2 to node3
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:54.852771
-//
 
 [.lead]
 After you verify network configuration on node3 and before you relocate aggregates from node2 to node3, you must verify that the NAS data LIFs belonging to node1 that are currently on node2 are relocated from node2 to node3. You must also verify that the SAN LIFs exist on node3.
@@ -31,7 +24,10 @@ NOTE: If you are changing the port speed of the T6-based Ethernet network interf
 
 . Resume the relocation operation:
 +
-`system controller replace resume`
+[source,cli]
+----
+system controller replace resume
+----
 +
 The system performs the following tasks:
 
@@ -46,7 +42,10 @@ The operation pauses at this stage in the network reachability check.
 [start=2]
 . Resume the relocation operation:
 +
-`system controller replace resume`
+[source,cli]
+----
+system controller replace resume
+----
 +
 The system performs the following checks:
 
@@ -59,21 +58,57 @@ The controller replacement operation pauses after the resource relocation is com
 [start=4]
 . Check the status of the aggregate relocation and NAS data LIF move operations:
 +
-`system controller replace show-details`
+[source,cli]
+----
+system controller replace show-details
+----
 +
 If the controller replacement procedure is paused, check and correct the error,  if any,  and then issue `resume` to continue the operation.
 
-. If necessary, restore and revert any displaced LIFs. List any displaced LIFs:
+. If necessary, restore and revert displaced LIFs or manually migrate and modify the node1 LIFs that failed to relocate automatically to node3.
 +
-`cluster controller-replacement network displaced-interface show`
+[role="tabbed-block"]
+====
+.Restore and revert displaced LIFs
+--
+.. List any displaced LIFs:
 +
-If any LIFs are displaced, restore the home node back to node3:
+[source,cli]
+----
+cluster controller-replacement network displaced-interface show
+----
+
+.. If any LIFs are displaced, restore the home node back to node3:
 +
-`cluster controller-replacement network displaced-interface restore-home-node`
+[source,cli]
+----
+cluster controller-replacement network displaced-interface restore-home-node -node <node3_nodename> -vserver <vserver name> -lif-name <lif_name>
+----
+--
+
+.Manually migrate and modify LIFs
+--
+.. Migrate the LIFs that failed to relocate automatically to node3:
++
+[source,cli]
+----
+network interface migrate -vserver <vserver name> -lif <lif_name> -destination-node <node3_nodename> -destination-port <port_on_node3>
+----
+
+.. Modify the home node and home port for the migrated LIFs:
++
+[source,cli]
+----
+network interface modify -vserver <vserver_name> -lif <data_lif_name> -home-node <node3_nodename> -home-port <home_port>
+----
+====
 
 . Resume the operation to prompt the system to perform the required post-checks:
 +
-`system controller replace resume`
+[source,cli]
+----
+system controller replace resume
+----
 +
 The system performs the following post-checks:
 
@@ -85,4 +120,5 @@ The system performs the following post-checks:
 * Cluster LIF status check
 * Volume check
 
+// 2025 SEP 19, AFFFASDOC-335
 // 2023 NOV 6, AFFFASDOC-144

@@ -31,7 +31,7 @@ You can use the case to report any issues that might arise during the upgrade.
 +
 You must physically check node3 and node4 to see if the NVMEM or NVRAM batteries are charged. For information about the LEDs for the model of node3 and node4, refer to link:other_references.html[References] to link to the _Hardware Universe_.
 +
-WARNING: *Attention* Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
+WARNING: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
 
 . Check the version of ONTAP on node3 and node4.
 +

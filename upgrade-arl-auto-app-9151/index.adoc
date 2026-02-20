@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: upgrade-arl-auto-app-9151/index.html
-keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology
+keywords: aggregate, relocation, controller, hardware, aggregates, metrocluster, terminology
 summary: "You can upgrade controller hardware running ONTAP 9.15.1 or later by using `system controller replace` commands, relocating the ownership of non-root aggregates."
 ---
 = Learn about this ARL upgrade procedure

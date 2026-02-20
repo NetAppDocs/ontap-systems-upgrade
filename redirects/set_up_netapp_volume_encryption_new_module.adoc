@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html
+---

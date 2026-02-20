@@ -2,7 +2,4 @@
 
 * You can upgrade the following type of systems:
 ** A FAS system to a FAS system.
-** A FAS system to a system with FlexArray Virtualization Software or a V-Series system.
 ** An AFF system to an AFF system.
-** A system with FlexArray Virtualization Software or a V-Series system to a FAS system, provided that the system with FlexArray Virtualization Software or V-Series system has no array LUNs.
-** A V-Series system to a system with FlexArray Virtualization Software or a V-Series system.

@@ -41,7 +41,6 @@ You cannot use this ARL procedure to upgrade a pair of nodes under the following
 |===
 +
 To perform upgrade an upgrade listed in the above table, see link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller models in the same chassis_.
-* You're upgrading a V-Series system or FlexArray Virtualization storage system using an external array for backend storage. Contact technical support for options to upgrade a V-series or FlexArray system.
 * You're upgrading a MetroCluster FC or IP configuration. To upgrade a MetroCluster configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion documentation_.
 
 [[sys_commands_9151_supported_systems]]
@@ -55,6 +54,8 @@ The following table shows the supported controller upgrade combinations using AR
 |AFF A400 |AFF A50 ^2^ |9.16.1
 |AFF A300 |AFF A50 ^2^	|9.16.1
 |AFF A220, AFF A150	|AFF A20 ^2^ |9.16.1 ^1^
+
+|AFF C400 | AFF C60, AFF C80 |9.16.1
 
 |FAS8200, FAS8300,  FAS9000
 |FAS70, FAS90, FAS50
@@ -88,6 +89,7 @@ The following table shows the supported controller upgrade combinations using AR
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+// 2025 OCT 22, AFFFASDOC-405
 // 2025 APR 15, ontap-systems-upgrade/issue-125
 // 2025 MAR 18, AFFFASDOC-287
 // 2024 NOV 25, AFFFASDOC-33

@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-affa900/install-aff-a30-a50-c30-c50-node2.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/install-aff-a30-a50-c30-c50-node2.html
+---

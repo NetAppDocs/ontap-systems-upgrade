@@ -60,7 +60,7 @@ To override this delay, press 'c' followed by 'Enter'
 .. Check for any console messages that might indicate a problem other than a low NVRAM battery, and, if necessary, take any required corrective action.
 .. Allow the battery to charge and the boot process to complete.
 +
-WARNING: *Attention: Do not override the delay; failure to allow the battery to charge could result in a loss of data.*
+WARNING: *Do not override the delay; failure to allow the battery to charge could result in a loss of data.*
 +
 NOTE: Refer to link:prepare_for_netboot.html[Prepare for netboot].
 
