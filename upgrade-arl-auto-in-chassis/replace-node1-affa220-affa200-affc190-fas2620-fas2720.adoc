@@ -39,7 +39,7 @@ image:drw_2240_x_opening_cam_latch.png[Opening the cam handle]
 
 . Turn the controller module over and place it on a flat, stable surface.
 
-== Install the ASA A150, AFF A150, or FAS2820 controller module
+== Step 2:Install the ASA A150, AFF A150, or FAS2820 controller module
 Install, cable, and connect the ASA A150, AFF A150, or FAS2820 controller module in node1.
 
 .Steps

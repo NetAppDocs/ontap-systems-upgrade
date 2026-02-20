@@ -19,7 +19,7 @@ At this stage, node1 is down and all data is served by node2. You must take care
 CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and connected to the same power supplies.
 
 == Step 1: Remove the AFF A250 or AFF C250 controller module
-To remove the node1 controller module, remove the cable management device and unlock the locking latches. Then remove the controller module from the chassis.
+To remove the node1 controller module, remove the cable management device and unlock the locking latches. Then, remove the controller module from the chassis.
 
 .Before you begin
 
@@ -59,7 +59,7 @@ The controller module moves slightly out of the chassis.
 +
 Make sure that you support the weight of the controller module as you slide it out of the chassis. 
 
-== Install the AFF A30, AFF A50, AFF C30, or AFF C60 controller module
+== Step 2: Install the AFF A30, AFF A50, AFF C30, or AFF C60 controller module
 Install, cable, and connect the replacement module in node1.
 
 .Before you begin
