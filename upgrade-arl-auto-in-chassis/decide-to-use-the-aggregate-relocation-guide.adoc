@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability
-summary: "Decide whether to use the ARL procedure that upgrades controller models in the same chassis."
+summary: "Decide whether to use the ARL procedure that upgrades controller models in the same chassis, disks, and the data stored on the disks."
 ---
 = Decide whether to use this aggregate relocation procedure
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: "Decide whether to use the ARL procedure that upgrades controller model
 :imagesdir: ../media/
 
 [.lead]
-There are several aggregate relocation (ARL) methods for upgrading controller hardware. This content describes how to upgrade storage controllers in an HA pair by converting the existing system to the replacement system, keeping the existing system chassis, disks, and stored data. You should only use this complex procedure if you're an experienced ONTAP administrator.
+There are several aggregate relocation (ARL) methods for upgrading controller hardware. This content describes how to upgrade storage controllers in an HA pair by converting the existing system to the replacement system, keeping the existing system chassis, disks, and the data stored on the disks. You should only use this complex procedure if you're an experienced ONTAP administrator.
 
 To help you decide if this ARL procedure is suitable for your controller hardware upgrade, you should review all of the following circumstances for supported and unsupported upgrades.
 
