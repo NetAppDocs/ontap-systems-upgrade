@@ -103,7 +103,7 @@ image:black_circle_two.png[Number two]
 |I/O latch completely unlocked
 |===
 
-== Step 4: Install the ASA A900, AFF A900, or FAS9500 controller module on node1.
+== Step 4: Install the ASA A900, AFF A900, or FAS9500 controller module in node1
 Install, cable, and connect the ASA A900, AFF A900, or FAS9500 controller module in node1.
 
 .Steps
