@@ -66,6 +66,9 @@ The following table shows the supported systems matrix for performing a controll
 
 |AFF A400, AFF A700
 |AFF A900
+
+|FAS2620^4^, FAS2720^4^
+|FAS2820
 |===
 // BURT 1455656 8-Apr-2022
 NOTE: If your controller upgrade model combination isn't in the above table, contact technical support.
@@ -81,17 +84,19 @@ NOTE: If your controller upgrade model combination isn't in the above table, con
 
 ^3^For FAS8020, FAS8040, AFF8020, and AFF8040 system upgrades to the target replacement controllers listed in the table above, the replacement controllers must be running same ONTAP version as the old controller. Note that FAS8020, FAS8040, AFF8020, and AFF8040 systems do not support ONTAP versions later than ONTAP 9.8.
 
-^4^The following table shows the minimum and later supported ONTAP versions for these controller upgrade combinations. 
+^4^The following table shows the supported ONTAP versions for the controller upgrade combinations.
 [cols=4*,cols="20,30,20,30"]
 |===
 2+h|Old controller 2+h|Replacement controller
 
 h|System h|ONTAP version h|System h|ONTAP version
-|AFF A320 |9.9.1 or later |AFF A400 |9.9.1 or later
+|FAS2720 |9.13.1 or later |FAS2820 |9.13.1 or later
+|FAS2760 |9.11.1P7 or earlier |FAS2820 |9.13.1 or later
 |AFF8060 |9.8P13 or later patches |AFF A900 |9.10.1 to 9.12.1
 |AFF8080 |9.8P10 or later patches |AFF A900 |9.10.1 to 9.12.1
 |FAS8060 |9.8P13 or later patches |FAS9500 |9.10.1P3 to 9.12.1
 |FAS8080 |9.8P12 or later patches |FAS9500 |9.10.1P3 to 9.12.1
+|AFF A320 |9.9.1 or later |AFF A400 |9.9.1 or later
 |===
 
 [NOTE]
@@ -105,6 +110,7 @@ For the upgrade combinations shown in the preceding table:
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+// 2023 MAY 22, BURT 1542232
 // BURT 1514374 17-Nov-2022
 // BURT 1501196 17-Nov-2022
 // BURT 1480916 27-May-2022
