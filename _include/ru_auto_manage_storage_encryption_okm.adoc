@@ -5,6 +5,17 @@ You can use the Onboard Key Manager (OKM) to manage encryption keys. If you have
 . Record the cluster-wide passphrase.
 +
 This is the passphrase that was entered when the OKM was configured or updated using the CLI or REST API.
+
+. Verify the password and the key-manager operation:
++
+`security key-manager onboard sync`
+
+. Verify that "cc-mode" is enabled:
++
+`security key-manager config show`
+
 . Back up the key-manager information by running the `security key-manager onboard show-backup` command.
+
+// 2026 MAR 5, AFFFASDOC-230
 // 2022 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // BURT 1450483 11-Feb-2022
