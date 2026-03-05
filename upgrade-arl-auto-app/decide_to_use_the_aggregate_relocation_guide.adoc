@@ -84,7 +84,7 @@ NOTE: If your controller upgrade model combination isn't in the above table, con
 
 ^3^For FAS8020, FAS8040, AFF8020, and AFF8040 system upgrades to the target replacement controllers listed in the table above, the replacement controllers must be running same ONTAP version as the old controller. Note that FAS8020, FAS8040, AFF8020, and AFF8040 systems do not support ONTAP versions later than ONTAP 9.8.
 
-^4^The following table shows the supported ONTAP versions for the controller upgrade combination. 
+^4^The following table shows the supported ONTAP versions for the controller upgrade combinations.
 [cols=4*,cols="20,30,20,30"]
 |===
 2+h|Old controller 2+h|Replacement controller
