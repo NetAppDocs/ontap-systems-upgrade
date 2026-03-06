@@ -26,10 +26,9 @@ Verify that you meet the following requirements:
 * Both AFF A400 controllers are on standby at the LOADER prompt.
 * You have all the appropriate cabling on-hand.
 
-.About this task
-The following steps are performed on AFF A250 node1.
-
 .Steps
+Perform these steps on AFF A250 node1.
+
 . Access the advanced privilege level:
 +
 `set -privilege advanced`
