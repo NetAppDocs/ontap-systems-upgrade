@@ -103,9 +103,9 @@ You can compare the output with the output that you captured in the link:prepare
 +
 `system service-processor network modify -node <node_name>`
 +
-Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
+Refer to link:other-references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
 
-. If you want to set up a switchless cluster on the new nodes, refer to link:other_references.html[References] to link to the _NetApp Support Site_ and follow the instructions in _Transitioning to a two-node switchless cluster_.
+. If you want to set up a switchless cluster on the new nodes, refer to link:other-references.html[References] to link to the _NetApp Support Site_ and follow the instructions in _Transitioning to a two-node switchless cluster_.
 
 .After you finish
 

@@ -43,10 +43,10 @@ You need to consider important factors before starting the upgrade.
 
 NOTE: You must review all the following important information.
 
-* This procedure is complex and assumes that you have advanced ONTAP administration skills. You should read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[guidelines for upgrading controllers] and link:overview_of_the_arl_upgrade.html[ARL upgrade sequence] before starting the upgrade.
+* This procedure is complex and assumes that you have advanced ONTAP administration skills. You should read and understand the link:guidelines-for-upgrading-controllers-with-arl.html[guidelines for upgrading controllers] and link:overview-of-the-arl-upgrade.html[ARL upgrade sequence] before starting the upgrade.
 * This procedure assumes that the replacement controller hardware is new and has not been used in another system. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used as part of another ONTAP cluster or as a standalone single node system.
 * You can use this procedure to upgrade the controller hardware in clusters with more than two nodes; however, you need to perform the procedure separately for each HA pair in the cluster.
-* If you have a switch that is not supported by the ONTAP version and the replacement system that you are upgrading to, refer to link:other_references.html[References] to link to the _Hardware Universe_.
+* If you have a switch that is not supported by the ONTAP version and the replacement system that you are upgrading to, refer to link:other-references.html[References] to link to the _Hardware Universe_.
 * The AFF A250 and AFF C250 systems use 10/25 GbE onboard ports for cluster interconnect. To upgrade two-node switchless clusters of an AFF A250 or AFF C250 system to an AFF A50, AFF A30, AFF C60, or AFF C30 system, you must use an X60132A, 4-port 10/25 GbE card in slot1 on both nodes. This provides cluster interconnect for cluster LIFs to a temporary port on the target platform. 
 * The AFF A30, AFF A50, AFF A70, AFF A90, AFF A1K, AFF C30, AFF C60, AFF C80, FAS70, and FAS90 systems share 100GbE network ports for both cluster and HA connections. These systems can support 10GbE or 25GbE cluster connections to legacy cluster switches; however, NetApp recommends updating to 100GbE cluster speeds when the 10GbE and 25GbE switches are no longer required. For more information, see the following Knowledge Base articles:
 +
@@ -60,7 +60,7 @@ If you cannot link up e0a or e0b cluster ports on the existing node to the clust
 ** link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978[NetApp Bugs Online Bug ID CONTAP-166978^]
 ** https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1127315[NetApp Bugs Online Bug ID 1127315^]
 * The ASA A900, AFF A900, and FAS9500 systems only support high-line power (200V to 240V). If your AFF A700 or FAS9000 system is running on low-line power (100V to 120V), you must convert the AFF A700 or FAS9000 input power before using this procedure.
-* If you are upgrading from an existing system with downtime that is included in the link:decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis[supported systems matrix], you can upgrade controller hardware by moving storage or by contacting technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
+* If you are upgrading from an existing system with downtime that is included in the link:decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis[supported systems matrix], you can upgrade controller hardware by moving storage or by contacting technical support. Refer to link:other-references.html[References] to link to _Upgrade by moving volumes or storage_.
 
 == Automate the controller upgrade process
 This procedure provides the steps for the automated procedure, which uses automatic disk assignment and network port reachability checks to simplify the controller upgrade experience.

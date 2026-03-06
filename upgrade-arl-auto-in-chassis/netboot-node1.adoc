@@ -22,13 +22,13 @@ You can also use the USB boot option to perform the netboot. See the Knowledge B
 
 .Before you begin
 * Verify that you can access a HTTP server with the system.
-* Download the necessary system files for your system and the correct version of ONTAP from the _NetApp Support Site_. Refer to link:other_references.html[References] to link to the _NetApp Support Site_.
+* Download the necessary system files for your system and the correct version of ONTAP from the _NetApp Support Site_. Refer to link:other-references.html[References] to link to the _NetApp Support Site_.
 
 .About this task
 You must netboot the new controllers if they do not have the same version of ONTAP 9 installed on them that is installed on the original controllers. After you install each new controller, you boot the system from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots.
 
 .Steps
-.	Refer to link:other_references.html[References] to link to the _NetApp Support Site_ to download the files used for performing the netboot of the system.
+.	Refer to link:other-references.html[References] to link to the _NetApp Support Site_ to download the files used for performing the netboot of the system.
 .	[[netboot_node1_step2]]Download the appropriate ONTAP software from the software download section of the _NetApp Support Site_ and store the `<ontap_version>_image.tgz` file on a web-accessible directory.
 .	Change to the web-accessible directory and verify that the files you need are available.
 .	Your directory listing should contain `<ontap_version>_image.tgz`.

@@ -38,14 +38,14 @@ You cannot use this ARL procedure under the following circumstances:
 * You want to add the new controllers as a new HA pair to the cluster and migrate the data by using volume moves.
 * You're upgrading a MetroCluster IP configuration. 
 +
-To upgrade a MetroCluster IP configuration, see link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
+To upgrade a MetroCluster IP configuration, see link:other-references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
 [[supported-systems]]
 == Supported system upgrade combinations
 
 The following table shows the supported systems matrix for performing a controller upgrade by converting the existing system to the replacement system, keeping the existing system chassis, disks, and the data stored on them.
 
-CAUTION: This procedure strictly applies to the following upgrade configurations. Don't use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other_references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_.
+CAUTION: This procedure strictly applies to the following upgrade configurations. Don't use this procedure to perform an upgrade between any other system combinations. For all other controller models, refer to link:other-references.html[References] to link to _Use "system controller replace" commands to upgrade controller hardware running ONTAP 9.8 or later_ and _Using aggregate relocation to manually upgrade controller hardware running ONTAP 9.8 or later_.
 
 [[supported-systems-in-chassis]]
 [cols=3*,options="header",cols="20,20,40"]
