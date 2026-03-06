@@ -41,9 +41,9 @@ You can fix the incorrect ownership problem after Stage 6, after you have enable
 +
 `storage aggregate show -nodes _node2_ -is-home true`
 +
-To identify aggregates that were not correctly relocated, refer to the list of aggregates with the home owner of node1 that you obtained in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] and compare it with the output of the above command.
+To identify aggregates that were not correctly relocated, refer to the list of aggregates with the home owner of node1 that you obtained in the section link:prepare-nodes-for-upgrade.html[Prepare the nodes for upgrade] and compare it with the output of the above command.
 
-.	Compare the output of Step 1 with the output you captured for node1 in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] and note any aggregates that were not correctly relocated.
+.	Compare the output of Step 1 with the output you captured for node1 in the section link:prepare-nodes-for-upgrade.html[Prepare the nodes for upgrade] and note any aggregates that were not correctly relocated.
 .	Relocate the aggregates left behind on node2:
 +
 `storage aggregate relocation start -node _node2_ -aggr _aggr_node_1_ -destination _node1_`
