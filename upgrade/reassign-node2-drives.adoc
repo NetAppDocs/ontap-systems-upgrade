@@ -1,23 +1,22 @@
 ---
-permalink: upgrade/reassign-fas2820-node2-drives.html
+permalink: upgrade/reassign-node2-drives.html
 sidebar: sidebar
-keywords: fas2820, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
-summary: After converting FAS2820 node2 to a DS212C drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4. 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node2, node4, reassign, drives
+summary: After converting node2 to a drive shelf and connecting to node4, you reassign the drives that previously belonged to node2 to node4. 
 ---
-= Reassign drives from FAS2820 node2 to node4
+= Reassign drives from node2 to node4
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Reassign the drives that previously belonged to FAS2820 node2 to node4.
+Reassign the drives that previously belonged to node2 to node4.
 
 .Before you begin
 Verify that both node3 and node4 are on standby at the LOADER prompt.
 
-.About this task
-Perform the following steps on node4.
-
 .Steps
+Perform these steps on node4.
+
 . At the LOADER prompt, boot node4 into Maintenance Mode:
 +
 [source,cli]
@@ -80,6 +79,6 @@ halt
 
 .What's next?
 
-link:migrate-fas2820-aggregates-epsilon-lifs.html[Migrate data aggregates, epsilon, and LIFs on node1 to node4]
+link:migrate-aggregates-epsilon-lifs.html[Migrate data aggregates, epsilon, and LIFs on node1 to node4]
 
 // 2023 Oct 12, AFFFASDOC-64

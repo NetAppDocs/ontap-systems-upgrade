@@ -41,9 +41,10 @@ This requires adding the new nodes, moving the volumes and LIFs to the new nodes
 +
 ARL is a replacement procedure. You do not need to expand and shrink your cluster with the new nodes, which is beneficial for two-node switchless clusters. Moving data by relocating aggregates is faster than copying data across aggregates when moving volumes.
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html[Move storage]
-+
-You can non-disruptively upgrade from an AFF A250 to an AFF A400 or a FAS2820 to a replacement system by converting the original nodes to drive shelves, then connecting the drive shelves to the replacement nodes to move onboard storage.
+* Convert the original system to a drive shelf and move storage:
+
+** link:upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html[Convert AFF A250 to a drive shelf and move storage to AFF A400]
+** link:upgrade/convert-to-drive-shelf.html[Convert AFF A150, AFF A220, or FAS2820 to a drive shelf and move storage to a supported replacement system]
 
 | Do I have a modular system?
 
@@ -59,7 +60,7 @@ a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system i
 . link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes].
 
 | Do I have an integrated system and want to upgrade by swapping the controller module only, keeping existing chassis and disks?
-| link:upgrade-arl-auto-affa900/index.html[Upgrade by using ARL, keeping the same chassis and disks].
+| link:upgrade-arl-auto-in-chassis/index.html[Upgrade by using ARL, keeping the same chassis and disks].
 
 | Am I relocating an SVM? 
 | Refer to link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow[SVM data mobility overview^].

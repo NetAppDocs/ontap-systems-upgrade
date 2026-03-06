@@ -1,0 +1,4 @@
+---
+permalink: upgrade/convert-fas2820-to-drive-shelf.html
+redirect: ontap-systems-upgrade/upgrade/convert-to-drive-shelf.html
+---
