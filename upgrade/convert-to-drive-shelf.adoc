@@ -12,16 +12,16 @@ summary: Perform a nondisruptive upgrade by converting each node to a drive shel
 Perform a nondisruptive upgrade of an AFF A150, AFF A220, or FAS2820 system. First, convert each node in the AFF A150, AFF A220, or FAS2820 system to a drive shelf. Then, connect them to the replacement nodes. This moves the onboard storage to the replacement system.
 
 .About this task
-* This procedure supports the following system conversions:
-+
+This procedure supports the following system conversions:
+
 |===
-|Converts this system... | To this drive shelf...
+|Convert this system... | To this drive shelf...
 
 |AFF A150 or AFF A220 | DS224C
 |FAS2820 |DS212C 
 |===
 
-* The high-availability (HA) pair controllers are node1 and node2 and the replacement HA pair controllers are node3 and node4.
+The high-availability (HA) pair controllers are node1 and node2 and the replacement HA pair controllers are node3 and node4.
 
 .Before you begin
 Review the general upgrade scenarios and upgrade considerations for upgrading by moving volumes or storage:

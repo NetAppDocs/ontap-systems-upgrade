@@ -9,7 +9,7 @@ summary: Convert node2 to a drive shelf and connect to node4 before reassigning 
 :imagesdir: ../media/
 
 [.lead]
-Convert node2 to a drive shelf and connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the controllers inside the drive shelf.
+Convert AFF A150, AFF A220, or FAS2820 node2 to a drive shelf and connect to node4 before reassigning drives from node2 to node4. Node1 and node2 are the controllers inside the drive shelf.
 
 .Steps
 . Disconnect all the network cables from node2.
