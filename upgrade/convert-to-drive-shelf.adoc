@@ -24,7 +24,7 @@ This procedure supports the following system conversions:
 The high-availability (HA) pair controllers are node1 and node2 and the replacement HA pair controllers are node3 and node4.
 
 .Before you begin
-Review the general upgrade scenarios and upgrade considerations for upgrading by moving volumes or storage:
+Review all the considerations for upgrading by moving volumes or storage:
 
 * link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
 * link:upgrade-considerations.html[Considerations for upgrading controller hardware]
