@@ -175,7 +175,7 @@ The following command sets the failover policy to `broadcast-domain-wide` and us
 +
 `network interface modify -vserver node3 -lif data1 failover-policy broadcast-domainwide -failover-group fg1`
 +
-Refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Commands: Manual Page Reference_ for more information.
+Refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Command reference_ for more information.
 
 . Verify the changes on node3:
 +

@@ -23,28 +23,8 @@ Content specific to this upgrade are listed in the table below.
 |Provides procedures for upgrading controller and storage models in the MetroCluster configuration, transitioning from a MetroCluster FC to a MetroCluster IP configuration, and expanding the MetroCluster configuration by adding additional nodes.
 |link:https://docs.netapp.com/us-en/ontap/network-management/index.html[Network Management^]
 |Describes how to configure and manage physical and virtual network ports (VLANs and interface groups), LIFs, routing, and host-resolution services in clusters; optimize network traffic by load balancing; and monitor the cluster by using SNMP.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-900%2Fhome.html[ONTAP 9.0 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.0 commands.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-910%2Fhome.html[ONTAP 9.1 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.1 commands.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-920%2Fhome.html[ONTAP 9.2 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.2 commands.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-930%2Fhome.html[ONTAP 9.3 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.3 commands.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-940%2Fhome.html[ONTAP 9.4 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.4 commands.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-950%2Fhome.html[ONTAP 9.5 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.5 commands.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-960%2Fhome.html[ONTAP 9.6 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.6 commands.
-|link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-970%2Fhome.html[ONTAP 9.7 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.7 commands.
-|link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-980/home.html[ONTAP 9.8 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.8 commands.
-|link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-991/home.html[ONTAP 9.9.1 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.9.1 commands.
-|link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-9101/home.html[ONTAP 9.10.1 Commands: Manual Page Reference^]
-|Describes syntax and usage of supported ONTAP 9.10.1 commands.
+|link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP 9 Command reference^]
+|Describes the syntax and usage of supported ONTAP commands.
 |link:https://docs.netapp.com/us-en/ontap/san-admin/index.html[SAN management with the CLI^]
 |Describes how to configure and manage LUNs, igroups, and targets using the iSCSI and FC protocols, and namespaces and subsystems using the NVMe/FC protocol.
 |link:https://docs.netapp.com/us-en/ontap/san-config/index.html[SAN configuration reference^]
