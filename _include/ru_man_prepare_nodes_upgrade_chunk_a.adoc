@@ -288,7 +288,7 @@ vs0
 +
 `network interface revert -vserver * -lif *`
 +
-For detailed information about the `network interface revert` command, refer to link:other_references.html[References] to link to the _ONTAP 9 Commands: Manual Page Reference_.
+For detailed information about the `network interface revert` command, refer to link:other_references.html[References] to link to the _ONTAP 9 Command reference_.
 
 . Check whether node1 or node2 owns any failed disks:
 +

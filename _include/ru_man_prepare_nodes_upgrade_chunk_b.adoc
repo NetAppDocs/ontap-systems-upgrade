@@ -227,7 +227,7 @@ The system displays detailed information about the SP on both nodes.
 .. Record the IP address and other information about the SP.
 +
 You might want to reuse the network parameters of the remote management devices, in this case the SPs, from the original system for the SPs on the new nodes.
-For detailed information about the SP, refer to link:other_references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Commands: Manual Page Reference_.
+For detailed information about the SP, refer to link:other_references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Command reference_.
 
 . [[man_prepare_nodes_step29]]If you want the new nodes to have the same licensed functionality as the original nodes, enter the following command to see the cluster licenses on the original system:
 +
@@ -291,7 +291,7 @@ a|Enable AutoSupport by following the instructions in the _System Administration
 +
 `system node autosupport show -node node_name -instance`
 +
-For detailed information about AutoSupport, refer to link:other_references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Commands: Manual Page Reference_.
+For detailed information about AutoSupport, refer to link:other_references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Command reference_.
 
 . [[man_prepare_nodes_step35,Step 35]] Send an AutoSupport message to NetApp for node1 by entering the following command:
 +

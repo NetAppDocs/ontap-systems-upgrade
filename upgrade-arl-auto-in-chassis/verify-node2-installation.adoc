@@ -124,7 +124,7 @@ NOTE:	In this procedure, section _Re-creating VLANs, ifgrps, and broadcast domai
 After you confirm that node2 is in quorum and can communicate with node1, verify that node1’s VLANs, interface groups, and broadcast domains are seen on node2. Also, verify that all node2 network ports are configured in their correct broadcast domains.
 
 .About this task
-For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other_references.html[References] to link to the _Network Management_ content.
+For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other-references.html[References] to link to the _Network Management_ content.
 
 .Steps
 . List all the physical ports that are on upgraded node2:
