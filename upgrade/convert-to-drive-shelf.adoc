@@ -15,10 +15,10 @@ Perform a nondisruptive upgrade of an AFF A150, AFF A220, or FAS2820 system. Fir
 This procedure supports the following system conversions:
 
 |===
-|Convert this system... | To this drive shelf...
+| Convert this system... | To this drive shelf...
 
-|AFF A150 or AFF A220 | DS224C
-|FAS2820 |DS212C 
+| AFF A150 or AFF A220 | DS224C
+| FAS2820 | DS212C 
 |===
 
 The high-availability (HA) pair controllers are node1 and node2 and the replacement HA pair controllers are node3 and node4.
