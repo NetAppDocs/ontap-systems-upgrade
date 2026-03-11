@@ -9,7 +9,7 @@ summary: Migrate the logical interfaces (LIFs) and data aggregates on node2 to n
 :imagesdir: ../media/
 
 [.lead]
-Migrate the logical interfaces (LIFs) and data aggregates on node2 to node1 before converting node2 to a drive shelf.
+Migrate the logical interfaces (LIFs) and data aggregates on AFF A150, AFF A220, or FAS2820 node2 to node1 before converting node2 to a drive shelf.
 
 .Before you begin
 Verify that you meet the following requirements:

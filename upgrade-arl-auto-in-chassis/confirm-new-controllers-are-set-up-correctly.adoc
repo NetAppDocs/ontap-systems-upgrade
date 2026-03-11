@@ -55,7 +55,7 @@ If neither node1 or node2 owns data LIFs home-owned by other nodes in the cluste
 `volume show -node <node1> -state offline`
 +
 `volume show -node <node2> -state offline`
-.	If any volumes are offline, compare them with the list of offline volumes that you captured in the section link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade], and bring online any of the offline volumes, as required, by using the following command, once for each volume:
+.	If any volumes are offline, compare them with the list of offline volumes that you captured in the section link:prepare-nodes-for-upgrade.html[Prepare the nodes for upgrade], and bring online any of the offline volumes, as required, by using the following command, once for each volume:
 +
 `volume online -vserver <vserver_name> -volume <volume_name>`
 .	Install new licenses for the new nodes by using the following command for each node:
@@ -94,22 +94,22 @@ Enter `y` to remove all of the packages.
 +
 `system license show`
 +
-You can compare the output with the output that you captured in the link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade] section.
+You can compare the output with the output that you captured in the link:prepare-nodes-for-upgrade.html[Prepare the nodes for upgrade] section.
 
-. [[unset_maxwait]] If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in _Boot node2 with the replacement system modules_, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1[Step 1]), you must unset the variable:
+. [[unset_maxwait]] If self-encrypting drives are being used in the configuration and you have set the `kmip.init.maxwait` variable to `off` (for example, in _Boot node2 with the replacement system modules_, link:boot-node2-with-a900-controller-and-nvs.html#boot_node2_step1[Step 1]), you must unset the variable:
 +
 `set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
 .	Configure the SPs by using the following command on both nodes:
 +
 `system service-processor network modify -node <node_name>`
 +
-Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
+Refer to link:other-references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Command reference_ for detailed information about the system `service-processor network modify` command.
 
-. If you want to set up a switchless cluster on the new nodes, refer to link:other_references.html[References] to link to the _NetApp Support Site_ and follow the instructions in _Transitioning to a two-node switchless cluster_.
+. If you want to set up a switchless cluster on the new nodes, refer to link:other-references.html[References] to link to the _NetApp Support Site_ and follow the instructions in _Transitioning to a two-node switchless cluster_.
 
 .After you finish
 
-If Storage Encryption is enabled on node1 and node2, complete the section link:set_up_storage_encryption_new_module.html[Set up Storage Encryption on the new controller module]. Otherwise, complete the section link:decommission_old_system.html[Decommission the old system].
+If Storage Encryption is enabled on node1 and node2, complete the section link:set-up-storage-encryption-new-module.html[Set up Storage Encryption on the new controller module]. Otherwise, complete the section link:decommission-old-system.html[Decommission the old system].
 
 // 2023 Feb 22, BURT 1518041
 // 2022 DEC 1, ontap-systems-upgrade-37

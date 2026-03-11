@@ -60,7 +60,7 @@ a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system i
 . link:upgrade/upgrade-decide-to-use-this-guide.html[Upgrade by moving volumes].
 
 | Do I have an integrated system and want to upgrade by swapping the controller module only, keeping existing chassis and disks?
-| link:upgrade-arl-auto-in-chassis/index.html[Upgrade by using ARL, keeping the same chassis and disks].
+| link:upgrade-arl-auto-in-chassis/index.html[Upgrade by using ARL, keeping the same chassis, disks, and the data stored on the disks].
 
 | Am I relocating an SVM? 
 | Refer to link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow[SVM data mobility overview^].

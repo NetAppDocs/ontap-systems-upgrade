@@ -14,13 +14,17 @@ Perform a nondisruptive upgrade of an AFF A150, AFF A220, or FAS2820 system. Fir
 .About this task
 This procedure supports the following system conversions:
 
-* Converting an AFF A150 or AFF A220 to a DS224C drive shelf
-* Converting a FAS2820 to a DS212C drive shelf
+|===
+| Convert this system... | To this drive shelf...
+
+| AFF A150 or AFF A220 | DS224C
+| FAS2820 | DS212C 
+|===
 
 The high-availability (HA) pair controllers are node1 and node2 and the replacement HA pair controllers are node3 and node4.
 
 .Before you begin
-Review the general upgrade scenarios and upgrade considerations for upgrading by moving volumes or storage:
+Review all the considerations for upgrading by moving volumes or storage:
 
 * link:upgrade-decide-to-use-this-guide.html[Decide whether to upgrade by moving volumes or storage]
 * link:upgrade-considerations.html[Considerations for upgrading controller hardware]

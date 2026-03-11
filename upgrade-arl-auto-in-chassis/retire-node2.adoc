@@ -53,7 +53,7 @@ The controller module moves slightly out of the chassis.
 
 .After you finish
 
-You can decommission node2 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system]. 
+You can decommission node2 after the upgrade is completed. See link:decommission-old-system.html[Decommission the old system]. 
 // 10 DEC 2020, thomi, checked
 
 // 2025 Aug 09, AFFFASDOC-378
