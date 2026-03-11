@@ -9,7 +9,7 @@ summary: Convert node1 to a drive shelf and connect to node3 before reassigning 
 :imagesdir: ../media/
 
 [.lead]
-Convert node1 to a drive shelf and connect to node3 before reassigning drives from node1 to node3.
+Convert AFF A150, AFF A220, or FAS2820 node1 to a drive shelf and connect to node3 before reassigning drives from node1 to node3.
 
 
 .Steps

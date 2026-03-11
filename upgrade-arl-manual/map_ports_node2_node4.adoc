@@ -179,7 +179,7 @@ ports in failover group `fg1` as failover targets for LIF `data1` on `node4`:
 +
 `network interface modify -vserver node4 -lif data1 failover-policy broadcast-domain-wide -failover-group fg1`
 +
-For more information, refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Commands: Manual Page Reference_, and go to _Configuring failover settings on a LIF_.
+For more information, refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Command reference_, and go to _Configuring failover settings on a LIF_.
 . Verify the changes on node4:
 +
 `network port show -node node4`
