@@ -6,7 +6,7 @@ You can use the Onboard Key Manager (OKM) to manage encryption keys. If you have
 +
 This is the passphrase that was entered when the OKM was configured or updated using the CLI or REST API.
 
-. Verify the password and the key-manager operation:
+. Verify the passphrase and the key-manager operation:
 +
 `security key-manager onboard sync`
 
