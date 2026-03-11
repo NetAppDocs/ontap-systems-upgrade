@@ -55,7 +55,7 @@ saveenv
 +
 image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the chassis midplane]
 
-.. Go to the rear of the chassis.
+. Go to the rear of the chassis.
 
 // 2025 JUN 19, AFFFASDOC-334
 // 2025 Aug 09, AFFFASDOC-378
