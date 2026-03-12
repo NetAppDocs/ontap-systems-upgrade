@@ -13,3 +13,6 @@ summary: "If required, configure the new controller module for NVE or NAE when u
 
 [.lead]
 include::../_include/ru_auto_set_up_netapp_volume_encryption_new_module.adoc[]
+
+.What's next?
+link:decommission_old_system.html[Decommission the old system]

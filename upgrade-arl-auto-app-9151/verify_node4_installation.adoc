@@ -270,3 +270,6 @@ When all ports are correctly configured and added to the correct broadcast domai
 . Verify that all LIFs have a home port and are administratively up:
 +
 `network interface show -fields home-port, status-admin`
+
+.What's next?
+link:restore_key-manager_config_node4.html[Restore key-manager configuration on node4]

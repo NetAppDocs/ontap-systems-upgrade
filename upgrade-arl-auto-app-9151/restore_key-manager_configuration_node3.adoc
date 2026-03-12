@@ -15,3 +15,6 @@ summary: "If required, restore key-manager configuration on node3 when upgrading
 If you are using NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. If you do not synchronize the key-manager, when you relocate the node1 aggregates from node2 to node3 by using ARL, failures might occur because node3 does not have the required encryption keys to bring encrypted volumes and aggregates online.
 
 include::../_include/ru_auto_restore_key_manager_config_ontap_98.adoc[]
+
+.What's next?
+link:move_non-root_aggr_and_nas_data_lifs_node1_from_node2_to_node3.html[Move non-root aggregates and NAS data LIFs owned by node1 from node2 to node3]

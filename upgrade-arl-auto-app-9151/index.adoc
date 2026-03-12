@@ -47,5 +47,8 @@ The AFF A20 system shares 10GbE and 25GbE network ports for both cluster and HA 
 +
 If you cannot link up e0a or e0b cluster ports on the existing node to the cluster ports on the new node, see link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978[NetApp Bugs Online Bug ID CONTAP-166978^].
 
+.What's next?
+link:automate_the_controller_upgrade_process.html[Automate the controller upgrade process]
+
 // 2024 NOV 25, AFFFASDOC-33
 // 2024 SEP 25, AFFFASDOC-268

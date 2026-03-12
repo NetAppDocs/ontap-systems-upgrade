@@ -13,3 +13,6 @@ summary: "You must have certain tools and documentation to upgrade controllers r
 
 [.lead]
 include::../_include/ru_auto_required_tools_documentation.adoc[]
+
+.What's next?
+link:guidelines_for_upgrading_controllers_with_arl.html[Guidelines for upgrading controllers with ARL]

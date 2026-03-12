@@ -13,3 +13,6 @@ summary: "Let NetApp know that the old system is no longer in operation after up
 
 [.lead]
 include::../_include/ru_auto_decommission_old_system.adoc[]
+
+.What's next?
+link:resume_snapmirror_operations.html[Resume SnapMirror operations]

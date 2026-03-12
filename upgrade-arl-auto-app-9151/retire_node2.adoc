@@ -26,4 +26,7 @@ The node halts automatically.
 
 After retiring node2, verify that it‘s powered off and not connected to the network. Leave the old hardware of node2 in this state until you complete the upgrade of both node1 and node2. You can then decommission node2 during link:manage-authentication-using-kmip-servers.html[Stage 6. Complete the upgrade].
 
+.What's next?
+link:install_boot_node4.html[Install and boot node4]
+
 // 2025 JUL 1, AFFFASDOC-361
