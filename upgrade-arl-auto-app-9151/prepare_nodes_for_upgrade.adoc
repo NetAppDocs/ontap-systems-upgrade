@@ -142,7 +142,7 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
-== License
+== Learn about ONTAP licensing
 
 For detailed information about ONTAP licensing, refer to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[License management^].
 

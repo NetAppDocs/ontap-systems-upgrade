@@ -26,9 +26,7 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 
-=== After you finish
-
-You must restart the controller replacement process:
+. Restart the controller replacement process:
 
 `system controller replace start -nodes _node_names_`
 
