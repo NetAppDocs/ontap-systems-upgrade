@@ -29,6 +29,6 @@ To retire node1, you resume the automated operation to disable the HA pair with 
 After retiring node1, verify that it‘s powered off and not connected to the network. Leave the old hardware of node1 in this state until you complete the upgrade of both node1 and node2. You can then decommission node1 during link:manage-authentication-using-kmip-servers.html[Stage 6. Complete the upgrade].
 
 .What's next?
-link:prepare_for_netboot.html[Prepare for netboot]
+After retiring node1, link:prepare_for_netboot.html[prepare for netboot].
 
 // 2025 JUL 1, AFFFASDOC-361

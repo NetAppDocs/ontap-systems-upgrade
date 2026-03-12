@@ -41,6 +41,6 @@ The system pauses the relocation operation due to the error.
 |===
 
 .What's next?
-link:retire-node2.html[Retire node2]
+After relocating failed or vetoed aggregates to node1, link:retire-node2.html[retire node2].
 
 // 2025 SEP 15, AFFFASDOC-388

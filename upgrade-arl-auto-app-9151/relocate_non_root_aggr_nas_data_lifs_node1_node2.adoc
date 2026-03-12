@@ -30,6 +30,6 @@ include::../_include/ru_auto_relocate_non_root_aggr_nas_lifs_from_node1_to_node2
 `network interface modify -vserver _vserver_name_ -lif _LIF_name_ -home-node _nodename_ -status-admin up`
 
 .What's next?
-link:relocate-failed-or-vetoed-aggr-node2.html[Relocate failed or vetoed aggregates to node2]
+After relocating non-root aggregates and NAS data LIFs owned by node1 to node2, link:relocate-failed-or-vetoed-aggr-node2.html[relocate failed or vetoed aggregates to node2].
 
 //BURT 1476241 , 2022-05-12

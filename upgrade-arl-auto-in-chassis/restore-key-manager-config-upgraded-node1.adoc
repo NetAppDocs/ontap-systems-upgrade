@@ -44,7 +44,7 @@ node1    svm1      ""           00000000000000000200000000000a008a81976 true
 ----
 
 .What's next?
-link:move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html[Move node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1]
+After restoring key-manager configuration on the upgraded node1, link:move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html[move node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1].
 
 // 11 DEC 2020, thomi, checked
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36

@@ -404,7 +404,7 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step32,Step 32>> until the system boots normally.
 
 .What's next?
-link:verify_node3_installation.html[Verify the node3 installation]
+After installing and booting node3, link:verify_node3_installation.html[verify the node3 installation].
 
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312

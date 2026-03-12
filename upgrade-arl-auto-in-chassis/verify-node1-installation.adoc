@@ -204,7 +204,7 @@ When all ports are correctly configured and added to the correct broadcast domai
 `network interface show -fields home-port,status-admin`
 
 .What's next?
-link:restore-key-manager-config-upgraded-node1.html[Restore key-manager configuration on the upgraded node1]
+After verifying the node1 installation, link:restore-key-manager-config-upgraded-node1.html[restore key-manager configuration on the upgraded node1].
 
 // 2024 DEC 9, AFFFASDOC-33
 // BURT 1476251, 2022-05-16

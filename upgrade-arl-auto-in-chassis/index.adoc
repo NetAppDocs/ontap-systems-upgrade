@@ -66,7 +66,7 @@ If you cannot link up e0a or e0b cluster ports on the existing node to the clust
 This procedure provides the steps for the automated procedure, which uses automatic disk assignment and network port reachability checks to simplify the controller upgrade experience.
 
 .What's next?
-link:decide-to-use-the-aggregate-relocation-guide.html[Decide whether to use this aggregate relocation procedure]
+After learning about this ARL upgrade procedure, link:decide-to-use-the-aggregate-relocation-guide.html[decide whether to use this aggregate relocation procedure].
 
 // 2024 DEC 9, AFFFASDOC-33
 // 2024 DEC 4, ontap-systems-upgrade-issue-118

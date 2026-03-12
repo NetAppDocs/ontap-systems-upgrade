@@ -198,7 +198,7 @@ For node2, the `partner-sysid` must be that of the node1 that you are upgrading.
 `printenv partner-sysid`
 
 .What's next?
-link:cable-node2-for-shared-cluster-HA-storage.html[Cable node2 for shared cluster-HA and storage]
+After netbooting node2, link:cable-node2-for-shared-cluster-HA-storage.html[cable node2 for shared cluster-HA and storage].
 
 // 2023 MAY 29, AFFFASDOC-39
 // BURT 1476251, 2022-05-16

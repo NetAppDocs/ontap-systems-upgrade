@@ -123,6 +123,6 @@ The system performs the following post-checks:
 * Volume check
 
 .What's next?
-link:manage-authentication-using-kmip-servers.html[Manage authentication using KMIP servers]
+After moving non-root aggregates and NAS data LIFs back to node2, link:manage-authentication-using-kmip-servers.html[manage authentication using KMIP servers].
 
 // 2025 SEP 19, AFFFASDOC-335

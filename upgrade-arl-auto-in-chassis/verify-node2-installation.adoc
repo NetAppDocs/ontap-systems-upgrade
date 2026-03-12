@@ -225,7 +225,7 @@ When all ports are correctly configured and added to the correct broadcast domai
 `network interface show -fields home-port,status-admin`
 
 .What's next?
-link:restore-key-manager-config-node2.html[Restore key-manager configuration on node2]
+After verifying the node2 installation, link:restore-key-manager-config-node2.html[restore key-manager configuration on node2].
 
 // BURT 1476251, 2022-05-16
 //BURT 1452254, 2022-04-27

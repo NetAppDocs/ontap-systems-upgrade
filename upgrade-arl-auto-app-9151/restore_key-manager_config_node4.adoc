@@ -42,7 +42,7 @@ node4    svm1      ""           00000000000000000200000000000a008a81976 true
 ----
 
 .What's next?
-link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html[Move non-root aggregates and NAS data LIFs owned by node2 from node3 to node4]
+After restoring key-manager configuration on node4, link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html[move non-root aggregates and NAS data LIFs owned by node2 from node3 to node4].
 
 // 11 DEC 2020, thomi, checked
 // BURT 1476241, 28 Sept 2022

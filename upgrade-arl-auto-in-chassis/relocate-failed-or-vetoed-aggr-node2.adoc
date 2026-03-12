@@ -16,6 +16,6 @@ summary: "Relocate failed or vetoed aggregates to node2 when using ARL to upgrad
 include::../_include/ru_auto_relocate_failed_vetoed_aggregates.adoc[]
 
 .What's next?
-link:retire-node1.html[Retire node1]
+After relocating failed or vetoed aggregates to node2, link:retire-node1.html[retire node1].
 
 // 2025 SEP 15, AFFFASDOC-388

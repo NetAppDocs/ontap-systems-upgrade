@@ -44,7 +44,7 @@ node2    svm1      ""           00000000000000000200000000000a008a81976 true
 
 
 .What's next?
-link:verify-rcf-configuration.html[Verify the RCF configuration on cluster switches]
+After restoring key-manager configuration on node2, link:verify-rcf-configuration.html[verify the RCF configuration on cluster switches].
 
 // 11 DEC 2020, thomi, checked
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36

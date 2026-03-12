@@ -149,7 +149,7 @@ For detailed information about ONTAP licensing, refer to https://docs.netapp.com
 NOTE: Using unlicensed features on the controller might put you out of compliance with your license agreement.
 
 .What's next?
-link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager]
+After preparing the nodes for upgrade, link:manage_storage_encryption_using_okm.html[manage storage encryption using the Onboard Key Manager].
 
 // 2023 JUN 28, ontap-systems-upgrade-issues-87
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747

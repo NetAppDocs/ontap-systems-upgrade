@@ -19,4 +19,4 @@ For an AFF A800 upgrade to an AFF A90 or AFF A70, verify that the 100GbE cables 
 Refer to link:other-references.html[References] to access the list of reference documents and reference sites required for this upgrade.
 
 .What's next?
-link:guidelines-for-upgrading-controllers-with-arl.html[Guidelines for upgrading controllers]
+After reviewing the required tools and documentation, link:guidelines-for-upgrading-controllers-with-arl.html[guidelines for upgrading controllers].

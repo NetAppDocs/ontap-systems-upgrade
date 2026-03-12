@@ -18,4 +18,4 @@ include::../_include/ru_auto_set_up_netapp_volume_encryption_new_module.adoc[]
 Check if any volumes were taken offline because authentication keys were not available or External Key Management servers could not be reached. Bring those volumes back online by using the `volume online` command.
 
 .What's next?
-link:decommission-old-system.html[Decommission the old system]
+After setting up NetApp Volume or Aggregate Encryption on the new controller module, link:decommission-old-system.html[decommission the old system].

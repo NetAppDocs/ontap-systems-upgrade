@@ -37,7 +37,7 @@ a|* AFF A700 configured as an ASA
 |===
 
 .What's next?
-link:prepare-nodes-for-upgrade.html[Prepare the nodes for upgrade]
+After verifying the upgrade hardware, link:prepare-nodes-for-upgrade.html[prepare the nodes for upgrade].
 
 // 2024 DEC 9, AFFFASDOC-33
 // 2024 APR 16, AFFFASDOC-32

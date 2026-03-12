@@ -236,7 +236,7 @@ Between entering node names at the prompt and the login prompt, the node reboots
 ====
 
 .What's next?
-link:verify-node1-installation.html[Verify the node1 installation]
+After booting node1 with the replacement system modules, link:verify-node1-installation.html[verify the node1 installation].
 
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312

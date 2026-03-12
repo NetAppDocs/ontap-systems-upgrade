@@ -172,6 +172,6 @@ The system performs the following post-checks:
 * Volume check
 
 .What's next?
-link:relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html[Relocate non-root aggregates and NAS data LIFs from node2 to node1]
+After moving node1 non-root aggregates and NAS data LIFs from node2 to the upgraded node1, link:relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html[relocate non-root aggregates and NAS data LIFs from node2 to node1].
 
 // 2025 SEP 19, AFFFASDOC-335

@@ -64,4 +64,4 @@ a| During Stage 6, you confirm that the new nodes are set up correctly and, if t
 |===
 
 .What's next?
-link:prepare_nodes_for_upgrade.html[Prepare the nodes for upgrade]
+After learning about the ARL upgrade sequence, link:prepare_nodes_for_upgrade.html[prepare the nodes for upgrade].

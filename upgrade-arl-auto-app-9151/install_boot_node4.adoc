@@ -419,7 +419,7 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check_4_step27,Step 27>> until the system boots normally.
 
 .What's next?
-link:verify_node4_installation.html[Verify the node4 installation]
+After installing and booting node4, link:verify_node4_installation.html[verify the node4 installation].
 
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312

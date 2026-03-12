@@ -17,7 +17,7 @@ Beginning with ONTAP 9.10.1, you can use Key Management Interoperability Protoco
 include::../_include/ru_auto_manage_authentication_kmip_servers.adoc[]
 
 .What's next?
-link:confirm-new-controllers-are-set-up-correctly.html[Confirm that the new controllers are set up correctly]
+After managing authentication using KMIP servers, link:confirm-new-controllers-are-set-up-correctly.html[confirm that the new controllers are set up correctly].
 
 // 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
 

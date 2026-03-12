@@ -32,5 +32,5 @@ A table displays cluster information, including the serial numbers.
 . Locate the cluster in the table and select *Decommission this system* from the Product Tool Set drop-down menu.
 
 .What's next?
-link:resume-snapmirror-operations.html[Resume SnapMirror operations]
+After decommissioning the old system, link:resume-snapmirror-operations.html[resume SnapMirror operations].
 

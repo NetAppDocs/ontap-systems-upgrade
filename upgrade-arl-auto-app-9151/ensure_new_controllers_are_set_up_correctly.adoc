@@ -120,7 +120,7 @@ Refer to link:other_references.html[References] to link to the _System Administr
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]
 
 .What's next?
-link:set_up_storage_encryption_new_module.html[Set up Storage Encryption on the new controller module]
+After confirming that the new controllers are set up correctly, link:set_up_storage_encryption_new_module.html[set up Storage Encryption on the new controller module].
 
 // 2023 Feb 22, BURT 1518041
 // 2022 DEC 1, ontap-systems-upgrade-37

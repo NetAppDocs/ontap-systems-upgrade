@@ -67,6 +67,6 @@ a| During Stage 7, you confirm that the new nodes are set up correctly and, if t
 |===
 
 .What's next?
-link:verify-upgrade-hardware.html[Verify the upgrade hardware]
+After learning about the ARL upgrade sequence, link:verify-upgrade-hardware.html[verify the upgrade hardware].
 
 //BURT 1452254, 2022-04-26

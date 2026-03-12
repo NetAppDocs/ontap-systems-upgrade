@@ -222,7 +222,7 @@ For node1, the `partner-sysid` must be that of node2. You can obtain the node2 s
 
 
 .What's next?
-link:cable-node1-for-shared-cluster-HA-storage.html[Cable node1 for shared cluster-HA and storage]
+After netbooting node1, link:cable-node1-for-shared-cluster-HA-storage.html[cable node1 for shared cluster-HA and storage].
 
 // 2023 AUG 29, AFFFASDOC-78
 //BURT 1452254, 2022-04-27
