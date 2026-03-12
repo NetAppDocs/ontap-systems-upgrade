@@ -150,6 +150,9 @@ set-defaults
 saveenv
 ----
 
+.What's next?
+link:netboot-node1.html[Netboot node1]
+
 // 2025 JUN 19, AFFFASDOC-334
 // 2023 AUG 29, AFFFASDOC-78
 // 2023 MAY 29, AFFFASDOC-39

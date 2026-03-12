@@ -40,4 +40,7 @@ The system pauses the relocation operation due to the error.
 `storage aggregate relocation start -node node2 -destination node1 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true`
 |===
 
+.What's next?
+link:retire-node2.html[Retire node2]
+
 // 2025 SEP 15, AFFFASDOC-388

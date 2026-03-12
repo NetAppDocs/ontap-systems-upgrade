@@ -122,4 +122,7 @@ The system performs the following post-checks:
 * Cluster LIF status check
 * Volume check
 
+.What's next?
+link:manage-authentication-using-kmip-servers.html[Manage authentication using KMIP servers]
+
 // 2025 SEP 19, AFFFASDOC-335

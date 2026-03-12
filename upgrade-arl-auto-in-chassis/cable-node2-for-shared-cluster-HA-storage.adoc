@@ -71,5 +71,8 @@ If e2a isn't present or doesn't support 100 GbE, directly connect e4b on node1 t
 
 include::../_include/ru-auto-cable-node-shared-storage-chunk-b.adoc[]
 
+.What's next?
+link:boot-node2-with-a900-controller-and-nvs.html[Boot node2 with the replacement system modules]
+
 // 2025 APR 22, AFFFASDOC-321
 // 2024 JULY 12, AFFFASDOC-240

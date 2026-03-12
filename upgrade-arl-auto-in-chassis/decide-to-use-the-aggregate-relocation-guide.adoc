@@ -113,6 +113,9 @@ The minimum ONTAP versions in the preceding table are mandatory. These ONTAP ver
 .Related information
 Refer to link:other-references.html[References] to link to the _ONTAP 9 Documentation_.
 
+.What's next?
+link:required-tools-and-documentation.html[Required tools and documentation]
+
 // 2025 FEB 25, AFFFASDOC-284
 // 2024 DEC 9, AFFFASDOC-33
 // 2024 DEC 5, AFFFASDOC-273

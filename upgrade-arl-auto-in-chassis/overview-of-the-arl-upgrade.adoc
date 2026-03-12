@@ -66,4 +66,7 @@ a| During Stage 6, you boot node2 with upgraded system modules and verify the up
 a| During Stage 7, you confirm that the new nodes are set up correctly and, if the new nodes are encryption-enabled, you configure and set up Storage Encryption or NVE. You should also decommission the old nodes and resume the SnapMirror operations.
 |===
 
+.What's next?
+link:verify-upgrade-hardware.html[Verify the upgrade hardware]
+
 //BURT 1452254, 2022-04-26

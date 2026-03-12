@@ -235,6 +235,9 @@ The system IDs shown in the preceding example are example IDs. The actual system
 Between entering node names at the prompt and the login prompt, the node reboots a few times to restore the environment variables, update firmware on the cards in the system, and for other ONTAP updates.
 ====
 
+.What's next?
+link:verify-node1-installation.html[Verify the node1 installation]
+
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312
 // 2023 AUG 29, AFFFASDOC-78
