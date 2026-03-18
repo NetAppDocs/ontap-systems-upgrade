@@ -16,7 +16,9 @@ When prompted, enter the cluster-wide OKM passphrase that you recorded in the pr
 +
 `security key-manager config show`
 
-. Back up the key-manager information by running the `security key-manager onboard show-backup` command.
+. Back up the key-manager information:
++
+`security key-manager onboard show-backup`
 
 // 2026 MAR 5, AFFFASDOC-230
 // 2022 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
