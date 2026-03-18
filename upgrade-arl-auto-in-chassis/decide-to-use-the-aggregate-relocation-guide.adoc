@@ -51,6 +51,21 @@ CAUTION: This procedure strictly applies to the following upgrade configurations
 [cols=3*,options="header",cols="20,20,40"]
 |===
 |Existing system |Replacement system |Supported ONTAP versions
+|AFF A70 ^1^
+|AFF A90
+|9.18.1 and later
+|AFF A30 ^1^
+|AFF A50
+|9.18.1 and later
+|AFF A20 ^1^
+|AFF A30, AFF A50
+|9.18.1 and later
+|AFF C30 ^1^
+|AFF C60
+|9.18.1 and later
+|FAS 70 ^1^
+|FAS 90
+|9.18.1 and later
 |AFF C250 ^1^
 |AFF C30, AFF C60
 |9.16.1
@@ -107,6 +122,7 @@ The minimum ONTAP versions in the preceding table are mandatory. These ONTAP ver
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+// 2026 MAR 18, AFFFASDOC-395
 // 2025 FEB 25, AFFFASDOC-284
 // 2024 DEC 9, AFFFASDOC-33
 // 2024 DEC 5, AFFFASDOC-273
