@@ -9,8 +9,10 @@ This is the passphrase that was entered when the OKM was configured or updated u
 . Verify the passphrase and the key-manager operation:
 +
 `security key-manager onboard sync`
++
+When prompted, enter the cluster-wide OKM passphrase that you recorded in the previous step.
 
-. Verify that "cc-mode" is enabled:
+. Verify that cc-mode is enabled by reviewing the output of the following command:
 +
 `security key-manager config show`
 
