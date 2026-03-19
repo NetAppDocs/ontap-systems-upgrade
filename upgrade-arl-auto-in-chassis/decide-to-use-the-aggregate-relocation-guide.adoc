@@ -63,8 +63,8 @@ CAUTION: This procedure strictly applies to the following upgrade configurations
 |AFF C30 ^1^
 |AFF C60
 |9.18.1 and later
-|FAS 70 ^1^
-|FAS 90
+|FAS70 ^1^
+|FAS90
 |9.18.1 and later
 |AFF C250 ^1^
 |AFF C30, AFF C60

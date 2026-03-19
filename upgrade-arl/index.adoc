@@ -83,8 +83,8 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 |AFF C60
 |9.18.1 and later
 
-|FAS 70
-|FAS 90
+|FAS70
+|FAS90
 |9.18.1 and later
 
 |AFF C250 |AFF C30, AFF C60
