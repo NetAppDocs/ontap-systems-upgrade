@@ -114,7 +114,7 @@ The minimum ONTAP versions in the preceding table are mandatory. These ONTAP ver
 Refer to link:other-references.html[References] to link to the _ONTAP 9 Documentation_.
 
 .What's next?
-After deciding whether to use this aggregate relocation procedure, link:required-tools-and-documentation.html[learn about the required tools and documentation].
+After deciding to use this ARL procedure, link:required-tools-and-documentation.html[learn about the required tools and documentation].
 
 // 2025 FEB 25, AFFFASDOC-284
 // 2024 DEC 9, AFFFASDOC-33

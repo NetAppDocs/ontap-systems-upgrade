@@ -24,7 +24,7 @@ In this information, the original nodes are called "node1" and "node2", and the 
 
 The terms "node1", "node2", "node3", and "node4" are used only to distinguish between the original and new nodes. When following the procedure, you must substitute the real names of your original and new nodes. However, in reality, the names of the nodes do not change: node3 has the name node1, and node4 has the name node2 after the controller hardware is upgraded.
 
-.Important information:
+.Important information
 
 * This procedure is complex and assumes that you have advanced ONTAP administration skills. You also must read and understand the link:guidelines_for_upgrading_controllers_with_arl.html[guidelines for upgrading controllers with ARL] and the link:overview_of_the_arl_upgrade.html[ARL upgrade sequence] before beginning the upgrade.
 * This procedure assumes that the replacement controller hardware is new and has not been used. The steps required to prepare used controllers with the `wipeconfig` command are not included in this procedure. You must contact technical support if the replacement controller hardware was previously used.
@@ -47,8 +47,12 @@ The AFF A20 system shares 10GbE and 25GbE network ports for both cluster and HA 
 +
 If you cannot link up e0a or e0b cluster ports on the existing node to the cluster ports on the new node, see link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978[NetApp Bugs Online Bug ID CONTAP-166978^].
 
+.Automated controller upgrade process
+During a controller upgrade, the existing controller is replaced with another controller running a newer or more powerful platform. This content provides the steps for the partially automated procedure, which utilizes automatic network port reachability checks to further simplify the controller upgrade experience.
+
+
 .What's next?
-After learning about this ARL upgrade procedure, link:automate_the_controller_upgrade_process.html[automate the controller upgrade process].
+After learning about this ARL upgrade procedure, link:decide_to_use_the_aggregate_relocation_guide.html[decide whether to use this procedure].
 
 // 2024 NOV 25, AFFFASDOC-33
 // 2024 SEP 25, AFFFASDOC-268

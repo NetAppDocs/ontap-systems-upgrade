@@ -55,8 +55,10 @@ The controller module moves slightly out of the chassis.
 You can decommission node2 after the upgrade is completed. See link:decommission-old-system.html[Decommission the old system].
 
 .What's next?
-After retiring node2, link:install-aff-a30-a50-c30-c50-node2.html[install AFF A30, AFF A50, AFF C30, or AFF C60 module in node2].
+After retiring node2:
 
-// 10 DEC 2020, thomi, checked
-
+* link:install-aff-a30-a50-c30-c50-node2.html[Install AFF A30, AFF A50, AFF C30, or AFF C60 module in node2]
+* link:install-affa90-affa70-on-node2.html[Install the AFF A90 or AFF A70 module in node2]
+* link:install-asa150-affa150-fas2820-on-node2.html[Install the ASA A150, AFF A150, or FAS2820 controller module in node2]
+* link:install-asa900-affa900-fas9500-on-node2.html[Install the ASA A900, AFF A900, or FAS9500 NVRAM and controller modules on node2]
 // 2025 Aug 09, AFFFASDOC-378
