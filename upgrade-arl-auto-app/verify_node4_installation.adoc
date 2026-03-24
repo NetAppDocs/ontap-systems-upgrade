@@ -323,6 +323,9 @@ When all ports are correctly configured and added to the correct broadcast domai
 +
 `network interface show -fields home-port, status-admin`
 
+.What's next?
+After verifying the node4 installation, link:restore_key-manager_config_node4.html[restore the key-manager configuration on node4].
+
 // 2023 OCT 31, AFFFASDOC-144
 // 2023 NOV 8, AFFFASDOC-133
 // 2022-05-12 , 1476241

@@ -120,5 +120,8 @@ The system performs the following post-checks:
 * Cluster LIF status check
 * Volume check
 
+.What's next?
+After moving non-root aggregates and NAS data LIFs owned by node1 from node2 to node3, link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html[relocate non-root aggregates and NAS data LIFs from node2 to node3].
+
 // 2025 SEP 19, AFFFASDOC-335
 // 2023 NOV 6, AFFFASDOC-144

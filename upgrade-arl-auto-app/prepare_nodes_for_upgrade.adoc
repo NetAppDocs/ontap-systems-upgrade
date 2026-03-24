@@ -164,6 +164,9 @@ include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
 include::../_include/ru_auto_license.adoc[]
 
+.What's next?
+After preparing the nodes for upgrade, link:manage_storage_encryption_using_okm.html[manage storage encryption using the Onboard Key Manager].
+
 // 2023 JUN 28, ontap-systems-upgrade-issues-87
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022 DEC 1, ontap-systems-upgrade-37

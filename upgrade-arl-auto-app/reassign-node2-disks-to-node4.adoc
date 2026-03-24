@@ -283,6 +283,9 @@ aggr0 offline                    raid_dp, aggr        diskroot
 ---------------------------------------------------------------------
 ....
 
+.What's next?
+After reassigning node2 disks to node4, link:verify_node4_installation.html[verify the node4 installation].
+
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312
 // 2025 MAR 5, AFFFASDOC-297
