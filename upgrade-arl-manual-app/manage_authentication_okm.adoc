@@ -14,5 +14,8 @@ summary:  "Use the Onboard Key Manager to manage authentication keys during a ma
 
 [.lead]
 include::../_include/ru_man_manage_authentication_okm.adoc[]
+
+.What's next?
+After managing authentication keys using the Onboard Key Manager, link:quiesce_snapmirror_relationships.html[quiesce the SnapMirror relationships].
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747
 // 5 MAR 2021:  formatted from CMS

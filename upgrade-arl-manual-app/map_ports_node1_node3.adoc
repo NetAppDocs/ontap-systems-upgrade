@@ -207,6 +207,8 @@ NOTE: For iSCSI LIFs, modification of the home port requires the LIF to be admin
 +
 `network interface revert *`
 
+.What's next?
+After mapping ports from node1 to node3, link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html[move NAS data LIFs owned by node1 from node2 to node3 and verify SAN LIFs on node3].
 // 2023 NOV 8, AFFFASDOC-133
 // 2022-05-17, BURT 1476241
 // Clean-up, 2022-03-09

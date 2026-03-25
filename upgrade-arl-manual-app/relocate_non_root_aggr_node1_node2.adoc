@@ -15,3 +15,6 @@ summary: "Move the non-root aggregates from node1 to node2 and verify the reloca
 [.lead]
 
 include::../_include/ru_man_relocate_non_root_aggr_node1_node2.adoc[]
+
+.What's next?
+After relocating non-root aggregates from node1 to node2, link:move_nas_lifs_node1_node2.html[move NAS data LIFs owned by node1 to node2].

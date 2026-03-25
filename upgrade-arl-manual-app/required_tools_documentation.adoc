@@ -15,3 +15,6 @@ summary: "You must have certain tools and documentation to perform a manual ARL 
 [.lead]
 
 include::../_include/ru_man_required_tools_documentation.adoc[]
+
+.What's next?
+After reviewing the required tools and documentation, link:worksheet_information_before_during_upgrade.html[record the original node information for use during the upgrade].

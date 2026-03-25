@@ -80,4 +80,6 @@ NOTE: The storage virtual machine (SVM) disaster recovery updates will not be in
 No changes occur in aggregate ownership.
 |===
 
+.What's next?
+After reviewing the ARL upgrade workflow, link:guidelines_upgrade_with_arl.html[review the guidelines for upgrading controllers with ARL].
 // Clean-up, 2022-03-09

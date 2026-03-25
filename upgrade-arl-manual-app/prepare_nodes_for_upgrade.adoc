@@ -23,4 +23,6 @@ include::../_include/ru_man_prepare_nodes_upgrade_chunk_a.adoc[]
 ====
 include::../_include/ru_man_prepare_nodes_upgrade_chunk_b.adoc[]
 
+.What's next?
+After preparing the nodes for upgrade, link:manage_authentication_okm.html[manage authentication keys using the Onboard Key Manager].
 // BURT 1462831, 2022-03-28

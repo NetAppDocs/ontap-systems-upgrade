@@ -68,4 +68,6 @@ If you are upgrading nodes in a two-node switchless cluster, you can leave the n
 
 include::../_include/ru_man_troubleshooting.adoc[]
 
+.What's next?
+After reviewing the guidelines for upgrading controllers with ARL, link:required_tools_documentation.html[review the required tools and documentation].
 // BURT 1463821, 2022-03-29
