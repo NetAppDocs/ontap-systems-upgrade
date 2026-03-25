@@ -122,8 +122,9 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 +
 NOTE:	In this procedure, section _Re-creating VLANs, ifgrps, and broadcast domains_ has been renamed _Restore network configuration on node2_.
 
-. With the controller replacement in a paused state, proceed to <<Restore network configuration on node2>>.
+. With the controller replacement in a paused state, proceed to <<restore_network_configuration_on_node2,Restore network configuration on node2>>.
 
+[[restore_network_configuration_on_node2]]
 == Step 2: Restore network configuration on node2
 After you confirm that node2 is in quorum and can communicate with node1, verify that node1’s VLANs, interface groups, and broadcast domains are seen on node2. Also, verify that all node2 network ports are configured in their correct broadcast domains.
 

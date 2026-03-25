@@ -20,7 +20,7 @@ Refer to link:other_references.html[References] to link to the _Hardware Univers
 
 Physical port layout might vary, depending on the model of the nodes. When the new node boots up, ONTAP tries to determine which ports should host cluster LIFs in order to automatically come into quorum.
 
-If the physical ports on node2 do not map directly to the physical ports on node4, the subsequent section <<Restore network configuration on node4>> must be used to repair network connectivity.
+If the physical ports on node2 do not map directly to the physical ports on node4, the subsequent section <<restore_network_configuration_on_node4,Restore network configuration on node4>> must be used to repair network connectivity.
 
 After you install and boot node4, you must verify that it is installed correctly. You must wait for node4 to join quorum and then resume the relocation operation.
 
@@ -130,6 +130,7 @@ NOTE: In this procedure, section _Re-creating VLANs, ifgrps, and broadcast domai
 
 . With the controller replacement in a paused state, proceed to the next section of this document to restore network configuration on the node.
 
+[[restore_network_configuration_on_node4]]
 == Step 2: Restore network configuration on node4
 
 After you confirm that node4 is in quorum and can communicate with node3, verify that node2’s VLANs, interface groups and broadcast domains are seen on node4.  Also,  verify that all node4 network ports are configured in their correct broadcast domains.
