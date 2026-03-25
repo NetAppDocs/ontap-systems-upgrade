@@ -14,6 +14,10 @@ summary: "Prepare the nodes and run a series of prechecks when upgrading control
 [.lead]
 The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure and, if required, determine the type of self-encrypting drives that are in use.
 
+== Step 1: Prepare the nodes
+
+Start the controller replacement process and run prechecks. If required, determine the type of self-encrypting drives that are in use.
+
 .Steps
 
 . Begin the controller replacement process by entering the following command in the ONTAP command line:
