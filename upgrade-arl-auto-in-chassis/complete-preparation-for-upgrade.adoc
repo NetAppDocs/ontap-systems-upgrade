@@ -24,7 +24,7 @@ Refer to link:other-references.html[References] to link to the _NetApp Support S
 
 For detailed information about ONTAP licensing, refer to link:other-references.html[References] to link to the _System Administration Reference_.
 
-[[manage_storage_encryption_using_okm]]
+[[manage-storage-encryption-using-okm]]
 
 include::../_include/ru_auto_manage_storage_encryption_okm.adoc[]
 

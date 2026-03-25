@@ -16,6 +16,7 @@ Learn about ONTAP licensing and managing Storage Encryption using the Onboard Ke
 
 include::../_include/ru_auto_license.adoc[]
 
+[[manage_storage_encryption_using_okm]]
 include::../_include/ru_auto_manage_storage_encryption_okm.adoc[]
 
 include::../_include/ru_auto_quiesce_snapmirror_relationships.adoc[]
