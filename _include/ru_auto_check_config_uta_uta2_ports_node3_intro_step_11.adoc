@@ -1,4 +1,4 @@
-== Check and configure UTA/UTA2 ports on node3
+== Step 2: Check and configure UTA/UTA2 ports on node3
 
 If node3 has onboard UTA/UTA2 ports or a UTA/UTA2 card, you must check the configuration of the ports and possibly reconfigure them, depending on how you want to use the upgraded system.
 

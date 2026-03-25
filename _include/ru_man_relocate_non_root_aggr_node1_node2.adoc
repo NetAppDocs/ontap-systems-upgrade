@@ -11,7 +11,7 @@ Before you can replace node1 with node3, you must move the non-root aggregates f
 `storage aggregate relocation start -node _node1_ -destination _node2_ -aggregate-list * -ndo-controller-upgrade true`
 .. When prompted, enter `y`.
 +
-Relocation will occur in the background. It could take anywhere from a few seconds to a couple of minutes to relocate an aggregate. The time includes both client outage and non-outage portions. The command does not relocate any offline or restricted aggregates.
+Relocation occurs in the background. It could take anywhere from a few seconds to a couple of minutes to relocate an aggregate. The time includes both client outage and non-outage portions. The command does not relocate any offline or restricted aggregates.
 
 .. Return to the admin level by entering the following command:
 +
@@ -21,7 +21,7 @@ Relocation will occur in the background. It could take anywhere from a few secon
 +
 `storage aggregate relocation show -node _node1_`
 +
-The output will display `Done` for an aggregate after it has been relocated.
+The output displays `Done` for an aggregate after it has been relocated.
 +
 NOTE: Wait until all non-root aggregates owned by node1 have been relocated to node2 before proceeding to the next step.
 

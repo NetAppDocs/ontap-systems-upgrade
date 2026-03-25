@@ -1,4 +1,4 @@
-== Configure FC ports on node4
+== Step 1: Configure FC ports on node4
 
 If node4 has FC ports, either onboard or on an add-on FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured when the systems are shipped. If you don't configure the ports as required, you might experience a disruption in service.
 

@@ -14,7 +14,7 @@ summary: "Shut down node2 and remove it from the rack or chassis when using ARL 
 [.lead]
 To retire node2, you shut down node2 correctly and then remove it from the rack or chassis.
 
-== Resume the system controller replace operation 
+== Step 1: Resume the system controller replace operation 
 
 .Steps
 
@@ -24,7 +24,7 @@ To retire node2, you shut down node2 correctly and then remove it from the rack 
 +
 The node halts automatically.
 
-== Remove the AFF A800 or AFF C800 controller module
+== Step 2: Remove the AFF A800 or AFF C800 controller module
 
 Remove the cable management device from the existing module and move the controller slightly out of the chassis.
 
@@ -55,7 +55,7 @@ The controller module moves slightly out of the chassis.
 You can decommission node2 after the upgrade is completed. See link:decommission-old-system.html[Decommission the old system].
 
 .What's next?
-After retiring node2:
+After retiring node2, choose one of the following install procedures based on your upgrade configuration:
 
 * link:install-aff-a30-a50-c30-c50-node2.html[Install AFF A30, AFF A50, AFF C30, or AFF C60 module in node2]
 * link:install-affa90-affa70-on-node2.html[Install the AFF A90 or AFF A70 module in node2]

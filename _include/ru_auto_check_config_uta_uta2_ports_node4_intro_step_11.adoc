@@ -1,4 +1,4 @@
-== Check and configure UTA/UTA2 ports on node4
+== Ste 2: Check and configure UTA/UTA2 ports on node4
 
 If node4 has onboard UTA/UTA2 ports or a UTA/UTA2A card, you must check the configuration of the ports and configure them, depending on how you want to use the upgraded system.
 

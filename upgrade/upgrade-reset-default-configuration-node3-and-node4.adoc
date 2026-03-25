@@ -45,7 +45,7 @@ Are you sure you want to continue?: yes
 Rebooting to finish wipeconfig request.
 ----
 +
-The system will initiate the `wipeconfig` procedure and reboot. When the procedure is complete, the system returns to the boot menu.
+The system initiates the `wipeconfig` procedure and reboots. When the procedure is complete, the system returns to the boot menu.
 
 . From the boot menu, enter 8 to reboot the node, and press Ctrl-C during AUTOBOOT to stop the node at the LOADER prompt.
 

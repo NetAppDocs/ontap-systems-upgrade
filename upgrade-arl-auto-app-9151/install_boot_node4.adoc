@@ -232,7 +232,7 @@ NOTE: If you have not already done so earlier in the procedure, see the Knowledg
 
 .. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
 +
-Enter the passphrase and the backup information that you recorded earlier in the procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
+Enter the passphrase and the backup information that you recorded earlier in the procedure. See link:complete-preparation-for-upgrade.html#manage_storage_encryption_using_okm[Manage storage encryption using the Onboard Key Manager].
 
 . Boot the node into boot menu:
 +
@@ -368,9 +368,9 @@ Login:
 ----
 ====
 +
-NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
+NOTE: In the above console output example, ONTAP prompts you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
-. [[auto_check_4_step27]]At the LOADER prompt, boot up:
+. [[auto_check_4_step27]]At the LOADER prompt, boot the node:
 +
 `boot_ontap menu`
 +

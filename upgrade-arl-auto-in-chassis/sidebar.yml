@@ -19,7 +19,7 @@ entries:
     - title: Prepare the nodes for upgrade
       url: /upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html
     - title: Manage storage encryption using the Onboard Key Manager
-      url: /upgrade-arl-auto-in-chassis/manage-storage-encryption-using-okm.html
+      url: /upgrade-arl-auto-in-chassis/complete-preparation-for-upgrade.html
 - title: "Stage 2. Relocate resources and retire node1"
   entries:
     - title: Relocate non-root aggregates and NAS data LIFs owned by node1 to node2

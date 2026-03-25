@@ -28,7 +28,7 @@ To retire node1, you resume the automated operation to disable the HA pair with 
 After node1 has completely halted, node1 should be at the LOADER> prompt. To see the LOADER> prompt, connect to the serial console of node1.
 
 .What's next?
-After retiring node1:
+After retiring node1, choose one of the following replacements procedures based on your upgrade configuration:
 * link:replace-node1-affa250-affc250.html[Replace the node1 AFF A250 or AFF C250 controller module]
 * link:replace-node1-affa800.html[Replace the node1 AFF A800 or AFF C800 controller module]
 * link:replace-node1-affa220-affa200-affc190-fas2620-fas2720.html[Replace the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module]

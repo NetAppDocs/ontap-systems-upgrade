@@ -43,4 +43,4 @@ For more information, see link:cable-node1-for-shared-cluster-HA-storage.html#co
 `ha interconnect status show`
 
 .What's next
-link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html[Move non-root aggregates and NAS data LIFs back to node2]
+After verifying the RCF configuration link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html[move non-root aggregates and NAS data LIFs back to node2].

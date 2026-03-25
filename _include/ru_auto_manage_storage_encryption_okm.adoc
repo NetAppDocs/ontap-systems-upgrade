@@ -1,4 +1,6 @@
-You can use the Onboard Key Manager (OKM) to manage encryption keys. If you have the OKM set up, you must record the passphrase and backup material before beginning the upgrade.
+== Manage storage encryption using the Onboard Key Manager
+
+Use the Onboard Key Manager (OKM) to manage encryption keys. If you have the OKM set up, you must record the passphrase and backup material before beginning the upgrade.
 
 .Steps
 

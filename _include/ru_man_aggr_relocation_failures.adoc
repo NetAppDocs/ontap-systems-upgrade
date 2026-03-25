@@ -29,10 +29,9 @@ At the end of the upgrade procedure, node3 must be the new home node of aggregat
 
 Aggregates might fail to relocate correctly, having node1 as their home node instead of node3 under the following circumstances:
 
-* During Stage 3, when aggregates are relocated from node2 to node3.
-Some of the aggregates being relocated have node1 as their home node. For example, such an aggregate could be called aggr_node_1. If relocation of aggr_node_1 fails during Stage 3, and relocation cannot be forced, then the aggregate will be left behind on node2.
+* During Stage 3, when aggregates are relocated from node2 to node3. Some of the aggregates being relocated have node1 as their home node. For example, such an aggregate could be called aggr_node_1. If relocation of aggr_node_1 fails during Stage 3, and relocation cannot be forced, then the aggregate is left behind on node2.
 * After Stage 4, when node2 is replaced with node4.
-When node2 is replaced, aggr_node_1 will come online with node4 as its home node instead of node3.
+When node2 is replaced, aggr_node_1 comes online with node4 as its home node instead of node3.
 
 You can fix the incorrect ownership problem after Stage 6 once storage failover has been enabled by completing the following steps:
 

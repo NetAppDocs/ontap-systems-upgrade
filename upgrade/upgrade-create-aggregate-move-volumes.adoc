@@ -28,7 +28,7 @@ NOTE: For each storage virtual machine (SVM), NetApp recommends moving all the n
 +
 `vserver add-aggregates`
 +
-Both the new aggregate and the old aggregate from which the volume will be moved must be in the same SVM.
+Both the new aggregate and the old aggregate from which the volume is being moved must be in the same SVM.
 
 . Verify that the new aggregate is now assigned to the same SVM as the aggregate on the original node:
 +

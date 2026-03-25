@@ -1,4 +1,4 @@
-== Correct aggregate ownership if an ARL precheck fails
+== Step 2: Correct aggregate ownership if an ARL precheck fails
 
 If the Aggregate Status Check fails, you must return aggregates owned by the partner node to the home owner node and initiate the precheck process again.
 

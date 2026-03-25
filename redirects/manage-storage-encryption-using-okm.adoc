@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-app-9151/manage-storage-encryption-using-okm.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-app-9151/complete-preparation-for-upgrade.html
+---
