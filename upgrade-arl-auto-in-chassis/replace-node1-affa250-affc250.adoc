@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html
 keywords: aff, asa, fas, replace, node1, system, modules
 summary: "Replace the AFF A250 or AFF C250 node1 system modules when using ARL to upgrade controller models in the same chassis."
 ---
-= Replace the node1 AFF A250 or AFF C250 controller module
+= Replace node1 AFF A250 or AFF C250 controller module
 :hardbreaks:
 :nofooter:
 :icons: font

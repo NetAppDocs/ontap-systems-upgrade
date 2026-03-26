@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/replace-node1-affa220-affa200-affc190-fas
 keywords: aff, asa, fas, replace, node1, system, modules
 summary: "Replace the node1 the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 system modules when using ARL to upgrade controller models in the same chassis."
 ---
-= Replace the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
+= Replace node1 AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -39,7 +39,7 @@ image:drw_2240_x_opening_cam_latch.png[Opening the cam handle]
 
 . Turn the controller module over and place it on a flat, stable surface.
 
-== Step 2:Install the ASA A150, AFF A150, or FAS2820 controller module
+== Step 2: Install the ASA A150, AFF A150, or FAS2820 controller module
 Install, cable, and connect the ASA A150, AFF A150, or FAS2820 controller module in node1.
 
 .Steps
