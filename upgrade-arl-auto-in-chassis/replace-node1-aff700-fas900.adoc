@@ -151,7 +151,7 @@ saveenv
 ----
 
 .What's next?
-After replacing the AFF A700 or FAS9000 controller and NVRAM modules, link:netboot-node1.html[netboot node1].
+After installing the ASA A900, AFF A900, or FAS9500 controller and NVRAM modules, link:netboot-node1.html[netboot node1].
 
 // 2025 JUN 19, AFFFASDOC-334
 // 2023 AUG 29, AFFFASDOC-78

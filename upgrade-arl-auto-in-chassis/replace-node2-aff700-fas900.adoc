@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-in-chassis/replace-node2-aff700-fas900.html
 keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement
-summary: "Install the replacement system modules on node2 during an ARL upgrade of controller models in the same chassis."
+summary: "Replace the node2 AFF A700 or FAS9000 controller and NVRAM modules during an ARL upgrade of controller models in the same chassis."
 ---
 = Replace node2 AFF A700 or FAS9000 controller and NVRAM modules
 :hardbreaks:
@@ -128,7 +128,8 @@ saveenv
 ----
 
 .What's next?
-After installing the ASA A900, AFF A900, or FAS9500 NVRAM and controller modules on node2, link:netboot-node2.html[netboot node2].
+After installing the ASA A900, AFF A900, or FAS9500 NVRAM and controller modules, link:netboot-node2.html[netboot node2].
+
 // 2023 MAY 29, AFFFASDOC-39
 // 2023-MAR-3, ontap-systems-upgrade/issues/78
 // 2022-OCT-24, BURT 1506458 

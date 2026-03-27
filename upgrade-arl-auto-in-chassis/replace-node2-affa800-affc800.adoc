@@ -137,4 +137,4 @@ image:drw_a800_drive_seated_IEOPS-960.png[Push drive to firmly seat against the 
 . Go to the rear of the chassis.
 
 .What's next?
-After installing the AFF A90 or AFF A70 module in node2, link:netboot-node2.html[netboot node2].
+After installing the AFF A90 or AFF A70 module, link:netboot-node2.html[netboot node2].

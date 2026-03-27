@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-in-chassis/replace-node2-affa250-affc250.html
 keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement
-summary: "Install the replacement system modules on node2 during an ARL upgrade of controller models in the same chassis."
+summary: "Replace the node2 AFF A250 or AFF C250 controller module during an ARL upgrade of controller models in the same chassis."
 ---
 = Replace node2 AFF A250 or AFF C250 controller module
 :hardbreaks:
@@ -93,4 +93,4 @@ saveenv
 . For two-node switchless configurations, verify that you have an X60132A, 4-port 10/25 GbE card in slot1 on node2. The X60132A card is required for cluster interconnect during the upgrade.
 
 .What's next?
-After installing the AFF A30, AFF A50, AFF C30, or AFF C60 module in node2, link:netboot-node2.html[netboot node2].
+After installing the AFF A30, AFF A50, AFF C30, or AFF C60 module, link:netboot-node2.html[netboot node2].

@@ -50,7 +50,7 @@ Aggregate ownership at the end of Stage 4:
 *	Upgraded node1 is the home owner and current owner of aggregates that originally belonged to node1
 *	Upgraded node1 is the current owner of node2 aggregates
 
-| link:install-aff-a30-a50-c30-c50-node2.html[Stage 5: Install the replacement system modules on node2]
+| link:install-aff-a30-a50-c30-c50-node2.html[Stage 5: Install the node2 replacement system modules]
 a| During Stage 5, you install the new system modules that you received for the upgraded node2 and then netboot node2.
 
 Aggregate ownership at the end of Stage 5:

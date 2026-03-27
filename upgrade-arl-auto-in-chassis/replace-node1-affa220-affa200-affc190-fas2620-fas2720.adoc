@@ -72,7 +72,7 @@ saveenv
 ----
 
 .What's next?
-After replacing the AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module, link:netboot-node1.html[netboot node1].
+After installing the ASA A150, AFF A150, or FAS2820 controller module, link:netboot-node1.html[netboot node1].
 
 // 2025 JUN 19, AFFFASDOC-334
 // 2023 AUG 29, AFFFASDOC-78

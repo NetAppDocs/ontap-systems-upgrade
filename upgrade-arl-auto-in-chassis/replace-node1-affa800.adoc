@@ -134,7 +134,7 @@ saveenv
 ----
 
 .What's next?
-After replacing the node1 AFF A800 or AFF C800 controller module, link:netboot-node1.html[netboot node1].
+After installing the AFF A90, AFF A70, or AFF C80 controller module, link:netboot-node1.html[netboot node1].
 
 // 2026 FEB 9, AFFFASDOC-420 and AFFFASDOC-385
 // 2025 JUN 19, AFFFASDOC-334
