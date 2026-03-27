@@ -29,5 +29,5 @@ After retiring node2, choose one of the following controller replacement procedu
 * link:replace-node2-affa250-affc250.html[Replace the node2 AFF A250 or AFF C250 controller module]
 * link:replace-node2-affa800-affc800.html[Replace the node2 AFF A800 or AFF C800 controller module]
 * link:replace-node2-affa220-affa200-affc190-fas2620-fas2720.html[Replace the node2 AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720 controller module]
-* link:replace-node2-aff700-fas900.html.html[Replace the node2 AFF A700 or FAS9000 controller and NVRAM modules]
+* link:replace-node2-aff700-fas900.html[Replace the node2 AFF A700 or FAS9000 controller and NVRAM modules]
 // 2025 Aug 09, AFFFASDOC-378
