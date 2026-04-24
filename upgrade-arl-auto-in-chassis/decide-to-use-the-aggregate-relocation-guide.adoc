@@ -57,8 +57,8 @@ CAUTION: This procedure strictly applies to the following upgrade configurations
 |AFF A30 ^1^
 |AFF A50
 |9.18.1 and later
-|AFF A20 ^1^
-|AFF A30, AFF A50
+|AFF A20 ^1^ 
+|AFF A30 ^3^, AFF A50
 |9.18.1 and later
 |AFF C30 ^1^
 |AFF C60
@@ -119,6 +119,14 @@ NetApp strongly recommends, when possible, that you have the same ONTAP version 
 
 The minimum ONTAP versions in the preceding table are mandatory. These ONTAP versions have the Service Processor or baseboard management controller (BMC) firmware version that is required to support mixing controller types within a chassis during an upgrade. 
 ====
+
+^3^ There are certain port connection requirements for an AFF A20 to AFF A30 upgrade in a two-node switchless cluster configuration:
+
+* The AFF A20 supports X60132A (4-port 10/25GbE CX7) and X60131A (2-port 10/25GbE CX6-LX) for cluster interconnect.
+* The AFF A30 supports only X60130A (2-port 100GbE CX6-DX) for cluster interconnect.
+* Use a temporary 10/25GbE card to temporarily connect from the AFF A20 to the AFF A30. A 4-port or 2-port 10/25GbE card supports clustering on the AFF A20. It is recommended to use the same card in the AFF A20 and AFF A30. If you don't have a new card, you can use the card from the AFF A20 as a temporary cluster interconnect.
+* When AFF A30 node3 comes online, it puts the HA IC ports on 100GbE and tries to place the cluster LIFS on 10/25GbE ports. ONTAP detects these ports as connected to the AFF A20. If ONTAP does not detect these ports automatically, you can manually modify the temporary cluster ports. Then, if required, you can move the cluster LIFs to the temporary cluster ports.
+* After you upgrade AFF A20 node1 and AFF A20 node2 goes down in preparation for upgrade, you need to remove the connections from the temporary 10/25GbE cluster ports and use only the 100GbE shared cluster ports. When AFF A30 node3 and node4 are connected over 100GbE ports, the connections come up and you can complete the upgrade. 
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
