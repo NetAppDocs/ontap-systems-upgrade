@@ -30,6 +30,6 @@ cluster::> network port broadcast-domain add-ports -ipspace Default -broadcast-d
 include::../_include/ru_man_move_nas_lifs_node1_from_node2_node3_verify_san_lifs_chunk_b.adoc[]
 
 .What's next?
-After moving NAS data LIFs owned by node1 from node2 to node3 and verifying SAN LIFs on node3, link:worksheet_information_before_moving_san_lifs_node3.html[record record the `adapter` and `switch-port` information for each LIF].
+After moving NAS data LIFs owned by node1 from node2 to node3 and verifying SAN LIFs on node3, link:worksheet_information_before_moving_san_lifs_node3.html[record the `adapter` and `switch-port` information for each LIF].
 // Clean-up, 2022-03-09
 // 2022-05-17, BURT 1476241

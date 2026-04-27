@@ -62,57 +62,57 @@ entries:
       url: /upgrade-arl-auto-in-chassis/retire-node2.html
 - title: "Stage 5. Install the node2 replacement system modules"
   entries:
-   - title: Replace the node2 system modules
-     entries:
-      - title: Replace AFF A250 or AFF C250
-        url: /upgrade-arl-auto-in-chassis/replace-node2-affa250-affc250.html
-      - title: Replace AFF A800 or AFF C800
-        url: /upgrade-arl-auto-in-chassis/replace-node2-affa800-affc800.html
-      - title: Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
-        url: /upgrade-arl-auto-in-chassis/replace-node2-affa220-affa200-affc190-fas2620-fas2720.html
-      - title: Replace AFF A700 or FAS9000
-        url: /upgrade-arl-auto-in-chassis/replace-node2-aff700-fas900.html
-   - title: Netboot node2
-     url: /upgrade-arl-auto-in-chassis/netboot-node2.html
+    - title: Replace the node2 system modules
+      entries:
+        - title: Replace AFF A250 or AFF C250
+          url: /upgrade-arl-auto-in-chassis/replace-node2-affa250-affc250.html
+        - title: Replace AFF A800 or AFF C800
+          url: /upgrade-arl-auto-in-chassis/replace-node2-affa800-affc800.html
+        - title: Replace AFF A220, AFF A200, AFF C190, FAS2620, or FAS2720
+          url: /upgrade-arl-auto-in-chassis/replace-node2-affa220-affa200-affc190-fas2620-fas2720.html
+        - title: Replace AFF A700 or FAS9000
+          url: /upgrade-arl-auto-in-chassis/replace-node2-aff700-fas900.html
+    - title: Netboot node2
+      url: /upgrade-arl-auto-in-chassis/netboot-node2.html
 - title: "Stage 6. Boot node2 with the replacement system modules"
   entries:
-   - title: Cable node2 for shared cluster-HA storage
-     url: /upgrade-arl-auto-in-chassis/cable-node2-for-shared-cluster-HA-storage.html 
-   - title: Boot node2 with the replacement system modules
-     url: /upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html
-   - title: Verify the node2 installation
-     url: /upgrade-arl-auto-in-chassis/verify-node2-installation.html
-   - title: Restore key-manager configuration on node2
-     url: /upgrade-arl-auto-in-chassis/restore-key-manager-config-node2.html
-   - title: Verify the RCF configuration on cluster switches
-     url: /upgrade-arl-auto-in-chassis/verify-rcf-configuration.html  
-   - title: Move non-root aggregates and NAS data LIFs back to node2
-     url: /upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html
+    - title: Cable node2 for shared cluster-HA storage
+      url: /upgrade-arl-auto-in-chassis/cable-node2-for-shared-cluster-HA-storage.html 
+    - title: Boot node2 with the replacement system modules
+      url: /upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html
+    - title: Verify the node2 installation
+      url: /upgrade-arl-auto-in-chassis/verify-node2-installation.html
+    - title: Restore key-manager configuration on node2
+      url: /upgrade-arl-auto-in-chassis/restore-key-manager-config-node2.html
+    - title: Verify the RCF configuration on cluster switches
+      url: /upgrade-arl-auto-in-chassis/verify-rcf-configuration.html  
+    - title: Move non-root aggregates and NAS data LIFs back to node2
+      url: /upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html
 - title: "Stage 7. Complete the upgrade"
   entries:
-  - title: Manage authentication using KMIP servers
-    url: /upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html
-  # 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
-  - title: Confirm that the new controllers are set up correctly
-    url: /upgrade-arl-auto-in-chassis/confirm-new-controllers-are-set-up-correctly.html
-  - title: Set up Storage Encryption on the new controller module
-    url: /upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html
-  - title: Set up NetApp Volume or Aggregate Encryption on the new controller module
-    url: /upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html
-  - title: Decommission the old system
-    url: /upgrade-arl-auto-in-chassis/decommission-old-system.html
-  - title: Resume SnapMirror operations
-    url: /upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html
+    - title: Manage authentication using KMIP servers
+      url: /upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html
+      # 2023 APR 17, ontap-systems-upgrade-issue-64/BURT 1519747
+    - title: Confirm that the new controllers are set up correctly
+      url: /upgrade-arl-auto-in-chassis/confirm-new-controllers-are-set-up-correctly.html
+    - title: Set up Storage Encryption on the new controller module
+      url: /upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html
+    - title: Set up NetApp Volume or Aggregate Encryption on the new controller module
+      url: /upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html
+    - title: Decommission the old system
+      url: /upgrade-arl-auto-in-chassis/decommission-old-system.html
+    - title: Resume SnapMirror operations
+      url: /upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html
 - title: "Troubleshoot"
   pdf-filename: "Troubleshoot (upgrade to AFF A900 or FAS9500)"
   entries:
-  - title: Aggregate relocation failures
-    url: /upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html
-  - title: Reboots, panics, or power cycles
-    url: /upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html
-  - title: Issues that can arise in multiple stages of the procedure
-    url: /upgrade-arl-auto-in-chassis/issues-in-multiple-stages-of-procedure.html
-  - title: LIF migration failure
-    url: /upgrade-arl-auto-in-chassis/lif-migration-failure.html
+    - title: Aggregate relocation failures
+      url: /upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html
+    - title: Reboots, panics, or power cycles
+      url: /upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html
+    - title: Issues that can arise in multiple stages of the procedure
+      url: /upgrade-arl-auto-in-chassis/issues-in-multiple-stages-of-procedure.html
+    - title: LIF migration failure
+      url: /upgrade-arl-auto-in-chassis/lif-migration-failure.html
 - title: References
   url: /upgrade-arl-auto-in-chassis/other-references.html
