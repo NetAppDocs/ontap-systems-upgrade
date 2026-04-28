@@ -41,7 +41,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 Do you want to continue? {y|n}: y
 ....
 
-. Select `y`, you will see the following output:
+. Select `y`, you see the following output:
 +
 ....
 Controller replacement operation: Prechecks in progress.

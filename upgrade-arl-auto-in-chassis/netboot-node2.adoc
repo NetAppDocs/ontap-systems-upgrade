@@ -111,7 +111,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
 . Clear any previous configuration on the boot media.
-.. At the following prompt, run the `wipeconfig` command, and press the enter key:
+.. At the following prompt, run the `wipeconfig` command. Then select Enter:
 +
 ----
 Please choose one of the following:
