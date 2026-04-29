@@ -14,3 +14,6 @@ summary: "Gather certain information during a manual ARL upgrade on controllers 
 
 [.lead]
 include::../_include/ru_man_worksheet.adoc[]
+
+.What's next?
+After recording the original node information, link:determine_aggregates_on_internal_drives.html[determine whether the controller has aggregates on internal disk drives].

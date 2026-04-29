@@ -89,6 +89,9 @@ The following table shows the supported controller upgrade combinations using AR
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+.What's next?
+After deciding to use this ARL procedure, link:required_tools_and_documentation.html[learn about the required tools and documentation].
+
 // 2025 OCT 22, AFFFASDOC-405
 // 2025 APR 15, ontap-systems-upgrade/issue-125
 // 2025 MAR 18, AFFFASDOC-287

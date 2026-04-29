@@ -18,7 +18,7 @@ If the version of ONTAP running on the new nodes is different to the version on 
 You can also use the USB boot option to perform a netboot. See the Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system[How to use the boot_recovery LOADER command for installing ONTAP for initial setup of a system^].
 
 .Steps
-. Turn on the power to node3, and then immediately press Ctrl-C at the console terminal to access the LOADER prompt.
+. Turn on the power to node3, and then immediately enter Ctrl-C at the console terminal to access the LOADER prompt.
 +
 If node3 and node4 are in the same chassis, go to Step 2. If not, go to Step 3.
 . If node3 and node4 are in a single-chassis configuration (with controllers in the same chassis):
@@ -69,7 +69,7 @@ Disregard the following message: `"This procedure is not supported for NonDisru
 +
 `/http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz`
 +
-Enter username/password if applicable, or press Enter to continue.
+Enter username/password if applicable, or select Enter to continue.
 . Enter `n` to skip the backup recovery when you see a prompt similar to the following:
 +
 ----

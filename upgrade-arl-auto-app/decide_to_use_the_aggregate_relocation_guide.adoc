@@ -110,6 +110,9 @@ For the upgrade combinations shown in the preceding table:
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+.What's next?
+After deciding whether to use this ARL procedure, learn about the link:required_tools_and_documentation.html[required tools and documentation].
+
 // 2023 MAY 22, BURT 1542232
 // BURT 1514374 17-Nov-2022
 // BURT 1501196 17-Nov-2022

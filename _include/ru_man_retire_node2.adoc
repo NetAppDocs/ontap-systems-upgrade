@@ -85,7 +85,9 @@ The value of this command must match the physical state of the system.
 . Halt node2 by entering the following command on either controller:
 `system node halt -node _node2_`
 
-. After node2 shuts down completely, remove it from the chassis or the rack. You can decommission node2 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].
+. After node2 shuts down completely, remove it from the chassis or the rack. 
+
+. Optionally, decommission node2 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].
 // 02 Mar 2021:  Formatted from CMS
 // Clean-up, 2022-03-09
 // 1476241, 2022-05-13

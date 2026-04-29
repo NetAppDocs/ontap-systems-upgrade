@@ -14,3 +14,6 @@ summary: "Record node1 NAS data LIF configuration information during a manual AR
 
 [.lead]
 include::../_include/ru_man_worksheet_move_san_lifs_node3.adoc[]
+
+.What's next?
+After recording the `adapter` and `switch-port` information for each LIF, link:relocate_non_root_aggr_node2_node3.html[relocate non-root aggregates from node2 to node3].

@@ -141,7 +141,7 @@ If either node is in partial giveback, use the `storage failover giveback` comma
 +
 `storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
 +
-If neither node1 nor node2 owns aggregates for which it is the current owner (but not the home owner), the system will return a message similar to the following example:
+If neither node1 nor node2 owns aggregates for which it is the current owner (but not the home owner), the system returns a message similar to the following example:
 +
 ....
 cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,homename,state

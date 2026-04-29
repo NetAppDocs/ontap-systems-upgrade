@@ -14,3 +14,6 @@ summary: "Relocate node2’s non-root aggregates from node3 to node4 during a ma
 
 [.lead]
 include::../_include/ru_man_relocate_node2_non_root_aggr_node3_node4.adoc[]
+
+.What's next?
+After relocating node2's non-root aggregates from node3 to node4, link:manage_authentication_kmip.html[manage authentication using KMIP servers].

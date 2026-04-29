@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-app/automate_the_controller_upgrade_process.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-app/index.html
+---

@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-in-chassis/complete-preparation-for-upgrade.html
+keywords: storage, encryption, authentication, key, manager, external
+summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships when using ARL to upgrade controller models in the same chassis."
+---
+= Complete the preparation for upgrade
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Learn about ONTAP licensing and managing Storage Encryption using the Onboard Key Manager (OKM). Optionally, quiesce the SnapMirror relationships.
+
+== Learn about ONTAP licensing
+
+Each node in the cluster must have its own NetApp License File (NLF). 
+
+If you do not have an NLF, currently licensed features in the cluster are available to the new controller. However, using unlicensed features on the controller might put you out of compliance with your license agreement, so you should install the NLF for the new controller after the upgrade is complete.
+
+Refer to link:other-references.html[References] to link to the _NetApp Support Site_ where you can obtain your NLF. The NLFs are available in the _My Support_ section under _Software licenses_. If the site does not have the NLFs that you need, contact your NetApp sales representative.
+
+For detailed information about ONTAP licensing, refer to link:other-references.html[References] to link to the _System Administration Reference_.
+
+[[manage-storage-encryption-using-okm]]
+
+include::../_include/ru_auto_manage_storage_encryption_okm.adoc[]
+
+include::../_include/ru_auto_quiesce_snapmirror_relationships.adoc[]
+
+.What's next?
+After preparing for upgrade, link:relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html[relocate non-root aggregates and NAS data LIFs owned by node1 to node2].

@@ -20,3 +20,6 @@ summary: "Disable the HA pair with node2 and shut down node1 when upgrading cont
 
 [.lead]
 include::../_include/ru_auto_retire_node1.adoc[]
+
+.What's next?
+After retiring node1, link:prepare_for_netboot.html[prepare for netboot].

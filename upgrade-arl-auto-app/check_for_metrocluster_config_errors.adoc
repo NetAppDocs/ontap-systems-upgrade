@@ -20,3 +20,6 @@ summary: "Use the Config Advisor tool to check for common configuration errors w
 
 [.lead]
 include::../_include/ru_all_check_metrocluster_configuration_errors.adoc[]
+
+.What's next?
+After checking for MetroCluster configuration errors, link:verify_switchover_healing_switchback.html[verify switchover, healing, and switchback].
