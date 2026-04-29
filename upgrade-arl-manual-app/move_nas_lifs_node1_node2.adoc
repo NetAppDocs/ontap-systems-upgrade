@@ -103,6 +103,9 @@ NOTE: For MetroCluster configurations, you might not be able to change the broad
 .	[[step11]]Enter the following command and examine its output to verify that there are no data LIFs remaining on node1:
 +
 `network interface show -curr-node _node1_ -role data`
+
+.What's next?
+After moving NAS data LIFs owned by node1 to node2, link:record_node1_information.html[record node1 information].
 // 5 MAR 2021:  formatted from CMS
 // Clean-up, 2022-03-09
 // 2022-05-17, BURT 1476241

@@ -14,3 +14,6 @@ summary: "Prepare to netboot node3 and node4 during a manual ARL upgrade on cont
 
 [.lead]
 include::../_include/ru_man_prepare_for_netboot.adoc[]
+
+.What's next?
+After preparing for netboot, link:relocate_non_root_aggr_node1_node2.html[relocate non-root aggregates from node1 to node2].

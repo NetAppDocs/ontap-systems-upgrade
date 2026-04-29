@@ -53,7 +53,7 @@ Convert node1 to a drive shelf and connect to node3 before reassigning drives fr
 [role="quick-margin-para"]
 After converting node1 to a drive shelf and connecting to node3, reassign the drives that previously belonged to node1 to node3.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]xref:migrate-node4-lIfs-aggregates.adoc[Migrate LIFs and data aggregates on node4 to node3]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven]xref:migrate-node4-lifs-aggregates.adoc[Migrate LIFs and data aggregates on node4 to node3]
 [role="quick-margin-para"]
 To complete the upgrade, connect node3 to node4 and migrate the data LIFs and data aggregates on node4 to node3.
 

@@ -33,9 +33,9 @@ If your system is not listed above, see the https://hwu.netapp.com[NetApp Hardwa
 . At the LOADER prompt of the node, enter the command:
 +
 `boot_ontap menu`
-. At the boot menu prompt, enter `9a` and then press Enter.
+. At the boot menu prompt, enter `9a` and then select Enter.
 +
-The following screen shows the boot menu prompt.
+You see the following output:
 +
 ----
 Please choose one of the following:

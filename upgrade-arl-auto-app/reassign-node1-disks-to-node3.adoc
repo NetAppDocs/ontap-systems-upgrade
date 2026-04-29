@@ -260,6 +260,9 @@ The following shows an example of the command output:
  -----------------------------------------------------------------
 ----
 
+.What's next?
+After reassigning node1 disks to node3, link:verify_node3_installation.html[verify the node3 installation].
+
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312
 // 2025 MAR 5, AFFFASDOC-297

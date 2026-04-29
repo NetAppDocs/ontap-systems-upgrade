@@ -17,7 +17,7 @@ After you install and boot node3, you must verify that it is installed correctly
 
 .About this task
 
-At this point in the procedure, the operation will have paused as node3 joins quorum.
+At this point in the procedure, the operation pauses as node3 joins quorum.
 
 .Steps
 
@@ -65,7 +65,7 @@ For more information on creating and re-creating VLANs, interface groups, and br
 
 == Restore key-manager configuration on node3
 
-If you are using NetApp Aggregate Encryption (NAE) or NetApp Volume Encryption (NVE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. If you do not restore key-manager, when you relocate the node1 aggregates from node2 to node3 by using ARL, encrypted volumes will be taken offline.
+If you are using NetApp Aggregate Encryption (NAE) or NetApp Volume Encryption (NVE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. If you do not restore key-manager, when you relocate the node1 aggregates from node2 to node3 by using ARL, encrypted volumes are taken offline.
 
 include::../_include/ru_auto_restore_key_manager_config_ontap_95_97.adoc[]
 

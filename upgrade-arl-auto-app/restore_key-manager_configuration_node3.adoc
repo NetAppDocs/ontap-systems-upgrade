@@ -24,4 +24,7 @@ If you are using NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption 
 // 20 June 2022, GitHub issue #30
 include::../_include/ru_auto_restore_key_manager_config_ontap_98.adoc[]
 
+.What's next?
+After restoring the key-manager configuration on node3, link:move_non-root_aggr_and_nas_data_lifs_node1_from_node2_to_node3.html[move non-root aggregates and NAS data LIFs owned by node1 from node2 to node3].
+
 // 12 Jan 2023, ontap-systems-upgrade-issues 13, 35 and 36

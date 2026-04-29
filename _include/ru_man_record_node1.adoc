@@ -98,7 +98,7 @@ The system displays the physical ports on the node as shown in the following exa
 
 .	Record the ports and their broadcast domains.
 +
-The broadcast domains will need to be mapped to the new ports on the new controller later in the procedure.
+The broadcast domains need to be mapped to the new ports on the new controller later in the procedure.
 
 .	Enter the following command on node1:
 +

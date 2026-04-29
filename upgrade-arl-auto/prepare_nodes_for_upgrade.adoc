@@ -25,7 +25,7 @@ NOTE: You can only execute this command at the advanced privilege level:
 `set -privilege advanced`
 
 +
-You will see the following output:
+You see the following output:
 +
 ....
 Warning:
@@ -41,7 +41,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 Do you want to continue? {y|n}: y
 ....
 +
-. Press `y`, you will see the following output:
+. Select `y`, you see the following output:
 +
 ....
 Controller replacement operation: Prechecks in progress.

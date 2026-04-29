@@ -13,3 +13,6 @@ summary: "Confirm that internal disk drives do not contain root or data aggregat
 
 [.lead]
 include::../_include/ru_man_determine_aggregates.adoc[]
+
+.What's next?
+After determining whether the controller has aggregates on internal disk drives, link:prepare_nodes_for_upgrade.html[prepare the nodes for upgrade].

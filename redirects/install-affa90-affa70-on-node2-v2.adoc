@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-in-chassis/install-affa90-affa70-on-node2.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/replace-node2-affa800-affc800.html
+---

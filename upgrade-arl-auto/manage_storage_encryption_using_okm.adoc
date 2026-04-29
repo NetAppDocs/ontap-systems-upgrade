@@ -4,8 +4,7 @@ permalink: upgrade-arl-auto/manage_storage_encryption_using_okm.html
 keywords: IP address, external, key management, server, storage encryption, kmip, onboard key management
 summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships when upgrading controllers running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
-
-=  Manage storage encryption using the Onboard Key Manager
+= Complete the preparation for upgrade
 :hardbreaks:
 :nofooter:
 :icons: font
