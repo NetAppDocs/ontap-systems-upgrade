@@ -15,4 +15,7 @@ summary: "Let NetApp know that the old system is no longer in operation after co
 [.lead]
 
 include::../_include/ru_man_decommission_old_system.adoc[]
+
+.What's next?
+After decommissioning the old system, link:resume_snapmirror_ops.html[resume SnapMirror operations].
 // 02 MAR 2021:  formmatted from CMS

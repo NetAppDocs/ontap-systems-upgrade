@@ -24,3 +24,6 @@ If node4 does not have onboard FC ports, onboard UTA/UTA2 ports, or a UTA/UTA2 c
 include::../_include/ru_man_config_fc_ports_node4.adoc[]
 
 include::../_include/ru_man_check_config_UTAUTA2_ports_node4.adoc[]
+
+.What's next?
+After setting the FC or UTA/UTA2 configuration on node4, link:map_ports_node2_node4.html[map ports from node2 to node4].

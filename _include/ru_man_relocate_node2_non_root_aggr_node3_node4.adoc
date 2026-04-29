@@ -27,7 +27,7 @@ Relocation occurs in the background. It could take anywhere from a few seconds t
 +
 `storage aggregate relocation show -node _node3_`
 +
-The output will display `Done` for an aggregate after it has been relocated.
+The output displays `Done` for an aggregate after it has been relocated.
 +
 NOTE: Wait until all the node2 aggregates have been relocated to node4 before proceeding to the next step.
 

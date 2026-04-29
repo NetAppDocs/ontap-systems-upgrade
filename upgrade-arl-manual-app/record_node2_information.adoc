@@ -14,4 +14,7 @@ summary: "Record information about node2 cluster network, management, FC ports, 
 
 [.lead]
 include::../_include/ru_man_record_node2.adoc[]
+
+.What's next?
+After recording node2 information, link:retire_node2.html[retire node2].
 // 02 MAR 2021: Formatted from CMS

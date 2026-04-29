@@ -37,4 +37,15 @@ This upgrade procedure primarily applies to upgrade scenarios where the controll
 // 2021-11-02, BURT 1438029
 * If you are upgrading from an AFF A320 system, you can use volume moves to upgrade controller hardware or contact technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
 
-// Clean-up, 2022-03-09
+
+.Automate the controller upgrade process
+
+During a controller upgrade, the controller is replaced with another controller running a newer or more powerful platform. Earlier versions of this content contained instructions for a nondisruptive controller update process that was comprised of entirely manual steps. This content provides the steps for the new automated procedure which utilizes automatic network port reachability checks to further simplify the controller upgrade experience.
+
+The manual process was lengthy and complex but in this simplified procedure you can implement a controller update using aggregate relocation, enabling more efficient nondisruptive upgrades for HA pairs. There are significantly fewer manual steps, especially around validation, collection of information, and post checks.
+
+.What's next?
+After learning about this ARL procedure, link:decide_to_use_the_aggregate_relocation_guide.html[decide whether to use this ARL procedure].
+
+
+

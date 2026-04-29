@@ -105,7 +105,16 @@ NetApp strongly recommends, when possible, that you have the same ONTAP version 
 The minimum ONTAP versions in the preceding table are mandatory. These ONTAP versions have the Service Processor or baseboard management controller (BMC) firmware version that is required to support mixing controller types within a chassis during an upgrade. 
 ====
 
-include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
+== Choose a different hardware upgrade procedure
+
+* link:../upgrade-arl/index.html[Review the alternative ARL methods available for upgrading controller hardware]. 
+* If you prefer a different method of upgrading the controller hardware and are willing to do volume moves, refer to link:other-references.html[References] to link to _Upgrade by moving volumes or storage_.
+
+.Related information
+Refer to link:other-references.html[References] to link to the _ONTAP 9 Documentation_.
+
+.What's next?
+After deciding to use this ARL procedure, link:required-tools-and-documentation.html[learn about the required tools and documentation].
 
 // 2025 FEB 25, AFFFASDOC-284
 // 2024 DEC 9, AFFFASDOC-33

@@ -119,6 +119,9 @@ You can compare the output with the output that you captured in the section link
 Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Command reference_ for detailed information about the system `service-processor network modify` command.
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]
 
+.What's next?
+After confirming that the new controllers are set up correctly, link:set_up_storage_encryption_new_module.html[set up Storage Encryption on the new controller module].
+
 // 2023 Feb 22, BURT 1518041
 // 2022 DEC 1, ontap-systems-upgrade-37
 // 2022 MAY 13, BURT 1476241

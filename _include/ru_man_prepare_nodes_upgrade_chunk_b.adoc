@@ -61,7 +61,7 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 +
 `network port vlan show -node _node_name_`
 +
-VLANs are configured over physical ports. If the physical ports change, then the VLANs will need to be re-created later in the procedure.
+VLANs are configured over physical ports. If the physical ports change, then the VLANs need to be re-created later in the procedure.
 +
 The system displays VLANs configured on the node, as shown in the following example:
 +
@@ -92,7 +92,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 +
 `network interface show -vserver _vserver_name_ -data-protocol iscsi|fcp`
 +
-If neither iSCSI nor FC is configured for the SVM, the command will display a message similar to the following example:
+If neither iSCSI nor FC is configured for the SVM, the command displays a message similar to the following example:
 +
 ....
 cluster::> network interface show -vserver Vserver8970 -data-protocol iscsi|fcp
@@ -101,7 +101,7 @@ There are no entries matching your query.
 +
 You can confirm that the node is in a NAS environment by using the `network interface show` command with the `-data-protocol nfs|cifs` parameters.
 +
-If either iSCSI or FC is configured for the SVM, the command will display a message similar to the following example:
+If either iSCSI or FC is configured for the SVM, the command displays a message similar to the following example:
 +
 ....
 cluster::> network interface show -vserver vs1 -data-protocol iscsi|fcp

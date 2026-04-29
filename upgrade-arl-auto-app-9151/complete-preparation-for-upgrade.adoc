@@ -1,0 +1,32 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-auto-app-9151/complete-preparation-for-upgrade.html
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication
+summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships when upgrading controllers running ONTAP 9.15.1 or later by using `system controller replace` command."
+---
+= Complete the preparation for upgrade
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Learn about ONTAP licensing and managing Storage Encryption using the Onboard Key Manager (OKM). Optionally, quiesce the SnapMirror relationships.
+
+== Learn about ONTAP licensing
+
+For detailed information about ONTAP licensing, refer to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[License management^].
+
+NOTE: Using unlicensed features on the controller might put you out of compliance with your license agreement.
+
+[[manage_storage_encryption_using_okm]]
+
+include::../_include/ru_auto_manage_storage_encryption_okm.adoc[]
+
+include::../_include/ru_auto_quiesce_snapmirror_relationships.adoc[]
+
+.What's next?
+After preparing for upgrade, link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html[relocate non-root aggregates and NAS data LIFs owned by node1 to node2].
+
+// BURT-1476241 2022-August-12

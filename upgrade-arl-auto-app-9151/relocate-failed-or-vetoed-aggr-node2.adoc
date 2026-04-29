@@ -14,4 +14,7 @@ summary: "Manually relocate failed or vetoed aggregates to node2 when upgrading 
 [.lead]
 include::../_include/ru_auto_relocate_failed_vetoed_aggregates.adoc[]
 
+.What's next?
+After relocating failed or vetoed aggregates to node2, link:retire_node1.html[retire node1].
+
 // 2025 SEP 15, AFFFASDOC-388

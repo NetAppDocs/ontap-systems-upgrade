@@ -50,7 +50,7 @@ Aggregate ownership at the end of Stage 4:
 *	Upgraded node1 is the home owner and current owner of aggregates that originally belonged to node1
 *	Upgraded node1 is the current owner of node2 aggregates
 
-| link:install-aff-a30-a50-c30-c50-node2.html[Stage 5: Install the replacement system modules on node2]
+| link:install-aff-a30-a50-c30-c50-node2.html[Stage 5: Install the node2 replacement system modules]
 a| During Stage 5, you install the new system modules that you received for the upgraded node2 and then netboot node2.
 
 Aggregate ownership at the end of Stage 5:
@@ -58,12 +58,15 @@ Aggregate ownership at the end of Stage 5:
 *	Upgraded node1 is the home owner and current owner of the aggregates that originally belonged to node1.
 *	Upgraded node2 is the home owner and current owner of aggregates that originally belonged to node2.
 
-| link:boot-node2-with-a900-controller-and-nvs.html[Stage 6: Boot node2 with the replacement system modules]
+| link:cable-node2-for-shared-cluster-HA-storage.html[Stage 6: Boot node2 with the replacement system modules]
 
 a| During Stage 6, you boot node2 with upgraded system modules and verify the upgraded node2 installation. If you are using NVE, you restore key-manager configuration. For switch-attached cluster upgrades, you need to validate that the cluster switch reference configuration file (RCF) supports the shared cluster/HA ports. You also relocate node1 non-root aggregates and NAS data LIFs from node1 to the upgraded node2 and verify that the SAN LIFs exist on node2.
 
 | link:manage-authentication-using-kmip-servers.html[Stage 7: Complete the upgrade]
 a| During Stage 7, you confirm that the new nodes are set up correctly and, if the new nodes are encryption-enabled, you configure and set up Storage Encryption or NVE. You should also decommission the old nodes and resume the SnapMirror operations.
 |===
+
+.What's next?
+After learning about the ARL upgrade sequence, link:verify-upgrade-hardware.html[verify the upgrade hardware].
 
 //BURT 1452254, 2022-04-26
