@@ -18,8 +18,8 @@ entries:
     entries:
       - title: "Prepare the nodes for upgrade"
         url: /upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html
-      - title: "Manage storage encryption using the Onboard Key Manager"
-        url: /upgrade-arl-auto-app-9151/manage_storage_encryption_using_okm.html
+      - title: "Complete the preparation for upgrade"
+        url: /upgrade-arl-auto-app-9151/complete-preparation-for-upgrade.html
   - title: "Stage 2. Relocate and retire node1"
     pdf-filename: "Stage 2. Relocate and retire node1 (upgrade with 'system controller replace' in ONTAP 9.15.1 or later)"
     entries:

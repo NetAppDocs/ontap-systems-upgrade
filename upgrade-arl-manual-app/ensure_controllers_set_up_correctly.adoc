@@ -15,5 +15,7 @@ summary: "Enable the HA pair, verify node3 and node4 storage access, and confirm
 [.lead]
 include::../_include/ru_man_ensure_controllers_set_up_correctly.adoc[]
 
+.What's next?
+After confirming that the new controllers are set up correctly, link:set_up_storage_encryption_new_controller.html[set up Storage Encryption on the new controller module].
 // 25 Feb 2021:  formatted from CMS
 // Clean-up, 2022-03-09

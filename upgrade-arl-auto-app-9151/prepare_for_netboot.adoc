@@ -36,3 +36,6 @@ Your directory listing should contain the following file:
 NOTE: You do not need to extract the contents of the `<ontap_version>_image.tgz` file.
 +
 You will use the information in the directories in link:install_boot_node3.html[Stage 3].
+
+.What's next?
+After preparing for netboot, link:install_boot_node3.html[install and boot node3].

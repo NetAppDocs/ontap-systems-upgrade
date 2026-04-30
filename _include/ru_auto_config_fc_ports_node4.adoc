@@ -1,4 +1,5 @@
-== Configure FC ports on node4
+[[configure-fc-ports-on-node4]]
+== Step 1: Configure FC ports on node4
 
 If node4 has FC ports, either onboard or on an add-on FC adapter, you must set port configurations on the node before you bring it into service because the ports are not preconfigured when the systems are shipped. If you don't configure the ports as required, you might experience a disruption in service.
 
@@ -8,7 +9,7 @@ You must have the values of the FC port settings from node2 that you saved in th
 
 .About this task
 
-You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 adapter, you configure them in <<Check and configure UTA/UTA2 ports on node4>>.
+You can skip this section if your system does not have FC configurations. If your system has onboard UTA/UTA2 ports or a UTA/UTA2 adapter, you configure them in <<check-config-uta-uta2-node4,Check and configure UTA/UTA2 ports on node4>>.
 
 IMPORTANT: Enter the commands in this section at the Maintenance mode shell prompt.
 

@@ -10,6 +10,4 @@ To retire node1, you resume the automated operation to disable the HA pair with 
 +
 `system controller replace show-details`
 
-.After you finish
-
-You can decommission node1 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].
+. Optionally, decommission node1 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].

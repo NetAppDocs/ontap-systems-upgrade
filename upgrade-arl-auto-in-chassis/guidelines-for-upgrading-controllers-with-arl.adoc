@@ -40,6 +40,9 @@ If any problems occur, refer to the link:aggregate-relocation-failures.html[Trou
 
 If you don't find a solution to the problem you encountered, contact technical support.
 
+.What's next?
+After reviewing the guidelines for upgrading controllers, link:overview-of-the-arl-upgrade.html[learn about the ARL upgrade sequence].
+
 // 2025 APR 22, AFFFASDOC-321
 // 2023 MAY 29, AFFFASDOC-39
 // 2023 MAY 22, BURT 1542232

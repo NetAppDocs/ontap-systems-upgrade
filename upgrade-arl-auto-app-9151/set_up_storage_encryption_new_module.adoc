@@ -13,3 +13,6 @@ summary: "If required, configure Storage Encryption, install SSL certificates, a
 
 [.lead]
 include::../_include/ru_auto_set_up_storage_encryption_new_module.adoc[]
+
+.What's next?
+After setting up Storage Encryption on the new controller module, link:set_up_netapp_volume_encryption_new_module.html[set up NetApp Volume or Aggregate Encryption on the new controller module].

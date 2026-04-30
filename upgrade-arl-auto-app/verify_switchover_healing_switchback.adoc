@@ -21,3 +21,6 @@ summary: "Verify the MetroCluster configuration switchover, healing, and switchb
 [.lead]
 
 include::../_include/ru_auto_verify_switchover_healing_switchback.adoc[]
+
+.What's next?
+After verifying switchover, healing, and switchback, link:overview_of_the_arl_upgrade.html[learn about the ARL upgrade sequence].

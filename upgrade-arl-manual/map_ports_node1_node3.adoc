@@ -14,9 +14,9 @@ summary: "Verify that the physical ports on node1 map correctly to node3 during 
 
 [.lead]
 include::../_include/ru_man_map_ports_node1_node3_intro.adoc[]
-You must make the original node's port and LIF configuration compatible with what you plan the new node's configuration to be. This is because the new node replays the same configuration when it boots, which means that when you boot node3, ONTAP will try to host LIFs on the same ports that were used on node1.
+You must make the original node's port and LIF configuration compatible with what you plan the new node's configuration to be. This is because the new node replays the same configuration when it boots, which means that when you boot node3, ONTAP tries to host LIFs on the same ports that were used on node1.
 
-Therefore, if the physical ports on node1 do not map directly to the physical ports on node3, then software configuration changes will be required to restore cluster, management, and network connectivity after the boot. In addition, if the cluster ports on node1 do not directly map to the cluster ports on node3, node3 might not automatically rejoin quorum when it is rebooted until a software configuration change is made to host the cluster LIFs on the correct physical ports.
+Therefore, if the physical ports on node1 do not map directly to the physical ports on node3, then software configuration changes are required to restore cluster, management, and network connectivity after the boot. In addition, if the cluster ports on node1 do not directly map to the cluster ports on node3, node3 might not automatically rejoin quorum when it is rebooted until a software configuration change is made to host the cluster LIFs on the correct physical ports.
 
 .Steps
 
@@ -42,7 +42,7 @@ Therefore, if the physical ports on node1 do not map directly to the physical po
 |Intercluster port | | | | | |
 |===
 +
-Refer to link:record_node1_information.html[Record node1 information] for the steps to obtains this information.
+Refer to link:record_node1_information.html[Record node1 information] for the steps to obtain this information.
 . [[step2]]Record all the cabling information for node3, the ports, broadcast domains, and IPspaces in the previous table using the same procedure in link:record_node1_information.html[Record node1 information].
 
 . [[step3]]Follow these steps to verify if the setup is a two-node switchless cluster:

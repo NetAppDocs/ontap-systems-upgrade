@@ -14,4 +14,7 @@ summary: "Disable the HA pair with node2 and shut node1 down correctly during a 
 
 [.lead]
 include::../_include/ru_man_retire_node1.adoc[]
+
+.What's next?
+After retiring node1, link:install_boot_node3.html[install and boot node3].
 // 19 FEB 2021: formatted from CMS

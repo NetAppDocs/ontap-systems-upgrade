@@ -26,7 +26,7 @@ include::../_include/ru_auto_config_fc_ports_node4.adoc[]
 [start=8]
 . [[step8]]Take one of the following actions:
 +
-* Go to <<Check and configure UTA/UTA2 ports on node4>> if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
+* Go to <<check-config-uta-uta2-node4,Check and configure UTA/UTA2 ports on node4>> if node4 has a UTA/UTA2 card or UTA/UTA2 onboard ports.
 
 * If node4 doesn't have a UTA/UTA2 card or UTA/UTA2 onboard ports, skip _Check and configure UTA/UTA2 ports on node4_ and go to link:reassign-node2-disks-to-node4.html[Reassign node2 disks to node4].
 

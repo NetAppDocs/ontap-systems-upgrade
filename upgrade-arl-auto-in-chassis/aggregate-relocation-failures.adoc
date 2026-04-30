@@ -32,7 +32,7 @@ Aggregates might fail to relocate correctly, that is, they have node2 as their h
 Some of the aggregates being relocated have node1 as their home node. For example, such an aggregate could be called aggr_node_1. If relocation of aggr_node_1 fails during Stage 3, and relocation cannot be forced, then the aggregate is left behind on node2.
 *	After Stage 4, when node2 is replaced with the new system modules.
 +
-When node2 is replaced, aggr_node_1 will come online with node1 as its home node instead of node2.
+When node2 is replaced, aggr_node_1 comes online with node1 as its home node instead of node2.
 
 You can fix the incorrect ownership problem after Stage 6, after you have enabled storage failover by completing the following steps:
 

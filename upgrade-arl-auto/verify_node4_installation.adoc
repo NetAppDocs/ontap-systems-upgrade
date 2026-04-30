@@ -18,7 +18,7 @@ summary: "Verify that node4 joins the quorum, re-create node1's VLANs, interface
 After you install and boot node4, you must verify that it is installed correctly, that it is part of the cluster, and that it can communicate with node3.
 
 .About this task
-At this point in the procedure, the operation will have paused as node4 joins quorum.
+At this point in the procedure, the operation pauses as node4 joins quorum.
 
 .Steps
 
@@ -37,7 +37,7 @@ If the configuration is different for node4, a system disruption might occur lat
 
 . Check that the replaced controller is configured correctly for MetroCluster configuration and not in switch-over mode.
 +
-CAUTION: At this stage MetroCluster configuration will not be in a normal state and you might have errors to resolve. See link:verify_health_of_metrocluster_config.html[Verify the health of the MetroCluster configuration].
+CAUTION: At this stage, the MetroCluster configuration is not in a normal state and you might have errors to resolve. See link:verify_health_of_metrocluster_config.html[Verify the health of the MetroCluster configuration].
 
 == Re-create VLANs, interface groups, and broadcast domains on node4
 
@@ -67,7 +67,7 @@ For more information on creating and re-creating VLANs, interface groups, and br
 
 == Restore key-manager configuration on node4
 
-If you are using NetApp Aggregate Encryption (NAE) or NetApp Volume Encryption (NVE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. If you do not restore key-manager, when you relocate the node2 aggregates from node3 to node4 by using ARL, encrypted volumes will be taken offline.
+If you are using NetApp Aggregate Encryption (NAE) or NetApp Volume Encryption (NVE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. If you do not restore key-manager, when you relocate the node2 aggregates from node3 to node4 by using ARL, encrypted volumes are taken offline.
 
 include::../_include/ru_auto_restore_key_manager_config_ontap_95_97.adoc[]
 

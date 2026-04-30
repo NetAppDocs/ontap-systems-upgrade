@@ -16,3 +16,6 @@ summary: "Configure and manage Storage Encryption, manage authentication keys, a
 You can use Key Management Interoperability Protocol (KMIP) servers to manage authentication keys.
 
 include::../_include/ru_auto_manage_authentication_kmip_servers.adoc[]
+
+.What's next?
+After managing authentication using KMIP servers, link:ensure_new_controllers_are_set_up_correctly.html[confirm that the new controllers are set up correctly].

@@ -75,9 +75,11 @@ Aggregate ownership at the end of Stage 5:
 | link:manage_authentication_kmip.html[Stage 6: Complete the upgrade]
 a| During Stage 6, you confirm that the new nodes are set up correctly and set up Storage Encryption or NetApp Volume Encryption if the new nodes are encryption-enabled. You should also decommission the old nodes resume SnapMirror operations.
 
-NOTE: The storage virtual machine (SVM) disaster recovery updates will not be interrupted as per the schedules assigned.
+NOTE: The storage virtual machine (SVM) disaster recovery updates are not interrupted as per the schedules assigned.
 
 No changes occur in aggregate ownership.
 |===
 
+.What's next?
+After reviewing the ARL upgrade workflow, link:guidelines_upgrade_with_arl.html[review the guidelines for upgrading controllers with ARL].
 // Clean-up, 2022-03-09

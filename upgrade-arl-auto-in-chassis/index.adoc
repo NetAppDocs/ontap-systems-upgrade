@@ -62,8 +62,11 @@ If you cannot link up e0a or e0b cluster ports on the existing node to the clust
 * The ASA A900, AFF A900, and FAS9500 systems only support high-line power (200V to 240V). If your AFF A700 or FAS9000 system is running on low-line power (100V to 120V), you must convert the AFF A700 or FAS9000 input power before using this procedure.
 * If you are upgrading from an existing system with downtime that is included in the link:decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis[supported systems matrix], you can upgrade controller hardware by moving storage or by contacting technical support. Refer to link:other-references.html[References] to link to _Upgrade by moving volumes or storage_.
 
-== Automate the controller upgrade process
+== Automated controller upgrade process
 This procedure provides the steps for the automated procedure, which uses automatic disk assignment and network port reachability checks to simplify the controller upgrade experience.
+
+.What's next?
+After learning about this ARL upgrade procedure, link:decide-to-use-the-aggregate-relocation-guide.html[decide whether to use this procedure].
 
 // 2024 DEC 9, AFFFASDOC-33
 // 2024 DEC 4, ontap-systems-upgrade-issue-118

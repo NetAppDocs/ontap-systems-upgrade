@@ -13,4 +13,7 @@ summary: "Send an AutoSupport message for node2 and manually relocate node2's no
 
 [.lead]
 include::../_include/ru_man_relocate_non_root_aggr_node2_node3.adoc[]
+
+.What's next?
+After relocating non-root aggregates from node2 to node3, link:move_nas_lifs_node2_node3.html[move NAS data LIFs owned by node2 to node3].
 // 24 FEB 2021:  formatted from CMS

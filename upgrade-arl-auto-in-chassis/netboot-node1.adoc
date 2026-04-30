@@ -128,7 +128,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
 . Clear any previous configuration on the boot media.
-.. At the following prompt, run the `wipeconfig` command, and press the enter key:
+.. At the following prompt, run the `wipeconfig` command. Then select Enter:
 +
 ----
 Please choose one of the following:
@@ -220,6 +220,9 @@ For node1, the `partner-sysid` must be that of node2. You can obtain the node2 s
 +
 `printenv partner-sysid`
 
+
+.What's next?
+After netbooting node1, link:cable-node1-for-shared-cluster-HA-storage.html[cable node1 for shared cluster-HA and storage].
 
 // 2023 AUG 29, AFFFASDOC-78
 //BURT 1452254, 2022-04-27

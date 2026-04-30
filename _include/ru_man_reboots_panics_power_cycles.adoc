@@ -19,12 +19,12 @@ Takeover and giveback can proceed normally.
 
 === Node1 crashes during or just after Stage 2 with HA still enabled
 
-Some or all aggregates have been relocated from node1 to node2, and HA is still enabled. Node2 will take over node1's root volume and any non-root aggregates that were not relocated.
+Some or all aggregates have been relocated from node1 to node2, and HA is still enabled. Node2 takes over node1's root volume and any non-root aggregates that were not relocated.
 
 .About this task
 
 Ownership of aggregates that were relocated looks the same as the ownership of non-root aggregates that were taken over because home owner has not changed.
-When node1 enters the `waiting for giveback state`, node2 will give back all the node1 non-root aggregates.
+When node1 enters the `waiting for giveback state`, node2 gives back all the node1 non-root aggregates.
 
 .Steps
 
@@ -34,7 +34,7 @@ When node1 enters the `waiting for giveback state`, node2 will give back all the
 
 === Node1 crashes after Stage 2 while HA is disabled
 
-Node2 will not take over but it is still serving data from all non-root aggregates.
+Node2 does not take over but it is still serving data from all non-root aggregates.
 
 .Steps
 
@@ -49,7 +49,7 @@ Node1 has relocated some or all of its aggregates to node2. HA is enabled.
 
 .About this task
 
-Node1 will take over all of node2's aggregates as well any of its own aggregates that it had relocated to node2. When node2 enters the `Waiting for Giveback` state, node1 gives back all of node2's aggregates.
+Node1 takes over all of node2's aggregates as well any of its own aggregates that it had relocated to node2. When node2 enters the `Waiting for Giveback` state, node1 gives back all of node2's aggregates.
 
 .Steps
 
@@ -58,13 +58,13 @@ Node1 will take over all of node2's aggregates as well any of its own aggregates
 
 === Node2 crashes after Stage 2 and after HA is disabled
 
-Node1 will not take over.
+Node1 does not take over.
 
 .Steps
 
 . Bring up node2.
 +
-A client outage will occur for all aggregates while node2 is booting up.
+A client outage occurs for all aggregates while node2 is booting.
 . Continue with the rest of the node pair upgrade procedure.
 
 == Reboots, panics, or power cycles during Stage 3
@@ -73,22 +73,22 @@ Failures can occur during or immediately after Stage 3, during which you install
 
 === Node2 crash during Stage 3 with HA disabled and before relocating any aggregates
 
-Node3 will not take over following a node2 crash as HA is already disabled.
+Node3 does not take over following a node2 crash as HA is already disabled.
 
 .Steps
 
 . Bring up node2.
 +
-A client outage will occur for all aggregates while node2 is booting up.
+A client outage occurs for all aggregates while node2 is booting.
 . Continue with the node-pair upgrade procedure.
 
 === Node2 crashes during Stage 3 after relocating some or all aggregates
 
-Node2 has relocated some or all of its aggregates to node3, which will serve data from aggregates that were relocated. HA is disabled.
+Node2 has relocated some or all of its aggregates to node3, which serves data from aggregates that were relocated. HA is disabled.
 
 .About this task
 
-There will be client outage for aggregates that were not relocated.
+There is a client outage for aggregates that were not relocated.
 
 .Steps
 
@@ -108,7 +108,7 @@ Node2 does not take over but it is still serving data from all non-root aggregat
 
 === Node3 crashes during Stage 3 during aggregate relocation
 
-If node3 crashes while node2 is relocating aggregates to node3, node2 will abort the relocation of any remaining aggregates.
+If node3 crashes while node2 is relocating aggregates to node3, node2 aborts the relocation of any remaining aggregates.
 
 .About this task
 
@@ -146,7 +146,7 @@ Node3 crashes after Stage 3 but before Stage 5. The HA pair is disabled.
 
 . Bring up node3.
 +
-There will be a client outage for all aggregates.
+There is a client outage for all aggregates.
 . Continue with the node-pair upgrade procedure.
 
 == Reboots, panics, or power cycles during Stage 5

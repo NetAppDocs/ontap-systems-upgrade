@@ -171,8 +171,8 @@ WARNING: If node1 is in same chassis as node2, do not power off the chassis by u
 The node stops at the boot environment prompt.
 
 . When node1 displays the boot environment prompt, remove it from the chassis or the rack.
-+
-You can decommission node1 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].
+
+. Optionally, decommission node1 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].
 
 // Clean-up, 2022-03-09
 // 1476241, 2022-05-13

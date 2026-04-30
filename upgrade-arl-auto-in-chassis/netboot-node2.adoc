@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-in-chassis/netboot-node2.html
 keywords: preparing, prepare, netboot, ontap, node2
 summary: After swapping the corresponding replacement node2 system modules when using ARL to upgrade controller models in the same chassis, you might need to netboot them.
 ---
-
 = Netboot node2
 :hardbreaks:
 :nofooter:
@@ -112,7 +111,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
 . Clear any previous configuration on the boot media.
-.. At the following prompt, run the `wipeconfig` command, and press the enter key:
+.. At the following prompt, run the `wipeconfig` command. Then select Enter:
 +
 ----
 Please choose one of the following:
@@ -197,6 +196,9 @@ For node2, the `partner-sysid` must be that of the node1 that you are upgrading.
 .	On node2, at the LOADER prompt, verify the `partner-sysid` for node2:
 +
 `printenv partner-sysid`
+
+.What's next?
+After netbooting node2, link:cable-node2-for-shared-cluster-HA-storage.html[cable node2 for shared cluster-HA and storage].
 
 // 2023 MAY 29, AFFFASDOC-39
 // BURT 1476251, 2022-05-16

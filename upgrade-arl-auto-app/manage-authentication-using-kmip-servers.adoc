@@ -18,4 +18,7 @@ With ONTAP 9.8 or later, you can use Key Management Interoperability Protocol (K
 
 include::../_include/ru_auto_manage_authentication_kmip_servers.adoc[]
 
+.What's next?
+After managing authentication using KMIP servers, link:ensure_new_controllers_are_set_up_correctly.html[confirm that the new controllers are set up correctly].
+
 // BURT-1476241 2022-August-12

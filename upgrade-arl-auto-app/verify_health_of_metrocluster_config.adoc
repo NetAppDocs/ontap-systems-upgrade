@@ -34,3 +34,6 @@ metrocluster_siteA::*> metrocluster check run
 The operation runs in the background.
 
 include::../_include/ru_auto_verify_health_metrocluster_configuration.adoc[]
+
+.What's next?
+After verifying the health of the MetroCluster configuration, link:check_for_metrocluster_config_errors.html[check for MetroCluster configuration errors].
