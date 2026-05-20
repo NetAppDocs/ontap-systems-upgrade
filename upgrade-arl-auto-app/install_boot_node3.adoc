@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/install_boot_node3.html
 keywords: installing, booting, node3, ontap
 summary: "Install and boot node3 and install ONTAP software when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
-= Install and boot node3
+= Install and boot node3 (ONTAP 9.8 or later, automated)
 :hardbreaks:
 :nofooter:
 :icons: font

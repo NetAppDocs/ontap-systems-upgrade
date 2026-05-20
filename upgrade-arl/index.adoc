@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: upgrade-arl/index.html
 keywords:  aggregate, relocation, moving, manual, upgrade, relocate, hardware
-summary: Use aggregate relocation to upgrade controller hardware
+summary: Use aggregate relocation to upgrade AFF, ASA, or FAS controller hardware
 ---
-= Start here: Choose your ARL upgrade procedure
+= Start here: Choose your ARL upgrade procedure AFF, ASA, or FAS controller hardware
 :hardbreaks:
 :nofooter:
 :icons: font

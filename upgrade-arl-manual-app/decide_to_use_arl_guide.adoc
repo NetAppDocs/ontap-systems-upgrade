@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/decide_to_use_arl_guide.html
 keywords:  decision, decision, what to use, upgrade, HA pair, metrocluster, storage encryption, volume encryption, NSE, NVE
 summary: "Decide whether to use the manual ARL procedure to upgrade storage controllers in an HA pair with new controllers running ONTAP 9.8 or later."
 ---
-= Decide whether to use this aggregate relocation procedure
+= Decide whether to use this aggregate relocation procedure (ONTAP 9.8 or later, manual)
 :hardbreaks:
 :nofooter:
 :icons: font

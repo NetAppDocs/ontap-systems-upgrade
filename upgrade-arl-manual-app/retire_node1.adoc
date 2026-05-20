@@ -5,7 +5,7 @@ keywords: retire, node1, epsilon, shut down, failover
 summary: "Disable the HA pair with node2 and shut node1 down correctly during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Retire node1
+= Retire node1 (ONTAP 9.8 or later, manual)
 :hardbreaks:
 :nofooter:
 :icons: font

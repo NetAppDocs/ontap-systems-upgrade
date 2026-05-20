@@ -5,7 +5,7 @@ keywords: prepare, netboot, rack, node3, node4
 summary: "Prepare to netboot node3 and node4 during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Prepare for netboot
+= Prepare for netboot (ONTAP 9.8 or later, manual)
 :hardbreaks:
 :nofooter:
 :icons: font

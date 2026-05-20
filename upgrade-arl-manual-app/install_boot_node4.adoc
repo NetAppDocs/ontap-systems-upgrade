@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/install_boot_node4.html
 keywords: node4, install ONTAP, boot, node4, relocate, non-root aggregates, disks
 summary: "Install and boot node4 and install ONTAP software during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
-= Install and boot node4
+= Install and boot node4 (ONTAP 9.8 or later, manual)
 :hardbreaks:
 :nofooter:
 :icons: font

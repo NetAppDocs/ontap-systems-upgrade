@@ -5,7 +5,7 @@ keywords:  lif, migration, error, failure, troubleshoot
 summary: "LIFs not online after migration in Stage 2, Stage 3, or Stage 5 during a manual ARL upgrade on controllers running ONTAP 9.8 or later." 
 ---
 
-= LIF migration failure
+= LIF migration failure (ONTAP 9.8 or later, manual)
 :hardbreaks:
 :nofooter:
 :icons: font

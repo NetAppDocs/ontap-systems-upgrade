@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app-9151/other_references.html
 keywords: other references, documentation, hardware universe, content, documentation center, information
 summary: "Reference content and websites required to support a controller upgrade running ONTAP 9.15.1 or later by using `system controller replace` commands."
 ---
-= References
+= References (ONTAP 9.15.1 or later)
 :hardbreaks:
 :nofooter:
 :icons: font

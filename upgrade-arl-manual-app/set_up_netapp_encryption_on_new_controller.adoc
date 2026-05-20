@@ -5,7 +5,7 @@ keywords: set up, netapp volume encryption, encryption, controller, module
 summary: "If required, configure the new controller module for NVE or NAE during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Set up NetApp Volume or Aggregte Encryption on the new controller module
+= Set up NetApp Volume or Aggregte Encryption on the new controller module (ONTAP 9.8 or later, manual)
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -5,7 +5,7 @@ keywords: resuming, snapmirror, operations, transfer, relationship, updates, sch
 summary: "Resume the SnapMirror transfers and relationships when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
 
-= Resume SnapMirror operations
+= Resume SnapMirror operations (ONTAP 9.8 or later, automated)
 :hardbreaks:
 :nofooter:
 :icons: font
