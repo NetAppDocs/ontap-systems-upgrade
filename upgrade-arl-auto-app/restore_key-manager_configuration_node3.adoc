@@ -5,7 +5,7 @@ keywords: restoring, key-manager, configuration, node3, nve, arl, encryption, ne
 summary: "If required, restore key-manager configuration on node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
 
-= Restore key-manager configuration on node3 
+= Restore key-manager configuration on node3
 :hardbreaks:
 :nofooter:
 :icons: font

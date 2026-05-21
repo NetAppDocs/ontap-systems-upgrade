@@ -5,7 +5,7 @@ keywords: issues, problems, errors, multiple stages, procedure, troubleshoot
 summary: "Information on issues that might occur during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Issues that can arise in multiple stages of the procedure 
+= Issues that can arise in multiple stages of the procedure
 :hardbreaks:
 :nofooter:
 :icons: font

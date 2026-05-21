@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/prepare_nodes_for_upgrade.html
 keywords: preparing, nodes, upgrade
 summary: "Prepare the nodes and run a series of prechecks when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
-= Prepare the nodes for upgrade 
+= Prepare the nodes for upgrade
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -5,7 +5,7 @@ keywords: resume, snapmirror, transfers, relationships
 summary: "Resume the SnapMirror transfers and relationships during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Resume SnapMirror operations 
+= Resume SnapMirror operations
 :hardbreaks:
 :nofooter:
 :icons: font

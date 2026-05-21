@@ -5,7 +5,7 @@ keywords: aggregate, relocation, failure, error, problem
 summary: "Troubleshoot aggregate relocation failures that might occur during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Aggregate relocation failures 
+= Aggregate relocation failures
 :hardbreaks:
 :nofooter:
 :icons: font

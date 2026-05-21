@@ -5,7 +5,7 @@ keywords: relocate, non-root, aggregates, nas, lif, node2, node3
 summary: "Relocate node2's non-root aggregates to node3 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
 
-= Relocate non-root aggregates and NAS data LIFs from node2 to node3 
+= Relocate non-root aggregates and NAS data LIFs from node2 to node3
 :hardbreaks:
 :nofooter:
 :icons: font
