@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/manage_authentication_kmip.html
 keywords: kmip, authentication, keys, fips
 summary: "Use KMIP servers to manage authentication keys during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
-= Manage authentication using KMIP servers (ONTAP 9.8 or later, manual)
+= Manage authentication using KMIP servers 
 :hardbreaks:
 :nofooter:
 :icons: font

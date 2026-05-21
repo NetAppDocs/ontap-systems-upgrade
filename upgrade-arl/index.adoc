@@ -20,9 +20,9 @@ ARL takes advantage of the HA configuration to give you the capability to move o
 
 There are several ARL methods for upgrading controller hardware. To select the appropriate procedure, review the following information on the systems and ONTAP versions supported for each ARL upgrade option. 
 
-== Use "system controller replace" commands with ONTAP 9.15.1 or later
+== Upgrade to systems introduced in ONTAP 9.15.1 or later
 
-If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto-app-9151/index.html[Use "system controller replace" commands to upgrade controller hardware introduced in ONTAP 9.15.1 and later] to start the upgrade procedure. 
+If your upgrade scenario is listed in the following supported systems matrix, go to link:../upgrade-arl-auto-app-9151/index.html[Use "system controller replace" commands to upgrade to controller hardware introduced in ONTAP 9.15.1 or later] to start the upgrade procedure. 
 
 .Show supported systems
 [%collapsible]

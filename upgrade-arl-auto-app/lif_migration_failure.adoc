@@ -5,7 +5,7 @@ keywords: lif, migration, failure, mtu
 summary: "LIFs not online after migration in Stage 2, Stage 3, or Stage 5 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
 
-= LIF migration failure (ONTAP 9.8 or later, automated)
+= LIF migration failure 
 :hardbreaks:
 :nofooter:
 :icons: font

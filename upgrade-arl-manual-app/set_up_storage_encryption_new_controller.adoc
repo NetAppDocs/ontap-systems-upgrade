@@ -5,7 +5,7 @@ keywords: set up, setup, storage encryption, new, controller, module
 summary: "If required, configure Storage Encryption, install SSL certificates, and set up key management servers during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Set up Storage Encryption on the new controller module (ONTAP 9.8 or later, manual)
+= Set up Storage Encryption on the new controller module 
 :hardbreaks:
 :nofooter:
 :icons: font

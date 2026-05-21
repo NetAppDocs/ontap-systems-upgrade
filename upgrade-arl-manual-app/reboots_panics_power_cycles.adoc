@@ -5,7 +5,7 @@ keywords: reboot, crash, panic, failure, upgrade
 summary: "The system might crash – reboot, panic, or go through a power cycle – during the different stages of a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Reboots, panics, or power cycles (ONTAP 9.8 or later, manual)
+= Reboots, panics, or power cycles 
 :hardbreaks:
 :nofooter:
 :icons: font

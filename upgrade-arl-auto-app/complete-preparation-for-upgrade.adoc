@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/complete-preparation-for-upgrade.html
 keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication
 summary: "Configure and manage Storage Encryption, manage authentication keys, and quiesce the SnapMirror relationships when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` command."
 ---
-= Complete the preparation for upgrade (ONTAP 9.8 or later, automated)
+= Complete the preparation for upgrade 
 :hardbreaks:
 :nofooter:
 :icons: font

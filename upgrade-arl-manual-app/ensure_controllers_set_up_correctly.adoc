@@ -5,7 +5,7 @@ keywords: set up, controllers, correctly, ha pair, lif, aggregate, node, failove
 summary: "Enable the HA pair, verify node3 and node4 storage access, and confirm aggregate ownership after a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Confirm that the new controllers are set up correctly (ONTAP 9.8 or later, manual)
+= Confirm that the new controllers are set up correctly 
 :hardbreaks:
 :nofooter:
 :icons: font

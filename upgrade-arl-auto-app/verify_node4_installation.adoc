@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/verify_node4_installation.html
 keywords: verify, node4, installation, physical ports, node2, node, LIF, MetroCluster
 summary: "Verify that node2's physical ports map correctly to node4 and restore network configuration on node4 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
 ---
-= Verify the node4 installation (ONTAP 9.8 or later, automated)
+= Verify the node4 installation 
 :hardbreaks:
 :nofooter:
 :icons: font

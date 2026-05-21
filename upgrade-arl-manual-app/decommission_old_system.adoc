@@ -5,7 +5,7 @@ keywords: decommission, system, metrocluster
 summary: "Let NetApp know that the old system is no longer in operation after completing a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Decommission the old system (ONTAP 9.8 or later, manual)
+= Decommission the old system 
 :hardbreaks:
 :nofooter:
 :icons: font

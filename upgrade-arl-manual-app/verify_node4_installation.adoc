@@ -5,7 +5,7 @@ keywords: verify, install, node4, cluster, communicate
 summary: "Verify the node4 installation and communication with node3 during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
 
-= Verify the node4 installation (ONTAP 9.8 or later, manual)
+= Verify the node4 installation 
 :hardbreaks:
 :nofooter:
 :icons: font
