@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: upgrade-arl-manual/send_custom_autosupport_message_prior_reconfig_switches.html
+keywords: autosupport, reconfigure, send message, maintenance, netapp support
+summary: "Notify NetApp technical support that maintenance is underway during a manual ARL upgrade on controllers running ONTAP 9.7 or earlier."
+---
+
+= Send a custom AutoSupport message prior to reconfiguring switches
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Before reconfiguring your switches, you must issue an AutoSupport message to notify NetApp technical support that maintenance is underway. Informing technical support that maintenance is underway prevents them from opening a case on the assumption that a disruption has occurred.
+
+.About this task
+
+This task must be performed on each MetroCluster site.
+
+.Steps
+
+. Log in to the cluster.
+
+. Invoke an AutoSupport message indicating the start of the maintenance:
++
+`system node autosupport invoke -node * -type all -message MAINT=_maintenance-window-in-hours_`
++
+The `maintenance-window-in-hours` value specifies the length of the maintenance window, with a maximum of 72 hours. If the maintenance is completed before the time has elapsed, you can invoke an AutoSupport message indicating the end of the maintenance period:
++
+`system node autosupport invoke -node * -type all -message MAINT=end`
+
+. Repeat these steps on the partner site.
