@@ -14,17 +14,28 @@ summary: "Prepare the nodes and run a series of prechecks when upgrading control
 [.lead]
 The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure. If any prechecks fail, you must correct aggregate ownership before you can continue with the upgrade.
 
-== Step 1: Prepare the nodes
+== Step 1: Prepare node1 and node2
 
-Start the controller replacement process and run prechecks. If required, determine the type of self-encrypting drives that are in use.
+Start the controller replacement process and run prechecks on node1 and node2. If required, determine the type of self-encrypting drives that are in use.
 
 .Steps
 
 . Begin the controller replacement process by entering the following command in the ONTAP command line:
 +
-`system controller replace start -nodes <node_names>`
+[source,cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
-NOTE: You can only execute the system controller replace start command at the advanced privilege level: `set -privilege advanced`
+[NOTE]
+====
+You can only execute the system controller replace start command at the advanced privilege level: 
+
+[source,cli]
+----
+set -privilege advanced
+----
+====
 +
 You see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
@@ -35,7 +46,7 @@ Warning: 1. Current ONTAP version is 9.15.1
          
 Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
          
-3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+3. If a controller was previously part of a different cluster, run `wipeconfig` before using it as the replacement controller.
          
 4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedure.
 Do you want to continue? {y|n}: y
@@ -114,24 +125,95 @@ For more information, see the Knowledge Base article link:https://kb.netapp.com/
 +
 From the serial port connected to each node, run and save the output of the following commands individually:
 +
-* `vserver services name-service dns show`
-* `network interface show -curr-node <local> -role <cluster,intercluster,node-mgmt,cluster-mgmt,data>`
-* `network port show -node <local> -type physical`
-* `service-processor show -node <local> -instance`
-* `network fcp adapter show -node <local>`
-* `network port ifgrp show -node <local>`
-* `system node show -instance -node <local>`
-* `run -node <local> sysconfig`
-* `storage aggregate show -r`
-* `storage aggregate show -node <local>`
-* `volume show -node <local>`
-* `system license show -owner <local>`
-* `storage encryption disk show`
-* `security key-manager onboard show-backup`
-* `security key-manager external show`
-* `security key-manager external show-status`
-* `network port reachability show -detail -node <local>`
-
+[source,cli]
+----
+vserver services name-service dns show
+----
++
+[source,cli]
+----
+network interface show -curr-node <local> -role <cluster,
+----
++
+[source,cli]
+----
+intercluster,node-mgmt,cluster-mgmt,data>
+----
++
+[source,cli]
+----
+network port show -node <local> -type physical
+----
++
+[source,cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source,cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source,cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source,cli]
+----
+system node show -instance -node <local>
+----
++
+[source,cli]
+----
+run -node <local> sysconfig
+----
++
+[source,cli]
+----
+storage aggregate show -r
+----
++
+[source,cli]
+----
+storage aggregate show -node <local>
+----
++
+[source,cli]
+----
+volume show -node <local>
+----
++
+[source,cli]
+----
+system license show -owner <local>
+----
++
+[source,cli]
+----
+storage encryption disk show
+----
++
+[source,cli]
+----
+security key-manager onboard show-backup
+----
++
+[source,cli]
+----
+security key-manager external show
+----
++
+[source,cli]
+----
+security key-manager external show-status
+----
++
+[source,cli]
+----
+network port reachability show -detail -node <local>
+----
 +
 NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager (OKM) is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
 
@@ -146,9 +228,47 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
+== Step 3: Prepare node3 and node4
+
+Check if the build on node3 and node4 contains a NODAR (no data at rest) image. If the build contains a NODAR image, reinstall an image on node3 and node4 that contains DARE (data at rest encryption).
+
+.Steps
+
+. Boot node3 and node4 to the boot menu:
++
+[source,cli]
+----
+LOADER> boot_ontap menu
+----
+. Enter systemshell:
++
+[source,cli]
+----
+systemshell
+----
+. [[check-build]]Check the build on node3 and node4:
++
+[source,cli]
+----
+# cat /BUILD
+----
++
+If `build-type` in the output contains `NODAR`, the build contains a NODAR image (no encryption). If `build-type` does not contain `NODAR`, the build contains a DARE image (encryption).
++
+. If the build contains a NODAR image, reinstall an image on the node that contains DARE.
+
+.. Exit systemshell and the boot menu:
++
+[source,cli]
+----
+halt
+---- 
+. Reinstall the image containing DARE:
+
 .What's next?
 After preparing the nodes, link:complete-preparation-for-upgrade.html[complete the preparation for upgrade].
 
+// 2026 JUN 2, AFFFASDOC-477
 // 2023 JUN 28, ontap-systems-upgrade-issues-87
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // 2022 DEC 1, ontap-systems-upgrade-37
