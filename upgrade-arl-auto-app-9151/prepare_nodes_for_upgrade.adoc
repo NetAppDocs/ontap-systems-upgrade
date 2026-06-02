@@ -230,11 +230,15 @@ include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
 == Step 3: Prepare node3 and node4
 
-Check if the build on node3 and node4 contains a NODAR (no data at rest) image. If the build contains a NODAR image, reinstall an image on node3 and node4 that contains DARE (data at rest encryption).
+Check if the build on node3 and node4 contains a NODAR (no data at rest) image. If the build contains a NODAR image, you need to reinstall an image containing DARE (data at rest encryption).
+
+.About this task
+
+Perform the following steps on node3 and node4.
 
 .Steps
 
-. Boot node3 and node4 to the boot menu:
+. Boot the node to boot menu:
 +
 [source,cli]
 ----
@@ -246,7 +250,7 @@ LOADER> boot_ontap menu
 ----
 systemshell
 ----
-. [[check-build]]Check the build on node3 and node4:
+. [[check-build]]Verify the build by running the following command and examining the output:
 +
 [source,cli]
 ----
@@ -255,7 +259,7 @@ systemshell
 +
 If `build-type` in the output contains `NODAR`, the build contains a NODAR image. If `build-type` does not contain `NODAR`, the build contains a DARE image.
 +
-. If the build contains a NODAR image, reinstall an image on the node that contains DARE.
+. If the build contains a NODAR image, reinstall an image that contains DARE.
 
 .. Exit systemshell and the boot menu:
 +
@@ -264,6 +268,8 @@ If `build-type` in the output contains `NODAR`, the build contains a NODAR image
 halt
 ---- 
 . Reinstall the image containing DARE:
++
+<add_command>
 
 .What's next?
 After preparing the nodes, link:complete-preparation-for-upgrade.html[complete the preparation for upgrade].
