@@ -253,7 +253,7 @@ systemshell
 # cat /BUILD
 ----
 +
-If `build-type` in the output contains `NODAR`, the build contains a NODAR image (no encryption). If `build-type` does not contain `NODAR`, the build contains a DARE image (encryption).
+If `build-type` in the output contains `NODAR`, the build contains a NODAR image. If `build-type` does not contain `NODAR`, the build contains a DARE image.
 +
 . If the build contains a NODAR image, reinstall an image on the node that contains DARE.
 
