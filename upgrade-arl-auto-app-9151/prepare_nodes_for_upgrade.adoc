@@ -268,7 +268,7 @@ NOTE: If `build-type` is not a NODAR image, the build is a DARE image.
 ----
 halt
 ---- 
-.. Install a DARE image. For more information, refer to see the Knowledge Base article link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/Netbooting_a_FAS_and_AFF_Controller_in_ONTAP_9[Netbooting a FAS and AFF Controller in ONTAP 9^].
+.. Install a DARE image. For more information, refer to the Knowledge Base article link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/Netbooting_a_FAS_and_AFF_Controller_in_ONTAP_9[Netbooting a FAS and AFF Controller in ONTAP 9^].
 
 .What's next?
 After preparing the nodes, link:complete-preparation-for-upgrade.html[complete the preparation for upgrade].
