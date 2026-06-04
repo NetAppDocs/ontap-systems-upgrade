@@ -230,7 +230,7 @@ include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
 == Step 3: Prepare node3 and node4
 
-Check if the build on node3 and node4 contains a NODAR (no data at rest) image. If the build contains a NODAR image, you need to reinstall an image containing DARE (data at rest encryption).
+Check if the build on node3 and node4 is a NODAR (no data at rest encryption) image. If the build is a NODAR image, you need to install a DARE (data at rest encryption) image.
 
 .About this task
 
@@ -250,16 +250,17 @@ LOADER> boot_ontap menu
 ----
 systemshell
 ----
-. [[check-build]]Verify the build by running the following command and examining the output:
+. [[check-build]]Check if the build is a NODAR image:
 +
 [source,cli]
 ----
 # cat /BUILD
 ----
 +
-If `build-type` in the output contains `NODAR`, the build contains a NODAR image. If `build-type` does not contain `NODAR`, the build contains a DARE image.
+In the command output, check if `build-type` is a NODAR image, for example, `DEBUG SIM NODAR`. 
 +
-. If the build contains a NODAR image, reinstall an image that contains DARE.
+NOTE: If `build-type` is not a NODAR image, the build is a DARE image.
+. If the build is a NODAR image, install a DARE image.
 
 .. Exit systemshell and the boot menu:
 +
@@ -267,9 +268,7 @@ If `build-type` in the output contains `NODAR`, the build contains a NODAR image
 ----
 halt
 ---- 
-. Reinstall the image containing DARE:
-+
-<add_command>
+.. Install a DARE image. For more information, refer to see the Knowledge Base article link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/Netbooting_a_FAS_and_AFF_Controller_in_ONTAP_9[Netbooting a FAS and AFF Controller in ONTAP 9^].
 
 .What's next?
 After preparing the nodes, link:complete-preparation-for-upgrade.html[complete the preparation for upgrade].
