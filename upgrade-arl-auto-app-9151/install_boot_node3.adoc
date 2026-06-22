@@ -225,7 +225,7 @@ NOTE: If you have not already done so earlier in the procedure, see the Knowledg
 
 .. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
 +
-Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
+Enter the passphrase and the backup information that you recorded earlier in the procedure. Refer to link:complete-preparation-for-upgrade.html#manage_storage_encryption_using_okm[Manage storage encryption using the Onboard Key Manager].
 
 . Boot the node into boot menu:
 +
@@ -340,11 +340,11 @@ Login:
 ....
 ====
 +
-NOTE: In the above console output example, ONTAP will prompt you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
+NOTE: In the above console output example, ONTAP prompts you for the partner node name if the system uses Advanced Disk Partitioning (ADP) disks.
 
 . If the system goes into a reboot loop with the message `no disks found`, it indicates that there was a problem with the disk reassignment. See link:aggregate_relocation_failures.html[Troubleshoot] to resolve the issue.
 
-. Press `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
+. Enter `Ctrl-C` during autoboot to stop the node at the `LOADER>` prompt.
 
 . At the LOADER prompt, enter maintenance mode:
 +
@@ -401,7 +401,10 @@ NOTE: You must have obtained the passphrase and backup data in the link:prepare_
 +
 .. After the system boots to the special boot menu again, run option *(1) Normal Boot*
 + 
-NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step32,Step 32>> until the system boots normally. 
+NOTE: You might encounter an error at this stage. If an error occurs, repeat the substeps in <<auto_check3_step32,Step 32>> until the system boots normally.
+
+.What's next?
+After installing and booting node3, link:verify_node3_installation.html[verify the node3 installation].
 
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312

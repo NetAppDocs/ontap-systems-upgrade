@@ -122,7 +122,7 @@ For the `<node2_sysid>` value, use the information captured in link:record_node2
 NOTE: The `-p` option is only required in maintenance mode when shared disks are present.
 
 +
-The `disk reassign` command will reassign only those disks for which `_node2_sysid_` is the current owner.
+The `disk reassign` command reassigns only those disks for which `_node2_sysid_` is the current owner.
 +
 The system displays the following message:
 +

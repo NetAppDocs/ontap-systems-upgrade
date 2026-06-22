@@ -19,7 +19,10 @@ include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_intro-s
 +
 `system service-processor network modify -node _node_name_`
 +
-Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9.8 Commands: Manual Page Reference_ for detailed information about the system `service-processor network modify` command.
+Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Command reference_ for detailed information about the system `service-processor network modify` command.
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]
+
+.What's next?
+After confirming that the new controllers are set up correctly, link:set_up_storage_encryption_new_module.html[set up Storage Encryption on the new controller module].
 
 // 2022-05-17, BURT 1476241

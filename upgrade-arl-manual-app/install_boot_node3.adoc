@@ -38,7 +38,10 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 
 .. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
 +
-Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_authentication_okm.html[Manage authentication keys using the Onboard Key Manager].
+Enter the passphrase and the backup information that you recorded earlier in the procedure. See link:manage_authentication_okm.html[Manage authentication keys using the Onboard Key Manager].
 include::../_include/ru_man_install_boot_node3_steps_17_to_48.adoc[]
+
+.What's next?
+After installing and booting node3, link:set_fc_uta_uta2_config_node3.html[set the FC or UTA/UTA2 configuration on node3].
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747
 // 22 FEB 2021: Formatted from CMS

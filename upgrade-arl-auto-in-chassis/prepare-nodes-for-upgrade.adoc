@@ -14,6 +14,10 @@ summary: "Prepare the nodes and run a series of prechecks when using ARL to upgr
 [.lead]
 The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure and, if required, determine the type of self-encrypting drives that are in use.
 
+== Step 1: Prepare the nodes
+
+Start the controller replacement process and run prechecks. If required, determine the type of self-encrypting drives that are in use.
+
 .Steps
 
 . List the Service Processor (SP) or baseboard management controller (BMC) firmware version running on the old controller: 
@@ -54,7 +58,7 @@ Verify that you have a supported SP or BMC firmware version:
 +
 `system controller replace start -nodes _node_names_`
 +
-You will see output similar to the following example. The output displays the ONTAP version running on your cluster:
+You see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
 ....
 Warning:
@@ -71,7 +75,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 Do you want to continue? {y|n}: y
 ....
 +
-. Select `y`. You will see the following output:
+. Select `y`. You see the following output:
 +
 ....
 Controller replacement operation: Prechecks in progress.
@@ -97,7 +101,7 @@ If the models are not supported, the task fails.
 |Image Version Check
 |Checks that the nodes being replaced run the same version of ONTAP.
 If the ONTAP image versions are different, the task fails.
-The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you need to netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to link:other_references.html[References] to link to _Upgrade ONTAP_.
+The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you need to netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to link:other-references.html[References] to link to _Upgrade ONTAP_.
 |HA Status Check
 |Checks if both the nodes being replaced are in a high availability (HA) pair configuration.
 If storage failover is not enabled for the controllers, the task fails.
@@ -106,7 +110,7 @@ If storage failover is not enabled for the controllers, the task fails.
 The nodes should not own any non-local aggregates.
 |Disk Status Check
 |If any nodes being replaced have missing or failed disks, the task fails.
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other-references.html[References] to link to _Disk and aggregate management with the CLI_,  _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 |Data LIF Status Check
 |Checks if any of the nodes being replaced have non-local data LIFs.
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
@@ -175,14 +179,8 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
-== License
-Each node in the cluster must have its own NetApp License File (NLF). 
-
-If you do not have an NLF, currently licensed features in the cluster are available to the new controller. However, using unlicensed features on the controller might put you out of compliance with your license agreement, so you should install the NLF for the new controller after the upgrade is complete.
-
-Refer to link:other_references.html[References] to link to the _NetApp Support Site_ where you can obtain your NLF. The NLFs are available in the _My Support_ section under _Software licenses_. If the site does not have the NLFs that you need, contact your NetApp sales representative.
-
-For detailed information about licensing, refer to link:other_references.html[References] to link to the _System Administration Reference_.
+.What's next?
+After preparing the nodes, link:complete-preparation-for-upgrade.html[complete the preparation for upgrade].
 
 // 2023 MAY 29, AFFFASDOC-39
 // 2023 APR 11, ontap-systems-upgrade-issues-64/BURT 1519747

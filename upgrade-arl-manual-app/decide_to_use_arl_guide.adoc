@@ -27,4 +27,6 @@ include::../_include/ru_man_decide_chunk_b.adoc[]
 
 include::../_include/ru_all_decide_use_arl_guide_end.adoc[]
 
+.What's next?
+After deciding whether to use this ARL procedure, link:arl_upgrade_workflow.html[review the ARL upgrade workflow].
 // 2022 SEP 28, BURT 1501272 

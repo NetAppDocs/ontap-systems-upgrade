@@ -8,6 +8,4 @@ To retire node2, you shut down node2 correctly and then remove it from the rack 
 +
 The node halts automatically.
 
-.After you finish
-
-You can decommission node2 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].
+.. Optionally, decommission node2 after the upgrade is completed. See link:decommission_old_system.html[Decommission the old system].

@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-in-chassis/netboot-node2.html
 keywords: preparing, prepare, netboot, ontap, node2
 summary: After swapping the corresponding replacement node2 system modules when using ARL to upgrade controller models in the same chassis, you might need to netboot them.
 ---
-
 = Netboot node2
 :hardbreaks:
 :nofooter:
@@ -21,13 +20,13 @@ You can also use the USB boot option to perform the netboot. See the Knowledge B
 
 .Before you begin
 * Verify that you can access a HTTP server with the system.
-* Download the necessary system files for your system and the correct version of ONTAP from the _NetApp Support Site_. Refer to link:other_references.html[References] to link to the _NetApp Support Site_.
+* Download the necessary system files for your system and the correct version of ONTAP from the _NetApp Support Site_. Refer to link:other-references.html[References] to link to the _NetApp Support Site_.
 
 .About this task
 You must netboot the new controllers if they do not have the same version of ONTAP 9 installed on them that is installed on the original controllers. After you install each new controller, you boot the system from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots.
 
 .Steps
-.	Refer to link:other_references.html[References] to link to the _NetApp Support Site_ to download the files used for performing the netboot of the system.
+.	Refer to link:other-references.html[References] to link to the _NetApp Support Site_ to download the files used for performing the netboot of the system.
 .	[[netboot_node2_step2]]Download the appropriate ONTAP software from the software download section of the NetApp Support Site and store the `<ontap_version>_image.tgz` file on a web-accessible directory.
 .	Change to the web-accessible directory and verify that the files you need are available.
 .	Your directory listing should contain `<ontap_version>_image.tgz`.
@@ -112,7 +111,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
 . Clear any previous configuration on the boot media.
-.. At the following prompt, run the `wipeconfig` command, and press the enter key:
+.. At the following prompt, run the `wipeconfig` command. Then select Enter:
 +
 ----
 Please choose one of the following:
@@ -197,6 +196,9 @@ For node2, the `partner-sysid` must be that of the node1 that you are upgrading.
 .	On node2, at the LOADER prompt, verify the `partner-sysid` for node2:
 +
 `printenv partner-sysid`
+
+.What's next?
+After netbooting node2, link:cable-node2-for-shared-cluster-HA-storage.html[cable node2 for shared cluster-HA and storage].
 
 // 2023 MAY 29, AFFFASDOC-39
 // BURT 1476251, 2022-05-16

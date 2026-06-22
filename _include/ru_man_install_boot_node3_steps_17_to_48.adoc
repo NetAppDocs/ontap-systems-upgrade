@@ -4,7 +4,7 @@
 +
 WARNING: If this new node has ever been used in any other cluster or HA pair, you must run `wipeconfig` before proceeding. Failure to do so might result in service outages or data loss. Contact technical support if the replacement controller was previously used, especially if the controllers were running ONTAP running in 7-Mode.
 
-. Press CTRL-C to display the boot menu.
+. Enter CTRL-C to display the boot menu.
 
 . [[man_install3_step19]]Take one of the following actions:
 +

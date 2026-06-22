@@ -4,7 +4,6 @@ permalink: upgrade-arl-manual/map_ports_node2_node4.html
 keywords: map, node2, node4, physical ports, cluster, network, connectivity
 summary: "Verify that the physical ports on node2 map correctly to node4 during a manual ARL upgrade on controllers running ONTAP 9.7 or earlier."
 ---
-
 = Map ports from node2 to node4
 :hardbreaks:
 :nofooter:
@@ -14,7 +13,7 @@ summary: "Verify that the physical ports on node2 map correctly to node4 during 
 
 [.lead]
 
-You must make sure that the physical ports on node2 map correctly to the physical ports on node4, which will let node4 communicate with other nodes in the cluster and with the network after the upgrade.
+The physical ports on node2 must map correctly to the physical ports on node4. This allows node4 to communicate with other nodes in the cluster and with the network after the upgrade.
 
 .Before you begin
 
@@ -24,9 +23,9 @@ The software configuration of node4 must match the physical connectivity of node
 
 .About this task
 
-Port settings might vary, depending on the model of the nodes. You must make the original node's port and LIF configuration compatible with what you plan the new node's configuration to be. This is because the new node replays the same configuration when it boots, meaning when you boot node4 that Data ONTAP will try to host LIFs on the same ports that were used on node2.
+Port settings might vary, depending on the model of the nodes. You must make the original node's port and LIF configuration compatible with what you plan the new node's configuration to be. This is because the new node replays the same configuration when it boots, meaning when you boot node4, Data ONTAP tries to host LIFs on the same ports that were used on node2.
 
-Therefore, if the physical ports on node2 do not map directly to the physical ports on node4, then software configuration changes will be required to restore cluster, management, and network connectivity after the boot. In addition, if the cluster ports on node2 do not directly map to the cluster ports on node4, node4 may not automatically rejoin quorum when it is rebooted until a software configuration change is made to host the cluster LIFs on the correct physical ports.
+Therefore, if the physical ports on node2 do not map directly to the physical ports on node4, then software configuration changes are required to restore cluster, management, and network connectivity after the boot. In addition, if the cluster ports on node2 do not directly map to the cluster ports on node4, node4 may not automatically rejoin quorum when it is rebooted until a software configuration change is made to host the cluster LIFs on the correct physical ports.
 
 .Steps
 
@@ -179,7 +178,7 @@ ports in failover group `fg1` as failover targets for LIF `data1` on `node4`:
 +
 `network interface modify -vserver node4 -lif data1 failover-policy broadcast-domain-wide -failover-group fg1`
 +
-For more information, refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Commands: Manual Page Reference_, and go to _Configuring failover settings on a LIF_.
+For more information, refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Command reference_, and go to _Configuring failover settings on a LIF_.
 . Verify the changes on node4:
 +
 `network port show -node node4`

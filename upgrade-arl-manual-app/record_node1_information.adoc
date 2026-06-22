@@ -14,3 +14,6 @@ summary: "Record information about node1 cluster network, management, FC ports, 
 
 [.lead]
 include::../_include/ru_man_record_node1.adoc[]
+
+.What's next?
+After recording node1 information, link:retire_node1.html[retire node1].

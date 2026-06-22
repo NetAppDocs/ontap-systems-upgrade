@@ -12,7 +12,7 @@ summary: Boot node1 with the replacement controller modules when using ARL to up
 :imagesdir: ../media/
 
 [.lead]
-Node1 with the replacement modules is now ready to boot. The supported replacement modules are listed in the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis[supported systems matrix].
+Node1 with the replacement modules is now ready to boot. The supported replacement modules are listed in the link:decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis[supported systems matrix].
 
 [NOTE]
 ====
@@ -73,7 +73,7 @@ You can mix SEDs with non-encrypting drives on the same node or HA pair.
 
 .. Go to the special boot menu and select option `(10) Set Onboard Key Manager recovery secrets`. 
 +
-Enter the passphrase and the backup information that you recorded earlier procedure. See link:manage_storage_encryption_using_okm.html[Manage storage encryption using the Onboard Key Manager].
+Enter the passphrase and the backup information that you recorded earlier in the procedure. See link:complete-preparation-for-upgrade.html#manage-storage-encryption-using-okm[Manage storage encryption using the Onboard Key Manager].
 
 . Boot the node into the boot menu:
 +
@@ -91,9 +91,9 @@ These prompts might get buried in the console messages. If you do not enter a no
 ====
 If `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` and, or, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` errors occur, perform the following steps:
 
-. Halt the node at the LOADER prompt.
-. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 2>>.
-. At the LOADER prompt, boot up:
+.. Halt the node at the LOADER prompt.
+.. Check and reset the storage encryption bootargs mentioned in <<A900_boot_node1,Step 2>>.
+.. At the LOADER prompt, boot up:
 +
 `boot_ontap`
 ====
@@ -234,6 +234,9 @@ The system IDs shown in the preceding example are example IDs. The actual system
 
 Between entering node names at the prompt and the login prompt, the node reboots a few times to restore the environment variables, update firmware on the cards in the system, and for other ONTAP updates.
 ====
+
+.What's next?
+After booting node1 with the replacement system modules, link:verify-node1-installation.html[verify the node1 installation].
 
 // 2025 SEP 15, AFFFASDOC-205
 // 2025 SEP 9, AFFFASDOC-312

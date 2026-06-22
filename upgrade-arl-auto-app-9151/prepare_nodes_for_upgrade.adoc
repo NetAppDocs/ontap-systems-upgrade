@@ -12,7 +12,11 @@ summary: "Prepare the nodes and run a series of prechecks when upgrading control
 :imagesdir: ../media/
 
 [.lead]
-The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure and, if required, determine the type of self-encrypting drives that are in use.
+The controller replacement process begins with a series of prechecks. You also gather information about the original nodes for use later in the procedure. If any prechecks fail, you must correct aggregate ownership before you can continue with the upgrade.
+
+== Step 1: Prepare the nodes
+
+Start the controller replacement process and run prechecks. If required, determine the type of self-encrypting drives that are in use.
 
 .Steps
 
@@ -22,7 +26,7 @@ The controller replacement process begins with a series of prechecks. You also g
 +
 NOTE: You can only execute the system controller replace start command at the advanced privilege level: `set -privilege advanced`
 +
-You will see output similar to the following example. The output displays the ONTAP version running on your cluster:
+You see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
 ....
 Warning: 1. Current ONTAP version is 9.15.1
@@ -37,7 +41,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 Do you want to continue? {y|n}: y
 ....
 
-. Press `y`, you will see the following output:
+. Select `y`, you see the following output:
 +
 ....
 Controller replacement operation: Prechecks in progress.
@@ -142,11 +146,8 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 include::../_include/ru_auto_correct_aggregate_ownership.adoc[]
 
-== License
-
-For detailed information about ONTAP licensing, refer to https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html[License management^].
-
-NOTE: Using unlicensed features on the controller might put you out of compliance with your license agreement.
+.What's next?
+After preparing the nodes, link:complete-preparation-for-upgrade.html[complete the preparation for upgrade].
 
 // 2023 JUN 28, ontap-systems-upgrade-issues-87
 // 2023 APR 17, ontap-systems-upgrade-issues-64/BURT 1519747

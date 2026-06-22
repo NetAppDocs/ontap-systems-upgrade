@@ -1,20 +1,19 @@
 ---
-permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html
+permalink: upgrade/migrate-aggregates-epsilon-lifs.html
 sidebar: sidebar
-keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs
 summary:  Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on node1 to node4.
 ---
-= Migrate data aggregates, epsilon, and LIFs on FAS2820 node1 to node4
+= Migrate data aggregates, epsilon, and LIFs on node1 to node4
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on the FAS2820 node1 to node4.
-
-.About this task
-Perform the following steps on node4.
+Migrate the data aggregates, epsilon, and logical interfaces (LIFs) on AFF A150, AFF A220, or FAS2820 node1 to node4.
 
 .Steps
+Perform these steps on node4.
+
 . At the LOADER prompt for node4, set partner-system ID:
 +
 [source,cli]
@@ -202,6 +201,6 @@ halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
 
 .What's next?
 
-link:convert-fas2820-node1-drive-shelf.html[Convert node1 to a drive shelf and connect to node3]
+link:convert-node1-to-drive-shelf.html[Convert node1 to a drive shelf and connect to node3]
 
 // 2023 Oct 12, AFFFASDOC-64

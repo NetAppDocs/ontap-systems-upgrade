@@ -14,7 +14,7 @@ summary:  When using ARL to upgrade controller models in the same chassis, you m
 [.lead]
 After swapping the corresponding replacement system modules, you must netboot node1. The term netboot means that you are booting from an ONTAP image stored on a remote server. When preparing for netboot, you add a copy of the ONTAP 9 boot image onto a web server that the system can access.
 
-It isn't possible to check the version of ONTAP installed on the boot media of the replacement controller module unless it is installed in a chassis and powered ON. The ONTAP version on the replacement system boot media must be same as the ONTAP version running on the old system that you are upgrading and both the primary and backup boot images on the boot media must match. To verify the minimum supported ONTAP version for your upgrade, see the link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis[supported systems matrix].
+It isn't possible to check the version of ONTAP installed on the boot media of the replacement controller module unless it is installed in a chassis and powered ON. The ONTAP version on the replacement system boot media must be the same as the ONTAP version running on the old system that you are upgrading and both the primary and backup boot images on the boot media must match. To verify the minimum supported ONTAP version for your upgrade, see the link:decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis[supported systems matrix].
 
 You can configure the images by performing a netboot followed by the `wipeconfig` command from the boot menu. If the controller module was previously used in another cluster, the `wipeconfig` command clears any residual configuration on the boot media.
 
@@ -22,13 +22,13 @@ You can also use the USB boot option to perform the netboot. See the Knowledge B
 
 .Before you begin
 * Verify that you can access a HTTP server with the system.
-* Download the necessary system files for your system and the correct version of ONTAP from the _NetApp Support Site_. Refer to link:other_references.html[References] to link to the _NetApp Support Site_.
+* Download the necessary system files for your system and the correct version of ONTAP from the _NetApp Support Site_. Refer to link:other-references.html[References] to link to the _NetApp Support Site_.
 
 .About this task
 You must netboot the new controllers if they do not have the same version of ONTAP 9 installed on them that is installed on the original controllers. After you install each new controller, you boot the system from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots.
 
 .Steps
-.	Refer to link:other_references.html[References] to link to the _NetApp Support Site_ to download the files used for performing the netboot of the system.
+.	Refer to link:other-references.html[References] to link to the _NetApp Support Site_ to download the files used for performing the netboot of the system.
 .	[[netboot_node1_step2]]Download the appropriate ONTAP software from the software download section of the _NetApp Support Site_ and store the `<ontap_version>_image.tgz` file on a web-accessible directory.
 .	Change to the web-accessible directory and verify that the files you need are available.
 .	Your directory listing should contain `<ontap_version>_image.tgz`.
@@ -128,7 +128,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 +
 The controller module reboots but stops at the boot menu because the boot device was reformatted, and the configuration data must be restored.
 . Clear any previous configuration on the boot media.
-.. At the following prompt, run the `wipeconfig` command, and press the enter key:
+.. At the following prompt, run the `wipeconfig` command. Then select Enter:
 +
 ----
 Please choose one of the following:
@@ -220,6 +220,9 @@ For node1, the `partner-sysid` must be that of node2. You can obtain the node2 s
 +
 `printenv partner-sysid`
 
+
+.What's next?
+After netbooting node1, link:cable-node1-for-shared-cluster-HA-storage.html[cable node1 for shared cluster-HA and storage].
 
 // 2023 AUG 29, AFFFASDOC-78
 //BURT 1452254, 2022-04-27

@@ -64,4 +64,7 @@ If any problems occur, refer to the link:aggregate_relocation_failures.html[Trou
 
 If you do not find a solution to the problem you encountered, contact technical support.
 
+.What's next?
+After reviewing the guidelines for upgrading controllers with ARL, link:verify_health_of_metrocluster_config.html[verify the health of the MetroCluster configuration].
+
 //Clean up- 2022-03-09

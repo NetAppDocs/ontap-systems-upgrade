@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/replace-node1-aff700-fas900.html
 keywords: aff, asa, fas, replace, node1, system, modules
 summary: "Replace the AFF A700 or FAS9000 node1 system modules when using ARL to upgrade controller models in the same chassis."
 ---
-= Replace the AFF A700 or FAS9000 controller and NVRAM modules
+= Replace node1 AFF A700 or FAS9000 controller and NVRAM modules
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -103,7 +103,7 @@ image:black_circle_two.png[Number two]
 |I/O latch completely unlocked
 |===
 
-== Step 4: Install the ASA A900, AFF A900, or FAS9500 controller module on node1.
+== Step 4: Install the ASA A900, AFF A900, or FAS9500 controller module in node1
 Install, cable, and connect the ASA A900, AFF A900, or FAS9500 controller module in node1.
 
 .Steps
@@ -135,7 +135,7 @@ image:black_circle_two.png[Number two]
 |===
 
 . Connect the serial console as soon as the module is seated and be ready to interrupt AUTOBOOT of node1.
-. After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
+. After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and enter Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 . At the LOADER> prompt of node1, set the default environment variables:
 +
 [source,cli]
@@ -149,6 +149,9 @@ set-defaults
 ----
 saveenv
 ----
+
+.What's next?
+After installing the ASA A900, AFF A900, or FAS9500 controller and NVRAM modules, link:netboot-node1.html[netboot node1].
 
 // 2025 JUN 19, AFFFASDOC-334
 // 2023 AUG 29, AFFFASDOC-78

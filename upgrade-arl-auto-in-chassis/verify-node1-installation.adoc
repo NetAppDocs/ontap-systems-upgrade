@@ -21,6 +21,10 @@ You must wait for node1 to join quorum and then resume the controller replacemen
 
 At this point in the procedure, the controller upgrade operation should have paused as node1 attempts to join quorum automatically.
 
+== Step 1: Verify that node1 is in quorum
+
+Verify that node1 is in quorum. Then, resume the controller replacement operation.
+
 .Steps
 .	Verify that node1 has joined quorum:
 +
@@ -95,13 +99,14 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 +
 NOTE:	In this procedure, section _Re-creating VLANs, ifgrps, and broadcast domains_ has been renamed _Restore network configuration on node1_.
 
-.	With the controller replacement in a paused state, proceed to <<Restore network configuration on node1>>.
+.	With the controller replacement in a paused state, proceed to <<restore_network_configuration_on_node1,Restore network configuration on node1>>.
 
-== Restore network configuration on node1
+[[restore_network_configuration_on_node1]]
+== Step 2: Restore network configuration on node1
 After you confirm that node1 is in quorum and can communicate with node2, verify that node1’s VLANs, interface groups, and broadcast domains are seen on node1. Also, verify that all node1 network ports are configured in their correct broadcast domains.
 
 .About this task
-For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other_references.html[References] to link to the _Network Management_ content.
+For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other-references.html[References] to link to the _Network Management_ content.
 
 .Steps
 .	List all the physical ports that are on upgraded node1:
@@ -176,7 +181,7 @@ Verify that all physical ports have their expected reachability:
 +
 `network port reachability show`
 +
-As the reachability repair is performed, ONTAP attempts to place the ports in the correct broadcast domains. However, if a port’s reachability cannot be determined and does not belong to any of the existing broadcast domains, ONTAP will create new broadcast domains for these ports.
+As the reachability repair is performed, ONTAP attempts to place the ports in the correct broadcast domains. However, if ONTAP cannot determine a port’s reachability and the port does not belong to any of the existing broadcast domains, ONTAP creates new broadcast domains for these ports.
 .	Verify port reachability:
 +
 `network port reachability show`
@@ -202,6 +207,9 @@ When all ports are correctly configured and added to the correct broadcast domai
 .	Verify that all LIFs have a home port and are administratively up:
 +
 `network interface show -fields home-port,status-admin`
+
+.What's next?
+After verifying the node1 installation, link:restore-key-manager-config-upgraded-node1.html[restore key-manager configuration on the upgraded node1].
 
 // 2024 DEC 9, AFFFASDOC-33
 // BURT 1476251, 2022-05-16

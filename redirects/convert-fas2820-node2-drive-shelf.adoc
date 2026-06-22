@@ -1,0 +1,4 @@
+---
+permalink: upgrade/convert-fas2820-node2-drive-shelf.html
+redirect: ontap-systems-upgrade/upgrade/convert-node2-to-drive-shelf.html
+---

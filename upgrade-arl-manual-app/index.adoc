@@ -41,5 +41,7 @@ include::../_include/ru_man_use_arl_overview.adoc[]
 ** For MetroCluster IP configurations and additional upgrade options for Fabric MetroCluster
 configurations, go to link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
+.What's next?
+After learning about this ARL procedure, link:decide_to_use_arl_guide.html[decide whether to use this ARL procedure].
 // 2024 NOV 29, AFFFASDOC-282
 // 2021 FEB 24,  Formatted from CMS

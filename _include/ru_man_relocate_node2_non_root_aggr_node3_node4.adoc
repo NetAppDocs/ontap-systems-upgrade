@@ -27,7 +27,7 @@ Relocation occurs in the background. It could take anywhere from a few seconds t
 +
 `storage aggregate relocation show -node _node3_`
 +
-The output will display `Done` for an aggregate after it has been relocated.
+The output displays `Done` for an aggregate after it has been relocated.
 +
 NOTE: Wait until all the node2 aggregates have been relocated to node4 before proceeding to the next step.
 
@@ -63,7 +63,7 @@ If necessary, you can force the relocation using one of the following methods:
 +
 `storage aggregate relocation start -override-destination-checks -ndocontroller-upgrade`
 
-For more information about storage aggregate relocation commands refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_ and the _ONTAP 9 Commands: Manual Page Reference_.
+For more information about storage aggregate relocation commands refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_ and the _ONTAP 9 Command reference_.
 |===
 
 . [[man_relocate_3_4_Step5]]Verify that all node2 non-root aggregates are online and their state on node4:

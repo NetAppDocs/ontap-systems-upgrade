@@ -14,7 +14,7 @@ summary: "Verify that the cluster switch RCF supports the shared cluster/HA port
 [.lead]
 At this stage in the upgrade procedure, all data aggregates should be on node1. If you're upgrading a configuration with switch-attached clusters, you need to validate that the cluster switch reference configuration file (RCF) supports the shared cluster/HA ports for the new controllers.  
 
-If you're upgrading to a two-node switchless cluster configuration, you can skip this section and go to link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2].
+If you're upgrading to a two-node switchless cluster configuration, you can skip this section and go to link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html[Move non-root aggregates and NAS data LIFs back to node2].
 
 .Steps
 . Switch to advanced privilege mode:
@@ -30,7 +30,7 @@ In the output, the "IC RDMA Connection" should have the status `Up`.
 |===
 |If the "IC RDMA Connection" status is ... |Then…
 | `Up`
-| Go to link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2].
+| Go to link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html[Move non-root aggregates and NAS data LIFs back to node2].
 | `Down`
 | Go to <<verify-rcf-step3,Step 3>>.
 |===
@@ -42,5 +42,5 @@ For more information, see link:cable-node1-for-shared-cluster-HA-storage.html#co
 +
 `ha interconnect status show`
 
-.What's next
-link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html[Move non-root aggregates and NAS data LIFs back to node2]
+.What's next?
+After verifying the RCF configuration link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html[move non-root aggregates and NAS data LIFs back to node2].

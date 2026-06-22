@@ -4,7 +4,6 @@ permalink: upgrade-arl-auto-in-chassis/decommission-old-system.html
 keywords: decommission, old system, upgrade, databases, netapp, support, site, serial, number, cluster
 summary: "Let NetApp know that the old system is no longer in operation after your controller upgrade."
 ---
-
 = Decommission the old system
 :hardbreaks:
 :nofooter:
@@ -13,5 +12,25 @@ summary: "Let NetApp know that the old system is no longer in operation after yo
 :imagesdir: ../media/
 
 [.lead]
-include::../_include/ru_auto_decommission_old_system.adoc[]
-// 11 DEC 2020, thomi, checked
+After upgrading, you can decommission the old system through the NetApp Support Site. Decommissioning the system tells NetApp that the system is no longer in operation and removes it from support databases.
+
+.Steps
+
+. Refer to link:other-references.html[References] to link to the _NetApp Support Site_ and log in.
+. Select *Products > My Products* from the menu.
+. On the *View Installed Systems* page, choose which *Selection Criteria* you want to use to display information about your system.
++
+You can choose one of the following to locate your system:
+
+* Serial Number (located on the back of the unit)
+* Serial Numbers for My Location
+
+. Select *Go!*
++
+A table displays cluster information, including the serial numbers.
+
+. Locate the cluster in the table and select *Decommission this system* from the Product Tool Set drop-down menu.
+
+.What's next?
+After decommissioning the old system, link:resume-snapmirror-operations.html[resume SnapMirror operations].
+

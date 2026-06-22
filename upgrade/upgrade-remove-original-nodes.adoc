@@ -18,11 +18,11 @@ After moving the volumes from the original to the new nodes and moving or deleti
 ----
 storage failover modify -node <original_node_name> -enabled false
 ----
-
+[start=2]
 include::https://raw.githubusercontent.com/NetAppDocs/ontap/main/_include/remove-nodes-from-cluster.adoc[]
 
-[start=11]
-. Repeat Steps <<disable-ha,1>> to <<return-admin,10>> to remove the failover partner from the cluster.
+[start=12]
+. Repeat Steps <<disable-ha,2>> to <<return-admin,11>> to remove the failover partner from the cluster.
 
 . If the cluster has only two nodes remaining, configure high availability for the two-node cluster:
 +

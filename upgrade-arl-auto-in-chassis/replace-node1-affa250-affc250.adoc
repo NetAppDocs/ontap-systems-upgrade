@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html
 keywords: aff, asa, fas, replace, node1, system, modules
 summary: "Replace the AFF A250 or AFF C250 node1 system modules when using ARL to upgrade controller models in the same chassis."
 ---
-= Replace the node1 AFF A250 or AFF C250 controller module
+= Replace node1 AFF A250 or AFF C250 controller module
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -19,7 +19,7 @@ At this stage, node1 is down and all data is served by node2. You must take care
 CAUTION: Don't power off the chassis because node1 and node2 are in the same chassis and connected to the same power supplies.
 
 == Step 1: Remove the AFF A250 or AFF C250 controller module
-To remove the node1 controller module, remove the cable management device and unlock the locking latches. Then remove the controller module from the chassis.
+To remove the node1 controller module, remove the cable management device and unlock the locking latches. Then, remove the controller module from the chassis.
 
 .Before you begin
 
@@ -59,7 +59,7 @@ The controller module moves slightly out of the chassis.
 +
 Make sure that you support the weight of the controller module as you slide it out of the chassis. 
 
-== Install the AFF A30, AFF A50, AFF C30, or AFF C60 controller module
+== Step 2: Install the AFF A30, AFF A50, AFF C30, or AFF C60 controller module
 Install, cable, and connect the replacement module in node1.
 
 .Before you begin
@@ -82,7 +82,7 @@ NOTE: To avoid damaging the connectors, don't use excessive force when sliding t
 
 . After you interrupt AUTOBOOT, node1 stops at the LOADER prompt. 
 +
-If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and press Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
+If you do not interrupt AUTOBOOT on time and node1 starts booting, wait for the prompt and enter Ctrl-C to go into the boot menu. After the node stops at the boot menu, use option `8` to reboot the node and interrupt AUTOBOOT during reboot.
 
 . At the LOADER> prompt of node1, set the default environment variables:
 +
@@ -97,6 +97,9 @@ set-defaults
 ----
 saveenv
 ----
+
+.What's next?
+After installing the AFF A30, AFF A50, AFF C30, or AFF C60 controller module, link:netboot-node1.html[netboot node1].
 
 // 2025 JUN 19, AFFFASDOC-334
 // 2024 DEC 9, AFFFASDOC-33

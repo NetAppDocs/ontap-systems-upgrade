@@ -16,4 +16,7 @@ You must have a grounding strap to perform the upgrade, and you need to referenc
 
 For an AFF A800 upgrade to an AFF A90 or AFF A70, verify that the 100GbE cables are a minimum of one meter in length.
 
-Refer to link:other_references.html[References] to access the list of reference documents and reference sites required for this upgrade.
+Refer to link:other-references.html[References] to access the list of reference documents and reference sites required for this upgrade.
+
+.What's next?
+After reviewing the required tools and documentation, link:guidelines-for-upgrading-controllers-with-arl.html[learn about the guidelines for upgrading controllers].
