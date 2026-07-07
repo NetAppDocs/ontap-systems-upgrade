@@ -29,7 +29,7 @@ system controller replace start -nodes <node_names>
 +
 [NOTE]
 ====
-You can only execute the system controller replace start command at the advanced privilege level: 
+You can only execute the `system controller replace start` command at the advanced privilege level:
 
 [source,cli]
 ----
