@@ -14,7 +14,7 @@ To confirm that configuration information on the boot media does not interfere w
 .About this task
 You must perform the following steps on node3 and node4. You can perform the steps on each node in parallel.
 
-. Boot the node to the boot menu:
+. Boot the node into the boot menu:
 +
 `boot_ontap menu`
 . At the boot menu prompt, type `wipeconfig` and then select Enter.
