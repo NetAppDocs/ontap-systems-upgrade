@@ -132,12 +132,7 @@ vserver services name-service dns show
 +
 [source,cli]
 ----
-network interface show -curr-node <local> -role <cluster,
-----
-+
-[source,cli]
-----
-intercluster,node-mgmt,cluster-mgmt,data>
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,cluster-mgmt,data
 ----
 +
 [source,cli]
