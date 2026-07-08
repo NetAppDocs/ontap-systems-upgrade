@@ -254,7 +254,7 @@ systemshell
 +
 [source,cli]
 ----
-# cat /BUILD
+cat /BUILD
 ----
 +
 In the command output, check if `build-type` is a NODAR image, for example, `DEBUG SIM NODAR`. 
