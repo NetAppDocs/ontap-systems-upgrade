@@ -29,7 +29,7 @@ system controller replace start -nodes <node_names>
 +
 [NOTE]
 ====
-You can only execute the system controller replace start command at the advanced privilege level: 
+You can only execute the `system controller replace start` command at the advanced privilege level: 
 
 [source,cli]
 ----
@@ -249,7 +249,7 @@ systemshell
 +
 [source,cli]
 ----
-# cat /BUILD
+cat /BUILD
 ----
 +
 In the command output, check if `build-type` is a NODAR image, for example, `DEBUG SIM NODAR`. 
