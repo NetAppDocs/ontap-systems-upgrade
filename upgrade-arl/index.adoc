@@ -67,6 +67,26 @@ If your upgrade scenario is listed in the following supported systems matrix, go
 |===
 |Old system |Replacement system |Supported ONTAP versions
 
+|AFF A70
+|AFF A90
+|9.18.1 and later
+
+|AFF A30
+|AFF A50
+|9.18.1 and later
+
+|AFF A20
+|AFF A30, AFF A50
+|9.18.1 and later
+
+|AFF C30
+|AFF C60
+|9.18.1 and later
+
+|FAS70
+|FAS90
+|9.18.1 and later
+
 |AFF C250 |AFF C30, AFF C60
 |9.16.1 and later
 
@@ -218,7 +238,7 @@ link:../upgrade-arl-manual/index.html[Manually upgrade controller hardware runni
 ====
 =====
 
- 
+// 2026 MAR 18, AFFFASDOC-395
 // 2025 MAR 18, AFFFASDOC-287
 // 2024 NOV 25, AFFFASDOC-33
 // 2023 SEP 6, AFFFASDOC-78
