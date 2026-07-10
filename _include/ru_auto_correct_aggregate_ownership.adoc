@@ -6,11 +6,17 @@ If the Aggregate Status Check fails, you must return aggregates owned by the par
 
 . Return the aggregates currently owned by the partner node to the home owner node:
 +
-`storage aggregate relocation start -node _source_node_ -destination _destination-node_ -aggregate-list *`
+[source,cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 
 . Verify that neither node1 nor node2 still owns aggregates for which it is the current owner (but not the home owner):
 +
-`storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
+[source,cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 The following example shows the output of the command when a node is both the current owner and home owner of aggregates:
 +
@@ -27,7 +33,9 @@ aggr4       node1      node1       online
 ----
 
 . Restart the controller replacement process:
-
-`system controller replace start -nodes _node_names_`
-
++
+[source,cli]
+----
+system controller replace start -nodes <node_names>
+----
 // BURT 1476241, 2022-05-11

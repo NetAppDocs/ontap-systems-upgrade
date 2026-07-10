@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-in-chassis/netboot-node2.html
 keywords: preparing, prepare, netboot, ontap, node2
-summary: After swapping the corresponding replacement node2 system modules when using ARL to upgrade controller models in the same chassis, you might need to netboot them.
+summary: When using ARL to upgrade controller models in the same chassis, you must netboot node2 after swapping the corresponding replacement system module.
 ---
 = Netboot node2
 :hardbreaks:

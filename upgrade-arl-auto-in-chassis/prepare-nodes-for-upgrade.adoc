@@ -22,7 +22,10 @@ Start the controller replacement process and run prechecks. If required, determi
 
 . List the Service Processor (SP) or baseboard management controller (BMC) firmware version running on the old controller: 
 +
-`service-processor show`
+[source,cli]
+----
+service-processor show
+----
 +
 Verify that you have a supported SP or BMC firmware version:
 +
@@ -54,9 +57,15 @@ Verify that you have a supported SP or BMC firmware version:
 
 . Begin the controller replacement process by entering the following command in the advanced privilege mode of the ONTAP command line:
 +
-`set -privilege advanced`
+[source,cli]
+----
+set -privilege advanced
+----
 +
-`system controller replace start -nodes _node_names_`
+[source,cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
 You see output similar to the following example. The output displays the ONTAP version running on your cluster:
 +
@@ -116,7 +125,7 @@ If any disks are missing, refer to link:other-references.html[References] to lin
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
 |Cluster LIF Status
 |Checks whether the cluster LIFs are up for both nodes. If the cluster LIFs are down, the task fails.
-|ASUP Status Check
+|AutoSupport Status Check
 |If AutoSupport notifications are not configured, the task fails.
 You must enable AutoSupport before beginning the controller replacement procedure.
 |CPU Utilization Check
@@ -136,28 +145,115 @@ If node affinity jobs are running, the check fails.
 +
 Run the commands from the serial port connected to each node, run and save the output of the commands individually:
 +
-* `vserver services name-service dns show`
-* `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
-* `network port show -node _local_ -type physical`
-* `service-processor show -node _local_ -instance`
-* `network fcp adapter show -node _local_`
-* `network port ifgrp show -node _local_`
-* `system node show -instance -node _local_`
-* `run -node _local_ sysconfig`
-* `run -node local sysconfig -ac`
-* `run -node local aggr status -r`
-* `vol show -fields type`
-* `run local aggr options _data_aggregate_name_`
-* `vol show -fields type , space-guarantee`
-* `storage aggregate show -node _local_`
-* `volume show -node _local_`
-* `storage array config show -switch _switch_name_`
-* `system license show -owner _local_`
-* `storage encryption disk show`
-* `security key-manager onboard show-backup`
-* `security key-manager external show`
-* `security key-manager external show-status`
-* `network port reachability show -detail -node _local_`
+[source,cli]
+----
+vserver services name-service dns show
+----
++
+[source,cli]
+----
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,cluster-mgmt,data
+----
++
+[source,cli]
+----
+network port show -node <local> -type physical
+----
++
+[source,cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source,cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source,cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source,cli]
+----
+system node show -instance -node <local>
+----
++
+[source,cli]
+----
+run -node <local> sysconfig
+----
++
+[source,cli]
+----
+run -node local sysconfig -ac
+----
++
+[source,cli]
+----
+run -node local aggr status -r
+----
++
+[source,cli]
+----
+vol show -fields type
+----
++
+[source,cli]
+----
+run local aggr options <data_aggregate_name>
+----
++
+[source,cli]
+----
+vol show -fields type , space-guarantee
+----
++
+[source,cli]
+----
+storage aggregate show -node <local>
+----
++
+[source,cli]
+----
+volume show -node <local>
+----
++
+[source,cli]
+----
+storage array config show -switch <switch_name>
+----
++
+[source,cli]
+----
+system license show -owner <local>
+----
++
+[source,cli]
+----
+storage encryption disk show
+----
++
+[source,cli]
+----
+security key-manager onboard show-backup
+----
++
+[source,cli]
+----
+security key-manager external show
+----
++
+[source,cli]
+----
+security key-manager external show-status
+----
++
+[source,cli]
+----
+network port reachability show -detail -node <local>
+----
 +
 NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using the Onboard Key Manager is in use, keep the key-manager passphrase ready to complete the key manager resync later in the procedure.
 
