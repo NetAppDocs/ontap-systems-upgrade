@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html
 keywords: relocating, failed, vetoed, aggregates, relocation, operation
-summary: "Manually relocate failed or vetoed aggregates to node1 when upgrading to controllers introdued  ONTTAP 9.15.1 or later by using `system controller replace` commands."
+summary: "Manually relocate failed or vetoed aggregates to node1 when using ARL to upgrade controller models in the same chassis."
 ---
 = Relocate failed or vetoed aggregates to node1
 :hardbreaks:

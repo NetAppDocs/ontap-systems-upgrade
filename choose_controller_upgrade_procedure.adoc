@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: 
 summary: In general, how you upgrade the controller hardware depends on the platform models of the original nodes. You upgrade either by moving aggregates or volumes storage (nondisruptive procedures) or by moving storage (a disruptive procedure).
 ---
-= Choose your AFF, ASA, or FAS controller hardware upgrade procedure
+= Choose an upgrade procedure for AFF, ASA, or FAS controller hardware
 :icons: font
 :imagesdir: ./media/
 
