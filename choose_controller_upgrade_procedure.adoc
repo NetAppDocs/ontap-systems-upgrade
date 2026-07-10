@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords: 
 summary: In general, how you upgrade the controller hardware depends on the platform models of the original nodes. You upgrade either by moving aggregates or volumes storage (nondisruptive procedures) or by moving storage (a disruptive procedure).
 ---
-= Choose your controller hardware upgrade procedure
+= Choose an upgrade procedure for AFF, ASA, or FAS controller hardware
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-In general, how you upgrade the controller hardware depends on the platform models of the original nodes. You upgrade either by relocating aggregates or moving volumes (both nondisruptive procedures), or by moving the storage (a disruptive procedure). If you have different ONTAP versions running on the original and new nodes, you might need to perform a software upgrade before starting the hardware upgrade.
+In general, how you upgrade NetApp AFF, ASA, or FAS controller hardware depends on the platform models of the original nodes. You upgrade either by relocating aggregates or moving volumes (both nondisruptive procedures), or by moving the storage (a disruptive procedure). If you have different ONTAP versions running on the original and new nodes, you might need to perform a software upgrade before starting the hardware upgrade.
 
 NOTE: ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from an ASA to ASA r2 system, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
 
