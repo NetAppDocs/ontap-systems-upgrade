@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html
+redirect: ontap-systems-upgrade/upgrade-arl-manual/send_custom_autosupport_message_prior_reconfig_switches.html
+---

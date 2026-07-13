@@ -29,7 +29,7 @@ This procedure is nondisruptive and takes approximately four hours to complete (
 
 .Steps
 
-. link:send_custom_asup_message_prior_reconfig_switches.html[Send a custom AutoSupport message prior to reconfiguring switches]
+. link:send_custom_autosupport_message_prior_reconfig_switches.html[Send a custom AutoSupport message prior to reconfiguring switches]
 
 . link:verify_health_mcc_config.html[Verify the health of the MetroCluster configuration]
 

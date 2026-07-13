@@ -19,11 +19,20 @@ The controller replacement process begins with a series of prechecks. You also g
 
 . Begin the controller replacement process by entering the following command in the ONTAP command line:
 +
-`system controller replace start -nodes _node_names_`
+[source,cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
-NOTE: You can only execute this command at the advanced privilege level:
-`set -privilege advanced`
+[NOTE]
+====
+You can only execute this command at the advanced privilege level:
 
+[source,cli]
+----
+set -privilege advanced
+----
+====
 +
 You see the following output:
 +
@@ -87,9 +96,9 @@ If any disks are missing, refer to link:other_references.html[References] to lin
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.
 |Cluster LIF Status
 |Checks whether the cluster LIFs are up for both nodes. If the cluster LIFs are down, the task fails.
-|ASUP Status Check
-|If ASUP notifications are not configured, the task fails.
-You must enable ASUP before beginning the controller replacement procedure.
+|AutoSupport Status Check
+|If AutoSupport notifications are not configured, the task fails.
+You must enable AutoSupport before beginning the controller replacement procedure.
 |CPU Utilization Check
 |Checks if the CPU utilization is more than 50% for any of the nodes being replaced.
 If the CPU usage is more than 50% for a considerable period of time, the task fails.
@@ -107,22 +116,80 @@ If node affinity jobs are running, the check fails.
 +
 From the serial port connected to each node, run and save the output of the following commands individually:
 +
-* `vserver services name-service dns show`
-* `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,clustermgmt, data`
-* `network port show -node _local_ -type physical`
-* `service-processor show -node _local_ -instance`
-* `network fcp adapter show -node _local_`
-* `network port ifgrp show -node _local_`
-* `network port vlan show`
-* `system node show -instance -node _local_`
-* `run -node _local_ sysconfig`
-* `storage aggregate show -node _local_`
-* `volume show -node _local_`
-* `network interface failover-groups show`
-* `storage array config show -switch _switch_name_`
-* `system license show -owner _local_`
-* `storage encryption disk show`
-
+[source,cli]
+----
+vserver services name-service dns show
+----
++
+[source,cli]
+----
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,clustermgmt, data
+----
++
+[source,cli]
+----
+network port show -node <local> -type physical
+----
++
+[source,cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source,cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source,cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source,cli]
+----
+network port vlan show
+----
++
+[source,cli]
+----
+system node show -instance -node <local>
+----
++
+[source,cli]
+----
+run -node <local> sysconfig
+----
++
+[source,cli]
+----
+storage aggregate show -node <local>
+----
++
+[source,cli]
+----
+volume show -node <local>
+----
++
+[source,cli]
+----
+network interface failover-groups show
+----
++
+[source,cli]
+----
+storage array config show -switch <switch_name>
+----
++
+[source,cli]
+----
+system license show -owner <local>
+----
++
+[source,cli]
+----
+storage encryption disk show
+----
 +
 NOTE: If NetApp Volume Encryption (NVE) or NetApp Aggregate Encryption (NAE) using Onboard Key Manager is in use, keep the key manager passphrase ready to complete the key manager resync later in the procedure.
 
