@@ -16,11 +16,11 @@ Before you upgrade the nodes using ARL, you must understand how the procedure wo
 
 == Upgrade the node pair
 
-To upgrade the node pair, you must prepare the original nodes and then perform a series of steps on both the original and new nodes. You can then decommission the original nodes.
+To upgrade the node pair, you prepare the original nodes and follow the upgrade steps on both the original and new nodes. Then, you decommission the original nodes.
 
 == ARL upgrade sequence overview
 
-During the procedure, you upgrade the original controller hardware with the replacement controller hardware, one controller at a time, taking advantage of the HA pair configuration to relocate the ownership of non-root aggregates. All non-root aggregates must undergo two relocations to reach their final destination, which is the correct upgraded node.
+You upgrade the original controller hardware with the replacement controller hardware, one controller at a time, taking advantage of the HA pair configuration to relocate the ownership of non-root aggregates. You must relocate all non-root aggregates twice to reach the correct upgraded node.
 
 Each aggregate has a home owner and current owner. The home owner is the actual owner of the aggregate, and the current owner is the temporary owner.
 
@@ -28,14 +28,14 @@ The following illustration shows the stages of the procedure. The thick, light g
 
 image:arl_upgrade_manual_image1.PNG[Illustration showing the stages of the ARL procedure]
 
-The following table describes the high-level tasks you perform during each stage and the state of aggregate ownership at the end of the stage. Detailed steps are provided later in the procedure:
+The following table describes the high-level tasks for each stage and the state of aggregate ownership at the end of the stage. Detailed steps are provided later in the procedure:
 
 [cols="35,65"]
 |===
 | Stage | Steps
 
 | link:determine_aggregates_on_internal_drives.html[Stage 1: Prepare for upgrade]
-a| During Stage 1, if required, you confirm that internal disk drives do not contain root aggregates or data aggregates, prepare the nodes for the upgrade, and run a series of prechecks. If required, you rekey disks for Storage Encryption and prepare to netboot the new controllers.
+a| During Stage 1, if necessary, you confirm that internal disk drives do not contain root aggregates or data aggregates, prepare the nodes for the upgrade, and run prechecks. If necessary, you rekey disks for Storage Encryption and prepare to netboot the new controllers.
 
 Aggregate ownership at the end of Stage 1:
 
@@ -52,7 +52,7 @@ Aggregate ownership at the end of Stage 2:
 * Node2 is the home owner and current owner of node2 aggregates.
 
 | link:install_boot_node3.html[Stage 3: Install and boot node3]
-a| During Stage 3, you install and boot node3, map the cluster and node-management ports from node1 to node3, and move data LIFs and SAN LIFs belonging to node1 from node2 to node3. You also relocate all aggregates from node2 to node3, and move the data LIFs and SAN LIFs owned by node2 to node3.
+a| During Stage 3, you install and boot node3 and map the cluster and node-management ports from node1 to node3. If you are using NetApp Volume Encryption (NVE), you restore key-manager configuration. Then, you move data LIFs and SAN LIFs belonging to node1 from node2 to node3, relocate all aggregates from node2 to node3, and move the data LIFs and SAN LIFs owned by node2 to node3.
 
 Aggregate ownership at the end of Stage 3:
 
@@ -65,7 +65,7 @@ a| During Stage 4, you record the necessary node2 information for use later in t
 No changes occur in aggregate ownership.
 
 | link:install_boot_node4.html[Stage 5: Install and boot node4]
-a| During Stage 5, you install and boot node4, map the cluster and node-management ports from node2 to node4, and move data LIFs and SAN LIFs belonging to node2 from node3 to node4. You also relocate node2 aggregates from node3 to node4 and move the data LIFs and SAN LIFs owned by node2 to node3.
+a| During Stage 5, you install and boot node4 and map the cluster and node-management ports from node2 to node4. If you are using NetApp Volume Encryption (NVE), you restore key-manager configuration. Then, you move data LIFs and SAN LIFs belonging to node2 from node3 to node4, relocate node2 aggregates from node3 to node4, and move the data LIFs and SAN LIFs owned by node2 to node3.
 
 Aggregate ownership at the end of Stage 5:
 
@@ -73,7 +73,7 @@ Aggregate ownership at the end of Stage 5:
 * Node4 is the home owner and current owner of aggregates that originally belonged to node2.
 
 | link:manage_authentication_kmip.html[Stage 6: Complete the upgrade]
-a| During Stage 6, you confirm that the new nodes are set up correctly and set up Storage Encryption or NetApp Volume Encryption if the new nodes are encryption-enabled. You should also decommission the old nodes resume SnapMirror operations.
+a| During Stage 6, you confirm that the new nodes are set up correctly and set up Storage Encryption or NetApp Volume Encryption if the new nodes are encryption-enabled. You should also decommission the old nodes and resume SnapMirror operations.
 
 NOTE: The storage virtual machine (SVM) disaster recovery updates are not interrupted as per the schedules assigned.
 
