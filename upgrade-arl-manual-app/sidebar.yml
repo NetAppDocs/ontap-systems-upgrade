@@ -51,6 +51,8 @@ entries:
         url: /upgrade-arl-manual-app/set_fc_uta_uta2_config_node3.html
       - title: "Map ports from node1 to node3"
         url: /upgrade-arl-manual-app/map_ports_node1_node3.html
+      - title: "Restore Key Manager configuration on node3"
+        url: /upgrade-arl-manual-app/restore_key-manager_configuration_node3.html      
       - title: "Move NAS data LIFs owned by node1 from node2 to node3 and verify SAN LIFs on node3"
         url: /upgrade-arl-manual-app/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html
       - title: "Worksheet: Information to record before moving NAS data LIFs to node3"
@@ -75,6 +77,8 @@ entries:
         url: /upgrade-arl-manual-app/set_fc_uta_uta2_config_node4.html
       - title: "Map ports from node2 to node4"
         url: /upgrade-arl-manual-app/map_ports_node2_node4.html
+      - title: "Restore Key Manager configuration on node4"
+        url: /upgrade-arl-manual-app/restore_key-manager_config_node4.html
       - title: "Move NAS data LIFs owned by node2 from node3 to node4 and verify SAN LIFs on node4"
         url: /upgrade-arl-manual-app/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html
       - title: "Worksheet: Information to record before moving NAS data LIFs to node4"
