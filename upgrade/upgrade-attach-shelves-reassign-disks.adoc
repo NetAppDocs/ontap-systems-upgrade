@@ -17,6 +17,7 @@ You perform the steps in this section on node3 and node4, completing each step o
 
 .Steps
 
+[[ressign-spare-disks-step1]]
 . Connect the storage shelf cables from the shelves that were previously attached to node1/node2 to node3/node4. 
 +
 CAUTION: You must not connect new shelves to node3/node4 during this upgrade procedure. You can nondisruptively connect new shelves to the system after completing the controller upgrade.
@@ -38,21 +39,29 @@ Local System ID: 101268854
 +
 Record the system ID of node3 for use in Step 4 below.
 
-. Reassign node1's spare disks, disks belonging to the root aggregate, and any data aggregates:
+. Reassign the disks and data aggregates:
 +
-`disk reassign -s _node1_sysid_ -d _node3_sysid_ -p _node2_sysID_`
-+
+[role="tabbed-block"]
+====
+.Reassign to node3
 --
+Reassign node1's spare disks, disks belonging to the root aggregate, and any data aggregates to node3:
+
+`disk reassign -s _node1_sysid_ -d _node3_sysid_ -p _node2_sysID_`
+
 ** The parameter `_node1_sysid_` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
 ** Specify the parameter `_-p partner_sysID_` only when shared disks are present.
-
-[NOTE]
-====
-When reassigning node2's spare disks, disks belonging to the root aggregate, and any data aggregates, the command is:
+--
+.Reassign to node4
+--
+Reassign node2's spare disks, disks belonging to the root aggregate, and any data aggregates to node4:
 
 `disk reassign -s node2_sysid -d node4_sysid -p node3_sysID`
-====
+
+** The parameter `_node2_sysid_` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
+** Specify the parameter `_-p partner_sysID_` only when shared disks are present.
 --
+====
 +
 The system displays a message similar to the following:
 +
@@ -89,9 +98,12 @@ You should see output similar to the following:
                                 64-bit
 ----
 
-. Exit Maintenance mode:
+. [[ressign-spare-disks-step9]]Exit Maintenance mode:
 +
 `halt`
 
+. Repeat <<ressign-spare-disks-step1,Step 1>> to <<ressign-spare-disks-step9,Step 9>> on node4.
+
+// 2026 JUL 21, ontap-systems-upgrade-issue-173
 // 2023 NOV 14, ontap-systems-upgrade-issues-94
 // Clean-up, 2022-03-09
