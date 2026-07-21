@@ -4,19 +4,21 @@
 Product: ONTAP controller hardware upgrades
 
 This repository documents how to upgrade NetApp *AFF*, *ASA*, and *FAS* controller hardware in ONTAP environments. The content helps users choose and execute the correct upgrade method by *aggregate relocation (ARL)*, *moving volumes*, *moving storage*, or supported *drive shelf* conversion workflows.
+The procedure-selection entry point is `choose_controller_upgrade_procedure.adoc`.
 
 ### Repository structure
-- `_include/` – Shared AsciiDoc fragments reused across ARL, move-volumes, move-storage, and troubleshooting topics.
+
+- `_include/` – Shared AsciiDoc fragments reused across procedures, including `ru_all_*`, `ru_auto_*`, `ru_man_*`, and `ru_upgrade_*` naming patterns; newer files might use hyphens instead of underscores (for example, `ru-auto-*`).
 - `media/` – Diagrams and hardware images for node replacement, chassis work, cabling, disk reassignment, and workflow illustrations.
 - `redirects/` – Redirect and legacy-named topic files that preserve older upgrade page paths and topic names.
 - `upgrade/` – Controller upgrade procedures based on moving volumes, moving storage, and supported convert-to-drive-shelf workflows.
 - `upgrade-arl/` – ARL entry content that helps readers choose the correct aggregate-relocation procedure and supported upgrade path.
-- `upgrade-arl-auto/` – ARL procedures that use `system controller replace` commands in the older automated command-based flow.
-- `upgrade-arl-auto-app/` – ARL procedures that use `system controller replace` commands with automated port reachability checks.
-- `upgrade-arl-auto-app-9151/` – ARL procedures for newer controller families that keep the existing disks and data in place.
-- `upgrade-arl-auto-in-chassis/` – ARL procedures that keep the existing chassis and disks while replacing controllers or controller modules.
-- `upgrade-arl-manual/` – Manual ARL procedures for earlier controller-upgrade paths.
-- `upgrade-arl-manual-app/` – Manual ARL procedures for later same-family AFF, ASA, and FAS controller upgrades.
+- `upgrade-arl-auto/` – ARL procedures that use `system controller replace` commands for systems running **ONTAP 9.5, 9.6, or 9.7**. Includes MetroCluster verification steps.
+- `upgrade-arl-auto-app/` – ARL procedures that use `system controller replace` commands with automated port reachability checks, for systems running **ONTAP 9.8 or later**.
+- `upgrade-arl-auto-app-9151/` – ARL procedures using `system controller replace` commands for AFF and FAS controllers introduced in **ONTAP 9.15.1 or later**. MetroCluster FC and IP configurations are **not supported** by this procedure.
+- `upgrade-arl-auto-in-chassis/` – ARL procedures that convert specific supported systems (such as AFF A700→AFF A900 or AFF A800) to replacement controllers while keeping the existing chassis and disks.
+- `upgrade-arl-manual/` – Manual ARL procedures for systems running **ONTAP 9.7 or earlier**. Includes switch reconfiguration steps (RCF files, recabling) for certain platforms.
+- `upgrade-arl-manual-app/` – Manual ARL procedures for systems running **ONTAP 9.8 or later**.
 
 ### Product-specific context
 **Architecture and components:**
@@ -24,7 +26,8 @@ This repository documents how to upgrade NetApp *AFF*, *ASA*, and *FAS* controll
 - *ARL* relocates ownership of *non-root aggregates* between nodes that share storage in the same cluster so data stays available during controller replacement.
 - In the docs, the original controllers are *node1* and *node2*, and the replacement controllers are *node3* and *node4*; after the upgrade, the replacement nodes take over the original node identities.
 - Some workflows replace controllers while keeping the same *chassis* and disks, and others convert a supported original system into a *drive shelf* attached to the replacement nodes.
-- *MetroCluster* is a special topology with separate guidance or procedure-specific limits; do not assume every upgrade path supports every MetroCluster configuration.
+- *MetroCluster* is a special topology with procedure-specific support: `upgrade-arl-auto/`, `upgrade-arl-manual/`, and `upgrade-arl-manual-app/` include MetroCluster verification steps and support MetroCluster configurations; `upgrade-arl-auto-app-9151/` explicitly excludes MetroCluster FC and IP. Do not assume every upgrade path supports MetroCluster.
+- *ASA r2* is a distinct platform family. Upgrading an ASA system to an ASA r2 replacement is not supported by any procedure in this repository; users must migrate data instead. Do not suggest an upgrade procedure for ASA-to-ASA-r2 transitions.
 
 **Key concepts:**
 - *Move volumes* is a nondisruptive method that adds new nodes to the cluster, moves volumes to them, migrates *LIFs*, and then removes the original nodes.
@@ -41,7 +44,7 @@ This repository documents how to upgrade NetApp *AFF*, *ASA*, and *FAS* controll
 - Hardware terms such as *NVRAM*, *I/O modules*, *cluster ports*, *disk ownership*, and *root volume configuration* are central to these procedures and should be used precisely.
 
 ### Typical user workflows
-**Choose an upgrade procedure:** Identify original and replacement platforms → determine whether the upgrade must be disruptive or nondisruptive → determine whether the system is modular, integrated, in-chassis, or drive-shelf-convertible → follow the matching ARL, move-volumes, or move-storage procedure
+**Choose an upgrade procedure:** Start from `choose_controller_upgrade_procedure.adoc`, which contains the decision table → identify original and replacement platforms → determine the ONTAP version running on the original nodes → determine whether the upgrade must be disruptive or nondisruptive → determine whether the system is modular, integrated, in-chassis, or drive-shelf-convertible → follow the matching ARL, move-volumes, or move-storage procedure. Note: if the original and new nodes run different ONTAP versions, a software upgrade may be required first; version differences cannot exceed four releases.
 
 **Upgrade by using ARL:** Confirm the supported controller replacement path → prepare node1/node2 and replacement node3/node4 → relocate non-root aggregates and migrate LIFs during controller replacement → verify the replacement nodes and resume related services
 
