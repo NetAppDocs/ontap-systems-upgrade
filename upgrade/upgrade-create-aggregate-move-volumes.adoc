@@ -94,7 +94,7 @@ Forcing the volume move operation to finish can disrupt client access to the vol
 `volume show -vserver _svm_name_`
 
 .What's next?
-link:upgrade-move-lifs-to-new-nodes.html[Move non-SAN data LIFs and cluster-management LIFs to the new nodes]
+After creating an aggregate and moving volumes to the new nodes, link:upgrade-move-lifs-to-new-nodes.html[move non-SAN data LIFs and cluster-management LIFs to the new nodes].
 
 // 2023 NOV 13, AFFFASDOC-166
 // 2023 JULY 3, BURTs 1552420, 1552651, and 1552660

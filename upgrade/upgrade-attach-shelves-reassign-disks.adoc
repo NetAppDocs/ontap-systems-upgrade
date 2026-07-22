@@ -104,6 +104,9 @@ You should see output similar to the following:
 
 . Repeat <<reassign-spare-disks-step1,Step 1>> to <<reassign-spare-disks-step9,Step 9>> on node4.
 
+.What's next?
+After attaching storage shelves and reassigning disk ownership, link:upgrade-restore-root-volume-config.html[restore the root volume configuration].
+
 // 2026 JUL 21, ontap-systems-upgrade-issue-173
 // 2023 NOV 14, ontap-systems-upgrade-issues-94
 // Clean-up, 2022-03-09

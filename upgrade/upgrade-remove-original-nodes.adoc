@@ -32,7 +32,7 @@ cluster ha modify -configured true
 ----
 
 .What's next?
-link:upgrade-complete-move-volumes.html[Complete the move volumes upgrade]
+After removing the original nodes, link:upgrade-complete-move-volumes.html[complete the move volumes upgrade].
 
 // 2026 FEB 6, ONTAPDOC-3581
 // 2025 DEC 12, AFFFASDOC-442

@@ -49,4 +49,7 @@ The system initiates the `wipeconfig` procedure and reboots. When the procedure 
 
 . From the boot menu, enter 8 to reboot the node, and enter Ctrl-C during AUTOBOOT to stop the node at the LOADER prompt.
 
+.What's next?
+After resetting the default configuration on the new nodes, link:upgrade-install-new-nodes.html[install the new nodes].
+
 // Clean-up, 2022-03-09
