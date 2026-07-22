@@ -20,7 +20,7 @@ You perform the steps in this section on node3 and node4, completing each step o
 [[reassign-spare-disks-step1]]
 . Connect the storage shelf cables from the shelves that were previously attached to node1 to node3 and node2 to node4. 
 +
-CAUTION: You must not connect new shelves to node3 or node4 during this upgrade procedure. You can nondisruptively connect new shelves to the system after completing the controller upgrade.
+CAUTION: Do not connect new shelves to node3 or node4 during this upgrade procedure. You can nondisruptively connect new shelves to the system after completing the controller upgrade.
 
 . Verify the power supply and physical connectivity of the shelves.
 
@@ -47,19 +47,19 @@ Record the system ID of node3 for use in Step 4 below.
 --
 Reassign node1's spare disks to node3, disks belonging to the root aggregate, and any data aggregates to node3:
 
-`disk reassign -s _node1_sysid_ -d _node3_sysid_ -p _node2_sysid_`
+`disk reassign -s <node1_sysid> -d <node3_sysid> -p <node2_sysid>`
 
-** The parameter `_node1_sysid_` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
-** Specify the parameter `_-p partner_sysid_` only when shared disks are present.
+** The parameter `node1_sysid` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
+** Specify the parameter `-p partner_sysid` only when shared disks are present.
 --
 .Reassign to node4
 --
 Reassign node2's spare disks to node4, disks belonging to the root aggregate, and any data aggregates to node4:
 
-`disk reassign -s node2_sysid -d node4_sysid -p node3_sysid`
+`disk reassign -s <node2_sysid> -d <node4_sysid> -p <node3_sysid>`
 
-** The parameter `_node2_sysid_` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
-** Specify the parameter `_-p partner_sysid_` only when shared disks are present.
+** The parameter `node2_sysid` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
+** Specify the parameter `-p partner_sysid` only when shared disks are present.
 --
 ====
 +
