@@ -10,4 +10,4 @@ During the procedure, you upgrade the original controller hardware with the repl
 
 Each aggregate has a home owner and current owner. The home owner is the actual owner of the aggregate, and the current owner is the temporary owner.
 
-The following table describes the high-level tasks you perform during each stage and the state of aggregate ownership at the end of the stage.  Detailed steps are provided later in the procedure:
+Learn about the high-level tasks you perform during each stage and the state of aggregate ownership at the end of the stage.  Detailed steps are provided later in the procedure:
