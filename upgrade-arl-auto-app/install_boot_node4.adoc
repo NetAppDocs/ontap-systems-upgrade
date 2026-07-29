@@ -80,7 +80,6 @@ Enter the passphrase and the backup information that you recorded earlier in the
 . Boot the node into boot menu:
 +
 `boot_ontap menu`
-+
 
 .What's next?
 

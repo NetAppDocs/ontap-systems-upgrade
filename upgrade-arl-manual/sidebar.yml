@@ -18,7 +18,7 @@ entries:
       - title: Prepare to reconfigure the switch layout
         url: /upgrade-arl-manual/reconfig_index.html
       - title: "Send a custom AutoSupport message prior to reconfiguring switches"
-        url: /upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html
+        url: /upgrade-arl-manual/send_custom_autosupport_message_prior_reconfig_switches.html
       - title: "Verify the health of the MetroCluster configuration"
         url: /upgrade-arl-manual/verify_health_mcc_config.html
       - title: "Check for MetroCluster configuration errors"

@@ -1,22 +1,15 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-app/restore_key-manager_config_node4.html
+permalink: upgrade-arl-manual-app/restore_key-manager_config_node4.html
 keywords: restore key-manager, configuration, node4, nve, arl, volume, encryption
-summary: "If required, restore key-manager configuration on node4 when upgrading controllers running ONTAP 9.8 or later by using `system controller replace` commands."
+summary: "If required, restore key-manager configuration on node4 during a manual ARL upgrade on controllers running ONTAP 9.8 or later."
 ---
-
 = Restore key-manager configuration on node4
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2020-12-02 14:33:55.642512
-//
 
 [.lead]
 If you are using NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) to encrypt volumes on the system you are upgrading, the encryption configuration must be synchronized to the new nodes. If you do not synchronize the key-manager, when you relocate the node2 aggregates from node3 to node4 by using ARL, failures might occur because node4 does not have the required encryption keys to bring encrypted volumes and aggregates online.
@@ -48,9 +41,6 @@ node     vserver   key-server   key-id                                  restored
 node4    svm1      ""           00000000000000000200000000000a008a81976 true
                                 2190178f9350e071fbb90f00000000000000000                           
 ----
-
-.What's next?
-After restoring key-manager configuration on node4, link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html[move non-root aggregates and NAS data LIFs owned by node2 from node3 to node4].
 
 // 11 DEC 2020, thomi, checked
 // BURT 1476241, 28 Sept 2022
