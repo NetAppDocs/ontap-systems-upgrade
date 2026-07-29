@@ -60,7 +60,7 @@ entries:
       url: /upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html
     - title: Retire node2
       url: /upgrade-arl-auto-in-chassis/retire-node2.html
-- title: "Stage 5. Install the node2 replacement system modules"
+- title: "Stage 5. Install node2 replacement system modules"
   entries:
     - title: Replace the node2 system modules
       entries:

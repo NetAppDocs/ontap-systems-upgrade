@@ -13,12 +13,15 @@ You must reassign the disks that belonged to node1 and node2 to node3 and node4 
 
 .About this task
 
-You perform the steps in this section on node3 and node4, completing each step on node3 and then node4 before going on to the next step.
+You perform the steps in this section on node3 and node4. Complete each step on node3 and then node4 before going on to the next step.
 
 .Steps
 
 [[reassign-spare-disks-step1]]
-. Connect the storage shelf cables from the shelves that were previously attached to node1 to node3 and node2 to node4. 
+. Connect the storage shelf cables from the shelves that were previously attached:
++
+* Connect the node1 cables to node3 
+* Connect the node2 cables to node4. 
 +
 CAUTION: Do not connect new shelves to node3 or node4 during this upgrade procedure. You can nondisruptively connect new shelves to the system after completing the controller upgrade.
 
@@ -37,29 +40,30 @@ Local System ID: 101268854
 ...
 ----
 +
-Record the system ID of node3 for use in Step 4 below.
+Record the system ID of node3 for use in <<reassign-disks-and-aggregates,Step 5>>.
 
+[[reassign-disks-and-aggregates]]
 . Reassign the disks and data aggregates:
 +
 [role="tabbed-block"]
 ====
 .Reassign to node3
 --
-Reassign node1's spare disks to node3, disks belonging to the root aggregate, and any data aggregates to node3:
+Reassign node1's spare disks, disks belonging to the root aggregate, and any data aggregates to node3:
 
 `disk reassign -s <node1_sysid> -d <node3_sysid> -p <node2_sysid>`
 
 ** The parameter `node1_sysid` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
-** Specify the parameter `-p partner_sysid` only when shared disks are present.
+** Specify the parameter `-p <node2_sysid>` only when shared disks are present.
 --
 .Reassign to node4
 --
-Reassign node2's spare disks to node4, disks belonging to the root aggregate, and any data aggregates to node4:
+Reassign node2's spare disks, disks belonging to the root aggregate, and any data aggregates to node4:
 
 `disk reassign -s <node2_sysid> -d <node4_sysid> -p <node3_sysid>`
 
 ** The parameter `node2_sysid` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
-** Specify the parameter `-p partner_sysid` only when shared disks are present.
+** Specify the parameter `-p <node3_sysid>` only when shared disks are present.
 --
 ====
 +
