@@ -6,6 +6,18 @@ Product: ONTAP controller hardware upgrades
 This repository documents how to upgrade NetApp *AFF*, *ASA*, and *FAS* controller hardware in ONTAP environments. The content helps users choose and execute the correct upgrade method by *aggregate relocation (ARL)*, *moving volumes*, *moving storage*, or supported *drive shelf* conversion workflows.
 The procedure-selection entry point is `choose_controller_upgrade_procedure.adoc`.
 
+**Page title guidance:**
+When writing or revising page titles for this repository, do not use the product name literally as a prefix. Titles should describe the topic in context, not label it with the product name.
+
+Use "ONTAP controller hardware" as the default contextual anchor for general-scope page titles. When a title lists platform families only as a broad qualifier, replace the family list with "your ONTAP controller hardware". For example, use "Choose an upgrade procedure for your ONTAP controller hardware" rather than "Choose an upgrade procedure for AFF, ASA, or FAS controller hardware".
+
+Retain specific model numbers when the model is the functional differentiator of the procedure and removing it would make the title ambiguous or incorrect. This includes model-specific in-chassis controller replacement procedures and model-specific drive shelf conversion procedures. Do not generalize those titles to "ONTAP controller hardware".
+
+Decision rule:
+
+- If the page applies broadly across families, use "ONTAP controller hardware".
+- If the page applies only to named models, keep the model names in the title.
+
 ### Repository structure
 
 - `_include/` – Shared AsciiDoc fragments reused across procedures, including `ru_all_*`, `ru_auto_*`, `ru_man_*`, and `ru_upgrade_*` naming patterns; newer files might use hyphens instead of underscores (for example, `ru-auto-*`).
