@@ -51,7 +51,7 @@ Record the system ID of node3 for use in <<reassign-disks-and-aggregates,Step 5>
 --
 Reassign node1's spare disks, disks belonging to the root aggregate, and any data aggregates to node3:
 
-`disk reassign -s <node1_sysid> -d <node3_sysid> -p <node2_sysid>`
+`disk reassign -s <node1_sysid> -d <node3_sysid> -p <node4_sysid>`
 
 ** The parameter `node1_sysid` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
 ** Specify the parameter `-p <node2_sysid>` only when shared disks are present.
