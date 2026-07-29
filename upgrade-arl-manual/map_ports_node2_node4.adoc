@@ -17,7 +17,7 @@ The physical ports on node2 must map correctly to the physical ports on node4. T
 
 .Before you begin
 
-You must already have information about the ports on the new nodes, to access this information refer to link:other_references.html[References] to link to the _Hardware Universe_. You use the information later in this section.
+You must already have information about the ports on the new nodes, to access this information refer to link:other-references.html[References] to link to the _Hardware Universe_. You use the information later in this section.
 
 The software configuration of node4 must match the physical connectivity of node4, and IP connectivity must be restored before you continue with the upgrade.
 
@@ -178,7 +178,7 @@ ports in failover group `fg1` as failover targets for LIF `data1` on `node4`:
 +
 `network interface modify -vserver node4 -lif data1 failover-policy broadcast-domain-wide -failover-group fg1`
 +
-For more information, refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Command reference_, and go to _Configuring failover settings on a LIF_.
+For more information, refer to link:other-references.html[References] to link to _Network Management_ or the _ONTAP 9 Command reference_, and go to _Configuring failover settings on a LIF_.
 . Verify the changes on node4:
 +
 `network port show -node node4`

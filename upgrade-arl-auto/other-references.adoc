@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-manual-app/other_references.html
+permalink: upgrade-arl-auto/other-references.html
 keywords: other references, documentation, hardware universe, content, documentation center, information
-summary: "Reference content and websites required to support a manual ARL upgrade on controllers running ONTAP 9.8 or later."
+summary: "Reference content and websites required to support a controller upgrade running ONTAP 9.5 to 9.7 by using `system controller replace` commands."
 ---
 
 = References
@@ -14,4 +14,3 @@ summary: "Reference content and websites required to support a manual ARL upgrad
 
 [.lead]
 include::../_include/ru_all_other_references.adoc[]
-// 02 MAR 2021:  added new approach for external references

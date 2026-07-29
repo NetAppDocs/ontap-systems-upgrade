@@ -25,7 +25,7 @@ NOTE: If you're upgrading to a system with both nodes in the same chassis, insta
 
 . [[step3]]Cable node3, moving the connections from node1 to node3.
 +
-The following references help you make proper cable connections. Go to link:other_references.html[References] to link to them.
+The following references help you make proper cable connections. Go to link:other-references.html[References] to link to them.
 +
 * _Installation and Setup Instructions_ for the node3 platform
 * The appropriate disk shelf procedure
