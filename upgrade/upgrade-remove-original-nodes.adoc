@@ -12,13 +12,13 @@ summary: After the volumes have been moved to the new nodes, you remove the orig
 After moving the volumes from the original to the new nodes and moving or deleting data LIFs, you remove the original nodes from the cluster. When you remove a node, the node's configuration is erased and all disks are initialized.
 
 .Steps
-. Disable high-availability (HA) configuration on the original nodes:
+. [[disable-ha]]Disable high-availability (HA) configuration on the original nodes:
 +
 [source,cli]
 ----
 storage failover modify -node <original_node_name> -enabled false
 ----
-[[disable-ha]]
+
 [start=2]
 include::https://raw.githubusercontent.com/NetAppDocs/ontap/main/_include/remove-nodes-from-cluster.adoc[]
 
