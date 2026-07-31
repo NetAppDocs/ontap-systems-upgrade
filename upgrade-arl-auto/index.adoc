@@ -34,7 +34,7 @@ The terms "node1", "node2", "node3", and "node4" are used only to distinguish be
 
 * Beginning with ONTAP 9.6, this procedure applies to systems running 4-node MetroCluster configuration or higher. Because MetroCluster configuration sites can be at two physically different locations, the automated controller upgrade must be carried out individually at each MetroCluster site for an HA pair.
 
-* If you are upgrading from an AFF A320 system, you can use volume moves to upgrade controller hardware or contact technical support. If you are willing to do volume moves, refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
+* If you are upgrading from an AFF A320 system, you can use volume moves to upgrade controller hardware or contact technical support. If you are willing to do volume moves, refer to link:other-references.html[References] to link to _Upgrade by moving volumes or storage_.
 
 // Page 5 in PDF
 // Clean-up, 2022-03-09

@@ -20,7 +20,7 @@ You must verify that the physical ports on node2 map correctly to the physical p
 
 .About this task
 
-Refer to link:other_references.html[References] to link to the _Hardware Universe_ to capture information about the ports on the new nodes. You will use the information later in this section.
+Refer to link:other-references.html[References] to link to the _Hardware Universe_ to capture information about the ports on the new nodes. You will use the information later in this section.
 
 The software configuration of node4 must match the physical connectivity of node4 and IP connectivity must be restored before you continue with the upgrade.
 
@@ -169,7 +169,7 @@ The following command sets the failover policy to `broadcast-domain-wide` and us
 +
 `network interface modify -vserver node4 -lif data1 failover-policy broadcast-domainwide -failover-group fg1`
 +
-Refer to link:other_references.html[References] to link to _Network Management_ or the _ONTAP 9 Command reference_ and see _Configuring failover settings on a LIF_ for more information.
+Refer to link:other-references.html[References] to link to _Network Management_ or the _ONTAP 9 Command reference_ and see _Configuring failover settings on a LIF_ for more information.
 . Verify the changes on node4:
 +
 `network port show -node node4`

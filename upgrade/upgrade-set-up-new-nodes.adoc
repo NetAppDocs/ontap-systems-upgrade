@@ -104,5 +104,8 @@ The `ha-config modify controller ha` command configures `ha` for the controller 
 +
 The system stops at the LOADER prompt
 
+.What's next?
+After setting up the new nodes, optionally, link:upgrade-move-internal-drives.html[move internal drives from the original node] or link:upgrade-convert-node-to-shelf.html[convert the original node to a drive shelf]. Then, link:upgrade-attach-shelves-reassign-disks.html[attach storage shelves and reassign disk ownership].
+
 // 2023 OCT 24, AFFFASDOC-131
 // Clean-up, 2022-03-09

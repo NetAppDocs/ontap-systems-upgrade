@@ -38,17 +38,17 @@ You cannot perform the following upgrades:
 
 *  To or from controllers that cannot run a version of ONTAP from ONTAP 9.0 to ONTAP 9.7.
 +
-For information on controller upgrades for systems running Data ONTAP operating in 7-Mode, refer to link:other_references.html[References] to link to the _NetApp Support Site_.
+For information on controller upgrades for systems running Data ONTAP operating in 7-Mode, refer to link:other-references.html[References] to link to the _NetApp Support Site_.
 
 * To replacement controllers that do not support the disk shelves connected to the original controllers.
 +
-For disk-support information, refer to link:other_references.html[References] to link to the _Hardware Universe_.
+For disk-support information, refer to link:other-references.html[References] to link to the _Hardware Universe_.
 
 * From controllers with root aggregates or data aggregates on internal drives.
 +
-If you want to upgrade controllers with root aggregates or data aggregates on internal disk drives, refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
+If you want to upgrade controllers with root aggregates or data aggregates on internal disk drives, refer to link:other-references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
 +
-NOTE: If you want to upgrade ONTAP on nodes in a cluster, refer to link:other_references.html[References] to link to _Upgrade ONTAP_.
+NOTE: If you want to upgrade ONTAP on nodes in a cluster, refer to link:other-references.html[References] to link to _Upgrade ONTAP_.
 
 == Assumptions and terminology
 
@@ -58,9 +58,9 @@ include::../_include/ru_man_assumptions_terminology.adoc[]
 
 include::../_include/ru_man_licensing.adoc[]
 
-All license keys are 28 uppercase alphabetic characters in length. Refer to link:other_references.html[References] to link to the _NetApp Support Site_ where you can obtain new 28-character license keys for ONTAP 9.7. or earlier. The keys are available in the _My Support_ section under _Software licenses_. If the site does not have the license keys you need, contact your NetApp sales representative.
+All license keys are 28 uppercase alphabetic characters in length. Refer to link:other-references.html[References] to link to the _NetApp Support Site_ where you can obtain new 28-character license keys for ONTAP 9.7. or earlier. The keys are available in the _My Support_ section under _Software licenses_. If the site does not have the license keys you need, contact your NetApp sales representative.
 
-For detailed information about licensing, go to link:other_references.html[References] to link to the _System Administration Reference_.
+For detailed information about licensing, go to link:other-references.html[References] to link to the _System Administration Reference_.
 
 == Storage Encryption
 

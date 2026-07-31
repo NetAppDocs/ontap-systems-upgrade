@@ -5,4 +5,4 @@ You need the following tools to perform the upgrade:
 * Grounding strap
 * #2 Phillips screwdriver
 
-Go to the link:other_references.html[References] section to access the list of reference documents and reference sites required for this upgrade
+Go to the link:other-references.html[References] section to access the list of reference documents and reference sites required for this upgrade

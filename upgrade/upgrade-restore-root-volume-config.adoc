@@ -4,7 +4,6 @@ sidebar: sidebar
 keywords: Controller Hardware Upgrade Express Guide
 summary: 'You must restore configuration information from the root volume to the boot devices.'
 ---
-
 = Restore the root volume configuration
 :icons: font
 :imagesdir: ../media/
@@ -51,5 +50,8 @@ Override system id? {y|n} [n] y
 The startup sequence proceeds normally.
 
 If the controller upgrade fails and reports a `rlib_port_ipspace_assign` error message, you must revert the upgrade and delete the LIFs on the network ports on the original system that are being used as HA ports on the replacement system. For more information, see link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/PANIC_%3A_rlib_port_ipspace_assign%3A_port_e0a_could_not_be_moved_to_HA_ipspace[this KB article^].
+
+.What's next?
+After restoring the root volume configuration, link:upgrade-complete.html[complete the move storage upgrade workflow].
 
 // Clean-up, 2022-03-09

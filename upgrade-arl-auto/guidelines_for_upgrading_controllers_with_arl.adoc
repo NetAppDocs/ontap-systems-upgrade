@@ -18,13 +18,13 @@ To understand whether you can use aggregate relocation (ARL) to upgrade a pair o
 
 When you upgrade a pair of nodes using this ARL procedure for ONTAP 9.5 to ONTAP 9.7, you must verify that ARL can be performed on the original and replacement controllers.
 
-You should check the size of all defined aggregates and number of disks supported by the original system. You must then compare the aggregate sizes and number of disks supported to the aggregate size and number of disks supported by the new system. Refer to link:other_references.html[References] to link to the _Hardware Universe_ where this information is available. The aggregate size and the number of disks supported by the new system must be equal to or greater than the aggregate size and number of disks supported by the original system.
+You should check the size of all defined aggregates and number of disks supported by the original system. You must then compare the aggregate sizes and number of disks supported to the aggregate size and number of disks supported by the new system. Refer to link:other-references.html[References] to link to the _Hardware Universe_ where this information is available. The aggregate size and the number of disks supported by the new system must be equal to or greater than the aggregate size and number of disks supported by the original system.
 
-You should validate in the cluster mixing rules whether new nodes can become part of the cluster with the existing nodes, when the original controller is replaced. For more information about cluster mixing rules, refer to link:other_references.html[References] to link to the _Hardware Universe_.
+You should validate in the cluster mixing rules whether new nodes can become part of the cluster with the existing nodes, when the original controller is replaced. For more information about cluster mixing rules, refer to link:other-references.html[References] to link to the _Hardware Universe_.
 
 NOTE: Before performing an AFF system upgrade, you must upgrade ONTAP to release versions 9.5P1 or later. These release levels are required for a successful upgrade.
 
-NOTE: If you are upgrading a system that supports internal drives (for example, an FAS2700 or AFF A250) but does NOT have internal drives, refer to link:other_references.html[References] and use the procedure in the _Aggregate Relocation to Manually Upgrade Controller Hardware_ content that is correct for your version of ONTAP.
+NOTE: If you are upgrading a system that supports internal drives (for example, an FAS2700 or AFF A250) but does NOT have internal drives, refer to link:other-references.html[References] and use the procedure in the _Aggregate Relocation to Manually Upgrade Controller Hardware_ content that is correct for your version of ONTAP.
 
 If you are using ONTAP 9.6P11, 9.7P8, or later releases, it is recommended to enable Connectivity, Liveliness, and Availability Monitor (CLAM) takeover to return the cluster into quorum when certain node failures occur. The `kernel-service` command requires advanced privilege level access. For more information, see: https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436[NetApp KB Article SU436: CLAM takeover default configuration changed^].
 // BURT 1400769 31-Jan-2022
@@ -41,11 +41,11 @@ You cannot perform the following upgrades:
 
 * To replacement controllers that do not support the disk shelves connected to the original controllers
 +
-Refer to link:other_references.html[References] to link to the _Hardware Universe_ for disk-support information.
+Refer to link:other-references.html[References] to link to the _Hardware Universe_ for disk-support information.
 
 * To entry level controllers with internal drives, for example: a FAS2750.
 +
-If you want to upgrade entry level controllers with internal drives,  refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
+If you want to upgrade entry level controllers with internal drives,  refer to link:other-references.html[References] to link to _Upgrade by moving volumes or storage_ and go to the procedure _Upgrading a pair of nodes running clustered Data ONTAP by moving volumes_.
 
 == MetroCluster FC configuration
 

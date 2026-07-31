@@ -83,7 +83,7 @@ network interface migrate -vserver <vserver_name> -lif cluster-mgmt -destination
 ----
 
 .What's next?
-link:upgrade_move_delete_recreate_san_lifs.html[Move, delete, or create SAN LIFs]
+After moving non-SAN data LIFs and cluster-management LIFs, link:upgrade_move_delete_recreate_san_lifs.html[move, delete, or create SAN LIFs].
 
 // 2023 NOV 16, AFFFASDOC-93
 // 2023 JUN 15, BURT 1552668

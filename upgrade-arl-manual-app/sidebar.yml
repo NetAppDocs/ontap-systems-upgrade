@@ -114,4 +114,4 @@ entries:
       - title: "LIFs are on invalid ports after upgrade"
         url: /upgrade-arl-manual-app/lifs_invalid_ports_after_upgrade.html
   - title: "References"
-    url: /upgrade-arl-manual-app/other_references.html
+    url: /upgrade-arl-manual-app/other-references.html

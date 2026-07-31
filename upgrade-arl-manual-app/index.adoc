@@ -36,10 +36,10 @@ include::../_include/ru_man_use_arl_overview.adoc[]
 
 * In addition to non-MetroCluster configurations, this procedure applies to Fabric MetroCluster four-node and eight-node configurations running ONTAP 9.8 and later.
 
-** For MetroCluster configurations running ONTAP 9.7 and earlier, go to link:other_references.html[References] to link to _Using Aggregate Relocation to Manually Upgrade Controller Hardware Running ONTAP 9.7 or Earlier_.
+** For MetroCluster configurations running ONTAP 9.7 and earlier, go to link:other-references.html[References] to link to _Using Aggregate Relocation to Manually Upgrade Controller Hardware Running ONTAP 9.7 or Earlier_.
 
 ** For MetroCluster IP configurations and additional upgrade options for Fabric MetroCluster
-configurations, go to link:other_references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
+configurations, go to link:other-references.html[References] to link to the _MetroCluster Upgrade and Expansion_ content.
 
 .What's next?
 After learning about this ARL procedure, link:decide_to_use_arl_guide.html[decide whether to use this ARL procedure].

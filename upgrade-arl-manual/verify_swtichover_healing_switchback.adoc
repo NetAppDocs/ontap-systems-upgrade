@@ -17,4 +17,4 @@ You should verify the switchover, healing, and switchback operations of the Metr
 
 .Step
 
-Refer to link:other_references.html[References] to link to the _MetroCluster Management and Disaster Recovery_ content and follow the procedures for negotiated switchover, healing, and switchback.
+Refer to link:other-references.html[References] to link to the _MetroCluster Management and Disaster Recovery_ content and follow the procedures for negotiated switchover, healing, and switchback.

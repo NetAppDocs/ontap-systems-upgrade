@@ -2,7 +2,7 @@ After upgrading, you can decommission the old system through the NetApp Support 
 
 .Steps
 
-. Refer to link:other_references.html[References] to link to the _NetApp Support Site_ and log in.
+. Refer to link:other-references.html[References] to link to the _NetApp Support Site_ and log in.
 . Select *Products > My Products* from the menu.
 . On the *View Installed Systems* page, choose which *Selection Criteria* you want to use to display information about your system.
 +

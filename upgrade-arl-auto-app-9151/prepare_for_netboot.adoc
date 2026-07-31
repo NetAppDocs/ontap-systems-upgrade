@@ -19,7 +19,7 @@ You can also use the USB boot option to perform a netboot. See the Knowledge Bas
 .Before you begin
 
 * Verify that you can access a HTTP server with the system.
-* Refer to link:other_references.html[References] to link to the _NetApp Support Site_ and download the necessary system files for your platform and the correct version of ONTAP.
+* Refer to link:other-references.html[References] to link to the _NetApp Support Site_ and download the necessary system files for your platform and the correct version of ONTAP.
 
 .About this task
 You must netboot the new controllers if they do not have the same version of ONTAP 9 installed on them that is installed on the original controllers. After you install each new controller, you boot the system from the ONTAP 9 image stored on the web server. You can then download the correct files to the boot media device for subsequent system boots.
