@@ -22,3 +22,6 @@ Do not attach disk shelves from the original nodes to the new nodes at this poin
 . Transfer all remaining cables, other than storage shelf cables, from the node1/node2 HA pair to corresponding ports on node3/node4 respectively.
 +
 This includes Fibre Channel and Ethernet cables that are not used to attach storage shelves.
+
+.What's next?
+After installing the new nodes, link:upgrade-set-up-new-nodes.html[set up the new nodes].

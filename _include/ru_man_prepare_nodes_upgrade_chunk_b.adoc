@@ -145,7 +145,7 @@ node1         node1         in-quorum     true          operational
 2 entries were displayed.
 ....
 +
-Nodes in a cluster are in quorum when a simple majority of nodes are healthy and can communicate with each other. For more information, refer to link:other_references.html[References] to link to the _System Administration Reference_.
+Nodes in a cluster are in quorum when a simple majority of nodes are healthy and can communicate with each other. For more information, refer to link:other-references.html[References] to link to the _System Administration Reference_.
 
 .. Return to the administrative privilege level:
 +
@@ -227,7 +227,7 @@ The system displays detailed information about the SP on both nodes.
 .. Record the IP address and other information about the SP.
 +
 You might want to reuse the network parameters of the remote management devices, in this case the SPs, from the original system for the SPs on the new nodes.
-For detailed information about the SP, refer to link:other_references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Command reference_.
+For detailed information about the SP, refer to link:other-references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Command reference_.
 
 . [[man_prepare_nodes_step29]]If you want the new nodes to have the same licensed functionality as the original nodes, enter the following command to see the cluster licenses on the original system:
 +
@@ -251,7 +251,7 @@ SnapVault         site    SnapVault License     -
 6 entries were displayed.
 ....
 
-. Obtain new license keys for the new nodes at the  _NetApp Support Site_. Refer to link:other_references.html[References] to link to _NetApp Support Site_.
+. Obtain new license keys for the new nodes at the  _NetApp Support Site_. Refer to link:other-references.html[References] to link to _NetApp Support Site_.
 +
 If the site does not have the license keys you need, contact your NetApp sales representative.
 
@@ -281,7 +281,7 @@ node2            enable    Postmaster    -                 mailhost
 |Has AutoSupport enabled...
 a|Go to <<man_prepare_nodes_step34,Step 34>>.
 |Does not have AutoSupport enabled...
-a|Enable AutoSupport by following the instructions in the _System Administration Reference_. (Refer to link:other_references.html[References] to link to the _System Administration Reference_.)
+a|Enable AutoSupport by following the instructions in the _System Administration Reference_. (Refer to link:other-references.html[References] to link to the _System Administration Reference_.)
 
 *Note:*  AutoSupport is enabled by default when you configure your storage system for the first time. Although you can disable AutoSupport at any time, you should leave it enabled. Enabling AutoSupport can significantly help identify problems and solutions should a problem occur on your storage system.
 
@@ -291,7 +291,7 @@ a|Enable AutoSupport by following the instructions in the _System Administration
 +
 `system node autosupport show -node node_name -instance`
 +
-For detailed information about AutoSupport, refer to link:other_references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Command reference_.
+For detailed information about AutoSupport, refer to link:other-references.html[References] to link to the _System Administration Reference_ and the _ONTAP 9 Command reference_.
 
 . [[man_prepare_nodes_step35,Step 35]] Send an AutoSupport message to NetApp for node1 by entering the following command:
 +

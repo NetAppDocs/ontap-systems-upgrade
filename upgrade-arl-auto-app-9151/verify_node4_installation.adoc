@@ -16,7 +16,7 @@ You must verify that the physical ports from node2 map correctly to the physical
 
 .About this task
 
-Refer to link:other_references.html[References] to link to the _Hardware Universe_ to capture information about the ports on the new nodes. You will use the information later in this section.
+Refer to link:other-references.html[References] to link to the _Hardware Universe_ to capture information about the ports on the new nodes. You will use the information later in this section.
 
 Physical port layout might vary, depending on the model of the nodes. When the new node boots up, ONTAP tries to determine which ports should host cluster LIFs in order to automatically come into quorum.
 
@@ -94,7 +94,7 @@ After you confirm that node4 is in quorum and can communicate with node3, verify
 
 .About this task
 
-For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other_references.html[References] to link to _Network Management_.
+For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other-references.html[References] to link to _Network Management_.
 
 .Steps
 

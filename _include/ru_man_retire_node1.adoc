@@ -100,7 +100,7 @@ If cluster HA has not been disabled, repeat <<man_retire_1_step2,Step 2>>.
 +
 `cluster show`
 +
-Because there is the possibility of a tie in a cluster that has an even number of nodes, one node has an extra fractional voting weight called epsilon. Refer to link:other_references.html[References] to link to the _System Administration Reference_ for more information.
+Because there is the possibility of a tie in a cluster that has an even number of nodes, one node has an extra fractional voting weight called epsilon. Refer to link:other-references.html[References] to link to the _System Administration Reference_ for more information.
 +
 [NOTE]
 ====

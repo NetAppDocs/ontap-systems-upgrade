@@ -18,9 +18,11 @@ After moving the volumes from the original to the new nodes and moving or deleti
 ----
 storage failover modify -node <original_node_name> -enabled false
 ----
+
 [start=2]
 include::https://raw.githubusercontent.com/NetAppDocs/ontap/main/_include/remove-nodes-from-cluster.adoc[]
 
+[[return-admin]]
 [start=12]
 . Repeat Steps <<disable-ha,2>> to <<return-admin,11>> to remove the failover partner from the cluster.
 
@@ -32,7 +34,7 @@ cluster ha modify -configured true
 ----
 
 .What's next?
-link:upgrade-complete-move-volumes.html[Complete the move volumes upgrade]
+After removing the original nodes, link:upgrade-complete-move-volumes.html[complete the move volumes upgrade].
 
 // 2026 FEB 6, ONTAPDOC-3581
 // 2025 DEC 12, AFFFASDOC-442

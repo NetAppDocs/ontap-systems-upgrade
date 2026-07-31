@@ -33,7 +33,7 @@ If node4 is in a separate chassis from node3, you can put node4 in the same loca
 
 . [[man_install4_Step4]]Cable node4, moving the connections from node2 to node4.
 +
-The following references help you make proper cable connections. Go to link:other_references.html[References] to link to them.
+The following references help you make proper cable connections. Go to link:other-references.html[References] to link to them.
 +
 * _Installation and Setup Instructions_ for the node4 platform
 * The appropriate disk shelf procedure

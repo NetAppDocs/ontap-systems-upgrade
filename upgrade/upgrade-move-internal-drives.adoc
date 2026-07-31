@@ -46,5 +46,8 @@ You must close the handle slowly so that it aligns correctly with the face of th
 
 . Repeat <<move_int_drive_2,Step 2>> through <<move_int_drive_5,Step 5>> for all of the drives that you are moving to the new system.
 
+.What's next?
+After moving internal drives from the original node, link:upgrade-attach-shelves-reassign-disks.html[attach storage shelves and reassign disk ownership].
+
 // 2022 SEP 29, BURT 1504117
 // 2022-03-09, Clean-up

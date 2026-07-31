@@ -17,7 +17,7 @@ You must make sure that the physical ports on node2 map correctly to the physica
 
 .Before you begin
 
-You must already have information about the ports on the new nodes, to access this information refer to link:other_references.html[References] to link to the _Hardware Universe_. You use the information later in this section.
+You must already have information about the ports on the new nodes, to access this information refer to link:other-references.html[References] to link to the _Hardware Universe_. You use the information later in this section.
 
 The software configuration of node4 must match the physical connectivity of node4, and IP connectivity must be restored before you continue with the upgrade.
 

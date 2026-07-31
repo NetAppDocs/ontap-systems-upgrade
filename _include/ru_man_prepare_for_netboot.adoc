@@ -3,7 +3,7 @@ After you physically rack node3 and node4 later in the procedure, you might need
 .Before you begin
 
 * Verify that you can access a HTTP server with the system.
-* Refer to link:other_references.html[References] to link to the _NetApp Support Site_ and download the necessary system files for your platform and the correct version of ONTAP.
+* Refer to link:other-references.html[References] to link to the _NetApp Support Site_ and download the necessary system files for your platform and the correct version of ONTAP.
 
 .About this task
 

@@ -19,7 +19,7 @@ If node4 is in a separate chassis from node2, you can put node4 in the same loca
 +
 Cable the following connections, using the _Installation and Setup Instructions_ for the node4 platform, the appropriate disk shelf document, and the _HA pair management_ documentation.
 +
-Refer to link:other_references.html[References] to link to _HA pair management_.
+Refer to link:other-references.html[References] to link to _HA pair management_.
 +
 * Console (remote management port)
 * Cluster ports

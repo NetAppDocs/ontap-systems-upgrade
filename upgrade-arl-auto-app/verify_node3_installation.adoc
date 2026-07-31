@@ -16,7 +16,7 @@ You must verify that the physical ports from node1 map correctly to the physical
 
 .About this task
 
-Refer to link:other_references.html[References] to link to the _Hardware Universe_ to capture information about the ports on the new nodes. You will use the information later in this section.
+Refer to link:other-references.html[References] to link to the _Hardware Universe_ to capture information about the ports on the new nodes. You will use the information later in this section.
 
 Physical port layout might vary, depending on the model of the nodes. When the new node boots up, ONTAP tries to determine which ports should host cluster LIFs in order to automatically come into quorum.
 
@@ -131,7 +131,7 @@ After you confirm that node3 is in quorum and can communicate with node2, verify
 
 .About this task
 
-For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other_references.html[References] to link to _Network Management_.
+For more information on creating and re-creating VLANs, interface groups, and broadcast domains, refer to link:other-references.html[References] to link to _Network Management_.
 
 NOTE: If you are changing the port speed of the e0a and e1a cluster ports on AFF A800 or AFF C800 systems, you might observe malformed packets being received after the speed conversion. See https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339[NetApp Bugs Online Bug ID 1570339^] and the knowledge base article https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE[CRC errors on T6 ports after converting from 40GbE to 100GbE^] for guidance.
 

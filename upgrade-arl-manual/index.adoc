@@ -21,7 +21,7 @@ You can use this ARL procedure if you are performing one of the following upgrad
 
 include::../_include/ru_man_use_arl_overview.adoc[]
 
-* This procedure applies to MetroCluster four-node and eight-node configurations running ONTAP 9.5 and earlier. For MetroCluster configurations running ONTAP 9.6 and later, go to link:other_references.html[References] to link to _Using "system controller replace" Commands to Upgrade Controller Hardware Running ONTAP 9.5 to ONTAP 9.7_.
+* This procedure applies to MetroCluster four-node and eight-node configurations running ONTAP 9.5 and earlier. For MetroCluster configurations running ONTAP 9.6 and later, go to link:other-references.html[References] to link to _Using "system controller replace" Commands to Upgrade Controller Hardware Running ONTAP 9.5 to ONTAP 9.7_.
 
 
 // 24 FEB 2021:  formatted from CMS
