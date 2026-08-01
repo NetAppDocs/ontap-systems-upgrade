@@ -88,4 +88,7 @@ All listed disks should be unassigned.
 +
 `halt`
 
+.What's next?
+After removing ownership of disks attached to the new nodes, link:upgrade-reset-default-configuration-node3-and-node4.html[reset the default configuration on the new nodes].
+
 // BURT 1493415, 2022-09-02

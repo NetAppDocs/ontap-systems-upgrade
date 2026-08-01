@@ -1,12 +1,12 @@
 * Controller upgrade using ARL is supported on systems configured with SnapLock Enterprise and SnapLock Compliance volumes.
 
-You must verify whether the ARL can be performed on the original and replacement controllers. You must check the size of all defined aggregates and number of disks supported by the original system. Then compare them with the aggregate size and number of disks supported by the new system. To access this information, refer to link:other_references.html[References] to link to the _Hardware Universe_. The aggregate size and the number of disks supported by the new system must be equal to or greater than the aggregate size and number of disks supported by the original system.
+You must verify whether the ARL can be performed on the original and replacement controllers. You must check the size of all defined aggregates and number of disks supported by the original system. Then compare them with the aggregate size and number of disks supported by the new system. To access this information, refer to link:other-references.html[References] to link to the _Hardware Universe_. The aggregate size and the number of disks supported by the new system must be equal to or greater than the aggregate size and number of disks supported by the original system.
 
-You must validate in the cluster mixing rules whether new nodes can become part of the cluster with the existing nodes when the original controller is replaced. For more information about cluster mixing rules, refer to link:other_references.html[References] to link to the _Hardware Universe_.
+You must validate in the cluster mixing rules whether new nodes can become part of the cluster with the existing nodes when the original controller is replaced. For more information about cluster mixing rules, refer to link:other-references.html[References] to link to the _Hardware Universe_.
 
 NOTE: Both systems are either high-availability (HA) or non-HA. Both nodes must either have the personality enabled or disabled; you cannot combine a node with the All Flash Optimized personality enabled with a node that does not have the personality enabled in the same HA pair. If the personalities are different, contact technical support.
 
-NOTE: If the new system has fewer slots than the original system, or if it has fewer or different ports, you might need to add an adapter to the new system. Refer to link:other_references.html[References] to link to the _Hardware Universe_ on the NetApp Support Site for details about specific platforms.
+NOTE: If the new system has fewer slots than the original system, or if it has fewer or different ports, you might need to add an adapter to the new system. Refer to link:other-references.html[References] to link to the _Hardware Universe_ on the NetApp Support Site for details about specific platforms.
 
 // 2021-04-14, Burt 1367155
 // Clean-up, 2022-03-09

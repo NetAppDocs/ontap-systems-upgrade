@@ -17,7 +17,7 @@ You must apply the appropriate reference configuration files (RCFs) to reconfigu
 
 .Before you begin
 
-The FC switch port usage must match the usage described in the _Fabric-attached MetroCluster Installation and Configuration_ content so that the RCFs can be used. Go to link:other_references.html[References] to link to the _Fabric-attached MetroCluster Installation and Configuration_ content.
+The FC switch port usage must match the usage described in the _Fabric-attached MetroCluster Installation and Configuration_ content so that the RCFs can be used. Go to link:other-references.html[References] to link to the _Fabric-attached MetroCluster Installation and Configuration_ content.
 
 .Steps
 

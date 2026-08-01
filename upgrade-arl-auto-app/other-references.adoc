@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: upgrade-arl-auto-app/other_references.html
+permalink: upgrade-arl-auto-app/other-references.html
 keywords: other references, documentation, hardware universe, content, documentation center, information
 summary: "Reference content and websites required to support a controller upgrade running ONTAP 9.8 or later by using `system controller replace` commands."
 ---

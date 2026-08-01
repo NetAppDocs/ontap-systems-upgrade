@@ -1,0 +1,4 @@
+---
+permalink: upgrade-arl-auto-app/other_references.html
+redirect: ontap-systems-upgrade/upgrade-arl-auto-app/other-references.html
+---

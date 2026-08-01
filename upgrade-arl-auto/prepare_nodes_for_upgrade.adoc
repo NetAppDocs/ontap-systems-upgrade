@@ -81,7 +81,7 @@ If the models are not supported, the task fails.
 |Image Version Check
 |Checks that the nodes being replaced run the same version of ONTAP.
 If the ONTAP image versions are different, the task fails.
-The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you need to netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to link:other_references.html[References] to link to _Upgrade ONTAP_.
+The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you need to netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to link:other-references.html[References] to link to _Upgrade ONTAP_.
 |HA Status Check
 |Checks if both the nodes being replaced are in a high- availability (HA) pair configuration.
 If storage failover is not enabled for the controllers, the task fails.
@@ -90,7 +90,7 @@ If storage failover is not enabled for the controllers, the task fails.
 The nodes should not own any non-local aggregates.
 |Disk Status Check
 |If any nodes being replaced have missing or failed disks, the task fails.
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other-references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 |Data LIF Status Check
 |Checks if any of the nodes being replaced have non- local data LIFs.
 The nodes should not contain any data LIFs for which they are not the home owner. If one of the nodes contains non-local data LIFs, the task fails.

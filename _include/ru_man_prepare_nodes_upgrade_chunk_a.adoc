@@ -4,7 +4,7 @@ Before you can replace the original nodes, you must confirm that they are in an 
 
 . Confirm that each of the original nodes has enough resources to adequately support the workload of both nodes during takeover mode.
 +
-Refer to link:other_references.html[References] to link to _HA pair management_ and follow the _Best practices for HA pairs_ section. Neither of the original nodes should be running at more than 50 percent utilization; if a node is running at less than 50 percent utilization, it can handle the loads for both nodes during the controller upgrade.
+Refer to link:other-references.html[References] to link to _HA pair management_ and follow the _Best practices for HA pairs_ section. Neither of the original nodes should be running at more than 50 percent utilization; if a node is running at less than 50 percent utilization, it can handle the loads for both nodes during the controller upgrade.
 
 . Complete the following substeps to create a performance baseline for the original nodes:
 
@@ -14,28 +14,28 @@ Refer to link:other_references.html[References] to link to _HA pair management_ 
 ====
 The diagnostic user account is intended only for low-level diagnostic purposes and should be used only with guidance from technical support.
 
-For information about unlocking the user accounts, refer to link:other_references.html[References] to link to the _System Administration Reference_.
+For information about unlocking the user accounts, refer to link:other-references.html[References] to link to the _System Administration Reference_.
 ====
 
-.. Refer to link:other_references.html[References] to link to the _NetApp Support Site_ and download the Performance and Statistics Collector (Perfstat Converged).
+.. Refer to link:other-references.html[References] to link to the _NetApp Support Site_ and download the Performance and Statistics Collector (Perfstat Converged).
 +
 The Perfstat Converged tool lets you establish a performance baseline for comparison after the upgrade.
 
 .. Create a performance baseline, following the instructions on the NetApp Support Site.
 
-. Refer to link:other_references.html[References] to link to the _NetApp Support Site_ and open a support case on the NetApp Support Site.
+. Refer to link:other-references.html[References] to link to the _NetApp Support Site_ and open a support case on the NetApp Support Site.
 +
 You can use the case to report any issues that might arise during the upgrade.
 
 . Verify that NVMEM or NVRAM batteries of node3 and node4 are charged, and charge them if they are not.
 +
-You must physically check node3 and node4 to see if the NVMEM or NVRAM batteries are charged. For information about the LEDs for the model of node3 and node4, refer to link:other_references.html[References] to link to the _Hardware Universe_.
+You must physically check node3 and node4 to see if the NVMEM or NVRAM batteries are charged. For information about the LEDs for the model of node3 and node4, refer to link:other-references.html[References] to link to the _Hardware Universe_.
 +
 WARNING: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
 
 . Check the version of ONTAP on node3 and node4.
 +
-The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you must netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to link:other_references.html[References] to link to _Upgrade ONTAP_.
+The new nodes must have the same version of ONTAP 9.x installed on them that is installed on the original nodes. If the new nodes have a different version of ONTAP installed, you must netboot the new controllers after you install them. For instructions on how to upgrade ONTAP, refer to link:other-references.html[References] to link to _Upgrade ONTAP_.
 +
 Information about the version of ONTAP on node3 and node4 should be included in the shipping boxes. The ONTAP version is displayed when the node boots up or you can boot the node to maintenance mode and run the command:
 +
@@ -135,7 +135,7 @@ node1          node2          true     Connected to node2, Partial giveback
 node2          node1          true     Connected to node1
 ....
 +
-If either node is in partial giveback, use the `storage failover giveback` command to perform the giveback, and then use the `storage failover show-giveback` command to make sure that no aggregates still need to be given back. For detailed information about the commands, refer to link:other_references.html[References] to link to _HA pair management_.
+If either node is in partial giveback, use the `storage failover giveback` command to perform the giveback, and then use the `storage failover show-giveback` command to make sure that no aggregates still need to be given back. For detailed information about the commands, refer to link:other-references.html[References] to link to _HA pair management_.
 
 . [[man_prepare_nodes_step9]]Confirm that neither node1 nor node2 owns the aggregates for which it is the current owner (but not the home owner):
 +
@@ -217,7 +217,7 @@ node1    None                None
 node2    None                None
 ....
 +
-If any disks are missing, refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
+If any disks are missing, refer to link:other-references.html[References] to link to _Disk and aggregate management with the CLI_, _Logical storage management with the CLI_, and _HA pair management_ to configure storage for the HA pair.
 
 . Confirm that node1 and node2 are healthy and eligible to participate in the cluster:
 +
@@ -288,13 +288,13 @@ vs0
 +
 `network interface revert -vserver * -lif *`
 +
-For detailed information about the `network interface revert` command, refer to link:other_references.html[References] to link to the _ONTAP 9 Command reference_.
+For detailed information about the `network interface revert` command, refer to link:other-references.html[References] to link to the _ONTAP 9 Command reference_.
 
 . Check whether node1 or node2 owns any failed disks:
 +
 `storage disk show -nodelist _node1,node2_ -broken`
 +
-If any of the disks have failed, remove them, following instructions in the _Disk and aggregate management with the CLI_. (Refer to link:other_references.html[References] to link to _Disk and aggregate management with the CLI_.)
+If any of the disks have failed, remove them, following instructions in the _Disk and aggregate management with the CLI_. (Refer to link:other-references.html[References] to link to _Disk and aggregate management with the CLI_.)
 
 . Collect information about node1 and node2 by completing the following substeps and recording the output of each command:
 // Clean-up, 2022-03-09
