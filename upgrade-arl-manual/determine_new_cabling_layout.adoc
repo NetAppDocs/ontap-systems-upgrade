@@ -23,7 +23,7 @@ This task must be performed at each MetroCluster site.
 
 Use the _Fabric-attached MetroCluster Installation and Configuration_ content to determine the cabling layout for your switch type, using the port usage for an eight-node MetroCluster configuration.  The FC switch port usage must match the usage described in the content so that the Reference Configuration Files (RCFs) can be used.
 
-Go to link:other_references.html[References] to link to the _Fabric-attached MetroCluster Installation and Configuration_ content.
+Go to link:other-references.html[References] to link to the _Fabric-attached MetroCluster Installation and Configuration_ content.
 
 NOTE: If your environment cannot be cabled in a way that RCFs can be used, contact technical support. Do not use this procedure if the cabling cannot use RCFs.
 

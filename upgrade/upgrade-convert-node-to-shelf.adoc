@@ -35,4 +35,7 @@ Each drive shelf, including the chassis, requires a unique ID.
 . Turn on the power to the converted drive shelf and any other drive shelves attached to the new nodes.
 . Turn on the power to the new nodes, and then interrupt the boot process on each node by pressing Ctrl-C to access the boot environment prompt.
 
+.What's next?
+After converting an original node to a drive shelf, link:upgrade-attach-shelves-reassign-disks.html[attach storage shelves and reassign disk ownership].
+
 // Clean-up, 2022-03-09

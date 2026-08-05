@@ -116,7 +116,7 @@ You can compare the output with the output that you captured in the section link
 +
 `system service-processor network modify -node <node_name>`
 +
-Refer to link:other_references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Command reference_ for detailed information about the system `service-processor network modify` command.
+Refer to link:other-references.html[References] to link to the _System Administration Reference_ for information about the SPs and the _ONTAP 9 Command reference_ for detailed information about the system `service-processor network modify` command.
 include::../_include/ru_auto_ensure_new_controllers_are_set_up_correctly_step_14_end.adoc[]
 
 .What's next?

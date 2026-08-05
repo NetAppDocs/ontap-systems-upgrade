@@ -35,7 +35,7 @@ This upgrade procedure primarily applies to upgrade scenarios where the controll
 * This procedure applies to systems running 4-node NetApp MetroCluster configuration or higher. Since MetroCluster configuration sites can be at two physically different locations, the automated controller upgrade must be carried out individually at each MetroCluster site for an HA pair.
 * For non-MetroCluster systems, such as HA clusters, the ARL upgrade is the only supported procedure.
 // 2021-11-02, BURT 1438029
-* If you are upgrading from an AFF A320 system, you can use volume moves to upgrade controller hardware or contact technical support. Refer to link:other_references.html[References] to link to _Upgrade by moving volumes or storage_.
+* If you are upgrading from an AFF A320 system, you can use volume moves to upgrade controller hardware or contact technical support. Refer to link:other-references.html[References] to link to _Upgrade by moving volumes or storage_.
 
 
 .Automate the controller upgrade process

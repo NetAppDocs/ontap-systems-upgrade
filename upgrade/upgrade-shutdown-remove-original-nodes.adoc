@@ -111,5 +111,8 @@ Use "storage failover modify -node <nodename> -onreboot false" to turn it OFF.
 . Label and remove all cables from node1 and node2.
 . Remove the chassis containing node1 and node2.
 
+.What's next?
+After shutting down the original nodes, link:upgrade-remove-disk-ownership-new-nodes.html[remove ownership of disks attached to the new nodes].
+
 // Clean-up, 2022-03-09
 // BURT 1476241 2022-05-13

@@ -45,7 +45,7 @@ After you confirm that node4 is in quorum and can communicate with node3, you mu
 
 .About this task
 
-For more information on creating and re-creating VLANs, interface groups, and broadcast domains, go to link:other_references.html[References] and link to _Network Management_.
+For more information on creating and re-creating VLANs, interface groups, and broadcast domains, go to link:other-references.html[References] and link to _Network Management_.
 
 .Steps
 

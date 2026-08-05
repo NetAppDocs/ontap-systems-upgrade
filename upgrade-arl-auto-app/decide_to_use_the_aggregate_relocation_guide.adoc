@@ -21,7 +21,7 @@ To help you decide if this ARL procedure is suitable for your controller hardwar
 * You're experienced in administering ONTAP and are comfortable with the risks of working in the diagnostic privilege mode.
 * If you're upgrading a MetroCluster configuration, it's a four-node or higher FC configuration, and all nodes are running ONTAP 9.8 or later.
 +
-For upgrading MetroCluster IP configurations, refer to link:other_references.html[References] to link to _MetroCluster Upgrade and Expansion_.
+For upgrading MetroCluster IP configurations, refer to link:other-references.html[References] to link to _MetroCluster Upgrade and Expansion_.
 
 [NOTE]
 ====
