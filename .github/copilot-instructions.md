@@ -39,7 +39,6 @@ Decision rule:
 - In the docs, the original controllers are *node1* and *node2*, and the replacement controllers are *node3* and *node4*; after the upgrade, the replacement nodes take over the original node identities.
 - Some workflows replace controllers while keeping the same *chassis* and disks, and others convert a supported original system into a *drive shelf* attached to the replacement nodes.
 - *MetroCluster* is a special topology with procedure-specific support: `upgrade-arl-auto/`, `upgrade-arl-manual/`, and `upgrade-arl-manual-app/` include MetroCluster verification steps and support MetroCluster configurations; `upgrade-arl-auto-app-9151/` explicitly excludes MetroCluster FC and IP. Do not assume every upgrade path supports MetroCluster.
-- *ASA r2* is a distinct platform family. Upgrading an ASA system to an ASA r2 replacement is not supported by any procedure in this repository; users must migrate data instead. Do not suggest an upgrade procedure for ASA-to-ASA-r2 transitions.
 
 **Key concepts:**
 - *Move volumes* is a nondisruptive method that adds new nodes to the cluster, moves volumes to them, migrates *LIFs*, and then removes the original nodes.
