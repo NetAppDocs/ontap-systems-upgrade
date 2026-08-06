@@ -30,6 +30,7 @@ CAUTION: Do not connect new shelves to node3 or node4 during this upgrade proced
 . From the node3 LOADER prompt, boot to Maintenance mode:
 +
 `boot_ontap maint`
+
 . Display the system ID of node3:
 +
 `disk show -v`
@@ -42,7 +43,6 @@ Local System ID: 101268854
 +
 Record the system ID of node3 for use in <<reassign-disks-and-aggregates,Step 5>>.
 
-[start=5]
 . [[reassign-disks-and-aggregates]]Reassign the disks and data aggregates:
 +
 [role="tabbed-block"]
