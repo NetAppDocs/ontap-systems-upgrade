@@ -40,16 +40,17 @@ The output of the `health` field should be `true`.
 --
 If node1 doesn't join quorum automatically:
 
-.. Check the IPspace of ports e1a and e1b:
+.. link:cable-node1-for-shared-cluster-HA-storage.html#two-node-switch-ports[Verify the node 1 cluster ports], then check the IPspace of the node 1 cluster ports:
 +
-`network port show` 
-.. If the IPspace isn't "Cluster", change the IPspace to "Cluster" on e1a and e1b:
+`network port show`
+
+.. If the IPspace isn't "Cluster", change the IPspace to "Cluster":
 +
 `network port modify -node <node_name> -port <port> -ipspace Cluster`
-.. Verify that the IPspace of ports e1a and e1b is "Cluster":
+.. Verify that the IPspace of the node 1 cluster ports is "Cluster":
 +
 `network port show` 
-.. Migrate node1 cluster LIFs to e1a and e1b:
+.. Migrate node1 cluster LIFs to the node 1 cluster ports:
 +
 `network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
 --
@@ -210,7 +211,7 @@ When all ports are correctly configured and added to the correct broadcast domai
 
 .What's next?
 After verifying the node1 installation, link:restore-key-manager-config-upgraded-node1.html[restore key-manager configuration on the upgraded node1].
-
+// 2026 SEP 1, ontap-systems-upgrade-issue-186 and 185
 // 2024 DEC 9, AFFFASDOC-33
 // BURT 1476251, 2022-05-16
 // BURT 1452254, 2022-04-27
