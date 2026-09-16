@@ -15,7 +15,7 @@ summary: Verify the node2 installation with replacement modules when using ARL t
 You must verify the node2 installation with the replacement system modules. Because there is no change to physical ports, you are not required to map the physical ports from the old node2 to the replacement node2.
 
 .About this task
-After you boot node1 with the replacement system module, you verify that it is installed correctly. You must wait for node2 to join quorum and then resume the controller replacement operation.
+After you boot node2 with the replacement system module, you verify that it is installed correctly. You must wait for node2 to join quorum and then resume the controller replacement operation.
 
 At this point in the procedure, the operation pauses while node2 joins quorum.
 
