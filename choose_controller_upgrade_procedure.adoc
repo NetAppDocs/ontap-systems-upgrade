@@ -97,7 +97,7 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 | Question | Example answer
 
 | Am I running a different software version on the original and new nodes?
-| No. Both FAS9500 and FAS90 run ONTAP 9.15.1.
+| No. Both FAS9500 and FAS90 run ONTAP 9.17.1.
 
 | Do I want to perform a disruptive upgrade?
 | No. I want to keep my production environment online during the upgrade.
