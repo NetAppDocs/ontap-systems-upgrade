@@ -38,18 +38,18 @@ The output of the `health` field should be `true`.
 --
 If node2 doesn't join quorum automatically:
 
-.. link:cable-node2-for-shared-cluster-HA-storage.html#two-node-switch-ports[Verify the node 2 cluster ports], then check the IPspace of the node 2 cluster ports:
+.. link:cable-node2-for-shared-cluster-HA-storage.html#two-node-switch-ports[Verify the node2 cluster ports], then check the IPspace of the node2 cluster ports:
 +
 `network port show` 
-.. If the IPspace isn't "Cluster", change the IPspace to "Cluster":
+.. If the IPspace isn't "Cluster", change the IPspace to "Cluster" on the node2 cluster ports:
 +
 `network port modify -node <node_name> -port <port> -ipspace Cluster`
-.. Verify that the IPspace of the node 2 cluster ports is "Cluster":
+.. Verify that the IPspace of the node2 cluster ports is "Cluster":
 +
 `network port show` 
-.. Migrate node2 cluster LIFs to the node 2 cluster ports:
+.. Migrate node2 cluster LIFs to the node2 cluster ports:
 +
-`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port <port_name`
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port <port_name>`
 --
 .	[[verify-node2-step3]]Verify that node2 and node1 are part of the same cluster and that the cluster is healthy:
 
