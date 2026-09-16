@@ -120,6 +120,9 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 | Am I upgrading a MetroCluster configuration?
 | No. This is a standard HA pair cluster.
 
+| Do I still need to validate SAN zoning on all nodes in the cluster?
+| No. I have already validated SAN zoning on all nodes in the cluster. 
+
 | Am I replacing an individual component?
 | No. I'm upgrading the entire controller system.
 |===
