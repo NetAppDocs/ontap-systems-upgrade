@@ -121,7 +121,7 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 | No. This is a standard HA pair cluster.
 
 | Does an FC SAN configuration exist on the cluster of my original system?
-| Yes. I have validated the SAN zoning configuration on all nodes of both the original and replacement system. 
+| Yes. I have validated the SAN zoning configuration on all nodes on both the original and replacement system. 
 
 | Am I replacing an individual component?
 | No. I'm upgrading the entire controller system.
