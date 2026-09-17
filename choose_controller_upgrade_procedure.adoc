@@ -64,7 +64,7 @@ a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system i
 | link:upgrade-arl-auto-in-chassis/index.html[Upgrade by using ARL, keeping the same chassis, disks, and the data stored on the disks].
 
 | Am I upgrading a MetroCluster configuration?
-|Refer to link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
+| Refer to link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
 
 |===
 
@@ -74,7 +74,7 @@ Before beginning your upgrade procedure, review all of the questions listed in t
 
 [cols=2*,options="header",cols="30,70"]
 |===
-| Ask yourself…	| If your answer is yes, you need to...
+| Ask yourself…	| If your answer is yes, you need to do this…
 
 
 | Am I relocating an SVM? 
@@ -82,7 +82,7 @@ Before beginning your upgrade procedure, review all of the questions listed in t
 
 | Does an FC SAN configuration exist on the cluster of my original system?
 
-| Validate the SAN zoning configuration for all nodes on both the original and replacement system. Refer to link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html[Learn about FC and FCoE zoning with ONTAP systems^] and link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html[Recommended FC and FCoE zoning configurations for ONTAP systems^].
+| Validate the SAN zoning configuration for all nodes on both the original and replacement systems. Refer to link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html[Learn about FC and FCoE zoning with ONTAP systems^] and link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html[Recommended FC and FCoE zoning configurations for ONTAP systems^].
 
 | Am I replacing an individual component?
 | Refer to the link:https://docs.netapp.com/us-en/ontap-systems/index.html[ONTAP Hardware Systems Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.
@@ -121,7 +121,7 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 | No. This is a standard HA pair cluster.
 
 | Does an FC SAN configuration exist on the cluster of my original system?
-| Yes. I have validated the SAN zoning configuration on all nodes on both the original and replacement system. 
+| Yes. I have validated the SAN zoning configuration on all nodes on both the original and replacement systems.
 
 | Am I replacing an individual component?
 | No. I'm upgrading the entire controller system.
@@ -129,6 +129,6 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 
 *Recommended upgrade path for this example:* link:upgrade-arl/index.html[Upgrade by using ARL] because the FAS9500 is a modular system and ARL provides a non-disruptive upgrade method.
 
-// 2026 Sept 16, AFFFASDOC-541
+// 2026 SEP 16, AFFFASDOC-541
 // 2025 OCT 17, AFFFASDOC-404
 // 2023 NOV 16, BURT 1552664
