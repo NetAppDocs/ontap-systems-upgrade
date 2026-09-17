@@ -82,7 +82,7 @@ Before beginning your upgrade procedure, review all of the questions listed in t
 
 | Does an FC SAN configuration exist on the cluster of my original system?
 
-| Validate the SAN zoning configuration for all nodes on both the original and replacement system. Refer to link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html[Learn about FC and FCoE zoning with ONTAP systems^] and link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html#dual-fabric-zoning-configurations[Recommended FC and FCoE zoning configurations for ONTAP systems^].
+| Validate the SAN zoning configuration for all nodes on both the original and replacement system. Refer to link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html[Learn about FC and FCoE zoning with ONTAP systems^] and link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html[Recommended FC and FCoE zoning configurations for ONTAP systems^].
 
 | Am I replacing an individual component?
 | Refer to the link:https://docs.netapp.com/us-en/ontap-systems/index.html[ONTAP Hardware Systems Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.
