@@ -80,7 +80,7 @@ Before beginning your upgrade procedure, review all of the questions listed in t
 | Am I relocating an SVM? 
 | Refer to link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow[SVM data mobility overview^].
 
-| Do I still need to validate SAN zoning on all nodes in the cluster?
+| Do I still need to validate SAN zoning on all nodes in the cluster on the original and replacement system?
 
 | Refer to link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html[Learn about FC and FCoE zoning with ONTAP systems^] and link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html#dual-fabric-zoning-configurations[Recommended FC and FCoE zoning configurations for ONTAP systems^].
 
@@ -120,8 +120,8 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 | Am I upgrading a MetroCluster configuration?
 | No. This is a standard HA pair cluster.
 
-| Do I still need to validate SAN zoning on all nodes in the cluster?
-| No. I have already validated SAN zoning on all nodes in the cluster. 
+| Do I still need to validate SAN zoning on all nodes in the cluster on the original and replacement system?
+| No. I have already validated SAN zoning on all nodes in the cluster on both systems. 
 
 | Am I replacing an individual component?
 | No. I'm upgrading the entire controller system.
