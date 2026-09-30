@@ -40,7 +40,7 @@ The output of the `health` field should be `true`.
 --
 If node1 doesn't join quorum automatically:
 
-.. link:cable-node1-for-shared-cluster-HA-storage.html#two-node-switch-ports[Verify the node1 cluster ports], then check the IPspace of the node1 cluster ports:
+.. link:https://docs.netapp.com/us-en/ontap-systems/index.html[Verify the node1 cluster ports^], then check the IPspace of the node1 cluster ports:
 +
 `network port show`
 
