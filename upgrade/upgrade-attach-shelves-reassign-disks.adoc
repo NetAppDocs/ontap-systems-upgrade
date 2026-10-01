@@ -54,7 +54,7 @@ Reassign node1's spare disks, disks belonging to the root aggregate, and any dat
 `disk reassign -s <node1_sysid> -d <node3_sysid> -p <node4_sysid>`
 
 ** The parameter `node1_sysid` is the value you recorded in  _Shutting down the original nodes_, link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5[Step 5].
-** Specify the parameter `-p <node2_sysid>` only when shared disks are present.
+** Specify the parameter `-p <node4_sysid>` only when shared disks are present.
 --
 .Reassign to node4
 --
@@ -111,6 +111,7 @@ You should see output similar to the following:
 .What's next?
 After attaching storage shelves and reassigning disk ownership, link:upgrade-restore-root-volume-config.html[restore the root volume configuration].
 
+// 2026 SEP 20, AFFFASDOC-519
 // 2026 JUL 29, ontap-systems-upgrade-issue-168
 // 2026 JUL 21, ontap-systems-upgrade-issue-172
 // 2026 JUL 21, ontap-systems-upgrade-issue-173
