@@ -18,6 +18,7 @@ a|. Merge the e0M and BMC IP addresses into one IP subnet.
 The following tables show the switch port usage for two-node switchless cluster configurations.
 
 
+[cols="2,2,2,2a" options="header"]
 |===
 |Port type |AFF A800, AFF C800  |AFF A90, AFF A70 | AFF C80
 
