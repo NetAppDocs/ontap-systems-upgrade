@@ -13,7 +13,8 @@ In general, how you upgrade NetApp AFF, ASA, or FAS controller hardware depends 
 
 NOTE: ASA upgrades to an ASA r2 replacement system aren't supported. For information on migrating data from an ASA to ASA r2 system, see link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html[Enable data access from SAN hosts to your ASA r2 storage system^].
 
-== Which upgrade procedure should I use?
+== Step 1: Select the correct upgrade procedure
+
 To select the appropriate upgrade procedure, review all of the questions listed in the table below.
 
 [cols=2*,options="header",cols="30,70"]
@@ -62,11 +63,26 @@ a| . link:https://hwu.netapp.com/DetailViews/Home.aspx[Verify that your system i
 | Do I have an integrated system and want to upgrade by swapping the controller module only, keeping existing chassis and disks?
 | link:upgrade-arl-auto-in-chassis/index.html[Upgrade by using ARL, keeping the same chassis, disks, and the data stored on the disks].
 
+| Am I upgrading a MetroCluster configuration?
+| Refer to link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
+
+|===
+
+== Step 2: Prepare for the upgrade
+
+Before beginning your upgrade procedure, review all of the questions listed in the table below.
+
+[cols=2*,options="header",cols="30,70"]
+|===
+| Ask yourself…	| If your answer is yes, you need to do this…
+
+
 | Am I relocating an SVM? 
 | Refer to link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow[SVM data mobility overview^].
 
-| Am I upgrading a MetroCluster configuration?
-|Refer to link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html[Upgrade, refresh, or expand the MetroCluster configuration^].
+| Does an FC SAN configuration exist on the cluster of my original system?
+
+| Validate the SAN zoning configuration for all nodes on both the original and replacement systems. Refer to link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html[Learn about FC and FCoE zoning with ONTAP systems^] and link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html[Recommended FC and FCoE zoning configurations for ONTAP systems^].
 
 | Am I replacing an individual component?
 | Refer to the link:https://docs.netapp.com/us-en/ontap-systems/index.html[ONTAP Hardware Systems Documentation^] and locate the field-replaceable unit (FRU) flyer for that component.
@@ -81,7 +97,7 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 | Question | Example answer
 
 | Am I running a different software version on the original and new nodes?
-| No. Both FAS9500 and FAS90 run ONTAP 9.15.1.
+| No. Both FAS9500 and FAS90 run ONTAP 9.17.1.
 
 | Do I want to perform a disruptive upgrade?
 | No. I want to keep my production environment online during the upgrade.
@@ -104,11 +120,15 @@ This example provides possible answers for a FAS9500 to FAS90 controller upgrade
 | Am I upgrading a MetroCluster configuration?
 | No. This is a standard HA pair cluster.
 
+| Does an FC SAN configuration exist on the cluster of my original system?
+| Yes. I have validated the SAN zoning configuration on all nodes on both the original and replacement systems.
+
 | Am I replacing an individual component?
 | No. I'm upgrading the entire controller system.
 |===
 
 *Recommended upgrade path for this example:* link:upgrade-arl/index.html[Upgrade by using ARL] because the FAS9500 is a modular system and ARL provides a non-disruptive upgrade method.
 
+// 2026 SEP 16, AFFFASDOC-541
 // 2025 OCT 17, AFFFASDOC-404
 // 2023 NOV 16, BURT 1552664
