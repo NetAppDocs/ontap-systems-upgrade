@@ -87,7 +87,7 @@ If e2a is present and is a 100GbE network port, this is the default second clust
 `broadcast-domain remove-ports -broadcast-domain Cluster -ipspace Cluster -ports <node_name>:e1a`
 .. Verify that only cluster ports e4a, e2a or e4a, e4b are in "Cluster" broadcast domain
 +
-`broadcast domain show`
+`network port broadcast-domain show`
 .. Remove the cable connections between e1a node1 and e1a node2, and e1b node1 and e1b node2 to ensure only valid cluster-HA connections are used and there is no redundant connectivity.
 
 . [[verify-node2-step6]]Check the status of the controller replacement operation and verify that it is in a paused state and in the same state that it was in before node2 was halted to perform the physical tasks of installing new controllers and moving cables:
@@ -232,6 +232,7 @@ When all ports are correctly configured and added to the correct broadcast domai
 .What's next?
 After verifying the node2 installation, link:restore-key-manager-config-node2.html[restore key-manager configuration on node2].
 
+// 2026 OCT 1, AFFFASDOC-530
 // 2026 SEP 1, ontap-systems-upgrade-issue-186 and 185
 // BURT 1476251, 2022-05-16
 // BURT 1452254, 2022-04-27
