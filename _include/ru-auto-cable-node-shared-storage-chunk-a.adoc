@@ -13,12 +13,14 @@ a|. Merge the e0M and BMC IP addresses into one IP subnet.
 |===
 
 
+[[two-node-switch-ports]]
 == Connect to a two-node switchless cluster
 The following tables show the switch port usage for two-node switchless cluster configurations.
 
 
+[cols="2,2,2,2a" options="header"]
 |===
-|Port type |AFF A800, AFF C800  |AFF A90 	|AFF A70, AFF C80
+|Port type |AFF A800, AFF C800  |AFF A90, AFF A70 | AFF C80
 
 |Cluster |e0a |e1a |e1a
 |Cluster |e1a |e7a 
@@ -31,3 +33,5 @@ The following tables show the switch port usage for two-node switchless cluster 
 |Ethernet storage ports for NS224 shelves |Any available port |Refer to Ethernet storage connectivity mapping |Refer to Ethernet storage connectivity mapping
 
 |===
+
+// 2026 SEP 1, ontap-systems-upgrade-issue-186 and 185
